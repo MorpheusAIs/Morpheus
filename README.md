@@ -1,6 +1,6 @@
 # Morpheus
 ## A Network For Powering Smart Agents
-## Authored by Morpheus, Trinity, & Neo
+### Authored by Morpheus, Trinity, & Neo
 
 ## Introduction
 The Smart Agent concept of connecting LLMs and AI Agents to wallets, Dapps, & smart contracts promises to open the world of Web3 to everyone. Chatting in normal language with your Smart Agent and having it understand the question or task, is similar to how Google's search engine opened the early internet up to the general public.
