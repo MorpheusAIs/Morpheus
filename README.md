@@ -110,13 +110,13 @@ Another important use for MTN & ETH in the Morpheus network will be compensating
 
 Recognizing ahead of time that software is never perfect and setting aside 5% of MTN & ETH resources from the 25% that goes to coders / developers provides the resources to repay those effected by a bug in the code. The Morpheus developer community will serve as an oracle to recognize when a bug or error has had an economic effect on a user, compute provider, or capital provider. A predefined set of failures will be covered by these resources to include bugs in the Morpheus Smart Contract or local install.
 
-For broader protection an integration with Nexus Mutual or similar smart contract / decentralized protection network could be considered to cover edge cases with agents / smart contracts that want to be included in a Morpheus Agent Store or better ranked by the Prompt Rank algorithm. 
+For broader protection an integration with Nexus Mutual or similar smart contract / decentralized protection network could be considered to cover edge cases with agents / smart contracts that want to be included in a Morpheus Agent Store or better ranked by the SmartContractRank algorithm. 
 
 ## Storage For Persistence & Wallets For Recovery
 Rather than store personal data in the Morpheus network itself, which would be cost prohibitive and a centralizing force, individuals will hold the private keys controlling access to their data, prompts & wallet. The data itself will be stored using the IPFS standard and the Filecoin network for decentralized longterm storage. Leveraging the Filecoin EVM and DeFi for yield a permanent recurring storage can be arranged. Alternatively users can pay annually ENS style for storage. The approach and keeping the private Web3 wallet as the key for movement / recovery of this data to different devices as the user changes computers or phones.
 
 ## Morpheus Tech Stack, Smart Contract & Development
-The Morpheus implementation of the Smart Agent Protocol will be a direct fork of the existing locally run repo. The most significant change will be to update Prompt Rank to include knowledge of the MTN token and its functions in powering a network of Smart Agents.
+The Morpheus implementation of the Smart Agent Protocol will be a direct fork of the existing locally run repo. The most significant change will be to update SmartContractRank to include knowledge of the MTN token and its functions in powering a network of Smart Agents.
 
 The Morpheus MTN token is being developed as a Smart Contract on Ethereum via the ERC20 standard for fungible tokens. Most smart contracts are on Ethereum and the Ethereum Virtual Machine has become the lingua franca of the Web3 space. To reduce the cost of gas fees for sending daily rewards we will leverage Ethereum's layer 2 called OP Mainnet.
 
