@@ -1,3 +1,0 @@
-cargo:rerun-if-changed=build/main.rs
-cargo:rustc-env=TYPENUM_BUILD_CONSTS=/home/dom/talk2web3-api/target/debug/build/typenum-cc8e23cc60a5b984/out/consts.rs
-cargo:rustc-env=TYPENUM_BUILD_OP=/home/dom/talk2web3-api/target/debug/build/typenum-cc8e23cc60a5b984/out/op.rs

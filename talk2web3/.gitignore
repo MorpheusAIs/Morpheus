@@ -9,8 +9,7 @@ lerna-debug.log*
 
 /rust
 /rust/target
-rust
-rust/target
+
 
 # hardhat artifacts
 artifacts
