@@ -1,4 +1,4 @@
-<img width="400" alt="Morepheus Logo 42 Font Bold MTN Binary" src="https://github.com/MorpheusAIs/Paper/assets/1563345/1e15f574-2c0c-4382-b0d9-8ff4661d2b4f">
+<img width="300" alt="Morepheus Logo 42 Font Bold MTN Binary" src="https://github.com/MorpheusAIs/Paper/assets/1563345/1e15f574-2c0c-4382-b0d9-8ff4661d2b4f">
 
 # Morpheus
 ## A Network For Powering Smart Agents
