@@ -1,0 +1,13 @@
+/home/dom/talk2web3-api/target/debug/deps/ecdsa-0533054bc74a57ee.rmeta: /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/lib.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/recovery.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/der.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/hazmat.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/signing.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/verifying.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/../README.md
+
+/home/dom/talk2web3-api/target/debug/deps/libecdsa-0533054bc74a57ee.rlib: /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/lib.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/recovery.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/der.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/hazmat.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/signing.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/verifying.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/../README.md
+
+/home/dom/talk2web3-api/target/debug/deps/ecdsa-0533054bc74a57ee.d: /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/lib.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/recovery.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/der.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/hazmat.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/signing.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/verifying.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/../README.md
+
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/lib.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/recovery.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/der.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/hazmat.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/signing.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/verifying.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ecdsa-0.16.8/src/../README.md:

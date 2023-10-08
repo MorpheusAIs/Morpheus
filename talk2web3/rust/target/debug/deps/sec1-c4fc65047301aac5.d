@@ -1,0 +1,13 @@
+/home/dom/talk2web3-api/target/debug/deps/sec1-c4fc65047301aac5.rmeta: /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/lib.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/point.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/error.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/parameters.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/private_key.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/traits.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/../README.md
+
+/home/dom/talk2web3-api/target/debug/deps/libsec1-c4fc65047301aac5.rlib: /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/lib.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/point.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/error.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/parameters.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/private_key.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/traits.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/../README.md
+
+/home/dom/talk2web3-api/target/debug/deps/sec1-c4fc65047301aac5.d: /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/lib.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/point.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/error.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/parameters.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/private_key.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/traits.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/../README.md
+
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/lib.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/point.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/error.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/parameters.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/private_key.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/traits.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sec1-0.7.3/src/../README.md:

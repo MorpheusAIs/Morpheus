@@ -1,0 +1,13 @@
+/home/dom/talk2web3-api/target/debug/deps/digest-9b2df42980d108fc.rmeta: /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/lib.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/digest.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/dyn_digest.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/errors.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/fixed.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/variable.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/xof.rs
+
+/home/dom/talk2web3-api/target/debug/deps/libdigest-9b2df42980d108fc.rlib: /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/lib.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/digest.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/dyn_digest.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/errors.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/fixed.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/variable.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/xof.rs
+
+/home/dom/talk2web3-api/target/debug/deps/digest-9b2df42980d108fc.d: /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/lib.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/digest.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/dyn_digest.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/errors.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/fixed.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/variable.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/xof.rs
+
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/lib.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/digest.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/dyn_digest.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/errors.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/fixed.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/variable.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/digest-0.9.0/src/xof.rs:
