@@ -7,6 +7,11 @@ yarn-error.log*
 lerna-debug.log*
 .vscode
 
+/rust
+/rust/target
+rust
+rust/target
+
 # hardhat artifacts
 artifacts
 cache
