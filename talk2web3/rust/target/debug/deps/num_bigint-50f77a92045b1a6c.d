@@ -1,0 +1,12 @@
+/home/dom/talk2web3-api/target/debug/deps/num_bigint-50f77a92045b1a6c.rmeta: /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/lib.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/macros.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/bigint.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/biguint.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/algorithms.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/monty.rs
+
+/home/dom/talk2web3-api/target/debug/deps/libnum_bigint-50f77a92045b1a6c.rlib: /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/lib.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/macros.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/bigint.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/biguint.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/algorithms.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/monty.rs
+
+/home/dom/talk2web3-api/target/debug/deps/num_bigint-50f77a92045b1a6c.d: /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/lib.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/macros.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/bigint.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/biguint.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/algorithms.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/monty.rs
+
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/lib.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/macros.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/bigint.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/biguint.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/algorithms.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num-bigint-0.2.6/src/monty.rs:

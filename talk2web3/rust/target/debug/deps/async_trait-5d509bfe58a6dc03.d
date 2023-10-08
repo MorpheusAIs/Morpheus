@@ -1,0 +1,12 @@
+/home/dom/talk2web3-api/target/debug/deps/libasync_trait-5d509bfe58a6dc03.so: /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/lib.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/args.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/bound.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/expand.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/lifetime.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/parse.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/receiver.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/verbatim.rs
+
+/home/dom/talk2web3-api/target/debug/deps/async_trait-5d509bfe58a6dc03.d: /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/lib.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/args.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/bound.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/expand.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/lifetime.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/parse.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/receiver.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/verbatim.rs
+
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/lib.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/args.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/bound.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/expand.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/lifetime.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/parse.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/receiver.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.73/src/verbatim.rs:

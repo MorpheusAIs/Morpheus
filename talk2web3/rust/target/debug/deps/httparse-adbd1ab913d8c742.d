@@ -1,0 +1,12 @@
+/home/dom/talk2web3-api/target/debug/deps/httparse-adbd1ab913d8c742.rmeta: /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/lib.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/iter.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/macros.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/simd/mod.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/simd/sse42.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/simd/avx2.rs
+
+/home/dom/talk2web3-api/target/debug/deps/libhttparse-adbd1ab913d8c742.rlib: /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/lib.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/iter.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/macros.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/simd/mod.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/simd/sse42.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/simd/avx2.rs
+
+/home/dom/talk2web3-api/target/debug/deps/httparse-adbd1ab913d8c742.d: /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/lib.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/iter.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/macros.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/simd/mod.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/simd/sse42.rs /home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/simd/avx2.rs
+
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/lib.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/iter.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/macros.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/simd/mod.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/simd/sse42.rs:
+/home/dom/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.8.0/src/simd/avx2.rs:
