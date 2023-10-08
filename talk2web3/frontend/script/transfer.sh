@@ -1,1 +1,0 @@
-yarn hardhat deploy-zksync --script transfer-usdc.ts
