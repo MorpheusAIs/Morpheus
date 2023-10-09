@@ -883,10 +883,12 @@
   "resolved" "https://registry.npmjs.org/@types/mocha/-/mocha-10.0.1.tgz"
   "version" "10.0.1"
 
-"@types/node@*", "@types/node@^20.6.0":
-  "integrity" "sha512-najjVq5KN2vsH2U/xyh2opaSEz6cZMR2SetLIlxlj08nOcmPOemJmUK2o4kUzfLqfrWE0PIrNeE16XhYDd3nqg=="
-  "resolved" "https://registry.npmjs.org/@types/node/-/node-20.6.0.tgz"
-  "version" "20.6.0"
+"@types/node@*", "@types/node@^20.8.4":
+  "integrity" "sha512-ZVPnqU58giiCjSxjVUESDtdPk4QR5WQhhINbc9UBrKLU68MX5BF6kbQzTrkwbolyr0X8ChBpXfavr5mZFKZQ5A=="
+  "resolved" "https://registry.npmjs.org/@types/node/-/node-20.8.4.tgz"
+  "version" "20.8.4"
+  dependencies:
+    "undici-types" "~5.25.1"
 
 "@types/pbkdf2@^3.0.0":
   "integrity" "sha512-Cf63Rv7jCQ0LaL8tNXmEyqTHuIJxRdlS5vMh1mj5voN4+QFhVZnlZruezqpWYDiJ8UTzhP0VmeLXCmBk66YrMQ=="
@@ -3253,6 +3255,11 @@
   "integrity" "sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w=="
   "resolved" "https://registry.npmjs.org/typescript/-/typescript-5.2.2.tgz"
   "version" "5.2.2"
+
+"undici-types@~5.25.1":
+  "integrity" "sha512-Ga1jfYwRn7+cP9v8auvEXN1rX3sWqlayd4HP7OKk4mZWylEmu3KzXDUGrQUN6Ol7qo1gPvB2e5gX6udnyEPgdA=="
+  "resolved" "https://registry.npmjs.org/undici-types/-/undici-types-5.25.3.tgz"
+  "version" "5.25.3"
 
 "undici@^5.14.0":
   "integrity" "sha512-Ji2IJhFXZY0x/0tVBXeQwgPlLWw13GVzpsWPQ3rV50IFMMof2I55PZZxtm4P6iNq+L5znYN9nSTAq0ZyE6lSJw=="

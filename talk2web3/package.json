@@ -14,6 +14,7 @@
     "@openzeppelin/contracts-upgradeable": "^4.9.3",
     "@types/chai": "^4.3.4",
     "@types/mocha": "^10.0.1",
+    "@types/node": "^20.8.4",
     "chai": "^4.3.7",
     "dotenv": "^16.3.1",
     "ethers": "^5.7.2",
@@ -31,7 +32,6 @@
     "frontend": "cd frontend && npm run start"
   },
   "dependencies": {
-    "@types/node": "^20.6.0",
     "next": "^13.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
