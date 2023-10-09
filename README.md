@@ -16,5 +16,5 @@ To make Smart Agents accessible to everyone and increase decentralization we pro
 - Open Issues: https://github.com/MorpheusAIs/Morpheus/blob/main/OpenIssues.md
 
 ## Code:
-Smart Contracts: https://github.com/MorpheusAIs/Morpheus/tree/main/contract_library
-Wallet Connections: https://github.com/MorpheusAIs/Morpheus/tree/main/talk2web3
+- Smart Contracts: https://github.com/MorpheusAIs/Morpheus/tree/main/contract_library
+- Wallet Connections: https://github.com/MorpheusAIs/Morpheus/tree/main/talk2web3
