@@ -2,9 +2,9 @@
 
 ## 1. How to pay for gas fees of the end user without adding complexity? 
 Example Solutions:
-Have developers use a part of the ETH generated from yield activities to pay for the user's transaction.
+- Have developers use a part of the ETH generated from yield activities to pay for the user's transaction.
 Or 
-Developers pay fees on behalf of the user via account abstraction or gas station type set up.
+- Developers pay fees on behalf of the user via account abstraction or gas station type set up.
 
 ## 2. How should ETH fees paid to Compute providers flow?
 Example Flow: 
