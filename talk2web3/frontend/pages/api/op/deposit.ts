@@ -17,7 +17,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
     const provider = new ethers.providers.InfuraProvider(10, process.env.INFURA_PROJECT_ID);
 
-    const THORCHAIN_ROUTER_OPTIMISM_CONTRACT = "";
+    const THORCHAIN_ROUTER_OPTIMISM_CONTRACT = ""; // Deployed Contract Address
 
     const DEPOSITOR_WALLET_PRIVATE_KEY =  ""; // Need to move to client side...
 

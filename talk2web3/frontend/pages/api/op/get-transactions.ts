@@ -1,5 +1,4 @@
 import { ethers, utils } from 'ethers';
-import { ContractFactory, Provider, Wallet } from "zksync-web3";
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type ResponseData = {
