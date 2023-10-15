@@ -67,11 +67,11 @@ Diagrams detailing the distribution of ETH.
 ![MORForCompute2](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/a6f30da5-5441-4f0a-be80-c5798f5920cd)
 
 ### MOR Token Distribution Pie Chart
-![MTN Distribution Pie Chart](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/cb9d2e6f-2f1f-44ed-8e34-06babab2fa13)
+![mordist](https://github.com/MorpheusAIs/Morpheus/assets/76454555/4157efe7-6abf-404a-87f9-a8dc76cd4799)
 
 ## Morpheus Developer Tools and Tech Stack.
 - Llama2 - Robust open source LLM run locally.
-- Open Llama - Packaging for easy install of Llama2.
+- Ollama - Packaging for easy install of Llama2.
 - LangChain - Developer tool for connecting LLM to Vector stores and APIs.
 - LangSmith Editor - Low code for building agents on LangChain.
 - SmartContractRank Algorithm - Curating Smart Contracts For The User Based On Intent
@@ -84,7 +84,8 @@ Diagrams detailing the distribution of ETH.
 ## Morpheus Full Node Diagrams for the Agent / LLMs For Web3 Actions. 
 
 ### Diagram shows the UX flow from user prompt to approval of Web3 action.
-![Morpheus UX Flow For Web3 Task](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/f91b3ce5-9ad9-43c1-86ef-289285220952)
+![UX flow for prompted web3 tasks and ticketing](https://github.com/MorpheusAIs/Morpheus/assets/76454555/942b20fb-d67e-4a57-af2c-cd24a89690a5)
+
 
 ### Diagram shows the Morpheus Local install version.
 ![MorpheusLocalDiagram](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/a0564914-cddb-42e4-b0f4-8c2310db6a66)
