@@ -12,12 +12,12 @@ On chain actions that need to be validated by the Morpheus smart contract.
 - A) Lock ETH through Thorchain, donate yield to Coders + Compute Providers.
 - B) Calculate pro-rata of ETH donated 
 
-2. Forever Provable Destruction of MTN:
-- A) Burn address or burn function for MTN tokens.
+2. Forever Provable Destruction of MOR:
+- A) Burn address or burn function for MOR tokens.
 
-3. ERC20 Template Contract For Issuing MTN
-- A) Mint MTN tokens daily to Capital + Community pro-rata to ETH yield donated.
-- B) Mint MTN tokens daily to Coders + Compute providers pro-rata to MTN burned via fees.
+3. ERC20 Template Contract For Issuing MOR
+- A) Mint MOR tokens daily to Capital + Community pro-rata to ETH yield donated.
+- B) Mint MOR tokens daily to Coders + Compute providers pro-rata to MOR burned via fees.
 
 4. Proof of Morpheus - Demonstrate Privacy, Open Source, & Safety
 - A) Publish list of audited Agents and their Smart Rank scores.
@@ -26,7 +26,7 @@ On chain actions that need to be validated by the Morpheus smart contract.
 - D) Publish list of Prompts & their Smart Rank scores.
 
 5. Protection Funds
-- A) Distribute MTN & ETH in cases of hacks, errors, bugs, or other attacks that cause losses. 
+- A) Distribute MOR & ETH in cases of hacks, errors, bugs, or other attacks that cause losses. 
 - B) Pre-defined set of scenarios for pay out. Policies for forking / roll backs in extreme cases.
 - C) Developers in charge of determining cases of attacks & their remedies. 
 - D) Funds for bug bounties / white hat hackers.
@@ -34,20 +34,20 @@ On chain actions that need to be validated by the Morpheus smart contract.
 
 ## Morpheus Smart Contract Diagrams
 
-Diagrams plus descriptions of the MTN minting & burning.
+Diagrams plus descriptions of the MOR minting & burning.
 Descriptions of the smart contracts required.
 Diagrams detailing the distribution of ETH. 
 
-### Morpheus MTN Smart Contract Rewards Distribution
+### Morpheus MOR Smart Contract Rewards Distribution
 ![MorpheusSmartContractDiagram](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/1675fa8c-a780-4019-9be8-68837ffdb4f9)
 
-### Morpheus MTN Distribution Diagram
+### Morpheus MOR Distribution Diagram
 ![MorpheusMTNDistributionUnitsDiagram](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/563c5f81-b16a-4e81-bab0-39e54f6cdac1)
 
-### MTN Token Distribution Example of Day 1 and Day 2.
+### MOR Token Distribution Example of Day 1 and Day 2.
 ![Day1Day2MTNTokenDistribution](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/20131e40-ee09-48c3-89aa-0af65a92df98)
 
-### Example Diagrams of ETH Yield Donation & Resulting MTN
+### Example Diagrams of ETH Yield Donation & Resulting MOR
 ### Step 1.
 ![Diagram1ofETHDontator](https://github.com/MorpheusAIs/Morpheus/assets/1563345/5a97da2c-31d5-4e97-876b-5532e799fdd2)
 
@@ -57,7 +57,7 @@ Diagrams detailing the distribution of ETH.
 ### Step 3.
 ![Diagram3ofMTNRewarded](https://github.com/MorpheusAIs/Morpheus/assets/1563345/92f9c3ff-1c48-485a-9b4a-734e700e5ba6)
 
-### MTN Token Distribution Pie Chart
+### MOR Token Distribution Pie Chart
 ![MTN Distribution Pie Chart](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/cb9d2e6f-2f1f-44ed-8e34-06babab2fa13)
 
 ## Morpheus Developer Tools and Tech Stack.
