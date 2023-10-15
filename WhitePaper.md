@@ -50,14 +50,27 @@ Developers pay MOR to compute providers for functions beyond what local hardware
 
 All projects go through phases of development. Its important that that at the beginning liquid resources such as ETH are used to pay devs and for equipment. Ethereum did the same thing when they leveraged BTC from their community to pay for the initial coding of their blockchain. The difference here is that the Smart Agent Protocol has already been developed and Morpheus is implementing a version to broaden its reach, so their isn't a need for a crowd sale before the project goes live. MOR tokens will only be rewarded after the software is live.
 
-Near-term: At Time Of Launch
-Capital - ETH locked. Yield is paid monthly to compute + coders + users. Compute - ETH yield sent to compute providers. Coders - ETH yield sent to intelligence providers. Users - ETH yield sent to data providers.
+## Near-term: At Time Of Launch
+Capital - ETH locked in a smart contract that generates yield (ETH in a Thorchain saver vault for example). 
 
-Mid-term: As MOR Gains Wider Circulation
-Capital - Block Rewards form majority of reward. Equipment - Block Rewards form majority of reward. Coders - Block Rewards form majority of reward. Users - Block rewards form majority of reward.
+The value of the ETH yield is converted weekly into MOR and sent to all compute providers + coders + data contributors above a threshold of 10 times the gas fee required for the transaction on OP Mainnet (Ethereum 2nd layer).
 
-Long-term: When MOR Has Deep Liquidity & Strong Organic Demand
-Fees going to compute providers will form the majority of their reward. Donations going to intelligence providers will form the majority of their reward. Trading fees going to liquidity providers will form the majority of their reward. For example Principle + 90% of gains go to users which is sustainable.
+- Capital, The value of their ETH yield will be calculated against all donations and MOR rewarded to them pro-rata.
+- Compute, The value of the ETH yield is converted into MOR and sent to compute providers. 
+- Coders, The value of the ETH yield is converted into MOR and sent to the coders. 
+- Community, The value of the ETH yield is converted into MOR and sent to the users contributing training data.
+
+## Mid-term: As MOR Gains Wider Circulation
+- Capital, A balance between block rewards and fees earned develop. 
+- Compute, A balance between block rewards and fees earned develop. 
+- Coders, A balance between block rewards and fees earned develop. 
+- Community, A balance between block rewards and fees earned develop.
+
+## Long-term: When MOR Has Deep Liquidity & Strong Organic Demand
+- Capital, Liquidity fees for providing ETH to the MOR token will provider a majority of their rewards.
+- Compute, Fees paid to compute providers will form the majority of their rewards.
+- Coders, Donations going to coders will form the majority of their rewards.
+- Community, Value shared with data providers will provide a majority of their rewards.
 
 Note this isn't a timeline. Rather each phase is a description of part of the life cycle. It may take years for the community to grow and mature through each phase and the block reward expires after about 16 years. This lengthy distribution schedule is intended to give time for the tokens to be rewarded on a very broad basis globally. Also the smooth daily decline in block rewards over many years gives all participants time to achieve scale and transition from the early subsidized rewards to operating solely by the fees they earn.
 
@@ -66,15 +79,8 @@ The path for all Proofs in Morpheus starts with downloading a copy of the Morphe
 
 The Morpheus full node comes with a wallet or the user can connect their existing wallet. This enables the user to sign and send transactions recommended by their Smart Agent.
 
-## Community Proof:
-The definition of a Community member is someone who has downloaded the full node, connected their wallet, and used their Smart Agent to take a first action such as locking ETH into a yielding protocol. This activity of locking ETH via the Smart Agent serves as proof of the Community member's status and earns a proportion of the MOR tokens each day. For example if there are 100 Community members day 1 when the network launches, then each one gets a pro-rata reward based on the amount of ETH they have locked up to 1 ETH. In this case presuming each of the 100 community members each locked 0.01 ETH, then 1% of the 3,456 MOR tokens each day = 34.56 MOR.
-
-The requirement of the full node & 0.01 ETH locked also discourages an attacker from spinning up millions of nodes and collecting most of the community MOR rewards. The cost of the minimum ETH locked is higher than the value of the MOR tokens. Increasing the likelihood of true community members who are using the Morpheus software being the ones collecting the MOR token reward.
-
-For community members they will use a "Community" smart contract that provides 100% of the yield to the Morpheus network functions. This ETH generated will help cover gas costs to send the MOR tokens to Community members. Thus creating a virtuous cycle of rewarding Community members with MOR, which then allows them to further use the Morpheus software.
-
 ## Capital Proof:
-The definition of a Capital provider is simply an extension of a Community Member. They have downloaded the full node and connected their wallet. The only difference is that a Capital provider is locking more ETH (at least 1). This Capital Provider Smart Contract will provide 100% of the yield to the Morpheus functions such as rewarding developers, compute providers & community members.
+The definition of a Capital provider is someone who has downloaded the full node and connected their wallet and locked at least 0.01 ETH in a yielding smart contract. This Capital Provider Smart Contract will provide 100% of the yield to the Morpheus functions such as rewarding developers, compute providers & community members.
 
 As a result the Capital Provider will receive MOR tokens each day in pro-rata to their locked ETH. For example if there are 100 Capital Providers each Staking 1 ETH on day 1 when the network launches, then each one gets 1% of the 3,456 MOR tokens each day = 34.56 MOR.
 
@@ -83,12 +89,19 @@ The definition of a Coder is simply an extension of a Community Member. They hav
 
 The contributors to the Morpheus codebase are rewarded in proportion to all the cumulative development done on the repository as guaged by Full Time Equivalent (FTE) work contributed. For example if there are 10 coders each having contributed 10% of the FTE time when the network launches, then each one gets 10% of the 3,456 MOR tokens each day = 345.6 MOR. This calculation is updated each month based on the cumulative FTE time contributions of the current mainnet version of the Morpheus software.
 
-Once there are specialized agents or tools or chains (sequence of prompts / calls to an LLM) interoperable with Morpheus, then half (50%) of the rewards will go to their developers. The reward will be calculated in proportion to the the usage of those agents. For example if there are 10 developers who built 10 agents each generating 10% of the agent usage on the Morpheus network. The Morpheus smart contract will calculate those usage statistics via MOR transactions. Then the Morpheus software coders would earn 50% of the MOR reward and each developer of a specialized agent would get 5% of the tokens = 172.8 MOR per developer in this example. 
+Once there are specialized agents or tools or chains (sequence of prompts / calls to an LLM) interoperable with Morpheus, then half (50%) of the rewards will go to their developers. The reward will be calculated in proportion to the the usage of those agents. For example if there are 10 developers who built 10 agents each generating 10% of the agent usage on the Morpheus network. The Morpheus smart contract will calculate those usage statistics via MOR transactions. Then the Morpheus software coders would earn 50% of the MOR reward and each developer of a specialized agent would get 5% of the tokens = 172.8 MOR per developer in this example.
 
 ## Compute Proof:
 The definition of a Compute provider is simply an extension of a Community Member. They have downloaded the full node and connected their wallet. The only difference is that a Compute provider has enabled others to send them prompt requests via the Morpheus APIs, which they will process and return the output for from their machine. This can be calculated by including a signed transaction generated by the Smart Agent with the return of the output.
 
 The pro-rata MOR transaction fees burned by each Compute Provider serves as proof of the Compute Providers status and earns a proportion of the MOR tokens each day. For example if there are 100 Compute Providers day 1 when the network launches, then each one gets a pro-rata reward based on the amount of MOR they have burned via fees. In this case presuming each of the 100 compute providers burned 100 MOR, then 1% of the 3,456 MOR tokens each day = 34.56 MOR.
+
+## Community Proof:
+The definition of a Community member is someone who has downloaded the full node, connected their wallet and is providing training data back the Morpheus network. This can be in the form of data to improve Smart Rank, Agent Rank, Prompt Rank, the underlying opne source LLMs, fine tuning models, and improving specialized agents.
+
+For example if there are 100 Community members day 1 when the network launches and each one is providing 100 language tokens worth of data to Morpheus. Then in this case presuming each of the 100 community members provides the same amount of data, then 1% of the 3,456 MOR tokens each day = 34.56 MOR.
+
+Thus creating a virtuous cycle of rewarding Community members with MOR, which then allows them to further use the Morpheus software.
 
 ## Morpheus Rewards Delivered by Smart Contract On Ethereum Layer 2 
 Note that Morpheus does not need to set aside MOR rewards for blockchain consensus or transaction execution on a distributed ledger thanks to building on Ethereum's 2nd layer "OP Mainnet" (formally known as Optimism). Yield from the ETH locked by users and capital providers will cover the gas fees needed for the Smart Agents and Morpheus Smart Contracts to operate. This selection vastly simplifies the Morpheus software as developing consensus and securing transactions is a very time and resource intensive process.
