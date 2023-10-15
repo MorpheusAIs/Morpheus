@@ -1,9 +1,7 @@
 # Morpheus Yellow Paper
 
-This paper describes the technical details of the Morpheus full node, Morpheus Smart Contract, and related proofs. 
-Presented as written in the whitepaper contributed by the anonymous developers Morpheus, Trinity & Neo.
-https://github.com/MorpheusAIs/Morpheus/blob/main/WhitePaper.md
-
+This paper describes the technical details of the Morpheus full node, Morpheus Smart Contract, and related proofs.
+Presented as written in the whitepaper contributed by the anonymous developers Morpheus, Trinity & Neo. Link to the whitepaper here: https://github.com/SmartAgentProtocol/SmartAgents/blob/main/MorpheusWP.md
 
 ## Morpheus Smart Contracts & Oracle Descriptions
 On chain actions that need to be validated by the Morpheus smart contract.
@@ -39,23 +37,32 @@ Descriptions of the smart contracts required.
 Diagrams detailing the distribution of ETH. 
 
 ### Morpheus MOR Smart Contract Rewards Distribution
-![MorpheusSmartContractDiagram](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/1675fa8c-a780-4019-9be8-68837ffdb4f9)
+![MorpheusSmartContractRewardsofMOR](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/cc35f2b5-14a4-48ef-88da-1a9c4ede336d)
 
 ### Morpheus MOR Distribution Diagram
 ![MorpheusMTNDistributionUnitsDiagram](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/563c5f81-b16a-4e81-bab0-39e54f6cdac1)
 
 ### MOR Token Distribution Example of Day 1 and Day 2.
-![Day1Day2MTNTokenDistribution](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/20131e40-ee09-48c3-89aa-0af65a92df98)
+![MORRateDistribution](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/d1a81b92-db02-49ed-bd55-80d36b6b43b9)
 
-### Example Diagrams of ETH Yield Donation & Resulting MOR
-### Step 1.
-![Diagram1ofETHDontator](https://github.com/MorpheusAIs/Morpheus/assets/1563345/5a97da2c-31d5-4e97-876b-5532e799fdd2)
+## Example Distribution Calculation For Address 0x123 ETH Donator
 
-### Step 2.
-![Diagram2ETHPercentage](https://github.com/MorpheusAIs/Morpheus/assets/1563345/c2b3d542-00b0-45f2-a612-10f805cd06a2)
+### Step One
+![Diagram1ofETHDontator](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/fead528c-d628-449e-a3a3-2f53904f4a3d)
 
-### Step 3.
-![Diagram3ofMTNRewarded](https://github.com/MorpheusAIs/Morpheus/assets/1563345/92f9c3ff-1c48-485a-9b4a-734e700e5ba6)
+### Step Two
+![Diagram2ETHPercentage](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/50580612-686f-4eaa-bd96-84efe0074838)
+
+### Step Three
+![MORForCapitalDiagram](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/32dfe643-cee2-411a-b36a-1daa7be668a4)
+
+## Example Distribution Calculation For Address 0x123 Compute Provider
+
+### Step One
+![MORForCompute](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/bef69c69-0420-441f-97f0-7e8195844f57)
+
+### Step Two
+![MORForCompute2](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/a6f30da5-5441-4f0a-be80-c5798f5920cd)
 
 ### MOR Token Distribution Pie Chart
 ![MTN Distribution Pie Chart](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/cb9d2e6f-2f1f-44ed-8e34-06babab2fa13)
