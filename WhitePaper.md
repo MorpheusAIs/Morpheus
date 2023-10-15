@@ -1,4 +1,4 @@
-<img width="300" alt="Morepheus Logo 42 Font Bold MTN Binary" src="https://github.com/MorpheusAIs/Paper/assets/1563345/1e15f574-2c0c-4382-b0d9-8ff4661d2b4f">
+<img width="400" alt="Morepheus Logo 42 Font Bold MOR Binary" src="https://github.com/MorpheusAIs/Morpheus/assets/1563345/1a19ff74-7165-4d59-9c2b-afe94306306e">
 
 # Morpheus
 ## A Network For Powering Smart Agents
@@ -24,7 +24,7 @@ Morpheus will provide these APIs and decentralized cloud functions by launching 
 Morpheus has many advantages right away. Being Web3 native the user can buy or sell crypto, send stablecoins, access smart contracts, use Dapps and DeFi services, which no LLM is connected to today. Regulatory barriers faced by centralized companies prevent them from offering these tools to users, so their models can chat about tasks, but not act on the user's behalf in a Web3 context. Running on the decentralized public infrastructure is cheaper than paying Chat GPT a license fee for every new user. Morpheus is the Linux type alternative for developers who want to be able to quickly spin up new agents / LLMs at no cost. The user can maintain ownership of their business or personal data. This avoids leaks, hacks, and attacks from competitors. By rewarding developers for contributing code not just to Morpheus but also to build more specialized Agents, an App Store/ Agent Store type experience for users will develop. With persistence of data, prompts, and history owned by the user the Smart Agent Protocol becomes the best solution for interoperability in the world of LLMs and Agents.
 
 ## Token Rewards & Economics
-Our proposal provides for this with a token MTN (Morpheus. Trinity. Neo.) MTN is rewarded each day 24% to the community, 24% to capital, 24% to compute, & 24% to coders. 4% for protection funds.
+Our proposal provides for this with a token MOR (Morpheus. Trinity. Neo.) MOR is rewarded each day 24% to the community, 24% to capital, 24% to compute, & 24% to coders. 4% for protection funds.
 
 This reflects the reality that for Morpheus to grow it needs the following: 
 
@@ -36,26 +36,26 @@ Compute - Providers the equipment and power.
 
 Coders - Provide the intelligence to use the data, capital and compute.
 
-The MTN Token Supply is limited to a maximum of 42,000,000 tokens that will ever exist. The distribution will start with all four groups earning the tokens by providing forms of proof of work (labor) and proof of Stake (capital) to the network. No pre-mine. No early token sale. Just fair launch.
+The MOR Token Supply is limited to a maximum of 42,000,000 tokens that will ever exist. The distribution will start with all four groups earning the tokens by providing forms of proof of work (labor) and proof of Stake (capital) to the network. No pre-mine. No early token sale. Just fair launch.
 
-The block reward will start at 14,400 MTN per day and then decline by 2.468994701 MTN each day, until the reward reaches 0 on day 5,833. By that time (about 16 years from now) provided Morpheus is in wide use, the fees will have taken over as the primary incentive. Fees paid to users for their data, fees to compute providers, fees to capital providers and fees to coders.
+The block reward will start at 14,400 MOR per day and then decline by 2.468994701 MOR each day, until the reward reaches 0 on day 5,833. By that time (about 16 years from now) provided Morpheus is in wide use, the fees will have taken over as the primary incentive. Fees paid to users for their data, fees to compute providers, fees to capital providers and fees to coders.
 
 42 Million supply cap for the tokens. 14,400 tokens per day evenly distributed between users, capital, code, compute. 3,456 tokens for compute. Proof transactions for API calls served. 3,456 tokens for code. Proof code committed and merged into Morpheus repo. 3,456 tokens for capital. Proof ETH locked & yield donated to devs, compute and Users. 3,456 tokens for data. Proof of feedback on prompts, agents, and Morpheus. With the remainder set aside for protection funds: 576 tokens per day for that purpose.
 
-## The Utility of The MTN Token
-The objective is for MTN to provide broad utility in many of the functions of the Morpheus network. As a result the use of the MTN token offers an on chain accounting mechanism to calculate rewards based on real usage of the software.
+## The Utility of The MOR Token
+The objective is for MOR to provide broad utility in many of the functions of the Morpheus network. As a result the use of the MOR token offers an on chain accounting mechanism to calculate rewards based on real usage of the software.
 
-Developers pay MTN to compute providers for functions beyond what local hardware can execute. MTN pays for the Morpheus API calls for decentralized applications using the Smart Agent Protocol. Users can pay MTN for specialized Agents released by developers. In turn Developers can pay users MTN for training data for new LLMs / Agents.
+Developers pay MOR to compute providers for functions beyond what local hardware can execute. MOR pays for the Morpheus API calls for decentralized applications using the Smart Agent Protocol. Users can pay MOR for specialized Agents released by developers. In turn Developers can pay users MOR for training data for new LLMs / Agents.
 
-All projects go through phases of development. Its important that that at the beginning liquid resources such as ETH are used to pay devs and for equipment. Ethereum did the same thing when they leveraged BTC from their community to pay for the initial coding of their blockchain. The difference here is that the Smart Agent Protocol has already been developed and Morpheus is implementing a version to broaden its reach, so their isn't a need for a crowd sale before the project goes live. MTN tokens will only be rewarded after the software is live.
+All projects go through phases of development. Its important that that at the beginning liquid resources such as ETH are used to pay devs and for equipment. Ethereum did the same thing when they leveraged BTC from their community to pay for the initial coding of their blockchain. The difference here is that the Smart Agent Protocol has already been developed and Morpheus is implementing a version to broaden its reach, so their isn't a need for a crowd sale before the project goes live. MOR tokens will only be rewarded after the software is live.
 
 Near-term: At Time Of Launch
 Capital - ETH locked. Yield is paid monthly to compute + coders + users. Compute - ETH yield sent to compute providers. Coders - ETH yield sent to intelligence providers. Users - ETH yield sent to data providers.
 
-Mid-term: As MTN Gains Wider Circulation
+Mid-term: As MOR Gains Wider Circulation
 Capital - Block Rewards form majority of reward. Equipment - Block Rewards form majority of reward. Coders - Block Rewards form majority of reward. Users - Block rewards form majority of reward.
 
-Long-term: When MTN Has Deep Liquidity & Strong Organic Demand
+Long-term: When MOR Has Deep Liquidity & Strong Organic Demand
 Fees going to compute providers will form the majority of their reward. Donations going to intelligence providers will form the majority of their reward. Trading fees going to liquidity providers will form the majority of their reward. For example Principle + 90% of gains go to users which is sustainable.
 
 Note this isn't a timeline. Rather each phase is a description of part of the life cycle. It may take years for the community to grow and mature through each phase and the block reward expires after about 16 years. This lengthy distribution schedule is intended to give time for the tokens to be rewarded on a very broad basis globally. Also the smooth daily decline in block rewards over many years gives all participants time to achieve scale and transition from the early subsidized rewards to operating solely by the fees they earn.
@@ -66,53 +66,53 @@ The path for all Proofs in Morpheus starts with downloading a copy of the Morphe
 The Morpheus full node comes with a wallet or the user can connect their existing wallet. This enables the user to sign and send transactions recommended by their Smart Agent.
 
 ## Community Proof:
-The definition of a Community member is someone who has downloaded the full node, connected their wallet, and used their Smart Agent to take a first action such as locking ETH into a yielding protocol. This activity of locking ETH via the Smart Agent serves as proof of the Community member's status and earns a proportion of the MTN tokens each day. For example if there are 100 Community members day 1 when the network launches, then each one gets a pro-rata reward based on the amount of ETH they have locked up to 1 ETH. In this case presuming each of the 100 community members each locked 0.01 ETH, then 1% of the 3,456 MTN tokens each day = 34.56 MTN.
+The definition of a Community member is someone who has downloaded the full node, connected their wallet, and used their Smart Agent to take a first action such as locking ETH into a yielding protocol. This activity of locking ETH via the Smart Agent serves as proof of the Community member's status and earns a proportion of the MOR tokens each day. For example if there are 100 Community members day 1 when the network launches, then each one gets a pro-rata reward based on the amount of ETH they have locked up to 1 ETH. In this case presuming each of the 100 community members each locked 0.01 ETH, then 1% of the 3,456 MOR tokens each day = 34.56 MOR.
 
-The requirement of the full node & 0.01 ETH locked also discourages an attacker from spinning up millions of nodes and collecting most of the community MTN rewards. The cost of the minimum ETH locked is higher than the value of the MTN tokens. Increasing the likelihood of true community members who are using the Morpheus software being the ones collecting the MTN token reward.
+The requirement of the full node & 0.01 ETH locked also discourages an attacker from spinning up millions of nodes and collecting most of the community MOR rewards. The cost of the minimum ETH locked is higher than the value of the MOR tokens. Increasing the likelihood of true community members who are using the Morpheus software being the ones collecting the MOR token reward.
 
-For community members they will use a "Community" smart contract that provides 100% of the yield to the Morpheus network functions. This ETH generated will help cover gas costs to send the MTN tokens to Community members. Thus creating a virtuous cycle of rewarding Community members with MTN, which then allows them to further use the Morpheus software.
+For community members they will use a "Community" smart contract that provides 100% of the yield to the Morpheus network functions. This ETH generated will help cover gas costs to send the MOR tokens to Community members. Thus creating a virtuous cycle of rewarding Community members with MOR, which then allows them to further use the Morpheus software.
 
 ## Capital Proof:
 The definition of a Capital provider is simply an extension of a Community Member. They have downloaded the full node and connected their wallet. The only difference is that a Capital provider is locking more ETH (at least 1). This Capital Provider Smart Contract will provide 100% of the yield to the Morpheus functions such as rewarding developers, compute providers & community members.
 
-As a result the Capital Provider will receive MTN tokens each day in pro-rata to their locked ETH. For example if there are 100 Capital Providers each Staking 1 ETH on day 1 when the network launches, then each one gets 1% of the 3,456 MTN tokens each day = 34.56 MTN.
+As a result the Capital Provider will receive MOR tokens each day in pro-rata to their locked ETH. For example if there are 100 Capital Providers each Staking 1 ETH on day 1 when the network launches, then each one gets 1% of the 3,456 MOR tokens each day = 34.56 MOR.
 
 ## Code Proof:
 The definition of a Coder is simply an extension of a Community Member. They have downloaded the full node and connected their wallet. Next the Coder must sign the commitment of their code with their Smart Agent. This can be done by including a signed transaction generated by the Smart Agent in the comments of the code contributed to the Morpheus repo. This is similar to how developers sign / authenticate applications & version releases today.
 
-The contributors to the Morpheus codebase are rewarded in proportion to all the cumulative development done on the repository as guaged by Full Time Equivalent (FTE) work contributed. For example if there are 10 coders each having contributed 10% of the FTE time when the network launches, then each one gets 10% of the 3,456 MTN tokens each day = 345.6 MTN. This calculation is updated each month based on the cumulative FTE time contributions of the current mainnet version of the Morpheus software.
+The contributors to the Morpheus codebase are rewarded in proportion to all the cumulative development done on the repository as guaged by Full Time Equivalent (FTE) work contributed. For example if there are 10 coders each having contributed 10% of the FTE time when the network launches, then each one gets 10% of the 3,456 MOR tokens each day = 345.6 MOR. This calculation is updated each month based on the cumulative FTE time contributions of the current mainnet version of the Morpheus software.
 
-Once there are specialized agents or tools or chains (sequence of prompts / calls to an LLM) interoperable with Morpheus, then half (50%) of the rewards will go to their developers. The reward will be calculated in proportion to the the usage of those agents. For example if there are 10 developers who built 10 agents each generating 10% of the agent usage on the Morpheus network. The Morpheus smart contract will calculate those usage statistics via MTN transactions. Then the Morpheus software coders would earn 50% of the MTN reward and each developer of a specialized agent would get 5% of the tokens = 172.8 MTN per developer in this example. 
+Once there are specialized agents or tools or chains (sequence of prompts / calls to an LLM) interoperable with Morpheus, then half (50%) of the rewards will go to their developers. The reward will be calculated in proportion to the the usage of those agents. For example if there are 10 developers who built 10 agents each generating 10% of the agent usage on the Morpheus network. The Morpheus smart contract will calculate those usage statistics via MOR transactions. Then the Morpheus software coders would earn 50% of the MOR reward and each developer of a specialized agent would get 5% of the tokens = 172.8 MOR per developer in this example. 
 
 ## Compute Proof:
 The definition of a Compute provider is simply an extension of a Community Member. They have downloaded the full node and connected their wallet. The only difference is that a Compute provider has enabled others to send them prompt requests via the Morpheus APIs, which they will process and return the output for from their machine. This can be calculated by including a signed transaction generated by the Smart Agent with the return of the output.
 
-The pro-rata MTN transaction fees burned by each Compute Provider serves as proof of the Compute Providers status and earns a proportion of the MTN tokens each day. For example if there are 100 Compute Providers day 1 when the network launches, then each one gets a pro-rata reward based on the amount of MTN they have burned via fees. In this case presuming each of the 100 compute providers burned 100 MTN, then 1% of the 3,456 MTN tokens each day = 34.56 MTN.
+The pro-rata MOR transaction fees burned by each Compute Provider serves as proof of the Compute Providers status and earns a proportion of the MOR tokens each day. For example if there are 100 Compute Providers day 1 when the network launches, then each one gets a pro-rata reward based on the amount of MOR they have burned via fees. In this case presuming each of the 100 compute providers burned 100 MOR, then 1% of the 3,456 MOR tokens each day = 34.56 MOR.
 
 ## Morpheus Rewards Delivered by Smart Contract On Ethereum Layer 2 
-Note that Morpheus does not need to set aside MTN rewards for blockchain consensus or transaction execution on a distributed ledger thanks to building on Ethereum's 2nd layer "OP Mainnet" (formally known as Optimism). Yield from the ETH locked by users and capital providers will cover the gas fees needed for the Smart Agents and Morpheus Smart Contracts to operate. This selection vastly simplifies the Morpheus software as developing consensus and securing transactions is a very time and resource intensive process.
+Note that Morpheus does not need to set aside MOR rewards for blockchain consensus or transaction execution on a distributed ledger thanks to building on Ethereum's 2nd layer "OP Mainnet" (formally known as Optimism). Yield from the ETH locked by users and capital providers will cover the gas fees needed for the Smart Agents and Morpheus Smart Contracts to operate. This selection vastly simplifies the Morpheus software as developing consensus and securing transactions is a very time and resource intensive process.
 
 ## The Free Market Sets Fees on Morpheus
 The best systems pick the least number of magic numbers and instead let the free market decide as many variables as possible. Fees are a great example of this. Rather than picking an arbitrary fee to charge instead Morpheus leaves these numbers up to users, devs, capital and compute providers. For example if a compute provider can offer a $0.02 price per 1,000 language tokens for their LLM and a user decides to pay it, then that's what the market is willing to pay. As compute speeds up prices are likely to change and so its better to leave these and other variables up to those using the Morpheus software.
 
 Fees For Compute
-Amount of fee set by users and compute provider. Option to pay compute & burn MTN tokens with each fee. Open market to develop over time. Free marketplace for compute instead of consensus or privileged nodes.
+Amount of fee set by users and compute provider. Option to pay compute & burn MOR tokens with each fee. Open market to develop over time. Free marketplace for compute instead of consensus or privileged nodes.
 
 Fees For Code / Agent Intelligence
-Amount of fee set by coder and accepted by user. Option to pay fee & burn MTN tokens with each fee. Open market to develop over time. Free marketplace for code instead of consensus on tasks.
+Amount of fee set by coder and accepted by user. Option to pay fee & burn MOR tokens with each fee. Open market to develop over time. Free marketplace for code instead of consensus on tasks.
 
 Fees For Capital
-Amount of fee set by LP & accepted by user. Option to pay fee & burn MTN tokens with each fee. Open market to develop over time. Free marketplace for capital instead of consensus on treasury.
+Amount of fee set by LP & accepted by user. Option to pay fee & burn MOR tokens with each fee. Open market to develop over time. Free marketplace for capital instead of consensus on treasury.
 
 ## Fees For User Community
-Amount of fee set by users and accepted by data buyer. Option to pay fee & burn MTN tokens with each fee. Open market to develop over time. Free marketplace for data.
+Amount of fee set by users and accepted by data buyer. Option to pay fee & burn MOR tokens with each fee. Open market to develop over time. Free marketplace for data.
 
-All fees are paid in native MTN tokens creating natural demand in the system as usage grows.
+All fees are paid in native MOR tokens creating natural demand in the system as usage grows.
 
 Use of Fees To Incentivize Honest Agents & Repair Losses In Case of Errors
-Another important use for MTN & ETH in the Morpheus network will be compensating users in case of Smart Agent / Smart Contract failures. We believe curating and building reputation backed up with economic resources will be key to growing confidence in Smart Agents and having a source of funding to address errors, bugs, and other issues that arise. After a major bug and the resulting hard fork of Bitcoin during 2010, an early core developer named Gavin Andresen stepped up to pay Bitcoin to miners who had lost rewards due to the hard fork. This action was important and quickly resolved the hard fork but it was ad hoc.
+Another important use for MOR & ETH in the Morpheus network will be compensating users in case of Smart Agent / Smart Contract failures. We believe curating and building reputation backed up with economic resources will be key to growing confidence in Smart Agents and having a source of funding to address errors, bugs, and other issues that arise. After a major bug and the resulting hard fork of Bitcoin during 2010, an early core developer named Gavin Andresen stepped up to pay Bitcoin to miners who had lost rewards due to the hard fork. This action was important and quickly resolved the hard fork but it was ad hoc.
 
-Recognizing ahead of time that software is never perfect and setting aside 5% of MTN & ETH resources from the 25% that goes to coders / developers provides the resources to repay those effected by a bug in the code. The Morpheus developer community will serve as an oracle to recognize when a bug or error has had an economic effect on a user, compute provider, or capital provider. A predefined set of failures will be covered by these resources to include bugs in the Morpheus Smart Contract or local install. 
+Recognizing ahead of time that software is never perfect and setting aside 5% of MOR & ETH resources from the 25% that goes to coders / developers provides the resources to repay those effected by a bug in the code. The Morpheus developer community will serve as an oracle to recognize when a bug or error has had an economic effect on a user, compute provider, or capital provider. A predefined set of failures will be covered by these resources to include bugs in the Morpheus Smart Contract or local install. 
 
 For broader protection an integration with Nexus Mutual or similar smart contract / decentralized protection network could be considered to cover edge cases with agents / smart contracts that want to be included in a Morpheus Agent Store or better ranked by the SmartContractRank algorithm. 
 
@@ -120,9 +120,9 @@ Storage For Persistence & Wallets For Recovery
 Rather than store personal data in the Morpheus network itself, which would be cost prohibitive and a centralizing force, individuals will hold the private keys controlling access to their data, prompts & wallet. The data itself will be stored using the IPFS standard and the Filecoin network for decentralized longterm storage. Leveraging the Filecoin EVM and DeFi for yield a permanent recurring storage can be arranged. Alternatively users can pay annually ENS style for storage. The approach and keeping the private Web3 wallet as the key for movement / recovery of this data to different devices as the user changes computers or phones.
 
 ## Morpheus Tech Stack, Smart Contract & Development
-The Morpheus implementation of the Smart Agent Protocol will be a direct fork of the existing locally run repo. The most significant change will be to update SmartContractRank to include knowledge of the MTN token and its functions in powering a network of Smart Agents.
+The Morpheus implementation of the Smart Agent Protocol will be a direct fork of the existing locally run repo. The most significant change will be to update SmartContractRank to include knowledge of the MOR token and its functions in powering a network of Smart Agents.
 
-The Morpheus MTN token is being developed as a Smart Contract on Ethereum via the ERC20 standard for fungible tokens. Most smart contracts are on Ethereum and the Ethereum Virtual Machine has become the lingua franca of the Web3 space. To reduce the cost of gas fees for sending daily rewards we will leverage Ethereum's layer 2 called OP Mainnet.
+The Morpheus MOR token is being developed as a Smart Contract on Ethereum via the ERC20 standard for fungible tokens. Most smart contracts are on Ethereum and the Ethereum Virtual Machine has become the lingua franca of the Web3 space. To reduce the cost of gas fees for sending daily rewards we will leverage Ethereum's layer 2 called OP Mainnet.
 
 We believe the choice of the Ethereum blockchain is the best starting place given on chain actions such as staking ETH can only be validated by a smart contract running on the same chain. In addition on chain validation of coding via ENS domains or Ethereum public addresses adds another means of connecting code contributed to the wallet of the coder who provided it. A record of which the Morpheus Smart Contract can access daily.
 
