@@ -24,7 +24,8 @@ Morpheus will provide these APIs and decentralized cloud functions by launching 
 Morpheus has many advantages right away. Being Web3 native the user can buy or sell crypto, send stablecoins, access smart contracts, use Dapps and DeFi services, which no LLM is connected to today. Regulatory barriers faced by centralized companies prevent them from offering these tools to users, so their models can chat about tasks, but not act on the user's behalf in a Web3 context. Running on the decentralized public infrastructure is cheaper than paying Chat GPT a license fee for every new user. Morpheus is the Linux type alternative for developers who want to be able to quickly spin up new agents / LLMs at no cost. The user can maintain ownership of their business or personal data. This avoids leaks, hacks, and attacks from competitors. By rewarding developers for contributing code not just to Morpheus but also to build more specialized Agents, an App Store/ Agent Store type experience for users will develop. With persistence of data, prompts, and history owned by the user the Smart Agent Protocol becomes the best solution for interoperability in the world of LLMs and Agents.
 
 ## Token Rewards & Economics
-Our proposal provides for this with a token MOR (Morpheus. Trinity. Neo.) MOR is rewarded each day 24% to the community, 24% to capital, 24% to compute, & 24% to coders. 4% for protection funds.
+Our proposal provides for this with a Morpheus token (symbol "MOR").
+MOR is rewarded each day 24% to the community, 24% to capital, 24% to compute, & 24% to coders. 4% for protection funds.
 
 This reflects the reality that for Morpheus to grow it needs the following: 
 
