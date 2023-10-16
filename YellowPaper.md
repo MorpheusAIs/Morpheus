@@ -40,8 +40,7 @@ Diagrams detailing the distribution of ETH.
 ![MorpheusSmartContractDiagram4](https://github.com/MorpheusAIs/Morpheus/assets/1563345/c7d0ef65-cd4f-4626-9ae4-723f2684fd23)
 
 ### Morpheus MOR Distribution Diagram
-![MOR Incentive Structure (buckets)](https://github.com/MorpheusAIs/Morpheus/assets/76454555/c6d17842-ced3-4598-b148-ba752523959f)
-
+![MTN Incentive Structure](https://github.com/MorpheusAIs/Morpheus/assets/76454555/0101603d-ab5b-420e-a202-a93aedfc5a4d)
 
 ### MOR Token Distribution Example of Day 1 and Day 2.
 ![Untitled spreadsheet - Google Sheets 2023-10-15 13-28-08](https://github.com/MorpheusAIs/Morpheus/assets/76454555/6ff7869d-bbd6-46b5-8673-6a59b75906e1)
