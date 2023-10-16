@@ -47,7 +47,7 @@ The block reward will start at 14,400 MOR per day and then decline by 2.46899470
 14,400 tokens per day evenly distributed between community users, capital, code, compute. 
 - 3,456 tokens for compute. Proof transactions for API calls served. 
 - 3,456 tokens for code. Proof code committed and merged into Morpheus repo. 
-- 3,456 tokens for capital. Proof ETH yield contributed, swapped for MOR & burned (ETH remainer used for Protection Resources). 
+- 3,456 tokens for capital. Proof ETH yield contributed, swapped for MOR & burned. 
 - 3,456 tokens for data. Proof of feedback on prompts, agents, and Morpheus.
 With the remainder set aside for protection resources: 576 tokens per day for that purpose.
 
