@@ -1,3 +1,152 @@
+Skip to content
+SmartAgentProtocol
+/
+SmartAgents
+
+Type / to search
+
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Pane width
+Use a value between 10% and 63%
+
+13
+Change width
+Files
+Go to file
+t
+backend
+frontend
+talk2web3
+ContributorGuidelines.md
+Dapps Score.md
+Documentation.md
+LICENSE
+MorpheusWP.md
+MorpheusYP.md
+OSSTookKit.md
+README.md
+SDKForAvalancheSmartAgents.md
+SDKForBitcoinSmartAgents.md
+SDKForCosmosSmartAgents.md
+SDKForEthereumSmartAgents.md
+SDKForPolygonSmartAgents.md
+SmartAgentImprovementProposals(SIPs).md
+SmartContractRank.md
+Wallet
+WeeklyStatus.md
+White Paper.md
+YellowPaper.md
+Documentation • Share feedback
+BreadcrumbsSmartAgents
+/
+MorpheusYP.md
+in
+main
+
+Edit
+
+Preview
+Indent mode
+
+Spaces
+Indent size
+
+2
+Line wrap mode
+
+Soft wrap
+Editing MorpheusYP.md file contents
+Selection deleted
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
 # Morpheus Yellow Paper
 
 This paper describes the technical details of the Morpheus full node, Morpheus Smart Contract, and related proofs.
@@ -37,10 +186,12 @@ Descriptions of the smart contracts required.
 Diagrams detailing the distribution of ETH. 
 
 ### Morpheus MOR Smart Contract Rewards Distribution
-![MorpheusSmartContractDiagram4](https://github.com/MorpheusAIs/Morpheus/assets/1563345/c7d0ef65-cd4f-4626-9ae4-723f2684fd23)
+![MorpheusSmartContractDiagram4](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/e0bb4085-ddb6-4c7e-863e-f28fd2b8c6d6)
 
 ### Morpheus MOR Distribution Diagram
-![MTN Incentive Structure](https://github.com/MorpheusAIs/Morpheus/assets/76454555/0101603d-ab5b-420e-a202-a93aedfc5a4d)
+![new-buckets](https://github.com/SmartAgentProtocol/SmartAgents/assets/76454555/cd57bae7-2a56-4a55-bf3e-1f810f3fba9c)
+
+
 
 ### MOR Token Distribution Example of Day 1 and Day 2.
 ![Untitled spreadsheet - Google Sheets 2023-10-15 13-28-08](https://github.com/MorpheusAIs/Morpheus/assets/76454555/6ff7869d-bbd6-46b5-8673-6a59b75906e1)
@@ -79,25 +230,7 @@ Diagrams detailing the distribution of ETH.
 - Filecoin - Storage & Cloud Compute Provision
 - Acash - Open compute network for running LLMs / agents.
 - Wallets - Shapeshift, Exodus, other open source options.
-
-## Morpheus Full Node Diagrams for the Agent / LLMs For Web3 Actions. 
-
-### Diagram shows the UX flow from user prompt to approval of Web3 action.
-![UX flow for prompted web3 tasks and ticketing](https://github.com/MorpheusAIs/Morpheus/assets/76454555/942b20fb-d67e-4a57-af2c-cd24a89690a5)
-
-
-### Diagram shows the Morpheus Local install version.
-![MorpheusLocalDiagram](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/a0564914-cddb-42e4-b0f4-8c2310db6a66)
-
-### Diagram shows the Morpheus P2P install version.
-![MorpheusP2PDiagram](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/a7eeb31f-3d38-4233-a45f-e9b91ad84ba2)
-
-### Diagram shows the Morpheus Decentralized version.
-![MorpheusDecentralized](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/1699f2de-cc18-42e8-a05c-32b3307baa20)
-
-## Community
-- Smart Agency - Freelance developers building use cases / agents for Morpheus users.
-- Global Developer Community - Growing developer, startup & user community.
-- Community recruiting ETH holders to donate yield to Morpheus developers, compute & community.
-- Distributed Development Group - Smart Contract Developers to code Morpheus Smart Contract.
-- Morpheus Dapps - Marketplace for Morpheus integrations with the user's Smart Agent.
+Use Control + Shift + m to toggle the tab key moving focus. Alternatively, use esc then tab to move to the next interactive element on the page.
+No file chosen
+Attach files by dragging & dropping, selecting or pasting them.
+Editing SmartAgents/MorpheusYP.md at main · SmartAgentProtocol/SmartAgents
