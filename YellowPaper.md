@@ -37,7 +37,7 @@ Descriptions of the smart contracts required.
 Diagrams detailing the distribution of ETH. 
 
 ### Morpheus MOR Smart Contract Rewards Distribution
-![MorpheusRewardsDiagramoffourcs](https://github.com/MorpheusAIs/Morpheus/assets/1563345/3f32f3e7-7440-4c87-bf25-2d49524cc5ae)
+![MorpheusSmartContractDiagram4](https://github.com/MorpheusAIs/Morpheus/assets/1563345/c7d0ef65-cd4f-4626-9ae4-723f2684fd23)
 
 ### Morpheus MOR Distribution Diagram
 ![MOR Incentive Structure (buckets)](https://github.com/MorpheusAIs/Morpheus/assets/76454555/c6d17842-ced3-4598-b148-ba752523959f)
