@@ -43,7 +43,13 @@ The MOR Token Supply is limited to a maximum of 42,000,000 tokens that will ever
 
 The block reward will start at 14,400 MOR per day and then decline by 2.468994701 MOR each day, until the reward reaches 0 on day 5,833. By that time (about 16 years from now) provided Morpheus is in wide use, the fees will have taken over as the primary incentive. Fees paid to users for their data, fees to compute providers, fees to capital providers and fees to coders.
 
-42 Million supply cap for the tokens. 14,400 tokens per day evenly distributed between users, capital, code, compute. 3,456 tokens for compute. Proof transactions for API calls served. 3,456 tokens for code. Proof code committed and merged into Morpheus repo. 3,456 tokens for capital. Proof ETH locked & yield donated to devs, compute and Users. 3,456 tokens for data. Proof of feedback on prompts, agents, and Morpheus. With the remainder set aside for protection funds: 576 tokens per day for that purpose.
+**42 Million supply cap for the MOR tokens.** 
+14,400 tokens per day evenly distributed between community users, capital, code, compute. 
+- 3,456 tokens for compute. Proof transactions for API calls served. 
+- 3,456 tokens for code. Proof code committed and merged into Morpheus repo. 
+- 3,456 tokens for capital. Proof ETH yield contributed, swapped for MOR & burned (ETH remainer used for Protection Resources). 
+- 3,456 tokens for data. Proof of feedback on prompts, agents, and Morpheus.
+With the remainder set aside for protection resources: 576 tokens per day for that purpose.
 
 ## The Utility of The MOR Token
 The objective is for MOR to provide broad utility in many of the functions of the Morpheus network. As a result the use of the MOR token offers an on chain accounting mechanism to calculate rewards based on real usage of the software.
@@ -57,7 +63,7 @@ Capital - ETH locked in a smart contract that generates yield (ETH in a Thorchai
 
 The value of the ETH yield is converted weekly into MOR and sent to all compute providers + coders + data contributors above a threshold of 10 times the gas fee required for the transaction on OP Mainnet (Ethereum 2nd layer).
 
-- Capital, The value of their ETH yield will be calculated against all donations and MOR rewarded to them pro-rata.
+- Capital, The value of their ETH yield will be calculated against all ETH contributed and MOR yield rewarded to them pro-rata.
 - Compute, The value of the ETH yield is converted into MOR and sent to compute providers. 
 - Coders, The value of the ETH yield is converted into MOR and sent to the coders. 
 - Community, The value of the ETH yield is converted into MOR and sent to the users contributing training data.
