@@ -69,10 +69,10 @@ The value of the ETH yield is converted weekly into MOR and sent to all compute 
 - Community, A balance between block rewards and fees earned develop.
 
 ## Long-term: When MOR Has Deep Liquidity & Strong Organic Demand
-- Capital, Liquidity fees for providing ETH to the MOR token will provider a majority of their rewards.
+- Capital, Fees for providing ETH liquidity to the MOR token will provider a majority of their rewards.
 - Compute, Fees paid to compute providers will form the majority of their rewards.
-- Coders, Donations going to coders will form the majority of their rewards.
-- Community, Value shared with data providers will provide a majority of their rewards.
+- Coders, Fees going to coders will form the majority of their rewards.
+- Community of Users, Fees paid to users share with data providers will provide a majority of their rewards.
 
 Note this isn't a timeline. Rather each phase is a description of part of the life cycle. It may take years for the community to grow and mature through each phase and the block reward expires after about 16 years. This lengthy distribution schedule is intended to give time for the tokens to be rewarded on a very broad basis globally. Also the smooth daily decline in block rewards over many years gives all participants time to achieve scale and transition from the early subsidized rewards to operating solely by the fees they earn.
 
