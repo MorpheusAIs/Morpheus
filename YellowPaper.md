@@ -81,7 +81,25 @@ Diagrams detailing the distribution of ETH.
 - Filecoin - Storage & Cloud Compute Provision
 - Acash - Open compute network for running LLMs / agents.
 - Wallets - Shapeshift, Exodus, other open source options.
-Use Control + Shift + m to toggle the tab key moving focus. Alternatively, use esc then tab to move to the next interactive element on the page.
-No file chosen
-Attach files by dragging & dropping, selecting or pasting them.
-Editing SmartAgents/MorpheusYP.md at main · SmartAgentProtocol/SmartAgents
+
+## Morpheus Full Node Diagrams for the Agent / LLMs For Web3 Actions. 
+
+### Diagram shows the UX flow from user prompt to approval of Web3 action.
+![UX flow for prompted web3 tasks and ticketing](https://github.com/MorpheusAIs/Morpheus/assets/76454555/942b20fb-d67e-4a57-af2c-cd24a89690a5)
+
+
+### Diagram shows the Morpheus Local install version.
+![MorpheusLocalDiagram](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/a0564914-cddb-42e4-b0f4-8c2310db6a66)
+
+### Diagram shows the Morpheus P2P install version.
+![MorpheusP2PDiagram](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/a7eeb31f-3d38-4233-a45f-e9b91ad84ba2)
+
+### Diagram shows the Morpheus Decentralized version.
+![MorpheusDecentralized](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/1699f2de-cc18-42e8-a05c-32b3307baa20)
+
+## Community
+- Smart Agency - Freelance developers building use cases / agents for Morpheus users.
+- Global Developer Community - Growing developer, startup & user community.
+- Community recruiting ETH holders to donate yield to Morpheus developers, compute & community.
+- Distributed Development Group - Smart Contract Developers to code Morpheus Smart Contract.
+- Morpheus Dapps - Marketplace for Morpheus integrations with the user's Smart Agent.
