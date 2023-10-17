@@ -37,16 +37,10 @@ Descriptions of the smart contracts required.
 Diagrams detailing the distribution of ETH. 
 
 ### Morpheus MOR Smart Contract Rewards Distribution
-![MorpheusSmartContractDiagram4](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/e0bb4085-ddb6-4c7e-863e-f28fd2b8c6d6)
-
-### Morpheus MOR Distribution Diagram
 ![new-buckets](https://github.com/SmartAgentProtocol/SmartAgents/assets/76454555/cd57bae7-2a56-4a55-bf3e-1f810f3fba9c)
-
-
 
 ### MOR Token Distribution Example of Day 1 and Day 2.
 ![Untitled spreadsheet - Google Sheets 2023-10-15 13-28-08](https://github.com/MorpheusAIs/Morpheus/assets/76454555/6ff7869d-bbd6-46b5-8673-6a59b75906e1)
-
 
 ## Example Distribution Calculation For Address 0x123 ETH Donator
 
