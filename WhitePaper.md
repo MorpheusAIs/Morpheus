@@ -109,9 +109,9 @@ The pro-rata MOR transaction fees burned by each Compute Provider serves as proo
 ## Community Proof:
 The definition of a Community member is someone who has downloaded the full node, connected their wallet and is providing training data back the Morpheus network. This can be in the form of data to improve Smart Rank, Agent Rank, Prompt Rank, the underlying opne source LLMs, fine tuning models, and improving specialized agents.
 
-For example if there are 100 Community members day 1 when the network launches and each one is providing 100 language tokens worth of data to Morpheus. Then in this case presuming each of the 100 community members provides the same amount of data, then 1% of the 3,456 MOR tokens each day = 34.56 MOR.
+Community members have the opportunity to be rewarded for the data they provide based in proportion to the MOR they HODL. So if a user is registered as a data provider and is HODLing 1% of the MOR compared to all the registered data providers then they get 1% of 3,456 MOR tokens each day = 34.56 MOR.
 
-Thus creating a virtuous cycle of rewarding Community members with MOR, which then allows them to further use the Morpheus software.
+Thus creates a virtuous cycle of rewarding Community members with MOR, which then allows them to further use & improve the Morpheus software.
 
 ## Morpheus Rewards Delivered by Smart Contract On Ethereum Layer 2 
 Note that Morpheus does not need to set aside MOR rewards for blockchain consensus or transaction execution on a distributed ledger thanks to building on Ethereum's 2nd layer "OP Mainnet" (formally known as Optimism). Yield from the ETH locked by users and capital providers will cover the gas fees needed for the Smart Agents and Morpheus Smart Contracts to operate. This selection vastly simplifies the Morpheus software as developing consensus and securing transactions is a very time and resource intensive process.
