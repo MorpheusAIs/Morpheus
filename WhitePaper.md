@@ -107,7 +107,7 @@ The definition of a Compute provider is simply an extension of a Community Membe
 The pro-rata MOR transaction fees burned by each Compute Provider serves as proof of the Compute Providers status and earns a proportion of the MOR tokens each day. For example if there are 100 Compute Providers day 1 when the network launches, then each one gets a pro-rata reward based on the amount of MOR they have burned via fees. In this case presuming each of the 100 compute providers burned 100 MOR, then 1% of the 3,456 MOR tokens each day = 34.56 MOR.
 
 ## Community Proof:
-The definition of a Community member is someone who has downloaded the full node, connected their wallet and is providing training data back the Morpheus network. This can be in the form of data to improve Smart Rank, Agent Rank, Prompt Rank, the underlying opne source LLMs, fine tuning models, and improving specialized agents.
+The definition of a Community member is someone who has downloaded the full node, connected their wallet and is providing training data back the Morpheus network. This can be in the form of data to improve Smart Rank, Agent Rank, Prompt Rank, the underlying opne source LLMs, fine tuning models, and improving specialized agents. This is important as developers, after utilizing Morpheus for compute, will need a sovereign & decentralized "Reinforcement Learning from Human Feedback" (RLHF) solution for their models.
 
 Community members have the opportunity to be rewarded for the data they provide based in proportion to the MOR they HODL. So if a user is registered as a data provider and is HODLing 1% of the MOR compared to all the registered data providers then they get 1% of 3,456 MOR tokens each day = 34.56 MOR.
 
