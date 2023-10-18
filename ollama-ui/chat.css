@@ -38,6 +38,8 @@ body {
     display: none;
     margin: 0 auto;
     overflow: auto;
+    position: absolute;
+    left: 200px;
   }
 
 .host-address-select {
