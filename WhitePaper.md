@@ -89,12 +89,16 @@ Note this isn't a timeline. Rather each phase is a description of part of the li
 ## Tail Emissions of MOR
 Ever since Bitcoin's launch people have argued about "what will happen when the block rewards finally stop?" To avoid this unhelpful debate in the context of Morpheus and to continue aligning new coders, community, compute & capital providers long into the future, we propose a "tail emission" of MOR tokens. This MOR tail emission will start after the last MOR tokens have been emitted on day 5,833 of the distribution schedule. 
 
-The tail emission will be calculated by reviewing the number of burned MOR tokens the past 5,833 days and setting the tail emission value to be 50% of the burned amount. This tail emission value will be emitted the next 5,833 day period. But in no case will the next emission be greater than 1,153 MOR per day. For example if 13,440,000 MOR were burned during the initial emission schedule, then 6,720,000 MOR can be rewarded in the second 5,833 day period. Which would be 1,152 MOR per day. Which works out to about 1% per of the total MOR emitted to be rewarded per year the following 16 years.
+The tail emission will be calculated by reviewing the number of burned MOR tokens the past 5,833 days and setting the tail emission value to be 50% of the burned amount. This tail emission value will be emitted the next 5,833 day period. But in no case will the tail emission be greater than 16% of the then in circulation MOR. For example if 13,440,000 MOR were burned during the first emission schedule, then 6,720,000 MOR can be rewarded in the second 5,833 day period. Which works out to about 19% of the 28,560,000 MOR are left in circulation after the burning. According this amount would be further reduced to 4,569,600 MOR (16% of tokens in circulation) to be rewarded in the second 5,833 day period or ~783.4 MOR per day.
 
-After the second 5,833 day period is complete, this process will repeat. The tail emission will be calculated again by reviewing the number of burned MOR tokens the past 5,833 days and setting the tail emission value to be 50% of the burned amount. This tail emission value will be emitted the next 5,833 day period. But in no case will the next emission be greater than 576.5 MOR per day (50% of the first emission limit). And so on forever into the future.
+After the second 5,833 day period is complete, this process will repeat. The tail emission will be calculated again by reviewing the number of burned MOR tokens the past 5,833 days and setting the tail emission value to be 50% of the burned amount. This tail emission value will be emitted the next 5,833 day period. But in no case will the tail emission be greater than 16% of the then in circulation MOR. For example if 6,720,000 MOR were burned during the second emission schedule, then 3,360,000 MOR can be rewarded in the third 5,833 day period. Since this number is less than 16% of the then 25,200,000 MOR then left in circulation due to burning the value is not further reduced.
 
-NOTE: This does not alter the nature of the hard Supply Cap of 42 Million MOR. 
-Since the next emission schedule is by definition only a part of the MOR burned, the MOR token can only become ever more scarce with each 5,833 day period.
+This process repeats forever on into the future.
+
+Longterm result. About 1% annual MOR reward (relative to the number of MOR then in circulation) available for future coders, compute, community & capital.
+
+**IMPORTANT NOTE:** This does not alter the nature of the hard Supply Cap of 42 Million MOR. 
+Since the tail emission schedule is by definition only a part of the MOR which was burned, the MOR token can only become ever more scarce with each 5,833 day period.
 
 ## Proof of Community, Code, Compute & Capital
 The path for all Proofs in Morpheus starts with downloading a copy of the Morpheus full node. This includes a local copy of the open source large language model on their machine. Once running a full node the user is in a position to contribute to any of the four functions of the network.
