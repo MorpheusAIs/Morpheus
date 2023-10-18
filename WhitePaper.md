@@ -98,7 +98,7 @@ This process repeats forever on into the future.
 Longterm result. About 1% annual MOR reward (relative to the number of MOR then in circulation) available for future coders, compute, community & capital.
 
 **IMPORTANT NOTE:** This does not alter the nature of the hard Supply Cap of 42 Million MOR. 
-Since the tail emission schedule is by definition only a part of the MOR which was burned, the MOR token can only become ever more scarce with each 5,833 day period.
+Since the tail emission schedule is by definition only a portion of the MOR tokens which were burned, thus the MOR token can only become ever more scarce with each 5,833 day period.
 
 ## Proof of Community, Code, Compute & Capital
 The path for all Proofs in Morpheus starts with downloading a copy of the Morpheus full node. This includes a local copy of the open source large language model on their machine. Once running a full node the user is in a position to contribute to any of the four functions of the network.
