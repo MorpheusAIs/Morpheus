@@ -1,0 +1,54 @@
+[
+    {
+        "id": 26,
+        "contract_type": "Stablecoin",
+        "contract_name": "Dai",
+        "blockchain": "Ethereum",
+        "overall_prompt_rank": 1,
+        "transactions_total": "17,595,808",
+        "dapp_score": 10,
+        "defi_score": 7,
+        "smart_score": 1231706560,
+        "contract_address": "https://etherscan.io/token/0x6b175474e89094c44da98b954eedeac495271d0f",
+        "website_address": "https://makerdao.com/en/"
+    },
+    {
+        "id": 27,
+        "contract_type": "Stablecoin",
+        "contract_name": "Tether USDT",
+        "blockchain": "Ethereum",
+        "overall_prompt_rank": 2,
+        "transactions_total": "191,270,168",
+        "dapp_score": 10,
+        "defi_score": 0.5,
+        "smart_score": 956350840,
+        "contract_address": "https://etherscan.io/token/0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "website_address": "https://tether.to/en/"
+    },
+    {
+        "id": 28,
+        "contract_type": "Stablecoin",
+        "contract_name": "USDC",
+        "blockchain": "Ethereum",
+        "overall_prompt_rank": 3,
+        "transactions_total": "67,692,675",
+        "dapp_score": 10,
+        "defi_score": 0.5,
+        "smart_score": 338463375,
+        "contract_address": "https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "website_address": "https://www.circle.com/en/usdc"
+    },
+    {
+        "id": 29,
+        "contract_type": "Stablecoin",
+        "contract_name": "Origin Dollar",
+        "blockchain": "Ethereum",
+        "overall_prompt_rank": 4,
+        "transactions_total": "26,245",
+        "dapp_score": 10,
+        "defi_score": 5,
+        "smart_score": 1312250,
+        "contract_address": "https://etherscan.io/token/0x2A8e1E676Ec238d8A992307B495b45B3fEAa5e86",
+        "website_address": "https://www.ousd.com/"
+    }
+]

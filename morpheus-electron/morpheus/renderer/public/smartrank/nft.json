@@ -1,0 +1,93 @@
+[
+    {
+        "id": 19,
+        "contract_type": "NFT",
+        "contract_name": "Open Sea",
+        "blockchain": "Ethereum",
+        "overall_prompt_rank": 1,
+        "transactions_total": "10,000,000",
+        "dapp_score": 10,
+        "defi_score": 5,
+        "smart_score": 500000000,
+        "contract_address": "",
+        "website_address": "https://opensea.io/"
+    },
+    {
+        "id": 20,
+        "contract_type": "NFT",
+        "contract_name": "ApeCoin",
+        "blockchain": "Ethereum",
+        "overall_prompt_rank": 2,
+        "transactions_total": "3,129,019",
+        "dapp_score": 10,
+        "defi_score": 5,
+        "smart_score": 156450950,
+        "contract_address": "https://etherscan.io/token/0x4d224452801aced8b2f0aebe155379bb5d594381",
+        "website_address": "https://apecoin.com/"
+    },
+    {
+        "id": 21,
+        "contract_type": "NFT",
+        "contract_name": "EnjinCoin",
+        "blockchain": "Ethereum",
+        "overall_prompt_rank": 3,
+        "transactions_total": "2,321,923",
+        "dapp_score": 10,
+        "defi_score": 5,
+        "smart_score": 116096150,
+        "contract_address": "https://etherscan.io/token/0xf629cbd94d3791c9250152bd8dfbdf380e2a3b9c",
+        "website_address": "https://enjin.io/"
+    },
+    {
+        "id": 22,
+        "contract_type": "NFT",
+        "contract_name": "Blur",
+        "blockchain": "Ethereum",
+        "overall_prompt_rank": 4,
+        "transactions_total": "569,627",
+        "dapp_score": 10,
+        "defi_score": 5,
+        "smart_score": 28481350,
+        "contract_address": "https://etherscan.io/token/0x5283d291dbcf85356a21ba090e6db59121208b44",
+        "website_address": "https://blur.io/"
+    },
+    {
+        "id": 23,
+        "contract_type": "NFT",
+        "contract_name": "WAX",
+        "blockchain": "Ethereum",
+        "overall_prompt_rank": 5,
+        "transactions_total": "198,901",
+        "dapp_score": 10,
+        "defi_score": 8,
+        "smart_score": 15912080,
+        "contract_address": "https://etherscan.io/token/0x39Bb259F66E1C59d5ABEF88375979b4D20D98022",
+        "website_address": "https://www.wax.io/"
+    },
+    {
+        "id": 24,
+        "contract_type": "NFT",
+        "contract_name": "ECOMI",
+        "blockchain": "Ethereum",
+        "overall_prompt_rank": 6,
+        "transactions_total": "136,126",
+        "dapp_score": 10,
+        "defi_score": 5,
+        "smart_score": 6806300,
+        "contract_address": "https://etherscan.io/token/0xed35af169af46a02ee13b9d79eb57d6d68c1749e",
+        "website_address": "https://www.ecomi.com/"
+    },
+    {
+        "id": 25,
+        "contract_type": "NFT",
+        "contract_name": "Immutable X",
+        "blockchain": "Ethereum",
+        "overall_prompt_rank": 7,
+        "transactions_total": "485,517",
+        "dapp_score": 10,
+        "defi_score": 1,
+        "smart_score": 4855170,
+        "contract_address": "https://etherscan.io/token/0xf57e7e7c23978c3caec3c3548e3d615c346e79ff",
+        "website_address": "https://www.immutable.com/"
+    }
+]
