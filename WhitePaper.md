@@ -13,7 +13,7 @@ Finally the average user can talk with their Smart Agent in normal language and 
 
 To make Smart Agents accessible to everyone and increase decentralization of their infrastructure we propose the development of the Morpheus network. The Morpheus network will include a fairly launched token (the "MOR" token) for incentivizing all four of the key contributors to the network. Namely, the community of users providing data, coders contributing to the Morpheus software / agents, capital providers funding development / operations and those suppling computation, storage and bandwidth. It has been well shown by the history of Bitcoin and Ethereum that free & open competition for scarce digital tokens can provide scalable infrastructure for a public blockchain over long periods of time.
 
-![MorpheusNetworkDiagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/7462762a-ca8a-4889-8456-c70b5980055e)
+![MorpheusNetworkDiagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/39ae1af5-ba60-4769-993c-ca5a97cd4c7c)
 
 ## Context & History
 Incumbents such as OpenAI, Microsoft, and Google are running close sourced large language models, charging customers license fees, and monetizing customer data. These models are censored, fragile, and operate in walled gardens. There is a strong demand for a open source large language model available for free. LlaMa, Falcon, and other open source LLMs have recently been released and are rapidly approaching the accuracy of their close sourced competitors.
@@ -171,6 +171,8 @@ The pro-rata MOR transaction fees burned by each Data Provider serves as proof o
 For example if there are 100 Data Providers day 1 when the network launches, then each one gets a pro-rata reward based on the amount of MOR they have burned via fees. In this case presuming each of the 100 data providers burned 100 MOR, then 1% of the 3,456 MOR tokens each day = 34.56 MOR.
 
 To qualify to receive Compute requests a Data Provider's address must HODL MOR tokens. Their data provided can be rewarded pro-rata to the MOR they hodl.
+
+![MorpheusUserDiagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/55c4b638-55c2-4b35-802b-97b2aa634111)
 
 ## Morpheus Rewards Delivered by Smart Contract On Ethereum Layer 2 
 Note that Morpheus does not need to set aside MOR rewards for blockchain consensus or transaction execution on a distributed ledger thanks to building on Ethereum's 2nd layer "OP Mainnet" (formally known as Optimism). Yield from the ETH locked by users and capital providers will cover the gas fees needed for the Smart Agents and Morpheus Smart Contracts to operate. This selection vastly simplifies the Morpheus software as developing consensus and securing transactions is a very time and resource intensive process.
