@@ -136,7 +136,7 @@ The Coder will include in the memo of the transaction the following meta data.
 - C. The version number of the software.
 - D. A hash of the state of the program, so users can check it is a valid and unaltered copy.
 
-The contributors to the Morpheus codebase are rewarded in proportion to all the cumulative development done on the repository as guaged by Full Time Equivalent (FTE) work contributed. For example if there are 10 coders each having contributed 10% of the FTE time when the network launches, then each one gets 10% of the 3,456 MOR tokens each day = 345.6 MOR. This calculation is updated each month based on the cumulative FTE time contributions of the current mainnet version of the Morpheus software.
+The contributors to the Morpheus codebase are rewarded in proportion to all the cumulative development done on the repository as gauged by Full Time Equivalent (FTE) work contributed. For example if there are 10 coders each having contributed 10% of the FTE time when the network launches, then each one gets 10% of the 3,456 MOR tokens each day = 345.6 MOR. This calculation is updated each month based on the cumulative FTE time contributions of the current mainnet version of the Morpheus software.
 
 Once there are specialized agents or tools or chains (sequence of prompts / calls to an LLM) interoperable with Morpheus, then half (50%) of the rewards will go to their developers. The reward will be calculated in proportion to the the usage of those agents. For example if there are 10 developers who built 10 agents each generating 10% of the agent usage on the Morpheus network. The Morpheus smart contract will calculate those usage statistics via MOR transactions. Then the Morpheus software coders would earn 50% of the MOR reward and each developer of a specialized agent would get 5% of the tokens = 172.8 MOR per developer in this example.
 
@@ -172,6 +172,7 @@ For example if there are 100 Data Providers day 1 when the network launches, the
 
 To qualify to receive Compute requests a Data Provider's address must HODL MOR tokens. Their data provided can be rewarded pro-rata to the MOR they hodl.
 
+**Morpheus User Diagram**
 ![MorpheusUserDiagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/55c4b638-55c2-4b35-802b-97b2aa634111)
 
 ## Morpheus Rewards Delivered by Smart Contract On Ethereum Layer 2 
