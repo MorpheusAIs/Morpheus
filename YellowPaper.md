@@ -77,10 +77,14 @@ Diagrams detailing the distribution of ETH.
 - Wallets - Shapeshift, Exodus, other open source options.
 
 ## Morpheus Full Node Diagrams for the Agent / LLMs For Web3 Actions. 
+Audits of Agents preformed by Coders generating an "Agent Proof" that the stated functions of the Agent are as presented. And of course contains no malicous code.
+
+Placeholder for description of audit process, who can conduct audits and how to certify their outcomes. Also incentives paid to auditors.
+
+Prompt Proof generated at the time of a user interaction showing the intent expressed, matches the smart contract selection and transaction values are confirmed with the user. 
 
 ### Diagram shows the UX flow from user prompt to approval of Web3 action.
 ![UX flow for prompted web3 tasks and ticketing](https://github.com/MorpheusAIs/Morpheus/assets/76454555/942b20fb-d67e-4a57-af2c-cd24a89690a5)
-
 
 ### Diagram shows the Morpheus Local install version.
 ![MorpheusLocalDiagram](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/a0564914-cddb-42e4-b0f4-8c2310db6a66)
