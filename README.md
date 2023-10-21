@@ -10,8 +10,6 @@ The Smart Agent concept of connecting LLMs and AI Agents to wallets, Dapps, & sm
 
 To make Smart Agents accessible to everyone and increase decentralization we propose a network & fairly launched token for incentivizing all four of the key contributors to their operation. Namely, the community of users, coders contributing to the Morpheus software / agents, capital providers funding development / operations and those suppling computation, storage and bandwidth. It has been well shown by the history of Bitcoin and Ethereum that free & open competition for scarce digital tokens can provide scalable infrastructure for a public blockchain over long periods of time.
 
-![MorpheusNetworkDiagram3](https://github.com/MorpheusAIs/Morpheus/assets/1563345/3514f631-7a38-470b-b6c8-8bd45e0aae2e)
-
 ## Papers:
 - Whtie Paper: https://github.com/MorpheusAIs/Morpheus/blob/main/WhitePaper.md
 - Yellow Paper: https://github.com/MorpheusAIs/Morpheus/blob/main/YellowPaper.md
@@ -20,3 +18,6 @@ To make Smart Agents accessible to everyone and increase decentralization we pro
 ## Code:
 - Smart Contracts: https://github.com/MorpheusAIs/Morpheus/tree/main/contract_library
 - Wallet Connections: https://github.com/MorpheusAIs/Morpheus/tree/main/talk2web3
+
+## Morpheus Network Diagram
+![MorpheusNetworkDiagram5](https://github.com/MorpheusAIs/Morpheus/assets/1563345/19fc43d3-6ceb-4072-9401-ec92de6e1ca6)
