@@ -13,7 +13,7 @@ Finally the average user can talk with their Smart Agent in normal language and 
 
 To make Smart Agents accessible to everyone and increase decentralization of their infrastructure we propose the development of the Morpheus network. The Morpheus network will include a fairly launched token (the "MOR" token) for incentivizing all four of the key contributors to the network. Namely, the community of users providing data, coders contributing to the Morpheus software / agents, capital providers funding development / operations and those suppling computation, storage and bandwidth. It has been well shown by the history of Bitcoin and Ethereum that free & open competition for scarce digital tokens can provide scalable infrastructure for a public blockchain over long periods of time.
 
-![MorpheusNetworkDiagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/39ae1af5-ba60-4769-993c-ca5a97cd4c7c)
+![MorpheusNetworkDiagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/2e8d45b6-98d5-4f44-8233-4dea9029cfd0)
 
 ## Context & History
 Incumbents such as OpenAI, Microsoft, and Google are running close sourced large language models, charging customers license fees, and monetizing customer data. These models are censored, fragile, and operate in walled gardens. There is a strong demand for a open source large language model available for free. LlaMa, Falcon, and other open source LLMs have recently been released and are rapidly approaching the accuracy of their close sourced competitors.
