@@ -67,7 +67,7 @@ All projects go through phases of development. Its important that that at the be
 ## Near-term: At Time Of Launch
 Capital - ETH locked in a smart contract that generates yield (ETH in a Thorchain saver vault for example). 
 
-The value of the ETH yield is converted weekly into MOR and sent to all compute providers + coders + data contributors above a threshold of 10 times the gas fee required for the transaction on OP Mainnet (Ethereum 2nd layer).
+The value of the ETH yield is converted weekly into MOR and sent to all compute providers + coders + data contributors above a threshold of 10 times the gas fee required for the transaction on Polygon (Ethereum 2nd layer).
 
 - Capital, The value of their ETH yield will be calculated against all ETH contributed and MOR yield rewarded to them pro-rata.
 - Compute, The value of the ETH yield is converted into MOR and sent to compute providers. 
@@ -176,7 +176,7 @@ To qualify to receive Compute requests a Data Provider's address must HODL MOR t
 ![Morpheus User Diagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/bc4ef1e4-4fe9-45fc-82e4-72febf7868d5)
 
 ## Morpheus Rewards Delivered by Smart Contract On Ethereum Layer 2 
-Note that Morpheus does not need to set aside MOR rewards for blockchain consensus or transaction execution on a distributed ledger thanks to building on Ethereum's 2nd layer "OP Mainnet" (formally known as Optimism). Yield from the ETH locked by users and capital providers will cover the gas fees needed for the Smart Agents and Morpheus Smart Contracts to operate. This selection vastly simplifies the Morpheus software as developing consensus and securing transactions is a very time and resource intensive process.
+Note that Morpheus does not need to set aside MOR rewards for blockchain consensus or transaction execution on a distributed ledger thanks to building on Ethereum's 2nd layer "Polygon". Yield from the ETH locked by users and capital providers will cover the gas fees needed for the Smart Agents and Morpheus Smart Contracts to operate. This selection vastly simplifies the Morpheus software as developing consensus and securing transactions is a very time and resource intensive process.
 
 ## The Free Market Sets Fees on Morpheus
 The best systems pick the least number of magic numbers and instead let the free market decide as many variables as possible. Fees are a great example of this. Rather than picking an arbitrary fee to charge instead Morpheus leaves these numbers up to users, devs, capital and compute providers. For example if a compute provider can offer a $0.02 price per 1,000 language tokens for their LLM and a user decides to pay it, then that's what the market is willing to pay. As compute speeds up prices are likely to change and so its better to leave these and other variables up to those using the Morpheus software.
@@ -208,15 +208,15 @@ Rather than store personal data in the Morpheus network itself, which would be c
 ## Morpheus Tech Stack, Smart Contract & Development
 The Morpheus implementation of the Smart Agent Protocol will be a direct fork of the existing locally run repo. The most significant change will be to update SmartContractRank to include knowledge of the MOR token and its functions in powering a network of Smart Agents.
 
-The Morpheus MOR token is being developed as a Smart Contract on Ethereum via the ERC20 standard for fungible tokens. Most smart contracts are on Ethereum and the Ethereum Virtual Machine has become the lingua franca of the Web3 space. To reduce the cost of gas fees for sending daily rewards we will leverage Ethereum's layer 2 called OP Mainnet.
+The Morpheus MOR token is being developed as a Smart Contract on Ethereum via the ERC20 standard for fungible tokens. Most smart contracts are on Ethereum and the Ethereum Virtual Machine has become the lingua franca of the Web3 space. To reduce the cost of gas fees for sending daily rewards we will leverage Ethereum's layer 2 called Polygon.
 
 We believe the choice of the Ethereum blockchain is the best starting place given on chain actions such as staking ETH can only be validated by a smart contract running on the same chain. In addition on chain validation of coding via ENS domains or Ethereum public addresses adds another means of connecting code contributed to the wallet of the coder who provided it. A record of which the Morpheus Smart Contract can access daily.
 
-Also zero knowledge proofs for scalability and privacy are key to many use cases. So starting with these capabilities day one will put the Smart Agent community in the best position for the future. OP Mainnet is in the process of adding ZK Proofs to both its main functions and fault proofs currently.
+Also zero knowledge proofs for scalability and privacy are key to many use cases. So starting with these capabilities day one will put the Smart Agent community in the best position for the future. Polygon is in the process of adding ZK tech, much of which is already live.
 
-In the near-term this tech stack selection secures Morpheus directly in Ethereum's layer 1 security with the reduced gas costs of a layer two. In the mid-term this selection also provides a pathway to launching a dedicated layer 2 via the OP Stack for Smart Agents in the future, just as Coinbase has done recently with Base.
+In the near-term this tech stack selection secures Morpheus directly in Ethereum's layer 1 security with the reduced gas costs of a layer two. In the mid-term this selection also provides a pathway to expand Morpheus to other Ethereum layer 2s and EVM compatible blockchains.
 
-As interoperability improves between public blockchains Morpheus will seek to serve all Web3 AI Agent builders across the various EVM / solidity compatible developer communities. We recognize strong builder communities on OP, Arbitrum, Polygon, Avalanche, Polkadot, Solana, Filecoin & Cosmos that share a similar vision and values. Morpheus is only possible today thanks to the tools built by developers across many of these chains.
+As interoperability improves between public blockchains Morpheus will seek to serve all Web3 AI Agent builders across the various EVM / solidity compatible developer communities. We recognize strong builder communities on Polygon, OP Stack, Base, Arbitrum, Avalanche, Polkadot, Solana, Filecoin & Cosmos that share a similar vision and values. Morpheus is only possible today thanks to the tools built by developers across many of these chains.
 
 ## Conclusion
 We are close to an important moment in history. With Morpheus everyone will have a powerful personal AI capable of thinking with them and taking actions to benefit them. The same way the personal computer and the search engine empowered the individual, we have the same opportunity with personal AIs today. The Smart Agent Protocol brings together the right mix of capabilities with LLMs, Agents, and Web3. Morpheus extends those capabilities into a public network capable of accelerating the mass distribution and usage of Smart Agents.
