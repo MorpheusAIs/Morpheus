@@ -3,10 +3,20 @@
 This paper describes the technical details of the Morpheus full node, Morpheus Smart Contract, and related proofs.
 Presented as written in the whitepaper contributed by the anonymous developers Morpheus, Trinity & Neo. Link to the whitepaper here: https://github.com/SmartAgentProtocol/SmartAgents/blob/main/MorpheusWP.md
 
-## Morpheus Smart Contracts & Oracle Descriptions
+## Local Version 0.0.1 of Morpheus is live at:
+Part 1 Download: Morpheus Version 0.0.1
+https://drive.google.com/file/d/1vquJDNejJ2AGvYCCsi9QldMqtJhrGsNI/view?usp=sharing
+
+Part 2 Download: Ollama for Mac or Linux
+https://ollama.ai/download
+
+First interaction with Morpheus October 22nd 2023.
+![FirstInteractionWithMorpheus20231022](https://github.com/MorpheusAIs/Morpheus/assets/1563345/35509f3a-4346-4f58-bb60-f7881fd10f7e)
+
+## Morpheus Smart Contracts
 On chain actions that need to be validated by the Morpheus smart contract.
 
-1. Fork of N2 Yield Smart Contract Redeployed On OP Stack
+1. Fork of N2 Yield Smart Contract Redeployed On Polygon
 - A) Lock ETH through Thorchain, donate yield to Coders + Compute Providers.
 - B) Calculate pro-rata of ETH donated 
 
@@ -31,7 +41,6 @@ On chain actions that need to be validated by the Morpheus smart contract.
 - E) Funds for protection from Nation State actors.
 
 ## Morpheus Smart Contract Diagrams
-
 Diagrams plus descriptions of the MOR minting & burning.
 Descriptions of the smart contracts required.
 Diagrams detailing the distribution of ETH. 
