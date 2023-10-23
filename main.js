@@ -1,56 +1,43 @@
-const { app, BrowserWindow, ipcMain } = require("electron");
-const { spawn } = require("child_process");
-const path = require("node:path");
+// Modules to control application life and create native browser window
+const { app, BrowserWindow } = require('electron')
+const path = require('node:path')
 
-
-const ollamaProcess = spawn('ollama', ['serve']);
-
-// Optional: Handle Ollama process events
-ollamaProcess.stdout.on('data', (data) => {
-  console.log(`Ollama stdout: ${data}`);
-});
-
-ollamaProcess.stderr.on('data', (data) => {
-  console.error(`Ollama stderr: ${data}`);
-});
-
-ollamaProcess.on('close', (code) => {
-    console.log(`Ollama process exited with code ${code}`);
-  });
-
-const createWindow = () => {
-  const win = new BrowserWindow({
-    //width: 1000,
-    //height: 800,
+function createWindow () {
+  // Create the browser window.
+  const mainWindow = new BrowserWindow({
+    // width: 800,
+    // height: 1000,
     webPreferences: {
-      preload: path.join(__dirname, "preload.js"),
-    },
-  });
+      preload: path.join(__dirname, 'preload.js')
+    }
+  })
 
-  win.loadFile("ollama-ui/chat.html");
-//  win.loadURL("http://localhost:3000");
-};
+  // and load the index.html of the app.
+  mainWindow.loadFile('ollama-ui/index.html')
 
+  // Open the DevTools.
+  // mainWindow.webContents.openDevTools()
+}
 
-
-  // Listen for the app's before-quit event
-  app.on('before-quit', () => {
-
-  });
-
+// This method will be called when Electron has finished
+// initialization and is ready to create browser windows.
+// Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
-  ipcMain.handle("ping", () => "pong");
-  createWindow();
-});
+  createWindow()
 
-app.whenReady().then(() => {
-  createWindow();
+  app.on('activate', function () {
+    // On macOS it's common to re-create a window in the app when the
+    // dock icon is clicked and there are no other windows open.
+    if (BrowserWindow.getAllWindows().length === 0) createWindow()
+  })
+})
 
-  app.on("activate", () => {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow();
-  });
-});
+// Quit when all windows are closed, except on macOS. There, it's common
+// for applications and their menu bar to stay active until the user quits
+// explicitly with Cmd + Q.
+app.on('window-all-closed', function () {
+  if (process.platform !== 'darwin') app.quit()
+})
 
-app.on("window-all-closed", () => {
-  if (process.platform !== "darwin") app.quit();
-});
+// In this file you can include the rest of your app's specific main process
+// code. You can also put them in separate files and require them here.
