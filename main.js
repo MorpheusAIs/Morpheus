@@ -13,7 +13,7 @@ function createWindow () {
   })
 
   //  load the index.html of the app.
-  mainWindow.loadFile('ollama-ui/index.html')
+  mainWindow.loadFile('ui/index.html')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
