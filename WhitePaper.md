@@ -29,7 +29,7 @@ Morpheus has many advantages right away. Being Web3 native the user can buy or s
 
 Morpheus is the Linux type alternative for developers who want to be able to quickly spin up new agents / LLMs at no cost. The user can maintain ownership of their business or personal data. This avoids leaks, hacks, and attacks from competitors. By rewarding developers for contributing code not just to Morpheus but also to build more specialized Agents, an App Store/ Agent Store type experience for users will develop. With persistence of data, prompts, and history owned by the user the Smart Agent Protocol becomes the best solution for interoperability in the world of LLMs and Agents.
 
-Lastly, Morpheus having an graphical user interface and leveraging Electron to package it as a one click install, allows Morpheus to pass the famous "Friedl test". A threshold that benchmarks when the ease of use of a software first makes it accessible to members of the non technical general public.
+Lastly, Morpheus having an graphical user interface and leveraging Electron to package it as a one click install, allows Morpheus to become the first open source AI to pass the famous "Friedl test". A threshold that benchmarks when the ease of use of a software first makes it as accessible to non technical members of the general public.
 
 ## Token Rewards & Economics
 Our proposal provides for this with a Morpheus token (symbol "MOR").
