@@ -1,0 +1,3 @@
+[submodule "ollama-ui"]
+	path = ollama-ui
+	url = https://github.com/ollama-ui/ollama-ui.git
