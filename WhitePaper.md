@@ -172,8 +172,8 @@ For example if there are 100 Data Providers day 1 when the network launches, the
 
 To qualify to receive Compute requests a Data Provider's address must HODL MOR tokens. Their data provided can be rewarded pro-rata to the MOR they hodl.
 
-**Morpheus User Diagram**
-![Morpheus User Diagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/bc4ef1e4-4fe9-45fc-82e4-72febf7868d5)
+## Morpheus User Diagram
+![Morpheus User   Contributor Diagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/478079be-417e-4d8b-b062-c0540138aac0)
 
 ## Morpheus Rewards Delivered by Smart Contract On Ethereum Layer 2 
 Note that Morpheus does not need to set aside MOR rewards for blockchain consensus or transaction execution on a distributed ledger thanks to building on Ethereum's 2nd layer "Polygon". Yield from the ETH locked by users and capital providers will cover the gas fees needed for the Smart Agents and Morpheus Smart Contracts to operate. This selection vastly simplifies the Morpheus software as developing consensus and securing transactions is a very time and resource intensive process.
