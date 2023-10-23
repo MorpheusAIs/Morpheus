@@ -6,7 +6,7 @@
 Published - September 2nd 2023
 
 **Part 1 Download: Morpheus Version 0.0.1**
-https://drive.google.com/file/d/1vquJDNejJ2AGvYCCsi9QldMqtJhrGsNI/view?usp=sharing
+https://bafybeifqgx33c6caindovmde6aah56lqhqaf2cuwrwplvkrjbiisxxlxou.ipfs.dweb.link/
 
 **Part 2 Download: Ollama for Mac or Linux**
 https://ollama.ai/download
