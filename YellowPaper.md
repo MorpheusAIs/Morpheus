@@ -92,6 +92,9 @@ Placeholder for description of audit process, who can conduct audits and how to 
 
 Prompt Proof generated at the time of a user interaction showing the intent expressed, matches the smart contract selection and transaction values are confirmed with the user. 
 
+## Morpheus User & Contributor Diagram
+![Morpheus User   Contributor Diagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/2cff8d70-c116-472f-a431-8a82bfa22f9b)
+
 ### Diagram shows the UX flow from user prompt to approval of Web3 action.
 ![UX flow for prompted web3 tasks and ticketing](https://github.com/MorpheusAIs/Morpheus/assets/76454555/942b20fb-d67e-4a57-af2c-cd24a89690a5)
 
