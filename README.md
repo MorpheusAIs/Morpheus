@@ -6,8 +6,9 @@
 Published - September 2nd 2023
 
 **Part 1 Download: Morpheus Version 0.0.1**
-- https://bafybeifqgx33c6caindovmde6aah56lqhqaf2cuwrwplvkrjbiisxxlxou.ipfs.dweb.link/
-- Verification Hash via SHA 256: d0caa1b7b1f9dd92ea623a3486940cc404557280f4849182d35cd84164df8baf
+- Download from Filecoin: https://bafybeiddkxis4yenpwokl7hflsluyv24q5acpqhiquwhgiufybtd4fhkru.ipfs.w3s.link/
+- Download from Google: https://drive.google.com/file/d/1vquJDNejJ2AGvYCCsi9QldMqtJhrGsNI/view?usp=sharing
+- Verification Hash via SHA 256 for electron-quick-start-darwin-x64-1.0.0.zip: 659ada97cef6eaa99fbc06310380594bbd5b00d077ffff77b7ee0251c1bcd869
 
 **Part 2 Download: Ollama for Mac or Linux**
 https://ollama.ai/download
