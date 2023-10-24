@@ -6,6 +6,7 @@ Presented as written in the whitepaper contributed by the anonymous developers M
 ## Local Version 0.0.1 of Morpheus is live at:
 Part 1 Download: Morpheus Version 0.0.1
 https://bafybeifqgx33c6caindovmde6aah56lqhqaf2cuwrwplvkrjbiisxxlxou.ipfs.dweb.link/
+Verification Hash via SHA 256: d0caa1b7b1f9dd92ea623a3486940cc404557280f4849182d35cd84164df8baf
 
 Part 2 Download: Ollama for Mac or Linux
 https://ollama.ai/download
