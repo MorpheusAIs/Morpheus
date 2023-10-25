@@ -186,6 +186,12 @@ Morpheus的MOR 代币作为 Ethereum上的智能合约通过ERC20标准进行开
 
 随着公共区块链之间的互操作性得到改善，Morpheus将寻求为所有Web3 AI 代理构建者服务，跨越各种EVM/固体兼容的开发者社区。我们认识到Polygon、OP Stack、Base、Arbitrum、Avalanche、Polkadot、Solana、Filecoin和Cosmos上有强大的构建者社区，它们分享着相似的愿景和价值观。Morpheus今天能成为可能，多亏了这些链上的开发者构建的工具。
 
+## 用户数据安全
+当提示内容发送到Morpheus点对点网络中的计算提供者时，为了避免泄露私人数据，我们的软件会寻求并利用大型语言模型的完全同态加密（FHE）技术（该版本已经发布）。此外，随着2024/2025年FHE硬件加速的出现，预计这类计算的成本将与纯文本处理在成本上达到平衡。
+
+LLM示例：https://huggingface.co/blog/encrypted-llm
+EVM示例：https://www.fhenix.io/
+
 ## 结论
 我们正接近历史上的一个重要时刻。有了Morpheus，每个人都将拥有一个强大的个人AI，能够与他们一起思考并采取行动以造福他们。就像个人计算机和搜索引擎赋予了个人权力，我们今天也有同样的机会拥有个人AI。智能代理协议将LLMs、代理和Web3的正确功能组合在一起。Morpheus将这些功能扩展到一个公共网络中，能够加速智能代理的大规模分发和使用。
 
