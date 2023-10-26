@@ -109,11 +109,6 @@ Prompt Proof generated at the time of a user interaction showing the intent expr
 ### Diagram shows the Morpheus Decentralized version.
 ![MorpheusDecentralized](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/1699f2de-cc18-42e8-a05c-32b3307baa20)
 
-## Diagram for User Data Security via FHE over LLM.
-![FHEForLLM](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/fee1d74d-2223-4076-909c-7047ca34dda1)
-
-Details available on Github. https://github.com/huggingface/blog/blob/main/encrypted-llm.md
-
 ## Community
 - Smart Agency - Freelance developers building use cases / agents for Morpheus users.
 - Global Developer Community - Growing developer, startup & user community.
