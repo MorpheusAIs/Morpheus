@@ -222,6 +222,12 @@ In the near-term this tech stack selection secures Morpheus directly in Ethereum
 
 As interoperability improves between public blockchains Morpheus will seek to serve all Web3 AI Agent builders across the various EVM / solidity compatible developer communities. We recognize strong builder communities on Polygon, OP Stack, Base, Arbitrum, Avalanche, Polkadot, Solana, Filecoin & Cosmos that share a similar vision and values. Morpheus is only possible today thanks to the tools built by developers across many of these chains.
 
+## User Data Security
+To avoid leaking private data when sending prompts to the Morpheus per to peer network of Compute Providers, the software should seek to leverage Fully Homomorphic Encryption (FHE) versions of Large Lanage Models as they are released. Also with the advent of hardware acceleration for FHE in 2024 / 2025 its projected that costs for this computation will reach parity with plain text processing. 
+
+- LLM example https://huggingface.co/blog/encrypted-llm 
+- EVM example https://www.fhenix.io/
+
 ## Conclusion
 We are close to an important moment in history. With Morpheus everyone will have a powerful personal AI capable of thinking with them and taking actions to benefit them. The same way the personal computer and the search engine empowered the individual, we have the same opportunity with personal AIs today. The Smart Agent Protocol brings together the right mix of capabilities with LLMs, Agents, and Web3. Morpheus extends those capabilities into a public network capable of accelerating the mass distribution and usage of Smart Agents.
 

@@ -40,6 +40,7 @@
                         <label for="model-select" class="form-label me-2" style="font-size: smaller;">Model:</label>
                         <select class="form-select" id="model-select" style="width: auto;"></select>
                     </div>
+                    <!--make the form submit when the return button is pressed-->
                     <div class="d-flex align-items-center">
                         <label for="chat-select" class="form-label me-2" style="font-size: smaller;">History:</label>
                         <select id="chat-select" class="form-select" style="width: auto;">
@@ -61,12 +62,24 @@
             </div>
         </div>
     </div>
-    <div class="container p-2 card" id="input-area">
-        <div class="input-group">
-            <textarea class="form-control" id="user-input" placeholder="Type your question here..."></textarea>
-            <button id="send-button" class="btn btn-primary">Send</button>
+    <div id="loading" class="container">
+        <div class="row d-none">
+            <div class="col-12 text-center">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <h3>Loading...</h3>
+            </div>
         </div>
+    <div class="container p-2 card" id="input-area">
+        <form id="user-form">
+            <div class="input-group">
+                <textarea class="form-control" id="user-input" placeholder="Greetings.  How may I help?"></textarea>
+                <button id="send-button" class="btn btn-primary">Send</button>
+            </div>
+        </form>
     </div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="nameModal" tabindex="-1" aria-labelledby="nameModalLabel" aria-hidden="true">
@@ -100,7 +113,20 @@
       </div>
     </div>
   </div>
-
+<script>
+    const userInput = document.getElementById("user-input");
+    userInput.addEventListener("keydown", function(event) {
+        if (event.key === "Enter" && event.shiftKey) {
+            event.preventDefault(); // prevent the default behavior of the "Shift-Enter" key
+            const currentValue = event.target.value;
+            event.target.value = currentValue + "\n";
+        }
+        else if (event.key === "Enter") {
+            event.preventDefault(); // prevent the default behavior of the "Enter" key
+            submitRequest(); // submit the form
+        }
+    });
+</script>
   <script src="api.js"></script>
   <script src="chat.js"></script>
 
