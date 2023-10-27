@@ -4,7 +4,8 @@
   "build": {
     "productName": "Morpheus",
     "appId": "org.morpheus.client",
-    "buildVersion": "${version}-${new Date().getTime()}"
+    "buildVersion": "${version}-${new Date().getTime()}",
+    "icon": "mtn.icns"
   },
   "dmg": {
     "contents": [

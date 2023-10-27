@@ -8,7 +8,8 @@ module.exports = {
       'entitlements-inherit': 'entitlements.plist',
       '--notarize': true,
       }, 
-      "icon": "mtn.icns"
+      "afterSign": "build/notarize.js",
+      "icon": 'mtn.icns'
   },
   rebuildConfig: {},
   makers: [

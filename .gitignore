@@ -9,3 +9,5 @@ ollama-ui/
 process.env
 dist/
 /dist
+/build
+build/
