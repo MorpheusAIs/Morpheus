@@ -1,7 +1,14 @@
 module.exports = {
   packagerConfig: {
     asar: true,
-    "icon": "mtn.icns"
+    osxSign: {
+      identity: 'Developer ID Application: Better Brand Management LLC (ZA3KN2X4MN)',
+      'hardened-runtime': true,
+      entitlements: 'entitlements.plist',
+      'entitlements-inherit': 'entitlements.plist',
+      '--notarize': true,
+      }, 
+      "icon": "mtn.icns"
   },
   rebuildConfig: {},
   makers: [

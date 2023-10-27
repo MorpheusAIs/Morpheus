@@ -3,3 +3,9 @@
 /node_modules
 *.swp
 out/
+ollama-ui/
+/ollama-ui
+*.env
+process.env
+dist/
+/dist
