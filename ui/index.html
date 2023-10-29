@@ -100,6 +100,20 @@
       </div>
     </div>
   </div>
+  <script>
+    const userInput = document.getElementById("user-input");
+    userInput.addEventListener("keydown", function(event) {
+        if (event.key === "Enter" && event.shiftKey) {
+            event.preventDefault(); // prevent the default behavior of the "Shift-Enter" key
+            const currentValue = event.target.value;
+            event.target.value = currentValue + "\n";
+        }
+        else if (event.key === "Enter") {
+            event.preventDefault(); // prevent the default behavior of the "Enter" key
+            submitRequest(); // submit the form
+        }
+    });
+</script>
 
   <script src="api.js"></script>
   <script src="chat.js"></script>
