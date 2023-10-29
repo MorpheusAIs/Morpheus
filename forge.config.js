@@ -7,9 +7,9 @@ module.exports = {
       entitlements: 'entitlements.plist',
       'entitlements-inherit': 'entitlements.plist',
       '--notarize': true,
+      "gatekeeper-assess": false,
       }, 
-      "afterSign": "build/notarize.js",
-      "icon": 'mtn.icns'
+      "afterSign": "build/notarize.js"
   },
 
   rebuildConfig: {},
