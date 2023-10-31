@@ -1,92 +1,25 @@
 {
-  "name": "morpheus",
+  "name": "test_install_with_morpheus",
+  "productName": "Morpheus",
   "version": "0.0.2",
-  "build": {
-    "productName": "Morpheus",
-    "appId": "org.morpheus.client",
-    "buildVersion": "${version}-${new Date().getTime()}",
-    "icon": "mtn.icns"
-  },
-  "dmg": {
-    "arch": [
-      "x64"
-    ],
-    "contents": [
-      {
-        "x": 410,
-        "y": 150,
-        "type": "link",
-        "path": "/Applications",
-        "icon": "mtn.icns"
-      },
-      {
-        "x": 130,
-        "y": 150,
-        "type": "file"
-      }
-    ]
-  },
-  "mac": {
-    "target": "dmg",
-    "arch": ["x64"],
-    "icon": "mtn.icns",
-    "dmg": {
-      "arch": ["x64"],
-      "contents": [
-        {
-          "x": 410,
-          "y": 150,
-          "type": "link",
-          "path": "/Applications",
-          "icon": "mtn.icns"
-        },
-        {
-          "x": 130,
-          "y": 150,
-          "type": "file"
-        }
-      ]
-    }
-  },
-  "description": "Morpheus is Local Sovereign AI for The People",
+  "icon": "build/mtn.icns",
+  "description": "Soverign AI for the people",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "make64": "electron-forge make --arch=x64"
+    "start": "electron .",
+    "package": "electron-builder"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MorpheusAIs/Morpheus.git"
-  },
-  "keywords": [
-    "Local",
-    "Sovereign",
-    "AI"
-  ],
+  "keywords": ["Local", "Sovereign", "AI"],
   "author": "Morpheus",
   "license": "Unlicense",
-  "bugs": {
-    "url": "https://github.com/MorpheusAIs/Morpheus/issues"
-  },
-  "homepage": "https://github.com/MorpheusAIs/Morpheus#readme",
   "devDependencies": {
-    "@electron-forge/cli": "^6.4.2",
-    "@electron-forge/maker-deb": "^6.4.2",
-    "@electron-forge/maker-rpm": "^6.4.2",
-    "@electron-forge/maker-squirrel": "^6.4.2",
-    "@electron-forge/maker-zip": "^6.4.2",
-    "@electron-forge/plugin-auto-unpack-natives": "^6.4.2",
     "electron": "^27.0.2",
-    "electron-builder": "^24.6.4",
-    "electron-osx-sign": "^0.6.0"
+    "electron-builder": "^24.6.4"
   },
-  "dependencies": {
-    "dotenv": "^16.3.1",
-    "electron-squirrel-startup": "^1.0.0",
-    "ollama": "^0.2.1",
-    "osx-sign": "^0.1.1"
+  "build":{
+    "appId":"org.morpheus.client",
+    "files": "![build_scripts{*/}",
+    "icon": "build/mtn.icns"
   }
 }
