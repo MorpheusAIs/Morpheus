@@ -8,18 +8,44 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "package": "electron-builder"
+    "package": "electron-builder --mac --x64"
   },
-  "keywords": ["Local", "Sovereign", "AI"],
+  "keywords": [
+    "Local",
+    "Sovereign",
+    "AI"
+  ],
   "author": "Morpheus",
   "license": "Unlicense",
   "devDependencies": {
     "electron": "^27.0.2",
     "electron-builder": "^24.6.4"
   },
-  "build":{
-    "appId":"org.morpheus.client",
+  "build": {
+    "appId": "org.morpheus.client",
     "files": "![build_scripts{*/}",
-    "icon": "build/mtn.icns"
+    "icon": "build/mtn.icns",
+    "forceCodeSigning": true,
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    }
   }
 }
