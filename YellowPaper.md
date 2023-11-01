@@ -5,9 +5,11 @@ Presented as written in the whitepaper contributed by the anonymous developers M
 
 ## Local Version 0.0.2 of Morpheus is live at:
 Part 1 Download: Morpheus Version 0.0.2
-- Download from Filecoin: https://bafybeicdggdftn5j7njdmh6sojehb2kq767aaiuy2l6jtwnuin3b2nmkoa.ipfs.dweb.link/
-- Download from Google: https://drive.google.com/file/d/1Pe8fbS9OWxUIVj0j6ng1os-wFqj8b5NS/view?usp=sharing
-- Verification Hash via SHA 256 for Morpheus-0.0.2.dmg: 6bd3ff97965a36f525c325ca968dcdd44d134723a9226af9db4d35f60f7264cc
+- Download the Mac Intel Version: https://bafybeidcqkx2dka2yjj7bud46lx2ldgdemwuh5k7fwwhvypuahrk7rkiki.ipfs.w3s.link/
+or
+- Download the Mac M1 / M2 Version: https://bafybeigmoaxim7o6mje32coorzfznihl724rx7uqdxl4qqnlerdmh2ic4i.ipfs.w3s.link/
+- Sha 256 Verification Hash: 50c5186fb31c897c45ee20370e4d632236f1a3963a2c0d5bb06adbe1fb9c59cd
+- Version: dist/Morpheus-0.0.2a-arm64.dmg
 
 Part 2 Download: Ollama for Mac or Linux
 https://ollama.ai/download
