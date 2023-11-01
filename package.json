@@ -1,14 +1,16 @@
 {
-  "name": "test_install_with_morpheus",
+  "name": "morpheus",
   "productName": "Morpheus",
   "version": "0.0.2",
   "icon": "build/mtn.icns",
-  "description": "Soverign AI for the people",
+  "description": "Sovereign AI for the people",
   "main": "main.js",
+  "homepage": "https://www.morepheusai.com",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "package": "electron-builder --mac --x64"
+    "package-mac64": "electron-builder --mac --x64",
+    "package-linux": "electron-builder --linux"
   },
   "keywords": [
     "Local",
@@ -46,6 +48,20 @@
         "dmg",
         "zip"
       ]
+    },
+    "linux": {
+      "compression": "normal",
+      "target": "AppImage",
+      "category": "Utility",
+      "synopsis": "Morpheus is AI for the people",
+      "description": "Decentralized AI for the people",
+      "maintainer": "Morpheus <morepheusai@proton.me>",
+      "vendor": "Morpheus",
+      "executableName": "morpheus",
+      "desktop": {
+        "Name": "Morpheus",
+        "Icon": "build/mtn.png"
+      }
     }
   }
 }
