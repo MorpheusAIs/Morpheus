@@ -1,4 +1,4 @@
-<img width="300" alt="Morepheus Logo 42 Font Bold MOR Binary" src="https://github.com/MorpheusAIs/Morpheus/assets/1563345/1a19ff74-7165-4d59-9c2b-afe94306306e">
+![Morpheuslogo](https://github.com/MorpheusAIs/Morpheus/assets/1563345/235b9c04-f3b1-4520-a328-2070c9c890ab)
 
 # Morpheus
 ## A Network For Powering Smart Agents
