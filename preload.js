@@ -7,4 +7,12 @@ contextBridge.exposeInMainWorld('versions', {
   ollama: () => process.versions.ollama,
   ping: () => ipcRenderer.invoke('ping')
   // we can also expose variables, not just functions
+});
+
+contextBridge.exposeInMainWorld('ollama', {
+  getNewModels: () => ipcRenderer.invoke('get-new-models')
 })
+
+// contextBridge.exposeInMainWorld('updates', {
+//   checkUpdate: () => 
+// })

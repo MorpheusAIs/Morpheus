@@ -1,0 +1,24 @@
+{
+    "mistral": {
+        "tags": [
+            "text",
+            "7b",
+            "7b-instruct",
+            "7b-text"
+        ]
+    },
+    "llama2": {
+        "tags": [
+            "chat",
+            "7b",
+            "text"
+        ]
+    },
+    "orca-mini": {
+        "tags": [
+            "latest",
+            "3b"
+        ]
+    }
+}
+  
