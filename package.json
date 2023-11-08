@@ -2,14 +2,16 @@
   "name": "morpheus",
   "productName": "Morpheus",
   "version": "0.0.2",
-  "icon": "build/mtn.icns",
+  "icon": "morph_square.icns",
   "description": "Sovereign AI for the people",
   "main": "main.js",
   "homepage": "https://www.morepheusai.com",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "CSC_NAME='Developer ID Application: Better Brand Management LLC (ZA3KN2X4MN)' electron-builder",
     "start": "electron .",
     "package-mac64": "electron-builder --mac --x64",
+    "package-mac": "electron-builder --mac",
     "package-linux": "electron-builder --linux"
   },
   "keywords": [
@@ -26,9 +28,10 @@
   "build": {
     "appId": "org.morpheus.client",
     "files": "![build_scripts{*/}",
-    "icon": "build/mtn.icns",
+    "icon": "build/morph_square.icns",
     "forceCodeSigning": true,
     "dmg": {
+      "background": "ui/morph-horiz-icon_only-white-bg.png",
       "contents": [
         {
           "x": 130,
@@ -60,7 +63,7 @@
       "executableName": "morpheus",
       "desktop": {
         "Name": "Morpheus",
-        "Icon": "build/mtn.png"
+        "Icon": "build/morph_square.icns"
       }
     }
   }

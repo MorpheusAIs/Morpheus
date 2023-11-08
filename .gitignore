@@ -10,4 +10,11 @@ contract_library/.DS_Store
 /out
 /dist
 contract_library/.DS_Store
-
+/build_scripts
+build_scripts/
+build_scripts/*.plist
+*.plist
+contract_library/.DS_Store
+/contract_library
+contract_library/
+contract_library/.DS_Store
