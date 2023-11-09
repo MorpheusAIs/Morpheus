@@ -31,7 +31,7 @@
     "icon": "build/morph_square.icns",
     "forceCodeSigning": true,
     "dmg": {
-      "background": "build/small_morph.png",
+      "background": "build/micon@2x.png",
       "contents": [
         {
           "x": 130,
