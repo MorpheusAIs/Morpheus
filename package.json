@@ -31,7 +31,7 @@
     "icon": "build/morph_square.icns",
     "forceCodeSigning": true,
     "dmg": {
-      "background": "ui/morph-horiz-icon_only-white-bg.png",
+      "background": "build/small_morph.png",
       "contents": [
         {
           "x": 130,
