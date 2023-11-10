@@ -5,13 +5,16 @@
 ### Authored by Morpheus, Trinity, & Neo
 Published - September 2nd 2023
 
-**Part 1 Download: Morpheus Version 0.0.2 for Mac**
-- Download from Google Drive: https://drive.google.com/file/d/1sDVugEXpAK59Ba8uEvwNk8TUwg6c6YgQ/view?usp=sharing
-- SHA 256 hash for validation: 3da53d4487afa52f54da98884987f23bb3e648b9095d9d47c8f4616688c7fab
-- Version: Morpheus-0.0.2b.dmg
+**Part 1 Download: Morpheus Version 0.0.3 for Mac**
+- Download from Google Drive: https://drive.google.com/file/d/1Uib9Ooo7ydU21CTYDW_Mak1SCKgoL2D9/view?usp=sharing
+- SHA 256 hash for validation: e8129afe037ae082ac6311fe568d48ef11cce6f6f55b5df2f0996b1dba3736aa
+- Version: Morpheus-0.0.3.dmg
 
-**Part 2 Download: Ollama for Mac or Linux**
+**Part 2 Download: Ollama for Mac**
 https://ollama.ai/download
+
+**For Linux download this Repo which includes Ollama**
+https://github.com/MorpheusAIs/MorpheusLinux
 
 ## Introduction 
 The Smart Agent concept of connecting LLMs and AI Agents to wallets, Dapps, & smart contracts promises to open the world of Web3 to everyone. Chatting in normal language with your Smart Agent and having it understand the question or task, is similar to how Google's search engine opened the early internet up to the general public.
