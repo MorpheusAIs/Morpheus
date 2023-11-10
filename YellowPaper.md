@@ -3,14 +3,17 @@
 This paper describes the technical details of the Morpheus full node, Morpheus Smart Contract, and related proofs.
 Presented as written in the whitepaper contributed by the anonymous developers Morpheus, Trinity & Neo. Link to the whitepaper here: https://github.com/SmartAgentProtocol/SmartAgents/blob/main/MorpheusWP.md
 
-## Local Version 0.0.2 of Morpheus is live at:
-Part 1 Download: Morpheus Version 0.0.2
-- Download from Google Drive: https://drive.google.com/file/d/1sDVugEXpAK59Ba8uEvwNk8TUwg6c6YgQ/view?usp=sharing
-- SHA 256 hash for validation: 3da53d4487afa52f54da98884987f23bb3e648b9095d9d47c8f4616688c7fab
-- Version: Morpheus-0.0.2b.dmg
+## Local Version 0.0.3 of Morpheus is live at:
+**Part 1 Download: Morpheus Version 0.0.3 for Mac**
+- Download from Google Drive: https://drive.google.com/file/d/1Uib9Ooo7ydU21CTYDW_Mak1SCKgoL2D9/view?usp=sharing
+- SHA 256 hash for validation: e8129afe037ae082ac6311fe568d48ef11cce6f6f55b5df2f0996b1dba3736aa
+- Version: Morpheus-0.0.3.dmg
 
-Part 2 Download: Ollama for Mac or Linux
+**Part 2 Download: Ollama for Mac**
 https://ollama.ai/download
+
+**For Linux download this Repo which includes Ollama**
+https://github.com/MorpheusAIs/MorpheusLinux
 
 First interaction with Morpheus October 22nd 2023.
 ![FirstInteractionWithMorpheus20231022](https://github.com/MorpheusAIs/Morpheus/assets/1563345/35509f3a-4346-4f58-bb60-f7881fd10f7e)
