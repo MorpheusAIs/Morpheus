@@ -22,7 +22,7 @@
   "author": "Morpheus",
   "license": "Unlicense",
   "devDependencies": {
-    "electron": "^27.0.2",
+    "electron": "^27.0.4",
     "electron-builder": "^24.6.4"
   },
   "build": {
@@ -31,7 +31,11 @@
     "icon": "build/morph_square.icns",
     "forceCodeSigning": true,
     "dmg": {
-      "background": "build/micon@2x.png",
+      "background": "build/1x/gmgbg.png",
+      "window": {
+        "width": 540,
+        "height": 380
+      },
       "contents": [
         {
           "x": 130,
