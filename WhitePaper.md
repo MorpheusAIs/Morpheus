@@ -37,7 +37,7 @@ MOR is rewarded each day 24% to the community, 24% to capital, 24% to compute, &
 
 This reflects the reality that for Morpheus to grow, it needs the following: 
 
-Community - Buildrs create frontends / tools and bring uses into the Morpheus ecosystem. 
+Community - Builders create frontends / tools and bring uses into the Morpheus ecosystem. 
 
 Capital - Brings the funding for compute and code. 
 
