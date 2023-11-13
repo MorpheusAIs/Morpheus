@@ -13,7 +13,7 @@ Finally, the average user can talk with their Smart Agent in normal language and
 
 To make Smart Agents accessible to everyone and increase decentralization of their infrastructure we propose the development of the Morpheus network. The Morpheus network will include a fairly launched token (the "MOR" token) for incentivizing all four of the key contributors to the network. Namely, the community of users providing data, coders contributing to the Morpheus software/agents, capital providers funding development/operations and those supplying computation, storage and bandwidth. It has been well shown by the history of Bitcoin and Ethereum that free & open competition for scarce digital tokens can provide scalable infrastructure for a public blockchain over long periods of time.
 
-![MorpheusNetworkDiagram5](https://github.com/MorpheusAIs/Morpheus/assets/1563345/5f116ceb-fc81-46e1-b6f9-322d36a10ca1)
+![MorpheusNetworkDiagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/f0960e25-80e3-42ed-aa1f-ad9792eb672d)
 
 ## Context & History
 Incumbents such as OpenAI, Microsoft, and Google are running close-sourced large language models, charging customers license fees, and monetizing customer data. These models are censored, fragile, and operate in walled gardens. There is a strong demand for an open-source large language model available for free. Llama, Falcon, and other open-source LLMs have recently been released and are rapidly approaching the accuracy of their close-sourced competitors.
@@ -37,13 +37,13 @@ MOR is rewarded each day 24% to the community, 24% to capital, 24% to compute, &
 
 This reflects the reality that for Morpheus to grow, it needs the following: 
 
-Community - Users bring and own their data. 
+Community - Buildrs create frontends / tools and bring uses into the Morpheus ecosystem. 
 
 Capital - Brings the funding for compute and code. 
 
 Compute - Providers the equipment and power. 
 
-Coders - Provide the intelligence to use the data, capital and compute.
+Coders - Provide the intelligence to use the frontends, capital and compute.
 
 The MOR Token Supply is limited to a maximum of 42,000,000 tokens that will ever exist. The distribution will start with all four groups earning the tokens by providing forms of proof of work (labor) and proof of Stake (capital) to the network. No pre-mine. No early token sale. Just a fair launch.
 
@@ -56,10 +56,10 @@ The block reward will start at 14,400 MOR per day and then decline by 2.46899470
 - 3,456 tokens for compute. Proof transactions for API calls served. 
 - 3,456 tokens for code. Proof code committed and merged into Morpheus repo. 
 - 3,456 tokens for capital. Proof ETH yield contributed, swapped for MOR & burned. 
-- 3,456 tokens for data. Proof of feedback on prompts, agents, and Morpheus.
+- 3,456 tokens for community. Proof of building front end applications & tools that engage users.
 With the remainder set aside for protection resources: 576 tokens per day for that purpose.
 
-![SimplifiedMORDiagram5 png ](https://github.com/MorpheusAIs/Morpheus/assets/1563345/19aaf1dd-0ce3-4fea-8af1-bae37f6d4c86)
+![MORRewardDiagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/be932ddc-290d-4ee7-b2d3-5f7c700b8bc1)
 
 ## The Utility of The MOR Token
 The objective is for MOR to provide broad utility in many of the functions of the Morpheus network. As a result, the use of the MOR token offers an on-chain accounting mechanism to calculate rewards based on real usage of the software.
@@ -69,14 +69,14 @@ Developers pay MOR to compute providers for functions beyond what local hardware
 All projects go through phases of development. It's important that at the beginning liquid resources such as ETH are used to pay devs and for equipment. Ethereum did the same thing when they leveraged BTC from their community to pay for the initial coding of their blockchain. The difference here is that the Smart Agent Protocol has already been developed and Morpheus is implementing a version to broaden its reach, so there isn't a need for a crowd sale before the project goes live. MOR tokens will only be rewarded after the software is live.
 
 ## Near-term: At Time Of Launch
-Capital - ETH locked in a smart contract that generates yield (ETH in a Thorchain saver vault for example). 
+Capital - ETH locked in a smart contract that generates yield (ETH in a stETH Lido Staking contract for example). 
 
-The value of the ETH yield is converted weekly into MOR and sent to all compute providers + coders + data contributors above a threshold of 10 times the gas fee required for the transaction on Polygon (Ethereum 2nd layer).
+The value of the ETH yield is swapped regularly into MOR via an AMM and burned.
 
-- Capital, The value of their ETH yield will be calculated against all ETH contributed and MOR yield rewarded to them pro-rata.
-- Compute, The value of the ETH yield is converted into MOR and sent to compute providers. 
-- Coders, The value of the ETH yield is converted into MOR and sent to the coders. 
-- Community, The value of the ETH yield is converted into MOR and sent to the users contributing training data.
+- Capital, The value of their ETH yield will be calculated against all ETH yield contributed and MOR yield rewarded to them pro-rata.
+- Compute, Compute providers receive MOR for the user prompts they reply to. 
+- Coders, Coders recieve MOR for the contributions they make to the Morpheus software which are merged.
+- Community, Community builders recieve MOR for the front ends, tools, usage, & value they bring into the Morpheus network.
 
 ## Mid-term: As MOR Gains Wider Circulation
 - Capital, A balance between block rewards and fees earned develop. 
@@ -88,7 +88,7 @@ The value of the ETH yield is converted weekly into MOR and sent to all compute 
 - Capital, Fees for providing ETH liquidity to the MOR token will provide a majority of their rewards.
 - Compute, Fees paid to compute providers will form the majority of their rewards.
 - Coders, Fees going to coders will form the majority of their rewards.
-- Community of Users, Fees paid to users share with data providers will provide a majority of their rewards.
+- Community, Fees paid by users will provide a majority of their rewards.
 
 Note this isn't a timeline. Rather each phase is a description of part of the life cycle. It may take years for the community to grow and mature through each phase and the block reward expires after about 16 years. This lengthy distribution schedule is intended to give time for the tokens to be rewarded on a very broad basis globally. Also, the smooth daily decline in block rewards over many years gives all participants time to achieve scale and transition from the early subsidized rewards to operating solely by the fees they earn.
 
@@ -162,27 +162,29 @@ For example, if there are 100 Compute Providers on day 1 when the network launch
 
 To qualify to receive Compute requests a Compute Provider's address must HODL MOR tokens. Requests will be routed to the Compute Providers API pro-rata to the MOR they hodl compared to all other registered Compute Providers.
 
-## Community Data Provider Proof, Registration & Reward:
-The definition of a Community Data Provider is they have downloaded the Morpheus full node, connected their wallet and are ready to send data back to the Morpheus network for LLM training. This is known as Reinforcement Learning from Human Feedback (RLHF) and is critical to improving the Morpheus software, agents and tools. Data provided can be calculated by including a signed transaction generated by the Smart Agent with the return of the output from the MOR transaction.
+## Community Builder Proof, Registration & Reward:
+The definition of a Community Builder is they have downloaded the Morpheus full node, connected their wallet and are using the Morpheus API to provide user front ends & deeveloper tools. Their contributions provided can be calculated by including a signed transaction generated by the Smart Agent with the return of the output from the MOR transaction.
 
-The Data Provider will send a MOR transaction to the Compute Provider Smart Contract to register the API endpoint for receiving requests. 
-The Data Provider will include in the memo of the transaction the following metadata. 
-- A. An IPFS link to their data via an endpoint in the memo field of the MOR transaction when they register. 
+The Community Builder will send a MOR transaction to the Community Builder Smart Contract to register the API endpoint for receiving requests. 
+The Community Builder will include in the memo of the transaction the following metadata. 
+- A. An IPFS link to their frontend or tool via an endpoint in the memo field of the MOR transaction when they register. 
 - B. A cryptographic signature, similar to how developers sign/authenticate app releases.
 - C. The version number of the Morpheus software they are using.
-- D. A hash of the state of the data, so users can check it is a valid and unaltered copy.
+- D. A hash of the state of the front end / tool, so users can check it is a valid and unaltered copy.
 
-The pro-rata MOR transaction fees burned by each Data Provider serves as proof of the Data Provider's status and earns a proportion of the MOR tokens each day. 
+The pro-rata MOR transaction fees burned by each Community Builder serves as proof of the Community Builder's status and earns a proportion of the MOR tokens each day. 
 
-For example, if there are 100 Data Providers on day 1 when the network launches, then each one gets a pro-rata reward based on the amount of MOR they have burned via fees. In this case, presuming each of the 100 data providers burned 100 MOR, then 1% of the 3,456 MOR tokens each day = 34.56 MOR.
-
-To qualify to receive Compute requests a Data Provider's address must HODL MOR tokens. Their data provided can be rewarded pro-rata to the MOR they hodl.
+For example, if there are 100 Community Builders on day 1 when the network launches, then each one gets a pro-rata reward based on the amount of MOR they have burned via fees. In this case, presuming each of the 100 Community Builders burned 100 MOR, then 1% of the 3,456 MOR tokens each day = 34.56 MOR.
 
 ## Morpheus User Diagram
 ![Morpheus User   Contributor Diagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/478079be-417e-4d8b-b062-c0540138aac0)
 
 ## Morpheus Rewards Delivered by Smart Contract On Ethereum Layer 2 
-Note that Morpheus does not need to set aside MOR rewards for blockchain consensus or transaction execution on a distributed ledger thanks to building on Ethereum's 2nd layer "Polygon". Yield from the ETH locked by users and capital providers will cover the gas fees needed for the Smart Agents and Morpheus Smart Contracts to operate. This selection vastly simplifies the Morpheus software as developing consensus and securing transactions is a very time and resource intensive process.
+Morpheus Tokens (MOR) will be originally awarded on the the Ethereum Layer 1, and there will be a wrapped MOR tokne (wMOR) that exists on Polygon for the purpose of payments and other MOR utility related actions.
+
+Note that Morpheus does not need to set aside MOR rewards for blockchain consensus or transaction execution on a distributed ledger thanks to building on Ethereum and 2nd layer Polygon. 
+
+MOR holders will be able to send a transaction to the MOR Smart Contracts and claim their MOR rewards at any time. They can also withdraw their stETH at any time.
 
 ## The Free Market Sets Fees on Morpheus
 The best systems pick the least number of magic numbers and instead let the free market decide as many variables as possible. Fees are a great example of this. Rather than picking an arbitrary fee to charge instead, Morpheus leaves these numbers up to users, devs, capital and compute providers. For example, if a compute provider can offer a $0.02 price per 1,000 language tokens for their LLM and a user decides to pay it, then that's what the market is willing to pay. As compute speeds up prices are likely to change and so it's better to leave these and other variables up to those using the Morpheus software.
@@ -201,14 +203,14 @@ Amount of fee set by users and accepted by data buyer. Option to pay fee & burn 
 
 All fees are paid in native MOR tokens creating natural demand in the system as usage grows.
 
-Use of Fees To Incentivize Honest Agents & Repair Losses In Case of Errors
+## Use of Fees To Incentivize Honest Agents & Repair Losses In Case of Errors
 Another important use for MOR & ETH in the Morpheus network will be compensating users in case of Smart Agent / Smart Contract failures. We believe curating and building reputation backed up with economic resources will be key to growing confidence in Smart Agents and having a source of funding to address errors, bugs, and other issues that arise. After a major bug and the resulting hard fork of Bitcoin in 2010, an early core developer named Gavin Andresen stepped up to pay Bitcoin to miners who had lost rewards due to the hard fork. This action was important and quickly resolved the hard fork but it was ad hoc.
 
 Recognizing ahead of time that software is never perfect and setting aside 4% of MOR resources to repay those affected by a bug in the code. The Morpheus developer community will serve as an oracle to recognize when a bug or error has had an economic effect on a user, compute provider, or capital provider. A predefined set of failures will be covered by these resources to include bugs in the Morpheus Smart Contract or local install.
 
 For broader protection, an integration with Nexus Mutual or similar smart contract / decentralized protection network could be considered to cover edge cases with agents / smart contracts that want to be included in a Morpheus Agent Store or better ranked by the SmartContractRank algorithm. 
 
-Storage For Persistence & Wallets For Recovery
+## Storage For Persistence & Wallets For Recovery
 Rather than store personal data in the Morpheus network itself, which would be cost prohibitive and a centralizing force, individuals will hold the private keys controlling access to their data, prompts & wallet. The data itself will be stored using the IPFS standard and the Filecoin network for decentralized long-term storage. Leveraging the Filecoin EVM and DeFi for yield a permanent recurring storage can be arranged. Alternatively, users can pay annually ENS style for storage. The approach and keeping the private Web3 wallet as the key for movement/recovery of this data to different devices as the user changes computers or phones.
 
 ## Morpheus Tech Stack, Smart Contract & Development
