@@ -59,7 +59,7 @@ The block reward will start at 14,400 MOR per day and then decline by 2.46899470
 - 3,456 tokens for community. Proof of building front end applications & tools that engage users.
 With the remainder set aside for protection resources: 576 tokens per day for that purpose.
 
-![MORRewardDiagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/be932ddc-290d-4ee7-b2d3-5f7c700b8bc1)
+![MORRewardDiagram3](https://github.com/MorpheusAIs/Morpheus/assets/1563345/cd40c0ea-81d3-466c-bd2e-8f4c063067a1)
 
 ## The Utility of The MOR Token
 The objective is for MOR to provide broad utility in many of the functions of the Morpheus network. As a result, the use of the MOR token offers an on-chain accounting mechanism to calculate rewards based on real usage of the software.
