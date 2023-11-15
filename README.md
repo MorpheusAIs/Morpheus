@@ -31,4 +31,5 @@ To make Smart Agents accessible to everyone and increase decentralization we pro
 - Wallet Connections: https://github.com/MorpheusAIs/Morpheus/tree/main/talk2web3
 
 ## Morpheus Network Diagram
-![MorpheusNetworkDiagram5](https://github.com/MorpheusAIs/Morpheus/assets/1563345/19fc43d3-6ceb-4072-9401-ec92de6e1ca6)
+![MorpheusNetworkDiagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/85209eb0-e9e0-4683-9451-315999754c9c)
+
