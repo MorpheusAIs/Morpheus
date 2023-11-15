@@ -12,8 +12,13 @@ Presented as written in the whitepaper contributed by the anonymous developers M
 **Part 2 Download: Ollama for Mac**
 https://ollama.ai/download
 
-**For Linux download this Repo which includes Ollama**
-https://github.com/MorpheusAIs/MorpheusLinux
+**Part 1 Download: Morpheus Version 0.0.3 for Linux**
+- Download from Google Drive: https://drive.google.com/file/d/1xtzGBPXw8qiFB4kQHCJUH9DN2U08Zyge/view?usp=drive_link
+- SHA 256 hash for validation: a8989a95e6a2cd371c78b117ccd5967a560de153b4a76cc17e2ee1d7d1055f10
+- Version: morpheus_0.0.3_amd64.deb
+
+**Part 2 Download: Ollama for Linux**
+https://ollama.ai/download
 
 First interaction with Morpheus October 22nd 2023.
 ![FirstInteractionWithMorpheus20231022](https://github.com/MorpheusAIs/Morpheus/assets/1563345/35509f3a-4346-4f58-bb60-f7881fd10f7e)
