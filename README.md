@@ -18,7 +18,7 @@ https://ollama.ai/download
 - SHA 256 hash for validation: a8989a95e6a2cd371c78b117ccd5967a560de153b4a76cc17e2ee1d7d1055f10
 - Version: morpheus_0.0.3_amd64.deb
 
-**Part 2 Download: Ollama for Mac**
+**Part 2 Download: Ollama for Linux**
 https://ollama.ai/download
 
 ## Introduction 
