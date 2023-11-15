@@ -13,8 +13,13 @@ Published - September 2nd 2023
 **Part 2 Download: Ollama for Mac**
 https://ollama.ai/download
 
-**For Linux download this Repo which includes Ollama**
-https://github.com/MorpheusAIs/MorpheusLinux
+**Part 1 Download: Morpheus Version 0.0.3 for Linux**
+- Download from Google Drive: https://drive.google.com/file/d/1xtzGBPXw8qiFB4kQHCJUH9DN2U08Zyge/view?usp=drive_link
+- SHA 256 hash for validation: a8989a95e6a2cd371c78b117ccd5967a560de153b4a76cc17e2ee1d7d1055f10
+- Version: morpheus_0.0.3_amd64.deb
+
+**Part 2 Download: Ollama for Mac**
+https://ollama.ai/download
 
 ## Introduction 
 The Smart Agent concept of connecting LLMs and AI Agents to wallets, Dapps, & smart contracts promises to open the world of Web3 to everyone. Chatting in normal language with your Smart Agent and having it understand the question or task, is similar to how Google's search engine opened the early internet up to the general public.
