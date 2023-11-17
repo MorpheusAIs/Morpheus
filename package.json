@@ -3,6 +3,7 @@
   "productName": "Morpheus",
   "version": "0.0.3",
   "appId": "org.morpheus.client",
+  "buildVersion": "${version}-${new Date().getTime()}",
   "icon": "morph_square.icns",
   "description": "Sovereign AI for the people",
   "main": "main.js",

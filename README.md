@@ -1,16 +1,23 @@
-<img width="300" alt="Morepheus Logo 42 Font Bold MTN Binary" src="https://github.com/MorpheusAIs/Paper/assets/1563345/1e15f574-2c0c-4382-b0d9-8ff4661d2b4f">
+![Morpheuslogo](https://github.com/MorpheusAIs/Morpheus/assets/1563345/5b9b1612-bd05-462a-9fd8-977874c5ca8f)
 
 # Morpheus
 ## A Network For Powering Smart Agents
 ### Authored by Morpheus, Trinity, & Neo
 Published - September 2nd 2023
 
-**Part 1 Download: Morpheus Version 0.0.2**
-- Download from Filecoin: https://bafybeicdggdftn5j7njdmh6sojehb2kq767aaiuy2l6jtwnuin3b2nmkoa.ipfs.dweb.link/
-- Download from Google: https://drive.google.com/file/d/1Pe8fbS9OWxUIVj0j6ng1os-wFqj8b5NS/view?usp=sharing
-- Verification Hash via SHA 256 for Morpheus-0.0.2.dmg: 6bd3ff97965a36f525c325ca968dcdd44d134723a9226af9db4d35f60f7264cc
+- Download from Google Drive: https://drive.google.com/file/d/1Uib9Ooo7ydU21CTYDW_Mak1SCKgoL2D9/view?usp=sharing
+- SHA 256 hash for validation: e8129afe037ae082ac6311fe568d48ef11cce6f6f55b5df2f0996b1dba3736aa
+- Version: Morpheus-0.0.3.dmg
 
-**Part 2 Download: Ollama for Mac or Linux**
+**Part 2 Download: Ollama for Mac**
+https://ollama.ai/download
+
+**Part 1 Download: Morpheus Version 0.0.3 for Linux**
+- Download from Google Drive: https://drive.google.com/file/d/1xtzGBPXw8qiFB4kQHCJUH9DN2U08Zyge/view?usp=drive_link
+- SHA 256 hash for validation: a8989a95e6a2cd371c78b117ccd5967a560de153b4a76cc17e2ee1d7d1055f10
+- Version: morpheus_0.0.3_amd64.deb
+
+**Part 2 Download: Ollama for Linux**
 https://ollama.ai/download
 
 ## Introduction 
@@ -29,4 +36,5 @@ To make Smart Agents accessible to everyone and increase decentralization we pro
 
 ## Morpheus Network Diagram
 ![MorpheusNetworkDiagram5](https://github.com/MorpheusAIs/Morpheus/assets/1563345/19fc43d3-6ceb-4072-9401-ec92de6e1ca6)
+
 

@@ -3,13 +3,21 @@
 This paper describes the technical details of the Morpheus full node, Morpheus Smart Contract, and related proofs.
 Presented as written in the whitepaper contributed by the anonymous developers Morpheus, Trinity & Neo. Link to the whitepaper here: https://github.com/SmartAgentProtocol/SmartAgents/blob/main/MorpheusWP.md 
 
-## Local Version 0.0.2 of Morpheus is live at:
-Part 1 Download: Morpheus Version 0.0.2
-- Download from Filecoin: https://bafybeicdggdftn5j7njdmh6sojehb2kq767aaiuy2l6jtwnuin3b2nmkoa.ipfs.dweb.link/
-- Download from Google: https://drive.google.com/file/d/1Pe8fbS9OWxUIVj0j6ng1os-wFqj8b5NS/view?usp=sharing
-- Verification Hash via SHA 256 for Morpheus-0.0.2.dmg: 6bd3ff97965a36f525c325ca968dcdd44d134723a9226af9db4d35f60f7264cc
+## Local Version 0.0.3 of Morpheus is live at:
+**Part 1 Download: Morpheus Version 0.0.3 for Mac**
+- Download from Google Drive: https://drive.google.com/file/d/1Uib9Ooo7ydU21CTYDW_Mak1SCKgoL2D9/view?usp=sharing
+- SHA 256 hash for validation: e8129afe037ae082ac6311fe568d48ef11cce6f6f55b5df2f0996b1dba3736aa
+- Version: Morpheus-0.0.3.dmg
 
-Part 2 Download: Ollama for Mac or Linux
+**Part 2 Download: Ollama for Mac**
+https://ollama.ai/download
+
+**Part 1 Download: Morpheus Version 0.0.3 for Linux**
+- Download from Google Drive: https://drive.google.com/file/d/1xtzGBPXw8qiFB4kQHCJUH9DN2U08Zyge/view?usp=drive_link
+- SHA 256 hash for validation: a8989a95e6a2cd371c78b117ccd5967a560de153b4a76cc17e2ee1d7d1055f10
+- Version: morpheus_0.0.3_amd64.deb
+
+**Part 2 Download: Ollama for Linux**
 https://ollama.ai/download
 
 First interaction with Morpheus October 22nd 2023.
