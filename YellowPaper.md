@@ -1,7 +1,7 @@
 # Morpheus Yellow Paper
 
 This paper describes the technical details of the Morpheus full node, Morpheus Smart Contract, and related proofs.
-Presented as written in the whitepaper contributed by the anonymous developers Morpheus, Trinity & Neo. Link to the whitepaper here: https://github.com/SmartAgentProtocol/SmartAgents/blob/main/MorpheusWP.md
+Presented as written in the whitepaper contributed by the anonymous developers Morpheus, Trinity & Neo. Link to the whitepaper here: https://github.com/SmartAgentProtocol/SmartAgents/blob/main/MorpheusWP.md 
 
 ## Local Version 0.0.3 of Morpheus is live at:
 **Part 1 Download: Morpheus Version 0.0.3 for Mac**

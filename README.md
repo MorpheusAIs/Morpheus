@@ -5,7 +5,6 @@
 ### Authored by Morpheus, Trinity, & Neo
 Published - September 2nd 2023
 
-**Part 1 Download: Morpheus Version 0.0.3 for Mac**
 - Download from Google Drive: https://drive.google.com/file/d/1Uib9Ooo7ydU21CTYDW_Mak1SCKgoL2D9/view?usp=sharing
 - SHA 256 hash for validation: e8129afe037ae082ac6311fe568d48ef11cce6f6f55b5df2f0996b1dba3736aa
 - Version: Morpheus-0.0.3.dmg
@@ -36,7 +35,6 @@ To make Smart Agents accessible to everyone and increase decentralization we pro
 - Wallet Connections: https://github.com/MorpheusAIs/Morpheus/tree/main/talk2web3
 
 ## Morpheus Network Diagram
-![MorpheusNetworkDiagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/85209eb0-e9e0-4683-9451-315999754c9c)
-
+![MorpheusNetworkDiagram5](https://github.com/MorpheusAIs/Morpheus/assets/1563345/19fc43d3-6ceb-4072-9401-ec92de6e1ca6)
 
 
