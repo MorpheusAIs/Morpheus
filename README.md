@@ -29,3 +29,4 @@ To make Smart Agents accessible to everyone and increase decentralization we pro
 
 ## Morpheus Network Diagram
 ![MorpheusNetworkDiagram5](https://github.com/MorpheusAIs/Morpheus/assets/1563345/19fc43d3-6ceb-4072-9401-ec92de6e1ca6)
+
