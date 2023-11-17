@@ -14,7 +14,7 @@
     "start": "electron .",
     "pack-mac64": "electron-builder --mac --x64",
     "pack-mac": "electron-builder --mac",
-    "pack-linux": "electron-builder --linux",,
+    "pack-linux": "electron-builder --linux",
     "postbuild": "dpkg-sig --sign builder dist/*.deb"
   },
   "keywords": [
@@ -78,5 +78,8 @@
     "deb": {
       "compression": "gz"
     }
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.1"
   }
 }
