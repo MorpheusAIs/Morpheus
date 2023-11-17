@@ -12,10 +12,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "CSC_NAME='Developer ID Application: Better Brand Management LLC (ZA3KN2X4MN)' electron-builder",
     "start": "electron .",
-    "package-mac64": "electron-builder --mac --x64",
-    "package-mac": "electron-builder --mac",
-    "package-linux": "electron-builder --linux",
-    "build-linux": "electron-builder --linux",
+    "pack-mac64": "electron-builder --mac --x64",
+    "pack-mac": "electron-builder --mac",
+    "pack-linux": "electron-builder --linux",,
     "postbuild": "dpkg-sig --sign builder dist/*.deb"
   },
   "keywords": [
