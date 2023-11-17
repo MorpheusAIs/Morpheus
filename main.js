@@ -1,6 +1,6 @@
 // Modules to control application life and create native browser window
 const { app, BrowserWindow, ipcMain } = require('electron');
-const { OllamaManager } = require('./modules/ollama-manager');
+//const { OllamaManager } = require('./modules/ollama-manager');
 const fs = require('fs-extra');
 const path = require('path');
 
@@ -34,7 +34,7 @@ app.whenReady().then(() => {
   //     console.error('Failed to install or start Ollama:', error);
   //     // Handle the error, maybe inform the user through a dialog
   //   });
-  OllamaManager.startOllama();
+ // OllamaManager.startOllama();
   createWindow();
   // app.on('activate', function () {
   //   // On macOS it's common to re-create a window in the app when the
