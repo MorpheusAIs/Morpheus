@@ -14,7 +14,7 @@
         crossorigin="anonymous"></script>
     <script src="resources/purify.min.js" integrity="sha256-QigBQMy2be3IqJD2ezKJUJ5gycSmyYlRHj2VGBuITpU="
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="chat.css">z
+    <link rel="stylesheet" href="chat.css">
 </head>
 
 <body data-bs-theme="dark">
@@ -45,6 +45,7 @@
                         <select id="chat-select" class="form-select" style="width: auto;">
                             <option value="" disabled selected>Select a chat</option>
                         </select>
+                        <!--<button type="button" class="btn btn-secondary ms-2" data-bs-toggle="modal" data-bs-target="#settingsModal">Settings</button>-->
                     </div>
                 </div>
             </div>
@@ -101,7 +102,33 @@
     </div>
   </div>
 
-  
+  <!--Settings Modal-->
+
+  <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="settingsModalLabel">Ollama Settings</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Add your settings fields here -->
+                <div>
+                    <label for="setting1" class="form-label">Setting 1</label>
+                    <input type="text" class="form-control" id="setting1" placeholder="Enter setting">
+                </div>
+                <!-- Add more settings as needed -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
   <script>
     const userInput = document.getElementById("user-input");
     userInput.addEventListener("keydown", function(event) {
@@ -119,6 +146,7 @@
 
   <script src="api.js"></script>
   <script src="chat.js"></script>
+  <!-- <script src="settings.js"></script> -->
 
 </body>
 
