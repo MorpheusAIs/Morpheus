@@ -16,7 +16,11 @@
     "pack-mac64": "electron-builder --mac --x64",
     "pack-mac": "electron-builder --mac",
     "pack-linux": "electron-builder --linux",
-    "postbuild": "dpkg-sig --sign builder dist/*.deb"
+    "postbuild": "dpkg-sig --sign builder dist/*.deb",
+    "package-mac64": "electron-builder --mac --x64",
+    "package-mac": "electron-builder --mac",
+    "package-linux": "electron-builder --linux",
+    "pack": "electron-builder --dir"
   },
   "keywords": [
     "Local",
@@ -24,7 +28,7 @@
     "AI"
   ],
   "author": "Morpheus",
-  "license": "Unlicense",
+  "license": "MIT",
   "devDependencies": {
     "cross-env": "^7.0.3",
     "electron": "^27.0.4",
