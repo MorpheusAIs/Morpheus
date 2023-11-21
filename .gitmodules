@@ -1,3 +1,6 @@
 #[submodule "ollama-ui"]
 #	path = ollama-ui
 #	url = https://github.com/ollama-ui/ollama-ui.git
+[submodule "contract_library/lib/solmate"]
+	path = contract_library/lib/solmate
+	url = https://github.com/transmissions11/solmate
