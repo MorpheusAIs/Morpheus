@@ -13,7 +13,8 @@
     "start": "electron .",
     "package-mac64": "electron-builder --mac --x64",
     "package-mac": "electron-builder --mac",
-    "package-linux": "electron-builder --linux"
+    "package-linux": "electron-builder --linux",
+    "pack": "electron-builder --dir"
   },
   "keywords": [
     "Local",
@@ -21,7 +22,7 @@
     "AI"
   ],
   "author": "Morpheus",
-  "license": "Unlicense",
+  "license": "MIT",
   "devDependencies": {
     "cross-env": "^7.0.3",
     "electron": "^27.0.4",
