@@ -1,6 +1,6 @@
 // Modules to control application life and create native browser window
 const { app, BrowserWindow, dialog } = require('electron')
-const path = require('node:path')
+const path = require('path')
 const { exec } = require('child_process');
 
 
@@ -10,10 +10,10 @@ let ollamaProcess = null; // Variable to store the Ollama process
 // Define the runOllamaCommand function
 function runOllamaCommand() {
   // Define the PATH for the child process
-  const env = { ...process.env, PATH: '/path/to/ollama:' + process.env.PATH };
+  const env = { ...process.env };
 
   // Check if ollama is installed
-  exec('ollama --version', { env }, (error, stdout, stderr) => {
+  exec('ollama --version', { env, shell: '/bin/sh' }, (error, stdout, stderr) => {
     if (error) {
       console.error(`Ollama is not installed: ${error}`);
       dialog.showErrorBox('Error', `Ollama is not installed: ${error}`);

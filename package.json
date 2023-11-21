@@ -8,7 +8,8 @@
   "homepage": "https://www.morepheusai.com",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "CSC_NAME='Developer ID Application: Better Brand Management LLC (ZA3KN2X4MN)' electron-builder",
+    "build-verbose": "CSC_NAME='Developer ID Application: Better Brand Management LLC (ZA3KN2X4MN)' electron-builder",
+    "build": "electron-builder",
     "start": "electron .",
     "package-mac64": "electron-builder --mac --x64",
     "package-mac": "electron-builder --mac",
@@ -22,6 +23,7 @@
   "author": "Morpheus",
   "license": "Unlicense",
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "electron": "^27.0.4",
     "electron-builder": "^24.6.4"
   },
@@ -70,5 +72,9 @@
         "Icon": "build/morph_square.icns"
       }
     }
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "shelljs": "^0.8.5"
   }
 }
