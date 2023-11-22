@@ -1,0 +1,17 @@
+{
+  MallocNanoZone: '0',
+  USER: 'myname',
+  COMMAND_MODE: 'unix2003',
+  __CFBundleIdentifier: 'com.electron.morpheus',
+  PATH: '/usr/bin:/bin:/usr/sbin:/sbin',
+  LOGNAME: 'myname',
+  DISPLAY: '/private/tmp/com.apple.launchd.Hgi5e6xpJx/org.xquartz:0',
+  SSH_AUTH_SOCK: '/private/tmp/com.apple.launchd.NqtW3QeMwg/Listeners',
+  HOME: '/Users/myname',
+  SHELL: '/bin/zsh',
+  TMPDIR: '/var/folders/9h/6xxs5cm509n1k0l80kln6q8h0000gn/T/',
+  __CF_USER_TEXT_ENCODING: '0x1F5:0x0:0x0',
+  XPC_SERVICE_NAME: 'application.com.electron.morpheus.169031285.169031288',
+  XPC_FLAGS: '0x0',
+  ORIGINAL_XDG_CURRENT_DESKTOP: 'undefined'
+}

@@ -1,10 +1,46 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow, ipcMain } = require('electron');
-//const { OllamaManager } = require('./modules/ollama-manager');
+const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const fs = require('fs-extra');
 const path = require('path');
+const { exec } = require('child_process');
+const os = require('os');
+const util = require('util');
 
-// OllamaManager.checkOllama()
+const logFilePath = path.join(os.homedir(), 'process_env.log');
+fs.writeFileSync(logFilePath, util.inspect(process.env), 'utf-8');
+
+let ollamaProcess = null; // Variable to store the Ollama process
+
+
+function runOllamaCommand() {
+  // Define the PATH for the child process
+  const env = { ...process.env };
+
+  // Check if ollama is installed
+  exec('ollama --version', { env, shell: '/bin/sh' }, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Ollama is not installed: ${error}`);
+      dialog.showErrorBox('Error', `Ollama is not installed: ${error}`);
+      return;
+    }
+
+    // If ollama is installed, run ollama serve
+    ollamaProcess = exec('ollama serve', { env, shell: '/bin/bash', maxBuffer: 1024 * 500 }, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`Error executing Ollama: ${error}`);
+        dialog.showErrorBox('Error', `Error executing Ollama: ${error}`);
+        return;
+      }
+
+      // Output verbose logging
+      console.log(`Ollama Output: ${stdout}`);
+      if (stderr) {
+        console.error(`Ollama Errors: ${stderr}`);
+      }
+    });
+  });
+}
+
 
 function createWindow () {
   // Create the browser window.
@@ -36,6 +72,7 @@ app.whenReady().then(() => {
   //   });
  // OllamaManager.startOllama();
   createWindow();
+  runOllamaCommand(); // Serve Ollama
   // app.on('activate', function () {
   //   // On macOS it's common to re-create a window in the app when the
   //   // dock icon is clicked and there are no other windows open.

@@ -1,21 +1,14 @@
 {
   "name": "morpheus",
   "productName": "Morpheus",
-  "version": "0.0.3",
-  "appId": "org.morpheus.client",
-  "buildVersion": "${version}-${new Date().getTime()}",
-  "icon": "morph_square.icns",
+  "version": "0.0.4",
   "description": "Sovereign AI for the people",
   "main": "main.js",
-  "homepage": "https://www.morepheusai.com",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "CSC_NAME='Developer ID Application: Better Brand Management LLC (ZA3KN2X4MN)' electron-builder",
-    "start": "electron .",
-    "pack-mac64": "electron-builder --mac --x64",
-    "pack-mac": "electron-builder --mac",
-    "pack-linux": "electron-builder --linux",
-    "postbuild": "dpkg-sig --sign builder dist/*.deb"
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
   },
   "keywords": [
     "Local",
@@ -24,60 +17,33 @@
   ],
   "author": "Morpheus",
   "license": "Unlicense",
-  "devDependencies": {
-    "electron": "^27.0.4",
-    "electron-builder": "^24.6.4"
-  },
-  "build": {
-    "appId": "org.morpheus.client",
-    "files": "![build_scripts{*/}",
-    "icon": "build/morph_square.icns",
-    "forceCodeSigning": true,
-    "dmg": {
-      "background": "build/1x/gmgbg.png",
-      "window": {
-        "width": 540,
-        "height": 380
-      },
-      "contents": [
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
         {
-          "x": 130,
-          "y": 220
+          "name": "@electron-forge/maker-squirrel"
         },
         {
-          "x": 410,
-          "y": 220,
-          "type": "link",
-          "path": "/Applications"
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
         }
       ]
-    },
-    "mac": {
-      "category": "public.app-category.productivity",
-      "target": [
-        "dmg",
-        "zip"
-      ]
-    },
-    "linux": {
-      "target": [
-        "AppImage",
-        "deb"
-      ],
-      "category": "Utility",
-      "synopsis": "Morpheus is AI for the people",
-      "description": "Decentralized AI for the people",
-      "maintainer": "Morpheus <morepheusai@proton.me>",
-      "vendor": "Morpheus",
-      "executableName": "morpheus",
-      "desktop": {
-        "Name": "Morpheus",
-        "Icon": "build/morph_square.icns"
-      }
-    },
-    "deb": {
-      "compression": "gz"
     }
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.1.0",
+    "electron": "^27.0.4"
   },
   "dependencies": {
     "fs-extra": "^11.1.1"
