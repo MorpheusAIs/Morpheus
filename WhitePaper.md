@@ -130,6 +130,8 @@ The definition of a Capital Provider is someone who has downloaded the full node
 
 As a result, the Capital Provider will receive MOR tokens each day in pro-rata to their total ETH yield contributed. For example, if there are 100 Capital Providers who each contributed 1 ETH on day 1 when the network launches, then each one gets 1% of the 3,456 MOR tokens each day = 34.56 MOR.
 
+It has been proposed to refer to this process of yield contribution, swap and burn as the "TCM". Short for the techno-capital machine in honor of the e/acc philosopher Beff Jezos. 
+
 ## Code Proof, Registration & Reward:
 The definition of a Coder is someone who has downloaded the Morpheus full node, connected their wallet, and contributed an agent, smart contract or other software to the Morpheus Network.
 
