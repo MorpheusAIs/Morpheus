@@ -8,7 +8,12 @@ const path = require('path');
 const { app, BrowserWindow, dialog } = require('electron')
 const path = require('path')
 const { exec } = require('child_process');
-
+const os = require('os');
+const util = require('util');
+const fs = require('fs');
+// Create the log file
+const logFilePath = path.join(os.homedir(), 'process_env.log');
+fs.writeFileSync(logFilePath, util.inspect(process.env), 'utf-8');
 
 
 let ollamaProcess = null; // Variable to store the Ollama process
@@ -68,7 +73,7 @@ function createWindow () {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
-//  runOllamaCommand(); // Serve Ollama
+runOllamaCommand(); // Serve Ollama
   createWindow();
 
 
@@ -99,7 +104,7 @@ app.on('window-all-closed', function() {
 app.on('before-quit', function () {
   // This will handle the Cmd + Q case on macOS
   // You can do any cleanup here before your application quits
-  //  ollamaProcess.kill(); // Kill Ollama process
+  ollamaProcess.kill(); // Kill Ollama process
 });
 
 app.on('will-quit', function () {
