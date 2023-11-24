@@ -24,7 +24,7 @@ class Ollama {
         });
     }
   
-    // Function to install Ollama
+    // Function to install Ollama - 
     installOllama() {
         return new Promise((resolve, reject) => {
             console.log('INSTALLING / UPDATING');

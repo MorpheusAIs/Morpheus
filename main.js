@@ -5,7 +5,9 @@ const path = require('path');
 const { exec } = require('child_process');
 const os = require('os');
 const util = require('util');
-
+//require ollama manager
+const OllamaManager = require('modules/ollama-manager');
+const { checkOllama } = require('modules/ollama-manager');
 const logFilePath = path.join(os.homedir(), 'process_env.log');
 fs.writeFileSync(logFilePath, util.inspect(process.env), 'utf-8');
 
@@ -57,20 +59,20 @@ function createWindow () {
   mainWindow.loadFile('ui/index.html')
 
   // Open the DevTools.
-//  mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
-  // checkOllama()
-  //   .then(createWindow)
-  //   .catch((error) => {
-  //     console.error('Failed to install or start Ollama:', error);
-  //     // Handle the error, maybe inform the user through a dialog
-  //   });
- // OllamaManager.startOllama();
+   checkOllama()
+     .then(createWindow)
+     .catch((error) => {
+       console.error('Failed to install or start Ollama:', error);
+       // Handle the error, maybe inform the user through a dialog
+     });
+  OllamaManager.startOllama();
   createWindow();
   runOllamaCommand(); // Serve Ollama
   // app.on('activate', function () {
