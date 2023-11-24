@@ -10,10 +10,4 @@ contract_library/.DS_Store
 /out
 /dist
 contract_library/.DS_Store
-build_scripts/developerID_application.cer
-build_scripts/developerID_installer.cer
-build_scripts/mac_development.cer
-.gitignore
-build_scripts/CertificateSigningRequest.certSigningRequest
-build_scripts/
-build/morph-dmgbg.ai
+
