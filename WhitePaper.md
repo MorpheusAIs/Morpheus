@@ -234,14 +234,15 @@ To avoid leaking private data when sending prompts to the Morpheus peer-to-peer 
 - LLM example https://huggingface.co/blog/encrypted-llm 
 - EVM example https://www.fhenix.io/
 
-## Launch Process Steps & 90 Day Bootstrapping Period
-The launch of the Morpheus Network will start with the launch of the MOR token smart contracts.
+## The Network Emerges & a 90 Day Bootstrapping Period
+
+The Morpheus Network begins with the local install version 0.0.1, then continues with the MOR token smart contracts and then full node software.
 
 The smart contracts which calculate the rewards of MOR should be extensively tested via a testnet before deployment onto a mainnet.
 
-Also there will be a one time 90 day delay (known at the bootstrapping period) between when the mainnet begins calculating rewards and when those MOR tokens are claimable / sendable by users. This bootstrapping period will ensure enough MOR tokens are ready for circulation to fulfill the utility functions of the network. To boot strap the AMM the 4% of MOR token dedicated to the protection funds will be leveraged for this purpose. 
+Also there will be a one time 90 day delay (known as the bootstrapping period) between when the mainnet begins calculating rewards and when those MOR tokens are claimable / sendable by users. This bootstrapping period will ensure enough MOR tokens are ready for circulation to fulfill the utility functions of the network. To boot strap the AMM, the 4% of MOR token dedicated to the protection funds (51,444 MOR by day 90) will be leveraged for this purpose. 
 
-These steps will provide that 1,286,111 MOR are claimable at the beginning of day 91 on the mainnet & thus avoid extreme token scarcity like happened with the launch of Zcash, when only a few tokens were first available from mining day 1. This issue took the market weeks to reach an equilibrium and establish rational price discovery. Morpheus avoids this issue with this 90 day boot strapping period thus preparing the token supply with enough tokens to fullfil its utility and establish rational price discovery.
+These steps will provide that 1,286,111 MOR are claimable at the beginning of day 91 on the mainnet & thus avoid extreme token scarcity like happened with the launch of Zcash, when only a few tokens were first available from mining day 1. This issue took the market weeks to reach an equilibrium and establish rational price discovery. Morpheus avoids this issue with this 90 day boot strapping period, thus preparing the token supply with enough tokens to fulfill its utility and establish rational price discovery.
 
 Once MOR tokens are claimable and sendable then the Morpheus Network can enable MOR transactions to pay for API calls, custom agents and validate the Stake of participants in the network. 
 
