@@ -1,0 +1,344 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: #181818;
+    color: #C8C8C8;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+textarea {
+    width: 100%;
+    padding: 20px;
+    background-color: #181818;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    color: #C8C8C8;
+    border: none;
+    resize: none; /* This will prevent users from resizing the textarea manually */
+    overflow-y: hidden; /* In case the text exceeds the height */
+    height: auto; /* This will ensure the height changes according to the content */
+}
+
+textarea:focus {
+    border: none;
+    outline: none;
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid #C8C8C8;
+    color: #C8C8C8;
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2a2a2a;
+}
+
+button:active {
+    background-color: #1e1e1e;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #656565;
+}
+
+#status-msg {
+    padding-top: 5%;
+}
+
+.chat {
+    width: 100%;
+    padding: 20px;
+    padding-top: 40px;
+}
+
+.history {
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.history-user-message {
+    width: 100%;
+    padding: 20px;
+    background-color: #181818;
+}
+
+.history-chat-response {
+    width: 100%;
+    border-radius: 4px;
+    background-color: #202020;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    white-space: pre-wrap;
+}
+
+.user-message {
+    width: 100%;
+    background-color: #202020;
+    padding: 20px;
+}
+
+.user-input {
+    width: 100%;
+}
+
+#user-input-text:focus {
+    border: none;
+    outline: none;
+}
+
+#chat-view {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+#chat-view::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5%;
+    background: linear-gradient(to bottom, rgba(24, 24, 24, 1), rgba(24, 24, 24, 0));
+    z-index: 999;
+    pointer-events: none;
+    overflow-y: auto;
+}
+
+#settings-view {
+    display: none;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings-content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#model-label {
+    color: #C8C8C8;
+    font-size: 0.9rem;
+}
+
+#model-select {
+    padding: 10px;
+    background-color: #202020;
+    border: 1px solid #C8C8C8;
+    color: #C8C8C8;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+#model-select:focus {
+    outline: none;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#cancel-btn {
+    background-color: #C8C8C8;
+    color: #202020;
+    margin-right: 4px;
+}
+
+#cancel-btn:hover {
+    background-color: #B0B0B0; 
+    color: #1a1a1a; 
+}
+
+#initial-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#app-logo {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#file-open {
+    background-color: rgba(32, 32, 32, 0.85);
+    border: 0.5px solid rgba(200, 200, 200, 0.8);
+    cursor: pointer;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* To make sure the button is always on top of the chat view */
+}
+
+#file-open svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+#file-open svg {
+    display: block;
+}
+
+#file-open:active svg rect {
+    fill: #1e1e1e;
+}
+
+#file-open:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #656565;
+}
+
+#file-open:hover {
+    background-color: #C8C8C8;
+    color: #181818;
+}
+
+#file-open:hover .folder-shape {
+    fill: #181818;
+}
+
+#file-open:hover .plus-sign {
+    stroke: #C8C8C8;
+}
+
+#file-button-text {
+    padding-top: 2.5px;
+}
+
+#file-open-err-msg {
+    padding-top: 10px;
+}
+
+#settings-icon {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 1001;
+    width: 16px;
+    height: 16px;
+}
+
+#stop-request-container {
+    display: none;
+    align-items: center;
+    gap: 5px;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+}
+
+#stop-request-btn {
+    font-size: 0.75rem;
+    background-color: rgba(32, 32, 32, 0.85);
+}
+
+#status-container {
+    display: none;
+    align-items: center;
+    gap: 5px;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+}
+
+/* Loading Animation Styles */
+.dots-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dots-loading>div {
+    width: 4px;
+    height: 4px;
+    background-color: #C8C8C8;
+    border-radius: 50%;
+    margin: 0 2px;
+    animation: bounce 0.6s infinite alternate;
+}
+
+.dots-loading>div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dots-loading>div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    to {
+        transform: translateY(-6px);
+    }
+}
+
+#spinner {
+    border: 2px solid #F8F8F8;
+    border-radius: 50%;
+    border-top: 4px solid #181818;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+#file-spinner {
+    border: 2px solid #181818;
+    border-radius: 50%;
+    border-top: 2px solid #656565;
+    width: 10px;
+    height: 10px;
+    animation: spin 1s linear infinite;
+    display: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
