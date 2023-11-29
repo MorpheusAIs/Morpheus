@@ -17,6 +17,10 @@ module.exports = {
       name: "@electron-forge/maker-rpm",
       config: {},
     },
+    {
+      name: "@electron-forge/maker-snap",
+      config: {},
+    },
   ],
   packagerConfig: {
     icon: "./public/MOR_logo_circle.icns",
