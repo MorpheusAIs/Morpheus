@@ -1,10 +1,4 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow, ipcMain } = require('electron');
-//const { OllamaManager } = require('./modules/ollama-manager');
-const fs = require('fs-extra');
-const path = require('path');
-
-// OllamaManager.checkOllama()
 const { app, BrowserWindow, dialog } = require('electron')
 const path = require('path')
 const { exec } = require('child_process');
