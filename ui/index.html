@@ -48,6 +48,7 @@
                         <select id="chat-select" class="form-select" style="width: auto;">
                             <option value="" disabled selected>Select a chat</option>
                         </select>
+                        <!--<button type="button" class="btn btn-secondary ms-2" data-bs-toggle="modal" data-bs-target="#settingsModal">Settings</button>-->
                     </div>
                 </div>
             </div>
@@ -104,65 +105,33 @@
     </div>
   </div>
 
-  <div class="modal fade" id="models-modal" tabindex="-1" aria-labelledby="nameModelsModal" aria-hidden="true">
+  <!--Settings Modal-->
+
+  <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="nameModelsLabel">Install new AI Models</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-5">
-                        <label for="install-model-select">Model</label>
-                    </div>
-                    <div class="col-sm-5">
-                        <label for="install-model-tag-select">Tag</label>
-                    </div>
-                    <div class="col-sm-2">
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-5">
-                        <div class="form-group">
-                            
-                            <select class="form-control" id="install-model-select">
-                              
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-5">
-                        <div class="form-group">
-                            
-                            <select class="form-control" id="install-model-tag-select" disabled>
-
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <button id="install-model-button" class="btn btn-primary">Install</button>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="progress mt-3">
-                            <div id="model-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="settingsModalLabel">Ollama Settings</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-
+            <div class="modal-body">
+                <!-- Add your settings fields here -->
+                <div>
+                    <label for="setting1" class="form-label">Setting 1</label>
+                    <input type="text" class="form-control" id="setting1" placeholder="Enter setting">
+                </div>
+                <!-- Add more settings as needed -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save Changes</button>
+            </div>
         </div>
-        
-      </div>
     </div>
-  </div>
+</div>
 
 
-  
+
   <script>
     const userInput = document.getElementById("user-input");
     userInput.addEventListener("keydown", function(event) {
@@ -176,10 +145,12 @@
             submitRequest(); // submit the form
         }
     });
-</script>
+
+    </script>
 
   <script src="api.js"></script>
   <script src="chat.js"></script>
+  <!-- <script src="settings.js"></script> -->
 
 </body>
 

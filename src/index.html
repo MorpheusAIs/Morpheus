@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>chatd</title>
+
+    <link rel="stylesheet" href="index.css" />
+
+    <script type="module" src="./client.js" defer></script>
+</head>
+
+<body>
+    <!-- Initial Loading View -->
+    <div id="initial-view">
+        <img id="app-logo" src="../public/dark-logo.png" alt="App Logo" />
+        <div id="spinner"></div>
+        <div id="status-msg"></div>
+    </div>
+
+    <!-- Chat View (Initially Hidden) -->
+    <div id="chat-view">
+        <button id="file-open">
+            <div id="file-spinner"></div>
+            <div id="file-open-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Folder Shape -->
+                    <path class="folder-shape" fill="#C8C8C8"
+                        d="M2 6c0-1.1.9-2 2-2h6l2 2h8c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6z" />
+                    <!-- Plus Sign  -->
+                    <path class="plus-sign" d="M12 11V17" stroke="#202020" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path class="plus-sign" d="M9.5 14H14.5" stroke="#202020" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <span id="file-button-text">Open a File</span>
+        </button>
+
+        <!-- Settings icon, only displayed when using a user's instance of ollama, not the packaged one -->
+        <svg id="settings-icon" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M1 5h1.424a3.228 3.228 0 0 0 6.152 0H19a1 1 0 1 0 0-2H8.576a3.228 3.228 0 0 0-6.152 0H1a1 1 0 1 0 0 2Zm18 4h-1.424a3.228 3.228 0 0 0-6.152 0H1a1 1 0 1 0 0 2h10.424a3.228 3.228 0 0 0 6.152 0H19a1 1 0 0 0 0-2Zm0 6H8.576a3.228 3.228 0 0 0-6.152 0H1a1 1 0 0 0 0 2h1.424a3.228 3.228 0 0 0 6.152 0H19a1 1 0 0 0 0-2Z"/>
+        </svg>
+
+        <!-- Chat Container -->
+        <div class="chat">
+            <div id="history"></div>
+            <div class="user-input">
+                <textarea id="user-input-text" placeholder="Ask a question, then press enter..."></textarea>
+            </div>
+        </div>
+
+        <!-- Stop Request Button -->
+        <div id="stop-request-container">
+            <button id="stop-request-btn">Stop</button>
+        </div>
+        <!-- Checkmark and Status Message to let the user know chatd connected to an instance of ollama that is already running -->
+        <div id="status-container">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="#C8C8C8" stroke-width="2" fill="none"/>
+                <path d="M7 12L10 15L17 8" stroke="#C8C8C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>ollama is running</span>
+        </div>
+    </div>
+
+    <!-- Settings View (Initially Hidden), Displayed when the Settings Icon is Clicked -->
+    <div id="settings-view">
+        <div class="settings-content">
+            <label for="model-select" id="model-label">Model Name</label>
+            <input id="model-select" placeholder="Select a model" autofocus>
+            <div class="button-group">
+                <button id="cancel-btn">Cancel</button>
+                <button id="save-btn">Save</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

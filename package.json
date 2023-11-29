@@ -1,21 +1,26 @@
 {
   "name": "morpheus",
   "productName": "Morpheus",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "appId": "org.morpheus.client",
   "buildVersion": "${version}-${new Date().getTime()}",
   "icon": "morph_square.icns",
   "description": "Sovereign AI for the people",
-  "main": "main.js",
+  "main": "src/index.js",
   "homepage": "https://www.morepheusai.com",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "CSC_NAME='Developer ID Application: Better Brand Management LLC (ZA3KN2X4MN)' electron-builder",
+    "build-verbose": "CSC_NAME='Developer ID Application: Better Brand Management LLC (ZA3KN2X4MN)' electron-builder",
+    "build": "electron-builder",
     "start": "electron .",
     "pack-mac64": "electron-builder --mac --x64",
     "pack-mac": "electron-builder --mac",
     "pack-linux": "electron-builder --linux",
-    "postbuild": "dpkg-sig --sign builder dist/*.deb"
+    "postbuild": "dpkg-sig --sign builder dist/*.deb",
+    "package-mac64": "electron-builder --mac --x64",
+    "package-mac": "electron-builder --mac",
+    "package-linux": "electron-builder --linux",
+    "pack": "electron-builder --dir"
   },
   "keywords": [
     "Local",
@@ -23,8 +28,14 @@
     "AI"
   ],
   "author": "Morpheus",
-  "license": "Unlicense",
+  "license": "MIT",
   "devDependencies": {
+    "@electron-forge/cli": "^6.1.1",
+    "@electron-forge/maker-deb": "^6.1.1",
+    "@electron-forge/maker-rpm": "^6.1.1",
+    "@electron-forge/maker-squirrel": "^6.1.1",
+    "@electron-forge/maker-zip": "^6.1.1",
+    "cross-env": "^7.0.3",
     "electron": "^27.0.4",
     "electron-builder": "^24.6.4"
   },
@@ -80,6 +91,15 @@
     }
   },
   "dependencies": {
-    "fs-extra": "^11.1.1"
+    "@electron-forge/maker-snap": "^7.1.0",
+    "@xenova/transformers": "^2.6.2",
+    "electron-squirrel-startup": "^1.0.0",
+    "langchain": "^0.0.170",
+    "mammoth": "^1.6.0",
+    "ml-distance": "^4.0.1",
+    "nvm": "^0.0.4",
+    "odt2html": "^1.0.1",
+    "pdf-parse": "^1.1.1",
+    "winston": "^3.11.0"
   }
 }
