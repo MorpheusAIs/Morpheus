@@ -30,14 +30,14 @@
   "author": "Morpheus",
   "license": "MIT",
   "devDependencies": {
-    "cross-env": "^7.0.3",
-    "electron": "^27.0.4",
-    "electron-builder": "^24.6.4",
     "@electron-forge/cli": "^6.1.1",
     "@electron-forge/maker-deb": "^6.1.1",
     "@electron-forge/maker-rpm": "^6.1.1",
     "@electron-forge/maker-squirrel": "^6.1.1",
-    "@electron-forge/maker-zip": "^6.1.1"
+    "@electron-forge/maker-zip": "^6.1.1",
+    "cross-env": "^7.0.3",
+    "electron": "^27.0.4",
+    "electron-builder": "^24.6.4"
   },
   "build": {
     "appId": "org.morpheus.client",
@@ -96,6 +96,7 @@
     "langchain": "^0.0.170",
     "mammoth": "^1.6.0",
     "ml-distance": "^4.0.1",
+    "nvm": "^0.0.4",
     "odt2html": "^1.0.1",
     "pdf-parse": "^1.1.1",
     "winston": "^3.11.0"

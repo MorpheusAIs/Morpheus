@@ -3096,6 +3096,11 @@ num-sort@^2.0.0:
   resolved "https://registry.npmjs.org/num-sort/-/num-sort-2.1.0.tgz"
   integrity sha512-1MQz1Ed8z2yckoBeSfkQHHO9K1yDRxxtotKSJ9yvcTUUxSvfvzEq5GwBrjjHEpMlq/k5gvXdmJ1SbYxWtpNoVg==
 
+nvm@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.npmjs.org/nvm/-/nvm-0.0.4.tgz"
+  integrity sha512-jvmyELykYcdyd0VCGY0E8Aqe5MngEasVvlPvrcJHbwBMUbVqa72mPdQuPzyTcykEtEx7jDrMY0QA5MoV+8EhgA==
+
 object-hash@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/object-hash/-/object-hash-3.0.0.tgz"
