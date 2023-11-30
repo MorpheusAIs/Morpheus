@@ -2,6 +2,15 @@ module.exports = {
   rebuildConfig: {},
   makers: [
     {
+      name: "@electron-forge/maker-dmg",
+      platforms: ["darwin"],
+      config: {
+        background: "./build/SVG/dmgbg.svg",
+        format: "ULFO",
+        icon: "./public/MOR_logo_circle.icns"
+      }
+    },
+    {
       name: "@electron-forge/maker-squirrel",
       config: {},
     },
@@ -18,6 +27,7 @@ module.exports = {
       config: {},
     },
   ],
+  packageManager: 'npm',
   packagerConfig: {
     icon: "./public/MOR_logo_circle.icns",
     osxSign: {
