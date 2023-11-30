@@ -3,22 +3,36 @@
 This paper describes the technical details of the Morpheus full node, Morpheus Smart Contract, and related proofs.
 Presented as written in the whitepaper contributed by the anonymous developers Morpheus, Trinity & Neo. Link to the whitepaper here: https://github.com/SmartAgentProtocol/SmartAgents/blob/main/MorpheusWP.md 
 
-## Local Version 0.0.3 of Morpheus is live at:
-**Part 1 Download: Morpheus Version 0.0.3 for Mac**
-- Download from Google Drive: https://drive.google.com/file/d/1Uib9Ooo7ydU21CTYDW_Mak1SCKgoL2D9/view?usp=sharing
-- SHA 256 hash for validation: e8129afe037ae082ac6311fe568d48ef11cce6f6f55b5df2f0996b1dba3736aa
-- Version: Morpheus-0.0.3.dmg
+## Local Version 0.0.4 of Morpheus is live at:
+
+---------
+**Part 1 Download: Morpheus Version 0.0.4 for Mac**
+- Download from Google Drive: https://drive.google.com/file/d/1uCdJ2RtKfabMPISqe4U-Ru2e_ojtY8WG/view?usp=sharing
+- SHA 256 hash for validation: feadc09bd41387d414f896e4adaa93fd5bbf03ac64737975a00c55860852ec7f  
+- Version: Morpheus-0.0.4-x64.dmg
 
 **Part 2 Download: Ollama for Mac**
 https://ollama.ai/download
 
-**Part 1 Download: Morpheus Version 0.0.3 for Linux**
-- Download from Google Drive: https://drive.google.com/file/d/1xtzGBPXw8qiFB4kQHCJUH9DN2U08Zyge/view?usp=drive_link
-- SHA 256 hash for validation: a8989a95e6a2cd371c78b117ccd5967a560de153b4a76cc17e2ee1d7d1055f10
-- Version: morpheus_0.0.3_amd64.deb
+---------
+**Part 1 Download: Morpheus Version 0.0.4 for Linux Debian**
+- Download from Google Drive: https://drive.google.com/file/d/1S64jOabU-fuFeIMFvOxBfSWQ_9FVUtOj/view?usp=drive_link
+- SHA 256 hash for validation: 96df97ea4aba7fe4209aa1be8fbe97abd0214904
+- Version: morpheus_0.0.4_amd64.deb
 
 **Part 2 Download: Ollama for Linux**
 https://ollama.ai/download
+
+---------
+**Part 1 Download: Morpheus Version 0.0.4 for Linux Red Hat**
+- Download from Google Drive: https://drive.google.com/file/d/18YllDs5VlSVWvnzFdXybQSvgl3nGyiMr/view?usp=sharing
+- SHA 256 hash for validation: ec2a9a6a0670dfe5adc07589dbb028bce0fb9b5e  
+- Version: morpheus-0.0.4-1.x86_64.rpm
+
+**Part 2 Download: Ollama for Linux**
+https://ollama.ai/download
+
+---------
 
 First interaction with Morpheus October 22nd 2023.
 ![FirstInteractionWithMorpheus20231022](https://github.com/MorpheusAIs/Morpheus/assets/1563345/35509f3a-4346-4f58-bb60-f7881fd10f7e)
