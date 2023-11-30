@@ -21,18 +21,20 @@ module.exports = {
       name: "@electron-forge/maker-snap",
       config: {},
     },
-  ],
+  ],   
+  //TODO: document env variables
   packagerConfig: {
     icon: "./public/MOR_logo_circle.icns",
     osxSign: {
       identity: process.env.APPLE_IDENTITY,
     },
-    osxNotarize: {
+
+/*     osxNotarize: {
       tool: "notarytool",
 //      appleId: process.env.APPLE_ID,
 //      appleIdPassword: process.env.APPLE_PASSWORD,
 //      teamId: process.env.APPLE_TEAM_ID,
-        keychainProfile: "betterbrand"
-    },
+        keychainProfile: "process.env.KEYCHAIN_PROFILE"
+    }, */
   },
 };
