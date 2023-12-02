@@ -92,6 +92,7 @@
     }
   },
   "dependencies": {
+    "@electron-forge/maker-snap": "^7.1.0",
     "@xenova/transformers": "^2.6.2",
     "electron-squirrel-startup": "^1.0.0",
     "langchain": "^0.0.170",
