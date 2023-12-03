@@ -20,7 +20,15 @@ module.exports = {
     },
     {
       name: "@electron-forge/maker-deb",
-      config: {},
+      platforms: ['darwin'],
+      config: {
+        options: {
+          maintainer: 'Morpheus',
+          homepage: 'https://www.mor.org',
+          icon: './public/morph_square.png',
+          categories: ['Utility'],
+        },
+      },
     },
     {
       name: "@electron-forge/maker-rpm",
@@ -37,6 +45,7 @@ module.exports = {
     osxSign: {
       identity: process.env.APPLE_IDENTITY,
     },
+    executableName: 'morpheus',
     osxNotarize: {
       tool: "notarytool",
 //      appleId: process.env.APPLE_ID,

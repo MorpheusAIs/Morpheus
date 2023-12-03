@@ -16,7 +16,8 @@
     "start-forge": "electron-forge start",
     "make": "electron-forge make",
     "package": "electron-forge package",
-    "pack": "electron-builder --dir"
+    "pack": "electron-builder --dir",
+    "make-deb": "electron-forge make --targets=@electron-forge/maker-deb"
   },
   "keywords": [
     "Local",
