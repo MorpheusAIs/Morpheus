@@ -1,7 +1,7 @@
 {
   "name": "morpheus",
   "productName": "Morpheus",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "appId": "org.morpheus.client",
   "buildVersion": "${version}-${new Date().getTime()}",
   "icon": "morph_square.icns",
