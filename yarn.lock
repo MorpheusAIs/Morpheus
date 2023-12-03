@@ -39,7 +39,7 @@
     ajv "^6.12.0"
     ajv-keywords "^3.4.1"
 
-"@electron-forge/cli@^6.1.1":
+"@electron-forge/cli@^6.4.2":
   version "6.4.2"
   resolved "https://registry.npmjs.org/@electron-forge/cli/-/cli-6.4.2.tgz"
   integrity sha512-bM6YVTV0uUEpIL1jkpARlSm4Li26XZn+avC/lyTdpPqnd65T/oXZNkrAD+2Jb0RlgplOaM21qWm7ybtvKDGDyA==
@@ -119,74 +119,85 @@
     fs-extra "^10.0.0"
     which "^2.0.2"
 
-"@electron-forge/maker-base@7.1.0":
-  version "7.1.0"
-  resolved "https://registry.npmjs.org/@electron-forge/maker-base/-/maker-base-7.1.0.tgz"
-  integrity sha512-W+u8y2D30vhY1xnX3g5cuwsbUV+W5zLR/I8XSfHNofu6+/LOjI2Mu9y0C/pLOMrnVbt1+F9MkxxmLNt0TRlAjg==
+"@electron-forge/maker-base@7.2.0":
+  version "7.2.0"
+  resolved "https://registry.npmjs.org/@electron-forge/maker-base/-/maker-base-7.2.0.tgz"
+  integrity sha512-5dCFiVo4WhSlLf/T9MP+jnMqP3qfmwvjCSiTRE08USeotNWhycztcFox94NbxMJkRt329tNeG2RRs7RzdCz21w==
   dependencies:
-    "@electron-forge/shared-types" "7.1.0"
+    "@electron-forge/shared-types" "7.2.0"
     fs-extra "^10.0.0"
     which "^2.0.2"
 
-"@electron-forge/maker-deb@^6.1.1":
-  version "6.4.2"
-  resolved "https://registry.npmjs.org/@electron-forge/maker-deb/-/maker-deb-6.4.2.tgz"
-  integrity sha512-tlV8ffivgBP94vtYXgAeXgzeKCaRyLuWH9LT8PQW1QrYbAFpCMmuwk/zFaJkyMklImCWmDFTPYMEqdEJGd7Npg==
+"@electron-forge/maker-deb@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.npmjs.org/@electron-forge/maker-deb/-/maker-deb-7.2.0.tgz"
+  integrity sha512-UYulMZpof+PIcapUFxQ5pVoSqa2FsS8crY8WGbVm1ALuknJUn4C2I37S8AujQH0l7oJRGnH95Y7Bcryyhe08yw==
   dependencies:
-    "@electron-forge/maker-base" "6.4.2"
-    "@electron-forge/shared-types" "6.4.2"
+    "@electron-forge/maker-base" "7.2.0"
+    "@electron-forge/shared-types" "7.2.0"
   optionalDependencies:
     electron-installer-debian "^3.2.0"
 
-"@electron-forge/maker-dmg@^7.1.0":
-  version "7.1.0"
-  resolved "https://registry.npmjs.org/@electron-forge/maker-dmg/-/maker-dmg-7.1.0.tgz"
-  integrity sha512-21DbJPEHvAETqaS7GvhuWKeJ0UVklQ3RNDaZkAjr61d/oUVXjj8JT5h5zfAwOn6SBy5mEMgzEO5zPZ2hzvBlTA==
+"@electron-forge/maker-dmg@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.npmjs.org/@electron-forge/maker-dmg/-/maker-dmg-7.2.0.tgz"
+  integrity sha512-hVCDWF2m2SOav0bHZygIwGy3aIWSgWgWiio+Ahoin4qQhtReXYwY2r+idBEBvTo4hnNuUVRHAS0IGVsIS/91AQ==
   dependencies:
-    "@electron-forge/maker-base" "7.1.0"
-    "@electron-forge/shared-types" "7.1.0"
+    "@electron-forge/maker-base" "7.2.0"
+    "@electron-forge/shared-types" "7.2.0"
     fs-extra "^10.0.0"
   optionalDependencies:
     electron-installer-dmg "^4.0.0"
 
-"@electron-forge/maker-rpm@^6.1.1":
-  version "6.4.2"
-  resolved "https://registry.npmjs.org/@electron-forge/maker-rpm/-/maker-rpm-6.4.2.tgz"
-  integrity sha512-+hfbY5pYbAer0y07OtOzVgVBHoTRmemqqZ//T0mKJpyK2ThHKGTvyW8FFlr5jlQs5LoDCM2WHKE8oGtRhivsMg==
+"@electron-forge/maker-flatpak@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.npmjs.org/@electron-forge/maker-flatpak/-/maker-flatpak-7.2.0.tgz"
+  integrity sha512-CMrmvzeSnF+a56JnQRIKU369zc5VzKkDR2hcesiHd/zr6lfCLd32wn3UBiLGF2rhV4QnTPE7oVnykxi+x7UKsQ==
   dependencies:
-    "@electron-forge/maker-base" "6.4.2"
-    "@electron-forge/shared-types" "6.4.2"
+    "@electron-forge/maker-base" "7.2.0"
+    "@electron-forge/shared-types" "7.2.0"
+    fs-extra "^10.0.0"
+  optionalDependencies:
+    "@malept/electron-installer-flatpak" "^0.11.4"
+
+"@electron-forge/maker-rpm@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.npmjs.org/@electron-forge/maker-rpm/-/maker-rpm-7.2.0.tgz"
+  integrity sha512-XKWK8Db44O9L7Njx0jEYLPfkf5eJ/i+XqT1Tejke+t0b74uCqFMKcbWLFp1LZj0hVM3kACy1LqtTCuOlti3INA==
+  dependencies:
+    "@electron-forge/maker-base" "7.2.0"
+    "@electron-forge/shared-types" "7.2.0"
   optionalDependencies:
     electron-installer-redhat "^3.2.0"
 
-"@electron-forge/maker-snap@^7.1.0":
-  version "7.1.0"
-  resolved "https://registry.npmjs.org/@electron-forge/maker-snap/-/maker-snap-7.1.0.tgz"
-  integrity sha512-DDfDXL4x5e2uY6cyCWqjQzEYHWEALBBmNDQGNUuf6eIU+DB1jC5FwbwQp3+f3Vgyt3nr8Rj+hXIIfz0atwi/3g==
+"@electron-forge/maker-snap@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.npmjs.org/@electron-forge/maker-snap/-/maker-snap-7.2.0.tgz"
+  integrity sha512-qOq/iUJcsE+8SmaBpnhF7SPMhUsRVoRPvmz16+OG2RDvt5XIwS6S/yHiZjGlFUyz5XDp2OM3Yb85vNF+27O5zg==
   dependencies:
-    "@electron-forge/maker-base" "7.1.0"
-    "@electron-forge/shared-types" "7.1.0"
+    "@electron-forge/maker-base" "7.2.0"
+    "@electron-forge/shared-types" "7.2.0"
   optionalDependencies:
     electron-installer-snap "^5.2.0"
 
-"@electron-forge/maker-squirrel@^6.1.1":
-  version "6.4.2"
-  resolved "https://registry.npmjs.org/@electron-forge/maker-squirrel/-/maker-squirrel-6.4.2.tgz"
-  integrity sha512-ukK3RcFaBrQXUzR52PsHxfwDq5XKSnj6A1kkXiyHWqgj+HIU97prBScBb5JRtasPvYN+nDdQO2vlInsLaqcx9Q==
+"@electron-forge/maker-squirrel@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.npmjs.org/@electron-forge/maker-squirrel/-/maker-squirrel-7.2.0.tgz"
+  integrity sha512-SyPeFgJoMUcOPDM8+1AUPuseOqnl5YqnnjgKX9+YUIrsGKIsSz1cTtSOEu5R/l2yWNWFTmLnOlcuqIe7NayHBg==
   dependencies:
-    "@electron-forge/maker-base" "6.4.2"
-    "@electron-forge/shared-types" "6.4.2"
+    "@electron-forge/maker-base" "7.2.0"
+    "@electron-forge/shared-types" "7.2.0"
     fs-extra "^10.0.0"
   optionalDependencies:
     electron-winstaller "^5.0.0"
 
-"@electron-forge/maker-zip@^6.1.1":
-  version "6.4.2"
-  resolved "https://registry.npmjs.org/@electron-forge/maker-zip/-/maker-zip-6.4.2.tgz"
-  integrity sha512-k2nfhhnxcYbUS7rCKCisuqEalxtH9l73+lrtfL0aQZiE/BLbDXyNckDIDOPvX0tBEg62nVzUdJonZwOhZVvAMw==
+"@electron-forge/maker-zip@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.npmjs.org/@electron-forge/maker-zip/-/maker-zip-7.2.0.tgz"
+  integrity sha512-U6FSSMcHogHDv+7SmF037lJ9m0stwwqyerw7Q6mD3jKQHX9GBxFApEzA5HSURGPAEBhPgPppYOSMGRB6LV5F2g==
   dependencies:
-    "@electron-forge/maker-base" "6.4.2"
-    "@electron-forge/shared-types" "6.4.2"
+    "@electron-forge/maker-base" "7.2.0"
+    "@electron-forge/shared-types" "7.2.0"
     cross-zip "^4.0.0"
     fs-extra "^10.0.0"
     got "^11.8.5"
@@ -214,12 +225,12 @@
     electron-packager "^17.1.2"
     listr2 "^5.0.3"
 
-"@electron-forge/shared-types@7.1.0":
-  version "7.1.0"
-  resolved "https://registry.npmjs.org/@electron-forge/shared-types/-/shared-types-7.1.0.tgz"
-  integrity sha512-uKCrWrgNCwwZB1DUBwo4/YyqLQNL55/X9xWhOT1dyw8W1wQ/bxD33F73FYNdmoL6qgIywWGNRLdQ4e1YaSxnvg==
+"@electron-forge/shared-types@7.2.0":
+  version "7.2.0"
+  resolved "https://registry.npmjs.org/@electron-forge/shared-types/-/shared-types-7.2.0.tgz"
+  integrity sha512-d8i+pwPwBnlmFTRkq7QfaoRS9LywfyjDdHqQZuArFbL6NLAEbZ52irFiAE3NSLf4STew/BA6IK9sTPz3KRmvQw==
   dependencies:
-    "@electron-forge/tracer" "7.1.0"
+    "@electron-forge/tracer" "7.2.0"
     "@electron/packager" "^18.0.0"
     "@electron/rebuild" "^3.2.10"
     listr2 "^5.0.3"
@@ -271,10 +282,10 @@
     "@electron-forge/template-base" "6.4.2"
     fs-extra "^10.0.0"
 
-"@electron-forge/tracer@7.1.0":
-  version "7.1.0"
-  resolved "https://registry.npmjs.org/@electron-forge/tracer/-/tracer-7.1.0.tgz"
-  integrity sha512-e3nWweJpWeFS7usi5d9GEEXiw38qreNz46I+yb4klNC/IPt8Xmmh2VsgUvuld8N9HcJ4eCU9CPLGjkeRQr9RiA==
+"@electron-forge/tracer@7.2.0":
+  version "7.2.0"
+  resolved "https://registry.npmjs.org/@electron-forge/tracer/-/tracer-7.2.0.tgz"
+  integrity sha512-EoJ07nptEuuY2fcs/bUWzIf11RQRx6Ch/dZ6A9WIRcFYe9cFrslQwvyUf0siY3jcqVvxETCz69JGuBxKGwak7A==
   dependencies:
     chrome-trace-event "^1.0.3"
 
@@ -421,6 +432,18 @@
   integrity sha512-1DpKU0Z5ThltBwjNySMC14g0CkbyhCaz9FkhxqNsZI6uAPJXFS8cMXlBKo26FJ8ZuW6S9GCMcR9IO5k2X5/9Fg==
   dependencies:
     cross-spawn "^7.0.1"
+
+"@malept/electron-installer-flatpak@^0.11.4":
+  version "0.11.4"
+  resolved "https://registry.npmjs.org/@malept/electron-installer-flatpak/-/electron-installer-flatpak-0.11.4.tgz"
+  integrity sha512-ZdwhT4WeeJWdnsmALUtQ7bn4pzYVh0Vg+4NnF1S3n3OACc9IWg+B+LxI5gT3XSXIrxogouqkjM6gD8S592awyA==
+  dependencies:
+    "@malept/flatpak-bundler" "^0.4.0"
+    debug "^4.1.1"
+    electron-installer-common "^0.10.0"
+    lodash "^4.17.15"
+    semver "^7.1.1"
+    yargs "^16.0.0"
 
 "@malept/flatpak-bundler@^0.4.0":
   version "0.4.0"
@@ -655,7 +678,7 @@
   dependencies:
     "@types/node" "*"
 
-"@xenova/transformers@^2.6.2":
+"@xenova/transformers@^2.5.4", "@xenova/transformers@^2.6.2":
   version "2.9.0"
   resolved "https://registry.npmjs.org/@xenova/transformers/-/transformers-2.9.0.tgz"
   integrity sha512-wzSjIMpkVaD+bIgIVxlXDeeKawr233t+1pPb5AhpYeTAPFdOaVUVdT4vIKqmmszApBFYYUpOqv5LoJ4lOAm6Ug==
@@ -719,7 +742,7 @@ ajv-keywords@^3.4.1:
   resolved "https://registry.npmjs.org/ajv-keywords/-/ajv-keywords-3.5.2.tgz"
   integrity sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==
 
-ajv@^6.10.0, ajv@^6.12.0:
+ajv@^6.10.0, ajv@^6.12.0, ajv@^6.9.1:
   version "6.12.6"
   resolved "https://registry.npmjs.org/ajv/-/ajv-6.12.6.tgz"
   integrity sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==
@@ -1570,7 +1593,7 @@ electron-builder@^24.6.4:
     simple-update-notifier "2.0.0"
     yargs "^17.6.2"
 
-electron-installer-common@^0.10.2:
+electron-installer-common@^0.10.0, electron-installer-common@^0.10.2:
   version "0.10.3"
   resolved "https://registry.npmjs.org/electron-installer-common/-/electron-installer-common-0.10.3.tgz"
   integrity sha512-mYbP+6i+nHMIm0WZHXgGdmmXMe+KXncl6jZYQNcCF9C1WsNA9C5SZ2VP4TLQMSIoFO+X4ugkMEA5uld1bmyEvA==
@@ -1714,6 +1737,11 @@ enabled@2.0.x:
   version "2.0.0"
   resolved "https://registry.npmjs.org/enabled/-/enabled-2.0.0.tgz"
   integrity sha512-AKrN98kuwOzMIdAizXGI86UFBoo26CL21UM763y1h/GMSJ4/OHU9k2YlsmBpyScFo/wbLzWQJBMCW4+IO3/+OQ==
+
+encode-utf8@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/encode-utf8/-/encode-utf8-1.0.3.tgz"
+  integrity sha512-ucAnuBEhUK4boH2HjVYG5Q2mQyPorvv0u/ocS+zhdw0S8AlHYY+GOFhP1Gio5z4icpP2ivFSvhtFjQi8+T9ppw==
 
 encoding@^0.1.0, encoding@^0.1.13:
   version "0.1.13"
@@ -2859,7 +2887,7 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "^3.0.0"
 
-lodash@^4.17.15, lodash@^4.17.20, lodash@^4.17.4:
+lodash@^4.17.15, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.4:
   version "4.17.21"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -2954,7 +2982,7 @@ make-fetch-happen@^10.0.3:
     socks-proxy-agent "^7.0.0"
     ssri "^9.0.0"
 
-mammoth@^1.6.0:
+mammoth@*, mammoth@^1.6.0:
   version "1.6.0"
   resolved "https://registry.npmjs.org/mammoth/-/mammoth-1.6.0.tgz"
   integrity sha512-jOwbj6BwJzxCf6jr2l1zmSemniIkLnchvELXnDJCANlJawhzyIKObIq48B8kWEPLgUUh57k7FtEO3DHFQMnjMg==
@@ -3663,7 +3691,7 @@ path-type@^2.0.0:
   dependencies:
     pify "^2.0.0"
 
-pdf-parse@^1.1.1:
+pdf-parse@^1.1.1, pdf-parse@1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/pdf-parse/-/pdf-parse-1.1.1.tgz"
   integrity sha512-v6ZJ/efsBpGrGGknjtq9J/oC8tZWq0KWL5vQrk2GlzLEQPUDB1ex+13Rmidl1neNN358Jn9EHZw5y07FFtaC7A==
@@ -4809,6 +4837,19 @@ yargs-parser@^21.1.1:
   resolved "https://registry.npmjs.org/yargs-parser/-/yargs-parser-21.1.1.tgz"
   integrity sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==
 
+yargs@^16.0.0:
+  version "16.2.0"
+  resolved "https://registry.npmjs.org/yargs/-/yargs-16.2.0.tgz"
+  integrity sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==
+  dependencies:
+    cliui "^7.0.2"
+    escalade "^3.1.1"
+    get-caller-file "^2.0.5"
+    require-directory "^2.1.1"
+    string-width "^4.2.0"
+    y18n "^5.0.5"
+    yargs-parser "^20.2.2"
+
 yargs@^16.0.2:
   version "16.2.0"
   resolved "https://registry.npmjs.org/yargs/-/yargs-16.2.0.tgz"
@@ -4861,7 +4902,7 @@ zod-to-json-schema@^3.20.4:
   resolved "https://registry.npmjs.org/zod-to-json-schema/-/zod-to-json-schema-3.22.1.tgz"
   integrity sha512-bVSWQ2JF3ZglQefafkM+Kk9KQ2fqqSi4VhxWaup1NJX9FS5jDg0EkEioVCWui0PiIQvcXJUjmN71bg672+a+tA==
 
-zod@^3.22.3:
+zod@^3.22.3, zod@^3.22.4:
   version "3.22.4"
   resolved "https://registry.npmjs.org/zod/-/zod-3.22.4.tgz"
   integrity sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==
