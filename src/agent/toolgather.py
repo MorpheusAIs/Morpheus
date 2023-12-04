@@ -1,22 +1,21 @@
+import os
 import importlib
-import sys
+import inspect
 
-def gather_tools_from_module(module_name='tools'):
-    # Step 1: Dynamically import the module
-    if module_name in sys.modules:
-        # If already imported, reload it
-        imported_module = importlib.reload(sys.modules[module_name])
-    else:
-        imported_module = importlib.import_module(module_name)
+def import_functions_from_directory(directory):
+    functions_list = []
+    for filename in os.listdir(directory):
+        if filename.endswith('.py') and not filename.startswith('__'):
+            module_name = filename[:-3]
+            module_path = f"{directory}.{module_name}"
+            module = importlib.import_module(module_path)
 
-    # Step 2: Iterate over the attributes of the module and collect tools
-    tool_objects = []
-    for attr_name in dir(imported_module):
-        if 'tool' in attr_name:
-            tool_objects.append(getattr(imported_module, attr_name))
+            for name, func in inspect.getmembers(module, inspect.isfunction):
+                functions_list.append(func)
+    
+    return functions_list
 
-    return tool_objects
+functionkit = import_functions_from_directory('tools')
 
-# Example usage
-toolkit = gather_tools_from_module()
+
 
