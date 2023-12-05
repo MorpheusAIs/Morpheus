@@ -10,13 +10,12 @@
   "homepage": "https://www.morepheusai.com",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-verbose": "CSC_NAME='Developer ID Application: Better Brand Management LLC (ZA3KN2X4MN)' electron-builder",
-    "build": "electron-builder",
     "start": "electron .",
     "start-forge": "electron-forge start",
     "make": "electron-forge make",
     "package": "electron-forge package",
     "pack": "electron-builder --dir",
+    "make-rpm": "electron-forge make --targets=@electron-forge/maker-rpm",
     "make-deb": "electron-forge make --targets=@electron-forge/maker-deb"
   },
   "keywords": [
