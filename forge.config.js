@@ -20,7 +20,7 @@ module.exports = {
     },
     {
       name: "@electron-forge/maker-deb",
-      platforms: ['darwin'],
+      //platforms: ['darwin'],
       config: {
         options: {
           maintainer: 'Morpheus',
@@ -42,16 +42,16 @@ module.exports = {
   packageManager: 'npm',
   packagerConfig: {
     icon: "./public/MOR_logo_circle.icns",
+    executableName: 'morpheus',
     osxSign: {
       identity: process.env.APPLE_IDENTITY,
     },
-    executableName: 'morpheus',
-    osxNotarize: {
+/*     osxNotarize: {
       tool: "notarytool",
 //      appleId: process.env.APPLE_ID,
 //      appleIdPassword: process.env.APPLE_PASSWORD,
 //      teamId: process.env.APPLE_TEAM_ID,
         keychainProfile: "betterbrand"
-    },
+    }, */
   },
 };
