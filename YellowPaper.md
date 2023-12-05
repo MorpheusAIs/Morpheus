@@ -4,31 +4,21 @@ This paper describes the technical details of the Morpheus full node, Morpheus S
 Presented as written in the whitepaper contributed by the anonymous developers Morpheus, Trinity & Neo. Link to the whitepaper here: https://github.com/SmartAgentProtocol/SmartAgents/blob/main/MorpheusWP.md 
 
 ## Local Version 0.0.5 of Morpheus is live at:
-
 ---------
-**Part 1 Download: Morpheus Version 0.0.5 for Mac**
+**Morpheus Version 0.0.5 for Mac**
 - Download from Google Drive: https://drive.google.com/file/d/1x-wR4HWjKqT_g6VRjrWPXu3rVm9ukOc9/view?usp=sharing
-- SHA 256 hash for validation: 9092d543023fb95086cf4a7039d42cbcbbdf5283d670c4de6396b3d89e57b064  
+- SHA 256 hash for validation: 9092d543023fb95086cf4a7039d42cbcbbdf5283d670c4de6396b3d89e57b064
 - Version: Morpheus-0.0.5-x64.dmg
 
 ---------
-**Part 1 Download: Morpheus Version 0.0.4 for Linux Debian**
-- Download from Google Drive: https://drive.google.com/file/d/1S64jOabU-fuFeIMFvOxBfSWQ_9FVUtOj/view?usp=drive_link
-- SHA 256 hash for validation: 96df97ea4aba7fe4209aa1be8fbe97abd0214904
-- Version: morpheus_0.0.4_amd64.deb
-
-**Part 2 Download: Ollama for Linux**
-https://ollama.ai/download
-
----------
-**Part 1 Download: Morpheus Version 0.0.4 for Linux Red Hat**
-- Download from Google Drive: https://drive.google.com/file/d/18YllDs5VlSVWvnzFdXybQSvgl3nGyiMr/view?usp=sharing
-- SHA 256 hash for validation: ec2a9a6a0670dfe5adc07589dbb028bce0fb9b5e  
-- Version: morpheus-0.0.4-1.x86_64.rpm
-
-**Part 2 Download: Ollama for Linux**
-https://ollama.ai/download
-
+**Morpheus Version 0.0.5 for Linux Debian**
+- Downalod: https://drive.google.com/file/d/1PQ3n7LXeJHe_jmkYLDUQ9fWjZQTWbHCB/view?usp=sharing
+- Instructions: To install, run this command:
+sudo dpkg -i /path/to/your/morpheus.deb
+NOTE: In the above command, replace "/path/to/your/morpheus.deb" with your path to the morpheus_0.0.5_amd64.deb file.
+- SHA Hash for Verifiction:
+b227e7bcb21ec9e8e2b4bf9510a2e1f224953fe5
+Version: morpheus_0.0.5_amd64.deb
 ---------
 
 First interaction with Morpheus October 22nd 2023.
