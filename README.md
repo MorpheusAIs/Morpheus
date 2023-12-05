@@ -18,7 +18,8 @@ Published - September 2nd 2023
 sudo dpkg -i /path/to/your/morpheus.deb
 NOTE: In the above command, replace "/path/to/your/morpheus.deb" with your path to the morpheus_0.0.5_amd64.deb file.
 - SHA Hash for Verifiction:
-b227e7bcb21ec9e8e2b4bf9510a2e1f224953fe5  morpheus_0.0.5_amd64.deb
+b227e7bcb21ec9e8e2b4bf9510a2e1f224953fe5
+- Version: morpheus_0.0.5_amd64.deb
 
 ---------
 ## Introduction 
