@@ -20,7 +20,7 @@ module.exports = {
     },
     {
       name: "@electron-forge/maker-deb",
-      //platforms: ['darwin'],
+      //      platforms: ['darwin'],
       config: {
         options: {
           maintainer: 'Morpheus',
