@@ -34,6 +34,7 @@
     "@electron-forge/maker-snap": "^7.2.0",
     "@electron-forge/maker-squirrel": "^7.2.0",
     "@electron-forge/maker-zip": "^7.2.0",
+    "@types/qrcode": "^1.5.1",
     "cross-env": "^7.0.3",
     "electron": "^27.0.4",
     "electron-builder": "^24.6.4"
@@ -90,6 +91,7 @@
     }
   },
   "dependencies": {
+    "@metamask/sdk": "^0.12.2",
     "@xenova/transformers": "^2.6.2",
     "electron-squirrel-startup": "^1.0.0",
     "langchain": "^0.0.170",
@@ -98,6 +100,9 @@
     "nvm": "^0.0.4",
     "odt2html": "^1.0.1",
     "pdf-parse": "^1.1.1",
-    "winston": "^3.11.0"
+    "qrcode": "^1.5.3",
+    "typescript": "^5.3.2",
+    "winston": "^3.11.0",
+    "yarn": "^1.22.21"
   }
 }
