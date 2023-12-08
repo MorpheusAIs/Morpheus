@@ -29,11 +29,12 @@ class MorpheusAgent:
             self.llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", model_kwargs={"temperature": 0.9, "max_length": 100})
 
         toolkit = list(map(lambda x: StructuredTool.from_function(x), self.functionkit))
-        memory = ConversationBufferMemory(memory_key="chat_history")
+        self.memory = ConversationBufferMemory(memory_key="chat_history")
         self.agent = initialize_agent(
-            toolkit, self.llm, agent=AgentType.STRUCTURED_CHAT_ZERO_SHOT_REACT_DESCRIPTION, memory=memory, verbose=True)
+            toolkit, self.llm, agent=AgentType.STRUCTURED_CHAT_ZERO_SHOT_REACT_DESCRIPTION, memory=self.memory, verbose=True)
     def prompt(self, prompt):
         response = self.agent.run(prompt)
+        self.writememory()
         return response
     
     def import_functions_from_directory(self, directory):
@@ -51,6 +52,11 @@ class MorpheusAgent:
 
         sys.path.pop(0)
         return functions_list
+    def writememory(self):
+        with open("memory.txt", "a") as file:
+            file.write(self.memory.buffer)
+
+
 
 
 

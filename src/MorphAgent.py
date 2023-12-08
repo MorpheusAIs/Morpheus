@@ -1,5 +1,4 @@
 from agent.agent import MorpheusAgent
 
-agent = MorpheusAgent("agent/tools",0)
-response = agent.prompt("What is 20 x 5")
+agent = MorpheusAgent("agent/tools",1)
 print(response)
