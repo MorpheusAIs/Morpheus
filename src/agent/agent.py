@@ -4,39 +4,27 @@ import importlib
 import inspect
 from langchain.memory import ConversationBufferMemory
 from langchain.agents import AgentType, initialize_agent
-from langchain.llms import Ollama, HuggingFaceHub, OpenAI
+from langchain.llms import Ollama
 from langchain.tools import StructuredTool
 
 class MorpheusAgent:
-    def __init__(self, toolpath,state):
-        self.state = state
-        self.openai_api_key = ''
-        self.huggingfacehub_api_token = '' 
+    def __init__(self, toolpath):
+        
         self.agent = None
         self.functionkit = self.import_functions_from_directory(toolpath)
         self.initialize_agent()
     
     def initialize_agent(self):
-        if self.state == 0:
-            self.llm = Ollama(model="llama2")
-        elif self.state == 1:
-            if self.openai_api_key:
-                os.environ['OPENAI_API_KEY'] = self.openai_api_key
-            self.llm = OpenAI(temperature=0.9)
-        else:
-            if self.huggingfacehub_api_token:
-                os.environ['HUGGINGFACEHUB_API_TOKEN'] = self.huggingfacehub_api_token
-            self.llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", model_kwargs={"temperature": 0.9, "max_length": 100})
-
+        self.llm = Ollama(model="mistral")
         toolkit = list(map(lambda x: StructuredTool.from_function(x), self.functionkit))
         self.memory = ConversationBufferMemory(memory_key="chat_history")
         self.agent = initialize_agent(
             toolkit, self.llm, agent=AgentType.STRUCTURED_CHAT_ZERO_SHOT_REACT_DESCRIPTION, memory=self.memory, verbose=True)
     def prompt(self, prompt):
-        response = self.agent.run(prompt)
-        memlen =  len(prompt) + len(response) + 12
-        self.writememory(memlen)
-        return response
+        response = self.agent(prompt)
+        output = response['output']
+        self.writememory()
+        return output
     
     def import_functions_from_directory(self, directory):
         functions_list = []
@@ -53,9 +41,9 @@ class MorpheusAgent:
 
         sys.path.pop(0)
         return functions_list
-    def writememory(self,memlen):
+    def writememory(self):
         with open("memory.txt", "a") as file:
-            file.write(self.memory.buffer[-memlen:])
+            file.write(self.memory.buffer)
 
 
 
