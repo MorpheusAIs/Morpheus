@@ -34,7 +34,8 @@ class MorpheusAgent:
             toolkit, self.llm, agent=AgentType.STRUCTURED_CHAT_ZERO_SHOT_REACT_DESCRIPTION, memory=self.memory, verbose=True)
     def prompt(self, prompt):
         response = self.agent.run(prompt)
-        self.writememory()
+        memlen =  len(prompt) + len(response) + 12
+        self.writememory(memlen)
         return response
     
     def import_functions_from_directory(self, directory):
@@ -52,9 +53,10 @@ class MorpheusAgent:
 
         sys.path.pop(0)
         return functions_list
-    def writememory(self):
+    def writememory(self,memlen):
         with open("memory.txt", "a") as file:
-            file.write(self.memory.buffer)
+            file.write(self.memory.buffer[-memlen:])
+
 
 
 
