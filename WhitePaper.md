@@ -182,9 +182,9 @@ For example, if there are 100 Community Builders on day 1 when the network launc
 ![Morpheus User   Contributor Diagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/478079be-417e-4d8b-b062-c0540138aac0)
 
 ## Morpheus Rewards Delivered by Smart Contract On Ethereum Layer 2 
-Morpheus Tokens (MOR) will be originally awarded on the the Ethereum Layer 1, and there will be a wrapped MOR tokne (wMOR) that exists on Polygon for the purpose of payments and other MOR utility related actions.
+Morpheus Tokens (MOR) will be originally awarded on the the Ethereum Layer 1, and there will be a wrapped MOR tokne (wMOR) that exists on Arbitrum for the purpose of payments and other MOR utility related actions.
 
-Note that Morpheus does not need to set aside MOR rewards for blockchain consensus or transaction execution on a distributed ledger thanks to building on Ethereum and 2nd layer Polygon. 
+Note that Morpheus does not need to set aside MOR rewards for blockchain consensus or transaction execution on a distributed ledger thanks to building on Ethereum and 2nd layer Arbitrum. 
 
 MOR holders will be able to send a transaction to the MOR Smart Contracts and claim their MOR rewards at any time. They can also withdraw their stETH at any time.
 
@@ -218,15 +218,15 @@ Rather than store personal data in the Morpheus network itself, which would be c
 ## Morpheus Tech Stack, Smart Contract & Development
 The Morpheus implementation of the Smart Agent Protocol will be a direct fork of the existing locally run repo. The most significant change will be to update SmartContractRank to include knowledge of the MOR token and its functions in powering a network of Smart Agents.
 
-The Morpheus MOR token is being developed as a Smart Contract on Ethereum via the ERC20 standard for fungible tokens. Most smart contracts are on Ethereum and the Ethereum Virtual Machine has become the lingua franca of the Web3 space. To reduce the cost of gas fees for sending daily rewards we will leverage Ethereum's layer 2 called Polygon.
+The Morpheus MOR token is being developed as a Smart Contract on Ethereum via the ERC20 standard for fungible tokens. Most smart contracts are on Ethereum and the Ethereum Virtual Machine has become the lingua franca of the Web3 space. To reduce the cost of gas fees for sending daily rewards we will leverage Ethereum's layer 2 called Arbitrum.
 
 We believe the choice of the Ethereum blockchain is the best starting place given on chain actions such as staking ETH can only be validated by a smart contract running on the same chain. In addition on chain validation of coding via ENS domains or Ethereum public addresses adds another means of connecting code contributed to the wallet of the coder who provided it. A record of which the Morpheus Smart Contract can access daily.
 
-Also, zero-knowledge proofs for scalability and privacy are key to many use cases. So starting with these capabilities day one will put the Smart Agent community in the best position for the future. Polygon is in the process of adding ZK tech, much of which is already live.
+Also, zero-knowledge proofs for scalability and privacy are key to many use cases. So starting with these capabilities day one will put the Smart Agent community in the best position for the future. Arbitrum is in the process of adding ZK tech, much of which is already live.
 
 In the near term, this tech stack selection secures Morpheus directly in Ethereum's layer 1 security with the reduced gas costs of a layer two. In the mid-term, this selection also provides a pathway to expand Morpheus to other Ethereum layer 2s and EVM compatible blockchains.
 
-As interoperability improves between public blockchains Morpheus will seek to serve all Web3 AI Agent builders across the various EVM / solidity compatible developer communities. We recognize strong builder communities on Polygon, OP Stack, Base, Arbitrum, Avalanche, Polkadot, Solana, Filecoin & Cosmos that share a similar vision and values. Morpheus is only possible today thanks to the tools built by developers across many of these chains.
+As interoperability improves between public blockchains Morpheus will seek to serve all Web3 AI Agent builders across the various EVM / solidity compatible developer communities. We recognize strong builder communities on Arbitrum, Polygon, OP Stack, Base, Arbitrum, Avalanche, Polkadot, Solana, Filecoin & Cosmos that share a similar vision and values. Morpheus is only possible today thanks to the tools built by developers across many of these chains.
 
 ## User Data Security
 To avoid leaking private data when sending prompts to the Morpheus peer-to-peer network of Compute Providers, the software should seek to leverage Fully Homomorphic Encryption (FHE) versions of Large Language Models as they are released. Also with the advent of hardware acceleration for FHE in 2024/2025, it's projected that costs for this computation will reach parity with plain text processing.
