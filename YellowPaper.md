@@ -27,7 +27,7 @@ First interaction with Morpheus October 22nd 2023.
 ## Morpheus Smart Contracts
 On chain actions that need to be validated by the Morpheus smart contract.
 
-1. Fork of N2 Yield Smart Contract Redeployed On Polygon
+1. Fork of N2 Yield Smart Contract Redeployed On Arbitrum
 - A) Lock ETH through Thorchain, donate yield to Coders + Compute Providers.
 - B) Calculate pro-rata of ETH donated 
 
