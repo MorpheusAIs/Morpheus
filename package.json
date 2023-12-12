@@ -1,7 +1,7 @@
 {
   "name": "morpheus",
   "productName": "Morpheus",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "appId": "org.morpheus.client",
   "buildVersion": "${version}-${new Date().getTime()}",
   "icon": "morph_square.icns",
@@ -10,17 +10,13 @@
   "homepage": "https://www.morepheusai.com",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-verbose": "CSC_NAME='Developer ID Application: Better Brand Management LLC (ZA3KN2X4MN)' electron-builder",
-    "build": "electron-builder",
     "start": "electron .",
-    "pack-mac64": "electron-builder --mac --x64",
-    "pack-mac": "electron-builder --mac",
-    "pack-linux": "electron-builder --linux",
-    "postbuild": "dpkg-sig --sign builder dist/*.deb",
-    "package-mac64": "electron-builder --mac --x64",
-    "package-mac": "electron-builder --mac",
-    "package-linux": "electron-builder --linux",
-    "pack": "electron-builder --dir"
+    "start-forge": "electron-forge start",
+    "make": "electron-forge make",
+    "package": "electron-forge package",
+    "pack": "electron-builder --dir",
+    "make-rpm": "electron-forge make --targets=@electron-forge/maker-rpm",
+    "make-deb": "electron-forge make --targets=@electron-forge/maker-deb"
   },
   "keywords": [
     "Local",
@@ -30,11 +26,14 @@
   "author": "Morpheus",
   "license": "MIT",
   "devDependencies": {
-    "@electron-forge/cli": "^6.1.1",
-    "@electron-forge/maker-deb": "^6.1.1",
-    "@electron-forge/maker-rpm": "^6.1.1",
-    "@electron-forge/maker-squirrel": "^6.1.1",
-    "@electron-forge/maker-zip": "^6.1.1",
+    "@electron-forge/cli": "^6.4.2",
+    "@electron-forge/maker-deb": "^7.2.0",
+    "@electron-forge/maker-dmg": "^7.2.0",
+    "@electron-forge/maker-flatpak": "^7.2.0",
+    "@electron-forge/maker-rpm": "^7.2.0",
+    "@electron-forge/maker-snap": "^7.2.0",
+    "@electron-forge/maker-squirrel": "^7.2.0",
+    "@electron-forge/maker-zip": "^7.2.0",
     "cross-env": "^7.0.3",
     "electron": "^27.0.4",
     "electron-builder": "^24.6.4"
@@ -91,7 +90,6 @@
     }
   },
   "dependencies": {
-    "@electron-forge/maker-snap": "^7.1.0",
     "@xenova/transformers": "^2.6.2",
     "electron-squirrel-startup": "^1.0.0",
     "langchain": "^0.0.170",
