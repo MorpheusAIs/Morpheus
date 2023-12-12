@@ -6,17 +6,16 @@
 - stETH Contract: 0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F 
 
 ### Capital Contribution Token (stETH)
-https://docs.lido.fi/guides/lido-tokens-integration-guide/#steth.
- 
-Used to add capital to pools.
-To obtain stETH, you can use the resource https://stake.testnet.fi or find it on Uniswap.
+- https://docs.lido.fi/guides/lido-tokens-integration-guide/#steth. Used to add capital to pools.
+- To obtain stETH, you can use the resource https://stake.testnet.fi or find it on Uniswap.
 
 ## Distribution
 To read information from the smart contract and interact with it, you need to go to the Read or Write section and connect your wallet.
 ![SmartContractExample1](https://github.com/MorpheusAIs/Morpheus/assets/1563345/739127b8-0a44-4112-94d9-2670442b9c09)
 
 ## Capital Contribution In A Group
-Providing capital is available for public groups. The user should specify the amount of tokens to provide, but not less than the minimum for the group, and then specify the group ID.
+Providing capital is available for public groups. 
+The user should specify the amount of tokens to provide, but not less than the minimum for the group, and then specify the group ID.
 ![SmartContractExample2](https://github.com/MorpheusAIs/Morpheus/assets/1563345/972f94fb-1dc0-4d46-bddd-37cd92e27b5d)
 
 Users can also increase the investment amount by calling this function repeatedly.
