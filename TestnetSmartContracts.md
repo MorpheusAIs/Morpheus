@@ -1,9 +1,9 @@
 # Goerli Testnet Smart Contracts for Morpheus Capital Contributors
 
 ## Smart Contracts Addresses
-New MOR Token: 0x454AE850eE61a98BF16FABA3a73fb0dD02D75C40 
-Distribution: 0x850A65DA677264bbb7536f8446336C022eCc85Dc
-stETH Contract: 0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F 
+- New MOR Token: 0x454AE850eE61a98BF16FABA3a73fb0dD02D75C40 
+- Distribution: 0x850A65DA677264bbb7536f8446336C022eCc85Dc
+- stETH Contract: 0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F 
 
 ### Capital Contribution Token (stETH)
 https://docs.lido.fi/guides/lido-tokens-integration-guide/#steth.
