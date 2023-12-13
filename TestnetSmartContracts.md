@@ -2,7 +2,11 @@
 
 ## Smart Contracts Addresses
 - New MOR Token: 0x454AE850eE61a98BF16FABA3a73fb0dD02D75C40 
+- Link to Smart Contract Code on Etherscan: https://goerli.etherscan.io/address/0x454AE850eE61a98BF16FABA3a73fb0dD02D75C40#code
+
 - Distribution: 0x850A65DA677264bbb7536f8446336C022eCc85Dc
+- Link to Smart Contract Code on Etherscan: https://goerli.etherscan.io/address/0x850A65DA677264bbb7536f8446336C022eCc85Dc#code
+
 - stETH Contract: 0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F 
 
 ### Capital Contribution Token (stETH)
