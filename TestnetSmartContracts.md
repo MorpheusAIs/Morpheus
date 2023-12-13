@@ -1,4 +1,8 @@
 # Goerli Testnet Smart Contracts for Morpheus Capital Contributors
+- Example:
+- 1. Before contributing, the user needs to give the distribution contract an "approve" that it will be able to transfer the user's funds.
+- Example: https://goerli.etherscan.io/address/0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F#writeProxyContract
+![exampleofapprove](https://github.com/MorpheusAIs/Morpheus/assets/1563345/d51a84da-9f38-42a7-9fb4-2f9dd2edfcff)
 
 ## Smart Contracts Addresses
 - New MOR Token: 0x454AE850eE61a98BF16FABA3a73fb0dD02D75C40 
