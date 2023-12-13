@@ -3,6 +3,7 @@ const { embed } = require("./service/embedding.js");
 const {
   store,
   search,
+  load,
   clearVectorStore,
   vectorStoreSize,
 } = require("./service/vector.js");
@@ -32,6 +33,10 @@ async function getModel(event) {
 
 async function runOllamaModel(event, msg) {
   try {
+
+    // load the embeddings into memory
+    await load();
+    
     // send an empty message to the model to load it into memory
     await run(model, (json) => {
       // status will be set if the model is downloading
@@ -73,7 +78,9 @@ async function sendChat(event, msg) {
         },
       ],
     });
-    const searchResult = search(msgEmbeds[0].embedding, 20);
+
+    // TopK = 3
+    const searchResult = search(msgEmbeds[0].embedding, 3);
     // format the system context search results
     let documentString = searchResult.join("\n\n");
     // Ensure the contextString does not exceed 500 characters
