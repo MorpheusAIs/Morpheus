@@ -36,7 +36,7 @@ async function runOllamaModel(event, msg) {
 
     // load the embeddings into memory
     await load();
-    
+
     // send an empty message to the model to load it into memory
     await run(model, (json) => {
       // status will be set if the model is downloading
@@ -87,24 +87,50 @@ async function sendChat(event, msg) {
     if (documentString.length > 500) {
       documentString = documentString.substring(0, 497) + "...";
     }
-    prompt = `Using the provided document, answer the user question to the best of your ability. You must try to use information from the provided document. Combine information in the document into a coherent answer.
-If there is nothing in the document relevant to the user question, say "Hmm, I don't see anything about that in this document." before providing any other information you know.
-Anything between the following \`document\` html blocks is retrieved from a knowledge bank, not part of the conversation with the user.
-<document>
-    ${documentString}
-<document/>
 
-If there is no relevant information within the document, say "Hmm, I don't see anything about that in this document." before providing any other information you know. Anything between the preceding 'document' html blocks is retrieved from a knowledge bank, not part of the conversation with the user.
+    /*     prompt = `Using the provided document, answer the user question to the best of your ability. You must try to use information from the provided document. Combine information in the document into a coherent answer.
+    If there is nothing in the document relevant to the user question, say "Hmm, I don't see anything about that in this document." before providing any other information you know.
+    Anything between the following \`document\` html blocks is retrieved from a knowledge bank, not part of the conversation with the user.
+    <document>
+        ${documentString}
+    <document/>
+    
+    If there is no relevant information within the document, say "Hmm, I don't see anything about that in this document." before providing any other information you know. Anything between the preceding 'document' html blocks is retrieved from a knowledge bank, not part of the conversation with the user.
+    
+    Anything between the following \`user\` html blocks is is part of the conversation with the user.
+    <user>
+      ${msg}
+    </user>
+    `; */
 
-Anything between the following \`user\` html blocks is is part of the conversation with the user.
+    prompt = `Answer the Question based on the System Prompt, Contract Data and the conversation with the user. \n\n
+
+System Prompt: You are MORPHEUS, an intelligent assistant, and a leading expert in web3, cryptocurrency, distributed consensus protocols, blockchain, cryptography, tokenization, and related crypto technologies. You are connected to a large language model running locally with a chat app in Electron. 
+
+You were instructed by the Morpheus IC's and maintainers of the morpheus project to understand, learn from, and emulate the strategies used by web3 experts to help users make ethereum transactions. There are a few rules:
+
+1) Use the app to create a chat output to assit executing a smart contract transaction. \n
+2) Your goal is to help the user work in a step by step way through function calling to a solution. \n
+3) Stop often (at a minimum after every step) to ask the user for feedback or clarification. \n
+4) Based on the contract ask the user for the required information to execute the transaction. Don't recommend any specific wallet or exchange. \n
+5) The user already has metamask connected. You should just ask what you need in order to complete the transaction. \n
+6) You can use the contract data to help you understand what the user needs to do. \n
+
+\n\n Contract Data: ${documentString}
+
+\n\n Anything between the following \`user\` html blocks is is part of the conversation with the user.
+
 <user>
   ${msg}
 </user>
 `;
+
   }
+
   try {
     debugLog("Sending prompt to Ollama...");
     debugLog(prompt);
+
     await generate(model, prompt, (json) => {
       // Reply with the content every time we receive data
       event.reply("chat:reply", { success: true, content: json });
