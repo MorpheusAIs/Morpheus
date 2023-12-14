@@ -123,9 +123,9 @@ The path for all Proofs in Morpheus starts with downloading a copy of the Morphe
 The Morpheus full node comes with a wallet or the user can connect their existing wallet. This enables the user to sign and send transactions recommended by their Smart Agent.
 
 ## Capital Proof & Reward:
-The definition of a Capital Provider is someone who has downloaded the full node and connected their wallet and locked at least 0.01 ETH in a yielding smart contract. This Capital Provider Smart Contract will provide 50% of the stETH yield produced to the Morpheus swap function. The swap buys the MOR tokens from an Automated Market Maker (AMM) then locks it into the AMM pool and the other 50% of the stETH yield gets locked into the AMM as a Liquitiy Provider. This will provide liquidity to all those coders, community members and compute providers. 
+The definition of a Capital Provider is someone who has downloaded the full node and connected their wallet and locked at least 0.01 ETH in a yielding smart contract. This Capital Provider Smart Contract will provide 50% of the stETH yield produced to the Morpheus swap function. The swap buys the MOR tokens from an Automated Market Maker (AMM) then added it into the AMM pool and the other 50% of the stETH yield gets locked into the AMM as a Liquitiy Provider. This will provide liquidity to all those coders, community members and compute providers. 
 
-This is a non reversible, one way contribution. All stETH yield provided to the Morpheus protocol and resulting MOR added into the AMM LP via the Capital Contribution mechanism can not be withdrawn.
+All stETH yield earned from your deposit is converted into protocol-owned liquidity (PoL). The yield remains as PoL indefinitely, but you can withdraw your stETH whenever.
 
 As a result, the Capital Provider will receive MOR tokens each day in pro-rata to their total stETH yield contributed. For example, if there are 100 Capital Providers who each contributed 1 stETH of yield on day 1 when the network launches, then each one gets 1% of the 3,456 MOR tokens each day = 34.56 MOR.
 
