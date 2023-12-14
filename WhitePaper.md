@@ -55,11 +55,10 @@ The block reward will start at 14,400 MOR per day and then decline by 2.46899470
 14,400 tokens per day evenly distributed between community users, capital, code, compute. 
 - 3,456 tokens for compute. Proof transactions for API calls served. 
 - 3,456 tokens for code. Proof code committed and merged into Morpheus repo. 
-- 3,456 tokens for capital. Proof ETH yield contributed, swapped for MOR & burned. 
+- 3,456 tokens for capital. Proof stETH yield contributed, 50% swapped for MOR & the rest locked in the AMM as a Liquidity Provider. 
 - 3,456 tokens for community. Proof of building front end applications & tools that engage users.
 With the remainder set aside for protection resources: 576 tokens per day for that purpose.
-
-![MORRewardDiagram3](https://github.com/MorpheusAIs/Morpheus/assets/1563345/cd40c0ea-81d3-466c-bd2e-8f4c063067a1)
+![MORAMM5050](https://github.com/MorpheusAIs/Morpheus/assets/1563345/10e1f8f1-d9ce-435d-b530-fa786a79ac80)
 
 ## The Utility of The MOR Token
 The objective is for MOR to provide broad utility in many of the functions of the Morpheus network. As a result, the use of the MOR token offers an on-chain accounting mechanism to calculate rewards based on real usage of the software.
@@ -69,9 +68,7 @@ Developers pay MOR to compute providers for functions beyond what local hardware
 All projects go through phases of development. It's important that at the beginning liquid resources such as ETH are used to pay devs and for equipment. Ethereum did the same thing when they leveraged BTC from their community to pay for the initial coding of their blockchain. The difference here is that the Smart Agent Protocol has already been developed and Morpheus is implementing a version to broaden its reach, so there isn't a need for a crowd sale before the project goes live. MOR tokens will only be rewarded after the software is live.
 
 ## Near-term: At Time Of Launch
-Capital - ETH locked in a smart contract that generates yield (ETH in a stETH Lido Staking contract for example). 
-
-The value of the ETH yield is swapped regularly into MOR via an AMM and burned.
+Capital - ETH locked in a smart contract that generates yield (ETH in a stETH Lido Staking contract for example). 50% of the stETH yield is swapped regularly into MOR via an AMM and the other 50% of the stETH yield is kept as stETH in the pool as a Liquidity Provider. So the Capital Contributors are adding roughly 50% MOR and 50% stETH to increase the liquidity of the AMM MOR / stETH pool over time.
 
 - Capital, The value of their ETH yield will be calculated against all ETH yield contributed and MOR yield rewarded to them pro-rata.
 - Compute, Compute providers receive MOR for the user prompts they reply to. 
@@ -126,11 +123,13 @@ The path for all Proofs in Morpheus starts with downloading a copy of the Morphe
 The Morpheus full node comes with a wallet or the user can connect their existing wallet. This enables the user to sign and send transactions recommended by their Smart Agent.
 
 ## Capital Proof & Reward:
-The definition of a Capital Provider is someone who has downloaded the full node and connected their wallet and locked at least 0.01 ETH in a yielding smart contract. This Capital Provider Smart Contract will provide 100% of the ETH yield produced to the Morpheus swap function. The swap buys the MOR tokens from an Automated Market Maker (AMM) and then burns those MOR tokens. This will provide liquidity to all those coders, community members and compute providers without recirculating the MOR tokens.
+The definition of a Capital Provider is someone who has downloaded the full node and connected their wallet and locked at least 0.01 ETH in a yielding smart contract. This Capital Provider Smart Contract will provide 50% of the stETH yield produced to the Morpheus swap function. The swap buys the MOR tokens from an Automated Market Maker (AMM) then locks it into the AMM pool and the other 50% of the stETH yield gets locked into the AMM as a Liquitiy Provider. This will provide liquidity to all those coders, community members and compute providers. 
 
-As a result, the Capital Provider will receive MOR tokens each day in pro-rata to their total ETH yield contributed. For example, if there are 100 Capital Providers who each contributed 1 ETH on day 1 when the network launches, then each one gets 1% of the 3,456 MOR tokens each day = 34.56 MOR.
+**Be aware. This is a non reversible, one way contribution. All stETH yield provided to the Morpheus protocol and resulting MOR locked into the AMM LP via the Capital Contribution mechanism can NEVER be withdrawn.**
 
-It has been proposed to refer to this process of yield contribution, swap and burn as the "TCM". Short for the techno-capital machine in honor of the e/acc philosopher Beff Jezos. 
+As a result, the Capital Provider will receive MOR tokens each day in pro-rata to their total stETH yield contributed. For example, if there are 100 Capital Providers who each contributed 1 stETH of yield on day 1 when the network launches, then each one gets 1% of the 3,456 MOR tokens each day = 34.56 MOR.
+
+It has been proposed to refer to this process of yield contribution, swap and adding liquidity as the "TCM". Short for the "techno-capital machine" in honor of the e/acc philosopher Beff Jezos. 
 
 ## Code Proof, Registration & Reward:
 The definition of a Coder is someone who has downloaded the Morpheus full node, connected their wallet, and contributed an agent, smart contract or other software to the Morpheus Network.
