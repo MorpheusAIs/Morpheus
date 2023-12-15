@@ -1,4 +1,4 @@
-## Compute Contributor - Proof of Work
+## Compute  - Proof of Contribution
 
 Detail the work you are contributing to Morpheus.  You must include a link to the work for the work to be considered.  Examples of proof include links to API endpoints or other easily verifyable information.
 
