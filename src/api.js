@@ -69,7 +69,10 @@ async function runOllamaModel(event, msg) {
 
 async function sendChat(event, msg) {
   let prompt = msg;
+  let second_prompt = "";
+
   if (vectorStoreSize() > 0) {
+
     const msgEmbeds = await embed({
       data: [
         {
@@ -80,28 +83,13 @@ async function sendChat(event, msg) {
     });
 
     // TopK = 3
-    const searchResult = search(msgEmbeds[0].embedding, 3);
+    const searchResult = search(msgEmbeds[0].embedding, 3); // TopK = 3
     // format the system context search results
     let documentString = searchResult.join("\n\n");
     // Ensure the contextString does not exceed 500 characters
     if (documentString.length > 500) {
       documentString = documentString.substring(0, 497) + "...";
     }
-
-    /*     prompt = `Using the provided document, answer the user question to the best of your ability. You must try to use information from the provided document. Combine information in the document into a coherent answer.
-    If there is nothing in the document relevant to the user question, say "Hmm, I don't see anything about that in this document." before providing any other information you know.
-    Anything between the following \`document\` html blocks is retrieved from a knowledge bank, not part of the conversation with the user.
-    <document>
-        ${documentString}
-    <document/>
-    
-    If there is no relevant information within the document, say "Hmm, I don't see anything about that in this document." before providing any other information you know. Anything between the preceding 'document' html blocks is retrieved from a knowledge bank, not part of the conversation with the user.
-    
-    Anything between the following \`user\` html blocks is is part of the conversation with the user.
-    <user>
-      ${msg}
-    </user>
-    `; */
 
     prompt = `Answer the Question based on the System Prompt, Contract Data and the conversation with the user. \n\n
 
@@ -116,7 +104,7 @@ You were instructed by the Morpheus IC's and maintainers of the morpheus project
 5) The user already has metamask connected. You should just ask what you need in order to complete the transaction. \n
 6) You can use the contract data to help you understand what the user needs to do. \n
 
-\n\n Contract Data: ${documentString}
+\n\n Contract ABI Data: ${documentString} 
 
 \n\n Anything between the following \`user\` html blocks is is part of the conversation with the user.
 
@@ -128,14 +116,103 @@ You were instructed by the Morpheus IC's and maintainers of the morpheus project
   }
 
   try {
+
+    var llm1_context_output = "";
+
     debugLog("Sending prompt to Ollama...");
     debugLog(prompt);
 
     await generate(model, prompt, (json) => {
       // Reply with the content every time we receive data
       event.reply("chat:reply", { success: true, content: json });
+
+      llm1_context_output = json;
+
     });
+
   } catch (err) {
+    console.log(err);
+    event.reply("chat:reply", { success: false, content: err.message });
+  }
+
+  try {
+
+    debugLog("Sending second prompt to Ollama...");
+    debugLog(second_prompt);
+
+
+    // Second Prompt creates a json object as follows:
+    /* "type": "function",
+                   "function":
+                   {
+                       "name": "send-usdc",
+                       "description": "Sends money",
+                       "parameters": {
+                           "type": "object",
+                           "properties": {
+                               "address": {
+                                   "type": "string",
+                                   "description": "the address ... } } */
+
+    /* LLM2:
+  Use ABI plaintext in context
+  
+  System prompt:
+  
+  Format result in JSON
+  {
+  "user_message": show to user,
+  "wallet_body": content to give to meta mask, if a valid transaction was requested, otherwise blank (UI will not connect to metamask in this case.
+  } */
+
+    second_prompt = `Format result in JSON based on the retrieved contract ABIs and related functions from the context: \n\n
+
+    ${llm1_context_output}
+
+
+    \n\n
+
+    Only respond with the following in JSON: \n\n
+
+    {
+      "user_message": "${msg}",
+      "wallet_body": ""
+      }
+    }
+
+    \n\n Anything between the following \`user\` html blocks is is part of the conversation with the user. The user asked the following:
+
+<user>
+  ${msg}
+</user>
+  
+    `;
+
+    var second_prompt_output = "";
+
+    await generate(model, second_prompt, (json) => {
+
+      // Reply with the content every time we receive data
+      // Check if the json is valid
+      // If valid JSON send the transaction input parameters to the contract
+      second_prompt_output = json;
+
+    });
+
+    // Returns the contract address and the transaction input parameters
+
+    console.log(contract_address);
+    console.log(second_prompt_output);
+
+    /* let txn = await sendTransaction(contract_address, second_prompt_output); */
+
+    if (txn.success) {
+      event.reply("chat:reply", { success: true, content: 'Transaction Succesfully exectuted.' });
+    }
+
+  }
+
+  catch (err) {
     console.log(err);
     event.reply("chat:reply", { success: false, content: err.message });
   }
