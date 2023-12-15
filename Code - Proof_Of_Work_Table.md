@@ -6,7 +6,7 @@ Detail the work you are contributing to Morpheus.  You must include a link to th
 
 Create a pull request and add a row to the following table. A good way to include proof of work is to put a link to the pull request of the work or a link to the issue in GitHub that describes the testing you did. Only add your link at the bottom, and do not alter any other rows. If you are submitting multiple contributions, please create multiple pull requests - one pull request per contribution.
 
-You need a wallet like Metamask that can receive ETH.
+You need a wallet like Metamask that can receive Ethereum based tokens. MOR is an ERC-20 type token. Also must support Arbitrum.
 
 | Wallet Address | Link to Work | Time Devoted (hrs) | Description of Contribution |
 | -------------- | ------------ | ------------------ | --------------------------- |
