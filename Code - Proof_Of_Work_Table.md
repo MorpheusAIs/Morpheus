@@ -1,5 +1,4 @@
-
-**Proof of Work**
+## Code Contributor - Proof of Work
 
 Detail the work you are contributing to Morpheus.  You must include a link to the work for the work to be considered.  Examples of proof include links to pull requests, github issues, or other easily verifyable information.
 
