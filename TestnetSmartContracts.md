@@ -42,7 +42,7 @@ To read information from the smart contract and interact with it, you need to go
 - Example: https://goerli.etherscan.io/address/0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F#writeProxyContract
 ![exampleofapprove](https://github.com/MorpheusAIs/Morpheus/assets/1563345/d51a84da-9f38-42a7-9fb4-2f9dd2edfcff)
 
-- You will need to write in terms of WEI instead of ETH. You can use this unit converter calculator https://eth-converter.com to help you. For instance, if you have 0.01 stETH, that equals 10000000000000000 WEI. This calculated number should be entered into the `_amount (uint256)` field. Also, enter your address in the `_spender (address)` field. Click "write". 
+- You will need to write in terms of WEI instead of ETH. You can use this unit converter calculator https://eth-converter.com to help you. For instance, if you have 0.01 stETH, that equals 10000000000000000 WEI. This calculated number should be entered into the `_amount (uint256)` field. Also, enter the Morpheus smart contract address 0x850A65DA677264bbb7536f8446336C022eCc85Dc in `_spender (address)` field. Click "write". 
 
 ## Capital Contribution 
 - Providing capital is available for public groups. 
