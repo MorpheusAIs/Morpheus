@@ -20,13 +20,25 @@ const {
   runOllamaModel,
 } = require("./api.js");
 
+
+
+//metamask
+// const installExtension = require('electron-devtools-installer');
+
+//import { MetaMaskSDK } from '@metamask/sdk';
+const MetaMaskSDK = require('@metamask/sdk');
+//ethereum.request({ method: 'eth_requestAccounts', params: [] });
+
+
+//const ethereum = MMSDK.getProvider(); // You can also access via window.ethereum
 // When debug is set to true, the app will log debug messages to the console
 // This will be turned on by default when running the app in non-packaged mode
 global.debug = true;
 
 
-
 const appVersion = app.getVersion();
+console.log("appVersion", appVersion);
+
 const osType = os.type(); // e.g., 'Darwin', 'Windows_NT', etc.
 const osArch = os.arch(); // e.g., 'x64', 'ia32', etc.
 const updateURL = `https://chatd.ai/api/update?version=${appVersion}&os=${osType}&arch=${osArch}`;
@@ -47,12 +59,17 @@ if (require("electron-squirrel-startup")) {
   app.quit();
 }
 
+
+
+
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
+      nodeIntegration: true,
+
     },
     autoHideMenuBar: true,
   });
@@ -64,6 +81,8 @@ const createWindow = () => {
     mainWindow.webContents.openDevTools();
   }
 };
+
+
 
 app.on("ready", () => {
   // Add a handler for the interprocess events. This enables 2-way communication

@@ -91,8 +91,9 @@
     }
   },
   "dependencies": {
-    "@metamask/sdk": "^0.12.2",
+    "@metamask/sdk": "^0.14.1",
     "@xenova/transformers": "^2.6.2",
+    "electron-devtools-installer": "^3.2.0",
     "electron-squirrel-startup": "^1.0.0",
     "langchain": "^0.0.170",
     "mammoth": "^1.6.0",

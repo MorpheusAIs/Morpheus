@@ -24,3 +24,4 @@ morpheus-v0.0.4.tgz
 package-old.json
 src/service/ollama/runners/
 src/service/ollama/Ollama
+contract_library/.DS_Store

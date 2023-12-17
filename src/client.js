@@ -19,6 +19,17 @@ const modelSelectInput = document.getElementById("model-select");
 
 let responseElem;
 
+// call for and test metamask installation
+if (typeof window.ethereum !== 'undefined' || (typeof window.web3 !== 'undefined')) {
+  // Web3 has been injected by the browser (Mist/MetaMask)
+  const web3 = new Web3(window.ethereum || window.web3.currentProvider);
+  console.log('MetaMask is installed!');
+} else {
+  console.log('MetaMask is not installed. You should consider trying MetaMask!');
+}
+
+
+
 /**
  * This is the initial chain of events that must run on start-up.
  * 1. Start the Ollama server.
@@ -26,6 +37,7 @@ let responseElem;
  *    This step will also download the model if it is not already downloaded.
  * 3. Monitor the run status
  * 4. Load the chat
+ * 5. Opem Metamask
  */
 
 // 1. Start the Ollama server
@@ -59,6 +71,7 @@ window.electronAPI.onOllamaRun((event, data) => {
     userInput.focus();
     return;
   }
+  
   statusMsg.textContent = data.content;
 });
 
