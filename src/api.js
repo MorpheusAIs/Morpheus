@@ -15,7 +15,7 @@ const {
   serve,
 } = require("./service/ollama/ollama.js");
 
-let model = "mistral";
+let model = "llama2:latest";
 
 function debugLog(msg) {
   if (global.debug) {
@@ -83,13 +83,18 @@ async function sendChat(event, msg) {
     });
 
     // TopK = 3
-    const searchResult = search(msgEmbeds[0].embedding, 3); // TopK = 3
+    const searchResult = search(msgEmbeds[0].embedding, 1); // TopK = 3
+
+    console.log(searchResult);
+    
     // format the system context search results
-    let documentString = searchResult.join("\n\n");
+    let documentString = JSON.stringify(searchResult, null, 2); // Add indentation and line breaks
     // Ensure the contextString does not exceed 500 characters
     if (documentString.length > 500) {
       documentString = documentString.substring(0, 497) + "...";
     }
+    
+    console.log(documentString);    
 
     prompt = `Answer the Question based on the System Prompt, Contract Data and the conversation with the user. \n\n
 
@@ -196,19 +201,16 @@ You were instructed by the Morpheus IC's and maintainers of the morpheus project
       // Check if the json is valid
       // If valid JSON send the transaction input parameters to the contract
       second_prompt_output = json;
+      
+      event.reply("chat:reply", { success: true, content: json });
 
     });
 
     // Returns the contract address and the transaction input parameters
 
-    console.log(contract_address);
-    console.log(second_prompt_output);
+    /* console.log(contract_address); */
 
     /* let txn = await sendTransaction(contract_address, second_prompt_output); */
-
-    if (txn.success) {
-      event.reply("chat:reply", { success: true, content: 'Transaction Succesfully exectuted.' });
-    }
 
   }
 

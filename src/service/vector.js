@@ -8,9 +8,10 @@ const fs = require("fs");
 const path = require("path");
 
 
-class MemoryVector {
-  constructor(document, embedding) {
-    this.document = document;
+class SmartRankMemoryVector {
+  constructor(metadata, abi, embedding) {
+    this.metadata = metadata;
+    this.abi = abi;
     this.embedding = embedding;
   }
 }
@@ -35,17 +36,27 @@ class MemoryVectorStore {
   }
 
   addEmbeddings(embeddings) {
+
     const vectors = embeddings.map((item) => {
-      return new MemoryVector(item.content, item.embedding);
+      return new SmartRankMemoryVector(item.metadata, item.abi, item.embedding);
     });
+
     this.memoryVectors = this.memoryVectors.concat(vectors);
+
   }
 
   addSmartRankEmbeddings(embeddings) {
+
     const vectors = embeddings.map((item) => {
-      return new MemoryVector(item.metadata, item.embedding);
+
+      console.log("Adding smart rank embeddings for " + item.metadata.contract_name);
+
+      return new SmartRankMemoryVector(item.metadata, item.abi, item.embeddings);
+
     });
+
     this.memoryVectors = this.memoryVectors.concat(vectors);
+
   }
 
   clear() {
@@ -55,7 +66,7 @@ class MemoryVectorStore {
   similaritySearchVector(query, k) {
     const results = this.memoryVectors.map((vector) => ({
       similarity: this.similarity(query, vector.embedding),
-      document: vector.document,
+      document: vector.abi,
     }));
 
     results.sort((a, b) => (a.similarity > b.similarity ? -1 : 1));
@@ -69,19 +80,23 @@ function clearVectorStore() {
 }
 
 async function load() {
+  
   const store = MemoryVectorStore.getMemoryVectorStore();
   
   // Read the JSON file
-  const dataFilePath = path.join(__dirname, "public/data/dex.json");
+  const dataFilePath = path.join("public/data/dex.json");
   const rawData = fs.readFileSync(dataFilePath, "utf8");
   const embeddingsData = JSON.parse(rawData);
   
   // Iterate over the "embeddings" array and add each item to the store
-  if (embeddingsData && embeddingsData.contracts && Array.isArray(embeddingsData.contracts.embeddings)) {
-    const embeddingsArray = embeddingsData.contracts.embeddings;
-    for (const embedding of embeddingsArray) {
-      store.addEmbeddings(embedding);
-    }
+  if (embeddingsData && embeddingsData.contracts && Array.isArray(embeddingsData.contracts)) {
+    
+    const embeddingsArray = embeddingsData.contracts;
+
+    console.log("Loading " + embeddingsArray.length + " smart contracts into the vector store...");
+
+    store.addSmartRankEmbeddings(embeddingsArray);
+
   }
 }
 
