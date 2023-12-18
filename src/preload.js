@@ -41,4 +41,24 @@ contextBridge.exposeInMainWorld("electronAPI", {
     });
   },
   setModel: (model) => ipcRenderer.send("model:set", model),
+
+  // MetaMask
+  requestMetaMaskAccess: () => {
+    // Check if the MetaMask extension has injected its provider
+    if (window.ethereum) {
+      // Use the MetaMask provider to request access to the user's Ethereum accounts
+      window.ethereum.request({ method: 'eth_requestAccounts' })
+        .then(accounts => {
+          // Send the accounts to the main process
+          ipcRenderer.send('metamask:accounts', accounts);
+        })
+        .catch(error => {
+          // Handle any errors
+          console.error(error);
+        });
+    } else {
+      // Handle the case where the MetaMask provider is not available
+      console.error('Please install MetaMask!');
+    }
+  },
 });

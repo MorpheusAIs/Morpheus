@@ -164,6 +164,10 @@ window.electronAPI.onChatReply((event, data) => {
   }
 });
 
+
+
+
+
 // Open file dialog
 openFileButton.addEventListener("click", () => {
   document.getElementById("file-open-icon").style.display = "none";
@@ -213,3 +217,13 @@ userInput.addEventListener("input", function () {
   this.style.height = "auto";
   this.style.height = this.scrollHeight + "px";
 });
+
+
+// Check if the MetaMask extension has injected its provider
+if (window.ethereum) {
+  // Use the MetaMask provider
+  const provider = window.ethereum;
+} else {
+  // Handle the case where the MetaMask provider is not available
+  console.error('Please install MetaMask!');
+}

@@ -91,10 +91,12 @@
     }
   },
   "dependencies": {
+    "@metamask/providers": "^14.0.2",
     "@metamask/sdk": "^0.14.1",
     "@xenova/transformers": "^2.6.2",
     "electron-devtools-installer": "^3.2.0",
     "electron-squirrel-startup": "^1.0.0",
+    "ethjs-provider-http": "^0.1.6",
     "langchain": "^0.0.170",
     "mammoth": "^1.6.0",
     "ml-distance": "^4.0.1",
@@ -103,6 +105,7 @@
     "pdf-parse": "^1.1.1",
     "qrcode": "^1.5.3",
     "typescript": "^5.3.2",
+    "web3": "^4.3.0",
     "winston": "^3.11.0",
     "yarn": "^1.22.21"
   }

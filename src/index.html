@@ -8,6 +8,20 @@
     <link rel="stylesheet" href="index.css" />
 
     <script type="module" src="./client.js" defer></script>
+
+    <!-- Metamask SDK -->
+<!--     <script>
+        window.onload = function () {
+            const MMSDK = new MetaMaskSDK.MetaMaskSDK();
+            // Because init process of the MetaMaskSDK is async.
+            setTimeout(() => {
+                const ethereum = MMSDK.getProvider(); // You can also access via window.ethereum
+                ethereum.request({ method: 'eth_requestAccounts' });
+            }, 0);
+        }
+    </script> -->
+
+
     <!--<script src="https://cdn.jsdelivr.net/npm/@metamask/legacy-web3@1.0.0/dist/legacy-web3.min.js"></script>-->
 </head>
 
@@ -42,8 +56,10 @@
         </button>
 
         <!-- Settings icon, only displayed when using a user's instance of ollama, not the packaged one -->
-        <svg id="settings-icon" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M1 5h1.424a3.228 3.228 0 0 0 6.152 0H19a1 1 0 1 0 0-2H8.576a3.228 3.228 0 0 0-6.152 0H1a1 1 0 1 0 0 2Zm18 4h-1.424a3.228 3.228 0 0 0-6.152 0H1a1 1 0 1 0 0 2h10.424a3.228 3.228 0 0 0 6.152 0H19a1 1 0 0 0 0-2Zm0 6H8.576a3.228 3.228 0 0 0-6.152 0H1a1 1 0 0 0 0 2h1.424a3.228 3.228 0 0 0 6.152 0H19a1 1 0 0 0 0-2Z"/>
+        <svg id="settings-icon" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path
+                d="M1 5h1.424a3.228 3.228 0 0 0 6.152 0H19a1 1 0 1 0 0-2H8.576a3.228 3.228 0 0 0-6.152 0H1a1 1 0 1 0 0 2Zm18 4h-1.424a3.228 3.228 0 0 0-6.152 0H1a1 1 0 1 0 0 2h10.424a3.228 3.228 0 0 0 6.152 0H19a1 1 0 0 0 0-2Zm0 6H8.576a3.228 3.228 0 0 0-6.152 0H1a1 1 0 0 0 0 2h1.424a3.228 3.228 0 0 0 6.152 0H19a1 1 0 0 0 0-2Z" />
         </svg>
 
         <!-- Chat Container -->
@@ -61,26 +77,42 @@
         <!-- Checkmark and Status Message to let the user know chatd connected to an instance of ollama that is already running -->
         <div id="status-container">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10" stroke="#C8C8C8" stroke-width="2" fill="none"/>
-                <path d="M7 12L10 15L17 8" stroke="#C8C8C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="10" stroke="#C8C8C8" stroke-width="2" fill="none" />
+                <path d="M7 12L10 15L17 8" stroke="#C8C8C8" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
             </svg>
             <span>ollama is running</span>
         </div>
-    </div>
+        <div id="link-to-mm">
+            <a href="https://metamask.io/download.html">Download Metamask</a>
+        </div>
 
-    <!-- Settings View (Initially Hidden), Displayed when the Settings Icon is Clicked -->
-    <div id="settings-view">
-        <div class="settings-content">
-            <label for="model-select" id="model-label">Model Name</label>
-            <input id="model-select" placeholder="Select a model" autofocus>
-            <div class="button-group">
-                <button id="cancel-btn">Cancel</button>
-                <button id="save-btn">Save</button>
+        <!-- Settings View (Initially Hidden), Displayed when the Settings Icon is Clicked -->
+        <div id="settings-view">
+            <div class="settings-content">
+                <label for="model-select" id="model-label">Model Name</label>
+                <input id="model-select" placeholder="Select a model" autofocus>
+                <div class="button-group">
+                    <button id="cancel-btn">Cancel</button>
+                    <button id="save-btn">Save</button>
+                </div>
             </div>
         </div>
-    </div>
 </body>
-
+<!-- metamask check -->
+<script>
+    window.onload = function () {
+        // Check if the MetaMask extension has injected its provider
+        if (window.ethereum) {
+            // Use the MetaMask provider
+            const provider = window.ethereum;
+            provider.request({ method: 'eth_requestAccounts' });
+        } else {
+            // Handle the case where the MetaMask provider is not available
+            console.error('Please install MetaMask!');
+        }
+    }
+</script>
 
 <script src="sdk.js"></script>
 <script src="mm.js"></script>
