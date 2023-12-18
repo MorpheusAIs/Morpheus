@@ -8,5 +8,5 @@ Create a pull request and add a row to the following table. A good way to includ
 
 You need a wallet like Metamask that can receive Ethereum based tokens (MOR is an ERC-20 token) and that supports Arbitrum.
 
-| Wallet Address                             | Link to Work | Compute Inference Provided (hours)  | Description of Contribution                                                                                             |
+| Wallet Address                             | Link to Work | Compute Inference Provided  | Description of Contribution                                                                                             |
 | -------------------------------------------| ------------ | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------|
