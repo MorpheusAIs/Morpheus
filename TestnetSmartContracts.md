@@ -23,7 +23,7 @@ To participate in the Morpheus staking contract on the Goerli Testnet, there are
 
 - There are lots of other faucets that can easily be found for the Goerli testnet but usually require an address that has been active on the main Ethereum network. 
 
-## Part 2: Converting go ETH to stETH 
+## Part 2: Converting goETH to stETH 
 
 -  Next, you will need to convert your goETH into Goerli stETH. You can do this by visiting https://stake.testnet.fi/. You will be able to load so goETH and swap it for stETH in just a few clicks. (Note: This site is currently very low on stETH at the time of writing this tutorial and might only have dust to exchange. Please leave some for others.)
 
@@ -36,6 +36,7 @@ To participate in the Morpheus staking contract on the Goerli Testnet, there are
 ## Connecting to Contract
 To read information from the smart contract and interact with it, you need to go to the Read or Write section and connect your wallet.
 ![SmartContractExample1](https://github.com/MorpheusAIs/Morpheus/assets/1563345/739127b8-0a44-4112-94d9-2670442b9c09)
+In this example we are going to "Contract", then to "Write as Proxy", and then to "Connect to Web3" to connect our web3 wallet. When connected the red indicator will turn green. Make sure the wallet address shown is the same as your Goerli testnet address. 
 
 ## Approval of Contract
 - Before contributing, the user needs to give the distribution contract an "approval" that it will be able to transfer the user's funds.
@@ -47,9 +48,11 @@ To read information from the smart contract and interact with it, you need to go
 ## Capital Contribution 
 - Providing capital is available for public groups. 
 - The user should specify the amount of tokens to provide, but not less than the minimum for the group, and then specify the group ID.
-![SmartContractExample2](https://github.com/MorpheusAIs/Morpheus/assets/1563345/972f94fb-1dc0-4d46-bddd-37cd92e27b5d)
+- Example: https://goerli.etherscan.io/address/0x850A65DA677264bbb7536f8446336C022eCc85Dc#code
+![SmartContractExample2](https://github.com/jabo38/morpheus-images/assets/10395907/b47c571b-e858-4c19-b73a-8ca8ef4acf8d) 
 
-- Again, you will need to write in terms of WEI instead of ETH. You can use this unit converter calculator https://eth-converter.com to help you. For instance, if you have 0.01 stETH, that equals 10000000000000000 WEI which should be entered into the `_amount (uint256)` field. Also, enter "0" in the `poolId_ (uint256)` field. Click "write". 
+
+- Again, you will need to write in terms of WEI instead of stETH. You can use this unit converter calculator https://eth-converter.com to help you. For instance, if you have 0.01 stETH, that equals 10000000000000000 WEI which should be entered into the `_amount (uint256)` field. Also, enter "0" in the `poolId_ (uint256)` field. Click "write". 
 
 - Users can also increase the investment amount by calling this function repeatedly.
 
@@ -57,26 +60,17 @@ To read information from the smart contract and interact with it, you need to go
 - After staking for some time a user can claim MOR tokens!
 - The user needs to invoke the reward function, in general anyone else can do it instead and pay the cost of the gas.
 - The user address and group ID are specified.
-![SmartContractExample5](https://github.com/MorpheusAIs/Morpheus/assets/1563345/53db8ba8-62f6-43e3-8602-7774691f496d)
+![SmartContractExample5](https://github.com/jabo38/morpheus-images/assets/10395907/eeb443a5-d28a-460e-9fd0-477dcc663789)
 
 - Again enter "0" in the `poolId_ (uint256)` field. Click "write". Enter your address in the `_user (address)` field. Click "write".
 
-## How to withdraw funds?
+## How to withdraw stETH?
 - Available for public groups only. Specify the group ID, and the amount to withdraw. Users can withdraw all or part of it. If the withdrawal is partial, the remaining amount must not be less than the minimum amount specified for the group.
 - When withdrawing, rewards are automatically credited to the user's wallet.
-![SmartContractExample6](https://github.com/MorpheusAIs/Morpheus/assets/1563345/89c4e407-d53c-4c37-9ffd-fe42dff00ce0)
+![SmartContractExample6](https://github.com/jabo38/morpheus-images/assets/10395907/579b7d74-8526-45de-a531-2df4c965c12a)
 
 - In section 13, you will need to enter "0" in the `poolId_ (uint256)` and the amount you want to withdraw in the `_amount (uint256)` field. This will be in WEI again, so feel free to use https://eth-converter.com again. 
 
-## How can I find out about the amount of tokens and accrued reward?
-- To do this, we need to call two functions.
 
-- In the first one, specify the user address and group number. As a result, we learn about the records by user, but we are interested in the top line, the volume of investments.
-![SmartContractExample3](https://github.com/MorpheusAIs/Morpheus/assets/1563345/8137496d-cb1d-40c0-9b0b-1c9675241659)
-
-- The second function takes the same parameters as the first, but shows what reward the user currently has and what he can withdraw.
-
-1999999999999999999 / 10^18 = 1,999999999999999999 MOR
-![SmartContractExample4](https://github.com/MorpheusAIs/Morpheus/assets/1563345/ecbfa14d-c0ec-4f50-93de-c642b6cab041)
 
 
