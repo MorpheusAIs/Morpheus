@@ -45,19 +45,23 @@ class MemoryVectorStore {
 
   }
 
-  addSmartRankEmbeddings(embeddings) {
+  addSmartRankEmbeddings(item) {
 
-    const vectors = embeddings && embeddings instanceof Array && embeddings.map((item) => {
+    // Ensure item is valid and has necessary properties
+    if (item && item.metadata && item.abi && item.embeddings) {
+      // Create a new SmartRankMemoryVector from the item
+      const vector = new SmartRankMemoryVector(item.metadata, item.abi, item.embeddings);
+  
+      // Add the new vector to the memoryVectors array
+      this.memoryVectors = this.memoryVectors.concat(vector);
 
-      console.log("Adding smart rank embeddings for " + item.metadata.contract_name);
+    } else {
 
-      return new SmartRankMemoryVector(item.metadata, item.abi, item.embeddings);
+      console.error('Invalid item provided to addSmartRankEmbeddings');
 
-    });
-
-    this.memoryVectors = this.memoryVectors.concat(vectors);
-
+    }
   }
+  
 
   clear() {
     this.memoryVectors = [];
@@ -65,9 +69,11 @@ class MemoryVectorStore {
 
   similaritySearchVector(query, k) {
 
+    console.log('Query', query);
+
     const results = this.memoryVectors.map((vector) => ({
       
-      similarity: this.similarity(query, vector.embeddings),
+      similarity: this.similarity(query, vector.embedding),
       document: vector.abi,
 
     }));
@@ -99,13 +105,9 @@ async function load() {
       const rawData = fs.readFileSync(dataFilePath, "utf8");
       const embeddingsData = JSON.parse(rawData);
 
-      if (embeddingsData) {
-
-        const embeddingsArray = embeddingsData
-
-        store.addSmartRankEmbeddings(embeddingsArray);
-
-      }
+      console.log("Loaded " + embeddingsData.metadata.contract_name);
+        
+      store.addSmartRankEmbeddings(embeddingsData);
 
     }
 

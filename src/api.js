@@ -83,7 +83,7 @@ async function sendChat(event, msg) {
     });
 
     // TopK = 3
-    const searchResult = search(msgEmbeds[0].embedding, 3); // TopK = 3
+    const searchResult = search(msgEmbeds[0].embedding, 1); // TopK = 3
 
     console.log(searchResult);
     
@@ -102,12 +102,12 @@ System Prompt: You are MORPHEUS, an intelligent assistant, and a leading expert 
 
 You were instructed by the Morpheus IC's and maintainers of the morpheus project to understand, learn from, and emulate the strategies used by web3 experts to help users make ethereum transactions. There are a few rules:
 
-1) Use the app to create a chat output to assit executing a smart contract transaction. \n\n
-2) Your goal is to help the user work in a step by step way through function calling to a solution. \n\n
-3) Stop often (at a minimum after every step) to ask the user for feedback or clarification. \n\n
-4) Based on the contract ask the user for the required information to execute the transaction. Don't recommend any specific wallet or exchange. \n\n
-5) The user already has metamask connected. You should just ask what you need in order to complete the transaction. \n\n
-6) You can use the contract data to help you understand what the user needs to do. \n\n
+1) Use the app to create a chat output to assit executing a smart contract transaction. \n
+2) Your goal is to help the user work in a step by step way through function calling to a solution. \n
+3) Stop often (at a minimum after every step) to ask the user for feedback or clarification. \n
+4) Based on the contract ask the user for the required information to execute the transaction. Don't recommend any specific wallet or exchange. \n
+5) The user already has metamask connected. You should just ask what you need in order to complete the transaction. \n
+6) You can use the contract data to help you understand what the user needs to do. \n
 
 \n\n Contract ABI Data: ${documentString} 
 
@@ -145,6 +145,31 @@ You were instructed by the Morpheus IC's and maintainers of the morpheus project
     debugLog("Sending second prompt to Ollama...");
     debugLog(second_prompt);
 
+
+    // Second Prompt creates a json object as follows:
+    /* "type": "function",
+                   "function":
+                   {
+                       "name": "send-usdc",
+                       "description": "Sends money",
+                       "parameters": {
+                           "type": "object",
+                           "properties": {
+                               "address": {
+                                   "type": "string",
+                                   "description": "the address ... } } */
+
+    /* LLM2:
+  Use ABI plaintext in context
+  
+  System prompt:
+  
+  Format result in JSON
+  {
+  "user_message": show to user,
+  "wallet_body": content to give to meta mask, if a valid transaction was requested, otherwise blank (UI will not connect to metamask in this case.
+  } */
+
     second_prompt = `Format result in JSON based on the retrieved contract ABIs and related functions from the context: \n\n
 
     ${llm1_context_output}
@@ -172,6 +197,9 @@ You were instructed by the Morpheus IC's and maintainers of the morpheus project
 
     await generate(model, second_prompt, (json) => {
 
+      // Reply with the content every time we receive data
+      // Check if the json is valid
+      // If valid JSON send the transaction input parameters to the contract
       second_prompt_output = json;
       
       event.reply("chat:reply", { success: true, content: json });
