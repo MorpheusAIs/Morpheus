@@ -47,7 +47,7 @@ class MemoryVectorStore {
 
   addSmartRankEmbeddings(embeddings) {
 
-    const vectors = embeddings.map((item) => {
+    const vectors = embeddings && embeddings instanceof Array && embeddings.map((item) => {
 
       console.log("Adding smart rank embeddings for " + item.metadata.contract_name);
 
@@ -64,9 +64,12 @@ class MemoryVectorStore {
   }
 
   similaritySearchVector(query, k) {
+
     const results = this.memoryVectors.map((vector) => ({
-      similarity: this.similarity(query, vector.embedding),
+      
+      similarity: this.similarity(query, vector.embeddings),
       document: vector.abi,
+
     }));
 
     results.sort((a, b) => (a.similarity > b.similarity ? -1 : 1));
@@ -80,25 +83,35 @@ function clearVectorStore() {
 }
 
 async function load() {
-  
+
   const store = MemoryVectorStore.getMemoryVectorStore();
-  
-  // Read the JSON file
-  const dataFilePath = path.join("public/data/dex.json");
-  const rawData = fs.readFileSync(dataFilePath, "utf8");
-  const embeddingsData = JSON.parse(rawData);
-  
-  // Iterate over the "embeddings" array and add each item to the store
-  if (embeddingsData && embeddingsData.contracts && Array.isArray(embeddingsData.contracts)) {
-    
-    const embeddingsArray = embeddingsData.contracts;
 
-    console.log("Loading " + embeddingsArray.length + " smart contracts into the vector store...");
+  var dataFilePath;
 
-    store.addSmartRankEmbeddings(embeddingsArray);
+  for (const file of fs.readdirSync("public/data")) {
+
+    if (file.endsWith(".json") && !file.includes("dex.json")) {
+
+      dataFilePath = path.join("public/data", file);
+
+      console.log("Loading smart contracts from " + dataFilePath);
+
+      const rawData = fs.readFileSync(dataFilePath, "utf8");
+      const embeddingsData = JSON.parse(rawData);
+
+      if (embeddingsData) {
+
+        const embeddingsArray = embeddingsData
+
+        store.addSmartRankEmbeddings(embeddingsArray);
+
+      }
+
+    }
 
   }
-}
+
+};
 
 async function store(embeddings) {
   const store = MemoryVectorStore.getMemoryVectorStore();

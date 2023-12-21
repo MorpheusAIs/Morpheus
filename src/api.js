@@ -83,7 +83,7 @@ async function sendChat(event, msg) {
     });
 
     // TopK = 3
-    const searchResult = search(msgEmbeds[0].embedding, 1); // TopK = 3
+    const searchResult = search(msgEmbeds[0].embedding, 3); // TopK = 3
 
     console.log(searchResult);
     
