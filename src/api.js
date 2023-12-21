@@ -69,117 +69,91 @@ async function runOllamaModel(event, msg) {
 
 // Send Chat to Morpheus 
 
+// Asynchronously sends a chat message and processes the response
 async function sendChat(event, msg) {
-  let prompt = msg;
-  let second_prompt = "";
+
+  let primaryPrompt = msg;
+  let secondaryPrompt = "";
+  let llm1ContextOutput = "";
 
   try {
 
     if (vectorStoreSize() > 0) {
 
-      const msgEmbeds = await embed({
-        data: [
-          {
-            section: "",
-            content: [msg],
-          },
-        ],
-      });
-
-      // TopK = 3
-      const searchResult = search(msgEmbeds[0].embedding, 1); // TopK = 3
-
+      const msgEmbeds = await embed({ data: [{ section: "", content: [msg] }] });
+      const searchResult = search(msgEmbeds[0].embedding, 1);
       console.log(searchResult);
 
-      // format the system context search results
-      let documentString = JSON.stringify(searchResult, null, 2); // Add indentation and line breaks
-      // Ensure the contextString does not exceed 500 characters
-      if (documentString.length > 500) {
-        documentString = documentString.substring(0, 497) + "...";
-      }
+      let documentString = JSON.stringify(searchResult, null, 2);
 
-      console.log(documentString);
+      primaryPrompt = createPrimaryPrompt(documentString, msg);
 
-      prompt = `Answer the Question based on the System Prompt, Contract Data and the conversation with the user. \n\n
+      debugLog("Sending primary prompt to model...");
 
-System Prompt: You are MORPHEUS, an intelligent assistant, and a leading expert in web3, cryptocurrency, distributed consensus protocols, blockchain, cryptography, tokenization, and related crypto technologies. You are connected to a large language model running locally with a chat app in Electron. 
+      llm1ContextOutput = await generateResponse(model, primaryPrompt);
 
-You were instructed by the Morpheus IC's and maintainers of the morpheus project to understand, learn from, and emulate the strategies used by web3 experts to help users make ethereum transactions. There are a few rules:
+      secondaryPrompt = createSecondaryPrompt(llm1ContextOutput, msg);
+      debugLog("Sending secondary prompt to model...");
 
-1) Use the app to create a chat output to assit executing a smart contract transaction. \n
-2) Your goal is to help the user work in a step by step way through function calling to a solution. \n
-3) Stop often (at a minimum after every step) to ask the user for feedback or clarification. \n
-4) Based on the contract ask the user for the required information to execute the transaction. Don't recommend any specific wallet or exchange. \n
-5) The user already has metamask connected. You should just ask what you need in order to complete the transaction. \n
-6) You can use the contract data to help you understand what the user needs to do. \n
+      const responseJson = await generateResponse(model, secondaryPrompt);
 
-\n\n Contract ABI Data: ${documentString} 
-
-\n\n Anything between the following \`user\` html blocks is is part of the conversation with the user.
-
-<user>
-  ${msg}
-</user>
-`;
-
+      event.reply("chat:reply", { success: true, content: responseJson });
     }
-
-
-    var llm1_context_output = "";
-
-    debugLog("Sending prompt to Ollama...");
-    debugLog(prompt);
-
-    await generate(model, prompt, (json) => {
-
-      llm1_context_output = json;
-
-    });
-
-    debugLog("Sending second prompt to Ollama...");
-
-    second_prompt = `Format result in JSON (
-      {
-      "user_message": the message to show to user,
-      "wallet_body": content to give to meta mask, if a valid transaction was requested, otherwise blank (UI will not connect to metamask in this case.
-      })
-      
-      based on the retrieved contract ABIs and related context: \n\n
-
-    ${llm1_context_output}
-
-
-    \n\n
-
-    Only respond with the following in JSON: \n\n
-
-    {
-      "user_message": "${msg}",
-      "wallet_body": ""
-      }
-    }
-
-    \n\n Anything between the following \`user\` html blocks is is part of the conversation with the user. The user asked the following:
-
-<user>
-  ${msg}
-</user>
-  
-    `;
-
-    await generate(model, second_prompt, (json) => {
-
-      event.reply("chat:reply", { success: true, content: json });
-
-    });
-
-
   } catch (err) {
-    console.log(err);
+    console.error(err);
     event.reply("chat:reply", { success: false, content: err.message });
   }
-
 }
+
+// Generates the primary prompt
+function createPrimaryPrompt(documentString, userMessage) {
+  return `As MORPHEUS, an AI assistant expert in web3 technologies, assist in executing a smart contract transaction. Use the provided Contract ABI data and the user's message to guide your response. Ensure to:
+
+- Create a chat output to assist in executing a smart contract transaction.
+- Guide the user step by step through function calling.
+- Regularly ask the user for feedback or clarification.
+- Request necessary information from the user to complete the transaction, without recommending specific wallets or exchanges.
+- Utilize the user's existing metamask connection for transaction completion.
+
+Contract ABI Data: ${documentString}
+
+User Conversation:
+<user>${userMessage}</user>`;
+}
+
+
+// Generates the secondary prompt for formatting the response with the user message and transaction input parameters
+function createSecondaryPrompt(contextOutput, userMessage) {
+  return `Format the response in JSON as per the following example. Use the provided context output and the user's message to tailor the response:
+
+Example JSON Format:
+{
+  "user_message": "Message to show to the user",
+  "wallet_body": "MetaMask transaction content or blank if not applicable"
+}
+
+Based on this context:
+${contextOutput}
+
+And the user's inquiry:
+<user>${userMessage}</user>
+
+Ensure the final response follows this JSON structure.`;
+}
+
+
+// Generates a response from the model based on the given prompt
+async function generateResponse(model, prompt) {
+
+  let output = "";
+
+  await generate(model, prompt, (json) => {
+    output = json;
+  });
+
+  return output;
+}
+
 
 function stopChat() {
   abort();
