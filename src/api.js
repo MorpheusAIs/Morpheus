@@ -67,36 +67,40 @@ async function runOllamaModel(event, msg) {
   }
 }
 
+// Send Chat to Morpheus 
+
 async function sendChat(event, msg) {
   let prompt = msg;
   let second_prompt = "";
 
-  if (vectorStoreSize() > 0) {
+  try {
 
-    const msgEmbeds = await embed({
-      data: [
-        {
-          section: "",
-          content: [msg],
-        },
-      ],
-    });
+    if (vectorStoreSize() > 0) {
 
-    // TopK = 3
-    const searchResult = search(msgEmbeds[0].embedding, 1); // TopK = 3
+      const msgEmbeds = await embed({
+        data: [
+          {
+            section: "",
+            content: [msg],
+          },
+        ],
+      });
 
-    console.log(searchResult);
-    
-    // format the system context search results
-    let documentString = JSON.stringify(searchResult, null, 2); // Add indentation and line breaks
-    // Ensure the contextString does not exceed 500 characters
-    if (documentString.length > 500) {
-      documentString = documentString.substring(0, 497) + "...";
-    }
-    
-    console.log(documentString);    
+      // TopK = 3
+      const searchResult = search(msgEmbeds[0].embedding, 1); // TopK = 3
 
-    prompt = `Answer the Question based on the System Prompt, Contract Data and the conversation with the user. \n\n
+      console.log(searchResult);
+
+      // format the system context search results
+      let documentString = JSON.stringify(searchResult, null, 2); // Add indentation and line breaks
+      // Ensure the contextString does not exceed 500 characters
+      if (documentString.length > 500) {
+        documentString = documentString.substring(0, 497) + "...";
+      }
+
+      console.log(documentString);
+
+      prompt = `Answer the Question based on the System Prompt, Contract Data and the conversation with the user. \n\n
 
 System Prompt: You are MORPHEUS, an intelligent assistant, and a leading expert in web3, cryptocurrency, distributed consensus protocols, blockchain, cryptography, tokenization, and related crypto technologies. You are connected to a large language model running locally with a chat app in Electron. 
 
@@ -118,9 +122,8 @@ You were instructed by the Morpheus IC's and maintainers of the morpheus project
 </user>
 `;
 
-  }
+    }
 
-  try {
 
     var llm1_context_output = "";
 
@@ -128,49 +131,20 @@ You were instructed by the Morpheus IC's and maintainers of the morpheus project
     debugLog(prompt);
 
     await generate(model, prompt, (json) => {
-      // Reply with the content every time we receive data
-      event.reply("chat:reply", { success: true, content: json });
 
       llm1_context_output = json;
 
     });
 
-  } catch (err) {
-    console.log(err);
-    event.reply("chat:reply", { success: false, content: err.message });
-  }
-
-  try {
-
     debugLog("Sending second prompt to Ollama...");
-    debugLog(second_prompt);
 
-
-    // Second Prompt creates a json object as follows:
-    /* "type": "function",
-                   "function":
-                   {
-                       "name": "send-usdc",
-                       "description": "Sends money",
-                       "parameters": {
-                           "type": "object",
-                           "properties": {
-                               "address": {
-                                   "type": "string",
-                                   "description": "the address ... } } */
-
-    /* LLM2:
-  Use ABI plaintext in context
-  
-  System prompt:
-  
-  Format result in JSON
-  {
-  "user_message": show to user,
-  "wallet_body": content to give to meta mask, if a valid transaction was requested, otherwise blank (UI will not connect to metamask in this case.
-  } */
-
-    second_prompt = `Format result in JSON based on the retrieved contract ABIs and related functions from the context: \n\n
+    second_prompt = `Format result in JSON (
+      {
+      "user_message": the message to show to user,
+      "wallet_body": content to give to meta mask, if a valid transaction was requested, otherwise blank (UI will not connect to metamask in this case.
+      })
+      
+      based on the retrieved contract ABIs and related context: \n\n
 
     ${llm1_context_output}
 
@@ -193,31 +167,18 @@ You were instructed by the Morpheus IC's and maintainers of the morpheus project
   
     `;
 
-    var second_prompt_output = "";
-
     await generate(model, second_prompt, (json) => {
 
-      // Reply with the content every time we receive data
-      // Check if the json is valid
-      // If valid JSON send the transaction input parameters to the contract
-      second_prompt_output = json;
-      
       event.reply("chat:reply", { success: true, content: json });
 
     });
 
-    // Returns the contract address and the transaction input parameters
 
-    /* console.log(contract_address); */
-
-    /* let txn = await sendTransaction(contract_address, second_prompt_output); */
-
-  }
-
-  catch (err) {
+  } catch (err) {
     console.log(err);
     event.reply("chat:reply", { success: false, content: err.message });
   }
+
 }
 
 function stopChat() {
