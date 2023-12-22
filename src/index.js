@@ -24,32 +24,7 @@ const {
 
 //metamask
 
-//TODO:  clean up failures
-/* 
-const MetaMaskSDK = require('@metamask/sdk');
 
-const { MMSDK, ethereum } = require('./service/wallet/metamask.js');
-
-
-
-const Web3 = require('web3');
-
-
-const web3 = new Web3('https://goerli.infura.io/v3/9ce2d8d0d000490399f9a8f2b1b2fa42');
-
-ipcMain.handle('getAccounts', async () => {
-  return await web3.eth.getAccounts();
-});
-
-ipcMain.handle('getBalance', async (event, address) => {
-  return await web3.eth.getBalance(address);
-});
- */
-
-//ethereum.request({ method: 'eth_requestAccounts', params: [] });
-
-
-//const ethereum = MMSDK.getProvider(); // You can also access via window.ethereum
 
 // When debug is set to true, the app will log debug messages to the console
 // This will be turned on by default when running the app in non-packaged mode
@@ -85,7 +60,7 @@ if (require("electron-squirrel-startup")) {
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 1800,
-    height: 600,
+    height: 1200,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       nodeIntegration: true,

@@ -11,8 +11,8 @@ const sdk = new MetaMaskSDK({
     enabled: true,
   },
   dappMetadata: {
-    name: 'Electron Test Dapp',
-    url: 'https://metamask.io/sdk/',
+    name: 'Morpheus',
+    url: 'https://github.com/morpheusais/',
   },
   modals: {
     install: ({ link }) => {
@@ -142,7 +142,7 @@ const connect = async () => {
 // Personal Sign
 const personal_sign = async () => {
   const from = ethereum.selectedAddress;
-  const message = 'Hello World from the Electron Example dapp!';
+  const message = 'Hello World from Morpheus!';
   const hexMessage = '0x' + Buffer.from(message, 'utf8').toString('hex');
   ethereum.request({
     method: 'personal_sign',
@@ -280,6 +280,7 @@ const setEventListeners = () => {
     }
   });
 };
+
 
 // Helper functions
 function updateDOM(domElement: HTMLElement, value: string){

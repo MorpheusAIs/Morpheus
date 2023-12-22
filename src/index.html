@@ -3,26 +3,14 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+
     <title>Morpheus</title>
 
     <link rel="stylesheet" href="index.css" />
 
     <script type="module" src="./client.js" defer></script>
 
-    <!-- Metamask SDK -->
-<!--     <script>
-        window.onload = function () {
-            const MMSDK = new MetaMaskSDK.MetaMaskSDK();
-            // Because init process of the MetaMaskSDK is async.
-            setTimeout(() => {
-                const ethereum = MMSDK.getProvider(); // You can also access via window.ethereum
-                ethereum.request({ method: 'eth_requestAccounts' });
-            }, 0);
-        }
-    </script> -->
-
-
-    <!--<script src="https://cdn.jsdelivr.net/npm/@metamask/legacy-web3@1.0.0/dist/legacy-web3.min.js"></script>-->
 </head>
 
 <body>
@@ -98,7 +86,45 @@
                 </div>
             </div>
         </div>
-</body>
+
+<!--mm-->
+
+<div class="container">
+    <img src="https://raw.githubusercontent.com/MetaMask/brand-resources/cb6fd847f3a9cc5e231c749383c3898935e62eab/SVG/metamask-fox-wordmark-horizontal.svg" width="450" alt=''/>
+    <h1>Electron Test Dapp</h1>
+  
+    <div id="buttonContainers">
+      <button class="button primary" id="connectButton">Connect</button>
+      <button class="button action" id="personalSignButton">personal_sign</button>
+      <button class="button action" id="signTypedDataButton">eth_signTypedData_v4</button>
+      <button class="button action" id="switchChainButton">Toggle Chain</button>
+      <button class="button action" id="addChainButton">Add Polygon</button>
+      <button class="button action" id="switchPolygonButton">Switch to Polygon</button>
+      <button class="button danger" id="terminateButton">Terminate</button>
+    </div>
+  
+    <div id="accountContainer">
+      <b>Account:</b><div id="account"></div>
+    </div>
+  
+    <div id="chainContainer">
+      <b>Chain:</b><div id="chain"></div>
+    </div>
+  
+    <div id="responseContainer">
+      <b>Response:</b><div id="response"></div>
+    </div>
+    <canvas id="qrCode"></canvas>
+    <div id="otpContainer">
+      <h1>OTP:</h1>
+      <h1 id="otp"></h1>
+    </div>
+  </div>
+
+
+
+
+    </body>
 <!-- metamask check -->
 <script>
     window.onload = function () {
@@ -116,5 +142,5 @@
 
 <script src="sdk.js"></script>
 <script src="mm.js"></script>
-
+<script src="sdk.js"></script>
 </html>
