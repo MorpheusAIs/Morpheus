@@ -1,0 +1,43 @@
+
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+  .container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  #accountContainer {
+    margin-top: 20px;
+  }
+  #buttonContainers {
+      margin-top: 20px;
+  }
+  .button {
+      min-width: 100px;
+      height: 50px;
+      border-radius: 5px;
+      border-color: transparent;
+
+  }
+  .button.primary {
+      background-color: teal;
+      color: white
+  }
+  .button.action {
+      background-color: coral;
+      color: white;
+      display: none;
+  }
+  .button.danger {
+      background-color: red;
+      color: white
+  }
+  #response {
+      max-width: 80%;
+      overflow: auto;
+  }
+  #otpContainer {
+      position: fixed;
+      bottom: 30px;
+      width: 100%;
+  }

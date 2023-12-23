@@ -69,7 +69,7 @@ const createWindow = () => {
     autoHideMenuBar: true,
   });
 
-  mainWindow.loadFile(path.join(__dirname, "index.html"));
+  mainWindow.loadFile(path.join(__dirname, "test-metamask.html"));
 
   if (!app.isPackaged) {
     global.debug = true;

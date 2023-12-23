@@ -9,6 +9,8 @@
   "main": "src/index.js",
   "homepage": "https://www.morepheusai.com",
   "scripts": {
+    "copy-assets": "cp src/*.html dist/src/ && cp src/*.css dist/src/ && cp -R src/service/ dist/src/service/ && cp -R public/ dist/public/",
+    "build": "tsc && npm run copy-assets",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
     "start-forge": "electron-forge start",
@@ -17,10 +19,12 @@
     "pack": "electron-builder --dir",
     "make-rpm": "electron-forge make --targets=@electron-forge/maker-rpm",
     "make-deb": "electron-forge make --targets=@electron-forge/maker-deb",
-    "build": "tsc",
+    "make-flatpak": "electron-forge make --targets=@electron-forge/maker-flatpak",
+    "make-snap": "electron-forge make --targets=@electron-forge/maker-snap",
+    "make-squirrel": "electron-forge make --targets=@electron-forge/maker-squirrel",
+    "make-zip": "electron-forge make --targets=@electron-forge/maker-zip",
     "start2": "yarn build && electron ./dist/src/index.js",
     "allow-scripts": ""
-
   },
   "keywords": [
     "Local",

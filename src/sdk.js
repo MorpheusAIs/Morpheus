@@ -24,8 +24,8 @@ const sdk = new sdk_1.MetaMaskSDK({
         enabled: true,
     },
     dappMetadata: {
-        name: 'Electron Test Dapp',
-        url: 'https://metamask.io/sdk/',
+        name: 'Morph',
+        url: 'https://github.com/morpheusais',
     },
     modals: {
         install: ({ link }) => {

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+
+    <title>Morpheus</title>
+
+    <!--<link rel="stylesheet" href="index.css" />-->
+    <link rel="stylesheet" href="test-metamask.css" />
+
+    <script type="module" src="./client.js" defer></script>
+    
+
+
+    
+</head>
+
+<body>
+
+
+<div class="container">
+    <h1>Test Morpheus MM in Electron</h1>
+  
+    <div id="buttonContainers">
+      <button class="button primary" id="connectButton">Connect</button>
+      <button class="button action" id="personalSignButton">personal_sign</button>
+      <button class="button action" id="signTypedDataButton">eth_signTypedData_v4</button>
+      <button class="button action" id="switchChainButton">Toggle Chain</button>
+      <button class="button action" id="addChainButton">Add Polygon</button>
+      <button class="button action" id="switchPolygonButton">Switch to Polygon</button>
+      <button class="button danger" id="terminateButton">Terminate</button>
+    </div>
+  
+    <div id="accountContainer">
+      <b>Account:</b><div id="account"></div>
+    </div>
+  
+    <div id="chainContainer">
+      <b>Chain:</b><div id="chain"></div>
+    </div>
+  
+    <div id="responseContainer">
+      <b>Response:</b><div id="response"></div>
+    </div>
+    <canvas id="qrCode"></canvas>
+    <div id="otpContainer">
+      <h1>OTP:</h1>
+      <h1 id="otp"></h1>
+    </div>
+  </div>
+
+
+
+
+    </body>
+<!-- metamask check -->
+<!-- <script>
+    window.onload = function () {
+        // Check if the MetaMask extension has injected its provider
+        if (window.ethereum) {
+            // Use the MetaMask provider
+            const provider = window.ethereum;
+            provider.request({ method: 'eth_requestAccounts' });
+        } else {
+            // Handle the case where the MetaMask provider is not available
+            console.error('Please install MetaMask!');
+        }
+    }
+</script> -->
+
+<script src="sdk.js"></script>
+<script src="mm.js"></script>
+<script src="sdk.js"></script>
+</html>
