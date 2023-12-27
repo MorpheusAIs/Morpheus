@@ -64,7 +64,7 @@ class Ollama {
           os.homedir(),
           "Library",
           "Application Support",
-          "morpheus"
+          "chatd"
         );
         break;
       case "linux":
