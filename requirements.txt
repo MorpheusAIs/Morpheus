@@ -1,0 +1,8 @@
+docarray
+numpy
+pandas
+scipy
+llama-index
+langchain
+tiktoken
+faiss-cpu

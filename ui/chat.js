@@ -81,7 +81,7 @@ async function populateModels() {
   catch (error) {
     document.getElementById('errorText').innerHTML =
     DOMPurify.sanitize(marked.parse(
-    `Ollama-ui was unable to communitcate with Ollama due to the following error:\n\n`
+    `Ollama-ui was unable to communicate with Ollama due to the following error:\n\n`
     + `\`\`\`${error.message}\`\`\`\n\n---------------------\n`
     + faqString));
     let modal = new bootstrap.Modal(document.getElementById('errorModal'));
