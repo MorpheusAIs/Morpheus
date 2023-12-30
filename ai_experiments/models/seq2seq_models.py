@@ -19,17 +19,16 @@ phase1_prompt_template = """
 """
 
 
-# FIXME, need to escape the \{\} around json body
 phase2_prompt_template = """
 
     Format the response in JSON as per the following example. 
     Use the provided context output and the user's message to tailor the response:
     
     Example JSON Format:
-    {
+    {{
       "user_message": "Message to show to the user",
-      "wallet_body": "```json {<insert metamask specific context here>}```"
-    }
+      "wallet_body": "```json {{<insert metamask specific context here>}}```"
+    }}
     
     Based on this context:
     {context}
@@ -37,6 +36,6 @@ phase2_prompt_template = """
     And the user's inquiry:
     {nlq}
     
-    Ensure the final response follows this JSON structure. ```json {<insert metamask specific context here>}```
+    Ensure the final response follows this JSON structure. ```json {{<insert metamask specific context here>}}```
 
 """
