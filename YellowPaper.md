@@ -93,7 +93,7 @@ Diagrams detailing the distribution of ETH.
 - AgentRank Algorithm - Curating specialized agents for executing actions for user.
 - PromptRank Algorithm - Curating prompts for the users based on projected intent / action.
 - Filecoin - Storage & Cloud Compute Provision
-- Acash - Open compute network for running LLMs / agents.
+- Akash Network - Open compute network for running LLMs / agents.
 - Wallets - Shapeshift, Exodus, other open source options.
 
 ## Morpheus Full Node Diagrams for the Agent / LLMs For Web3 Actions. 
