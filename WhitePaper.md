@@ -178,7 +178,7 @@ The pro-rata MOR transaction fees burned by each Community Builder serves as pro
 For example, if there are 100 Community Builders on day 1 when the network launches, then each one gets a pro-rata reward based on the amount of MOR they have burned via fees. In this case, presuming each of the 100 Community Builders burned 100 MOR, then 1% of the 3,456 MOR tokens each day = 34.56 MOR.
 
 ## Morpheus User Diagram
-![Morpheus User   Contributor Diagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/478079be-417e-4d8b-b062-c0540138aac0)
+![UpdatedDiagram2UserFlow](https://github.com/MorpheusAIs/Morpheus/assets/1563345/a02468a7-9284-4ce5-b7e3-f32f476ff9f1)
 
 ## Morpheus Rewards Delivered by Smart Contract On Ethereum Layer 2 
 Morpheus Tokens (MOR) will be originally awarded on the the Ethereum Layer 1, and there will be a wrapped MOR token (wMOR) that exists on Arbitrum for the purpose of payments and other MOR utility related actions.
