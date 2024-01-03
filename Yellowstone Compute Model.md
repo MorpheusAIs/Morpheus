@@ -1,6 +1,6 @@
 # Morpheus “Yellowstone” Compute Model
 ### Erik Voorhees
-### Dec 30 2023
+### January 3rd 2023
 
 A suggested revision to the Morpheus tokenomics structure for compute incentivization on a decentralized AI network. 
 
