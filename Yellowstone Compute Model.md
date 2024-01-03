@@ -1,3 +1,5 @@
+![Image1forYellowstone](https://github.com/MorpheusAIs/Morpheus/assets/1563345/80a6c1cf-fe52-42ba-bfd4-91d9faf67f07)
+
 # Morpheus “Yellowstone” Compute Model
 ### Erik Voorhees
 ### January 3rd 2023
@@ -76,6 +78,7 @@ Four Components Involved:
 10) Router instructs Compute Contract to credit Provider with MOR if [milliseconds] per [LangToken] is no worse than X% below mean of past Z queries for that [LLM] and if User reported [Pass]. 
 (11) (Some time later) Provider requests payment of MOR from Compute Contract and Compute Contract sends MOR payment if valid (first blockchain TX so far, can be batched).
 
+![ComputeContractImage2](https://github.com/MorpheusAIs/Morpheus/assets/1563345/e66ea20c-9851-4f9e-9caa-66c6d798c462)
 
 ## Outcome
 * User received fast Result for her Query, and paid nothing (this will lead to amazing UX and thus adoption). Solves Goal 1.
@@ -123,10 +126,7 @@ That potential production of 30 billion LT’s is allocated by MOR balance, pro 
 So long as Compute Budget is at or below the emissions level, the Compute Contract cannot run out of MOR.  
 In reality, most tokens will sit in wallets and exchanges, and only a fraction will be used to demand the LT production.
 
-
-
 ## Notes
-
 * Fundamental demand for MOR comes from Users who wish to have access to generative AI and other forms of compute on the Morpheus network. 
  
 * Provider’s hardware type is irrelevant to the network, so long as they satisfy the User’s pass/fail test. Any Provider bidding on more Queries than they can efficiently process will be penalized by failing this test.
