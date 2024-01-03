@@ -4,12 +4,12 @@
 
 A suggested revision to the Morpheus tokenomics structure for compute incentivization on a decentralized AI network. 
 
-Summary
+## Summary
 In the Yellowstone Compute Model, the Morpheus network pays Providers only for Compute actually provided through a competitive bid process, and allocates the scarce production of LangTokens pro-rata to MOR token holders based on balance, rather than on payment. This drastically improves UX while minimizing Sybil vulnerability. Yellowstone also imbues the important metrics of time and a Pass/Fail test to ensure Providers are adequately prompt and accurate. Yellowstone preserves privacy by never sending prompts or results through the Router, and minimizes blockchain transactions to permit a large scale of operation. Through this model, MOR achieves fundamental value as it enables perpetual (though not unlimited) access to permissionless compute, without requiring transactions per inference. 
 
 If adopted, this paper replaces the “Compute Proof, Registration & Reward” section of the Morpheus whitepaper (https://github.com/MorpheusAIs/Morpheus/blob/main/WhitePaper.md)
 
-Background
+## Background
 Morpheus uses tokenomics to incentivize sufficient and scalable compute as a resource for the purpose of decentralized and permissionless generative AI. In its original conception, Morpheus issued 24% of MOR emissions to Compute Providers directly, pro-rata depending on the inference requests received, and it prioritized inference requests to those providers based on how much MOR they held. 
 
 From the original white paper:
@@ -24,29 +24,29 @@ If inference requests are prioritized based on the MOR amount held by Providers,
 
 Below is proposed the “Yellowstone” Model which modifies the Morpheus tokenomics for compute provision to address the above issues. This model works regardless of what portion of emissions are allocated to compute, and we’ll assume the status quo of 24% of total emissions. 
 
-The goals are:
+## The goals are:
 * Enable users to not pay per inference (ideally, to not pay at all)
 * Achieve efficient, scalable, and sustainable provision of permissionless compute resource without overpaying for it
 * Incentivize low response time and cost competition among compute Providers
 * Minimize number of blockchain transactions (whether L2 or otherwise)
 * Demonstrate an economically sound fundamental demand for MOR 
 
-Yellowstone Model
+## Yellowstone Model
 Four Components Involved:
 
-Users
+### Users
 * Have Queries
 * Want fast/accurate compute for free and without censorship/surveillance
 
-Providers
+### Providers
 * Have compute
 * Want money (MOR)
 
-Router 
+### Router 
 * High throughput processing engine
 * Can be relatively centralized at first, ultimately needs to decentralize
 
-Compute Contract
+## Compute Contract
 *Permissionless smart contract which receives emissions of MOR, tracks credits and debits to Providers, and pays Providers when called.
 
 “Users”: defined as any entity that has a MOR address and sends Requests to the Router. This can be a specific individual person sending Requests from a Morpheus desktop node, or it could be a bot, or it could be a company or 3rd party website which interacts with the Morpheus network on behalf of its sub-users (“sub-users” in this case are meaningless to the Morpheus network). 
@@ -61,7 +61,7 @@ Compute Contract
 
 “RFC”: stands for “Request for Compute.” A user sends an RFC to the Router, and specifies the [LLM] User desires access to as well as the [TokenMax], which is a cap on the acceptable LT’s in response. User will want to cap this because higher numbers = longer wait times for answers, and count more toward UserMax, which is limited each day. 
 
-Workflow
+## Workflow
 1) Users, Providers, and Router all create MOR pub keys (this is their identity, all messages signed as such). 
 2) If User hodls any balance of MOR, User may submit a signed Request for Processing “RFP” message to the Router. User specifies [LLM] and [TokenMax].
 3) Router prioritizes RFPs based on User’s MOR balance (solves sybil issue)
@@ -75,7 +75,7 @@ Workflow
 (11) (Some time later) Provider requests payment of MOR from Compute Contract and Compute Contract sends MOR payment if valid (first blockchain TX so far, can be batched).
 
 
-Outcome
+## Outcome
 * User received fast Result for her Query, and paid nothing (this will lead to amazing UX and thus adoption). Solves Goal 1.
 * Compute Contract paid for Compute through a competitive bidding process, and a check for quality/satisfaction from the User who ordered it. Solves Goal 2.
 * Provider received money (MOR) from Compute Contract so long as response was fast enough. Provider received exactly what she asked for to provide the compute. If her ask is too high, others will bid lower, thus the system is efficient and will drive down Provider prices toward the cost of base electricity.  Solves Goal 3
@@ -85,20 +85,16 @@ Outcome
 * MOR balance was reduced from Compute Contract. Contract will be solvent so long as MOR paid < MOR earned per period from emissions.
 * If User sends an RFC which exceeds User’s UserMax, the Router will reject the request.
 
-
-
 —-------------
 
-
-
-Compute Budget
+## Compute Budget
 The Morpheus network needs to determine how much MOR it is willing to spend on compute in a given period (such as each day), this is referred to as the Compute Budget. Each period, up to this amount of MOR may be spent by the Compute Contract. This number multiplied by the MOR price gives us a dollar budget for acquisition of Compute each day. 
 
 
 Open question 1: How should the Compute Budget be determined? The simplest idea is to set Compute Budget = emissions into the Compute Contract. This way, Compute Contract would never run out of tokens. But then what to do with the unused tokens, since the maximum would never be utilized each day? These could, perhaps, be granted pro-rata to current MOR token holders. Or, they could be burned. Or, they could remain unused in the Compute Contract, to be spent in the future on Compute (but then this opens more governance questions). 
 
 
-AccessRate
+## AccessRate
 The Morpheus network allocates the scarce resource of LT production through the concept of the “AccessRate”. The AccessRate determines how many LTs each MOR token can access per day. Unused access does not accrue. AccessRate is always displayed as a quantity of LTs per 1 MOR token (such as 1 MOR = 15,000 LT). AccessRate is determined in part by MaxLT, which quantifies the maximum number of LTs the network can purchase per day.
 
 AccessRate = (1/MOR Supply) * MaxLT
@@ -106,18 +102,17 @@ MaxLT = ((MOR Compute Budget * MOR Price) / LT Price) * 1000
 UserMax = MaxLT * User MOR balance
 
 
-Example Assumptions: 
+## Example Assumptions: 
 MOR Supply = 10,000,000 MOR tokens
 MOR Compute Budget = 3,000 MOR tokens per day
 MOR Price = $20
 LT Price = $0.002 per 1000 LTs
 User Balance = 5 MOR tokens
 
-Example Result:
+## Example Result:
 MaxLT = 30,000,000,000 LTs (this is the maximum LTs the network can buy/produce each day)
 AccessRate = 3,000 (thus each MOR token grants access to 3,000 LTs per day)
 UserMax = 15,000 (a User with 5 MOR tokens can access up to 15,000 LT’s per day)
-
 
 Each period (each day), Morpheus as a network has enough funds to buy X number of LTs from compute Providers. X is a function of the amount of MOR the Compute Contract is willing to spend (the “Compute Budget”) multiplied by the current MOR price divided by the market rate for LTs. 
 If the Compute Budget is 3,000 MOR, and each is worth $20, then the network can buy (produce) up to $60,000 of LTs that day. If the going rate for 1,000 LTs is $0.002, then the network can buy up to 30 billion LTs (30m x 1000 LTs). 
@@ -126,8 +121,7 @@ So long as Compute Budget is at or below the emissions level, the Compute Contra
 In reality, most tokens will sit in wallets and exchanges, and only a fraction will be used to demand the LT production.
 
 
-
-Notes
+## Notes
 
 * Fundamental demand for MOR comes from Users who wish to have access to generative AI and other forms of compute on the Morpheus network. 
  
