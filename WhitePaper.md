@@ -181,7 +181,7 @@ For example, if there are 100 Community Builders on day 1 when the network launc
 ![Morpheus User   Contributor Diagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/478079be-417e-4d8b-b062-c0540138aac0)
 
 ## Morpheus Rewards Delivered by Smart Contract On Ethereum Layer 2 
-Morpheus Tokens (MOR) will be originally awarded on the the Ethereum Layer 1, and there will be a wrapped MOR tokne (wMOR) that exists on Arbitrum for the purpose of payments and other MOR utility related actions.
+Morpheus Tokens (MOR) will be originally awarded on the the Ethereum Layer 1, and there will be a wrapped MOR token (wMOR) that exists on Arbitrum for the purpose of payments and other MOR utility related actions.
 
 Note that Morpheus does not need to set aside MOR rewards for blockchain consensus or transaction execution on a distributed ledger thanks to building on Ethereum and 2nd layer Arbitrum. 
 
