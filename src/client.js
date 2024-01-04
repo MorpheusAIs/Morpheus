@@ -200,3 +200,11 @@ userInput.addEventListener("input", function () {
   this.style.height = "auto";
   this.style.height = this.scrollHeight + "px";
 });
+
+window.electronAPI.runMorpheusAgent('prompt')
+    .then(response => {
+        console.log(response);
+    })
+    .catch(error => {
+        console.error(error);
+    });
