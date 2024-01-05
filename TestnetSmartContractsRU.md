@@ -1,4 +1,4 @@
-# Goerli Testnet Smart Contracts for Morpheus Capital Contributors
+# Goerli Тестнет Смарт Контракты для поставщиков капитала в Morpheus
 
 ## Introduction
 
