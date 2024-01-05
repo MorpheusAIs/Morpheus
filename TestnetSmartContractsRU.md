@@ -14,16 +14,16 @@
 - Распределение наград: 0x850A65DA677264bbb7536f8446336C022eCc85Dc
 - Ссылка на код Смарт Контракта: https://goerli.etherscan.io/address/0x850A65DA677264bbb7536f8446336C022eCc85Dc#code
 
-- stETH Contract: 0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F 
+- Токен stETH: 0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F
 
-## Part 1: Obtaining goETH
-- To start a person should have installed Metamask or another web3 wallet they are comfortable using. You will need to go to network settings which by default is usually set to Ethereum, then choose the Goerli testnet as the network and create a Goerli address/account. 
+## Part 1: Получение goETH
+- Для начала, у вас должен быть установлен Metamask или другой web3 кошелек, который вам удобен. Вам нужно перейти к настройкам сети, которые по умолчанию обычно установлены на Ethereum, затем выбрать тестовую сеть Goerli или добавить ее вручную. 
 
-- The next step is to fund your address with goETH. You may use a website like https://goerli-faucet.pk910.de/#/ to earn goETH if you are using a fresh address.
+- Следующим шагом является получение goETH для вашего адреса. Для этого вы можете использовать сайты-краны, например, https://goerli-faucet.pk910.de/#/
 
-- There are lots of other faucets that can easily be found for the Goerli testnet but usually require an address that has been active on the main Ethereum network. 
+- Есть много других кранов для тестовой сети Goerli, которые легко можно найти, но для них обычно требуется адрес, который был активен в основной сети Ethereum.
 
-## Part 2: Converting goETH to stETH 
+## Part 2: Конвертирование goETH to stETH 
 
 -  Next, you will need to convert your goETH into Goerli stETH. You can do this by visiting https://stake.testnet.fi/. You will be able to load so goETH and swap it for stETH in just a few clicks. (Note: This site is currently very low on stETH at the time of writing this tutorial and might only have dust to exchange. Please leave some for others.)
 
