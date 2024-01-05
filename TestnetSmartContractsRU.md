@@ -2,17 +2,17 @@
 
 ## Введение
 
-To participate in the Morpheus staking contract on the Goerli Testnet, there are roughly the following three parts:
-1) Obtaining goETH
-2) Converting goETH into Goerli stETH, then finally
-3) A multistep process of connecting to the Morpheus contract 
+Чтобы принять участие в тестировании Goerli Смарт Контрактов для поставщиков ликвидности в Morpheus, необходимо пройти три этапа:
+1) Получить goETH (если у вас его еще нет)
+2) Конвертировать goETH в Goerli stETH 
+3) Подключиться и провзаимодействовать со Смарт Контрактами 
 
-## Smart Contracts Addresses
-- New MOR Token: 0x454AE850eE61a98BF16FABA3a73fb0dD02D75C40 
-- Link to Smart Contract Code on Etherscan: https://goerli.etherscan.io/address/0x454AE850eE61a98BF16FABA3a73fb0dD02D75C40#code
+## Адреса Смарт Контрактов
+- Токен MOR: 0x454AE850eE61a98BF16FABA3a73fb0dD02D75C40 
+- Ссылка на код Смарт Контракта: https://goerli.etherscan.io/address/0x454AE850eE61a98BF16FABA3a73fb0dD02D75C40#code
 
-- Distribution: 0x850A65DA677264bbb7536f8446336C022eCc85Dc
-- Link to Smart Contract Code on Etherscan: https://goerli.etherscan.io/address/0x850A65DA677264bbb7536f8446336C022eCc85Dc#code
+- Распределение наград: 0x850A65DA677264bbb7536f8446336C022eCc85Dc
+- Ссылка на код Смарт Контракта: https://goerli.etherscan.io/address/0x850A65DA677264bbb7536f8446336C022eCc85Dc#code
 
 - stETH Contract: 0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F 
 
