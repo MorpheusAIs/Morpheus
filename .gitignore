@@ -24,3 +24,6 @@ morpheus-v0.0.4.tgz
 package-old.json
 src/service/ollama/runners/
 src/service/ollama/Ollama
+.idea
+venv
+__pycache__/
