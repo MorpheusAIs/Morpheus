@@ -11,7 +11,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough, RunnableParallel
 from langchain_community.document_loaders import DirectoryLoader
 
-from llama_index import Document, SimpleDirectoryReader
+from llama_index import Document
 from llama_index.retrievers import VectorIndexRetriever
 
 from ai_experiments.models.embedding import build_llamaindex_index
@@ -51,20 +51,13 @@ documents_contracts_metadata_index = build_llamaindex_index(embed_model=llamaind
 documents_contracts_retriever = VectorIndexRetriever(index=documents_contracts_metadata_index,
                                                      similarity_top_k=TOP_K_METADATA)
 
-""" For Metamask Examples"""
-# metamask_example_documents = SimpleDirectoryReader("rag_assets/metamask_eth_examples").load_data()
-# documents_metamask_examples_index = build_llamaindex_index(embed_model=llamaindex_embeddings_factory(),
-#                                                            documents=metamask_example_documents)
-# documents_metamask_examples_retriever = VectorIndexRetriever(index=documents_metamask_examples_index,
-#                                                              similarity_top_k=TOP_K_EXAMPLES)
-
 
 if __name__ == "__main__":
 
     # TODO, consider completion (LLM) model instead of chat
 
     # for prompt
-    NLQ = "I'd like to send 5USDC to 0xkwnf4bng34oitn4oignfnwefki on arbitrum"   # replace with input() or cli args
+    NLQ = "What network is my metamask wallet on?"   # replace with input() or cli args
 
     # phase one can be simplified by not invoking an LLM at all, instead just do retrievals for metadata and examples
     # Contract metadata (via llama index) and relevent ABIs (via langchain)
@@ -81,8 +74,6 @@ if __name__ == "__main__":
     abi_retriever = abi_in_memory_vectorstore.as_retriever(search_kwargs={"k": TOP_K_ABIS})
 
     # metamask examples
-    # retrieved_metamask_examples = documents_metamask_examples_retriever.retrieve(NLQ)
-    # metamask_examples = "\n".join([f"{doc.node.text}" for doc in retrieved_metamask_examples])
     metamask_examples_loader = DirectoryLoader("rag_assets/metamask_eth_examples", glob="*.txt")
     metamask_examples = metamask_examples_loader.load()
     metamask_examples_in_memory_vectorstore = FAISS.from_documents(
