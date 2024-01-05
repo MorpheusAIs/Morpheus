@@ -2,7 +2,7 @@ import json
 import os
 from os.path import join as path_join
 
-CONTRACTS_DIR = "contracts/contracts"
+CONTRACTS_DIR = "rag_assets/contracts/"
 
 contracts = []  # [(fname, payload), ..., (fname, payload)]
 

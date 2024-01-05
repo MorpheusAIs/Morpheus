@@ -1,0 +1,9 @@
+**Get Gas Price**:
+```json
+{
+ "jsonrpc": "2.0",
+ "method": "eth_gasPrice",
+ "params": [],
+ "id": 1
+}
+```

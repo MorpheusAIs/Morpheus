@@ -1,0 +1,9 @@
+**Get Transaction by Hash**:
+```json
+{
+ "jsonrpc": "2.0",
+ "method": "eth_getTransactionByHash",
+ "params": ["0xTransactionHash"],
+ "id": 1
+}
+```

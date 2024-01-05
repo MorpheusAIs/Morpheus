@@ -1,0 +1,9 @@
+ **Get Ethereum Balance**:
+```json
+{
+ "jsonrpc": "2.0",
+ "method": "eth_getBalance",
+ "params": ["0xYourEthereumAddress", "latest"],
+ "id": 1
+}
+```

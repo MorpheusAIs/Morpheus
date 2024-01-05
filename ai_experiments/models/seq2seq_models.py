@@ -10,7 +10,7 @@ phase1_prompt_template = """
     - Request necessary information from the user to complete the transaction, without recommending specific wallets or exchanges.
     - Utilize the user's existing metamask connection for transaction completion.
     
-    Contract ABI Data: 
+    Contract ABI Data:
     {context}
     
     User Request:
@@ -32,6 +32,9 @@ phase2_prompt_template = """
     
     Based on this context:
     {context}
+    
+    An relevant example of a metamask payload:
+    {metamask_examples}
     
     And the user's inquiry:
     {nlq}

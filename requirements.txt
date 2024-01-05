@@ -6,3 +6,4 @@ llama-index
 langchain
 tiktoken
 faiss-cpu
+unstructured

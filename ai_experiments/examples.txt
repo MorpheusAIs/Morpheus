@@ -1,0 +1,31 @@
+--------------------------------------------------------------------------------------------------------------------------------------
+I'd like to send 5USDC to 0xkwnf4bng34oitn4oignfnwefki on arbitrum
+
+
+```javascript
+const Web3 = require('web3');
+
+// ... (your existing code)
+
+const metamaskContext = {
+  network_id: '0xkwnf4bng34iotn4oignfnwefki', // Replace with the target network ID
+  arbitrum: true, // Whether the transaction is being sent on Arbitrum or not
+};
+
+const response = web3.eth.sendTransaction(transaction, {
+  from: account,
+  gas: gasPrice * (2 * Math.pow(2, 20)), // Increase the gas limit to handle the extra data
+  value: web3.utils.toWei(value, 'ether'), // Send the appropriate amount of Ether
+  context: metamaskContext, // Pass the Metamask specific context
+});
+
+```
+
+Currently, not executable, would need an agent to fetch gas price from Geth (via RPC).
+Or just ask metamask.
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+What is my eth balance on {arbitrum, ethereum, sepolia}
+
+(meet Sunday if possible, def on Tuesday)

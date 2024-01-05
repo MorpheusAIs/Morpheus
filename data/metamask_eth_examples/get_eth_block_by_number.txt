@@ -1,0 +1,9 @@
+**Get Block by Number**:
+```json
+{
+ "jsonrpc": "2.0",
+ "method": "eth_getBlockByNumber",
+ "params": ["0xBlockNumber", true],
+ "id": 1
+}
+```
