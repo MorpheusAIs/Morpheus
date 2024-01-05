@@ -87,8 +87,6 @@ if __name__ == "__main__":
     phase2_model = ChatOllama(model="llama2:7b")
     phase2_prompt = ChatPromptTemplate.from_template(phase2_prompt_template)
 
-    # FIXME, not clear whether NLQ is used by LangChain for retrieval
-
     setup_and_retrieval = RunnableParallel(
         {
             "nlq": RunnablePassthrough(),  # gets set by the RunnableParallel.invoke() method

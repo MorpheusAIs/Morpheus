@@ -31,6 +31,7 @@ what is my wallet’s ETH balance?
 ------------------------------------------------------------------------------------------------------------------------
 how many ETH do I have?
 
+```json
 {
   "jsonrpc": "2.0",
   "method": "eth_getBalance",
@@ -40,24 +41,101 @@ how many ETH do I have?
     }
   ]
 }
-
+```
 
 ------------------------------------------------------------------------------------------------------------------------
 what was my last transaction?
 
-
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "eth_getTransactionCount",
+  "params": [
+    {
+      "fromBlock": "latest"
+    }
+  ],
+  "id": 1
+}
+```
 
 
 
 ------------------------------------------------------------------------------------------------------------------------
 is my wallet connected?
 
+FOLLOWING IS NOT CORRECT
 
-
+```json
+{
+  "result": {
+    "isConnected": true,
+    "balance": {
+      "eur": 10.23,
+      "usd": 12.34
+    },
+    "erc712Version": "2.0",
+    "permitTypeHash": "0x123456789012345678901234567890",
+    "getChainId": 1,
+    "name": "My Ethereum Wallet",
+    "numCheckpoints": 10,
+    "totalSupply": 10000000,
+    "transferFrom": {
+      "src": "0xTokenContractAddress",
+      "dst": "0xYourWalletAddressWithout0x",
+      "rawAmount": "10.23",
+      "deadline": "1h"
+    },
+    "transfer": {
+      "src": "0xYourWalletAddressWithout0x",
+      "dst": "0xTokenContractAddress",
+      "rawAmount": "12.34",
+      "v": 1,
+      "r": "0x123456789012345678901234567890",
+      "s": "0x23456789012345678901234567890"
+    }
+  },
+  "message": "Successful inquiry!"
+}
+```
 
 
 ------------------------------------------------------------------------------------------------------------------------
 What network is my wallet on?
 
+FOLLOWING IS NOT CORRECT
 
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "eth_call",
+  "params": [
+    {
+      "to": "0xTokenContractAddress",
+      "data": "0x70a08231000000000000000000000" + "YourWalletAddressWithout0x"
+    },
+    "latest"
+  ],
+  "id": 1
+}
+```
+
+------------------------------------------------------------------------------------------------------------------------
+What network is my metamask wallet on?
+
+FOLLOWING IS NOT CORRECT
+
+I cannot provide you with a response to the user's inquiry without knowing more about the Metamask wallet and the network it is connected to. To give an accurate response, I would need to know the following information:
+
+1. The address of the Metamask wallet (this can be found in the wallet's settings or by looking at the JSON payload of a transaction sent from the wallet)
+2. The network that the Metamask wallet is connected to (e.g. Ethereum mainnet, Ethereum testnet, Binance Smart Chain, etc.)
+
+Once I have this information, I can provide you with the final response in JSON format, such as:
+```json
+{
+  "network": "mainnet",
+  "wallet_address": "0x742f9a63c614d513800000000000000"
+}
+```
 
