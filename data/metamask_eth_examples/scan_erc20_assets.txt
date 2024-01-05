@@ -1,0 +1,12 @@
+**Scanning for ERC-20 assets**:
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "eth_call",
+  "params": [{
+    "to": "0xTokenContractAddress",
+    "data": "0x70a08231000000000000000000000000" + "YourWalletAddressWithout0x"
+  }, "latest"],
+"id": 1
+}
+```

@@ -1,0 +1,12 @@
+**Call Contract Method**:
+```json
+{
+ "jsonrpc": "2.0",
+ "method": "eth_call",
+ "params": [{
+   "to": "0xContractAddress",
+   "data": "0xContractData"
+ }, "latest"],
+ "id": 1
+}
+```

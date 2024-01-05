@@ -1,4 +1,3 @@
-
 .DS_Store
 *.DS_Store
 node_modules
@@ -25,3 +24,6 @@ package-old.json
 src/service/ollama/runners/
 src/service/ollama/Ollama
 .vscode/settings.json
+.idea
+venv
+__pycache__/

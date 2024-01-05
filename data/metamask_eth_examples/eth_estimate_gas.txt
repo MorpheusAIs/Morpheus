@@ -1,0 +1,12 @@
+**Estimate Gas**:
+```json
+{
+ "jsonrpc": "2.0",
+ "method": "eth_estimateGas",
+ "params": [{
+   "to": "0xAddress",
+   "data": "0xData"
+ }],
+ "id": 1
+}
+```
