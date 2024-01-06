@@ -14,7 +14,7 @@ To participate in the Morpheus staking contract on the Goerli Testnet, there are
 - Distribution: 0x850A65DA677264bbb7536f8446336C022eCc85Dc
 - Link to Smart Contract Code on Etherscan: https://goerli.etherscan.io/address/0x850A65DA677264bbb7536f8446336C022eCc85Dc#code
 
-- stETH Contract: 0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F 
+- stETH Contract: [0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84](https://goerli.etherscan.io/address/0x1643e812ae58766192cf7d2cf9567df2c37e9b7f)
 
 ## Part 1: Obtaining goETH
 - To start a person should have installed Metamask or another web3 wallet they are comfortable using. You will need to go to network settings which by default is usually set to Ethereum, then choose the Goerli testnet as the network and create a Goerli address/account. 
@@ -27,7 +27,7 @@ To participate in the Morpheus staking contract on the Goerli Testnet, there are
 
 -  Next, you will need to convert your goETH into Goerli stETH. You can do this by visiting https://stake.testnet.fi/. You will be able to load so goETH and swap it for stETH in just a few clicks. (Note: This site is currently very low on stETH at the time of writing this tutorial and might only have dust to exchange. Please leave some for others.)
 
-- You may also be able to find small amounts of stETH on Uniswap.
+- You may also be able to find small amounts of stETH on [Uniswap.](https://app.uniswap.org/swap?outputCurrency=0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F&chain=goerli) 
 
 ## Part 3: Interacting with the Morpheus Smart Contract 
 
@@ -62,7 +62,7 @@ In this example we are going to "Contract", then to "Write as Proxy", and then t
 - The user address and group ID are specified.
 ![SmartContractExample5](https://github.com/jabo38/morpheus-images/assets/10395907/eeb443a5-d28a-460e-9fd0-477dcc663789)
 
-- Again enter "0" in the `poolId_ (uint256)` field. Click "write". Enter your address in the `_user (address)` field. Click "write".
+- Again enter "0" in the `poolId_ (uint256)` field. Enter your address in the `_user (address)` field. Click "write".
 
 ## How to withdraw stETH?
 - Available for public groups only. Specify the group ID, and the amount to withdraw. Users can withdraw all or part of it. If the withdrawal is partial, the remaining amount must not be less than the minimum amount specified for the group.
