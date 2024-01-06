@@ -22,3 +22,4 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | 0xd8737632121D4C50b76FA3349B3C197c4574170a | https://github.com/mor-org-ai/website/pull/25 | 40 HR   | Working on mor.org; set up backend on Akash to host OS models via Ollama; Biden Exec Order Retrieval Augmented Generation |
 | 0x2ed6D479C15272438c38c7c47994e3e8df3138c8 | Tokenomics Audit and Modelling | 140 HR | Modelling smart contract payouts and testing smart contract token distribution |
 | 0x7aE68C76771131835e90AEfF44f1c03d07503B92 | @ Kehndry Discord and on the Blockchain |X Hrs | Discord Help, Smart Contract Testing, Facilitation of new user Testing, Proposal Vetting |
+| 0x8d00121e79cBb741A7da7B0598762B8dE3394E62 | Tech stack resources documentation | 1 | Listing, cleaning, linking, and documenting the decentralized AI stack components |
