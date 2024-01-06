@@ -118,12 +118,10 @@ Below is shown the unified MOR Supply Curve showing the first 5,833 day period a
 ![MORSupplyCurve20231019](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/8994c389-dad1-4e46-9b63-e048da8ef172)
 
 ## Proof of Community, Code, Compute & Capital
-The path for all Proofs in Morpheus starts with downloading a copy of the Morpheus full node. This includes a local copy of the open-source large language model on their machine. Once running a full node the user is in a position to contribute to any of the four functions of the network.
-
-The Morpheus full node comes with a wallet or the user can connect their existing wallet. This enables the user to sign and send transactions recommended by their Smart Agent.
+The Morpheus full node comes with a wallet or the user can connect their existing wallet. This enables the user to sign and send transactions recommended by their Smart Agent. So users will be able to participate in the proofs through the Morpheus software. However Capital Providers are not required to have a full node for example. They can interact directly with the Smart Contracts on Ethereum / Arbitrum using stETH.
 
 ## Capital Proof & Reward:
-The definition of a Capital Provider is someone who has downloaded the full node and connected their wallet and locked at least 0.01 ETH in a yielding smart contract. This Capital Provider Smart Contract will provide 50% of the stETH yield produced to the Morpheus swap function. The swap buys the MOR tokens from an Automated Market Maker (AMM) then added it into the AMM pool and the other 50% of the stETH yield gets locked into the AMM as a Liquitiy Provider. This will provide liquidity to all those coders, community members and compute providers. 
+The definition of a Capital Provider is someone provides stETH yield to the Morpheus network which becomes Protocol Owned Liquidity. This Capital Provider Smart Contract will provide 50% of the stETH yield produced to the Morpheus swap function. The swap buys the MOR tokens from an Automated Market Maker (AMM) then added it into the AMM pool and the other 50% of the stETH yield gets locked into the AMM as a Liquitiy Provider. This will provide liquidity to all those coders, community members and compute providers. 
 
 All stETH yield earned from your deposit is converted into protocol-owned liquidity (PoL). The yield remains as PoL indefinitely, but you can withdraw your stETH whenever.
 
