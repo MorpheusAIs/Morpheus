@@ -63,6 +63,12 @@ const createWindow = () => {
   }
 };
 
+const { runMorpheusAgent } = require('./Langchainapi.js');
+
+ipcMain.handle('runMorpheusAgent', async (event, prompt) => {
+    return await runMorpheusAgent(prompt);
+});
+
 app.on("ready", () => {
   // Add a handler for the interprocess events. This enables 2-way communication
   // between the renderer process (UI) and the main process.

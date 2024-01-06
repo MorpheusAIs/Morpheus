@@ -1,5 +1,10 @@
+import sys
 from agent.agent import MorpheusAgent
 
-agent = MorpheusAgent("agent/tools",0)
-response = agent.prompt("What is 20 x 5")
-print(response)
+def main(prompt):
+    agent = MorpheusAgent("agent/tools")
+    response = agent.prompt(prompt)
+    print(response)
+
+if __name__ == "__main__":
+    main(sys.argv[1])
