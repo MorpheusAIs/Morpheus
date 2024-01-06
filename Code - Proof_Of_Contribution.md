@@ -23,3 +23,4 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | 0x2ed6D479C15272438c38c7c47994e3e8df3138c8 | Tokenomics Audit and Modelling | 140 HR | Modelling smart contract payouts and testing smart contract token distribution |
 | 0x7aE68C76771131835e90AEfF44f1c03d07503B92 | @ Kehndry Discord and on the Blockchain |X Hrs | Discord Help, Smart Contract Testing, Facilitation of new user Testing, Proposal Vetting |
 | 0x8388298D1B9601CE2da78127605570b4878f2cFa | Security Audit/Scan  |5 Hrs | Smart Contract Security Scanner Review Initial - [https://github.com/MorpheusAIs/Morpheus/blob/main/TestingReports.md] 3 Stage Audit Rollout Plan Also Established. Assist by @EnergyHound
+| 0x8d00121e79cBb741A7da7B0598762B8dE3394E62 | Tech stack resources documentation | 10 | Listing, cleaning, linking, and documenting the decentralized AI stack components |
