@@ -1,5 +1,6 @@
-Morpheus Capital Providers Smart Contract Testing Guide on Ethereum Sepolia and Arbitrum Sepolia networks
+# Morpheus Capital Providers Smart Contract Testing Guide on Ethereum Sepolia and Arbitrum Sepolia networks
 
+## Introduction
 
 To participate in the testing of Morpheus Capital Providers Smart Contracts on the Ethereum Sepolia and Arbitrum Sepolia, there are following main steps:
 Obtaining SepoliaETH
@@ -7,12 +8,12 @@ Obtaining stETH on the Ethereum Sepolia network
 Depositing stETH into Distribution contract on the Ethereum Sepolia network
 Claiming MOR rewards on Arbitrum Sepolia using Layer Zero bridge
 
-Deployed contracts:
-Ethereum Sepolia
-Distribution: 0x0d9e3455d964029796e4b2b921ee27871125c21d
-stETH: 0xe6D01D086a844a61641C75f1BCA572e7aa70e154
-Arbitrum Sepolia
-MOR: 0xe6d01d086a844a61641c75f1bca572e7aa70e154
+## Smart Contracts Addresses
+Ethereum Sepolia 
+- Distribution: 0x0d9e3455d964029796e4b2b921ee27871125c21d 
+- stETH: 0xe6D01D086a844a61641C75f1BCA572e7aa70e154
+Arbitrum Sepolia 
+- MOR: 0xe6d01d086a844a61641c75f1bca572e7aa70e154
 
 How to get Sepolia ETH?
 To start we should have installed Metamask or another web3 wallet. We need to go to network settings which by default are usually set to Ethereum, then choose the Sepolia testnet as the network.
