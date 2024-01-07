@@ -35,7 +35,7 @@ To make Smart Agents accessible to everyone and increase decentralization we pro
 ## Papers:
 - White Paper: https://github.com/MorpheusAIs/Morpheus/blob/main/WhitePaper.md
 - Yellow Paper: https://github.com/MorpheusAIs/Morpheus/blob/main/YellowPaper.md
-- Yellowstone Compute Model Paper: https://github.com/MorpheusAIs/Morpheus/blob/main/Yellowstone%20Compute%20Model.md![image](https://github.com/MorpheusAIs/Morpheus/assets/1563345/2ac99674-2500-4373-b19f-5d0c9e3b2f8d)
+- Yellowstone Compute Model Paper: https://github.com/MorpheusAIs/Morpheus/blob/main/Yellowstone%20Compute%20Model.md
 
 ## Code:
 -	Morpheus Local Install: https://github.com/MorpheusAIs/Morpheus
