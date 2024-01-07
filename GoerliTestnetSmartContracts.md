@@ -105,7 +105,7 @@ In the example on the picture, the 0x19ec...53 address has 6000 * 10^18 stETH in
 
 
 ## How can I find out which pools are available for deposit?
-We need to go to the Deposit contract, open the “Contract” tab, then the “Read Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+We need to go to the Deposit contract, open the “Contract” tab, then the “Read as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
 It is necessary to call the pools() function and pass the number of the group. All groups are numbered starting from zero. If a group exists, you will get information on this group.
 
@@ -129,14 +129,14 @@ It is necessary to select the approve() function that will add allowance for Dis
 spender: Distribution contract	    address;
 amount: amount of tokens in wei. Should be more or equal to the deposited amount.
 
-Then, we need to go to the Deposit contract, open the “Contract” tab, then the “Write Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+Then, we need to go to the Deposit contract, open the “Contract” tab, then the “Write as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
 It is necessary to select the stake() function that will deposit stETH tokens to the smart contract. As parameters:
 poolId_: pool identifier, allowed only existed and public pools;
 amount_: amount of tokens in wei. (50 stETH in this example).
 
 How can I get information about how much I have deposited? What is the amount of rewards earned?
-We need to go to the Deposit contract, open the “Contract” tab, then the “Read Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+We need to go to the Deposit contract, open the “Contract” tab, then the “Read as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
 For this purpose we have two functions, the first shows how many rewards have already been earned, the rewards are earned every second.
 
@@ -145,14 +145,14 @@ To check the amount of rewards, you need to call the getCurrentUserReward functi
 The second function will show how many tokens have been invested by the user, the parameters are similar to the first function call. The name of the function is usersData().
 
 ## How to withdraw from a group?
-We need to go to the Deposit contract, open the “Contract” tab, then the “Write Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+We need to go to the Deposit contract, open the “Contract” tab, then the “Write as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
 It is necessary to select the withdraw() function that will withdraw the required number of stETH. As parameters:
 poolId_: pool identifier;
 amount_: amount of tokens in wei. 1 stETH = 1 * 10^18.
 
 ## How to claim rewards?
-We need to go to the Deposit contract, open the “Contract” tab, then the “Write Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+We need to go to the Deposit contract, open the “Contract” tab, then the “Write as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 The mint of the MOR token takes place on a different network, so we need a Layer Zero bridge to help us do this. 
 
 All the user needs to do is to call the claim() function and specify the following parameters:
@@ -171,7 +171,7 @@ We need to transfer stETH to the Arbitrum network, for this purpose stETH is tur
 
 Overall this may look complicated, but only a couple of transactions are needed. Remember that only the contract administrator can call the transaction to transfer stETH to Arbitrum. 
 
-We need to go to the Deposit contract, open the “Contract” tab, then the “Read Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+We need to go to the Deposit contract, open the “Contract” tab, then the “Read as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
 It is necessary to select the overplus() function that will show how many stETH is ready for transfer to Arbitrum Seploia. 
 
@@ -197,7 +197,7 @@ Just repeat the steps that were in the "How to get stETH?" section for wstETH to
 
 
 ## How to increase liquidity on Uniswap?
-We need to go to the L2TokenReceiver contract, open the “Contract” tab, then the “Write Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+We need to go to the L2TokenReceiver contract, open the “Contract” tab, then the “Write as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
 Then it is necessary to call the function swap(), this call will exchange wstETH on MOR and send in to the current contract.
 As parameters:
