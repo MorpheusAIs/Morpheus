@@ -28,7 +28,9 @@ Arbitrum Sepolia
 Since the stETH test token is not officially deployed on the Sepolia network, we will use a copy of this token with the core functionality that we have deployed.
 
 We need to go to the [stETH](https://sepolia.etherscan.io/address/0xe6D01D086a844a61641C75f1BCA572e7aa70e154#writeContract) contract, open the “Contract” tab, then the “Write Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+
 ![stETHContract](https://drive.google.com/file/d/1gz7UvleUvhhh9mIn8WImVOPzS4TQHAal/view?usp=sharing)
+
 It is necessary to select the `mint()` function that will mint the required number of stETH. 
 As parameters:
 - `account_`: address to which tokens will be credited
