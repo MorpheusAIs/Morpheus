@@ -28,7 +28,7 @@ Arbitrum Sepolia
 Since the stETH test token is not officially deployed on the Sepolia network, we will use a copy of this token with the core functionality that we have deployed.
 
 We need to go to the [stETH](https://sepolia.etherscan.io/address/0xe6D01D086a844a61641C75f1BCA572e7aa70e154#writeContract) contract, open the “Contract” tab, then the “Write Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
-
+![stETHContract](https://drive.google.com/file/d/1gz7UvleUvhhh9mIn8WImVOPzS4TQHAal/view?usp=sharing)
 It is necessary to select the `mint()` function that will mint the required number of stETH. 
 As parameters:
 - `account_`: address to which tokens will be credited
@@ -98,13 +98,14 @@ All the user needs to do is to call the `claim()` function and specify the follo
   
 Click “Write” and confirm a transaction.
 
-Great, our rewards are now in the form of a MOR token on Arbitrum Sepolia, you can import the token address `0xe6D01D086a844a61641C75f1BCA572e7aa70e154` to your list in metamask using this [guide](https://support.metamask.io/hc/en-us/articles/360015489031-How-to-display-tokens-in-MetaMask#h_01FWH492CHY60HWPC28RW0872H) or check your balance via smart contract as we did with [stETH](#how-to-check-steth-balance?) token.
+Great, our rewards are now in the form of a MOR token on Arbitrum Sepolia, you can import the token address `0xe6D01D086a844a61641C75f1BCA572e7aa70e154` to your list in metamask using this [guide](https://support.metamask.io/hc/en-us/articles/360015489031-How-to-display-tokens-in-MetaMask#h_01FWH492CHY60HWPC28RW0872H) or check your balance via smart contract as we did with stETH token.
 
 
 ## How to get Arbitrum Sepolia ETH?
-To start we should have installed Metamask or another web3 wallet. Then we need to add Arbitrum Sepolia manually or using Chainlist and clicking “Add to Metamask”
+To start we should have installed Metamask or another web3 wallet. Then we need to add Arbitrum Sepolia manually or using [Chainlist](https://chainlist.org/?testnets=true&search=arbitrum+sepolia) and clicking “Add to Metamask”
+
 The next step is to fund your address with Arbitrum Sepolia ETH. You may use faucets like https://faucet.quicknode.com/arbitrum/sepolia or https://faucet.triangleplatform.com/arbitrum/sepolia to get some for paying fees.
 
-In case you are interested in more in depth guidance, please follow the link 
+**In case you are interested in more in depth testnet guidance, please follow the [link](https://docs.google.com/document/d/1DbNx-CBpHjFUvIhbKHJSOshCKNTWlng7SeLzzn95AKY/edit)** 
 
 
