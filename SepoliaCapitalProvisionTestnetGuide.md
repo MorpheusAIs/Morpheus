@@ -55,6 +55,8 @@ Another way of checking is to add stETH token in your web3 wallet. For Metamask 
 ## How to deposit stETH into the contract?
 We need to go to the [stETH](https://sepolia.etherscan.io/address/0xe6D01D086a844a61641C75f1BCA572e7aa70e154#writeContract) contract, open the “Contract” tab, then the “Write Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
+![stETHContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/stethapproval.png)
+
 Before contributing, we need to give the distribution contract an "approval" to transfer our stETH tokens. It is necessary to select the `approve()` function that will add allowance for Distribution contract. As parameters:
 - `spender`: Distribution contract address - `0x0d9e3455d964029796e4b2b921ee27871125c21d`
 - `amount`: amount of tokens in WEI. Should be more or equal to the deposited amount. You can use this unit converter calculator https://eth-converter.com to help you.
@@ -63,9 +65,11 @@ Click “Write” and confirm a transaction.
 
 Then, we need to go to the [Distribution](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#writeProxyContract) contract, open the “Contract” tab, then the “Write Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
+![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/stake.png)
+
 It is necessary to select the `stake()` function that will deposit stETH tokens to the smart contract. As parameters:
 - `poolId_`: pool identifier, allowed only existed and public pools; for testing purpose enter “0”;
-- `amount_`: amount of tokens in WEI. (50 stETH in this example).
+- `amount_`: amount of tokens in WEI. (10 stETH in this example).
 
 Click “Write” and confirm a transaction.
 
@@ -75,9 +79,13 @@ We need to go to the [Distribution](https://sepolia.etherscan.io/address/0x0d9e3
 
 For this purpose we have two functions, the first shows how many rewards have already been earned, the rewards are earned every second.
 
+![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/rewards.png)
+
 To check the amount of rewards, you need to call the `getCurrentUserReward` function, where you need to pass the group number and your address (or the address of the user you want to know about). As a result, we will find out how many rewards there are at the moment. Amount is in WEI and you can use this unit converter calculator https://eth-converter.com to help you.
 
 The second function will show how many tokens have been invested by the user, the parameters are similar to the first function call. The name of the function is `usersData()`.
+
+![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/stakedamount.png)
 
 
 ## How to withdraw stETH from the contract?
