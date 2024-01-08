@@ -29,14 +29,14 @@ Since the stETH test token is not officially deployed on the Sepolia network, we
 
 We need to go to the [stETH](https://sepolia.etherscan.io/address/0xe6D01D086a844a61641C75f1BCA572e7aa70e154#writeContract) contract, open the “Contract” tab, then the “Write Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
-![stETHContract](https://drive.google.com/file/d/1gz7UvleUvhhh9mIn8WImVOPzS4TQHAal/view?usp=sharing)
+![stETHContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/stETH-580x648.png)
 
 It is necessary to select the `mint()` function that will mint the required number of stETH. 
 As parameters:
 - `account_`: address to which tokens will be credited
 - `amount_`: amount of tokens in WEI, instead of ETH. You can use this unit converter calculator https://eth-converter.com to help you. For instance, if you need 0.01 stETH, that equals 10000000000000000 WEI. 
 
-In the example in the picture, 100 stETH (indicated in WEI) is minted to the address 0x19ec...a7F4.
+In the example in the picture, 100 stETH (indicated in WEI) is minted to the address 0xa4DB...2259.
 
 And finally we need to click “Write” and confirm a transaction in the wallet.
 
@@ -44,8 +44,10 @@ And finally we need to click “Write” and confirm a transaction in the wallet
 ## How to check stETH balance?
 We need to go to the [stETH](https://sepolia.etherscan.io/address/0xe6D01D086a844a61641C75f1BCA572e7aa70e154#readContract) contract, open the “Contract” tab, then the “Read Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
+![stETHContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/check-stETH.png)
+
 It is necessary to call the function `balanceOf()` and specify in the `account_` field your address. As a result, we will find out how many tokens are on the wallet.
-In the example on the picture, the 0x19ec...a7F4 address has 6000 stETH indicated in WEI.
+In the example on the picture, the 0xa4DB...2259 address has 1000 stETH indicated in WEI.
 
 Another way of checking is to add stETH token in your web3 wallet. For Metamask wallet, please follow steps from this [guide](https://support.metamask.io/hc/en-us/articles/360015489031-How-to-display-tokens-in-MetaMask#h_01FWH492CHY60HWPC28RW0872H) and fill stETH token’s contract address `0xe6D01D086a844a61641C75f1BCA572e7aa70e154`
 
