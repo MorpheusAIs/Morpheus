@@ -91,6 +91,8 @@ The second function will show how many tokens have been invested by the user, th
 ## How to withdraw stETH from the contract?
 We need to go to the [Distribution](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#writeProxyContract) contract, open the “Contract” tab, then the “Write Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
+![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/withdraw.png)
+
 It is necessary to select the `withdraw()` function that will withdraw the required number of stETH. As parameters:
 - `poolId_`: pool identifier; enter "0" for test purpose;
 - `amount_`: amount of tokens in WEI.
@@ -100,6 +102,8 @@ Click “Write” and confirm a transaction.
 
 ## How to claim rewards?
 We need to go to the [Distribution](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#writeProxyContract), open the “Contract” tab, then the “Write Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+
+![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/claim.png)
 
 The mint of the MOR token takes place on the Arbitrum Sepolia network, so we need a Layer Zero bridge to help us do this. 
 
