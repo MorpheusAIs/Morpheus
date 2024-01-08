@@ -63,7 +63,7 @@ Before contributing, we need to give the distribution contract an "approval" to 
 
 Click “Write” and confirm a transaction.
 
-Then, we need to go to the [Distribution](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#writeProxyContract) contract, open the “Contract” tab, then the “Write Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+Then, we need to go to the [Distribution](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#writeProxyContract) contract, open the “Contract” tab, then the “Write as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
 ![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/stake.png)
 
@@ -75,7 +75,7 @@ Click “Write” and confirm a transaction.
 
 
 ## How can I get information about how much I have deposited? What is the amount of rewards earned?
-We need to go to the [Distribution](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#readProxyContract) contract, open the “Contract” tab, then the “Read Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+We need to go to the [Distribution](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#readProxyContract) contract, open the “Contract” tab, then the “Read as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
 For this purpose we have two functions, the first shows how many rewards have already been earned, the rewards are earned every second.
 
@@ -89,7 +89,7 @@ The second function will show how many tokens have been invested by the user, th
 
 
 ## How to withdraw stETH from the contract?
-We need to go to the [Distribution](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#writeProxyContract) contract, open the “Contract” tab, then the “Write Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+We need to go to the [Distribution](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#writeProxyContract) contract, open the “Contract” tab, then the “Write as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
 ![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/withdraw.png)
 
@@ -101,7 +101,7 @@ Click “Write” and confirm a transaction.
 
 
 ## How to claim rewards?
-We need to go to the [Distribution](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#writeProxyContract), open the “Contract” tab, then the “Write Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+We need to go to the [Distribution](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#writeProxyContract), open the “Contract” tab, then the “Write as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
 ![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/claim.png)
 
