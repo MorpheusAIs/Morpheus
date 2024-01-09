@@ -48,6 +48,8 @@ module.exports = {
     executableName: 'morpheus',
     osxSign: {
       identity: process.env.APPLE_IDENTITY,
+      entitlements: "public/entitlements.plist",
+      entitlementsInherit: "public/entitlements.plist",
     },
 /*     osxNotarize: {
       tool: "notarytool",
