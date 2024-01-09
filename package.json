@@ -18,11 +18,8 @@
     "make-rpm": "electron-forge make --targets=@electron-forge/maker-rpm",
     "make-deb": "electron-forge make --targets=@electron-forge/maker-deb"
   },
-  "keywords": [
-    "Local",
-    "Sovereign",
-    "AI"
-  ],
+  
+  "keywords": [ "Local", "Sovereign","AI"],
   "author": "Morpheus",
   "license": "MIT",
   "devDependencies": {

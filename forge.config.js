@@ -7,7 +7,10 @@ module.exports = {
       config: {
         background: "./build/SVG/dmgbg.svg",
         format: "ULFO",
-        icon: "./public/MOR_logo_circle.icns"
+        icon: "./public/MOR_logo_circle.icns",
+        window: {
+          width: 600,
+          height: 400
       }
     },
     {
