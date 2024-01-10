@@ -1,7 +1,7 @@
 ![Morpheuslogo](https://github.com/MorpheusAIs/Morpheus/assets/1563345/235b9c04-f3b1-4520-a328-2070c9c890ab)
 
 # Morpheus
-## Un réseau pour alimenter les agents intelligents
+## Un Réseau pour Alimenter les Agents Intelligents
 ### Rédigé par Morpheus, Trinity, & Neo
 Publié - 2 septembre 2023
 Lien vers les détails techniques du livre jaune : https://github.com/MorpheusAIs/Morpheus/blob/main/YellowPaper.md
