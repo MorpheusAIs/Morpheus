@@ -1,7 +1,7 @@
 ﻿![Morpheuslogo](https://github.com/MorpheusAIs/Morpheus/assets/1563345/235b9c04-f3b1-4520-a328-2070c9c890ab)
 
 # Morpheus
-## Sieć do zasilania inteligentnych agentów
+## Sieć do zasilania Smart Agentów
 ### Autorami są Morpheus, Trinity i Neo
 Opublikowano - 2 września 2023 r.
 Link do szczegółów technicznych Yellow Paper: https://github.com/MorpheusAIs/Morpheus/blob/main/YellowPaper.md
