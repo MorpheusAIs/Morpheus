@@ -9,7 +9,7 @@ View on Notion: https://defiant-wolfsbane-830.notion.site/Morpheus-Yellowstone-C
 
 
 ## Summary
-In the Yellowstone Compute Model, the Morpheus network pays Providers only for Compute actually provided through a competitive bid process, and allocates the scarce production of LangTokens pro-rata to MOR token holders based on balance, rather than on payment. This drastically improves UX while minimizing Sybil vulnerability. Yellowstone also imbues the important metrics of time and a Pass/Fail test to ensure Providers are adequately prompt and accurate. Yellowstone preserves privacy by never sending prompts or results through the Router, and minimizes blockchain transactions to permit a large scale of operation. Through this model, MOR achieves fundamental value as it enables perpetual (though not unlimited) access to permissionless compute, without requiring transactions per inference. 
+In the Yellowstone Compute Model, the Morpheus network pays Providers only for Compute actually provided through a competitive bid process, and allocates the scarce production of Tokens pro-rata to MOR token holders based on balance, rather than on payment. This drastically improves UX while minimizing Sybil vulnerability. Yellowstone also imbues the important metrics of time and a Pass/Fail test to ensure Providers are adequately prompt and accurate. Yellowstone preserves privacy by never sending prompts or results through the Router, and minimizes blockchain transactions to permit a large scale of operation. Through this model, MOR achieves fundamental value as it enables perpetual (though not unlimited) access to permissionless compute, without requiring transactions per inference. 
 
 If adopted, this paper replaces the “Compute Proof, Registration & Reward” section of the Morpheus whitepaper (https://github.com/MorpheusAIs/Morpheus/blob/main/WhitePaper.md)
 
@@ -50,32 +50,84 @@ Four Components Involved:
 * High throughput processing engine
 * Can be relatively centralized at first, ultimately needs to decentralize
 
+## Standard Weights and Measures
+
+There is an atomic unit of inferences in AI, measured in inferences/second (IPS). This can be conceptually compared to wei on the blockchain. Inferences are used to define rates in the Yellowstone router.  The weight of a single Morpheus AI unit is therefore an inference.  Depending on the type of request, this can be applied to any compute task.  
+
+As AI and blockchain merge commonalities, Morpheus looks to provide an open-source standard of measurements in order to clarify terminology used by both AI and Blockchain. 
+
+
+There are two types of prompts, defined by the size of response returned by a model:  
+
+***Determined Length Prompts***, where the response considers the length of the response to return. Examples of this are:
+- Chat/Image creation
+- Disease diagnosis
+- Object recognition
+- Fraud detection
+
+
+**Undetermined Length Prompts** require resources to respond that are only knowable after the response is created. Example prompts of non deterministic responses are:
+- Sing a sonata about spaghetti.
+- Generate a Happy Birthday video
+- Combine model X with model Y
+- Slice a 3D model into an .stl file
+
+Yellowstone focuses on Determined Length Prompts.  The router described will be constructed in a fashion to handle undetermined prompts in the future, but not to service them today.  To accomplish this we use a standardized measurement of Decentralized AI.
+
+DeAI Rates
+
+### Expressions of inference/second:
+
+| Type | Response | Rate |
+|------|----------|------|
+| Determined | Language | Inferred Tokens per second (TPS)|
+| Undetermined - media | Audio | Inferred Samples per second (ISPS) |
+| Undetermined - media | Video | Inferred Frames per second (IFPS) |
+| Undetermined - future tech | Unknown Future Format | NA |
+
+The first measure of inference for the Yellowstone router will be tokens. Other inference formats to follow.
+
+### Time
+
+The block time for inference is 12 seconds, meaning a block of inference transactions is published and accounted for 5 times per minute.  
+
 ### Compute Contract
 *Permissionless smart contract which receives emissions of MOR, tracks credits and debits to Providers, and pays Providers when called.
 
-“Users”: defined as any entity that has a MOR address and sends Requests to the Router. This can be a specific individual person sending Requests from a Morpheus desktop node, or it could be a bot, or it could be a company or 3rd party website which interacts with the Morpheus network on behalf of its sub-users (“sub-users” in this case are meaningless to the Morpheus network). 
+“Users”: defined as any entity that has a MOR address and sends Requests to the Router, using the compute. This can be a specific individual person sending Requests from a Morpheus desktop node, or it could be a bot, or it could be a company or 3rd party website which interacts with the Morpheus network on behalf of its end-users (end-users' use of inference aren't tracked or  considered in the compute contract, except when there is an inference failure). 
 
-“Providers”: defined as any entity that has a MOR address and offers LT bids to the Router. When a Provider wins the bid from the Router, Provider provides the compute resource (GPUs, etc) for various AI models to the User. 
+“Providers”: defined as any entity, running a node that provides compute resources, has a MOR address and offers Token bids through the Router. When a Provider wins the bid from the Router, Provider provides the compute resource (GPUs, etc) for various AI models to the User. 
 
 “Router”:  defined as a software application that has a MOR address and negotiates the 2-sided market between Users and Providers. The Router registers and tracks Provider addresses and bids, processes Requests from Users, records [miliseconds] and Pass/Fail tests of processed Requests, and instructs the Compute Contract to credit eligible Providers for payment in MOR. The Router never sends or receives MOR transactions (nor transactions on any blockchain). The Router never sees the content of a Request, nor the response. 
 
 “Compute Contract”: defined as a smart contract that has a MOR address, receives all emitted MOR allocated to the Compute bucket, tracks amounts owed to eligible Providers, and pays MOR to eligible Providers when Providers request payment.
 
-“LangToken” (“LT”): defined as a language token in generative AI parlance. Often this is ~4 characters of text, or 5x5 pixels of image, etc. LTs are the base commodity being offered in Morpheus, not to be confused with “tokens” generally such as ERC20 tokens or the MOR token itself. “TokenMax” below refers to a maximum number of LangTokens accepted for payment by the Router. 
+“Token” (“T”): is the smallest amount of letters or pixels bid on vi the router. Often this is ~4 characters of text, or 5x5 pixels of image, etc. This is not to be confused with blockchain “tokens” such as ERC20 tokens or the MOR token itself. 
+
+“TokenMax” below refers to a maximum number of Tokens accepted for payment by the Router. 
 
 “RFC”: stands for “Request for Compute.” A user sends an RFC to the Router, and specifies the [LLM] User desires access to as well as the [TokenMax], which is a cap on the acceptable LT’s in response. User will want to cap this because higher numbers = longer wait times for answers, and count more toward UserMax, which is limited each day. 
+
+
+### Contract Protections
+
+In order to prevent an attack that shorts or runs the number of MOR by manipulating  using any unused compute, the pool of unused MOR allocated to Compute Providers can be reduced by no more than 1% per block day. This is equal to normal compute emisions + 1%.
+
+### Compute Bootstrapping Incentive
+
+For the first year following the Capital Contract's bootsrtapping period, the top 100 Compute providers will be entitled to a pro-rata amount of 2.4% of MOR emissions.  This is calculated by the routers and accounted for in the compute contract.
 
 ## Workflow
 1) Users, Providers, and Router all create MOR pub keys (this is their identity, all messages signed as such). 
 2) If User hodls any balance of MOR, User may submit a signed Request for Processing “RFP” message to the Router. User specifies [LLM] and [TokenMax].
 3) Router prioritizes RFPs based on User’s MOR balance (solves sybil issue)
-4) Router selects Provider that supports the [LLM], prioritized based on lowest Bid per LangToken in MOR. 
+4) Router selects Provider that supports the [LLM], prioritized based on lowest Bid per Token in MOR. 
 5) Router sends liveness check to Provider. If Pass, then
 6) Router connects User to the Provider
 7) User sends Query ([LLM],[prompt]) to Provider 
 8) Provider computes Query, sends Result to User
-9) User reports Time [milliseconds] between Step 4 & 5, [LangTokens] delivered, and Pass/Fail to Router
-10) Router instructs Compute Contract to credit Provider with MOR if [milliseconds] per [LangToken] is no worse than X% below mean of past Z queries for that [LLM] and if User reported [Pass]. 
+9) User reports Time [milliseconds] between Step 4 & 5, [Tokens] delivered, and Pass/Fail to Router
+10) Router instructs Compute Contract to credit Provider with MOR if [milliseconds] per [oken] is no worse than X% below mean of past Z queries for that [LLM] and if User reported [Pass]. 
 (11) (Some time later) Provider requests payment of MOR from Compute Contract and Compute Contract sends MOR payment if valid (first blockchain TX so far, can be batched).
 
 ![ComputeContractImage2](https://github.com/MorpheusAIs/Morpheus/assets/1563345/e66ea20c-9851-4f9e-9caa-66c6d798c462)
