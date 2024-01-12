@@ -11,8 +11,8 @@ To participate in the testing of Morpheus Capital Providers Smart Contracts on t
 
 ## Smart Contracts Addresses
 Ethereum Sepolia 
-- Distribution: [0x0d9e3455d964029796e4b2b921ee27871125c21d](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#code) 
-- stETH: [0xe6D01D086a844a61641C75f1BCA572e7aa70e154](https://sepolia.etherscan.io/token/0xe6D01D086a844a61641C75f1BCA572e7aa70e154)
+- Distribution: [0x98a8c301F3B168daCD0B054dc06A15c778F12D6e](https://sepolia.etherscan.io/address/0x98a8c301f3b168dacd0b054dc06a15c778f12d6e#code) 
+- stETH: [0xEE3fc2711cBB17B26747048c177698398c9a95ce](https://sepolia.etherscan.io/address/0xee3fc2711cbb17b26747048c177698398c9a95ce#code)
   
 Arbitrum Sepolia 
 - MOR: [0xe6d01d086a844a61641c75f1bca572e7aa70e154](https://sepolia.arbiscan.io/address/0xe6d01d086a844a61641c75f1bca572e7aa70e154#code)
@@ -27,7 +27,7 @@ Arbitrum Sepolia
 ## How to get stETH?
 Since the stETH test token is not officially deployed on the Sepolia network, we will use a copy of this token with the core functionality that we have deployed.
 
-We need to go to the [stETH](https://sepolia.etherscan.io/address/0xe6D01D086a844a61641C75f1BCA572e7aa70e154#writeContract) contract, open the “Contract” tab, then the “Write Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+We need to go to the [stETH](https://sepolia.etherscan.io/address/0xEE3fc2711cBB17B26747048c177698398c9a95ce#writeContract) contract, open the “Contract” tab, then the “Write Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
 ![stETHContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/stETH-580x648.png)
 
@@ -42,28 +42,28 @@ And finally we need to click “Write” and confirm a transaction in the wallet
 
 
 ## How to check stETH balance?
-We need to go to the [stETH](https://sepolia.etherscan.io/address/0xe6D01D086a844a61641C75f1BCA572e7aa70e154#readContract) contract, open the “Contract” tab, then the “Read Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+We need to go to the [stETH](https://sepolia.etherscan.io/address/0xEE3fc2711cBB17B26747048c177698398c9a95ce#readContract) contract, open the “Contract” tab, then the “Read Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
 ![stETHContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/check-stETH.png)
 
 It is necessary to call the function `balanceOf()` and specify in the `account_` field your address. As a result, we will find out how many tokens are on the wallet.
 In the example on the picture, the 0xa4DB...2259 address has 1000 stETH indicated in WEI.
 
-Another way of checking is to add stETH token in your web3 wallet. For Metamask wallet, please follow steps from this [guide](https://support.metamask.io/hc/en-us/articles/360015489031-How-to-display-tokens-in-MetaMask#h_01FWH492CHY60HWPC28RW0872H) and fill stETH token’s contract address `0xe6D01D086a844a61641C75f1BCA572e7aa70e154`
+Another way of checking is to add stETH token in your web3 wallet. For Metamask wallet, please follow steps from this [guide](https://support.metamask.io/hc/en-us/articles/360015489031-How-to-display-tokens-in-MetaMask#h_01FWH492CHY60HWPC28RW0872H) and fill stETH token’s contract address `0xEE3fc2711cBB17B26747048c177698398c9a95ce`
 
 
 ## How to deposit stETH into the contract?
-We need to go to the [stETH](https://sepolia.etherscan.io/address/0xe6D01D086a844a61641C75f1BCA572e7aa70e154#writeContract) contract, open the “Contract” tab, then the “Write Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+We need to go to the [stETH](https://sepolia.etherscan.io/address/0xEE3fc2711cBB17B26747048c177698398c9a95ce#writeContract) contract, open the “Contract” tab, then the “Write Contract” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
 ![stETHContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/stethapproval.png)
 
 Before contributing, we need to give the distribution contract an "approval" to transfer our stETH tokens. It is necessary to select the `approve()` function that will add allowance for Distribution contract. As parameters:
-- `spender`: Distribution contract address - `0x0d9e3455d964029796e4b2b921ee27871125c21d`
+- `spender`: Distribution contract address - `0x98a8c301F3B168daCD0B054dc06A15c778F12D6e`
 - `amount`: amount of tokens in WEI. Should be more or equal to the deposited amount. You can use this unit converter calculator https://eth-converter.com to help you.
 
 Click “Write” and confirm a transaction.
 
-Then, we need to go to the [Distribution](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#writeProxyContract) contract, open the “Contract” tab, then the “Write as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+Then, we need to go to the [Distribution](https://sepolia.etherscan.io/address/0x98a8c301F3B168daCD0B054dc06A15c778F12D6e#writeProxyContract) contract, open the “Contract” tab, then the “Write as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
 ![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/stake.png)
 
@@ -75,7 +75,7 @@ Click “Write” and confirm a transaction.
 
 
 ## How can I get information about how much I have deposited? What is the amount of rewards earned?
-We need to go to the [Distribution](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#readProxyContract) contract, open the “Contract” tab, then the “Read as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+We need to go to the [Distribution](https://sepolia.etherscan.io/address/0x98a8c301F3B168daCD0B054dc06A15c778F12D6e#readProxyContract) contract, open the “Contract” tab, then the “Read as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
 For this purpose we have two functions, the first shows how many rewards have already been earned, the rewards are earned every second.
 
@@ -89,7 +89,7 @@ The second function will show how many tokens have been invested by the user, th
 
 
 ## How to withdraw stETH from the contract?
-We need to go to the [Distribution](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#writeProxyContract) contract, open the “Contract” tab, then the “Write as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+We need to go to the [Distribution](https://sepolia.etherscan.io/address/0x98a8c301F3B168daCD0B054dc06A15c778F12D6e#writeProxyContract) contract, open the “Contract” tab, then the “Write as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
 ![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/withdraw.png)
 
@@ -101,7 +101,7 @@ Click “Write” and confirm a transaction.
 
 
 ## How to claim rewards?
-We need to go to the [Distribution](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#writeProxyContract), open the “Contract” tab, then the “Write as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
+We need to go to the [Distribution](https://sepolia.etherscan.io/address/0x98a8c301F3B168daCD0B054dc06A15c778F12D6e#writeProxyContract), open the “Contract” tab, then the “Write as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
 ![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/claim.png)
 

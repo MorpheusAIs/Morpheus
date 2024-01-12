@@ -11,8 +11,8 @@
 
 ## Адреса смарт контрактов
 Ethereum Sepolia 
-- Контракт распределения наград: [0x0d9e3455d964029796e4b2b921ee27871125c21d](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#code) 
-- Контракт токена stETH: [0xe6D01D086a844a61641C75f1BCA572e7aa70e154](https://sepolia.etherscan.io/token/0xe6D01D086a844a61641C75f1BCA572e7aa70e154)
+- Контракт распределения наград: [0x98a8c301F3B168daCD0B054dc06A15c778F12D6e](https://sepolia.etherscan.io/address/0x98a8c301f3b168dacd0b054dc06a15c778f12d6e#code)
+- Контракт токена stETH: [0xEE3fc2711cBB17B26747048c177698398c9a95ce](https://sepolia.etherscan.io/address/0xee3fc2711cbb17b26747048c177698398c9a95ce#code)
   
 Arbitrum Sepolia 
 - Контракт токена MOR: [0xe6d01d086a844a61641c75f1bca572e7aa70e154](https://sepolia.arbiscan.io/address/0xe6d01d086a844a61641c75f1bca572e7aa70e154#code)
@@ -27,7 +27,7 @@ Arbitrum Sepolia
 ## Как получить stETH?
 Поскольку тестовый токен stETH официально не развернут в сети Sepolia, мы будем использовать копию этого токена с необходимыми для тестирования основными функциями.
 
-Для этого необходимо перейти к контракту [stETH](https://sepolia.etherscan.io/address/0xe6D01D086a844a61641C75f1BCA572e7aa70e154#writeContract) и открыть вкладку “Contract”, затем нажать на “Write Contract”. Не забудьте подключить свой кошелек, в котором должен быть достаточный баланс нативного токена для оплаты комиссии.
+Для этого необходимо перейти к контракту [stETH](https://sepolia.etherscan.io/address/0xEE3fc2711cBB17B26747048c177698398c9a95ce#writeContract) и открыть вкладку “Contract”, затем нажать на “Write Contract”. Не забудьте подключить свой кошелек, в котором должен быть достаточный баланс нативного токена для оплаты комиссии.
 
 ![stETHContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/stETH-580x648.png)
 
@@ -41,28 +41,28 @@ Arbitrum Sepolia
 
 
 ## Как проверить баланс stETH?
-Необходимо перейти к контракту [stETH](https://sepolia.etherscan.io/address/0xe6D01D086a844a61641C75f1BCA572e7aa70e154#readContract), перейти во вкладку “Contract”, затем “Read Contract”. Не забудьте подключить свой кошелек, в котором должен быть достаточный баланс нативного токена для оплаты комиссии.
+Необходимо перейти к контракту [stETH](https://sepolia.etherscan.io/address/0xEE3fc2711cBB17B26747048c177698398c9a95ce#readContract), перейти во вкладку “Contract”, затем “Read Contract”. Не забудьте подключить свой кошелек, в котором должен быть достаточный баланс нативного токена для оплаты комиссии.
 
 ![stETHContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/check-stETH.png)
 
 Перейдите к функции `balanceOf()` и в качестве параметра, в поле `account_`, укажите ваш адрес и нажмите на кнопку "Query". В результате мы получим значение в WEI показывающее количество stETH на вашем адресе. На примере выше, у адреса 0xa4DB...2259 есть 1000 stETH отображенные в WEI.
 
-Еще один способ проверки баланса, это добавление токена в ваш web3 кошелек. Узнать как это сделать в кошельке Metamask, вы можете из этого [руководства](https://support.metamask.io/hc/en-us/articles/360015489031-How-to-display-tokens-in-MetaMask#h_01FWH492CHY60HWPC28RW0872H). В качестве адреса токена stETH введите `0xe6D01D086a844a61641C75f1BCA572e7aa70e154`.
+Еще один способ проверки баланса, это добавление токена в ваш web3 кошелек. Узнать как это сделать в кошельке Metamask, вы можете из этого [руководства](https://support.metamask.io/hc/en-us/articles/360015489031-How-to-display-tokens-in-MetaMask#h_01FWH492CHY60HWPC28RW0872H). В качестве адреса токена stETH введите `0xEE3fc2711cBB17B26747048c177698398c9a95ce`.
 
 
 ## Как внести stETH в контракт распределения наград?
-Перейдите к контракту [stETH](https://sepolia.etherscan.io/address/0xe6D01D086a844a61641C75f1BCA572e7aa70e154#writeContract), откройте сначала вкладку “Contract”, затем вкладку “Write Contract”. Не забудьте подключить свой кошелек, в котором должен быть достаточный баланс нативного токена для оплаты комиссии.
+Перейдите к контракту [stETH](https://sepolia.etherscan.io/address/0xEE3fc2711cBB17B26747048c177698398c9a95ce#writeContract), откройте сначала вкладку “Contract”, затем вкладку “Write Contract”. Не забудьте подключить свой кошелек, в котором должен быть достаточный баланс нативного токена для оплаты комиссии.
 
 ![stETHContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/stethapproval.png)
 
 Перед внесением средств, нам необходимо предоставить разрешение контракту на отправку stETH с вашего кошелька. Для этого мы будем использовать функцию `approve()`.  
 В качестве параметров укажите:
-- `spender`: адрес контракта распределения наград - `0x0d9e3455d964029796e4b2b921ee27871125c21d`;
+- `spender`: адрес контракта распределения наград - `0x98a8c301F3B168daCD0B054dc06A15c778F12D6e`;
 - `amount`: сумму токенов на которые даете разрешение отображенную в WEI. Сумма должна равняться или быть больше той, которую вы планируете внести в контракт. Для удобства вычислений, вы можете воспользоваться калькулятором https://eth-converter.com.
 
 После выполнения всех действий нажмите на кнопку “Write” и подтвердите транзакцию в кошельке.
 
-Далее необходимо перейти к контракту [распределения наград](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#writeProxyContract), и открыть вкладку “Contract”, а затем “Write as Proxy”. Не забудьте подключить свой кошелек, в котором должен быть достаточный баланс нативного токена для оплаты комиссии.
+Далее необходимо перейти к контракту [распределения наград](https://sepolia.etherscan.io/address/0x98a8c301F3B168daCD0B054dc06A15c778F12D6e#writeProxyContract), и открыть вкладку “Contract”, а затем “Write as Proxy”. Не забудьте подключить свой кошелек, в котором должен быть достаточный баланс нативного токена для оплаты комиссии.
 
 ![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/stake.png)
 
@@ -75,7 +75,7 @@ Arbitrum Sepolia
 
 
 ## Как получить информацию о сумме депозита и сумме наград?
-Данная информация доступна через взаимодействие с контрактом [распределения наград](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#readProxyContract). Откройте вкладку “Contract”, а затем “Read as Proxy”. Не забудьте подключить свой кошелек, в котором должен быть достаточный баланс нативного токена для оплаты комиссии.
+Данная информация доступна через взаимодействие с контрактом [распределения наград](https://sepolia.etherscan.io/address/0x98a8c301F3B168daCD0B054dc06A15c778F12D6e#readProxyContract). Откройте вкладку “Contract”, а затем “Read as Proxy”. Не забудьте подключить свой кошелек, в котором должен быть достаточный баланс нативного токена для оплаты комиссии.
 
 Для нашей цели, мы будем использовать две функции. Первая показывает количество токенов MOR полученных в качестве награды за депозит stETH в контракт. Награды начисляются каждую секунду.
 
@@ -94,7 +94,7 @@ Arbitrum Sepolia
 
 
 ## Как снять stETH с контракта?
-Необходимо перейти к контракту [распределения наград](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#writeProxyContract), вкладку “Contract”, а затем вкладку “Write as Proxy”. Не забудьте подключить свой кошелек, в котором должен быть достаточный баланс нативного токена для оплаты комиссии.
+Необходимо перейти к контракту [распределения наград](https://sepolia.etherscan.io/address/0x98a8c301F3B168daCD0B054dc06A15c778F12D6e#writeProxyContract), вкладку “Contract”, а затем вкладку “Write as Proxy”. Не забудьте подключить свой кошелек, в котором должен быть достаточный баланс нативного токена для оплаты комиссии.
 
 ![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/withdraw.png)
 
@@ -106,7 +106,7 @@ Arbitrum Sepolia
 
 
 ## Как получить награды?
-Для этого нам снова необходим контракт [распределения наград](https://sepolia.etherscan.io/address/0x0d9e3455d964029796e4b2b921ee27871125c21d#writeProxyContract). Нужная функция находится во вкладке “Contract” и “Write as Proxy”. Не забудьте подключить свой кошелек, в котором должен быть достаточный баланс нативного токена для оплаты комиссии.
+Для этого нам снова необходим контракт [распределения наград](https://sepolia.etherscan.io/address/0x98a8c301F3B168daCD0B054dc06A15c778F12D6e#writeProxyContract). Нужная функция находится во вкладке “Contract” и “Write as Proxy”. Не забудьте подключить свой кошелек, в котором должен быть достаточный баланс нативного токена для оплаты комиссии.
 
 ![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/claim.png)
 
