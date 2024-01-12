@@ -55,30 +55,30 @@ Morpheus - это альтернатива по типу Linux для разра
 - 3 456 токенов для кода. Доказательство кода добавленного в репозиторий Morpheus та гитхаб.
 - 3 456 токенов для капитала. Доказательство вклада доходности stETH, 50% которой будут обменены на MOR, а остальная часть заблокирована в AMM для предоставления ликвидности. 
 - 3 456 токенов для сообщества. Доказательство создания приложений и инструментов, которые привлекают пользователей.    
-Оставшаяся часть, 576 токенов в день,  предназначена для создания защитных ресурсов.
+Оставшаяся часть, 576 токенов в день, предназначена для создания защитных ресурсов.
 
 ![5050version3](https://github.com/MorpheusAIs/Morpheus/assets/1563345/c9fe763f-d4e4-4069-b9c9-75e0a777c3ad)
 
-## The Utility of The MOR Token
-The objective is for MOR to provide broad utility in many of the functions of the Morpheus network. As a result, the use of the MOR token offers an on-chain accounting mechanism to calculate rewards based on real usage of the software.
+## Использование токена MOR 
+Цель MOR - обеспечить широкую полезность многих функций сети Morpheus. В результате использование токена MOR предлагает механизм учета он-чейн для расчета вознаграждения на основе реального использования программного обеспечения. 
 
-Developers pay MOR to compute providers for functions beyond what local hardware can execute. MOR pays for the Morpheus API calls for decentralized applications using the Smart Agent Protocol. Users can pay MOR for specialized Agents released by developers. In turn, developers can pay users MOR for training data for new LLMs/Agents.
+Разработчики платят MOR поставщикам вычислений за функции, выходящие за пределы возможностей локального оборудования. В MOR также оплачиваются вызовы API Morpheus для децентрализованных приложений, использующих протокол Smart Agent. Пользователи могут платить MOR за специализированные агенты, выпущенные разработчиками. В свою очередь, разработчики могут платить пользователям MOR за обучающие данные для новых LLM/агентов.
 
-All projects go through phases of development. It's important that at the beginning liquid resources such as ETH are used to pay devs and for equipment. Ethereum did the same thing when they leveraged BTC from their community to pay for the initial coding of their blockchain. The difference here is that the Smart Agent Protocol has already been developed and Morpheus is implementing a version to broaden its reach, so there isn't a need for a crowd sale before the project goes live. MOR tokens will only be rewarded after the software is live.
+Все проекты проходят через фазы развития. Важно, что в начале ликвидные ресурсы, такие как ETH, используются для оплаты услуг разработчиков и оборудования. Ethereum сделал то же самое, когда привлек BTC из своего сообщества для оплаты первоначальной разработки своего блокчейна. Разница в том, что протокол Smart Agent уже разработан, а Morpheus  расширяет сферы его применения, поэтому нет необходимости в сборе средств перед запуском проекта. Токены MOR можно будет получить только после запуска программного обеспечения.
 
-## Near-term: At Time Of Launch
-Capital - ETH locked in a smart contract that generates yield (ETH in a stETH Lido Staking contract for example). 50% of the stETH yield is swapped regularly into MOR via an AMM and the other 50% of the stETH yield is kept as stETH in the pool as a Liquidity Provider. So the Capital Contributors are adding roughly 50% MOR and 50% stETH to increase the liquidity of the AMM MOR / stETH pool over time.
+## Ближайшая перспектива: На момент запуска
+Капитал - ETH, заблокированные в смарт-контракте, который генерирует доходность (например, ETH в контракте stETH Lido Staking). 50% доходности stETH регулярно обменивается на MOR через децентрализованную биржу, а остальные 50% доходности stETH остаются в виде stETH в пуле ликвидности. Таким образом, поставщики капитала добавляют примерно 50% MOR и 50% stETH, со временем увеличивая ликвидность пула AMM MOR / stETH.
 
-- Capital, The value of their ETH yield will be calculated against all ETH yield contributed and MOR yield rewarded to them pro-rata.
-- Compute, Compute providers receive MOR for the user prompts they reply to. 
-- Coders, Coders recieve MOR for the contributions they make to the Morpheus software which are merged.
-- Community, Community builders recieve MOR for the front ends, tools, usage, & value they bring into the Morpheus network.
-
-## Mid-term: As MOR Gains Wider Circulation
-- Capital, A balance between block rewards and fees earned develop. 
-- Compute, A balance between block rewards and fees earned develop. 
-- Coders, A balance between block rewards and fees earned develop. 
-- Community, A balance between block rewards and fees earned develop.
+  - Капитал. стоимость их ETH-доходов будет рассчитана по отношению ко всем ETH-доходам, внесенным в смарт-контракт, и вознаграждения в MOR будут распределены пропорционально.
+  - Вычисления. Провайдеры вычислений получают MOR за пользовательские запросы, на которые они отвечают.
+  - Программисты. Получают MOR за вклад в программное обеспечение Morpheus, который добавлен на гитхаб.
+  - Сообщество. Создатели сообществ получают MOR за приложения, инструменты, использование и ценность, которые они привносят в сеть Morpheus.
+ 
+## Среднесрочная перспектива: На момент, когда MOR получит более широкое распространение
+- Капитал. Развивается баланс между ежедневными эмиссионными вознаграждениями и заработанными комиссиями. 
+- Вычисления. Развивается баланс между ежедневными эмиссионными вознаграждениями и заработанными комиссиями. 
+- Программисты. Развивается баланс между ежедневными эмиссионными вознаграждениями и заработанными комиссиями. 
+- Сообщество. Развивается баланс между ежедневными эмиссионными вознаграждениями и заработанными комиссиями. 
 
 ## Long-term: When MOR Has Deep Liquidity & Strong Organic Demand
 - Capital, Fees for providing ETH liquidity to the MOR token will provide a majority of their rewards.
@@ -86,63 +86,68 @@ Capital - ETH locked in a smart contract that generates yield (ETH in a stETH Li
 - Coders, Fees going to coders will form the majority of their rewards.
 - Community, Fees paid by users will provide a majority of their rewards.
 
-Note this isn't a timeline. Rather each phase is a description of part of the life cycle. It may take years for the community to grow and mature through each phase and the block reward expires after about 16 years. This lengthy distribution schedule is intended to give time for the tokens to be rewarded on a very broad basis globally. Also, the smooth daily decline in block rewards over many years gives all participants time to achieve scale and transition from the early subsidized rewards to operating solely by the fees they earn.
+## Долгосрочная перспектива: Когда у MOR будет глубокая ликвидность и высокий органический спрос 
+- Капитал. Плата за предоставление ETH ликвидности для токена MOR обеспечит большую часть вознаграждения.
+- Вычисления. Комиссии, выплачиваемые поставщикам вычислений, составят большую часть вознаграждений.
+- Программисты. Комиссии, выплачиваемые программистам, составят большую часть вознаграждений.
+- Сообщество. Комиссии, оплачиваемые пользователями, составят большинство вознаграждений.
+
+Обратите внимание, что это не временная шкала. Скорее, каждая фаза - это описание части жизненного цикла. Для того чтобы сообщество выросло и созрело в каждой фазе, могут потребоваться годы, а срок ежедневных эмиссионных вознаграждений истекает примерно через 16 лет. Такой длительный график распределения предназначен для того, чтобы дать время токенам возможность вознаградить пользователей на очень широкой основе по всему миру. Кроме того, плавное ежедневное снижение вознаграждения за блок в течение многих лет дает всем участникам время для масштабирования и перехода от ранних субсидируемых вознаграждений к работе исключительно за счет заработанных комиссий.
 
 ![MOREmissionSchedule](https://github.com/MorpheusAIs/Morpheus/assets/1563345/94c96cb0-b6e4-4c63-be46-39088c91e168)
 
-## Tail Emissions of MOR
-Ever since Bitcoin's launch people have argued about "what will happen when the block rewards finally stop?" To avoid this unhelpful debate in the context of Morpheus and to continue aligning new coders, community, compute & capital providers long into the future, we propose a "tail emission" of MOR tokens. This MOR tail emission will start after the last MOR tokens have been emitted on day 5,833 of the distribution schedule.
+## Остаточная эмиссия MOR
+С момента запуска Биткойна люди спорили о том, "что произойдет, когда вознаграждения за блоки наконец прекратятся?". Чтобы избежать этих бесполезных дебатов в контексте Morpheus и продолжить привлечение новых программистов, сообществ, вычислительных мощностей и поставщиков капитала надолго в будущее, мы предлагаем "остаточную (хвостовую) эмиссию" токенов MOR. Она начнется после того, как будут выпущены последние токены MOR в день 5,833 по графику распределения. 
  
-The tail emission will be calculated by reviewing the number of burned MOR tokens in the past 5,833 days and setting the tail emission value to be 50% of the burned amount. This tail emission value will be emitted in the next 5,833 day period. But in no case will the tail emission be greater than 16% of the then in circulation MOR. 
+Остаточная эмиссия будет рассчитываться путем анализа количества сожженных токенов MOR за последние 5 833 дня и установления значения в размере 50% от количества этих токенов. Это количество будет выпущено в течение следующих 5 833 дней. Но ни в коем случае остаточная эмиссия не будет превышать 16 % от находящегося в обращении MOR.
  
-For example, if on average 25% of MOR tokens were burned during the first 5,833 days then 10,500,000 MOR would have been burned during the first emission schedule. Then by applying the 50% tail emissions value we calculate 5,250,000 MOR can be rewarded in the second 5,833 day period. Which works out to about 16.6% of the 31,500,000 MOR left in circulation. According this amount would be further reduced to 5,040,000 MOR (16% of tokens in circulation) to be rewarded in the second 5,833 day period or ~864 MOR per day.
+Например, если в среднем 25% токенов MOR были сожжены в течение первых 5 833 дней, то во время первого графика эмиссии было бы сожжено 10 500 000 MOR. Затем, применив значение 50% остаточной эмиссии, мы вычисляем, что 5 250 000 MOR могут быть распределены во второй период в 5 833 дня. Это составляет примерно 16,6% от 31 500 000 MOR, оставшихся в обращении. В дальнейшем эта сумма будет уменьшена до 5,040,000 MOR (16% токенов в обращении), которые будут вознаграждены во второй 5,833-дневный период, что составит приблизительно ~864 MOR в день. 
  
-After the second 5,833 day period is complete, this process will repeat. The tail emission will be calculated again by reviewing the number of burned MOR tokens in the past 5,833 days and setting the tail emission value to be 50% of the burned amount. This tail emission value will be emitted in the next 5,833 day period. But in no case will the tail emission be greater than 16% of the then in circulation MOR. 
+После завершения второго 5 833-дневного периода этот процесс повторится. Хвостовая эмиссия будет снова рассчитана путем анализа количества сожженных токенов MOR за последние 5 833 дня и установления значения хвостовой эмиссии в размере 50% от сожженного количества. Это значение хвостовой эмиссии будет выпущено в следующем периоде в 5 833 дня. Но ни в коем случае хвостовая эмиссия не должна превышать 16 % от находящегося в обращении MOR.  
  
-For example, again if 25% of MOR tokens were burned during the second period, that equals 9,135,000 MOR were burned during the second emission schedule. Then 4,567,500 MOR can be rewarded in the third 5,833 day period. However, since this number is more than 16% of the then 27,405,000 MOR then left in circulation it will be reduced to 4,384,800 MOR to align with the 1% annual rewards (relative to tokens in circulation).
+Например, если во второй период было сожжено 25% токенов MOR, то это означает, что во время второго графика эмиссии было сожжено 9 135 000 MOR. Тогда 4 567 500 MOR могут быть вознаграждены в третий период продолжительностью 5 833 дня. Однако, поскольку это число составляет более 16 % от 27 405 000 MOR, оставшихся в обращении, оно будет уменьшено до 4 384 800 MOR, чтобы соответствовать годовому вознаграждению в 1 % (по отношению к токенам в обращении).
  
-This process repeats forever on into the future.
+Этот процесс будет повторяться бесконечно в будущем. 
  
-Longterm result. About 1% of annual MOR rewards (relative to the number of MOR then in circulation) will be available for future coders, compute, community & capital.
+Долгосрочный результат. Около 1% ежегодных вознаграждений MOR (относительно количества MOR, находящихся в обращении) будет доступно для будущих программистов, поставщиков вычислений, сообществ и капитала.
 
 ![MaxMORScenario25](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/81c7794a-b5bc-4a9e-bb2d-1f28b98ea079)
 
-**IMPORTANT NOTE:** This does not alter the nature of the hard Supply Cap of 42 Million MOR. 
-Since the tail emission schedule is by definition only a portion of the MOR tokens which were burned, thus the MOR token can only become ever more scarce with each 5,833 day period.
+**ВАЖНОЕ ПРИМЕЧАНИЕ:** Остаточная эмиссия не изменяет потолок общей эмиссии в 42 миллиона MOR. Поскольку график хвостовой эмиссии по определению представляет собой лишь часть сожженных токенов MOR, поэтому токен MOR будет становиться все более дефляционным с каждым 5,833-дневным периодом.
 
 ![MOR25ScenarioV9](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/4813cd02-b104-4a0c-893b-a7fd329fe2a3)
 
-Below is shown the unified MOR Supply Curve showing the first 5,833 day period and adding the long tail emissions from year 17 to year 256. Presuming the example of a 25% average burn rate of MOR over the epochs.
+Ниже показана единая кривая предложения MOR, показывающая первый период в 5 833 дня и добавляющая длинный хвост эмиссии с 17-го по 256-й год. Предположим, что средняя скорость сжигания MOR составляет 25 % за все эпохи.
 
 ![MORSupplyCurve20231019](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/8994c389-dad1-4e46-9b63-e048da8ef172)
 
-## Proof of Community, Code, Compute & Capital
-The Morpheus full node comes with a wallet or the user can connect their existing wallet. This enables the user to sign and send transactions recommended by their Smart Agent. So users will be able to participate in the proofs through the Morpheus software. However Capital Providers are not required to have a full node for example. They can interact directly with the Smart Contracts on Ethereum / Arbitrum using stETH.
+## Доказательство сообщества, кода, вычислений и капитала 
+Полный узел Morpheus поставляется с кошельком, также пользователь может подключить свой существующий кошелек. Это позволит пользователю подписывать и отправлять транзакции, рекомендованные его умным агентом. Таким образом, пользователи смогут участвовать в доказательствах через программное обеспечение Morpheus. Однако поставщикам капитала не обязательно иметь полный узел. Они могут напрямую взаимодействовать со смарт-контрактами на Ethereum / Arbitrum с помощью stETH. 
 
-## Capital Proof & Reward:
-The definition of a Capital Provider is someone provides stETH yield to the Morpheus network which becomes Protocol Owned Liquidity. This Capital Provider Smart Contract will provide 50% of the stETH yield produced to the Morpheus swap function. The swap buys the MOR tokens from an Automated Market Maker (AMM) then added it into the AMM pool and the other 50% of the stETH yield gets locked into the AMM as a Liquitiy Provider. This will provide liquidity to all those coders, community members and compute providers. 
+## Доказательство капитала и вознаграждение: 
+Определение поставщика капитала - это тот, кто предоставляет доходность от stETH в сеть Morpheus, которая становится ликвидностью, принадлежащей протоколу. Смарт-контракт поставщика капитала будет предоставлять 50% от полученной доходности stETH для покупки MOR на децентрализованной бирже (AMM), затем добавлять их в пул, а остальные 50% доходности stETH блокировать в AMM в качестве ликвидности, что обеспечит ликвидность всем программистам, членам сообщества и поставщикам вычислений.
 
-All stETH yield earned from your deposit is converted into protocol-owned liquidity (PoL). The yield remains as PoL indefinitely, but you can withdraw your stETH whenever.
+Вся доходность stETH, полученная от депозитов, конвертируется в ликвидность, принадлежащую протоколу (PoL). Доходность остается в виде ликвидности навсегда, но вы можете вывести свои stETH в любое время. 
 
-As a result, the Capital Provider will receive MOR tokens each day in pro-rata to their total stETH yield contributed. For example, if there are 100 Capital Providers who each contributed 1 stETH of yield on day 1 when the network launches, then each one gets 1% of the 3,456 MOR tokens each day = 34.56 MOR.
+В результате поставщик капитала будет получать токены MOR каждый день пропорционально общей сумме внесенного им дохода stETH. Например, если есть 100 поставщиков капитала, которые внесли по 1 stETH в день запуска сети, то каждый из них получит 1% от 3 456 токенов MOR каждый день = 34,56 MOR. 
 
-It has been proposed to refer to this process of yield contribution, swap and adding liquidity as the "TCM". Short for the "techno-capital machine" in honor of the e/acc philosopher Beff Jezos. 
+Было предложено назвать процесс внесения доходности, обмена и добавления ликвидности "TCM". Сокращение от "техно-капитальной машины" ("techno-capital machine") в честь философа e/acc Беффа Джезоса. 
 
-## Code Proof, Registration & Reward:
-The definition of a Coder is someone who has downloaded the Morpheus full node, connected their wallet, and contributed an agent, smart contract or other software to the Morpheus Network.
+## Доказательство кода, регистрация и вознаграждение: 
+Программист (кодер) - это тот, кто загрузил полный узел Morpheus, подключил свой кошелек и внес свой вклад (код) в разработку агента, смарт-контракт или другое программное обеспечение в сети Morpheus.
 
-The Coder will send a MOR transaction to the Coder Smart Contract to register their agent / smart contract or software. 
-The Coder will include in the memo of the transaction the following metadata. 
-- A. An IPFS link to their software's endpoint in the memo field of the MOR transaction when they register. 
-- B. A cryptographic signature, similar to how developers sign/authenticate app releases.
-- C. The version number of the software.
-- D. A hash of the state of the program, so users can check it is a valid and unaltered copy.
+Программист должен отправить транзакцию MOR Coder смарт-контракту, чтобы зарегистрировать своего агента / смарт-контракт или программное обеспечение.   
+Он должен включить в транзакцию следующие метаданные: 
+- A. IPFS-ссылку на endpoint своего ПО в поле memo транзакции MOR при регистрации.
+- B. Криптографическую подпись, подобно тому, как разработчики подписывают/аутентифицируют релизы приложений.
+- C. Номер версии программного обеспечения.
+- D. Хеш состояния программы, чтобы пользователи могли проверить, что это действительная и неизмененная копия.
 
-The contributors to the Morpheus codebase are rewarded in proportion to all the cumulative development done on the repository as gauged by Full Time Equivalent (FTE) work contributed. For example, if there are 10 coders each having contributed 10% of the FTE time when the network launches, then each one gets 10% of the 3,456 MOR tokens each day = 345.6 MOR. This calculation is updated each month based on the cumulative FTE time contributions of the current mainnet version of the Morpheus software.
+Участники кодовой базы Morpheus получают вознаграждение пропорционально всему совокупному объему разработок, выполненных в репозитории, измеряемому в эквиваленте полного рабочего времени (FTE). Например, если на момент запуска сети 10 программистов зарегистрировали свое программное обеспечение, каждый из которых внес 10 % от FTE, то каждый из них получит 10 % от 3 456 токенов MOR выпускаемых в день = 345,6 MOR. Этот расчет обновляется каждый месяц на основе совокупного вклада времени FTE в текущую версию программного обеспечения Morpheus для основной сети. 
 
-Once there are specialized agents or tools or chains (sequence of prompts/calls to an LLM) interoperable with Morpheus, then half (50%) of the rewards will go to their developers. The reward will be calculated in proportion to the usage of those agents. For example, if there are 10 developers who built 10 agents each generating 10% of the agent usage on the Morpheus network. The Morpheus smart contract will calculate those usage statistics via MOR transactions. Then the Morpheus software coders would earn 50% of the MOR reward and each developer of a specialized agent would get 5% of the tokens = 172.8 MOR per developer in this example.
+Как только появятся специализированные агенты, инструменты или сети (последовательность запросов/вызовов к LLM), совместимые с Morpheus, половина (50%) вознаграждения достанется их разработчикам. Вознаграждение будет рассчитываться пропорционально использованию этих агентов. Например, если есть 10 разработчиков, которые создали 10 агентов, каждый из которых генерирует 10 % использования агентов в сети Morpheus. Смарт-контракт Morpheus будет подсчитывать статистику использования через транзакции MOR. Тогда разработчики программного обеспечения Morpheus получат 50 % вознаграждения MOR, а каждый разработчик специализированного агента - 5 % токенов = 172,8 MOR на одного разработчика в этом примере. 
 
-A great deal of the leading research that has been done in this area of "Proof of Contribution" is by the good folks at the TEA Protocol. Including Max Howell the developer of Home Brew. Link to paper with the details. Morpheus may consider leveraging TEA after its launch in 2024.
+Большая часть ведущих исследований, проведенных в этой области "Доказательства вклада", принадлежит классным людям из TEA Protocol. В том числе Максу Хауэллу, разработчику Home Brew. Морфеус может рассмотреть возможность использования TEA после своего запуска в 2024 году.
 
 ## Compute Proof, Registration & Reward:
 The definition of a Compute provider is they have downloaded the Morpheus full node, connected their wallet and are ready to receive API / LLM / Compute requests from other Morpheus users. Compute provided can be calculated by including a signed transaction generated by the Smart Agent with the return of the output from the MOR transaction.
@@ -159,6 +164,9 @@ The pro-rata MOR transaction fees burned by each Compute Provider serves as proo
 For example, if there are 100 Compute Providers on day 1 when the network launches, then each one gets a pro-rata reward based on the amount of MOR they have burned via fees. In this case, presuming each of the 100 compute providers burned 100 MOR, then 1% of the 3,456 MOR tokens each day = 34.56 MOR.
 
 To qualify to receive Compute requests a Compute Provider's address must HODL MOR tokens. Requests will be routed to the Compute Providers API pro-rata to the MOR they hodl compared to all other registered Compute Providers.
+
+## Доказательство, регистрация и вознаграждение за вычисления: 
+Определение провайдера вычислений заключается в том, что он загрузил полный узел Morpheus, подключил свой кошелек и готов принимать API / LLM / запросы на вычисления от других пользователей Morpheus. Предоставленные вычисления могут быть рассчитаны путем включения подписанной транзакции, сгенерированной Умным агентом, с возвратом вывода из транзакции MOR. Поставщик вычислений отправит транзакцию MOR смарт-контракту поставщика вычислений, чтобы зарегистрировать конечную точку API для приема запросов. Провайдер вычислений включит в меморандум транзакции следующие метаданные. - A. Ссылку IPFS на конечную точку API в поле memo транзакции MOR при регистрации. - B. Криптографическую подпись, подобную той, которой разработчики подписывают/аутентифицируют релизы приложений. - C. Номер версии используемого программного обеспечения Morpheus. - D. Хеш состояния программы, чтобы пользователи могли проверить, что это действительная и неизмененная копия. Пропорциональные сборы за транзакции MOR, сжигаемые каждым поставщиком вычислений, служат доказательством статуса поставщика вычислений и позволяют зарабатывать часть токенов MOR каждый день. Например, если в первый день запуска сети существует 100 провайдеров вычислений, то каждый из них получает пропорциональное вознаграждение, основанное на количестве MOR, которое он сжег посредством комиссий. В данном случае, если предположить, что каждый из 100 провайдеров вычислений сжег 100 MOR, то 1% от 3 456 токенов MOR в день = 34,56 MOR. Чтобы иметь право получать запросы на вычисления, адрес провайдера вычислений должен иметь HODL-токены MOR. Запросы будут направляться к API провайдеров вычислений пропорционально количеству MOR, которое они намолотили, по сравнению со всеми остальными зарегистрированными провайдерами вычислений.
 
 ## Community Builder Proof, Registration & Reward:
 The definition of a Community Builder is they have downloaded the Morpheus full node, connected their wallet and are using the Morpheus API to provide user front ends & deeveloper tools. Their contributions provided can be calculated by including a signed transaction generated by the Smart Agent with the return of the output from the MOR transaction.
