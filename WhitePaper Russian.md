@@ -1,13 +1,13 @@
 ![Morpheuslogo](https://github.com/MorpheusAIs/Morpheus/assets/1563345/235b9c04-f3b1-4520-a328-2070c9c890ab)
 
 # Morpheus
-## Сеть для питания умных агентов (Smart Agents)
+## Сеть для запуска умных агентов (Smart Agents)
 ### Авторы: Morpheus, Trinity, & Neo
-Опубликовано 2го сентября 2023.  
+Опубликовано 2го сентября 2023  
 Ссылка на Желтую бумагу Технические детали: https://github.com/MorpheusAIs/Morpheus/blob/main/YellowPaper.md
 
 ## Введение 
-Morpheus предназначен для стимулирования первой одноранговой сети персональных ИИ, известных как Умные Агенты (Smart Agents). Предоставление пользователям смарт-агентов с открытым исходным кодом для подключения к их кошелькам, Dapps и смарт-контрактам обещает открыть мир Web3 для всех. 
+Morpheus предназначен для стимулирования первой одноранговой сети персональных ИИ, известных как Умные Агенты (Smart Agents). Предоставление пользователям смарт-агентов с открытым исходным кодом для подключения к их кошелькам, децентрализованным приложениям и смарт-контрактам обещает открыть мир Web3 для всех. 
 
 Наконец-то обычный пользователь сможет поговорить со своим умным агентом на обычном языке, чтобы он понял вопрос и предпринял действие, основанное на намерении/одобрении пользователя. Этот момент похож на то, как в конце 1990-х годов поисковая система Google открыла для широкой публики ранний Интернет с помощью простого в использовании веб-интерфейса. 
 
@@ -20,7 +20,7 @@ Morpheus предназначен для стимулирования перво
 
 В настоящее время этим LLM с открытым исходным кодом не хватает стандартного графического интерфейса, с помощью которого пользователи могли бы общаться с ними, API для разработчиков, облачного решения для перемещения между устройствами и способа управления пользовательскими данными и процессом восстановления. Именно здесь на помощь приходит протокол смарт агентов,, который предоставляет LLM с открытым исходным кодом, работающую локально и управляемую с помощью пользовательского Web3-кошелька. 
 
-В то же время, в случае локального подхода, отсутствует API для разработчиков и облачное решение, в котором сеть пользователей может запускать программное обеспечение на мощном оборудовании, что позволяет использовать такие варианты, как легкие клиенты, где пользователю не нужно загружать полную версию узла или Smart Agent локально.
+В то же время, в случае локального запуска, отсутствует API для разработчиков и облачное решение, в котором сеть пользователей может запускать программное обеспечение на мощном оборудовании, что позволяет использовать такие варианты, как легкие клиенты, где пользователю не нужно загружать полную версию узла или Smart Agent локально.
 
 Morpheus предоставит эти API и децентрализованные облачные функции, запустив сеть и токен для вознаграждения пользователей, предоставляющих публичную блокчейн-инфраструктуру сообществу умных агентов. Для реализации протокола Smart Agent, Morpheus стремится собрать ресурсы, необходимые для персональных ИИ с открытым исходным кодом, чтобы сравняться, а затем и превзойти возможности технологических компаний, предлагающих закрытые модели GPT сегодня. 
 
@@ -194,86 +194,84 @@ Morpheus - это альтернатива по типу Linux для разра
 Плата за капитал  
 Размер платы устанавливается поставщиками ликвидности и принимается пользователем. Возможность оплачивать комиссию и сжигать токены MOR с каждой комиссией. Открытый рынок, который будет развиваться со временем. Свободный рынок для капитала вместо консенсуса по казне. 
 
-## Fees For User Community
-Amount of fee set by users and accepted by data buyer. Option to pay fee & burn MOR tokens with each fee. Open market to develop over time. Free marketplace for data.
+## Комиссии для сообщества пользователей 
+Размер платы устанавливается пользователями и принимается покупателем данных. Возможность оплачивать комиссию и сжигать токены MOR с каждой комиссией. Открытый рынок, который будет развиваться с течением времени. Свободный рынок данных. 
 
-All fees are paid in native MOR tokens creating natural demand in the system as usage grows.
+Все комиссии оплачиваются в токенах MOR, что стимулирует естественный спрос в системе по мере роста использования. 
 
-## Use of Fees To Incentivize Honest Agents & Repair Losses In Case of Errors
-Another important use for MOR & ETH in the Morpheus network will be compensating users in case of Smart Agent / Smart Contract failures. We believe curating and building reputation backed up with economic resources will be key to growing confidence in Smart Agents and having a source of funding to address errors, bugs, and other issues that arise. After a major bug and the resulting hard fork of Bitcoin in 2010, an early core developer named Gavin Andresen stepped up to pay Bitcoin to miners who had lost rewards due to the hard fork. This action was important and quickly resolved the hard fork but it was ad hoc.
+## Использование комиссий для поощрения честных агентов и возмещения убытков в случае ошибок
+Еще одним важным применением MOR и ETH в сети Morpheus станет компенсация пользователям в случае сбоев в работе умных агентов / смарт-контрактов. Мы считаем, что создание и укрепление репутации, подкрепленной экономическими ресурсами, станет ключом к росту доверия к умным агентам и наличию источника финансирования для решения ошибок, багов и других возникающих проблем. После крупной ошибки и последовавшего за ней форка биткоина в 2010 году один из первых разработчиков по имени Гэвин Андресен взялся выплатить биткоины майнерам, которые потеряли вознаграждение из-за этого форка. Это действие было важным и быстро решило проблему хард форка, но оно было ситуативным.
 
-Recognizing ahead of time that software is never perfect and setting aside 4% of MOR resources to repay those affected by a bug in the code. The Morpheus developer community will serve as an oracle to recognize when a bug or error has had an economic effect on a user, compute provider, or capital provider. A predefined set of failures will be covered by these resources to include bugs in the Morpheus Smart Contract or local install.
+Заранее признав, что программное обеспечение никогда не бывает совершенным мы выделилили 4% эмиссии MOR для выплаты компенсации тем, кто пострадает от ошибки в коде. Сообщество разработчиков Morpheus будет служить оракулом, распознающим, когда баг или ошибка оказали экономический эффект на пользователя, поставщика вычислений или капитала. Эти ресурсы будут охватывать заранее определенный набор сбоев, включая ошибки в смарт-контракте Morpheus или локальной установке. 
 
-For broader protection, an integration with Nexus Mutual or similar smart contract / decentralized protection network could be considered to cover edge cases with agents / smart contracts that want to be included in a Morpheus Agent Store or better ranked by the SmartContractRank algorithm. 
-
-## Плата для сообщества пользователей 
-Размер платы устанавливается пользователями и принимается покупателем данных. 
-Возможность оплачивать комиссию и сжигать токены MOR с каждой комиссией. Открытый рынок, который будет развиваться с течением времени. Свободный рынок данных. Все сборы выплачиваются в собственных токенах MOR, что создает естественный спрос в системе по мере роста использования. 
-
-## Использование сборов для поощрения честных агентов и возмещения убытков в случае ошибок
-Еще одним важным применением MOR и ETH в сети Morpheus станет компенсация пользователям в случае сбоев в работе умных агентов / смарт-контрактов. Мы считаем, что создание и укрепление репутации, подкрепленной экономическими ресурсами, станет ключом к росту доверия к умным агентам и наличию источника финансирования для решения ошибок, багов и других возникающих проблем. После крупной ошибки и последовавшего за ней жесткого форка биткоина в 2010 году один из первых разработчиков ядра по имени Гэвин Андресен взялся выплатить биткоины майнерам, которые потеряли вознаграждение из-за жесткого форка. Это действие было важным и быстро решило проблему хард форка, но оно было ситуативным. Заранее признав, что программное обеспечение никогда не бывает совершенным, выделили 4 % ресурсов MOR для выплаты компенсации тем, кто пострадал от ошибки в коде. Сообщество разработчиков Morpheus будет служить оракулом, распознающим, когда баг или ошибка оказали экономический эффект на пользователя, поставщика вычислений или капитала. Эти ресурсы будут охватывать заранее определенный набор сбоев, включая ошибки в смарт-контракте Morpheus или локальной установке. Для более широкой защиты можно рассмотреть возможность интеграции с Nexus Mutual или аналогичной сетью смарт-контрактов / децентрализованной защиты, чтобы охватить крайние случаи с агентами / смарт-контрактами, которые хотят быть включены в Morpheus Agent Store или лучше ранжированы по алгоритму SmartContractRank. 
-
+Для более широкой защиты можно рассмотреть возможность интеграции с Nexus Mutual или аналогичной сетью смарт-контрактов / децентрализованной защиты, чтобы охватить крайние случаи с агентами / смарт-контрактами, которые хотят быть включены в Morpheus Agent Store или лучше ранжированы по алгоритму SmartContractRank.
 
 ## Storage For Persistence & Wallets For Recovery
 Rather than store personal data in the Morpheus network itself, which would be cost prohibitive and a centralizing force, individuals will hold the private keys controlling access to their data, prompts & wallet. The data itself will be stored using the IPFS standard and the Filecoin network for decentralized long-term storage. Leveraging the Filecoin EVM and DeFi for yield a permanent recurring storage can be arranged. Alternatively, users can pay annually ENS style for storage. The approach and keeping the private Web3 wallet as the key for movement/recovery of this data to different devices as the user changes computers or phones.
 
-## Morpheus Tech Stack, Smart Contract & Development
-The Morpheus implementation of the Smart Agent Protocol will be a direct fork of the existing locally run repo. The most significant change will be to update SmartContractRank to include knowledge of the MOR token and its functions in powering a network of Smart Agents.
-
-The Morpheus MOR token is being developed as a Smart Contract on Ethereum via the ERC20 standard for fungible tokens. Most smart contracts are on Ethereum and the Ethereum Virtual Machine has become the lingua franca of the Web3 space. To reduce the cost of gas fees for sending daily rewards we will leverage Ethereum's layer 2 called Arbitrum.
-
-We believe the choice of the Ethereum blockchain is the best starting place given on chain actions such as staking ETH can only be validated by a smart contract running on the same chain. In addition on chain validation of coding via ENS domains or Ethereum public addresses adds another means of connecting code contributed to the wallet of the coder who provided it. A record of which the Morpheus Smart Contract can access daily.
-
-Also, zero-knowledge proofs for scalability and privacy are key to many use cases. So starting with these capabilities day one will put the Smart Agent community in the best position for the future. Arbitrum is in the process of adding ZK tech, much of which is already live.
-
-In the near term, this tech stack selection secures Morpheus directly in Ethereum's layer 1 security with the reduced gas costs of a layer two. In the mid-term, this selection also provides a pathway to expand Morpheus to other Ethereum layer 2s and EVM compatible blockchains.
-
-As interoperability improves between public blockchains Morpheus will seek to serve all Web3 AI Agent builders across the various EVM / solidity compatible developer communities. We recognize strong builder communities on Arbitrum, Polygon, OP Stack, Base, Arbitrum, Avalanche, Polkadot, Solana, Filecoin & Cosmos that share a similar vision and values. Morpheus is only possible today thanks to the tools built by developers across many of these chains.
 
 ## Хранилище для стойкости и кошельки для восстановления
-Вместо того чтобы хранить персональные данные в самой сети Morpheus, что было бы дорогостоящим и централизующим фактором, отдельные люди будут владеть закрытыми ключами, контролирующими доступ к их данным, подсказкам и кошельку. Сами данные будут храниться с использованием стандарта IPFS и сети Filecoin для децентрализованного долгосрочного хранения. Используя Filecoin EVM и DeFi для доходности, можно организовать постоянное рекуррентное хранение. В качестве альтернативы пользователи могут ежегодно оплачивать хранение в стиле ENS. Подход и сохранение приватного кошелька Web3 в качестве ключа для перемещения/восстановления этих данных на различных устройствах по мере того, как пользователь меняет компьютеры или телефоны. ## Технический стек Morpheus, смарт-контракт и разработка Реализация протокола Smart Agent в Morpheus будет представлять собой прямой форк существующего локального репозитория. Самым значительным изменением будет обновление SmartContractRank, чтобы включить знания о токене MOR и его функциях для питания сети умных агентов. Токен Morpheus MOR разрабатывается как смарт-контракт на Ethereum по стандарту ERC20 для взаимозаменяемых токенов. Большинство смарт-контрактов работают на Ethereum, а виртуальная машина Ethereum стала лингва франка в пространстве Web3. Чтобы сократить расходы на оплату газа для отправки ежедневных вознаграждений, мы будем использовать второй уровень Ethereum под названием Arbitrum. Мы считаем, что выбор блокчейна Ethereum - это лучшее место для старта, поскольку действия на цепи, такие как ставка ETH, могут быть подтверждены только смарт-контрактом, работающим на той же цепи. Кроме того, подтверждение кодов на цепочке через домены ENS или публичные адреса Ethereum добавляет еще одно средство связи между внесенным кодом и кошельком того, кто его предоставил. Запись, к которой смарт-контракт Morpheus может получить ежедневный доступ. Кроме того, доказательства с нулевым знанием для масштабируемости и конфиденциальности являются ключевыми для многих сценариев использования. Поэтому, начав работу с этими возможностями с первого дня, сообщество умных агентов окажется в наилучшей позиции для будущего. Arbitrum находится в процессе добавления технологий ZK, большая часть которых уже работает. В ближайшей перспективе этот выбор технологического стека обеспечивает Morpheus непосредственной защитой первого уровня Ethereum при снижении затрат на газ второго уровня. В среднесрочной перспективе этот выбор также открывает путь для распространения Morpheus на другие блокчейны второго уровня Ethereum и блокчейны, совместимые с EVM. По мере улучшения взаимодействия между публичными блокчейнами Morpheus будет стремиться обслуживать всех создателей Web3 AI Agent в различных сообществах разработчиков, совместимых с EVM / Solidity. Мы признаем сильные сообщества разработчиков на Arbitrum, Polygon, OP Stack, Base, Arbitrum, Avalanche, Polkadot, Solana, Filecoin и Cosmos, которые разделяют схожее видение и ценности. Сегодня Morpheus возможен только благодаря инструментам, созданным разработчиками многих из этих цепочек. ## Безопасность пользовательских данных Чтобы избежать утечки приватных данных при отправке запросов в одноранговую сеть провайдеров вычислений Morpheus, программное обеспечение должно стремиться использовать версии больших языковых моделей с полностью гомоморфным шифрованием (FHE) по мере их выпуска. Также прогнозируется, что с появлением аппаратного ускорения для FHE в 2024/2025 годах стоимость этих вычислений сравняется с обработкой обычного текста. - Пример LLM https://huggingface.co/blog/encrypted-llm - Пример EVM https://www.fhenix.io/ .
+Вместо того чтобы хранить персональные данные в самой сети Morpheus, что было бы дорогостоящим и централизующим фактором, отдельные пользователи будут владеть закрытыми ключами, контролирующими доступ к их данным, запросам и кошельку. Сами данные будут храниться с использованием стандарта IPFS в сети Filecoin для децентрализованного долгосрочного хранения. Используя Filecoin EVM и DeFi для доходности, можно организовать рекуррентное хранение. В качестве альтернативы пользователи могут ежегодно оплачивать хранение в стиле ENS. Подход и хранение приватного Web3 кошелька важны в качестве ключа для перемещения/восстановления данных на различных устройствах по мере того, как пользователь меняет компьютеры или телефоны. 
 
-## User Data Security
-To avoid leaking private data when sending prompts to the Morpheus peer-to-peer network of Compute Providers, the software should seek to leverage Fully Homomorphic Encryption (FHE) versions of Large Language Models as they are released. Also with the advent of hardware acceleration for FHE in 2024/2025, it's projected that costs for this computation will reach parity with plain text processing.
- 
-- LLM example https://huggingface.co/blog/encrypted-llm 
-- EVM example https://www.fhenix.io/
+## Технический стек Morpheus, смарт-контракт и разработка 
+Реализация протокола Smart Agent в Morpheus будет представлять собой прямой форк существующего локального репозитория. Самым значительным изменением будет обновление SmartContractRank, чтобы включить данные о токене MOR и его функциях для питания сети умных агентов.
 
-## The Network Emerges & a 90 Day Bootstrapping Period
+Токен Morpheus MOR разрабатывается как смарт-контракт на Ethereum по стандарту ERC20 для взаимозаменяемых токенов. Большинство смарт-контрактов работают на Ethereum, а виртуальная машина Ethereum стала широко распространена в Web3 пространстве. Чтобы сократить расходы на оплату газа для отправки ежедневных вознаграждений, мы будем использовать сеть второго уровеня Ethereum под названием Arbitrum.
 
-The Morpheus Network begins with the local install version 0.0.1, then continues with the MOR token smart contracts and then full node software.
+Мы считаем, что выбор блокчейна Ethereum - это лучшее место для старта, поскольку он-чейн действия, такие как стейкинг ETH, могут быть подтверждены только смарт-контрактом, работающим на той же цепи. Кроме того, подтверждение кода он-чейн через домены ENS или публичные адреса Ethereum добавляет еще одно средство связи между внесенным кодом и кошельком того, кто его написал. Запись, к которой смарт-контракт Morpheus может получить ежедневный доступ.
 
-The smart contracts which calculate the rewards of MOR should be extensively tested via a testnet before deployment onto a mainnet.
+Кроме того, доказательства с нулевым разглашением для масштабируемости и конфиденциальности являются ключевыми для многих сценариев использования. Поэтому, начав работу с этими возможностями с первого дня, сообщество умных агентов окажется в наилучшей позиции для будущего. Arbitrum находится в процессе добавления технологий ZK, большая часть которых уже работает. 
 
-Also there will be a one time 90 day delay (known as the bootstrapping period) between when the mainnet begins calculating rewards and when those MOR tokens are claimable / sendable by users. This bootstrapping period will ensure enough MOR tokens are ready for circulation to fulfill the utility functions of the network. 
+В ближайшей перспективе этот выбор технологического стека обеспечит Morpheus безопасность уровня Ethereum при снижении затрат на газ второго уровня. В среднесрочной перспективе этот выбор также открывает путь для распространения Morpheus на другие блокчейны второго уровня Ethereum и блокчейны, совместимые с EVM.
 
-To boot strap the AMM, the 4% of MOR tokens dedicated to the protection funds (51,444 MOR by day 90) will be leveraged for this purpose. 
+По мере улучшения взаимодействия между публичными блокчейнами, Morpheus будет стремиться обслуживать всех создателей Web3 AI Agent в различных сообществах разработчиков, совместимых с EVM / Solidity. Мы признаем сильные сообщества разработчиков на Arbitrum, Polygon, OP Stack, Base, Arbitrum, Avalanche, Polkadot, Solana, Filecoin и Cosmos, которые разделяют схожее видение и ценности. Сегодня Morpheus возможен только благодаря инструментам, созданным разработчиками многих из этих цепочек. 
 
-These steps will provide that 1,286,111 MOR are claimable at the beginning of day 91 on the mainnet & thus avoid extreme token scarcity like happened with the launch of Zcash, when only a few tokens were first available from mining day 1. This issue took the market weeks to reach an equilibrium and establish rational price discovery. Morpheus avoids this issue with this 90 day boot strapping period, thus preparing the token supply with enough tokens to fulfill its utility and establish rational price discovery.
+## Безопасность пользовательских данных
+Чтобы избежать утечки приватных данных при отправке запросов в одноранговую сеть провайдеров вычислений Morpheus, программное обеспечение должно стремиться использовать версии больших языковых моделей с полностью гомоморфным шифрованием (FHE) по мере их выпуска. Также прогнозируется, что с появлением аппаратного ускорения для FHE в 2024/2025 годах стоимость этих вычислений сравняется с обработкой обычного текста. -
 
-Once MOR tokens are claimable and sendable then the Morpheus Network can enable MOR transactions to pay for API calls, custom agents and validate the Stake of participants in the network. 
+- Пример LLM https://huggingface.co/blog/encrypted-llm 
+- Пример EVM https://www.fhenix.io/ .
+
+## Запуск сети и 90-дневный период загрузки
+
+Сеть Morpheus Network начинается с локальной установки версии 0.0.1, затем идут смарт-контракты с токенами MOR, а затем программное обеспечение полного узла. 
+
+Смарт-контракты, которые рассчитывают вознаграждение MOR, должны быть всесторонне протестированы в тестовой сети перед развертыванием в основной сети. 
+
+Кроме того, будет 90-дневная задержка (Bootstrapping Period) между моментом когда награды начнут начисляться в основной сети, и моментом, когда начисленными токенами можно будет воспользоваться (снять/отправить). Этот период обеспечит достаточное количество токенов MOR, готовых к обращению, для должного функционирования сети.
+
+Для создания ликвидности в AMM будут использованы 4% токенов MOR, предназначенных для фонда защиты (51 444 MOR к 90-му дню). 
+
+Эти шаги обеспечат возможность получения 1 286 111 MOR в начале 91-го дня в основной сети и, таким образом, позволят избежать крайнего дефицита токенов, как это произошло при запуске Zcash, когда в первый день майнинга было доступно лишь небольшое количество токенов. Рынку потребовалось несколько недель, чтобы достичь равновесия и установить рациональное ценообразование. Morpheus избегает этой проблемы с помощью 90-дневного периода загрузки, таким образом подготавливая достаточное предложениев, для использования токена и установления рационального ценообразования. 
+
+После того как токены MOR смогут быть востребованы и отправлены, сеть Morpheus сможет проводить транзакции MOR для оплаты API-вызовов, пользовательских агентов и подтверждения доли участников сети.. 
 
 ## Conclusion
 We are close to an important moment in history. With Morpheus, everyone will have a powerful personal AI capable of thinking with them and taking actions to benefit them. In the same way the personal computer and the search engine empowered the individual, we have the same opportunity with personal AIs today. The Smart Agent Protocol brings together the right mix of capabilities with LLMs, Agents, and Web3. Morpheus extends those capabilities into a public network capable of accelerating the mass distribution and usage of Smart Agents.
 
 We believe the economic alignment of incentives is ultimately how we secure the best outcomes from the coming of AGI. Help us secure an open source, permissionless and free future for everyone. 
 
+## Заключение 
+Мы близки к важному моменту в истории. С появлением Morpheus у каждого человека появится мощный персональный ИИ, способный думать вместе с ним и предпринимать действия, направленные на его благо. Точно так же, как персональный компьютер и поисковая система расширили возможности человека, сегодня у нас есть такая же возможность с персональными ИИ. Протокол интеллектуальных агентов объединяет в себе правильное сочетание возможностей LLM, агентов и Web3. Morpheus расширяет эти возможности в публичную сеть, способную ускорить массовое распространение и использование интеллектуальных агентов. 
+
+Мы считаем, что экономические стимулы - это, в конечном счете, то, как мы можем обеспечить наилучшие результаты от появления AGI (общего ИИ). Помогите нам обеспечить с открытым исходным кодом, без разрешений и свободное для всех будущее.
+
 _______________________
-## Context On Proposal:
+## Контекст предложения:
 
-I received an email from a developer named Morpheus September 2nd 2023 with the above proposal.
+Второго сентября 2023 года, я получил письмо от разработчика назвавшего себя Morpheus с предложением изложенным выше.
 
 _______________________
-David,
+Девид,
 
-Find below a proposal for launching "Morpheus - A Network For Powering Smart Agents".
+Ниже вы найдете предложение по запуску «Morpheus — сети для запуска умных агентов».
 
-The paper lays out the token economics, tech stack, and means of calculating proofs for fairly rewarding the community, coders, capital & compute providers with tokens.
+В документе изложена экономика токенов, технологический стек и средства расчета доказательств для справедливого вознаграждения сообщества, программистов, поставщиков капитала и вычислений токенами.
 
-This paper is freely given to the Smart Agent community and is available in the public domain.
+Этот документ бесплатно предоставляется сообществу Smart Agent и находится в открытом доступе.
 
-Free your mind.
+Освободите свой разум.
 
-Morpheus
+Морфеус
 
 --------------------------------------------------------------------
