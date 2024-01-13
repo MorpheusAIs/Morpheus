@@ -120,6 +120,8 @@ async function runOllamaModel(event, msg) {
     // load the embeddings into memory
     // await load(); // Removing for Cached Embeddings: TODO
 
+    console.log ('Running the model...');
+
     await run(model, (json) => {
       // status will be set if the model is downloading
       if (json.status) {
@@ -148,6 +150,8 @@ async function runOllamaModel(event, msg) {
     event.reply("ollama:run", { success: false, content: err.message });
   }
 }
+
+
 
 // For Smart Contract ABI Metadata Retrieval, Examples Retrieval, and Chat
 const TOP_K_METADATA = 2;
@@ -258,31 +262,24 @@ async function sendChat(event, msg) {
 }
 
 // SendTransaction
-function sendTransaction(txn) {
+async function sendTransaction(txn) {
 
-  // Data
-  const data = {}
+  // Call a JSON-RPC method with the transaction data returned from the AI
+  const data = txn;
 
-  // The transaction object
-  const _txn = {
-    from: "0x00000000",
-    to: "0x00000000",
-    value: "0x00000000",
-    gas: "0x00000000",
-    gasPrice: "0x00000000",
-    data: "0x00000000",
-    nonce: "0x00000000",
-    chainId: "0x00000000"
+  var infuraSettings = {
+    method : 'POST',
+    headers : {
+      'Content-Type' : 'application/json'
+    },
+    body : JSON.stringify(data)
   };
 
-  // Send the transaction
-  /*   web3.eth.sendTransaction(txn, function (err, transactionHash) {
-      if (!err) {
-        console.log(transactionHash);
-      } else {
-        console.error(err);
-      }
-    }); */
+  const txn_data = await fetch('https://mainnet.infura.io/v3/YOUR-API-KEY', infuraSettings)
+
+  console.log(txn_data);
+
+  return txn_data;
 
 }
 
