@@ -26,8 +26,8 @@ const LangChainOllamaEmbeddings = require('llamaindex');
 const { Ollama } = require('llamaindex');
 const { serviceContextfromDefaults } = require('llamaindex');
 
-const ServiceContext = require('llamaindex');
-const VectorStoreIndex = require('llamaindex');
+const { ServiceContext } = require('llamaindex');
+const { VectorStoreIndex } = require('llamaindex');
 
 const fs = require("fs");
 const path = require("path");
@@ -77,14 +77,14 @@ function langchainEmbeddingsFactory() {
 // Function to create LlamaIndex Ollama Embeddings
 function llamaindexEmbeddingsFactory() {
   const llm = new Ollama({ modelName: "llama2" });
-  return llm.getTextEmbedding();
+  return llm;
 }
 
 // Function to build a LlamaIndex Index
 async function buildLlamaIndexIndex({ embedModel, documents }) {
   
   // Create Service Context for LlamaIndex
-  const serviceContext = serviceContextfromDefaults({ embedModel: embedModel, llm: null, chunkSize: 4096 });
+  const serviceContext = ({ embedModel: embedModel, llm: null, chunkSize: 4096 });
 
   // Create Index from Documents
   const index = await VectorStoreIndex.fromDocuments({
