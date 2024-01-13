@@ -211,20 +211,20 @@ async function sendChat(event, msg) {
        const abiRetriever = abiInMemoryVectorStore.asRetriever({ k: TOP_K_ABIS });
    
       */
+     
+    console.log('Loading JSON-RPC Examples...');
 
-    // Examples Loader
-    // Loads in Example Ethereum Transactions 
-    const metamaskExamplesLoader = new DirectoryLoader(
-      "/home/dom/Morpheus/ai_experiments/rag_assets/metamask_eth_examples",
-      {
-        ".txt": (path) => new DirectoryLoader(path),
-      }
-    );
-
-    console.log('Loading Examples...');
-
+    // Create the FaissStore from the Examples and load into MemoryVectorStore from Retrival topk = 1
     async function loadExamples() {
       try {
+
+        const metamaskExamplesLoader = new DirectoryLoader(
+          "/home/dom/Morpheus/ai_experiments/rag_assets/metamask_eth_examples",
+          {
+            ".txt": (path) => new DirectoryLoader(path),
+          }
+        );
+
         // Load the examples from the directory using the DirectoryLoader
         const metamaskExamples = await metamaskExamplesLoader.load();
     
