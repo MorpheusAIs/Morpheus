@@ -22,8 +22,7 @@ const { RunnableParallel, RunnablePassthrough } = require("@langchain/core/runna
 const { StrOutputParser } = require("@langchain/core/output_parsers");
 const { DirectoryLoader } = require("langchain/document_loaders/fs/directory");
 
-const { FAISS } = require("faiss-node");
-const LangChainOllamaEmbeddings = require('llamaindex');
+const { FaissStore } = require("@langchain/community/vectorstores/faiss");
 const { Ollama } = require('llamaindex');
 const { serviceContextfromDefaults } = require('llamaindex');
 
@@ -72,7 +71,8 @@ contractFilenames.forEach(contractFilename => {
 
 // Function to create LangChain Ollama Embeddings
 function langchainEmbeddingsFactory() {
-  return new LangChainOllamaEmbeddings(); // Assumes llama2 model is default
+  return new Ollama({ modelName: "llama2" });
+
 }
 
 
@@ -214,18 +214,37 @@ async function sendChat(event, msg) {
 
     // Examples Loader
     // Loads in Example Ethereum Transactions 
-    const metamaskExamplesLoader = new DirectoryLoader("/home/dom/Morpheus/ai_experiments/rag_assets/metamask_eth_examples", { glob: "*.txt" });
+    const metamaskExamplesLoader = new DirectoryLoader(
+      "/home/dom/Morpheus/ai_experiments/rag_assets/metamask_eth_examples",
+      {
+        ".txt": (path) => new DirectoryLoader(path),
+      }
+    );
 
-    console.log('MetamaskExamplesLoader: ' + metamaskExamplesLoader)
+    console.log('Loading Examples...');
 
-    // Load the examples from the directory using the DirectoryLoader In Memory Vector Store
-    // Loads in the Data into the Prompt Template
-    const metamaskExamples = metamaskExamplesLoader.load();
+    async function loadExamples() {
+      try {
+        // Load the examples from the directory using the DirectoryLoader
+        const metamaskExamples = await metamaskExamplesLoader.load();
+    
+        console.log('Metamask Examples Loaded:', metamaskExamples);
+    
+        // FAISS processing
+        const metamaskExamplesInMemoryVectorStore = await FaissStore.fromDocuments(metamaskExamples, {
+          embedding: new Ollama({ modelName: "llama2" })
+        });
+    
+        // Additional processing or return
+        return metamaskExamplesInMemoryVectorStore;
+    
+      } catch (error) {
+        console.error('Error loading examples:', error);
+        throw error; // Re-throw the error for further handling, if necessary
+      }
+    }
 
-    // FAISS 
-    const metamaskExamplesInMemoryVectorStore = FAISS.fromDocuments(metamaskExamples, {
-      embedding: langchainEmbeddingsFactory()
-    });
+    var metamaskExamplesInMemoryVectorStore = await loadExamples();
 
     // Retrieval Engine
     const metamaskExamplesRetriever = metamaskExamplesInMemoryVectorStore.asRetriever({ k: TOP_K_EXAMPLES });
