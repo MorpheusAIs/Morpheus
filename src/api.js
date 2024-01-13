@@ -20,6 +20,7 @@ const { ChatPromptTemplate } = require("@langchain/core/prompts");
 const { ChatOllama } = require("@langchain/community/chat_models/ollama");
 const { RunnableParallel, RunnablePassthrough } = require("@langchain/core/runnables");
 const { StrOutputParser } = require("@langchain/core/output_parsers");
+const { DirectoryLoader } = require("langchain/document_loaders/fs/directory");
 
 const { FAISS } = require("faiss-node");
 const LangChainOllamaEmbeddings = require('llamaindex');
@@ -74,17 +75,12 @@ function langchainEmbeddingsFactory() {
   return new LangChainOllamaEmbeddings(); // Assumes llama2 model is default
 }
 
-// Function to create LlamaIndex Ollama Embeddings
-function llamaindexEmbeddingsFactory() {
-  const llm = new Ollama({ modelName: "llama2" });
-  return llm;
-}
 
 // Function to build a LlamaIndex Index
 async function buildLlamaIndexIndex({ embedModel, documents }) {
-  
+
   // Create Service Context for LlamaIndex
-  const serviceContext = ({ embedModel: embedModel, llm: null, chunkSize: 4096 });
+  const serviceContext = serviceContextfromDefaults({ embedModel: embedModel, llm: null, chunkSize: 4096 });
 
   // Create Index from Documents
   const index = await VectorStoreIndex.fromDocuments({
@@ -120,7 +116,7 @@ async function runOllamaModel(event, msg) {
     // load the embeddings into memory
     // await load(); // Removing for Cached Embeddings: TODO
 
-    console.log ('Running the model...');
+    console.log('Running the model...');
 
     await run(model, (json) => {
       // status will be set if the model is downloading
@@ -152,7 +148,6 @@ async function runOllamaModel(event, msg) {
 }
 
 
-
 // For Smart Contract ABI Metadata Retrieval, Examples Retrieval, and Chat
 const TOP_K_METADATA = 2;
 const TOP_K_ABIS = 5;
@@ -174,12 +169,16 @@ const documentsContractsMetadata = contracts.map(contract => {
   });
 });
 
+console.log('Building LlamaIndex Index...');
+
 // For Smart Contract ABI Metadata
 // Retrieve the metadata for the smart contracts and store in LlamaIndex
 const documentsContractsMetadataIndex = buildLlamaIndexIndex({
-  embedModel: llamaindexEmbeddingsFactory(),
+  embedModel: new Ollama({ modelName: "llama2" }),
   documents: documentsContractsMetadata
 });
+
+console.log('Create Vector Index Retriever...');
 
 // For Smart Contracts ABI Metadata
 const documentsContractsRetriever = new VectorIndexRetriever({
@@ -196,22 +195,28 @@ async function sendChat(event, msg) {
     // The user message needs to be structured with the user_address, message, and timestamp
     const NLQ = msg;
 
+    console.log('User Message: ' + NLQ);
+
     // The prompt template that is imported
-    const retrievedContractsMetadataWithAbis = documentsContractsRetriever.retrieve(NLQ).map(contract => {
-      return `The Contract: ${contract.node.text}\n The Contract's ABI:\n${contract.node.metadata.abis}`;
-    });
-
-    // In Memory Vector Store with FAISS for Similarity Retrieval
-    const abiInMemoryVectorStore = FAISS.fromTexts(retrievedContractsMetadataWithAbis, {
-      embedding: langchainEmbeddingsFactory()
-    });
-
-    // ABI Retrieval Engine
-    const abiRetriever = abiInMemoryVectorStore.asRetriever({ k: TOP_K_ABIS });
+    /*    const retrievedContractsMetadataWithAbis = documentsContractsRetriever.retrieve(NLQ).map(contract => {
+         return `The Contract: ${contract.node.text}\n The Contract's ABI:\n${contract.node.metadata.abis}`;
+       });
+   
+       // In Memory Vector Store with FAISS for Similarity Retrieval
+       const abiInMemoryVectorStore = FAISS.fromTexts(retrievedContractsMetadataWithAbis, {
+         embedding: langchainEmbeddingsFactory()
+       });
+   
+       // ABI Retrieval Engine
+       const abiRetriever = abiInMemoryVectorStore.asRetriever({ k: TOP_K_ABIS });
+   
+      */
 
     // Examples Loader
     // Loads in Example Ethereum Transactions 
-    const metamaskExamplesLoader = new DirectoryLoader("Morpheus/data/metamask_eth_examples", "*.txt");
+    const metamaskExamplesLoader = new DirectoryLoader("/home/dom/Morpheus/ai_experiments/rag_assets/metamask_eth_examples", { glob: "*.txt" });
+
+    console.log('MetamaskExamplesLoader: ' + metamaskExamplesLoader)
 
     // Load the examples from the directory using the DirectoryLoader In Memory Vector Store
     // Loads in the Data into the Prompt Template
@@ -226,7 +231,7 @@ async function sendChat(event, msg) {
     const metamaskExamplesRetriever = metamaskExamplesInMemoryVectorStore.asRetriever({ k: TOP_K_EXAMPLES });
 
     // Model
-    const model = new ChatOllama({ model: "llama2:7b" });
+    const model = new ChatOllama({ model: "llama2" });
 
     // Prompt Template from LangChain Core
     const prompt = new ChatPromptTemplate.fromTemplate(promptTemplate);
@@ -235,13 +240,12 @@ async function sendChat(event, msg) {
     // RunnableParallele / RunInput with the NLQ, Context, and Metamask Examples
     const setupAndRetrieval = new RunnableParallel({
       nlq: new RunnablePassthrough(),
-      context: abiRetriever,
+      context: 'abi": []', // Defaulting ABI to empty array for JSON RPC Test
       metamaskExamples: metamaskExamplesRetriever
     });
 
     // Chain
     // Setup and Retrieval -> Prompt -> Model -> Output Parser
-
     const chain = setupAndRetrieval.pipe(prompt).pipe(model).pipe(new StrOutputParser());
 
     // Invoke the Chain for the NLQ response from the AI
@@ -249,11 +253,17 @@ async function sendChat(event, msg) {
 
     console.log(result);
 
-/*     // Parser the Result and Send Ethereum Transaction
-    sendTransaction(result); */
+    // Parser the Result and Send Ethereum Transaction
+    var txn_response = await sendTransaction(result);
 
-    // Send the response to the user
-    event.reply("chat:reply", { success: true, content: result });
+    // Parse the Response
+    var txn_response_data = await txn_response.json();
+
+    // Parse the Result
+    var txn_response_data_result = txn_response_data.result;
+
+    // Send the result to the user
+    event.reply("chat:reply", { success: true, content: txn_response_data_result });
 
   } catch (err) {
     console.error(err);
@@ -265,24 +275,29 @@ async function sendChat(event, msg) {
 async function sendTransaction(txn) {
 
   // Call a JSON-RPC method with the transaction data returned from the AI
+  var API_KEY = '';
+
+  // Check the JSON RPC Transaction
+  console.log(txn);
+
+  // Only send the JSON RPC method from the txn data
   const data = txn;
 
   var infuraSettings = {
-    method : 'POST',
-    headers : {
-      'Content-Type' : 'application/json'
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
     },
-    body : JSON.stringify(data)
+    body: JSON.stringify(data)
   };
 
-  const txn_data = await fetch('https://mainnet.infura.io/v3/YOUR-API-KEY', infuraSettings)
+  const txn_data = await fetch(`https://mainnet.infura.io/v3/${API_KEY}`, infuraSettings)
 
   console.log(txn_data);
 
   return txn_data;
 
 }
-
 
 function stopChat() {
   abort();
