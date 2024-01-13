@@ -92,7 +92,9 @@
   "dependencies": {
     "@xenova/transformers": "^2.6.2",
     "electron-squirrel-startup": "^1.0.0",
+    "faiss-node": "^0.5.1",
     "langchain": "^0.0.170",
+    "llamaindex": "^0.0.44",
     "mammoth": "^1.6.0",
     "ml-distance": "^4.0.1",
     "nvm": "^0.0.4",

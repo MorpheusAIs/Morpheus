@@ -15,22 +15,91 @@ const {
   serve,
 } = require("./service/ollama/ollama.js");
 
+const { Document, VectorIndexRetriever } = require("llamaindex");
+const { DirectoryLoader, RunnablePassthrough, RunnableParallel, StrOutputParser, ChatPromptTemplate, ChatOllama } = require("@langchainjs");
+const { FAISS } = requite("faiss-node");
+const LangChainOllamaEmbeddings = require('llamaindex');
+const LlamaIndexOllamaEmbeddings = require('llamaindex');
+const ServiceContext = require('llamaindex');
+const VectorStoreIndex = require('llamaindex');
+
 let model = "llama2:latest";
 
+// Smart Contracts Directory with ABI to make initial function call
+const CONTRACTS_DIR = "public/data";
+
+let contracts = []; // Array to hold contracts data
+
+// Contract Filenames
+const contractFilenames = ["1inch.json", "curve.json", "lido.json", "pancakeswap.json", "router.json", "sushiswap.json", "uniswap.json", "usdc.json", "usdt.json"];
+
+// Function to extract metadata and abi from a contract object
+function extractMetadataAbi(contract) {
+  const subsetKeys = new Set(["metadata", "abi"]);
+  let result = {};
+  for (let key in contract) {
+    if (subsetKeys.has(key)) {
+      result[key] = contract[key];
+    }
+  }
+  return result;
+}
+
+// Function to extract metadata and abi from a contract object
+contractFilenames.forEach(contractFilename => {
+  let filePath = path.join(CONTRACTS_DIR, contractFilename);
+  let rawData = fs.readFileSync(filePath, 'utf8');
+  let payload = JSON.parse(rawData);
+
+  if (payload.contracts) {
+    payload.contracts.forEach(contract => {
+      contracts.push([contractFilename, extractMetadataAbi(contract)]);
+    });
+  } else {
+    contracts.push([contractFilename, extractMetadataAbi(payload)]);
+  }
+});
+
+// Function to create LangChain Ollama Embeddings
+function langchainEmbeddingsFactory() {
+  return new LangChainOllamaEmbeddings(); // Assumes llama2 model is default
+}
+
+// Function to create LlamaIndex Ollama Embeddings
+function llamaindexEmbeddingsFactory() {
+  return new LlamaIndexOllamaEmbeddings({ modelName: "llama2" });
+}
+
+// Function to build a LlamaIndex Index
+function buildLlamaIndexIndex({ embedModel, documents }) {
+  const serviceContext = ServiceContext.fromDefaults({ embedModel: embedModel, llm: null, chunkSize: 4096 });
+  // TODO: Implement local persistence if necessary
+  const index = VectorStoreIndex.fromDocuments({
+    documents: documents,
+    serviceContext: serviceContext
+  });
+  return index;
+}
+
+// Debug Log
 function debugLog(msg) {
   if (global.debug) {
     console.log(msg);
   }
 }
 
+// Sets the model to use for the Ollama AI
 async function setModel(event, msg) {
   model = msg;
 }
 
+// Gets the model to use for the Ollama AI
 async function getModel(event) {
   event.reply("model:get", { success: true, content: model });
 }
 
+
+// Runs the Ollama AI
 async function runOllamaModel(event, msg) {
   try {
 
@@ -38,6 +107,7 @@ async function runOllamaModel(event, msg) {
     await load();
 
     // send an empty message to the model to load it into memory
+
     await run(model, (json) => {
       // status will be set if the model is downloading
       if (json.status) {
@@ -67,91 +137,132 @@ async function runOllamaModel(event, msg) {
   }
 }
 
-// Send Chat to Morpheus 
+// For Smart Contract ABI Metadata Retrieval, Examples Retrieval, and Chat
+const TOP_K_METADATA = 2;
+const TOP_K_ABIS = 5;
+const TOP_K_EXAMPLES = 1;
+
+// For Smart Contract ABI Metadata
+const numContracts = contracts.length;
+const documentsContractsMetadata = contracts.map(contract => {
+  return new Document({
+    text: contract[1].metadata.toString(),
+    metadata: {
+      fname: contract[0],
+      abis: contract[1].abi
+    },
+    excludedEmbedMetadataKeys: ["abis", "fname"],
+    excludedLlmMetadataKeys: ["abis", "fname"]
+  });
+});
+
+// For Smart Contract ABI Metadata
+const documentsContractsMetadataIndex = buildLlamaIndexIndex({
+  embedModel: llamaindexEmbeddingsFactory(),
+  documents: documentsContractsMetadata
+});
+
+// For Smart Contracts
+const documentsContractsRetriever = new VectorIndexRetriever({
+  index: documentsContractsMetadataIndex,
+  similarityTopK: TOP_K_METADATA
+});
 
 // Asynchronously sends a chat message and processes the response
 async function sendChat(event, msg) {
 
-  let primaryPrompt = msg;
-  let secondaryPrompt = "";
-  let llm1ContextOutput = "";
-
   try {
 
-    if (vectorStoreSize() > 0) {
+    // The users query
+    const NLQ = msg;
 
-      const msgEmbeds = await embed({ data: [{ section: "", content: [msg] }] });
-      const searchResult = search(msgEmbeds[0].embedding, 1);
-      console.log(searchResult);
+    // The prompt template
+    const retrievedContractsMetadataWithAbis = documentsContractsRetriever.retrieve(NLQ).map(contract => {
+      return `The Contract: ${contract.node.text}\n The Contract's ABI:\n${contract.node.metadata.abis}`;
+    });
 
-      let documentString = JSON.stringify(searchResult, null, 2);
+    // In Memory Vector Store
+    const abiInMemoryVectorStore = FAISS.fromTexts(retrievedContractsMetadataWithAbis, {
+      embedding: langchainEmbeddingsFactory()
+    });
 
-      primaryPrompt = createPrimaryPrompt(documentString, msg);
+    // ABI Retrieval Engine
+    const abiRetriever = abiInMemoryVectorStore.asRetriever({ k: TOP_K_ABIS });
 
-      debugLog("Sending primary prompt to model...");
+    // Examples Loader
+    const metamaskExamplesLoader = new DirectoryLoader("Morpheus/data/metamask_eth_examples", "*.txt");
 
-      llm1ContextOutput = await generateResponse(model, primaryPrompt);
+    // Load the examples from the directory using the DirectoryLoader In Memory Vector Store
+    const metamaskExamples = metamaskExamplesLoader.load();
 
-      secondaryPrompt = createSecondaryPrompt(llm1ContextOutput, msg);
-      debugLog("Sending secondary prompt to model...");
+    // FAISS 
+    const metamaskExamplesInMemoryVectorStore = FAISS.fromDocuments(metamaskExamples, {
+      embedding: langchainEmbeddingsFactory()
+    });
 
-      const responseJson = await generateResponse(model, secondaryPrompt);
+    // Retrieval Engine
+    const metamaskExamplesRetriever = metamaskExamplesInMemoryVectorStore.asRetriever({ k: TOP_K_EXAMPLES });
 
-      event.reply("chat:reply", { success: true, content: responseJson });
-    }
+    // Model
+    const model = new ChatOllama({ model: "llama2:7b" });
+
+    // Prompt
+    const prompt = new ChatPromptTemplate.fromTemplate(promptTemplate);
+
+    // Setup And Retrieval
+    const setupAndRetrieval = new RunnableParallel({
+      nlq: new RunnablePassthrough(),
+      context: abiRetriever,
+      metamaskExamples: metamaskExamplesRetriever
+    });
+
+    // Chain
+    const chain = setupAndRetrieval.pipe(prompt).pipe(model).pipe(new StrOutputParser());
+
+    // Invoke
+    const result = chain.invoke(NLQ);
+
+    console.log(result);
+
+    // Parser the Result and Send Ethereum Transaction
+    sendTransaction(result);
+
+    // Send the response to the user
+    event.reply("chat:reply", { success: true, content: result });
+
   } catch (err) {
     console.error(err);
     event.reply("chat:reply", { success: false, content: err.message });
   }
 }
 
-// Generates the primary prompt
-function createPrimaryPrompt(documentString, userMessage) {
-  return `As MORPHEUS, an AI assistant expert in web3 technologies, assist in executing a smart contract transaction. Use the provided Contract ABI data and the user's message to guide your response. Ensure to:
+// SendTransaction
+function sendTransaction(txn) {
 
-- Create a chat output to assist in executing a smart contract transaction.
-- Guide the user step by step through function calling.
-- Regularly ask the user for feedback or clarification.
-- Request necessary information from the user to complete the transaction, without recommending specific wallets or exchanges.
-- Utilize the user's existing metamask connection for transaction completion.
+  // Data
+  const data = {}
 
-Contract ABI Data: ${documentString}
+  // The transaction object
+  const txn = {
+    from: "0x00000000",
+    to: "0x00000000",
+    value: "0x00000000",
+    gas: "0x00000000",
+    gasPrice: "0x00000000",
+    data: "0x00000000",
+    nonce: "0x00000000",
+    chainId: "0x00000000"
+  };
 
-User Conversation:
-<user>${userMessage}</user>`;
-}
+  // Send the transaction
+/*   web3.eth.sendTransaction(txn, function (err, transactionHash) {
+    if (!err) {
+      console.log(transactionHash);
+    } else {
+      console.error(err);
+    }
+  }); */
 
-
-// Generates the secondary prompt for formatting the response with the user message and transaction input parameters
-function createSecondaryPrompt(contextOutput, userMessage) {
-  return `Format the response in JSON as per the following example. Use the provided context output and the user's message to tailor the response:
-
-Example JSON Format:
-{
-  "user_message": "Message to show to the user",
-  "wallet_body": "MetaMask transaction content or blank if not applicable"
-}
-
-Based on this context:
-${contextOutput}
-
-And the user's inquiry:
-<user>${userMessage}</user>
-
-Ensure the final response follows this JSON structure.`;
-}
-
-
-// Generates a response from the model based on the given prompt
-async function generateResponse(model, prompt) {
-
-  let output = "";
-
-  await generate(model, prompt, (json) => {
-    output = json;
-  });
-
-  return output;
 }
 
 
@@ -207,6 +318,7 @@ module.exports = {
   getModel,
   stopChat,
   sendChat,
+  sendTransaction,
   loadDocument,
   serveOllama,
   runOllamaModel,
