@@ -193,67 +193,64 @@ async function sendChat(event, msg) {
 
     // The users query that is sent to the AI for processing
     // The user message needs to be structured with the user_address, message, and timestamp
-    const NLQ = msg;
+    var NLQ = msg;
 
     console.log('User Message: ' + NLQ);
 
     // The prompt template that is imported
-    /*    const retrievedContractsMetadataWithAbis = documentsContractsRetriever.retrieve(NLQ).map(contract => {
-         return `The Contract: ${contract.node.text}\n The Contract's ABI:\n${contract.node.metadata.abis}`;
-       });
-   
-       // In Memory Vector Store with FAISS for Similarity Retrieval
-       const abiInMemoryVectorStore = FAISS.fromTexts(retrievedContractsMetadataWithAbis, {
-         embedding: langchainEmbeddingsFactory()
-       });
-   
-       // ABI Retrieval Engine
-       const abiRetriever = abiInMemoryVectorStore.asRetriever({ k: TOP_K_ABIS });
-   
-      */
+    const retrievedContractsMetadataWithAbis = documentsContractsRetriever.retrieve(NLQ).map(contract => {
+      return `The Contract: ${contract.node.text}\n The Contract's ABI:\n${contract.node.metadata.abis}`;
+    });
+
+    // In Memory Vector Store with FAISS for Similarity Retrieval
+    const abiInMemoryVectorStore = FAISS.fromTexts(retrievedContractsMetadataWithAbis, {
+      embedding: langchainEmbeddingsFactory()
+    });
+
+    // ABI Retrieval Engine
+    const abiRetriever = abiInMemoryVectorStore.asRetriever({ k: TOP_K_ABIS });
 
     console.log('Loading JSON-RPC Examples...');
 
     // Create the FaissStore from the Examples and load into MemoryVectorStore from Retrival topk = 1
-    /*     async function loadExamples() {
-          try {
-    
-            const metamaskExamplesLoader = new DirectoryLoader(
-              "/home/dom/Morpheus/ai_experiments/rag_assets/metamask_eth_examples",
-              {
-                ".txt": (path) => new DirectoryLoader(path),
-              }
-            );
-    
-            // Load the examples from the directory using the DirectoryLoader
-            const metamaskExamples = await metamaskExamplesLoader.load();
-    
-            console.log('Metamask Examples Loaded:', metamaskExamples);
-    
-            // FAISS processing
-            const metamaskExamplesInMemoryVectorStore = await FaissStore.fromDocuments(metamaskExamples, {
-              embedding: new Ollama({ modelName: "llama2" })
-            });
-    
-            // Additional processing or return
-            return metamaskExamplesInMemoryVectorStore;
-    
-          } catch (error) {
-            console.error('Error loading examples:', error);
-            throw error; // Re-throw the error for further handling, if necessary
-          }
-        }
-    
-        var metamaskExamplesInMemoryVectorStore = await loadExamples();
-    
-        // Retrieval Engine
-        const metamaskExamplesRetriever = metamaskExamplesInMemoryVectorStore.asRetriever({ k: TOP_K_EXAMPLES }); */
+    async function loadExamples() {
+      try {
 
-    // Model
+        const metamaskExamplesLoader = new DirectoryLoader(
+          "/home/dom/Morpheus/ai_experiments/rag_assets/metamask_eth_examples",
+          {
+            ".txt": (path) => new DirectoryLoader(path),
+          }
+        );
+
+        // Load the examples from the directory using the DirectoryLoader
+        const metamaskExamples = await metamaskExamplesLoader.load();
+
+        console.log('Metamask Examples Loaded:', metamaskExamples);
+
+        // FAISS processing
+        const metamaskExamplesInMemoryVectorStore = await FaissStore.fromDocuments(metamaskExamples, {
+          embedding: new Ollama({ modelName: "llama2" })
+        });
+
+        // Additional processing or return
+        return metamaskExamplesInMemoryVectorStore;
+
+      } catch (error) {
+        console.error('Error loading examples:', error);
+        throw error; // Re-throw the error for further handling, if necessary
+      }
+    }
+
+    var metamaskExamplesInMemoryVectorStore = await loadExamples();
+
+    // Retrieval Engine
+    const metamaskExamplesRetriever = metamaskExamplesInMemoryVectorStore.asRetriever({ k: TOP_K_EXAMPLES });
 
     const model = new ChatOllama({ model: "llama2" });
 
-    const promptTemplate = `{Format the response in JSON as per the following example. 
+    const promptTemplate = `
+    Format the response in JSON as per the following example. 
     Use the provided context output and the user's message to tailor the response:
     
     Example JSON Format:
@@ -263,35 +260,29 @@ async function sendChat(event, msg) {
     }
     
     Based on this context:
-    {context}
+    ${context}
     
     A relevant example of a metamask payload:
-    {metamask_examples}
+    ${metamask_examples}
     
     And the user's inquiry:
-    {nlq}
+    ${nlq}
     
     Ensure the final response follows this JSON structure. \`\`\`json {<insert metamask specific context here>}\`\`\`
-  }`;
+`;
+    ;
 
-    console.log('Loading Template');
+    console.log('Loading Template...');
 
     // Prompt Template from LangChain Core
     const prompt = ChatPromptTemplate.fromTemplate(promptTemplate);
 
     console.log('Prompt Template Loaded');
 
-    // Setup And Retrieval
-    // RunnableParallele / RunInput with the NLQ, Context, and Metamask Examples
     const setupAndRetrieval = new RunnableParallel({
       nlq: new RunnablePassthrough(),
-      context: 'abi": []', // Defaulting ABI to empty array for JSON RPC Test
-      metamask_examples: `{
-        "jsonrpc": "2.0",
-        "method": "eth_getBlockByNumber",
-        "params": ["0xBlockNumber", true],
-        "id": 1
-      }`
+      context: abiRetriever,
+      metamask_examples: metamaskExamplesRetriever
     });
 
     console.log('Creating chain...');
@@ -301,9 +292,7 @@ async function sendChat(event, msg) {
     const chain = setupAndRetrieval.pipe(prompt).pipe(model).pipe(new StrOutputParser());
 
     // Invoke the Chain for the NLQ response from the AI
-    const result = chain.invoke(NLQ);
-
-    console.log(result);
+    const result = chain.invoke({ nlq: NLQ });
 
     // Parser the Result and Send Ethereum Transaction
     var txn_response = await sendTransaction(result);
