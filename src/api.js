@@ -83,13 +83,15 @@ function llamaindexEmbeddingsFactory() {
 // Function to build a LlamaIndex Index
 async function buildLlamaIndexIndex({ embedModel, documents }) {
   
+  // Create Service Context for LlamaIndex
   const serviceContext = serviceContextfromDefaults({ embedModel: embedModel, llm: null, chunkSize: 4096 });
-  // TODO: Implement local persistence if necessary
+
+  // Create Index from Documents
   const index = await VectorStoreIndex.fromDocuments({
     documents: documents,
     serviceContext: serviceContext
   });
-  
+
   return index;
 }
 
@@ -116,9 +118,7 @@ async function runOllamaModel(event, msg) {
   try {
 
     // load the embeddings into memory
-    await load();
-
-    // send an empty message to the model to load it into memory
+    // await load(); // Removing for Cached Embeddings: TODO
 
     await run(model, (json) => {
       // status will be set if the model is downloading
@@ -156,6 +156,8 @@ const TOP_K_EXAMPLES = 1;
 
 // For Smart Contract ABI Metadata
 const numContracts = contracts.length;
+
+// For Smart Contract ABI Metadata
 const documentsContractsMetadata = contracts.map(contract => {
   return new Document({
     text: contract[1].metadata.toString(),
@@ -169,12 +171,13 @@ const documentsContractsMetadata = contracts.map(contract => {
 });
 
 // For Smart Contract ABI Metadata
+// Retrieve the metadata for the smart contracts and store in LlamaIndex
 const documentsContractsMetadataIndex = buildLlamaIndexIndex({
   embedModel: llamaindexEmbeddingsFactory(),
   documents: documentsContractsMetadata
 });
 
-// For Smart Contracts
+// For Smart Contracts ABI Metadata
 const documentsContractsRetriever = new VectorIndexRetriever({
   index: documentsContractsMetadataIndex,
   similarityTopK: TOP_K_METADATA
@@ -185,15 +188,16 @@ async function sendChat(event, msg) {
 
   try {
 
-    // The users query
+    // The users query that is sent to the AI for processing
+    // The user message needs to be structured with the user_address, message, and timestamp
     const NLQ = msg;
 
-    // The prompt template
+    // The prompt template that is imported
     const retrievedContractsMetadataWithAbis = documentsContractsRetriever.retrieve(NLQ).map(contract => {
       return `The Contract: ${contract.node.text}\n The Contract's ABI:\n${contract.node.metadata.abis}`;
     });
 
-    // In Memory Vector Store
+    // In Memory Vector Store with FAISS for Similarity Retrieval
     const abiInMemoryVectorStore = FAISS.fromTexts(retrievedContractsMetadataWithAbis, {
       embedding: langchainEmbeddingsFactory()
     });
@@ -202,9 +206,11 @@ async function sendChat(event, msg) {
     const abiRetriever = abiInMemoryVectorStore.asRetriever({ k: TOP_K_ABIS });
 
     // Examples Loader
+    // Loads in Example Ethereum Transactions 
     const metamaskExamplesLoader = new DirectoryLoader("Morpheus/data/metamask_eth_examples", "*.txt");
 
     // Load the examples from the directory using the DirectoryLoader In Memory Vector Store
+    // Loads in the Data into the Prompt Template
     const metamaskExamples = metamaskExamplesLoader.load();
 
     // FAISS 
@@ -218,10 +224,11 @@ async function sendChat(event, msg) {
     // Model
     const model = new ChatOllama({ model: "llama2:7b" });
 
-    // Prompt
+    // Prompt Template from LangChain Core
     const prompt = new ChatPromptTemplate.fromTemplate(promptTemplate);
 
     // Setup And Retrieval
+    // RunnableParallele / RunInput with the NLQ, Context, and Metamask Examples
     const setupAndRetrieval = new RunnableParallel({
       nlq: new RunnablePassthrough(),
       context: abiRetriever,
@@ -229,15 +236,17 @@ async function sendChat(event, msg) {
     });
 
     // Chain
+    // Setup and Retrieval -> Prompt -> Model -> Output Parser
+
     const chain = setupAndRetrieval.pipe(prompt).pipe(model).pipe(new StrOutputParser());
 
-    // Invoke
+    // Invoke the Chain for the NLQ response from the AI
     const result = chain.invoke(NLQ);
 
     console.log(result);
 
-    // Parser the Result and Send Ethereum Transaction
-    sendTransaction(result);
+/*     // Parser the Result and Send Ethereum Transaction
+    sendTransaction(result); */
 
     // Send the response to the user
     event.reply("chat:reply", { success: true, content: result });
