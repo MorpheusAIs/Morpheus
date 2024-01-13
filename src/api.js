@@ -16,12 +16,19 @@ const {
 } = require("./service/ollama/ollama.js");
 
 const { Document, VectorIndexRetriever } = require("llamaindex");
-const { DirectoryLoader, RunnablePassthrough, RunnableParallel, StrOutputParser, ChatPromptTemplate, ChatOllama } = require("@langchainjs");
-const { FAISS } = requite("faiss-node");
+const { ChatPromptTemplate } = require("@langchain/core/prompts");
+const { ChatOllama } = require("@langchain/community/chat_models/ollama");
+const { RunnableParallel, RunnablePassthrough } = require("@langchain/core/runnables");
+const { StrOutputParser } = require("@langchain/core/output_parsers");
+
+const { FAISS } = require("faiss-node");
 const LangChainOllamaEmbeddings = require('llamaindex');
 const LlamaIndexOllamaEmbeddings = require('llamaindex');
 const ServiceContext = require('llamaindex');
 const VectorStoreIndex = require('llamaindex');
+
+const fs = require("fs");
+const path = require("path");
 
 let model = "llama2:latest";
 
@@ -243,7 +250,7 @@ function sendTransaction(txn) {
   const data = {}
 
   // The transaction object
-  const txn = {
+  const _txn = {
     from: "0x00000000",
     to: "0x00000000",
     value: "0x00000000",

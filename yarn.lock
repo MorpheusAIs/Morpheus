@@ -46,10 +46,10 @@
     "enabled" "2.0.x"
     "kuler" "^2.0.0"
 
-"@datastax/astra-db-ts@^0.1.2":
-  "integrity" "sha512-7lnpym0HhUtfJVd8+vu6vYdDQpFyYof7TVLFVD2fgoIjUwj3EksFXmqDqicLAlLferZDllqSVthX9pXQ5Rdapw=="
-  "resolved" "https://registry.npmjs.org/@datastax/astra-db-ts/-/astra-db-ts-0.1.3.tgz"
-  "version" "0.1.3"
+"@datastax/astra-db-ts@^0.1.2", "@datastax/astra-db-ts@0.1.2":
+  "integrity" "sha512-JfgQCjNuyqJ4ki38pWBBz9oR/UJHJDruqjSLAZp0sjFr17asr2QMNsNTiW30otNqjA+mWBy9lS6x+mFXESvr0Q=="
+  "resolved" "https://registry.npmjs.org/@datastax/astra-db-ts/-/astra-db-ts-0.1.2.tgz"
+  "version" "0.1.2"
   dependencies:
     "axios" "^1.4.0"
     "bson" "^6.2.0"
@@ -447,6 +447,45 @@
   "integrity" "sha512-x5mpbfJt1nKmVep5WNP5VjNsjWApWNj8pPYI+uYMkBWH9bWUJmQmHt2lbf0VCoQd54Oq3XuFEh/UyoVh7rPxmg=="
   "resolved" "https://registry.npmjs.org/@huggingface/jinja/-/jinja-0.1.2.tgz"
   "version" "0.1.2"
+
+"@langchain/community@^0.0.17":
+  "integrity" "sha512-BI7WJv3rtIbmKrvUNeTaxGGrz8jnu4boLnpl+4cH3WE2lrKTdzuvp6Ot4dACowWInvNSfXcdMzG3BrtTMSaDcQ=="
+  "resolved" "https://registry.npmjs.org/@langchain/community/-/community-0.0.17.tgz"
+  "version" "0.0.17"
+  dependencies:
+    "@langchain/core" "~0.1.9"
+    "@langchain/openai" "~0.0.10"
+    "flat" "^5.0.2"
+    "langsmith" "~0.0.48"
+    "uuid" "^9.0.0"
+    "zod" "^3.22.3"
+
+"@langchain/core@^0.1.12", "@langchain/core@~0.1.9":
+  "integrity" "sha512-lBfPEjcizJzkZjVTNJp0j+a85BFaXEjzyiUlsh7GwZRERwkrMEV2vtCSRrujbsnZcHzxN67K2bL02KHNLgWkOg=="
+  "resolved" "https://registry.npmjs.org/@langchain/core/-/core-0.1.12.tgz"
+  "version" "0.1.12"
+  dependencies:
+    "ansi-styles" "^5.0.0"
+    "camelcase" "6"
+    "decamelize" "1.2.0"
+    "js-tiktoken" "^1.0.8"
+    "langsmith" "~0.0.48"
+    "ml-distance" "^4.0.0"
+    "p-queue" "^6.6.2"
+    "p-retry" "4"
+    "uuid" "^9.0.0"
+    "zod" "^3.22.3"
+
+"@langchain/openai@~0.0.10":
+  "integrity" "sha512-km0N+b1bcbtHVDmTEGs7LJFsCrjAcOMnkYlBQrhuIcyhJ052iF4zPpfptScQcZ25dW1yJJI8DS6dVVeM76l52w=="
+  "resolved" "https://registry.npmjs.org/@langchain/openai/-/openai-0.0.11.tgz"
+  "version" "0.0.11"
+  dependencies:
+    "@langchain/core" "~0.1.9"
+    "js-tiktoken" "^1.0.7"
+    "openai" "^4.24.2"
+    "zod" "^3.22.3"
+    "zod-to-json-schema" "3.20.3"
 
 "@malept/cross-spawn-promise@^1.0.0", "@malept/cross-spawn-promise@^1.1.0":
   "integrity" "sha512-RTBGWL5FWQcg9orDOCcp4LvItNzUPcyEU9bwaeJX0rJ1IQxzucC48Y0/sQLp/g6t99IQgAlGIaesJS+gTn7tVQ=="
@@ -1588,7 +1627,7 @@
   dependencies:
     "ms" "2.1.2"
 
-"decamelize@^1.2.0":
+"decamelize@^1.2.0", "decamelize@1.2.0":
   "integrity" "sha512-z2S+W9X73hAUUki+N+9Za2lBlun89zigOyGrsax+KUQ6wKW4ZoWpEYBkGhQjwAjjDCkWxhY0VKEhk8wzY7F5cA=="
   "resolved" "https://registry.npmjs.org/decamelize/-/decamelize-1.2.0.tgz"
   "version" "1.2.0"
@@ -2924,7 +2963,7 @@
   "resolved" "https://registry.npmjs.org/langchainhub/-/langchainhub-0.0.6.tgz"
   "version" "0.0.6"
 
-"langsmith@~0.0.31":
+"langsmith@~0.0.31", "langsmith@~0.0.48":
   "integrity" "sha512-TC2RkjDizxtubClLNjLkB0m53NHtom9LHIhbdRYJ5O6gqUpcXkN/pefb8w734lBp9VYfnYBk/JJ8AiCq+ooeDQ=="
   "resolved" "https://registry.npmjs.org/langsmith/-/langsmith-0.0.49.tgz"
   "version" "0.0.49"
@@ -3764,6 +3803,21 @@
     "node-fetch" "^2.6.7"
 
 "openai@^4.20.1":
+  "integrity" "sha512-JUesECWPtsDHO0TlZGb6q73hnAmXUdzj9NrwgZeL4lqlRt/kR1sWrXoy8LocxN/6uOtitywvcJqe0O1PLkG45g=="
+  "resolved" "https://registry.npmjs.org/openai/-/openai-4.24.7.tgz"
+  "version" "4.24.7"
+  dependencies:
+    "@types/node" "^18.11.18"
+    "@types/node-fetch" "^2.6.4"
+    "abort-controller" "^3.0.0"
+    "agentkeepalive" "^4.2.1"
+    "digest-fetch" "^1.3.0"
+    "form-data-encoder" "1.7.2"
+    "formdata-node" "^4.3.2"
+    "node-fetch" "^2.6.7"
+    "web-streams-polyfill" "^3.2.1"
+
+"openai@^4.24.2":
   "integrity" "sha512-JUesECWPtsDHO0TlZGb6q73hnAmXUdzj9NrwgZeL4lqlRt/kR1sWrXoy8LocxN/6uOtitywvcJqe0O1PLkG45g=="
   "resolved" "https://registry.npmjs.org/openai/-/openai-4.24.7.tgz"
   "version" "4.24.7"
@@ -5346,7 +5400,7 @@
   "resolved" "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz"
   "version" "1.0.2"
 
-"ws@^8.13.0":
+"ws@^8.13.0", "ws@^8.14.2":
   "integrity" "sha512-HS0c//TP7Ina87TfiPUz1rQzMhHrl/SG2guqRcTOIUYD2q8uhUdNHZYJUaQ8aTGPzCh+c6oawMKW35nFl1dxyQ=="
   "resolved" "https://registry.npmjs.org/ws/-/ws-8.16.0.tgz"
   "version" "8.16.0"
@@ -5456,7 +5510,12 @@
   "resolved" "https://registry.npmjs.org/zod-to-json-schema/-/zod-to-json-schema-3.22.1.tgz"
   "version" "3.22.1"
 
-"zod@^3.22.3", "zod@^3.22.4":
+"zod-to-json-schema@3.20.3":
+  "integrity" "sha512-/Q3wnyxAfCt94ZcrGiXXoiAfRqasxl9CX64LZ9fj+4dKH68zulUtU0uk1WMxQPfAxQ0ZI70dKzcoW7hHj+DwSQ=="
+  "resolved" "https://registry.npmjs.org/zod-to-json-schema/-/zod-to-json-schema-3.20.3.tgz"
+  "version" "3.20.3"
+
+"zod@^3.20.0", "zod@^3.22.3", "zod@^3.22.4":
   "integrity" "sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg=="
   "resolved" "https://registry.npmjs.org/zod/-/zod-3.22.4.tgz"
   "version" "3.22.4"
