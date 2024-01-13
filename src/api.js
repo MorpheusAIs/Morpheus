@@ -211,57 +211,90 @@ async function sendChat(event, msg) {
        const abiRetriever = abiInMemoryVectorStore.asRetriever({ k: TOP_K_ABIS });
    
       */
-     
+
     console.log('Loading JSON-RPC Examples...');
 
     // Create the FaissStore from the Examples and load into MemoryVectorStore from Retrival topk = 1
-    async function loadExamples() {
-      try {
-
-        const metamaskExamplesLoader = new DirectoryLoader(
-          "/home/dom/Morpheus/ai_experiments/rag_assets/metamask_eth_examples",
-          {
-            ".txt": (path) => new DirectoryLoader(path),
+    /*     async function loadExamples() {
+          try {
+    
+            const metamaskExamplesLoader = new DirectoryLoader(
+              "/home/dom/Morpheus/ai_experiments/rag_assets/metamask_eth_examples",
+              {
+                ".txt": (path) => new DirectoryLoader(path),
+              }
+            );
+    
+            // Load the examples from the directory using the DirectoryLoader
+            const metamaskExamples = await metamaskExamplesLoader.load();
+    
+            console.log('Metamask Examples Loaded:', metamaskExamples);
+    
+            // FAISS processing
+            const metamaskExamplesInMemoryVectorStore = await FaissStore.fromDocuments(metamaskExamples, {
+              embedding: new Ollama({ modelName: "llama2" })
+            });
+    
+            // Additional processing or return
+            return metamaskExamplesInMemoryVectorStore;
+    
+          } catch (error) {
+            console.error('Error loading examples:', error);
+            throw error; // Re-throw the error for further handling, if necessary
           }
-        );
-
-        // Load the examples from the directory using the DirectoryLoader
-        const metamaskExamples = await metamaskExamplesLoader.load();
+        }
     
-        console.log('Metamask Examples Loaded:', metamaskExamples);
+        var metamaskExamplesInMemoryVectorStore = await loadExamples();
     
-        // FAISS processing
-        const metamaskExamplesInMemoryVectorStore = await FaissStore.fromDocuments(metamaskExamples, {
-          embedding: new Ollama({ modelName: "llama2" })
-        });
-    
-        // Additional processing or return
-        return metamaskExamplesInMemoryVectorStore;
-    
-      } catch (error) {
-        console.error('Error loading examples:', error);
-        throw error; // Re-throw the error for further handling, if necessary
-      }
-    }
-
-    var metamaskExamplesInMemoryVectorStore = await loadExamples();
-
-    // Retrieval Engine
-    const metamaskExamplesRetriever = metamaskExamplesInMemoryVectorStore.asRetriever({ k: TOP_K_EXAMPLES });
+        // Retrieval Engine
+        const metamaskExamplesRetriever = metamaskExamplesInMemoryVectorStore.asRetriever({ k: TOP_K_EXAMPLES }); */
 
     // Model
+
     const model = new ChatOllama({ model: "llama2" });
 
+    const promptTemplate = `{Format the response in JSON as per the following example. 
+    Use the provided context output and the user's message to tailor the response:
+    
+    Example JSON Format:
+    {
+      "user_message": "Message to show to the user",
+      "wallet_body": "\`\`\`json {<insert metamask specific context here>}\`\`\`"
+    }
+    
+    Based on this context:
+    {context}
+    
+    A relevant example of a metamask payload:
+    {metamask_examples}
+    
+    And the user's inquiry:
+    {nlq}
+    
+    Ensure the final response follows this JSON structure. \`\`\`json {<insert metamask specific context here>}\`\`\`
+  }`;
+
+    console.log('Loading Template');
+
     // Prompt Template from LangChain Core
-    const prompt = new ChatPromptTemplate.fromTemplate(promptTemplate);
+    const prompt = ChatPromptTemplate.fromTemplate(promptTemplate);
+
+    console.log('Prompt Template Loaded');
 
     // Setup And Retrieval
     // RunnableParallele / RunInput with the NLQ, Context, and Metamask Examples
     const setupAndRetrieval = new RunnableParallel({
       nlq: new RunnablePassthrough(),
       context: 'abi": []', // Defaulting ABI to empty array for JSON RPC Test
-      metamaskExamples: metamaskExamplesRetriever
+      metamask_examples: `{
+        "jsonrpc": "2.0",
+        "method": "eth_getBlockByNumber",
+        "params": ["0xBlockNumber", true],
+        "id": 1
+      }`
     });
+
+    console.log('Creating chain...');
 
     // Chain
     // Setup and Retrieval -> Prompt -> Model -> Output Parser
