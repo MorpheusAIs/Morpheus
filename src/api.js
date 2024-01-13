@@ -23,7 +23,9 @@ const { StrOutputParser } = require("@langchain/core/output_parsers");
 
 const { FAISS } = require("faiss-node");
 const LangChainOllamaEmbeddings = require('llamaindex');
-const LlamaIndexOllamaEmbeddings = require('llamaindex');
+const { Ollama } = require('llamaindex');
+const { serviceContextfromDefaults } = require('llamaindex');
+
 const ServiceContext = require('llamaindex');
 const VectorStoreIndex = require('llamaindex');
 
@@ -74,17 +76,20 @@ function langchainEmbeddingsFactory() {
 
 // Function to create LlamaIndex Ollama Embeddings
 function llamaindexEmbeddingsFactory() {
-  return new LlamaIndexOllamaEmbeddings({ modelName: "llama2" });
+  const llm = new Ollama({ modelName: "llama2" });
+  return llm.getTextEmbedding();
 }
 
 // Function to build a LlamaIndex Index
-function buildLlamaIndexIndex({ embedModel, documents }) {
-  const serviceContext = ServiceContext.fromDefaults({ embedModel: embedModel, llm: null, chunkSize: 4096 });
+async function buildLlamaIndexIndex({ embedModel, documents }) {
+  
+  const serviceContext = serviceContextfromDefaults({ embedModel: embedModel, llm: null, chunkSize: 4096 });
   // TODO: Implement local persistence if necessary
-  const index = VectorStoreIndex.fromDocuments({
+  const index = await VectorStoreIndex.fromDocuments({
     documents: documents,
     serviceContext: serviceContext
   });
+  
   return index;
 }
 
@@ -262,13 +267,13 @@ function sendTransaction(txn) {
   };
 
   // Send the transaction
-/*   web3.eth.sendTransaction(txn, function (err, transactionHash) {
-    if (!err) {
-      console.log(transactionHash);
-    } else {
-      console.error(err);
-    }
-  }); */
+  /*   web3.eth.sendTransaction(txn, function (err, transactionHash) {
+      if (!err) {
+        console.log(transactionHash);
+      } else {
+        console.error(err);
+      }
+    }); */
 
 }
 
