@@ -15,7 +15,6 @@ So February 8th MAYBE the beginning of the 90 day bootstrapping period. Thanks t
 ## Updated Testing Plan
 https://github.com/MorpheusAIs/Morpheus/blob/main/TestingPlan.md
 
-## The Date
-February 8th 2024 is the 28th Anniversery of "A Declaration of the Indpedence of Cyberspace" (February 8th 1996). 
-Seems like a good day to release Decentralized AI into the world.
+## History
+February 8th 2024 is the 28th Anniversary of "A Declaration of the Independence of Cyberspace" (February 8th 1996). Seems like a good day to release Decentralized AI into the world.
 https://www.eff.org/cyberspace-independence
