@@ -233,29 +233,36 @@ const documentsContractsRetriever = new VectorIndexRetriever({
   similarityTopK: TOP_K_METADATA
 });
 
+console.log('Loading Document Contracts...', documentsContractsMetadata);
+
 // Asynchronously sends a chat message and processes the response
 async function sendMorpheusChat(event, msg) {
 
   try {
 
-    // The users query that is sent to the AI for processing
-    // The user message needs to be structured with the user_address, message, and timestamp
     var NLQ = msg;
+    var abiRetriever;
 
-    console.log('User Message: ' + NLQ);
+    console.log('User Message:', NLQ);
 
-    // The prompt template that is imported
-    const retrievedContractsMetadataWithAbis = documentsContractsRetriever.retrieve(NLQ).map(contract => {
-      return `The Contract: ${contract.node.text}\n The Contract's ABI:\n${contract.node.metadata.abis}`;
-    });
+    // Check if the retrieved data is an array
+    documentsContractsRetriever.retrieve(NLQ).then(retrievedContracts => {
+      const retrievedContractsMetadataWithAbis = [];
+    
+      for (const contract of retrievedContracts) {
+        const formattedContract = `The Contract: ${contract.node.text}\nThe Contract's ABI:\n${contract.node.metadata.abis}`;
+        retrievedContractsMetadataWithAbis.push(formattedContract);
+      }
 
-    // In Memory Vector Store with FAISS for Similarity Retrieval
-    const abiInMemoryVectorStore = FAISS.fromTexts(retrievedContractsMetadataWithAbis, {
-      embedding: langchainEmbeddingsFactory()
-    });
+      // In Memory Vector Store with FAISS for Similarity Retrieval
+      const abiInMemoryVectorStore = FAISS.fromTexts(retrievedContractsMetadataWithAbi, {
+        embedding: langchainEmbeddingsFactory()
+      });
 
-    // ABI Retrieval Engine
-    const abiRetriever = abiInMemoryVectorStore.asRetriever({ k: TOP_K_ABIS });
+      // ABI Retrieval Engine
+      abiRetriever = abiInMemoryVectorStore.asRetriever({ k: TOP_K_ABIS });
+
+    })
 
     console.log('Loading JSON-RPC Examples...');
 
