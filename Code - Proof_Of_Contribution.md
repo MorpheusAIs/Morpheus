@@ -33,3 +33,6 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | 0xaBd9faA94384595ea304ddce2Ac8e097970eD5b3 | @Believer4  | 12 Hrs | https://github.com/MorpheusAIs/Morpheus/pull/270
 | 0x63d45Be2F2828c0f8e2b4Cff745e89ae74A6d034 | @ dayer | 16 Hrs | General contract testing and subsequent updating of testing documentation (https://github.com/MorpheusAIs/Morpheus/pull/252). Additionally, offensive security contract testing of test contracts
 | 0x01974549C9B9a30d47c548A16b120b1cAa7B586C | `L1Sender` vulnerability report | 12 Hours | Audit [`78b68b7`](https://github.com/MorpheusAIs/SmartContracts/tree/78b68b7d67729c2849cfe16a76a82a7f22b1d5ce) and submitted vulnerabilities & fixes in `L1Sender` | 
+| 0x683C0173BD2214E95cA9FFB1B437c12A9697ABe6 | @ Ninibarker | 60 Hours | Calls with protocols, sourcing devs, calls with devs for API integration, Operations, onboarded devs from protocols| 
+| 0xb75DB2216E7047C7b6bebE1057CF7c99e5D87eD0 | TheOracle-Potentiated | 80 Hours | Adminitration of social channels, growth, API dev sourcing for integrations, calls with protocols,onboarded devs for protocols, Operating work for Design tile library and inforgraphics |
+| 0xe4D28FE30829A825B7379EF28d5d91174436C899 | @ Phypto | 80 hours | Design tile library, logo and new upfdated infographics|
