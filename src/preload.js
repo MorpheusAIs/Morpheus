@@ -12,6 +12,7 @@ contextBridge.exposeInMainWorld("electronAPI", {
       callback(event, data);
     });
   },
+  sendMorpheusChat: (text) => ipcRenderer.send("chat:send-morpheus", text),
   stopChat: () => ipcRenderer.send("chat:stop"),
   loadDocument: () => ipcRenderer.send("doc:load"),
   onDocumentLoaded: (callback) => {

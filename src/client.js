@@ -104,8 +104,19 @@ userInput.addEventListener("keydown", function (event) {
     }
     responseElem.appendChild(loadingAnimation);
 
-    // Send chat to Ollama server
-    window.electronAPI.sendChat(message);
+
+    if (message.includes("/morpheus")) {
+
+      // Send chat to Ollama server with RAG
+      window.electronAPI.sendMorpheusChat(message);
+
+    } else {
+
+      // Send chat to Ollama server
+      window.electronAPI.sendChat(message);
+
+    }
+
     chatView.scrollTop = chatView.scrollHeight;
     // The response will be received in the onChatReply event
   }

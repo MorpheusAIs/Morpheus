@@ -13,6 +13,7 @@ const {
   getModel,
   setModel,
   sendChat,
+  sendMorpheusChat,
   stopChat,
   serveOllama,
   stopOllama,
@@ -71,6 +72,7 @@ app.on("ready", () => {
   ipcMain.on("model:set", setModel);
   ipcMain.on("model:get", getModel);
   ipcMain.on("chat:send", sendChat);
+  ipcMain.on("chat:send-morpheus", sendMorpheusChat);
   ipcMain.on("chat:stop", stopChat);
   ipcMain.on("doc:load", loadDocument);
   ipcMain.on("ollama:serve", serveOllama);

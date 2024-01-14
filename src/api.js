@@ -148,6 +148,53 @@ async function runOllamaModel(event, msg) {
 }
 
 
+async function sendChat(event, msg) {
+  let prompt = msg;
+  if (vectorStoreSize() > 0) {
+    const msgEmbeds = await embed({
+      data: [
+        {
+          section: "",
+          content: [msg],
+        },
+      ],
+    });
+    const searchResult = search(msgEmbeds[0].embedding, 20);
+    // format the system context search results
+    let documentString = searchResult.join("\n\n");
+    // Ensure the contextString does not exceed 500 characters
+    if (documentString.length > 500) {
+      documentString = documentString.substring(0, 497) + "...";
+    }
+    prompt = `Using the provided document, answer the user question to the best of your ability. You must try to use information from the provided document. Combine information in the document into a coherent answer.
+If there is nothing in the document relevant to the user question, say "Hmm, I don't see anything about that in this document." before providing any other information you know.
+Anything between the following \`document\` html blocks is retrieved from a knowledge bank, not part of the conversation with the user.
+<document>
+    ${documentString}
+<document/>
+
+If there is no relevant information within the document, say "Hmm, I don't see anything about that in this document." before providing any other information you know. Anything between the preceding 'document' html blocks is retrieved from a knowledge bank, not part of the conversation with the user.
+
+Anything between the following \`user\` html blocks is is part of the conversation with the user.
+<user>
+  ${msg}
+</user>
+`;
+  }
+  try {
+    debugLog("Sending prompt to Ollama...");
+    debugLog(prompt);
+    await generate(model, prompt, (json) => {
+      // Reply with the content every time we receive data
+      event.reply("chat:reply", { success: true, content: json });
+    });
+  } catch (err) {
+    console.log(err);
+    event.reply("chat:reply", { success: false, content: err.message });
+  }
+}
+
+
 // For Smart Contract ABI Metadata Retrieval, Examples Retrieval, and Chat
 const TOP_K_METADATA = 2;
 const TOP_K_ABIS = 5;
@@ -187,7 +234,7 @@ const documentsContractsRetriever = new VectorIndexRetriever({
 });
 
 // Asynchronously sends a chat message and processes the response
-async function sendChat(event, msg) {
+async function sendMorpheusChat(event, msg) {
 
   try {
 
@@ -392,6 +439,7 @@ module.exports = {
   getModel,
   stopChat,
   sendChat,
+  sendMorpheusChat,
   sendTransaction,
   loadDocument,
   serveOllama,
