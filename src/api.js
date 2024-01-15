@@ -15,7 +15,7 @@ const {
   serve,
 } = require("./service/ollama/ollama.js");
 
-const { Document, VectorIndexRetriever } = require("llamaindex");
+const { Document, VectorIndexRetriever, Ollama, serviceContextFromDefaults } = require("llamaindex");
 const { ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate } = require("@langchain/core/prompts");
 const { ChatOllama } = require("@langchain/community/chat_models/ollama");
 const { RunnableSequence, RunnableParallel, RunnablePassthrough } = require("@langchain/core/runnables");
@@ -25,8 +25,6 @@ const { TextLoader } = require("langchain/document_loaders/fs/text");
 const { RecursiveCharacterTextSplitter } = require("langchain/text_splitter");
 const { HNSWLib } = require("@langchain/community/vectorstores/hnswlib");
 const { FaissStore } = require("@langchain/community/vectorstores/faiss");
-const { Ollama } = require('llamaindex');
-const { serviceContextfromDefaults } = require('llamaindex');
 const { OllamaEmbeddings } = require("langchain/embeddings/ollama");
 
 const { ServiceContext } = require('llamaindex');
@@ -36,63 +34,6 @@ const fs = require("fs");
 const path = require("path");
 
 let model = "llama2:latest";
-
-// Smart Contracts Directory with ABI to make initial function call
-const CONTRACTS_DIR = "public/data";
-
-let contracts = []; // Array to hold contracts data
-
-// Contract Filenames
-const contractFilenames = ["1inch.json", "curve.json", "lido.json", "pancakeswap.json", "router.json", "sushiswap.json", "uniswap.json", "usdc.json", "usdt.json"];
-
-// Function to extract metadata and abi from a contract object
-function extractMetadataAbi(contract) {
-  const subsetKeys = new Set(["metadata", "abi"]);
-  let result = {};
-  for (let key in contract) {
-    if (subsetKeys.has(key)) {
-      result[key] = contract[key];
-    }
-  }
-  return result;
-}
-
-// Function to extract metadata and abi from a contract object
-contractFilenames.forEach(contractFilename => {
-  let filePath = path.join(CONTRACTS_DIR, contractFilename);
-  let rawData = fs.readFileSync(filePath, 'utf8');
-  let payload = JSON.parse(rawData);
-
-  if (payload.contracts) {
-    payload.contracts.forEach(contract => {
-      contracts.push([contractFilename, extractMetadataAbi(contract)]);
-    });
-  } else {
-    contracts.push([contractFilename, extractMetadataAbi(payload)]);
-  }
-});
-
-// Function to create LangChain Ollama Embeddings
-function langchainEmbeddingsFactory() {
-  return new Ollama({ modelName: "llama2" });
-
-}
-
-
-// Function to build a LlamaIndex Index
-async function buildLlamaIndexIndex({ embedModel, documents }) {
-
-  // Create Service Context for LlamaIndex
-  const serviceContext = serviceContextfromDefaults({ embedModel: embedModel, llm: null, chunkSize: 4096 });
-
-  // Create Index from Documents
-  const index = await VectorStoreIndex.fromDocuments({
-    documents: documents,
-    serviceContext: serviceContext
-  });
-
-  return index;
-}
 
 // Debug Log
 function debugLog(msg) {
@@ -203,8 +144,41 @@ const TOP_K_METADATA = 2;
 const TOP_K_ABIS = 5;
 const TOP_K_EXAMPLES = 1;
 
-// For Smart Contract ABI Metadata
-const numContracts = contracts.length;
+// Smart Contracts Directory with ABI to make initial function call
+const CONTRACTS_DIR = "public/data";
+
+let contracts = []; // Array to hold contracts data
+
+// Contract Filenames
+const contractFilenames = ["1inch.json", "curve.json", "lido.json", "pancakeswap.json", "router.json", "sushiswap.json", "uniswap.json", "usdc.json", "usdt.json"];
+
+// Function to extract metadata and abi from a contract object
+function extractMetadataAbi(contract) {
+  const subsetKeys = new Set(["metadata", "abi"]);
+  let result = {};
+  for (let key in contract) {
+    if (subsetKeys.has(key)) {
+      result[key] = contract[key];
+    }
+  }
+  return result;
+}
+
+// Function to extract metadata and abi from a contract object
+contractFilenames.forEach(contractFilename => {
+  let filePath = path.join(CONTRACTS_DIR, contractFilename);
+  let rawData = fs.readFileSync(filePath, 'utf8');
+  let payload = JSON.parse(rawData);
+
+  if (payload.contracts) {
+    payload.contracts.forEach(contract => {
+      contracts.push([contractFilename, extractMetadataAbi(contract)]);
+    });
+  } else {
+    contracts.push([contractFilename, extractMetadataAbi(payload)]);
+  }
+});
+
 
 // For Smart Contract ABI Metadata
 const documentsContractsMetadata = contracts.map(contract => {
@@ -219,19 +193,14 @@ const documentsContractsMetadata = contracts.map(contract => {
   });
 });
 
-console.log('Building LlamaIndex Index...');
+const serviceContext = serviceContextfromDefaults({ embedModel: new Ollama({ modelName: "llama2" }), llm: null, chunkSize: 4096 });
 
-// For Smart Contract ABI Metadata
-// Retrieve the metadata for the smart contracts and store in LlamaIndex
-const documentsContractsMetadataIndex = buildLlamaIndexIndex({
-  embedModel: new OllamaEmbeddings({
-    model: "llama2",
-    baseUrl: "http://localhost:11434",
-  }),
-  documents: documentsContractsMetadata
+// Create Index from Documents
+var index = VectorStoreIndex.fromDocuments(documentsContractsMetadata, {
+  serviceContext: serviceContext
 });
 
-console.log('Create Vector Index Retriever...');
+const documentsContractsMetadataIndex = index;
 
 // For Smart Contracts ABI Metadata
 const documentsContractsRetriever = new VectorIndexRetriever({
@@ -249,83 +218,62 @@ async function sendMorpheusChat(event, msg) {
 
     console.log('User Message:', NLQ);
 
-    async function loadContractABI() {
+    async function loadContractABIs() {
 
       try {
 
-        // Check if the retrieved data is an array
-        documentsContractsRetriever.retrieve(NLQ).then(retrievedContracts => {
-          const retrievedContractsMetadataWithAbis = [];
+        const retrievedContracts = await documentsContractsRetriever.retrieve(NLQ);
 
-          for (const contract of retrievedContracts) {
-            const formattedContract = `The Contract: ${contract.node.text}\nThe Contract's ABI:\n${contract.node.metadata.abis}`;
-            retrievedContractsMetadataWithAbis.push(formattedContract);
-          }
+        console.log('Retrieved Contracts:', retrievedContracts);
 
-          // In Memory Vector Store with FAISS for Similarity Retrieval
-          const abiInMemoryVectorStore = FAISS.fromTexts(retrievedContractsMetadataWithAbi,
-            new OllamaEmbeddings({
-              model: "llama2",
-              baseUrl: "http://localhost:11434",
-            })
-          );
+        const formattedContracts = retrievedContracts.map(contract => {
+          return `The Contract: ${contract.node.text}\nThe Contract's ABI:\n${contract.node.metadata.abis}`;
+        });
 
-          // ABI Retrieval Engine
-          return abiInMemoryVectorStore
-
-        })
+        return createInMemoryVectorStore(formattedContracts);
 
       } catch (error) {
         console.error('Error loading contracts:', error);
-        throw error; // Re-throw the error for further handling, if necessary
-      }
-
-    };
-
-    // Load Contract ABI
-    var abiInMemoryVectorStore = await loadContractABI();
-
-    // Load Contract ABI
-    const contractAbiRetriever = await abiInMemoryVectorStore.asRetriever({ k: TOP_K_ABIS });
-
-    // Create the FaissStore from the Examples and load into MemoryVectorStore from Retrival topk = 1
-    async function loadExamples() {
-
-      try {
-
-        const metamaskExamplesLoader = new DirectoryLoader("/home/dom/Morpheus/ai_experiments/rag_assets/metamask_eth_examples",
-          {
-            ".txt": (path) => new TextLoader(path),
-          },
-        );
-
-        // Load the examples from the directory using the DirectoryLoader
-        const metamaskExamples = await metamaskExamplesLoader.load();
-
-        console.log('Metamask Examples Loaded:', metamaskExamples);
-
-        // FAISS processing
-        const metamaskExamplesInMemoryVectorStore = await FaissStore.fromDocuments(
-          metamaskExamples,
-          new OllamaEmbeddings({
-            model: "llama2",
-            baseUrl: "http://localhost:11434",
-          })
-        );
-
-        console.log('Metamask Examples In Memory Vector Store:', metamaskExamplesInMemoryVectorStore);
-
-        // Additional processing or return
-        return metamaskExamplesInMemoryVectorStore;
-
-      } catch (error) {
-        console.error('Error loading examples:', error);
-        throw error; // Re-throw the error for further handling, if necessary
+        throw error;
       }
     }
 
-    // Load Txn Examples
-    var metamaskExamplesInMemoryVectorStore = await loadExamples();
+    async function createInMemoryVectorStore(contracts) {
+
+      const embeddings = new OllamaEmbeddings({
+        model: "llama2",
+        baseUrl: "http://localhost:11434",
+      });
+      return FAISS.fromTexts(contracts, embeddings);
+    }
+
+    const abiInMemoryVectorStore = await loadContractABIs();
+
+    const contractAbiRetriever = await abiInMemoryVectorStore.asRetriever({ k: TOP_K_ABIS });
+
+    async function loadMetamaskExamples() {
+      try {
+        const directoryLoader = new DirectoryLoader("/home/dom/Morpheus/ai_experiments/rag_assets/metamask_eth_examples", {
+          ".txt": (path) => new TextLoader(path),
+        });
+
+        const examples = await directoryLoader.load();
+        return createFaissStoreFromExamples(examples);
+      } catch (error) {
+        console.error('Error loading examples:', error);
+        throw error;
+      }
+    }
+
+    async function createFaissStoreFromExamples(examples) {
+      const embeddings = new OllamaEmbeddings({
+        model: "llama2",
+        baseUrl: "http://localhost:11434",
+      });
+      return FaissStore.fromDocuments(examples, embeddings);
+    }
+
+    const metamaskExamplesInMemoryVectorStore = await loadMetamaskExamples();
 
     // Retrieval Engine
     const metamaskExamplesRetriever = metamaskExamplesInMemoryVectorStore.asRetriever({ k: TOP_K_EXAMPLES });
