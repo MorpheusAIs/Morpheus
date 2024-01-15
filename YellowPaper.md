@@ -12,7 +12,7 @@ Presented as written in the whitepaper contributed by the anonymous developers M
 
 ---------
 **Morpheus Version 0.0.5 for Linux Debian**
-- Downalod: https://drive.google.com/file/d/1PQ3n7LXeJHe_jmkYLDUQ9fWjZQTWbHCB/view?usp=sharing
+- Download: https://drive.google.com/file/d/1PQ3n7LXeJHe_jmkYLDUQ9fWjZQTWbHCB/view?usp=sharing
 - Instructions: To install, run this command:
 sudo dpkg -i /path/to/your/morpheus.deb
 NOTE: In the above command, replace "/path/to/your/morpheus.deb" with your path to the morpheus_0.0.5_amd64.deb file.
