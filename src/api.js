@@ -16,15 +16,18 @@ const {
 } = require("./service/ollama/ollama.js");
 
 const { Document, VectorIndexRetriever } = require("llamaindex");
-const { ChatPromptTemplate } = require("@langchain/core/prompts");
+const { ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate } = require("@langchain/core/prompts");
 const { ChatOllama } = require("@langchain/community/chat_models/ollama");
-const { RunnableParallel, RunnablePassthrough } = require("@langchain/core/runnables");
-const { StrOutputParser } = require("@langchain/core/output_parsers");
+const { RunnableSequence, RunnableParallel, RunnablePassthrough } = require("@langchain/core/runnables");
+const { StrOutputParser, StringOutputParser } = require("@langchain/core/output_parsers");
 const { DirectoryLoader } = require("langchain/document_loaders/fs/directory");
-
+const { TextLoader } = require("langchain/document_loaders/fs/text");
+const { RecursiveCharacterTextSplitter } = require("langchain/text_splitter");
+const { HNSWLib } = require("@langchain/community/vectorstores/hnswlib");
 const { FaissStore } = require("@langchain/community/vectorstores/faiss");
 const { Ollama } = require('llamaindex');
 const { serviceContextfromDefaults } = require('llamaindex');
+const { OllamaEmbeddings } = require("langchain/embeddings/ollama");
 
 const { ServiceContext } = require('llamaindex');
 const { VectorStoreIndex } = require('llamaindex');
@@ -221,7 +224,10 @@ console.log('Building LlamaIndex Index...');
 // For Smart Contract ABI Metadata
 // Retrieve the metadata for the smart contracts and store in LlamaIndex
 const documentsContractsMetadataIndex = buildLlamaIndexIndex({
-  embedModel: new Ollama({ modelName: "llama2" }),
+  embedModel: new OllamaEmbeddings({
+    model: "llama2",
+    baseUrl: "http://localhost:11434",
+  }),
   documents: documentsContractsMetadata
 });
 
@@ -233,8 +239,6 @@ const documentsContractsRetriever = new VectorIndexRetriever({
   similarityTopK: TOP_K_METADATA
 });
 
-console.log('Loading Document Contracts...', documentsContractsMetadata);
-
 // Asynchronously sends a chat message and processes the response
 async function sendMorpheusChat(event, msg) {
 
@@ -245,36 +249,54 @@ async function sendMorpheusChat(event, msg) {
 
     console.log('User Message:', NLQ);
 
-    // Check if the retrieved data is an array
-    documentsContractsRetriever.retrieve(NLQ).then(retrievedContracts => {
-      const retrievedContractsMetadataWithAbis = [];
-    
-      for (const contract of retrievedContracts) {
-        const formattedContract = `The Contract: ${contract.node.text}\nThe Contract's ABI:\n${contract.node.metadata.abis}`;
-        retrievedContractsMetadataWithAbis.push(formattedContract);
+    async function loadContractABI() {
+
+      try {
+
+        // Check if the retrieved data is an array
+        documentsContractsRetriever.retrieve(NLQ).then(retrievedContracts => {
+          const retrievedContractsMetadataWithAbis = [];
+
+          for (const contract of retrievedContracts) {
+            const formattedContract = `The Contract: ${contract.node.text}\nThe Contract's ABI:\n${contract.node.metadata.abis}`;
+            retrievedContractsMetadataWithAbis.push(formattedContract);
+          }
+
+          // In Memory Vector Store with FAISS for Similarity Retrieval
+          const abiInMemoryVectorStore = FAISS.fromTexts(retrievedContractsMetadataWithAbi,
+            new OllamaEmbeddings({
+              model: "llama2",
+              baseUrl: "http://localhost:11434",
+            })
+          );
+
+          // ABI Retrieval Engine
+          return abiInMemoryVectorStore
+
+        })
+
+      } catch (error) {
+        console.error('Error loading contracts:', error);
+        throw error; // Re-throw the error for further handling, if necessary
       }
 
-      // In Memory Vector Store with FAISS for Similarity Retrieval
-      const abiInMemoryVectorStore = FAISS.fromTexts(retrievedContractsMetadataWithAbi, {
-        embedding: langchainEmbeddingsFactory()
-      });
+    };
 
-      // ABI Retrieval Engine
-      abiRetriever = abiInMemoryVectorStore.asRetriever({ k: TOP_K_ABIS });
+    // Load Contract ABI
+    var abiInMemoryVectorStore = await loadContractABI();
 
-    })
-
-    console.log('Loading JSON-RPC Examples...');
+    // Load Contract ABI
+    const contractAbiRetriever = await abiInMemoryVectorStore.asRetriever({ k: TOP_K_ABIS });
 
     // Create the FaissStore from the Examples and load into MemoryVectorStore from Retrival topk = 1
     async function loadExamples() {
+
       try {
 
-        const metamaskExamplesLoader = new DirectoryLoader(
-          "/home/dom/Morpheus/ai_experiments/rag_assets/metamask_eth_examples",
+        const metamaskExamplesLoader = new DirectoryLoader("/home/dom/Morpheus/ai_experiments/rag_assets/metamask_eth_examples",
           {
-            ".txt": (path) => new DirectoryLoader(path),
-          }
+            ".txt": (path) => new TextLoader(path),
+          },
         );
 
         // Load the examples from the directory using the DirectoryLoader
@@ -283,9 +305,15 @@ async function sendMorpheusChat(event, msg) {
         console.log('Metamask Examples Loaded:', metamaskExamples);
 
         // FAISS processing
-        const metamaskExamplesInMemoryVectorStore = await FaissStore.fromDocuments(metamaskExamples, {
-          embedding: new Ollama({ modelName: "llama2" })
-        });
+        const metamaskExamplesInMemoryVectorStore = await FaissStore.fromDocuments(
+          metamaskExamples,
+          new OllamaEmbeddings({
+            model: "llama2",
+            baseUrl: "http://localhost:11434",
+          })
+        );
+
+        console.log('Metamask Examples In Memory Vector Store:', metamaskExamplesInMemoryVectorStore);
 
         // Additional processing or return
         return metamaskExamplesInMemoryVectorStore;
@@ -296,6 +324,7 @@ async function sendMorpheusChat(event, msg) {
       }
     }
 
+    // Load Txn Examples
     var metamaskExamplesInMemoryVectorStore = await loadExamples();
 
     // Retrieval Engine
@@ -308,57 +337,63 @@ async function sendMorpheusChat(event, msg) {
     Use the provided context output and the user's message to tailor the response:
     
     Example JSON Format:
-    {
+    {{
       "user_message": "Message to show to the user",
-      "wallet_body": "\`\`\`json {<insert metamask specific context here>}\`\`\`"
-    }
+      "json_rpc_data": "JSON body to send to the wallet",
+    }}
+
+    ABI as Context:
+    {context}
     
-    Based on this context:
-    ${context}
-    
-    A relevant example of a metamask payload:
-    ${metamask_examples}
+    An relevant example of a metamask payload:
+    {metamask_examples}
     
     And the user's inquiry:
-    ${nlq}
+    {nlq}
     
-    Ensure the final response follows this JSON structure. \`\`\`json {<insert metamask specific context here>}\`\`\`
-`;
-    ;
+    Ensure the final response follows this JSON structure.`;
 
     console.log('Loading Template...');
 
-    // Prompt Template from LangChain Core
-    const prompt = ChatPromptTemplate.fromTemplate(promptTemplate);
+
+    // Loading Messages
+    const messages = [
+      SystemMessagePromptTemplate.fromTemplate(promptTemplate),
+      HumanMessagePromptTemplate.fromTemplate("{nlq}"),
+    ];
+
+    const prompt = ChatPromptTemplate.fromMessages(messages);
 
     console.log('Prompt Template Loaded');
 
-    const setupAndRetrieval = new RunnableParallel({
-      nlq: new RunnablePassthrough(),
-      context: abiRetriever,
-      metamask_examples: metamaskExamplesRetriever
-    });
-
-    console.log('Creating chain...');
-
-    // Chain
-    // Setup and Retrieval -> Prompt -> Model -> Output Parser
-    const chain = setupAndRetrieval.pipe(prompt).pipe(model).pipe(new StrOutputParser());
+    const chain = RunnableSequence.from([
+      {
+        nlq: new RunnablePassthrough(),
+        context: contractAbiRetriever,
+        metamask_examples: metamaskExamplesRetriever
+      },
+      prompt,
+      model,
+      new StringOutputParser(),
+    ]);
 
     // Invoke the Chain for the NLQ response from the AI
-    const result = chain.invoke({ nlq: NLQ });
+    const result = await chain.invoke({ nlq: NLQ });
 
-    // Parser the Result and Send Ethereum Transaction
-    var txn_response = await sendTransaction(result);
+    console.log('Result:', result);
 
-    // Parse the Response
-    var txn_response_data = await txn_response.json();
-
-    // Parse the Result
-    var txn_response_data_result = txn_response_data.result;
+    /*     // Parser the Result and Send Ethereum Transaction
+        var txn_response = await sendTransaction(result);
+    
+        // Parse the Response
+        var txn_response_data = await txn_response.json();
+    
+        // Parse the Result
+        var txn_response_data_result = txn_response_data.result; */
 
     // Send the result to the user
-    event.reply("chat:reply", { success: true, content: txn_response_data_result });
+
+    event.reply("chat:reply", { success: true, content: result });
 
   } catch (err) {
     console.error(err);
@@ -367,16 +402,16 @@ async function sendMorpheusChat(event, msg) {
 }
 
 // SendTransaction
-async function sendTransaction(txn) {
+async function sendTransaction(route, txn_parameters) {
+
+  // Get the Transaction Data from the AI
+  var data = txn_parameters
 
   // Call a JSON-RPC method with the transaction data returned from the AI
   var API_KEY = '';
 
   // Check the JSON RPC Transaction
-  console.log(txn);
-
-  // Only send the JSON RPC method from the txn data
-  const data = txn;
+  console.log(txn_parameters);
 
   var infuraSettings = {
     method: 'POST',
