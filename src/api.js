@@ -15,7 +15,7 @@ const {
   serve,
 } = require("./service/ollama/ollama.js");
 
-const { Document, VectorIndexRetriever, Ollama, OllamaEmbedding } = require("llamaindex");
+const { Document, VectorIndexRetriever, Ollama, MistralAIEmbedding, OpenAIEmbedding } = require("llamaindex");
 const { ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate } = require("@langchain/core/prompts");
 const { ChatOllama } = require("@langchain/community/chat_models/ollama");
 const { RunnableSequence, RunnableParallel, RunnablePassthrough } = require("@langchain/core/runnables");
@@ -166,7 +166,7 @@ function extractMetadataAbi(contract) {
   return result;
 }
 
-// Function to extract metadata and abi from a contract object
+/* // Function to extract metadata and abi from a contract object
 contractFilenames.forEach(contractFilename => {
   let filePath = path.join(CONTRACTS_DIR, contractFilename);
   let rawData = fs.readFileSync(filePath, 'utf8');
@@ -195,11 +195,10 @@ const documentsContractsMetadata = contracts.map(contract => {
   });
 });
 
-const serviceContext = serviceContextFromDefaults({ embedModel: new Ollama({ modelName: "llama2" }), llm: new Ollama({ modelName: "llama2" }), chunkSize: 4096 });
-
 // Create Index from Documents
+// Ollama Embeddings not supported yet in the LLAMA Index Library
 var index = VectorStoreIndex.fromDocuments(documentsContractsMetadata, {
-  serviceContext: serviceContext
+  serviceContext: serviceContextFromDefaults({ embedModel: new OpenAIEmbedding({apiKey: ""}), llm: new Ollama({ modelName: "llama2" }), chunkSize: 4096 })
 });
 
 const documentsContractsMetadataIndex = index;
@@ -208,7 +207,7 @@ const documentsContractsMetadataIndex = index;
 const documentsContractsRetriever = new VectorIndexRetriever({
   index: documentsContractsMetadataIndex,
   similarityTopK: TOP_K_METADATA
-});
+}); */
 
 // Asynchronously sends a chat message and processes the response
 async function sendMorpheusChat(event, msg) {
@@ -220,6 +219,7 @@ async function sendMorpheusChat(event, msg) {
 
     console.log('User Message:', NLQ);
 
+/*     // Load Contract ABIs
     async function loadContractABIs() {
 
       try {
@@ -240,6 +240,7 @@ async function sendMorpheusChat(event, msg) {
       }
     }
 
+    // Create In Memory Vector Store
     async function createInMemoryVectorStore(contracts) {
 
       const embeddings = new OllamaEmbeddings({
@@ -252,6 +253,8 @@ async function sendMorpheusChat(event, msg) {
     const abiInMemoryVectorStore = await loadContractABIs();
 
     const contractAbiRetriever = await abiInMemoryVectorStore.asRetriever({ k: TOP_K_ABIS });
+
+    */
 
     async function loadMetamaskExamples() {
       try {
@@ -291,9 +294,6 @@ async function sendMorpheusChat(event, msg) {
       "user_message": "Message to show to the user",
       "json_rpc_data": "JSON body to send to the wallet",
     }}
-
-    ABI as Context:
-    {context}
     
     An relevant example of a metamask payload:
     {metamask_examples}
@@ -319,7 +319,7 @@ async function sendMorpheusChat(event, msg) {
     const chain = RunnableSequence.from([
       {
         nlq: new RunnablePassthrough(),
-        context: contractAbiRetriever,
+        // context: contractAbiRetriever, removed for now
         metamask_examples: metamaskExamplesRetriever
       },
       prompt,
