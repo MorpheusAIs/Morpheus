@@ -33,3 +33,4 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | 0xaBd9faA94384595ea304ddce2Ac8e097970eD5b3 | @Believer4  | 12 Hrs | https://github.com/MorpheusAIs/Morpheus/pull/270
 | 0x63d45Be2F2828c0f8e2b4Cff745e89ae74A6d034 | @ dayer | 16 Hrs | General contract testing and subsequent updating of testing documentation (https://github.com/MorpheusAIs/Morpheus/pull/252). Additionally, offensive security contract testing of test contracts
 | 0x01974549C9B9a30d47c548A16b120b1cAa7B586C | `L1Sender` vulnerability report | 12 Hours | Audit [`78b68b7`](https://github.com/MorpheusAIs/SmartContracts/tree/78b68b7d67729c2849cfe16a76a82a7f22b1d5ce) and submitted vulnerabilities & fixes in `L1Sender` | 
+| 0x5EBe5223831523823528Ef0a7EdF67D288B1B070 | https://github.com/MorpheusAIs/Morpheus/pull/296 | 2hrs
