@@ -15,7 +15,7 @@ const {
   serve,
 } = require("./service/ollama/ollama.js");
 
-const { Document, VectorIndexRetriever, Ollama, serviceContextFromDefaults } = require("llamaindex");
+const { Document, VectorIndexRetriever, Ollama, OllamaEmbedding } = require("llamaindex");
 const { ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate } = require("@langchain/core/prompts");
 const { ChatOllama } = require("@langchain/community/chat_models/ollama");
 const { RunnableSequence, RunnableParallel, RunnablePassthrough } = require("@langchain/core/runnables");
@@ -29,6 +29,8 @@ const { OllamaEmbeddings } = require("langchain/embeddings/ollama");
 
 const { ServiceContext } = require('llamaindex');
 const { VectorStoreIndex } = require('llamaindex');
+
+const { serviceContextFromDefaults } = require("llamaindex");
 
 const fs = require("fs");
 const path = require("path");
@@ -193,7 +195,7 @@ const documentsContractsMetadata = contracts.map(contract => {
   });
 });
 
-const serviceContext = serviceContextfromDefaults({ embedModel: new Ollama({ modelName: "llama2" }), llm: null, chunkSize: 4096 });
+const serviceContext = serviceContextFromDefaults({ embedModel: new Ollama({ modelName: "llama2" }), llm: new Ollama({ modelName: "llama2" }), chunkSize: 4096 });
 
 // Create Index from Documents
 var index = VectorStoreIndex.fromDocuments(documentsContractsMetadata, {

@@ -3005,10 +3005,10 @@
     "through" "^2.3.8"
     "wrap-ansi" "^7.0.0"
 
-"llamaindex@^0.0.44":
-  "integrity" "sha512-+yrodGHXp/XkCQJmjPh2WnhrHmN8qNZdsXHwhtic1B1fWBNOsLIgvgk+LA2t04bXx9LWKkmrqrkLpWtvufgH5g=="
-  "resolved" "https://registry.npmjs.org/llamaindex/-/llamaindex-0.0.44.tgz"
-  "version" "0.0.44"
+"llamaindex@^0.0.45":
+  "integrity" "sha512-hHQKuxeQcafAVa3R8EN+droiRAfnQPe3UQ4iIhF74j1bF6Ys5hEdM3Fu4UEo0/8swQiJPVEhhm43ezAveDUpFQ=="
+  "resolved" "https://registry.npmjs.org/llamaindex/-/llamaindex-0.0.45.tgz"
+  "version" "0.0.45"
   dependencies:
     "@anthropic-ai/sdk" "^0.9.1"
     "@datastax/astra-db-ts" "^0.1.2"
@@ -3034,7 +3034,6 @@
     "rake-modified" "^1.0.8"
     "replicate" "^0.21.1"
     "string-strip-html" "^13.4.3"
-    "uuid" "^9.0.1"
     "wink-nlp" "^1.14.3"
 
 "load-json-file@^2.0.0":
@@ -5244,7 +5243,7 @@
   "resolved" "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz"
   "version" "1.0.2"
 
-"uuid@^9.0.0", "uuid@^9.0.1":
+"uuid@^9.0.0":
   "integrity" "sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA=="
   "resolved" "https://registry.npmjs.org/uuid/-/uuid-9.0.1.tgz"
   "version" "9.0.1"
