@@ -28,3 +28,4 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | 0x683C0173BD2214E95cA9FFB1B437c12A9697ABe6 | @ Ninibarker | 40 Hours | Calls with protocols, sourcing devs, calls with devs for API integration, Operations| 
 | 0xf3ed92789Ec71174FCDff6aA97239E5456a1b5c0 | @RyanSinger | 40 | Reviewed Smart Agents Whitepaper, calls with contributers, discussions at events, participation groups and lightly on Discord. Mostly discussions about tech, economic analysis, and long term outlook and strategy |
 | 0x46266F255E49756847587eabDDFc4D336Ef268d2 | @ 0xGracieGrace | 20 | Intro to Polygon protocols, identifying best fit for Morpheus, discussing Morpheus to gain tech support| 
+| 0xaBd9faA94384595ea304ddce2Ac8e097970eD5b3 | @Believer4  | 10 Hrs | https://github.com/MorpheusAIs/Morpheus/pull/292|
