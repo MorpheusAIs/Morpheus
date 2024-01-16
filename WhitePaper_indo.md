@@ -37,7 +37,7 @@ MOR dihargai setiap hari 24% untuk komunitas, 24% untuk modal, 24% untuk menghit
 
 Ini mencerminkan kenyataan bahwa agar Morpheus dapat berkembang, dibutuhkan hal-hal berikut: 
 
-Komunitas - Pembangun membuat frontend / alat dan membawa penggunaan ke dalam ekosistem Morpheus. 
+Komunitas - Pembangun membuat frontend / alat dan membawa pengguna ke dalam ekosistem Morpheus. 
 
 Modal - Membawa dana untuk komputasi dan kode. 
 
@@ -122,16 +122,16 @@ Di bawah ini ditunjukkan Kurva Pasokan MOR terpadu yang menunjukkan periode 5.83
 Node penuh Morpheus dilengkapi dengan dompet atau pengguna dapat menghubungkan dompet yang sudah ada. Hal ini memungkinkan pengguna untuk menandatangani dan mengirim transaksi yang direkomendasikan oleh Smart Agent mereka. Jadi pengguna akan dapat berpartisipasi dalam pembuktian melalui perangkat lunak Morpheus. Namun Penyedia Modal tidak diharuskan untuk memiliki node penuh misalnya. Mereka dapat berinteraksi langsung dengan Smart Contract di Ethereum / Arbitrum menggunakan stETH.
 
 ## Bukti Modal & Imbalan:
-Definisi dari Capital Provider adalah seseorang yang memberikan hasil stETH kepada jaringan Morpheus yang menjadi Protocol Owned Liquidity. Smart Contract Penyedia Modal ini akan memberikan 50% dari hasil stETH yang dihasilkan ke fungsi swap Morpheus. Swap membeli token MOR dari Automated Market Maker (AMM) kemudian menambahkannya ke dalam pool AMM dan 50% lainnya dari hasil stETH akan dikunci ke dalam AMM sebagai Penyedia Likuiditas. Ini akan memberikan likuiditas kepada semua pembuat kode, anggota komunitas, dan penyedia komputasi. 
+Definisi dari Capital Provider adalah seseorang yang memberikan hasil stETH kepada jaringan Morpheus yang menjadi Protocol Owned Liquidity (PoL). Capital Provider Smart Contract ini akan memberikan 50% dari hasil stETH yang dihasilkan ke fungsi swap Morpheus. Swap membeli token MOR dari Automated Market Maker (AMM) kemudian memasangkannya dengan 50% dari hasil stETH dan menguncinya ke dalam Pool Likuiditas AMM sebagai PoL. Ini akan memberikan likuiditas kepada semua pembuat kode, anggota komunitas, dan compute providers. Biaya yang diperoleh dari posisi likuiditas akan diinvestasikan kembali ke dalam pool untuk memastikan pertumbuhan likuiditas yang stabil. 
 
-Semua hasil stETH yang diperoleh dari setoran Anda diubah menjadi protocol-owned liquidity (PoL). Hasil tersebut tetap menjadi PoL tanpa batas waktu, tetapi Anda dapat menarik stETH Anda kapan saja.
+Dengan cara ini, semua hasil stETH yang diperoleh dari deposit Anda diubah menjadi protocol-owned liquidity (PoL). Hasil tersebut tetap menjadi PoL tanpa batas waktu, tetapi Anda dapat menarik stETH Anda kapan saja..
 
 Sebagai hasilnya, Penyedia Modal akan menerima token MOR setiap hari secara pro-rata dari total hasil stETH yang dikontribusikan. Misalnya, jika ada 100 Penyedia Modal yang masing-masing menyumbangkan 1 stETH hasil pada hari pertama saat jaringan diluncurkan, maka masing-masing akan menerima 1% dari 3.456 token MOR setiap hari = 34,56 MOR.
 
 Telah diusulkan untuk menyebut proses kontribusi hasil, swap, dan penambahan likuiditas ini sebagai "TCM". Kependekan dari "techno-capital machine" untuk menghormati filsuf e/acc, Beff Jezos. 
 
 ## Bukti Kode, Pendaftaran & Hadiah:
-Definisi Coder adalah seseorang yang telah mengunduh full node Morpheus, menghubungkan dompet mereka, dan menyumbangkan agen, kontrak pintar atau perangkat lunak lain ke Jaringan Morpheus.
+Definisi Coder adalah seseorang yang telah mengunduh dan menjalankan Morpheus Full Node, menghubungkan dompet mereka, dan menyumbangkan agen, smart contract, atau perangkat lunak lain ke Morpheus Network.
 
 Coder akan mengirimkan transaksi MOR ke Smart Contract Coder untuk mendaftarkan agen / smart contract atau perangkat lunak mereka. 
 Coder akan menyertakan dalam memo transaksi metadata berikut. 
@@ -148,7 +148,7 @@ Setelah ada agen atau alat khusus atau rantai (urutan permintaan/panggilan ke LL
 Banyak penelitian terkemuka yang telah dilakukan di bidang "Bukti Kontribusi" ini dilakukan oleh orang-orang baik di Protokol TEA. Termasuk Max Howell, pengembang Home Brew. Tautkan ke makalah dengan rinciannya. Morpheus dapat mempertimbangkan untuk memanfaatkan TEA setelah diluncurkan pada tahun 2024.
 
 ## Hitung Bukti, Registrasi & Hadiah:
-Definisi dari penyedia Compute adalah mereka telah mengunduh node penuh Morpheus, menghubungkan dompet mereka dan siap untuk menerima permintaan API / LLM / Compute dari pengguna Morpheus lainnya. Compute yang disediakan dapat dihitung dengan menyertakan transaksi yang ditandatangani yang dihasilkan oleh Smart Agent dengan pengembalian output dari transaksi MOR.
+Definisi dari penyedia Compute adalah mereka telah mengunduh dan menjalankan Morpheus Full Node, menghubungkan wallet mereka dan siap untuk menerima permintaan API/LLM/Compute dari pengguna Morpheus lainnya. Compute yang disediakan dapat dihitung dengan menyertakan transaksi yang ditandatangani yang dihasilkan oleh Smart Agent dengan pengembalian output dari transaksi MOR.
 
 Penyedia Komputasi akan mengirimkan transaksi MOR ke Kontrak Cerdas Penyedia Komputasi untuk mendaftarkan titik akhir API untuk menerima permintaan. 
 Penyedia Komputasi akan menyertakan metadata berikut dalam memo transaksi. 
@@ -165,7 +165,7 @@ Sebagai contoh, jika ada 100 Compute Provider pada hari pertama saat jaringan di
 Agar memenuhi syarat untuk menerima permintaan Compute, alamat Compute Provider harus HODL token MOR. Permintaan akan dialihkan ke API Compute Provider secara pro-rata ke MOR yang mereka hodl dibandingkan dengan semua Compute Provider terdaftar lainnya.
 
 ## Bukti Pembangun Komunitas, Pendaftaran & Penghargaan:
-Definisi dari Pembangun Komunitas adalah mereka telah mengunduh simpul penuh Morpheus, menghubungkan dompet mereka dan menggunakan API Morpheus untuk menyediakan front end pengguna & alat pengembang. Kontribusi yang mereka berikan dapat dihitung dengan menyertakan transaksi yang ditandatangani yang dihasilkan oleh Smart Agent dengan pengembalian hasil dari transaksi MOR.
+Definisi dari Pembangun Komunitas adalah mereka yang telah mengunduh dan menjalankan Morpheus Full Node, menghubungkan dompet mereka dan menggunakan API Morpheus untuk menyediakan alat Frontends & Developer kepada pengguna. Kontribusi yang mereka berikan dapat dihitung dengan menyertakan transaksi yang ditandatangani yang dihasilkan oleh Smart Agent dengan pengembalian hasil dari transaksi MOR.
 
 Community Builder akan mengirimkan transaksi MOR ke Smart Contract Community Builder untuk mendaftarkan titik akhir API untuk menerima permintaan. 
 Pembuat Komunitas akan menyertakan metadata berikut dalam memo transaksi. 
@@ -183,7 +183,7 @@ Sebagai contoh, jika ada 100 Community Builder pada hari pertama saat jaringan d
 ![UpdatedDiagram2UserFlow](https://github.com/MorpheusAIs/Morpheus/assets/1563345/a02468a7-9284-4ce5-b7e3-f32f476ff9f1)
 
 ## Hadiah Morpheus Dikirimkan oleh Smart Contract di Ethereum Layer 2 
-Token Morpheus (MOR) pada awalnya akan diberikan pada Ethereum Layer 1, dan akan ada token MOR terbungkus (wMOR) yang ada di Arbitrum untuk tujuan pembayaran dan tindakan terkait utilitas MOR lainnya.
+Token Morpheus (MOR) akan diberikan pada Arbitrum Ethereum Layer 2, untuk tujuan pembayaran dan tindakan terkait utilitas MOR lainnya.
 
 Perhatikan bahwa Morpheus tidak perlu menyisihkan hadiah MOR untuk konsensus blockchain atau eksekusi transaksi pada buku besar terdistribusi berkat membangun Ethereum dan Arbitrum lapisan 2. 
 
