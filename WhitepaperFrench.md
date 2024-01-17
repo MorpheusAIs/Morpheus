@@ -13,7 +13,7 @@ Enfin, l'utilisateur moyen pourra parler à son agent intelligent dans un langag
 
 Pour rendre les agents intelligents accessibles à tous et accroître la décentralisation de leur infrastructure, nous proposons de développer le réseau Morpheus. Le réseau Morpheus comprendra un jeton lancé récemment (le jeton "MOR") pour encourager les quatre principaux contributeurs au réseau. Il s'agit de la communauté des constructeurs qui créent des interfaces, des codeurs qui contribuent au logiciel et aux agents de Morpheus, des fournisseurs de capitaux qui ajoutent de la liquidité et de ceux qui fournissent des capacités de calcul, de stockage et de bande passante. L'histoire du Bitcoin et de l'Ethereum a bien montré que la concurrence libre et ouverte pour des jetons numériques rares peut fournir une infrastructure évolutive pour une blockchain publique sur de longues périodes.
 
-![MorpheusNetworkDiagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/f0960e25-80e3-42ed-aa1f-ad9792eb672d)
+![MorpheusNetworkDiagram](https://github.com/0xgroundfloor/Morpheus-images-French/blob/main/img1-French-.png)
 
 ## Contexte et histoire
 Les opérateurs historiques tels qu'OpenAI, Microsoft et Google utilisent de grands modèles de langage de source proche, facturent des droits de licence aux clients et monétisent les données de ces derniers. Ces modèles sont censurés, fragiles et fonctionnent dans des jardins clos. Il existe une forte demande en faveur d'un modèle linguistique à grande échelle open-source disponible gratuitement. Llama, Falcon et d'autres LLM open-source ont récemment été publiés et se rapprochent rapidement de la précision de leurs concurrents à source fermée.
@@ -54,7 +54,7 @@ Les codeurs - fournissent l'intelligence pour utiliser les frontends, le capital
 L'offre de jetons MOR est limitée à un maximum de 42 000 000 jetons qui existeront jamais. La distribution commencera avec les quatre groupes qui gagneront les jetons en fournissant des formes de preuve de travail (main d'œuvre) et de preuve d'enjeu (capital) au réseau. Pas de pré-mine. Pas de vente anticipée de jetons. Juste un lancement équitable.
 
 
-![MOREmissionsCurve2](https://github.com/MorpheusAIs/Morpheus/assets/1563345/3514217c-50ed-4639-8c5d-87ca5cfb5d1b)
+![MOREmissionsCurve2](https://github.com/0xgroundfloor/Morpheus-images-French/blob/main/img2-French.png)
 
 
 La récompense du bloc commencera à 14 400 MOR par jour et diminuera ensuite de 2,468994701 MOR chaque jour, jusqu'à ce que la récompense atteigne 0 au jour 5 833. À ce moment-là (dans environ 16 ans), à condition que Morpheus soit largement utilisé, les frais auront pris le relais en tant que principale motivation. Frais payés aux utilisateurs pour leurs données, frais aux fournisseurs de calcul, frais aux fournisseurs de capital et frais aux codeurs.
@@ -67,7 +67,7 @@ La récompense du bloc commencera à 14 400 MOR par jour et diminuera ensuite de
 - 3 456 jetons pour le capital. Proof stETH yield contribué, 50% échangé contre MOR et le reste bloqué dans l'AMM en tant que fournisseur de liquidité. 
 - 3 456 jetons pour la communauté. Preuve de la construction d'applications et d'outils frontaux qui engagent les utilisateurs.
 Le reste est mis de côté pour les ressources de protection : 576 jetons par jour à cette fin.
-![5050version3](https://github.com/MorpheusAIs/Morpheus/assets/1563345/c9fe763f-d4e4-4069-b9c9-75e0a777c3ad)
+![5050version3](https://github.com/0xgroundfloor/Morpheus-images-French/blob/main/img3-French-.png)
 
 
 ## L'utilité du jeton MOR
@@ -106,7 +106,7 @@ Capital - ETH verrouillé dans un contrat intelligent qui génère un rendement 
 Notez qu'il ne s'agit pas d'un calendrier. Chaque phase est plutôt une description d'une partie du cycle de vie. Il faudra peut-être des années pour que la communauté grandisse et mûrisse à travers chaque phase et la récompense du bloc expire après environ 16 ans. Ce long calendrier de distribution vise à donner le temps aux jetons d'être récompensés sur une base très large à l'échelle mondiale. De plus, la diminution progressive des récompenses de bloc sur plusieurs années donne à tous les participants le temps d'atteindre une certaine échelle et de passer des premières récompenses subventionnées à un fonctionnement basé uniquement sur les frais qu'ils gagnent.
 
 
-![MOREmissionSchedule](https://github.com/MorpheusAIs/Morpheus/assets/1563345/94c96cb0-b6e4-4c63-be46-39088c91e168)
+![MOREmissionSchedule](https://github.com/0xgroundfloor/Morpheus-images-French/blob/main/img4-French.png)
 
 
 ## Emissions de queue de MOR
@@ -125,20 +125,20 @@ Ce processus se répète indéfiniment dans le futur.
 Résultat à long terme. Environ 1% des récompenses annuelles en MOR (par rapport au nombre de MOR alors en circulation) sera disponible pour les futurs codeurs, l'informatique, la communauté et le capital.
 
 
-MaxMORScenario25](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/81c7794a-b5bc-4a9e-bb2d-1f28b98ea079)
+![MaxMORScenario25](https://github.com/0xgroundfloor/Morpheus-images-French/blob/main/img5-French.png)
 
 
 **NOTE IMPORTANTE:** Cela ne modifie pas la nature du plafond d'approvisionnement de 42 millions de MOR. 
 Puisque le programme d'émission de queue n'est par définition qu'une partie des jetons MOR qui ont été brûlés, le jeton MOR ne peut que devenir de plus en plus rare avec chaque période de 5,833 jours.
 
 
-![MOR25ScenarioV9](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/4813cd02-b104-4a0c-893b-a7fd329fe2a3)
+![MOR25ScenarioV9](https://github.com/0xgroundfloor/Morpheus-images-French/blob/main/img6-French.png)
 
 
 Ci-dessous est présentée la courbe d'offre unifiée de MOR montrant la première période de 5 833 jours et ajoutant les émissions de la longue traîne de l'année 17 à l'année 256. Si l'on prend l'exemple d'un taux de combustion moyen du MOR de 25 % sur l'ensemble des époques, on obtient la courbe suivante
 
 
-![MORSupplyCurve20231019](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/8994c389-dad1-4e46-9b63-e048da8ef172)
+![MORSupplyCurve20231019](https://github.com/0xgroundfloor/Morpheus-images-French/blob/main/img7-French.png)
 
 
 ## Preuve de la communauté, du code, du calcul et du capital
@@ -217,7 +217,7 @@ Par exemple, s'il y a 100 Community Builders le premier jour du lancement du ré
 
 
 ## Diagramme de l'utilisateur de Morpheus
-![UpdatedDiagram2UserFlow](https://github.com/MorpheusAIs/Morpheus/assets/1563345/a02468a7-9284-4ce5-b7e3-f32f476ff9f1)
+![UpdatedDiagram2UserFlow](https://github.com/0xgroundfloor/Morpheus-images-French/blob/main/img8-French.png)
 
 
 ## Les récompenses de Morpheus sont délivrées par un contrat intelligent sur la couche 2 d'Ethereum 
