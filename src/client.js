@@ -71,7 +71,11 @@ window.electronAPI.onDocumentLoaded((event, data) => {
 
 // Send chat on enter key
 userInput.addEventListener("keydown", function (event) {
-  if (event.key === "Enter" && !event.shiftKey) {
+  if (event.key === "Enter" && event.shiftKey) {
+    userInput.value += "\n";
+    const currentValue = event.target.value;
+    event.target.value = currentValue + "\n";
+  } else if (event.key === "Enter") {
     event.preventDefault();
     statusContainer.style.display = "none"; // once the first chat is sent, hide the initial status message
     settingsIcon.style.display = "none"; // once the first chat is sent, hide the settings icon
@@ -108,8 +112,6 @@ userInput.addEventListener("keydown", function (event) {
     window.electronAPI.sendChat(message);
     chatView.scrollTop = chatView.scrollHeight;
     // The response will be received in the onChatReply event
-  } else if (event.key === "Enter" && event.shiftKey) {
-    userInput.value += "\n";
   }
 });
 
