@@ -6,9 +6,9 @@ Today, there is no easy way for developers who create software to get rewarded f
 
 This proposal for a Techno Capital Machine is meant to create a platform for developers to create and deploy their software.  It does so in a way so that the TCM first handles all the infrastructure and payments before rewarding the developer based on the popularity of the program.
 
-The Morpheus community is leveraging this framework of the Techno Capital Machine (TCM) and using it to accelerate the development of Decentralized AI. Though the concept is pertinent to all Smart Contracts, Decentralized Applications, and Web3 programs. See a link to the detailed tokenomics here: Whitepaper.
+The Morpheus community is leveraging this framework of the Techno Capital Machine (TCM) and using it to accelerate the development of Decentralized AI. Though the concept is pertinent to all Smart Contracts, Decentralized Applications, and Web3 programs. See a link to the detailed tokenomics here: [Whitepaper.](https://github.com/MorpheusAIs/Morpheus/blob/main/WhitePaper.md)
 
-The term Techno Capital Machine is inspired by renowned philosopher Beff Jazos and has been first implemented by the Morpheus community.
+The term Techno Capital Machine is inspired by renowned philosopher [Beff Jazos](https://twitter.com/BasedBeffJezos) and has been first implemented by the Morpheus community.
 
 ## The Mismatch of Corporate Structures and Decentralized Tech
 There is a fundamental mismatch between the desire to build open source and freedom tech for the world and the traditional corporate compute structure. Many projects which begin open source resort to forming a company in order to scale their efforts and reward their contributors. The structure of these companies then force their founders over time to gradually release less open source solutions that benefit the communities that created them..
@@ -67,10 +67,10 @@ This TCM framework is much better aligned with a purely free market approach to 
 
 ## Links To Smart Contract Code and Examples
 Smart Contracts for Capital Providers offering stETH and earning native project tokens.
-https://github.com/MorpheusAIs/SmartContracts
+[https://github.com/MorpheusAIs/SmartContracts](https://github.com/MorpheusAIs/SmartContracts)
 
 Yellowstone Compute Model for bidding on Compute.
-https://github.com/MorpheusAIs/Morpheus/blob/main/Yellowstone%20Compute%20Model.md
+[https://github.com/MorpheusAIs/Morpheus/blob/main/Yellowstone%20Compute%20Model.md](https://github.com/MorpheusAIs/Morpheus/blob/main/Yellowstone%20Compute%20Model.md)
 
 Example Proof of Code Contribution.
-https://github.com/MorpheusAIs/Morpheus/blob/main/Code%20-%20Proof_Of_Contribution.md
+[https://github.com/MorpheusAIs/Morpheus/blob/main/Code%20-%20Proof_Of_Contribution.md](https://github.com/MorpheusAIs/Morpheus/blob/main/Code%20-%20Proof_Of_Contribution.md)https://github.com/MorpheusAIs/Morpheus/blob/main/Code%20-%20Proof_Of_Contribution.md
