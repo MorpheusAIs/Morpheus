@@ -148,21 +148,11 @@ Setelah ada agen atau alat khusus atau rantai (urutan permintaan/panggilan ke LL
 Banyak penelitian terkemuka yang telah dilakukan di bidang "Bukti Kontribusi" ini dilakukan oleh orang-orang baik di Protokol TEA. Termasuk Max Howell, pengembang Home Brew. Tautkan ke makalah dengan rinciannya. Morpheus dapat mempertimbangkan untuk memanfaatkan TEA setelah diluncurkan pada tahun 2024.
 
 ## Hitung Bukti, Registrasi & Hadiah:
-Definisi dari penyedia Compute adalah mereka telah mengunduh node penuh Morpheus, menghubungkan dompet mereka dan siap untuk menerima permintaan API / LLM / Compute dari pengguna Morpheus lainnya. Compute yang disediakan dapat dihitung dengan menyertakan transaksi yang ditandatangani yang dihasilkan oleh Smart Agent dengan pengembalian output dari transaksi MOR.
-
-Penyedia Komputasi akan mengirimkan transaksi MOR ke Kontrak Cerdas Penyedia Komputasi untuk mendaftarkan titik akhir API untuk menerima permintaan. 
-Penyedia Komputasi akan menyertakan metadata berikut dalam memo transaksi. 
-
-- A. Tautan IPFS ke titik akhir API mereka di bidang memo transaksi MOR ketika mereka mendaftar. 
-- B. Tanda tangan kriptografi, mirip dengan cara pengembang menandatangani/mengautentikasi rilis aplikasi.
-- C. Nomor versi perangkat lunak Morpheus yang mereka gunakan.
-- D. Sebuah hash dari status program, sehingga pengguna dapat memeriksa bahwa itu adalah salinan yang valid dan tidak diubah.
-
-Biaya transaksi MOR pro-rata yang dibakar oleh setiap Penyedia Komputasi berfungsi sebagai bukti status Penyedia Komputasi dan mendapatkan proporsi token MOR setiap hari.  
-
-Sebagai contoh, jika ada 100 Compute Provider pada hari pertama saat jaringan diluncurkan, maka masing-masing akan mendapatkan hadiah pro-rata berdasarkan jumlah MOR yang telah mereka bakar melalui biaya. Dalam hal ini, dengan asumsi masing-masing dari 100 penyedia komputasi membakar 100 MOR, maka 1% dari 3.456 token MOR setiap hari = 34,56 MOR.
+Dalam Model Komputasi Yellowstone, jaringan Morpheus membayar Penyedia hanya untuk Komputasi yang benar-benar disediakan melalui proses penawaran yang kompetitif, dan mengalokasikan produksi Token yang langka secara pro-rata kepada pemegang token MOR berdasarkan saldo, bukan berdasarkan pembayaran. Hal ini secara drastis meningkatkan UX sekaligus meminimalkan kerentanan sybil. Yellowstone juga mengilhami metrik waktu yang penting dan tes Lulus/Gagal untuk memastikan Penyedia cukup cepat dan akurat. Yellowstone menjaga privasi dengan tidak pernah mengirimkan permintaan atau hasil melalui Router, dan meminimalkan transaksi blockchain untuk mengizinkan skala operasi yang besar. Melalui model ini, MOR mencapai nilai fundamental karena memungkinkan akses abadi (meskipun tidak terbatas) ke komputasi tanpa izin, tanpa memerlukan transaksi per kesimpulan.
 
 Agar memenuhi syarat untuk menerima permintaan Compute, alamat Compute Provider harus HODL token MOR. Permintaan akan dialihkan ke API Compute Provider secara pro-rata ke MOR yang mereka hodl dibandingkan dengan semua Compute Provider terdaftar lainnya.
+
+Detailnya dibahas dalam makalah Yellowstone Compute Model: https://github.com/MorpheusAIs/Morpheus/blob/main/Yellowstone%20Compute%20Model.md 
 
 ## Bukti Pembangun Komunitas, Pendaftaran & Penghargaan:
 Definisi dari Pembangun Komunitas adalah mereka telah mengunduh simpul penuh Morpheus, menghubungkan dompet mereka dan menggunakan API Morpheus untuk menyediakan front end pengguna & alat pengembang. Kontribusi yang mereka berikan dapat dihitung dengan menyertakan transaksi yang ditandatangani yang dihasilkan oleh Smart Agent dengan pengembalian hasil dari transaksi MOR.
@@ -183,7 +173,7 @@ Sebagai contoh, jika ada 100 Community Builder pada hari pertama saat jaringan d
 ![UpdatedDiagram2UserFlow](https://github.com/MorpheusAIs/Morpheus/assets/1563345/a02468a7-9284-4ce5-b7e3-f32f476ff9f1)
 
 ## Hadiah Morpheus Dikirimkan oleh Smart Contract di Ethereum Layer 2 
-Token Morpheus (MOR) pada awalnya akan diberikan pada Ethereum Layer 1, dan akan ada token MOR terbungkus (wMOR) yang ada di Arbitrum untuk tujuan pembayaran dan tindakan terkait utilitas MOR lainnya.
+Penyetoran stETH untuk mendapatkan hadiah akan dilakukan di mainnet Ethereum, ketika Token Morpheus (MOR) akan diberikan di Arbitrum Ethereum Layer 2, untuk tujuan pembayaran dan tindakan terkait utilitas MOR lainnya.
 
 Perhatikan bahwa Morpheus tidak perlu menyisihkan hadiah MOR untuk konsensus blockchain atau eksekusi transaksi pada buku besar terdistribusi berkat membangun Ethereum dan Arbitrum lapisan 2. 
 
