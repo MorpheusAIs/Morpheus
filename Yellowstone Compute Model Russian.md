@@ -9,7 +9,7 @@
 
 
 ## Краткое содержание
-В модели вычислений Yellowstone сеть Morpheus выплачивает провайдерам вознаграждение только за фактически предоставленные вычислительные мощности через конкурентный процесс торгов, а также выделяет ограниченный выпуск Токенов пропорционально количеству удерживаемых токенов MOR, а не на основе платежей. Это существенно улучшает пользовательский опыт, минимизируя при этом уязвимость к атакам типа Sybil. Yellowstone также вводит важные метрики времени и прохождения теста "Пройдено/Не пройдено", чтобы гарантировать, что поставщики вычислений действуют достаточно оперативно и точно. Yellowstone сохраняет конфиденциальность, не направляя запросы или результаты через маршрутизатор, и минимизирует транзакции в блокчейне для обеспечения масштабируемости. С помощью этой модели MOR приобретает фундаментальную ценность, предоставляя постоянный (но ограниченный) доступ к вычислениям без необходимости проведения транзакций на каждую операцию вывода.
+В модели вычислений Yellowstone сеть Morpheus выплачивает провайдерам вознаграждение только за фактически предоставленные вычислительные мощности через конкурентный процесс торгов, а также выделяет ограниченный выпуск Токенов (прим. единица измерения запросов к ИИ) пропорционально количеству удерживаемых токенов MOR, а не на основе платежей. Это существенно улучшает пользовательский опыт, минимизируя при этом уязвимость к атакам типа Sybil. Yellowstone также вводит важные метрики времени и прохождения теста "Pass/Fail", чтобы гарантировать, что поставщики вычислений действуют достаточно оперативно и точно. Yellowstone сохраняет конфиденциальность, не направляя запросы или результаты через маршрутизатор, и минимизирует транзакции в блокчейне для обеспечения масштабируемости. С помощью этой модели MOR приобретает фундаментальную ценность, предоставляя постоянный (но ограниченный) доступ к вычислениям без необходимости проведения транзакций на каждую операцию вывода.
 
 Если данное предложение будет принято, оно заменит раздел "Compute Proof, Registration & Reward" в белой книге Morpheus (https://github.com/MorpheusAIs/Morpheus/blob/main/WhitePaper%20Russian.md)
 
@@ -88,23 +88,22 @@ Yellowstone фокусируется на запросах с определен
 
 Время блока для вывода составляет 12 секунд, что означает, что блок вывода транзакций публикуется и учитывается 5 раз в минуту.
 
-### Compute Contract
-*Permissionless smart contract which receives emissions of MOR, tracks credits and debits to Providers, and pays Providers when called.
+### Контракт вычислений
+- Общедоступный смарт-контракт, который получает эмиссию MOR, отслеживает начисления и удержания у поставщиков и выплачивает им награды при вызове.
 
-“Users”: defined as any entity that has a MOR address and sends Requests to the Router, using the compute. This can be a specific individual person sending Requests from a Morpheus desktop node, or it could be a bot, or it could be a company or 3rd party website which interacts with the Morpheus network on behalf of its end-users (end-users' use of inference aren't tracked or  considered in the compute contract, except when there is an inference failure). 
+"Пользователи": определены как любой участник, у которого есть адрес MOR и который отправляет запросы маршрутиризатору на использование вычисления. Это может быть конкретное лицо, отправляющее запросы с локальной версии Morpheus, или это может быть бот, или это может быть компания или веб-сайт от третьей стороны, который взаимодействует с сетью Morpheus от имени своих конечных пользователей (использование выводов конечными пользователями не отслеживается или не учитывается в контракте вычислений, за исключением случаев сбоя операций вывода).
 
-“Providers”: defined as any entity, running a node that provides compute resources, has a MOR address and offers Token bids through the Router. When a Provider wins the bid from the Router, Provider provides the compute resource (GPUs, etc) for various AI models to the User. 
+"Поставщики": определены как любой участник, поддерживающий работу узла предоставляющего ресурсы для вычислений, имеющий адрес MOR и предлагающий ставки на Токены через маршрутиризатор. Когда поставщик выигрывает ставку, он предоставляет ресурсы для вычислений (графические процессоры и т.д.) для различных пользовательских моделей ИИ.
 
-“Router”:  defined as a software application that has a MOR address and negotiates the 2-sided market between Users and Providers. The Router registers and tracks Provider addresses and bids, processes Requests from Users, records [miliseconds] and Pass/Fail tests of processed Requests, and instructs the Compute Contract to credit eligible Providers for payment in MOR. The Router never sends or receives MOR transactions (nor transactions on any blockchain). The Router never sees the content of a Request, nor the response. 
+"Маршрутиризатор": определен как программное приложение, имеющее адрес MOR и являющееся посредником между пользователями и поставщиками в двустороннем рынке. Маршрутиризатор регистрирует и отслеживает адреса и ставки поставщиков, обрабатывает запросы от пользователей, записывает [миллисекунды] результаты тестов Pass/Fail обработанных запросов и указывает контракту вычислений начислять средства по мере необходимости поставщикам в MOR. Маршрутиризатор никогда не отправляет и не получает транзакции MOR (или транзакции на любом блокчейне) и никогда не видит содержимого запроса или ответа.
 
-“Compute Contract”: defined as a smart contract that has a MOR address, receives all emitted MOR allocated to the Compute bucket, tracks amounts owed to eligible Providers, and pays MOR to eligible Providers when Providers request payment.
+"Контракт вычислений": определен как смарт-контракт, имеющий адрес MOR, который получает всю эмиссию MOR выделенную для вычислений, отслеживает суммы, которые должны быть выплачены поставщикам, и выплачивает MOR поставщикам при запросе.
 
-“Token” (“T”): is the smallest amount of letters or pixels bid on vi the router. Often this is ~4 characters of text, or 5x5 pixels of image, etc. This is not to be confused with blockchain “tokens” such as ERC20 tokens or the MOR token itself. 
+"Токен" ("T"): это самое маленькое количество букв или пикселей, предложенных через маршрутиризатор. Часто это примерно 4 символа текста или 5x5 пикселей изображения и т.д. Не путайте это с токенами блокчейна, такими как токены ERC20 или сам токен MOR.
 
-“TokenMax” below refers to a maximum number of Tokens accepted for payment by the Router. 
+"TokenMax" относится к максимальному количеству токенов, принимаемых для оплаты маршрутиризатором.
 
-“RFC”: stands for “Request for Compute.” A user sends an RFC to the Router, and specifies the [LLM] User desires access to as well as the [TokenMax], which is a cap on the acceptable LT’s in response. User will want to cap this because higher numbers = longer wait times for answers, and count more toward UserMax, which is limited each day. 
-
+"RFC" означает "Запрос на вычисление". Пользователь отправляет RFC маршрутиризатору и указывает [LLM], к которой пользователь хочет получить доступ, а также [TokenMax], который является пределом приемлемых LT в ответе. Пользователю следует ограничивать это количество, потому что более высокие числа = более долгое ожидание ответов и считаются большим вкладом в UserMax, который ограничен каждый день.
 
 ### Contract Protections
 
