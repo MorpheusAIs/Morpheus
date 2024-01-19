@@ -89,171 +89,182 @@
 
 ![MOREmissionSchedule](https://github.com/MorpheusAIs/Morpheus/assets/1563345/94c96cb0-b6e4-4c63-be46-39088c91e168)
 
-## Tail Emissions of MOR
-Ever since Bitcoin's launch people have argued about "what will happen when the block rewards finally stop?" To avoid this unhelpful debate in the context of Morpheus and to continue aligning new coders, community, compute & capital providers long into the future, we propose a "tail emission" of MOR tokens. This MOR tail emission will start after the last MOR tokens have been emitted on day 5,833 of the distribution schedule.
+## Ουρές Εκπομπής του MOR
+Από την εκκίνηση του Bitcoin, οι άνθρωποι έχουν συζητήσει για το "τι θα συμβεί όταν οι ανταμοιβές των μπλοκ σταματήσουν εν τέλει;" Για να αποφευχθεί αυτή η ανώφελη συζήτηση στο πλαίσιο του Morpheus και για να συνεχίσει να ευθυγραμμίζει νέους προγραμματιστές, την κοινότητα, τον υπολογισμό και τους παρόχους κεφαλαίου μακροπρόθεσμα, προτείνουμε μια "ουρά εκπομπής" των κερμάτων MOR. Αυτή η εκπομπή των MOR θα ξεκινήσει μετά την τελευταία εκπομπή των MOR την ημέρα 5,833 του προγράμματος διανομής.
  
-The tail emission will be calculated by reviewing the number of burned MOR tokens in the past 5,833 days and setting the tail emission value to be 50% of the burned amount. This tail emission value will be emitted in the next 5,833 day period. But in no case will the tail emission be greater than 16% of the then in circulation MOR. 
+Η ουρά εκπομπής θα υπολογίζεται εξετάζοντας τον αριθμό των καμένων κερμάτων MOR τις προηγούμενες 5,833 ημέρες και θα ορίζει την τιμή της ουράς εκπομπής στο 50% του ποσού που καίγεται. Αυτή η τιμή ουράς εκπομπής θα εκπέμπεται στην επόμενη περίοδο 5,833 ημερών. Ωστόσο, σε καμία περίπτωση δεν θα υπερβαίνει το 16% του τότε σε κυκλοφορία MOR.
  
-For example, if on average 25% of MOR tokens were burned during the first 5,833 days then 10,500,000 MOR would have been burned during the first emission schedule. Then by applying the 50% tail emissions value we calculate 5,250,000 MOR can be rewarded in the second 5,833 day period. Which works out to about 16.6% of the 31,500,000 MOR left in circulation. According this amount would be further reduced to 5,040,000 MOR (16% of tokens in circulation) to be rewarded in the second 5,833 day period or ~864 MOR per day.
+Για παράδειγμα, αν κατά μέσο όρο το 25% των κερμάτων MOR είχαν καεί κατά τις πρώτες 5,833 ημέρες, τότε 10,500,000 MOR θα είχαν καεί κατά τη διάρκεια του πρώτου προγράμματος εκπομπής. Στη συνέχεια, εφαρμόζοντας την τιμή ουράς εκπομπής του 50%, υπολογίζουμε ότι μπορούν να ανταμειφθούν 5,250,000 MOR κατά τη δεύτερη περίοδο 5,833 ημερών. Αυτό αντιστοιχεί περίπου στο 16.6% των 31,500,000 MOR που παραμένουν σε κυκλοφορία. Σύμφωνα με αυτό, αυτό το ποσό θα μειωθεί περαιτέρω σε 5,040,000 MOR (16% των νομισμάτων σε κυκλοφορία) προς ανταμοιβή κατά τη δεύτερη περίοδο 5,833 ημερών ή περίπου 864 MOR ανά ημέρα.
  
-After the second 5,833 day period is complete, this process will repeat. The tail emission will be calculated again by reviewing the number of burned MOR tokens in the past 5,833 days and setting the tail emission value to be 50% of the burned amount. This tail emission value will be emitted in the next 5,833 day period. But in no case will the tail emission be greater than 16% of the then in circulation MOR. 
+Αφού ολοκληρωθεί η δεύτερη περίοδος των 5,833 ημερών, αυτή η διαδικασία θα επαναληφθεί. Η ουρά εκπομπής θα υπολογίζεται ξανά εξετάζοντας τον αριθμό των καμένων κερμάτων MOR τις προηγούμενες 5,833 ημέρες και θα ορίζει την τιμή της ουράς εκπομπής στο 50% του καμένου ποσού. Αυτή η τιμή ουράς εκπομπής θα εκπέμπεται στην επόμενη περίοδο 5,833 ημερών. Ωστόσο, σε καμία περίπτωση δεν θα υπερβαίνει το 16% του τότε σε κυκλοφορία MOR.
+
+Για παράδειγμα, αν κατά τη δεύτερη περίοδο το 25% των κερμάτων MOR είχαν καεί, αυτό αντιστοιχούσε σε 9,135,000 MOR που καήκαν κατά τη δεύτερη περίοδο εκπομπής. Τότε 4,567,500 MOR μπορούν να ανταμειφθούν κατά την τρίτη περίοδο των 5,833 ημερών. Ωστόσο, διότι αυτό το ποσό είναι περισσότερο από το 16% των τότε 27,405,000 MOR που παραμένουν σε κυκλοφορία, θα μειωθεί σε 4,384,800 MOR για να ευθυγραμμιστεί με το 1% ετήσιο ανταμοιβής (σε σχέση με τα νομίσματα σε κυκλοφορία).
  
-For example, again if 25% of MOR tokens were burned during the second period, that equals 9,135,000 MOR were burned during the second emission schedule. Then 4,567,500 MOR can be rewarded in the third 5,833 day period. However, since this number is more than 16% of the then 27,405,000 MOR then left in circulation it will be reduced to 4,384,800 MOR to align with the 1% annual rewards (relative to tokens in circulation).
- 
-This process repeats forever on into the future.
- 
-Longterm result. About 1% of annual MOR rewards (relative to the number of MOR then in circulation) will be available for future coders, compute, community & capital.
+Αυτή η διαδικασία επαναλαμβάνεται επ' αόριστον προς το μέλλον.
+
+Μακροπρόθεσμο αποτέλεσμα: Περίπου το 1% των ετήσιων ανταμοιβών του MOR (σε σχέση με τον αριθμό του MOR που τότε κυκλοφορεί) θα είναι διαθέσιμο για μελλοντικούς προγραμματιστές, υπολογισμό, κοινότητα και κεφάλαιο.
 
 ![MaxMORScenario25](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/81c7794a-b5bc-4a9e-bb2d-1f28b98ea079)
 
-**IMPORTANT NOTE:** This does not alter the nature of the hard Supply Cap of 42 Million MOR. 
-Since the tail emission schedule is by definition only a portion of the MOR tokens which were burned, thus the MOR token can only become ever more scarce with each 5,833 day period.
+**ΣΗΜΑΝΤΙΚΗ ΣΗΜΕΙΩΣΗ:** Αυτό δεν αλλάζει τη φύση του αυστηρού Supply Cap των 42 εκατομμυρίων MOR. Εφόσον το πρόγραμμα ουράς εκπομπής είναι κατά ορισμό μόνο ένα τμήμα των MOR που κάηκαν, έτσι το MOR μπορεί να γίνει μόνο πιο σπάνιο με κάθε περίοδο 5,833 ημερών.
 
 ![MOR25ScenarioV9](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/4813cd02-b104-4a0c-893b-a7fd329fe2a3)
 
-Below is shown the unified MOR Supply Curve showing the first 5,833 day period and adding the long tail emissions from year 17 to year 256. Presuming the example of a 25% average burn rate of MOR over the epochs.
+Παρακάτω παρουσιάζεται η ενοποιημένη Καμπύλη Προσφοράς του MOR, δείχνοντας την πρώτη περίοδο των 5.833 ημερών και προσθέτοντας τις μακροχρόνιες εκπομπές ουράς από το έτος 17 έως το έτος 256. Υποθέτοντας το παράδειγμα ενός μέσου ποσοστού καύσης του MOR της τάξης του 25% κατά τις εποχές.
 
 ![MORSupplyCurve20231019](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/8994c389-dad1-4e46-9b63-e048da8ef172)
 
-## Proof of Community, Code, Compute & Capital
-The Morpheus full node comes with a wallet or the user can connect their existing wallet. This enables the user to sign and send transactions recommended by their Smart Agent. So users will be able to participate in the proofs through the Morpheus software. However Capital Providers are not required to have a full node for example. They can interact directly with the Smart Contracts on Ethereum / Arbitrum using stETH.
+## Απόδειξη Κοινοτικότητας, Κώδικα, Υπολογισμός και Κεφάλαιο
+Ο πλήρης κόμβος του Morpheus συνοδεύεται από ένα πορτοφόλι ή ο χρήστης μπορεί να συνδέσει το υπάρχον πορτοφόλι του. Αυτό επιτρέπει στον χρήστη να υπογράφει και να στέλνει συναλλαγές που συνιστά ο Smart Agent του. Έτσι, οι χρήστες θα μπορούν να συμμετέχουν στις αποδείξεις μέσω του λογισμικού Morpheus. Ωστόσο, οι Παρόχοι Κεφαλαίου δεν είναι υποχρεωμένοι να έχουν έναν πλήρη κόμβο, για παράδειγμα. Μπορούν να αλληλεπιδρούν απευθείας με τα Έξυπνα Συμβόλαια στο Ethereum / Arbitrum χρησιμοποιώντας το stETH.
 
-## Capital Proof & Reward:
-The definition of a Capital Provider is someone provides stETH yield to the Morpheus network which becomes Protocol Owned Liquidity (PoL). This Capital Provider Smart Contract will provide 50% of the stETH yield produced to the Morpheus swap function. The swap buys the MOR tokens from an Automated Market Maker (AMM) then pairs them with 50% of the stETH yield and lock into the AMM Liquidity Pool as PoL. This will provide liquidity to all those coders, community members and compute providers. The fees earned by liquidity position are re-invested in the pool ensuring steady liquidity growth.
+## Απόδειξη & Ανταμοιβή Κεφαλαίου:
+Ο ορισμός ενός Παρόχου Κεφαλαίου είναι κάποιος που παρέχει απόδοση stETH στο δίκτυο Morpheus, η οποία γίνεται Πρωτόκολλο Κατοχυρωμένη Υγρασία (PoL). Αυτό το Έξυπνο Συμβόλαιο Παρόχου Κεφαλαίου θα παρέχει το 50% της απόδοσης stETH που παράγεται στη λειτουργία ανταλλαγής του Morpheus. Η ανταλλαγή αγοράζει τα MOR τόκεν από έναν Αυτοματισμένο Αγορητή (AMM) και στη συνέχεια τα ζευγαρώνει με το 50% της απόδοσης stETH και τα κλειδώνει στη Λίμνη Υγρασίας του AMM ως PoL. Αυτό θα παρέχει υγρασία σε όλους εκείνους τους κωδικοποιητές, τα μέλη της κοινότητας και τους παρόχους υπολογισμού. Τα τέλη που κερδίζονται από τη θέση υγρασίας επανεπενδύονται στη λίμνη εξασφαλίζοντας έτσι σταθερή αύξηση της υγρασίας.
 
-This way all stETH yield earned from your deposit is converted into protocol-owned liquidity (PoL). The yield remains as PoL indefinitely, but you can withdraw your stETH whenever.
+Με αυτό τον τρόπο, όλη η απόδοση stETH που κερδίζεται από την κατάθεσή σας μετατρέπεται σε υγρασία που ανήκει στο πρωτόκολλο (PoL). Η απόδοση παραμένει ως PoL αόριστα, αλλά μπορείτε να αναλύσετε το stETH σας οποτεδήποτε.
 
-As a result, the Capital Provider will receive MOR tokens each day in pro-rata to their total stETH yield contributed. For example, if there are 100 Capital Providers who each contributed 1 stETH of yield on day 1 when the network launches, then each one gets 1% of the 3,456 MOR tokens each day = 34.56 MOR.
+Ως αποτέλεσμα, ο Παροχέας Κεφαλαίου θα λαμβάνει τα tokens MOR καθημερινά ανάλογα με τη συνολική απόδοση stETH που συνέβαλε. Για παράδειγμα, αν υπάρχουν 100 Παρόχοι Κεφαλαίου που συνέβαλαν καθένας 1 stETH από απόδοση την ημέρα 1 όταν το δίκτυο ξεκινά, τότε κάθε ένας λαμβάνει το 1% των 3,456 tokens MOR καθημερινά = 34,56 MOR.
 
-It has been proposed to refer to this process of yield contribution, swap and adding liquidity as the "TCM". Short for the "techno-capital machine" in honor of the e/acc philosopher Beff Jezos. 
+Έχει προταθεί να αναφερόμαστε σε αυτήν τη διαδικασία συνεισφοράς απόδοσης, ανταλλαγής και προσθήκης υγρασίας ως "TCM". Συντομογραφία για το "τεχνο-κεφαλαιακό μηχάνημα" προς τιμήν του φιλοσόφου του e/acc Beff Jezos. 
 
-## Code Proof, Registration & Reward:
-The definition of a Coder is someone who has downloaded and run the Morpheus full node, connected their wallet, and contributed an agent, smart contract or other software to the Morpheus Network.
+## Απόδειξη Κώδικα, Εγγραφή & Ανταμοιβή:
+Ο ορισμός ενός Κωδικοποιητή είναι κάποιος που έχει κατεβάσει και εκτελεί τον πλήρη κόμβο του Morpheus, έχει συνδέσει το πορτοφόλι του και έχει συνεισφέρει έναν πράκτορα, ένα έξυπνο συμβόλαιο ή άλλο λογισμικό στο Δίκτυο Morpheus.
 
-The Coder will send a MOR transaction to the Coder Smart Contract to register their agent / smart contract or software. 
-The Coder will include in the memo of the transaction the following metadata. 
-- A. An IPFS link to their software's endpoint in the memo field of the MOR transaction when they register. 
-- B. A cryptographic signature, similar to how developers sign/authenticate app releases.
-- C. The version number of the software.
-- D. A hash of the state of the program, so users can check it is a valid and unaltered copy.
+Ο Κωδικοποιητής θα στείλει μια συναλλαγή MOR στο Έξυπνο Συμβόλαιο Κωδικοποιητή για να καταχωρίσει τον πράκτορά του / έξυπνο συμβόλαιο ή το λογισμικό του.
+Ο Κωδικοποιητής θα συμπεριλάβει στο μήνυμα της συναλλαγής τα παρακάτω μεταδεδομένα.
 
-The contributors to the Morpheus codebase are rewarded in proportion to all the cumulative development done on the repository as gauged by Full Time Equivalent (FTE) work contributed. For example, if there are 10 coders each having contributed 10% of the FTE time when the network launches, then each one gets 10% of the 3,456 MOR tokens each day = 345.6 MOR. This calculation is updated each month based on the cumulative FTE time contributions of the current mainnet version of the Morpheus software.
+A. Ένα σύνδεσμο IPFS στο σημείο έναρξης του λογισμικού του στο πεδίο μνήμης της συναλλαγής MOR κατά την εγγραφή του.
+B. Ένα κρυπτογραφικό υπογεγραμμένο, παρόμοιο με τον τρόπο με τον οποίο οι προγραμματιστές υπογράφουν/επαληθεύουν τις εκδόσεις εφαρμογών.
+C. Ο αριθμός έκδοσης του λογισμικού.
+D. Ένα hash της κατάστασης του προγράμματος, ώστε οι χρήστες να μπορούν να ελέγξουν ότι είναι μια έγκυρη και μη αλλοιωμένη αντιγραφή.
 
-Once there are specialized agents or tools or chains (sequence of prompts/calls to an LLM) interoperable with Morpheus, then half (50%) of the rewards will go to their developers. The reward will be calculated in proportion to the usage of those agents. For example, if there are 10 developers who built 10 agents each generating 10% of the agent usage on the Morpheus network. The Morpheus smart contract will calculate those usage statistics via MOR transactions. Then the Morpheus software coders would earn 50% of the MOR reward and each developer of a specialized agent would get 5% of the tokens = 172.8 MOR per developer in this example.
+Οι συνεισφορές στον κώδικα του Morpheus ανταμείβονται ανάλογα με όλη τη συσσωρευμένη ανάπτυξη που έχει γίνει στον αποθετήριο, όπως εκτιμάται από τον χρόνο ισοδύναμης πλήρους απασχόλησης (FTE) που συνέβαλε. Για παράδειγμα, αν υπάρχουν 10 κωδικοποιητές που έχουν συνεισφέρει καθένας 10% του χρόνου FTE όταν ξεκινά το δίκτυο, τότε καθένας λαμβάνει 10% των 3.456 κρυπτονομισμάτων MOR κάθε μέρα = 345,6 MOR. Αυτός ο υπολογισμός ενημερώνεται κάθε μήνα με βάση τις συνολικές συνεισφορές FTE χρόνου της τρέχουσας έκδοσης του Morpheus software.
 
-A great deal of the leading research that has been done in this area of "Proof of Contribution" is by the good folks at the TEA Protocol. Including Max Howell the developer of Home Brew. Link to paper with the details. Morpheus may consider leveraging TEA after its launch in 2024.
+Μόλις υπάρχουν εξειδικευμένοι πράκτορες ή εργαλεία ή αλυσίδες (ακολουθία εντολών/κλήσεων σε ένα LLM) που είναι συμβατά με το Morpheus, τότε το ήμισυ (50%) των ανταμοιβών θα πηγαίνει στους προγραμματιστές τους. Η ανταμοιβή θα υπολογίζεται ανάλογα με τη χρήση αυτών των πρακτόρων. Για παράδειγμα, αν υπάρχουν 10 προγραμματιστές που δημιούργησαν 10 πράκτορες καθένας που δημιουργούν 10% της χρήσης του πράκτορα στο δίκτυο Morpheus. Το έξυπνο συμβόλαιο Morpheus θα υπολογίσει αυτά τα στατιστικά χρήσης μέσω των συναλλαγών MOR. Στη συνέχεια, οι προγραμματιστές του λογισμικού Morpheus θα κερδίσουν το 50% της ανταμοιβής MOR και κάθε προγραμματιστής ενός εξειδικευμένου πράκτορα θα λάβει 5% των νομισμάτων = 172,8 MOR ανά προγραμματιστή σε αυτό το παράδειγμα.
 
-## Compute Proof, Registration & Reward:
-In the Yellowstone Compute Model, the Morpheus network pays Providers only for Compute actually provided through a competitive bid process, and allocates the scarce production of Tokens pro-rata to MOR token holders based on balance, rather than on payment. This drastically improves UX while minimizing Sybil vulnerability. Yellowstone also imbues the important metrics of time and a Pass/Fail test to ensure Providers are adequately prompt and accurate. Yellowstone preserves privacy by never sending prompts or results through the Router, and minimizes blockchain transactions to permit a large scale of operation. Through this model, MOR achieves fundamental value as it enables perpetual (though not unlimited) access to permissionless compute, without requiring transactions per inference.
+Πολλές από τις κορυφαίες έρευνες που έχουν γίνει σε αυτόν τον τομέα του "Αποδεικτικού Συνεισφοράς" είναι των καλών ανθρώπων του πρωτοκόλλου TEA. Συμπεριλαμβανομένου του Max Howell, του προγραμματιστή του Home Brew. Σύνδεσμος για το έγγραφο με τις λεπτομέρειες. Το Morpheus μπορεί να εξετάσει το να αξιοποιήσει το TEA μετά την εκκίνησή του το 2024.
 
-To qualify to receive Compute requests a Compute Provider's address must HODL MOR tokens. Requests will be routed to the Compute Providers API pro-rata to the MOR they hodl compared to all other registered Compute Providers.
+## Υπολογισμός Απόδειξης, Εγγραφής και Ανταμοιβής:
 
-Details are discussed in the Yellowstone Compute Model paper: https://github.com/MorpheusAIs/Morpheus/blob/main/Yellowstone%20Compute%20Model.md 
+Στο Yellowstone Compute Model, το δίκτυο Morpheus πληρώνει τους Παροχείς μόνο για τον Υπολογισμό που παρέχεται πραγματικά μέσω διαγωνιστικής διαδικασίας προσφοράς και εκχωρεί τη σπάνια παραγωγή Tokens pro-rata στους κατόχους του MOR token με βάση το υπόλοιπο, παρά στην πληρωμή. Αυτό βελτιώνει δραστικά την εμπειρία χρήστη ενώ ελαχιστοποιεί την ευπάθεια Sybil. Το Yellowstone επίσης εμπνέει τα σημαντικά μετρικά του χρόνου και ενός τεστ Επιτυχίας/Αποτυχίας για να διασφαλίσει ότι οι Παροχείς είναι επαρκώς έγκαιροι και ακριβείς. Το Yellowstone διατηρεί την ιδιωτικότητα ποτέ δεν στέλνοντας εντολές ή αποτελέσματα μέσω του Router, και ελαχιστοποιεί τις συναλλαγές blockchain για να επιτρέψει μια μεγάλη κλίμακα λειτουργίας. Μέσω αυτού του μοντέλου, το MOR επιτυγχάνει θεμελιώδη αξία καθώς επιτρέπει τη διαρκή (αν και όχι απεριόριστη) πρόσβαση σε υπολογιστικούς πόρους χωρίς την ανάγκη συναλλαγών ανά συλλογισμό.
 
-## Community Builder Proof, Registration & Reward:
-The definition of a Community Builder is they have downloaded and run the Morpheus full node, connected their wallet and are using the Morpheus API to provide user front ends & developer tools. Their contributions provided can be calculated by including a signed transaction generated by the Smart Agent with the return of the output from the MOR transaction.
+Για να προκριθεί για την λήψη αιτημάτων Υπολογισμού, η διεύθυνση ενός Παρόχου Υπολογισμού πρέπει να HODL MOR tokens. Τα αιτήματα θα κατευθύνονται στο API των Παρόχων Υπολογισμού pro-rata στο MOR που κρατούν σε σύγκριση με όλους τους άλλους εγγεγραμμένους Παρόχους Υπολογισμού.
 
-The Community Builder will send a MOR transaction to the Community Builder Smart Contract to register the API endpoint for receiving requests. 
-The Community Builder will include in the memo of the transaction the following metadata. 
-- A. An IPFS link to their frontend or tool via an endpoint in the memo field of the MOR transaction when they register. 
-- B. A cryptographic signature, similar to how developers sign/authenticate app releases.
-- C. The version number of the Morpheus software they are using.
-- D. A hash of the state of the front end / tool, so users can check it is a valid and unaltered copy.
+Λεπτομέρειες συζητούνται στο έγγραφο του Yellowstone Compute Model: https://github.com/MorpheusAIs/Morpheus/blob/main/Yellowstone%20Compute%20Model.md
 
-The pro-rata MOR transaction fees burned by each Community Builder serves as proof of the Community Builder's status and earns a proportion of the MOR tokens each day. 
+## Απόδειξη, Εγγραφή και Ανταμοιβή Κοινοτικού Δημιουργού:
 
-For example, if there are 100 Community Builders on day 1 when the network launches, then each one gets a pro-rata reward based on the amount of MOR they have burned via fees. In this case, presuming each of the 100 Community Builders burned 100 MOR, then 1% of the 3,456 MOR tokens each day = 34.56 MOR.
+Ο ορισμός ενός Κοινοτικού Δημιουργού είναι ότι έχουν κατεβάσει και εκτελούν τον πλήρη κόμβο του Morpheus, έχουν συνδέσει το πορτοφόλι τους και χρησιμοποιούν το API του Morpheus για την παροχή διεπαφών χρήστη και εργαλείων προγραμματιστή. Οι συνεισφορές τους μπορούν να υπολογιστούν συμπεριλαμβάνοντας μια υπογεγραμμένη συναλλαγή που δημιουργείται από το Smart Agent με την επιστροφή της έξοδου από τη συναλλαγή του MOR.
 
-## Morpheus User Diagram
+Ο Κοινοτικός Δημιουργός θα στείλει μια συναλλαγή MOR στο Έξυπνο Συμβόλαιο του Κοινοτικού Δημιουργού για να καταχωρίσει το API endpoint για τη λήψη αιτημάτων. 
+Ο Κοινοτικός Δημιουργός θα περιλαμβάνει στην μνημονευτική της συναλλαγής τα παρακάτω μεταδεδομένα.
+- A. Ένα σύνδεσμο IPFS στο frontend ή εργαλείο τους μέσω ενός endpoint στο πεδίο μνημονεύματος της συναλλαγής MOR κατά την εγγραφή τους. 
+- B. Ένα κρυπτογραφικό υπογραφή, παρόμοιο με το πώς οι προγραμματιστές υπογράφουν/εξουσιοδοτούν απελευθερώσεις εφαρμογών.
+- C. Ο αριθμός έκδοσης του λογισμικού Morpheus που χρησιμοποιούν.
+- D. Ένα hash της κατάστασης του frontend / εργαλείου, ώστε οι χρήστες να μπορούν να ελέγξουν ότι είναι μια έγκυρη και μη τροποποιημένη αντιγραφή.
+
+Οι pro-rata τέλεσης συναλλαγών MOR που καίγονται από κάθε Κοινοτικό Δημιουργό αποτελούν απόδειξη της κατάστασης του Κοινοτικού Δημιουργού και κερδίζουν ένα μερίδιο των tokens MOR κάθε μέρα.
+
+Για παράδειγμα, αν υπάρχουν 100 Κοινοτικοί Δημιουργοί την πρώτη μέρα όταν το δίκτυο ξεκινά, τότε καθένας λαμβάνει μια ανταμοιβή pro-rata βασισμένη στο ποσό του MOR που έχουν καίγει μέσω τελών. Σε αυτήν την περίπτωση, υποθέτοντας ότι κάθε ένας από τους 100 Κοινοτικούς Δημιουργούς κάηκε 100 MOR, τότε το 1% των 3,456 MOR tokens κάθε μέρα = 34,56 MOR.
+
 ![UpdatedDiagram2UserFlow](https://github.com/MorpheusAIs/Morpheus/assets/1563345/a02468a7-9284-4ce5-b7e3-f32f476ff9f1)
 
-## Morpheus Rewards Delivered by Smart Contract On Ethereum Layer 2 
-Depositing of stETH for rewards will be made on Ethereum mainnet, when Morpheus Tokens (MOR) will be awarded on the the Ethereum Layer 2 Arbitrum, for the purpose of payments and other MOR utility related actions.
+## Επιβραβεύσεις Morpheus που παρέχονται από το Smart Contract On Ethereum Layer 2
 
-Note that Morpheus does not need to set aside MOR rewards for blockchain consensus or transaction execution on a distributed ledger thanks to building on Ethereum and 2nd layer Arbitrum. 
+Η κατάθεση stETH για επιβραβεύσεις θα πραγματοποιείται στο Ethereum mainnet, ενώ τα Morpheus Tokens (MOR) θα απονέμονται στο Ethereum Layer 2 Arbitrum, για τον σκοπό των πληρωμών και άλλων ενεργειών που σχετίζονται με τη χρησιμότητα του MOR.
 
-MOR holders will be able to send a transaction to the MOR Smart Contracts and claim their MOR rewards at any time. They can also withdraw their stETH at any time.
+Σημειώστε ότι το Morpheus δεν χρειάζεται να διαθέσει επιβραβεύσεις MOR για τη συναίνεση της blockchain ή την εκτέλεση συναλλαγών σε ένα κατανεμημένο λογιστικό βιβλίο χάρη στο γεγονός ότι βασίζεται στο Ethereum και το 2ο επίπεδο Arbitrum.
 
-## The Free Market Sets Fees on Morpheus
-The best systems pick the least number of magic numbers and instead let the free market decide as many variables as possible. Fees are a great example of this. Rather than picking an arbitrary fee to charge instead, Morpheus leaves these numbers up to users, devs, capital and compute providers. For example, if a compute provider can offer a $0.02 price per 1,000 language tokens for their LLM and a user decides to pay it, then that's what the market is willing to pay. As compute speeds up prices are likely to change and so it's better to leave these and other variables up to those using the Morpheus software.
+Οι κάτοχοι του MOR θα μπορούν να στείλουν μια συναλλαγή στα Έξυπνα Συμβόλαια του MOR και να αξιώσουν τις επιβραβεύσεις τους MOR οποτεδήποτε. Επίσης, μπορούν να αποσύρουν τα stETH τους οποτεδήποτε.
 
-Fees For Compute
-Amount of fee set by users and compute provider. Option to pay compute & burn MOR tokens with each fee. Open market to develop over time. Free marketplace for compute instead of consensus or privileged nodes.
+## Η Ελεύθερη Αγορά Καθορίζει τα Τέλη στο Morpheus
 
-Fees For Code / Agent Intelligence
-Amount of fee set by coder and accepted by user. Option to pay fee & burn MOR tokens with each fee. Open market to develop over time. Free marketplace for code instead of consensus on tasks.
+Τα καλύτερα συστήματα επιλέγουν τον ελάχιστο αριθμό μαγικών αριθμών και αντί να αφήνουν την αγορά να αποφασίσει όσες μεταβλητές γίνεται. Τα τέλη είναι ένα εξαιρετικό παράδειγμα για αυτό. Αντί να επιλέγει ένα αυθαίρετο τέλος που θα χρεώνεται, το Morpheus αφήνει αυτούς τους αριθμούς στους χρήστες, τους προγραμματιστές, το κεφάλαιο και τους παροχείς υπολογιστικής ισχύος. Για παράδειγμα, αν ένας παροχέας υπολογιστικής ισχύος μπορεί να προσφέρει ένα κόστος $0.02 ανά 1,000 γλωσσικά τokens για το LLM τους και ένας χρήστης αποφασίζει να το πληρώσει, τότε αυτό είναι αυτό που η αγορά είναι διατεθειμένη να πληρώσει. Καθώς ο υπολογιστικός ρυθμός επιταχύνεται, είναι πιθανό να αλλάξουν οι τιμές και γι' αυτό είναι καλύτερο να αφήσουμε αυτές και άλλες μεταβλητές σε αυτούς που χρησιμοποιούν το λογισμικό του Morpheus.
 
-Fees For Capital
-Amount of fee set by LP & accepted by user. Option to pay fee & burn MOR tokens with each fee. Open market to develop over time. Free marketplace for capital instead of consensus on treasury.
+Τέλη για τον Υπολογισμό
+Ποσό τέλους που καθορίζεται από τους χρήστες και τον παροχέα υπολογιστικής ισχύος. Επιλογή πληρωμής υπολογισμού και καύσης των tokens MOR με κάθε τέλος. Ανοιχτή αγορά για ανάπτυξη με τον χρόνο. Ελεύθερη αγορά για τον υπολογισμό αντί για συναίνεση ή προνομιούχους κόμβους.
 
-## Fees For User Community
-Amount of fee set by users and accepted by data buyer. Option to pay fee & burn MOR tokens with each fee. Open market to develop over time. Free marketplace for data.
+Τέλη για τον Κώδικα / Νοημοσύνη του Πράκτορα
+Ποσό τέλους που καθορίζεται από τον κωδικοποιητή και γίνεται αποδεκτό από τον χρήστη. Επιλογή πληρωμής τέλους και καύσης tokens MOR με κάθε τέλος. Ανοιχτή αγορά για ανάπτυξη με τον χρόνο. Ελεύθερη αγορά για τον κώδικα αντί για συναίνεση σε εργασίες.
 
-All fees are paid in native MOR tokens creating natural demand in the system as usage grows.
+Τέλη για το Κεφάλαιο
+Ποσό τέλους που καθορίζεται από τον LP και γίνεται αποδεκτό από τον χρήστη. Επιλογή πληρωμής τέλους και καύσης tokens MOR με κάθε τέλος. Ανοιχτή αγορά για ανάπτυξη με τον χρόνο. Ελεύθερη αγορά για το κεφάλαιο αντί για συναίνεση στο ταμείο.
 
-## Use of Fees To Incentivize Honest Agents & Repair Losses In Case of Errors
-Another important use for MOR & ETH in the Morpheus network will be compensating users in case of Smart Agent / Smart Contract failures. We believe curating and building reputation backed up with economic resources will be key to growing confidence in Smart Agents and having a source of funding to address errors, bugs, and other issues that arise. After a major bug and the resulting hard fork of Bitcoin in 2010, an early core developer named Gavin Andresen stepped up to pay Bitcoin to miners who had lost rewards due to the hard fork. This action was important and quickly resolved the hard fork but it was ad hoc.
+## Τέλη για την Κοινοτική Χρήστη
+Ποσό τέλους που καθορίζεται από τους χρήστες και αποδεκτό από τον αγοραστή δεδομένων. Επιλογή πληρωμής τέλους και καύσης tokens MOR με κάθε τέλος. Ανοιχτή αγορά για ανάπτυξη με τον χρόνο. Ελεύθερη αγορά για τα δεδομένα.
 
-Recognizing ahead of time that software is never perfect and setting aside 4% of MOR resources to repay those affected by a bug in the code. The Morpheus developer community will serve as an oracle to recognize when a bug or error has had an economic effect on a user, compute provider, or capital provider. A predefined set of failures will be covered by these resources to include bugs in the Morpheus Smart Contract or local install.
+Όλα τα τέλη καταβάλλονται σε native tokens MOR δημιουργώντας φυσική ζήτηση στο σύστημα με την ανάπτυξη της χρήσης.
 
-For broader protection, an integration with Nexus Mutual or similar smart contract / decentralized protection network could be considered to cover edge cases with agents / smart contracts that want to be included in a Morpheus Agent Store or better ranked by the SmartContractRank algorithm. 
+## Χρήση Τελών για τη Κίνητρο Honest Agents & Επισκευή Ζημιών σε Περίπτωση Σφαλμάτων
 
-## Storage For Persistence & Wallets For Recovery
-Rather than store personal data in the Morpheus network itself, which would be cost prohibitive and a centralizing force, individuals will hold the private keys controlling access to their data, prompts & wallet. The data itself will be stored using the IPFS standard and the Filecoin network for decentralized long-term storage. Leveraging the Filecoin EVM and DeFi for yield a permanent recurring storage can be arranged. Alternatively, users can pay annually ENS style for storage. The approach and keeping the private Web3 wallet as the key for movement/recovery of this data to different devices as the user changes computers or phones.
+Ένας ακόμα σημαντικός τρόπος χρήσης των MOR & ETH στο δίκτυο Morpheus θα είναι η αποζημίωση των χρηστών σε περίπτωση αποτυχίας του Smart Agent / Smart Contract. Πιστεύουμε ότι η δημιουργία και διαχείριση φήμης, υποστηριζόμενη από οικονομικούς πόρους, θα είναι καθοριστική για την αύξηση της εμπιστοσύνης στους Smart Agents και για τη διαθεσιμότητα πόρων για την αντιμετώπιση σφαλμάτων, bugs και άλλων προβλημάτων που προκύπτουν. Μετά από ένα μεγάλο bug και τη συνεπακόλουθη σκληρή πιρουέτα του Bitcoin το 2010, ένας πρώιμος προγραμματιστής πυρήνα με το όνομα Gavin Andresen αναδείχθηκε για να πληρώσει Bitcoin σε miners που είχαν χάσει ανταμοιβές λόγω της σκληρής πιρουέτας. Αυτή η ενέργεια ήταν σημαντική και λύθηκε γρήγορα τη σκληρή πιρουέτα, αλλά ήταν αδέκαστη.
 
-## Morpheus Tech Stack, Smart Contract & Development
-The Morpheus implementation of the Smart Agent Protocol will be a direct fork of the existing locally run repo. The most significant change will be to update SmartContractRank to include knowledge of the MOR token and its functions in powering a network of Smart Agents.
+Αναγνωρίζοντας εκ των προτέρων ότι το λογισμικό δεν είναι ποτέ τέλειο και διαθέτοντας το 4% των πόρων του MOR για να αποζημιώσει εκείνους που επηρεάστηκαν από ένα bug στον κώδικα. Η κοινότητα των προγραμματιστών του Morpheus θα λειτουργήσει ως ορατή για να αναγνωρίσει πότε ένα bug ή σφάλμα έχει οικονομικές συνέπειες σε έναν χρήστη, έναν παροχέα υπολογιστικής ισχύος ή έναν παροχέα κεφαλαίου. Ένα προκαθορισμένο σύνολο αποτυχιών θα καλύπτεται από αυτούς τους πόρους, συμπεριλαμβανομένων bugs στο Smart Contract του Morpheus ή τοπική εγκατάσταση.
 
-The Morpheus MOR token is being developed as a Smart Contract on Ethereum via the ERC20 standard for fungible tokens. Most smart contracts are on Ethereum and the Ethereum Virtual Machine has become the lingua franca of the Web3 space. To reduce the cost of gas fees for sending daily rewards we will leverage Ethereum's layer 2 called Arbitrum.
+Για πιο ευρεία προστασία, θα μπορούσε να ληφθεί υπόψη η ολοκλήρωση με το Nexus Mutual ή παρόμοιο έξυπνο συμβόλαιο / αποκεντρωμένο δίκτυο προστασίας για να καλύψει ακραίες περιπτώσεις με agents / smart contracts που επιθυμούν να περιληφθούν σε ένα Morpheus Agent Store ή να κατατάσσονται καλύτερα από τον αλγόριθμο SmartContractRank.
 
-We believe the choice of the Ethereum blockchain is the best starting place given on chain actions such as staking ETH can only be validated by a smart contract running on the same chain. In addition on chain validation of coding via ENS domains or Ethereum public addresses adds another means of connecting code contributed to the wallet of the coder who provided it. A record of which the Morpheus Smart Contract can access daily.
+## Αποθήκευση για Επιμονή & Πορτοφόλια για Επαναφορά
 
-Also, zero-knowledge proofs for scalability and privacy are key to many use cases. So starting with these capabilities day one will put the Smart Agent community in the best position for the future. Arbitrum is in the process of adding ZK tech, much of which is already live.
+Αντί να αποθηκεύει τα προσωπικά δεδομένα στο ίδιο το δίκτυο Morpheus, πράγμα που θα ήταν κόστος απαγορευτικό και μια κεντρικοποιητική δύναμη, τα άτομα θα κρατούν τα ιδιωτικά κλειδιά που ελέγχουν την πρόσβαση στα δεδομένα τους, τα προτροπής και το πορτοφόλι. Τα ίδια τα δεδομένα θα αποθηκεύονται χρησιμοποιώντας το πρότυπο IPFS και το δίκτυο Filecoin για αποκεντρωμένη αποθήκευση μακροπρόθεσμα. Χρησιμοποιώντας το Filecoin EVM και το DeFi για απόδοση, μπορεί να οργανωθεί μια μόνιμη επαναλαμβανόμενη αποθήκευση. Εναλλακτικά, οι χρήστες μπορούν να πληρώνουν ετησίως, σε στυλ ENS, για την αποθήκευση. Η προσέγγιση και το διατήρηση του ιδιωτικού Web3 πορτοφολιού ως το κλειδί για τη μετακίνηση/επαναφορά αυτών των δεδομένων σε διάφορες συσκευές καθώς ο χρήστης αλλάζει υπολογιστές ή τηλέφωνα.
 
-In the near term, this tech stack selection secures Morpheus directly in Ethereum's layer 1 security with the reduced gas costs of a layer two. In the mid-term, this selection also provides a pathway to expand Morpheus to other Ethereum layer 2s and EVM compatible blockchains.
+## Morpheus Τεχνολογικό Στοίβαγμα, Έξυπνα Συμβόλαια & Ανάπτυξη
 
-As interoperability improves between public blockchains Morpheus will seek to serve all Web3 AI Agent builders across the various EVM / solidity compatible developer communities. We recognize strong builder communities on Arbitrum, Polygon, OP Stack, Base, Arbitrum, Avalanche, Polkadot, Solana, Filecoin & Cosmos that share a similar vision and values. Morpheus is only possible today thanks to the tools built by developers across many of these chains.
+Η υλοποίηση του Morpheus του Πρωτοκόλλου Smart Agent θα είναι ένα άμεσο fork του υπάρχοντος τοπικά τρέχοντος αποθετηρίου. Η πιο σημαντική αλλαγή θα είναι η ενημέρωση του SmartContractRank για να συμπεριλαμβάνει τη γνώση του MOR token και τις λειτουργίες του στην ενίσχυση ενός δικτύου Smart Agents.
 
-## User Data Security
-To avoid leaking private data when sending prompts to the Morpheus peer-to-peer network of Compute Providers, the software should seek to leverage Fully Homomorphic Encryption (FHE) versions of Large Language Models as they are released. Also with the advent of hardware acceleration for FHE in 2024/2025, it's projected that costs for this computation will reach parity with plain text processing.
- 
-- LLM example https://huggingface.co/blog/encrypted-llm 
-- EVM example https://www.fhenix.io/
+Το MOR token του Morpheus αναπτύσσεται ως Έξυπνο Συμβόλαιο στο Ethereum μέσω του προτύπου ERC20 για τα συμβολαιογραφικά tokens. Τα περισσότερα έξυπνα συμβόλαια βρίσκονται στο Ethereum και η Ethereum Virtual Machine έχει γίνει η κοινή γλώσσα του χώρου Web3. Για να μειώσουμε το κόστος των τελών gas για την αποστολή καθημερινών ανταμοιβών, θα εκμεταλλευτούμε το layer 2 του Ethereum που ονομάζεται Arbitrum.
 
-## The Network Emerges & a 90 Day Bootstrapping Period
+Πιστεύουμε ότι η επιλογή του Ethereum blockchain είναι το καλύτερο σημείο εκκίνησης, καθώς οι ενέργειες στην αλυσίδα, όπως το staking ETH, μπορούν να επικυρωθούν μόνο από ένα έξυπνο συμβόλαιο που λειτουργεί στην ίδια αλυσίδα. Επιπλέον, η επικύρωση του κώδικα μέσω των ENS domains ή των δημόσιων διευθύνσεων Ethereum προσθέτει άλλον ένα τρόπο σύνδεσης του κώδικα που συνεισφέρεται στο πορτοφόλι του προγραμματιστή που το παρέχει. Ένα αρχείο το οποίο το Έξυπνο Συμβόλαιο του Morpheus μπορεί να έχει πρόσβαση καθημερινά.
 
-The Morpheus Network begins with the local install version 0.0.1, then continues with the MOR token smart contracts and then full node software.
+Επίσης, τα zero-knowledge proofs για την επεκτασιμότητα και την ιδιωτικότητα είναι καίρια για πολλές περιπτώσεις χρήσης. Επομένως, η έναρξη με αυτές τις δυνατότητες από την πρώτη μέρα θα τοποθετήσει την κοινότητα των Smart Agents στην καλύτερη θέση για το μέλλον. Το Arbitrum βρίσκεται στη διαδικασία προσθήκης της τεχνολογίας ZK, πολλά από τα οποία είναι ήδη ζωντανά.
 
-The smart contracts which calculate the rewards of MOR should be extensively tested via a testnet before deployment onto a mainnet.
+Στο προσεχές μέλλον, η επιλογή αυτή για το στοίβαγμα τεχνολογίας ασφαλίζει το Morpheus απευθείας στην ασφάλεια του Ethereum layer 1 με τα μειωμένα κόστη gas ενός layer two. Στο μεσοπρόθεσμο, αυτή η επιλογή παρέχει επίσης μια πορεία για τη διεύρυνση του Morpheus σε άλλα Ethereum layer 2s και συμβατά EVM blockchains.
 
-Also there will be a one time 90 day delay (known as the bootstrapping period) between when the mainnet begins calculating rewards and when those MOR tokens are claimable / sendable by users. This bootstrapping period will ensure enough MOR tokens are ready for circulation to fulfill the utility functions of the network. 
+Καθώς η διαλειτουργικότητα βελτιώνεται μεταξύ των δημόσιων blockchains, το Morpheus θα επιδιώξει να εξυπηρετήσει όλους τους δημιουργούς Τεχνητής Νοημοσύνης του Web3 σε διάφορες κοινότητες προγραμματιστών συμβατών με το EVM/solidity. Αναγνωρίζουμε ισχυρές κοινότητες δημιουργών σε Arbitrum, Polygon, OP Stack, Base, Arbitrum, Avalanche, Polkadot, Solana, Filecoin & Cosmos που μοιράζονται μια παρόμοια όραση και αξίες. Το Morpheus είναι δυνατό σήμερα μόνο χάρη στα εργαλεία που δημιούργησαν οι προγραμματιστές σε πολλές από αυτές τις αλυσίδες.
 
-To boot strap the AMM, the 4% of MOR tokens dedicated to the protection funds (51,444 MOR by day 90) will be leveraged for this purpose. 
 
-These steps will provide that 1,286,111 MOR are claimable at the beginning of day 91 on the mainnet & thus avoid extreme token scarcity like happened with the launch of Zcash, when only a few tokens were first available from mining day 1. This issue took the market weeks to reach an equilibrium and establish rational price discovery. Morpheus avoids this issue with this 90 day boot strapping period, thus preparing the token supply with enough tokens to fulfill its utility and establish rational price discovery.
+## Ασφάλεια Δεδομένων Χρηστών
 
-Once MOR tokens are claimable and sendable then the Morpheus Network can enable MOR transactions to pay for API calls, custom agents and validate the Stake of participants in the network. 
+Για να αποφευχθεί η διαρροή προσωπικών δεδομένων κατά την αποστολή προτροπών στο δίκτυο Morpheus παροχής υπολογιστικής ισχύος, το λογισμικό θα πρέπει να επιδιώκει να χρησιμοποιήσει εκδόσεις των Μεγάλων Μοντέλων Γλώσσας με Πλήρη Ομομορφική Κρυπτογραφία (Fully Homomorphic Encryption - FHE) καθώς αυτές διατίθενται. Επίσης, με την εμφάνιση της υποστήριξης υλικού για την FHE το 2024/2025, προβλέπεται ότι τα κόστη για αυτού του είδους υπολογισμό θα φτάσουν σε ισορροπία με την επεξεργασία απλού κειμένου.
 
-## Conclusion
-We are close to an important moment in history. With Morpheus, everyone will have a powerful personal AI capable of thinking with them and taking actions to benefit them. In the same way the personal computer and the search engine empowered the individual, we have the same opportunity with personal AIs today. The Smart Agent Protocol brings together the right mix of capabilities with LLMs, Agents, and Web3. Morpheus extends those capabilities into a public network capable of accelerating the mass distribution and usage of Smart Agents.
+- Παράδειγμα LLM https://huggingface.co/blog/encrypted-llm 
+- Παράδειγμα EVM https://www.fhenix.io/
 
-We believe the economic alignment of incentives is ultimately how we secure the best outcomes from the coming of AGI. Help us secure an open source, permissionless and free future for everyone. 
+## Εμφάνιση του Δικτύου & Περίοδος Εκκίνησης 90 Ημερών
+
+Το Δίκτυο Morpheus ξεκινά με την εγκατάσταση της έκδοσης 0.0.1, στη συνέχεια συνεχίζει με τα έξυπνα συμβόλαια των MOR tokens και, στη συνέχεια, με το λογισμικό του πλήρους κόμβου.
+
+Τα έξυπνα συμβόλαια που υπολογίζουν τις ανταμοιβές των MOR θα πρέπει να δοκιμαστούν εκτενώς μέσω ενός δοκιμαστικού δικτύου πριν την υλοποίησή τους στο κύριο δίκτυο.
+
+Επίσης, θα υπάρξει μια μοναδική περίοδος καθυστέρησης 90 ημερών (γνωστή ως περίοδος εκκίνησης) μεταξύ του χρόνου που το κύριο δίκτυο αρχίζει να υπολογίζει τις ανταμοιβές και του χρόνου που αυτά τα MOR tokens είναι διαθέσιμα/μεταφερόμενα από τους χρήστες. Αυτή η περίοδος εκκίνησης θα διασφαλίσει ότι υπάρχουν αρκετά MOR tokens έτοιμα για κυκλοφορία ώστε να πληρούνται οι λειτουργίες χρησιμότητας του δικτύου.
+
+Για την εκκίνηση του AMM, το 4% των MOR tokens που αφιερώνονται στους κεφαλαιακούς πόρους προστασίας (51,444 MOR μέχρι την ημέρα 90) θα χρησιμοποιηθεί για αυτόν τον σκοπό.
+
+Αυτά τα βήματα θα διασφαλίσουν ότι 1,286,111 MOR είναι διαθέσιμα για αξίωση στην αρχή της ημέρας 91 στο κύριο δίκτυο, αποφεύγοντας έτσι την ακραία έλλειψη των tokens όπως συνέβη με την εκκίνηση του Zcash, όταν μόνο λίγα tokens ήταν διαθέσιμα από την πρώτη ημέρα της εξόρυξης. Αυτό το ζήτημα πήρε εβδομάδες στην αγορά για να επιτύχει μια ισορροπία και να καθιερώσει μια λογική ανακάλυψη τιμής. Το Morpheus αποφεύγει αυτό το πρόβλημα με αυτήν την περίοδο εκκίνησης 90 ημερών, προετοιμάζοντας έτσι την προσφορά tokens με αρκετά tokens για να πληρούν την χρησιμότητά του και να καθιερώσουν μια λογική ανακάλυψη τιμής.
+
+Αφού τα MOR tokens είναι διαθέσιμα και μεταφερόμενα, τότε το Δίκτυο Morpheus μπορεί να ενεργοποιήσει τις συναλλαγές MOR για να πληρώσει για κλήσεις API, προσαρμοσμένους πράκτορες και να επικυρώσει την Στοίχηση των συμμετεχόντων στο δίκτυο.
+
+
+## Συμπέρασμα
+Βρισκόμαστε κοντά σε ένα σημαντικό στιγμιότυπο στην ιστορία. Με το Morpheus, κάθε άνθρωπος θα έχει ένα ισχυρό προσωπικό AI που είναι ικανό να σκέφτεται μαζί τους και να λαμβάνει μέτρα προς όφελός τους. Με τον ίδιο τρόπο που ο προσωπικός υπολογιστής και ο μηχανισμός αναζήτησης εξουσίασαν το ατομικό, έχουμε την ίδια ευκαιρία με τα προσωπικά AI σήμερα. Το Πρωτόκολλο Έξυπνων Πρακτόρων συνδυάζει το σωστό μίγμα ικανοτήτων με Μεγάλα Μοντέλα Γλώσσας (LLMs), Πράκτορες και την Web3. Το Morpheus επεκτείνει αυτές τις ικανότητες σε ένα δημόσιο δίκτυο που μπορεί να επιταχύνει τη μαζική διανομή και χρήση των Έξυπνων Πρακτόρων.
+
+Πιστεύουμε ότι η οικονομική συναλλαγή κινήτρων είναι τελικά πώς εξασφαλίζουμε τα καλύτερα αποτελέσματα από την έλευση της Γενικής Τεχνητής Νοημοσύνης (AGI). Βοηθήστε μας να διασφαλίσουμε ένα μέλλον ανοικτού κώδικα, χωρίς άδεια και ελεύθερο για όλους.
 
 _______________________
-## Context On Proposal:
 
-I received an email from a developer named Morpheus September 2nd 2023 with the above proposal.
+## Συμφραζόμενα στην Πρόταση:
+
+Λάβαμε ένα email από έναν προγραμματιστή με το όνομα Morpheus στις 2 Σεπτεμβρίου 2023 με την παραπάνω πρόταση.
 
 _______________________
+
 David,
 
-Find below a proposal for launching "Morpheus - A Network For Powering Smart Agents".
+Βρες παρακάτω μια πρόταση για την εκκίνηση του "Morpheus - Ένα Δίκτυο για την Ενίσχυση των Έξυπνων Πρακτόρων".
 
-The paper lays out the token economics, tech stack, and means of calculating proofs for fairly rewarding the community, coders, capital & compute providers with tokens.
+Το έγγραφο περιγράφει την οικονομία των token, το τεχνολογικό σωρό, και τα μέσα υπολογισμού αποδείξεων για την δίκαιη ανταμοιβή της κοινότητας, των προγραμματιστών, του κεφαλαίου και των παροχέων υπολογιστικής ισχύος με tokens.
 
-This paper is freely given to the Smart Agent community and is available in the public domain.
+Αυτό το έγγραφο δίνεται ελεύθερα στην κοινότητα των Έξυπνων Πρακτόρων και είναι διαθέσιμο στον δημόσιο τομέα.
 
-Free your mind.
+Ελευθέρωσε τον νου σου.
 
 Morpheus
 
