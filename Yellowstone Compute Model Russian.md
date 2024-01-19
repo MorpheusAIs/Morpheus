@@ -22,18 +22,18 @@ Morpheus использует токеномику для стимулирова
 Например, если существует 100 провайдеров вычислений в день запуска сети, то каждый из них получит пропорциональное вознаграждение в зависимости от количества MOR, которое он сжег через комиссии. В данном случае, предположим, что каждый из 100 провайдеров вычислений сжег 100 MOR, тогда 1% из 3 456 MOR ежедневно = 34.56 MOR".
 
 ### Однако у этого подхода есть три основных проблемы:
-- Он требует от пользователей оплаты комиссии за каждую операцию вывода. Даже если это дешево, это существенное препятствие, которое вызовет плохой пользовательский опыт и постоянное отставание от OpenAI. Кроме того, требуется как минимум одна транзакция в блокчейне на каждую операцию, что, вероятно, не сможет масштабироваться даже на L2. Каждая операция имеет чрезвычайно низкую стоимость и если будет необходима транзакция в блокчейне, то операции станут экономчески нецелесообразными.  
-- Эта модель существенно подвержена уязвимостям, потому что ожидаемые доходы для провайдеров вычислений гораздо выше фактических затрат на вычисления. Таким образом, злоумышленник может засыпать свой собственный узел провайдера запросами на операции, зарабатывая относительно большую часть токенов MOR каждый день, даже если никакой экономической ценности никому не предоставлено. Это, вероятно, приведет к большим объемам неиспользуемых вычислений, которые исчезнут, как только исчезнет огромная возможность дохода, а потраченные за этот период MOR будут потеряны.
-- Если запросы на операции вывода распределяются в зависимости от количества MOR, удерживаемого провайдерами, то сеть игнорирует производительность этих провайдеров (время отклика) и стоимость их вычислительной обработки. Именно эти два фактора сеть должна пытаться оптимизировать (время отклика и стоимость вычислений должны стремиться быть минимальными). Если провайдер с наибольшим количеством MOR использует GPU за 200 долларов, выпущенную когда он еще учился в колледже, производительность операций для многих пользователей будет чрезвычайно низкой. Приоритет должен базироваться на цене предложения вычислений и производительности, а не количестве удерживаемых MOR. 
+1) Он требует от пользователей оплаты комиссии за каждую операцию вывода. Даже если это дешево, это существенное препятствие, которое вызовет плохой пользовательский опыт и постоянное отставание от OpenAI. Кроме того, требуется как минимум одна транзакция в блокчейне на каждую операцию, что, вероятно, не сможет масштабироваться даже на L2. Каждая операция имеет чрезвычайно низкую стоимость и если будет необходима транзакция в блокчейне, то операции станут экономчески нецелесообразными.  
+2) Эта модель существенно подвержена уязвимостям, потому что ожидаемые доходы для провайдеров вычислений гораздо выше фактических затрат на вычисления. Таким образом, злоумышленник может засыпать свой собственный узел провайдера запросами на операции, зарабатывая относительно большую часть токенов MOR каждый день, даже если никакой экономической ценности никому не предоставлено. Это, вероятно, приведет к большим объемам неиспользуемых вычислений, которые исчезнут, как только исчезнет огромная возможность дохода, а потраченные за этот период MOR будут потеряны.
+3) Если запросы на операции вывода распределяются в зависимости от количества MOR, удерживаемого провайдерами, то сеть игнорирует производительность этих провайдеров (время отклика) и стоимость их вычислительной обработки. Именно эти два фактора сеть должна пытаться оптимизировать (время отклика и стоимость вычислений должны стремиться быть минимальными). Если провайдер с наибольшим количеством MOR использует GPU за 200 долларов, выпущенную когда он еще учился в колледже, производительность операций для многих пользователей будет чрезвычайно низкой. Приоритет должен базироваться на цене предложения вычислений и производительности, а не количестве удерживаемых MOR. 
 
 Ниже представлена модель "Yellowstone", которая модифицирует токеномику Morpheus для предоставления вычислительных ресурсов, чтобы решить указанные выше проблемы. Эта модель работает независимо от того, какая часть эмиссии выделена на вычисления, и мы будем предполагать сохранение текущего статуса, где 24% общей эмиссии выделено на вычисления.
 
 ### Цели:
-- Позволить пользователям не платить за каждую операцию вывода (в идеале, вообще не платить)
-- Достигнуть эффективного, масштабируемого и устойчивого предоставления вычислительных ресурсов без переплаты
-- Стимулировать конкуренцию по времени отклика и стоимости среди поставщиков вычислительных ресурсов
-- Минимизировать количество блокчейн-транзакций (будь то L2 или другие)
-- Продемонстрировать экономически обоснованный фундаментальный спрос на MOR
+1) Позволить пользователям не платить за каждую операцию вывода (в идеале, вообще не платить)
+2) Достигнуть эффективного, масштабируемого и устойчивого предоставления вычислительных ресурсов без переплаты
+3) Стимулировать конкуренцию по времени отклика и стоимости среди поставщиков вычислительных ресурсов
+4) Минимизировать количество блокчейн-транзакций (будь то L2 или другие)
+5) Продемонстрировать экономически обоснованный фундаментальный спрос на MOR
 
 ## Модель Yellowstone
 Включает в себя четыре компонента:
@@ -123,7 +123,7 @@ For the first year following the Capital Contract's bootsrtapping period, the to
 7) User sends Query ([LLM],[prompt]) to Provider 
 8) Provider computes Query, sends Result to User
 9) User reports Time [milliseconds] between Step 4 & 5, [Tokens] delivered, and Pass/Fail to Router
-10) Router instructs Compute Contract to credit Provider with MOR if [milliseconds] per [oken] is no worse than X% below mean of past Z queries for that [LLM] and if User reported [Pass]. 
+10) Router instructs Compute Contract to credit Provider with MOR if [milliseconds] per [oken] is no worse than X% below mean of past Z queries for that [LLM] and if User reported [Pass].   
 (11) (Some time later) Provider requests payment of MOR from Compute Contract and Compute Contract sends MOR payment if valid (first blockchain TX so far, can be batched).
 
 ![ComputeContractImage2](https://github.com/MorpheusAIs/Morpheus/assets/1563345/e66ea20c-9851-4f9e-9caa-66c6d798c462)
@@ -143,57 +143,53 @@ For the first year following the Capital Contract's bootsrtapping period, the to
 ## Compute Budget
 The Morpheus network needs to determine how much MOR it is willing to spend on compute in a given period (such as each day), this is referred to as the Compute Budget. Each period, up to this amount of MOR may be spent by the Compute Contract. This number multiplied by the MOR price gives us a dollar budget for acquisition of Compute each day. 
 
-
-Open question 1: How should the Compute Budget be determined? The simplest idea is to set Compute Budget = emissions into the Compute Contract. This way, Compute Contract would never run out of tokens. But then what to do with the unused tokens, since the maximum would never be utilized each day? These could, perhaps, be granted pro-rata to current MOR token holders. Or, they could be burned. Or, they could remain unused in the Compute Contract, to be spent in the future on Compute (but then this opens more governance questions). 
-
-
 ## AccessRate
 The Morpheus network allocates the scarce resource of LT production through the concept of the “AccessRate”. The AccessRate determines how many LTs each MOR token can access per day. Unused access does not accrue. AccessRate is always displayed as a quantity of LTs per 1 MOR token (such as 1 MOR = 15,000 LT). AccessRate is determined in part by MaxLT, which quantifies the maximum number of LTs the network can purchase per day.
 
-AccessRate = (1/MOR Supply) * MaxLT
-MaxLT = ((MOR Compute Budget * MOR Price) / LT Price) * 1000
-UserMax = MaxLT * User MOR balance
+**AccessRate** = (1/MOR Supply) * MaxLT  
+**MaxLT** = ((MOR Compute Budget * MOR Price) / LT Price) * 1000  
+**UserMax** = MaxLT * User MOR balance  
 
 
 ### Example Assumptions: 
-MOR Supply = 10,000,000 MOR tokens
-MOR Compute Budget = 3,000 MOR tokens per day
-MOR Price = $20
-LT Price = $0.002 per 1000 LTs
-User Balance = 5 MOR tokens
+**MOR Supply** = 10,000,000 MOR tokens  
+**MOR Compute Budget** = 3,000 MOR tokens per day  
+**MOR Price** = $20  
+**LT Price** = $0.002 per 1000 LTs  
+**User Balance** = 5 MOR tokens  
 
 ### Example Result:
-MaxLT = 30,000,000,000 LTs (this is the maximum LTs the network can buy/produce each day)
-AccessRate = 3,000 (thus each MOR token grants access to 3,000 LTs per day)
-UserMax = 15,000 (a User with 5 MOR tokens can access up to 15,000 LT’s per day)
+**MaxLT** = 30,000,000,000 LTs (this is the maximum LTs the network can buy/produce each day)  
+**AccessRate** = 3,000 (thus each MOR token grants access to 3,000 LTs per day)  
+**UserMax** = 15,000 (a User with 5 MOR tokens can access up to 15,000 LT’s per day)  
 
 
-Each period (each day), Morpheus as a network has enough funds to buy X number of LTs from compute Providers. X is a function of the amount of MOR the Compute Contract is willing to spend (the “Compute Budget”) multiplied by the current MOR price divided by the market rate for LTs. 
-If the Compute Budget is 3,000 MOR, and each is worth $20, then the network can buy (produce) up to $60,000 of LTs that day. If the going rate for 1,000 LTs is $0.002, then the network can buy up to 30 billion LTs (30m x 1000 LTs). 
-That potential production of 30 billion LT’s is allocated by MOR balance, pro rata. Assume there are 10,000,000 MOR in existence. A user with 500 MOR tokens (0.005% of total) could freely access up to 1.5m LTs that day. 
-So long as Compute Budget is at or below the emissions level, the Compute Contract cannot run out of MOR.  
-In reality, most tokens will sit in wallets and exchanges, and only a fraction will be used to demand the LT production.
+- Each period (each day), Morpheus as a network has enough funds to buy X number of LTs from compute Providers. X is a function of the amount of MOR the Compute Contract is willing to spend (the “Compute Budget”) multiplied by the current MOR price divided by the market rate for LTs. 
+- If the Compute Budget is 3,000 MOR, and each is worth $20, then the network can buy (produce) up to $60,000 of LTs that day. If the going rate for 1,000 LTs is $0.002, then the network can buy up to 30 billion LTs (30m x 1000 LTs). 
+- That potential production of 30 billion LT’s is allocated by MOR balance, pro rata. Assume there are 10,000,000 MOR in existence. A user with 500 MOR tokens (0.005% of total) could freely access up to 1.5m LTs that day. 
+- So long as Compute Budget is at or below the emissions level, the Compute Contract cannot run out of MOR.  
+- In reality, most tokens will sit in wallets and exchanges, and only a fraction will be used to demand the LT production.
 
 ## Notes
-* Fundamental demand for MOR comes from Users who wish to have access to generative AI and other forms of compute on the Morpheus network. 
+1) Fundamental demand for MOR comes from Users who wish to have access to generative AI and other forms of compute on the Morpheus network. 
  
-* Provider’s hardware type is irrelevant to the network, so long as they satisfy the User’s pass/fail test. Any Provider bidding on more Queries than they can efficiently process will be penalized by failing this test.
+2) Provider’s hardware type is irrelevant to the network, so long as they satisfy the User’s pass/fail test. Any Provider bidding on more Queries than they can efficiently process will be penalized by failing this test.
 
-* The above model importantly pays Providers ONLY when there is demand for their compute. This prevents the situation where large portions of MOR are emitted prematurely when the network doesn’t need it. 
+3) The above model importantly pays Providers ONLY when there is demand for their compute. This prevents the situation where large portions of MOR are emitted prematurely when the network doesn’t need it. 
 
-* Providers should need to prove they have a given LLM, by signing hash of LLM model with their key. This doesn’t prove they used it, but it proves they downloaded and installed it, which represents work, thus preventing some forms of sybil-sensitive fraud. If Providers provide garbage results to User, User can send [Fail] along with [miliseconds] back to Router, and Provider won’t be credited for that compute. Morpheus doesn’t need all answers to be perfect… it only needs enough answers to be good enough, relative to competing alternatives. 
+4) Providers should need to prove they have a given LLM, by signing hash of LLM model with their key. This doesn’t prove they used it, but it proves they downloaded and installed it, which represents work, thus preventing some forms of sybil-sensitive fraud. If Providers provide garbage results to User, User can send [Fail] along with [miliseconds] back to Router, and Provider won’t be credited for that compute. Morpheus doesn’t need all answers to be perfect… it only needs enough answers to be good enough, relative to competing alternatives. 
 
-* Sybil attacks of flooding the network with RFCs is prevented by the AccessRate. The “cost” of sending and RFC is the cost of acquiring a MOR token divided by the number of RFCs submitted on its behalf. Cost is thus never zero, and yet a user won’t feel a loss each time an RFC is made. 
+5) Sybil attacks of flooding the network with RFCs is prevented by the AccessRate. The “cost” of sending and RFC is the cost of acquiring a MOR token divided by the number of RFCs submitted on its behalf. Cost is thus never zero, and yet a user won’t feel a loss each time an RFC is made. 
 
-* Pass/Fail is determined by User, and polices quality to some degree. User conveys Pass/Fail result alongside [miliseconds] back to Router. If Fail, either no reward or penalty point (TBD). There is no incentive to falsely Fail a Provider (no monetary incentive in doing so). This mechanism prevents Providers from sending fast but useless Results.
+6) Pass/Fail is determined by User, and polices quality to some degree. User conveys Pass/Fail result alongside [miliseconds] back to Router. If Fail, either no reward or penalty point (TBD). There is no incentive to falsely Fail a Provider (no monetary incentive in doing so). This mechanism prevents Providers from sending fast but useless Results.
 Consider: perhaps No Reward occurs on Fail only if User MOR > Provider MOR. Otherwise, just a negative point which Router can use in its privatization logic.
 
-* All four parties (User, Provider, Router, and Compute Contract) have unique MOR address as their identity. All messages between the parties require signatures (but most don’t require blockchain txs)
+7) All four parties (User, Provider, Router, and Compute Contract) have unique MOR address as their identity. All messages between the parties require signatures (but most don’t require blockchain txs)
 
-* Providers must have non-zero balance to discourage Sybil attack from Provider side.
+8) Providers must have non-zero balance to discourage Sybil attack from Provider side.
 
-* If [milisecond] criteria is higher, network will be generally faster, but discourages smaller Providers
+9) If [milisecond] criteria is higher, network will be generally faster, but discourages smaller Providers
 
-* There is a disincentive to provide slow Results (no revenue after computation)
+10) There is a disincentive to provide slow Results (no revenue after computation)
   
-* Centrally hosted Router to start is probably fine (decentralize Router eventually (IPFS? Or PoS node consortium?))
+11) Centrally hosted Router to start is probably fine (decentralize Router eventually (IPFS? Or PoS node consortium?))
