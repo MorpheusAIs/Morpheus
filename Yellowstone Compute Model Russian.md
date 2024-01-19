@@ -103,7 +103,7 @@ Yellowstone фокусируется на запросах с определен
 
 "TokenMax" относится к максимальному количеству токенов, принимаемых для оплаты маршрутиризатором.
 
-"RFC" означает "Запрос на вычисление". Пользователь отправляет RFC маршрутиризатору и указывает [LLM], к которой пользователь хочет получить доступ, а также [TokenMax], который является пределом приемлемых LT в ответе. Пользователю следует ограничивать это количество, потому что более высокие числа = более долгое ожидание ответов и считаются большим вкладом в UserMax, который ограничен каждый день.
+"RFC" означает "Запрос на вычисление". Пользователь отправляет RFC маршрутиризатору и указывает [LLM], к которой пользователь хочет получить доступ, а также [TokenMax], который является пределом приемлемых LT в ответе. Пользователю следует ограничивать это количество, потому что более высокие числа = более долгое ожидание ответов и считаются большим вкладом в [UserMax], который ограничен каждый день.
 
 ### Contract Protections
 
@@ -123,17 +123,17 @@ For the first year following the Capital Contract's bootsrtapping period, the to
 7) User sends Query ([LLM],[prompt]) to Provider 
 8) Provider computes Query, sends Result to User
 9) User reports Time [milliseconds] between Step 4 & 5, [Tokens] delivered, and Pass/Fail to Router
-10) Router instructs Compute Contract to credit Provider with MOR if [milliseconds] per [oken] is no worse than X% below mean of past Z queries for that [LLM] and if User reported [Pass].   
+10) Router instructs Compute Contract to credit Provider with MOR if [milliseconds] per [Token] is no worse than X% below mean of past Z queries for that [LLM] and if User reported [Pass].   
 (11) (Some time later) Provider requests payment of MOR from Compute Contract and Compute Contract sends MOR payment if valid (first blockchain TX so far, can be batched).
 
 ![ComputeContractImage2](https://github.com/MorpheusAIs/Morpheus/assets/1563345/e66ea20c-9851-4f9e-9caa-66c6d798c462)
 
 ## Outcome
-* User received fast Result for her Query, and paid nothing (this will lead to amazing UX and thus adoption). Solves Goal 1.
-* Compute Contract paid for Compute through a competitive bidding process, and a check for quality/satisfaction from the User who ordered it. Solves Goal 2.
-* Provider received money (MOR) from Compute Contract so long as response was fast enough. Provider received exactly what she asked for to provide the compute. If her ask is too high, others will bid lower, thus the system is efficient and will drive down Provider prices toward the cost of base electricity.  Solves Goal 3
-* Number of on-chain transactions was minimized (many thousands of Queries can flow without a single on-chain TX). Solves Goal 4
-* The ability to get fast, free compute drives the demand for MOR tokens to be held by Users. Solves Goal 5
+* User received fast Result for her Query, and paid nothing (this will lead to amazing UX and thus adoption). **Solves Goal 1.**
+* Compute Contract paid for Compute through a competitive bidding process, and a check for quality/satisfaction from the User who ordered it. **Solves Goal 2.**
+* Provider received money (MOR) from Compute Contract so long as response was fast enough. Provider received exactly what she asked for to provide the compute. If her ask is too high, others will bid lower, thus the system is efficient and will drive down Provider prices toward the cost of base electricity.  **Solves Goal 3**
+* Number of on-chain transactions was minimized (many thousands of Queries can flow without a single on-chain TX). **Solves Goal 4**
+* The ability to get fast, free compute drives the demand for MOR tokens to be held by Users. **Solves Goal 5**
 * Step 6 & 7 provide reasonable privacy (Query never touches the Router, nor does Result). Providers are selected somewhat randomly, and never know identity of User other than IP address. Better privacy can be later achieved with TOR + FHE
 * MOR balance was reduced from Compute Contract. Contract will be solvent so long as MOR paid < MOR earned per period from emissions.
 * If User sends an RFC which exceeds User’s UserMax, the Router will reject the request.
@@ -144,31 +144,31 @@ For the first year following the Capital Contract's bootsrtapping period, the to
 The Morpheus network needs to determine how much MOR it is willing to spend on compute in a given period (such as each day), this is referred to as the Compute Budget. Each period, up to this amount of MOR may be spent by the Compute Contract. This number multiplied by the MOR price gives us a dollar budget for acquisition of Compute each day. 
 
 ## AccessRate
-The Morpheus network allocates the scarce resource of LT production through the concept of the “AccessRate”. The AccessRate determines how many LTs each MOR token can access per day. Unused access does not accrue. AccessRate is always displayed as a quantity of LTs per 1 MOR token (such as 1 MOR = 15,000 LT). AccessRate is determined in part by MaxLT, which quantifies the maximum number of LTs the network can purchase per day.
+The Morpheus network allocates the scarce resource of LT production through the concept of the “AccessRate”. The AccessRate determines how many Ts each MOR token can access per day. Unused access does not accrue. AccessRate is always displayed as a quantity of Ts per 1 MOR token (such as 1 MOR = 15,000 T). AccessRate is determined in part by MaxT, which quantifies the maximum number of Ts the network can purchase per day.
 
-**AccessRate** = (1/MOR Supply) * MaxLT  
-**MaxLT** = ((MOR Compute Budget * MOR Price) / LT Price) * 1000  
-**UserMax** = MaxLT * User MOR balance  
+**AccessRate** = (1/MOR Supply) * MaxT  
+**MaxLT** = ((MOR Compute Budget * MOR Price) / T Price) * 1000  
+**UserMax** = MaxT * User MOR balance  
 
 
 ### Example Assumptions: 
 **MOR Supply** = 10,000,000 MOR tokens  
 **MOR Compute Budget** = 3,000 MOR tokens per day  
 **MOR Price** = $20  
-**LT Price** = $0.002 per 1000 LTs  
+**LT Price** = $0.002 per 1000 Ts  
 **User Balance** = 5 MOR tokens  
 
 ### Example Result:
-**MaxLT** = 30,000,000,000 LTs (this is the maximum LTs the network can buy/produce each day)  
-**AccessRate** = 3,000 (thus each MOR token grants access to 3,000 LTs per day)  
-**UserMax** = 15,000 (a User with 5 MOR tokens can access up to 15,000 LT’s per day)  
+**MaxT** = 30,000,000,000 Ts (this is the maximum Ts the network can buy/produce each day)  
+**AccessRate** = 3,000 (thus each MOR token grants access to 3,000 Ts per day)  
+**UserMax** = 15,000 (a User with 5 MOR tokens can access up to 15,000 T’s per day)  
 
 
-- Each period (each day), Morpheus as a network has enough funds to buy X number of LTs from compute Providers. X is a function of the amount of MOR the Compute Contract is willing to spend (the “Compute Budget”) multiplied by the current MOR price divided by the market rate for LTs. 
-- If the Compute Budget is 3,000 MOR, and each is worth $20, then the network can buy (produce) up to $60,000 of LTs that day. If the going rate for 1,000 LTs is $0.002, then the network can buy up to 30 billion LTs (30m x 1000 LTs). 
-- That potential production of 30 billion LT’s is allocated by MOR balance, pro rata. Assume there are 10,000,000 MOR in existence. A user with 500 MOR tokens (0.005% of total) could freely access up to 1.5m LTs that day. 
+- Each period (each day), Morpheus as a network has enough funds to buy X number of Ts from compute Providers. X is a function of the amount of MOR the Compute Contract is willing to spend (the “Compute Budget”) multiplied by the current MOR price divided by the market rate for Ts. 
+- If the Compute Budget is 3,000 MOR, and each is worth $20, then the network can buy (produce) up to $60,000 of Ts that day. If the going rate for 1,000 Ts is $0.002, then the network can buy up to 30 billion Ts (30m x 1000 Ts). 
+- That potential production of 30 billion Ts is allocated by MOR balance, pro rata. Assume there are 10,000,000 MOR in existence. A user with 500 MOR tokens (0.005% of total) could freely access up to 1.5m Ts that day. 
 - So long as Compute Budget is at or below the emissions level, the Compute Contract cannot run out of MOR.  
-- In reality, most tokens will sit in wallets and exchanges, and only a fraction will be used to demand the LT production.
+- In reality, most tokens will sit in wallets and exchanges, and only a fraction will be used to demand the T production.
 
 ## Notes
 1) Fundamental demand for MOR comes from Users who wish to have access to generative AI and other forms of compute on the Morpheus network. 
