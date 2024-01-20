@@ -15,16 +15,15 @@ Notion पर देखें: https://defiant-wolfsbane-830.notion.site/Morpheu
 (https://github.com/MorpheusAIs/Morpheus/blob/main/WhitePaper.md)
 
 ## Background
-Morpheus uses tokenomics to incentivize sufficient and scalable compute as a resource for the purpose of decentralized and permissionless generative AI. In its original conception, Morpheus issued 24% of MOR emissions to Compute Providers directly, pro-rata depending on the inference requests received, and it prioritized inference requests to those providers based on how much MOR they held. 
+मॉर्फियस, विकेन्द्रीकृत और अनुमतिहीन जेनेरेटिव AI के लिए पर्याप्त और स्केलेबल कम्प्यूट के संसाधन के लिए टोकनॉमिक्स का उपयोग करता है। इसके मूल संकल्पना में, मॉर्फियस ने 24% MOR उत्सर्जन को सीधे कंप्यूट प्रदाताओं को दिया, प्रत्येक के अनुसार अनुरोधित इन्फरेंस के आधार पर, और यह उन प्रदाताओं को इन्फरेंस अनुरोधों की प्राथमिकता देता था जिनके पास MOR की अधिक मात्रा थी।
 
-### From the original white paper:
-“The pro-rata MOR transaction fees burned by each Compute Provider serves as proof of the Compute Providers status and earns a proportion of the MOR tokens each day.
- 
-For example, if there are 100 Compute Providers on day 1 when the network launches, then each one gets a pro-rata reward based on the amount of MOR they have burned via fees. In this case, presuming each of the 100 compute providers burned 100 MOR, then 1% of the 3,456 MOR tokens each day = 34.56 MOR.”
+मूल श्वेत पत्र से:
+"प्रत्येक कंप्यूट प्रदाता द्वारा जलाए गए MOR लेन-देन शुल्कों का प्रो-राटा हिस्सा, कंप्यूट प्रदाताओं की स्थिति का प्रमाण के रूप में काम करता है और हर दिन MOR टोकन का एक अनुपात प्राप्त करता है।
 
-### There are three major issues with this approach:
-It requires users to pay per-inference transaction fees. Even if low, this is substantial friction and will cause poor UX and an ever-present inferiority to OpenAI’s UX. It also requires at least one blockchain transaction per inference, which is probably not scalable even on L2s. Each inference event is extremely low cost, and if a blockchain transaction was required, the economics would be infeasible. 
-This model is substantially exploitable because expected revenue for compute providers is far higher than actual compute costs. An adversary could thus flood spam inference requests to his own Compute Provider node, and earn a relatively large portion of MOR tokens each day, even though no economic value was provided to anyone. Likely, it would lead to large amounts of early (unused) compute, which disappears once the huge revenue opportunity dissipates, and the MOR spent on that early subsidy would be wasted/lost.  
+उदाहरण के लिए, अगर नेटवर्क शुरू होने पर दिन 1 पर 100 कंप्यूट प्रदाता हैं, तो प्रत्येक को MOR शुल्कों के माध्यम से जलाए गए अनुपात के आधार पर प्रो-राटा इनाम मिलता है। इस मामले में, मान लें कि 100 कंप्यूट प्रदाताओं में से प्रत्येक ने 100 MOR जलाए, तो हर दिन 3,456 MOR टोकन का 1% = 34.56 MOR होगा।"
+
+इस दृष्टिकोण की तीन प्रमुख समस्याएं हैं:
+इसमें उपयोगकर्ताओं को प्रति-इन्फरेंस लेन-देन शुल्क देना पड़ता है। भले ही यह कम हो, यह काफी बाधा है और ओपनएआई के UX की तुलना में यह हमेशा हीन होगा। इसमें प्रत्येक इन्फरेंस के लिए कम से कम एक ब्लॉकचेन लेन-द
 
 ## पृष्ठभूमि
 मॉर्फियस टोकनॉमिक्स का उपयोग स्थानीय और अनुमति रहित सृजनात्मक ए.आई. के लक्ष्य के लिए पर्याप्त और स्केलेबल संगणन को प्रोत्साहित करने के लिए करता है। इसके मूल रूप में, मॉर्फियस ने मॉर इमिशन्स के 24% को कम्प्यूट प्रदाताओं को सीधे जारी किया, इंफेरेंस रिक्वेस्ट्स के आधार पर प्रो-रेटा, और यह इंफेरेंस रिक्वेस्ट्स को उन प्रदाताओं को प्राथमिकता दी जो ने कितना मॉर होल्ड किया।
