@@ -103,66 +103,69 @@ Yellowstone фокусируется на запросах с определен
 
 "TokenMax" относится к максимальному количеству токенов, принимаемых для оплаты маршрутиризатором.
 
-"RFC" означает "Запрос на вычисление". Пользователь отправляет RFC маршрутиризатору и указывает [LLM], к которой пользователь хочет получить доступ, а также [TokenMax], который является пределом приемлемых LT в ответе. Пользователю следует ограничивать это количество, потому что более высокие числа = более долгое ожидание ответов и считаются большим вкладом в [UserMax], который ограничен каждый день.
+"RFC" означает "Запрос на вычисление". Пользователь отправляет RFC маршрутиризатору и указывает [LLM], к которой пользователь хочет получить доступ, а также [TokenMax], который является пределом приемлемых T в ответе. Пользователю следует ограничивать это количество, потому что более высокие числа = более долгое ожидание ответов и считаются большим вкладом в [UserMax], который ограничен каждый день.
 
 ### Contract Protections
 
 In order to prevent an attack that shorts or runs the number of MOR by manipulating  using any unused compute, the pool of unused MOR allocated to Compute Providers can be reduced by no more than 1% per block day. This is equal to normal compute emisions + 1%.
 
-### Compute Bootstrapping Incentive
+### Защиты контракта
 
-For the first year following the Capital Contract's bootsrtapping period, the top 100 Compute providers will be entitled to a pro-rata amount of 2.4% of MOR emissions.  This is calculated by the routers and accounted for in the compute contract.
+Для предотвращения атак, направленных на манипулирование неиспользуемыми вычислениями, пул неиспользованных MOR, выделенных поставщикам вычислений, может уменьшаться не более чем на 1% в блок день, что соответствует обычным вычислительным эмиссиям + 1%.
 
-## Workflow
-1) Users, Providers, and Router all create MOR pub keys (this is their identity, all messages signed as such). 
-2) If User hodls any balance of MOR, User may submit a signed Request for Processing “RFP” message to the Router. User specifies [LLM] and [TokenMax].
-3) Router prioritizes RFPs based on User’s MOR balance (solves sybil issue)
-4) Router selects Provider that supports the [LLM], prioritized based on lowest Bid per Token in MOR. 
-5) Router sends liveness check to Provider. If Pass, then
-6) Router connects User to the Provider
-7) User sends Query ([LLM],[prompt]) to Provider 
-8) Provider computes Query, sends Result to User
-9) User reports Time [milliseconds] between Step 4 & 5, [Tokens] delivered, and Pass/Fail to Router
-10) Router instructs Compute Contract to credit Provider with MOR if [milliseconds] per [Token] is no worse than X% below mean of past Z queries for that [LLM] and if User reported [Pass].   
-(11) (Some time later) Provider requests payment of MOR from Compute Contract and Compute Contract sends MOR payment if valid (first blockchain TX so far, can be batched).
+### Стимул для инициализации вычислений
+
+В течение первого года после завершения 90ти дневного периода инициализации, топ-100 поставщиков вычислений будут иметь право на пропорциональную часть в размере 2,4% от эмиссии MOR. Это рассчитывается маршрутизаторами и учитывается в контракте вычислений.
+
+## Процесс работы
+1) Пользователи, поставщики и маршрутизатор создают публичные ключи MOR (это их идентификатор и подпись для всех сообщений).
+2) Если у пользователя положительный баланс MOR, пользователь может отправить подписанное сообщение с запросом на обработку "RFP" маршрутизатору. Пользователь указывает [LLM] и [TokenMax].
+3) Маршрутизатор упорядочивает запросы на обработку на основе баланса MOR пользователя (решает проблему сибила).
+4) Маршрутизатор выбирает поставщика, поддерживающего [LLM], с приоритетом наименьшей ставки Token в MOR.
+5) Маршрутизатор отправляет проверку активности поставщику. Если проверка пройдена, то
+6) Маршрутизатор соединяет пользователя с поставщиком.
+7) Пользователь отправляет запрос ([LLM], [запрос]) поставщику.
+8) Поставщик вычисляет запрос, отправляет результат пользователю.
+9) Пользователь сообщает время [миллисекунды] между шагами 4 и 5, [Токены] доставлены, и результат прошел/не прошел маршрутизатору.
+10) Маршрутизатор инструктирует контракт вычислений начислить поставщику MOR, если [миллисекунд] на [Токен] не хуже чем на X% ниже среднего значения по прошлым Z запросам для этого [LLM] и если пользователь сообщил [Пройдено].   
+(11) (Через некоторое время) Поставщик запрашивает выплату MOR из контракта вычислений, и контракт вычислений отправляет выплату MOR, если она действительна.
 
 ![ComputeContractImage2](https://github.com/MorpheusAIs/Morpheus/assets/1563345/e66ea20c-9851-4f9e-9caa-66c6d798c462)
 
-## Outcome
-* User received fast Result for her Query, and paid nothing (this will lead to amazing UX and thus adoption). **Solves Goal 1.**
-* Compute Contract paid for Compute through a competitive bidding process, and a check for quality/satisfaction from the User who ordered it. **Solves Goal 2.**
-* Provider received money (MOR) from Compute Contract so long as response was fast enough. Provider received exactly what she asked for to provide the compute. If her ask is too high, others will bid lower, thus the system is efficient and will drive down Provider prices toward the cost of base electricity.  **Solves Goal 3**
-* Number of on-chain transactions was minimized (many thousands of Queries can flow without a single on-chain TX). **Solves Goal 4**
-* The ability to get fast, free compute drives the demand for MOR tokens to be held by Users. **Solves Goal 5**
-* Step 6 & 7 provide reasonable privacy (Query never touches the Router, nor does Result). Providers are selected somewhat randomly, and never know identity of User other than IP address. Better privacy can be later achieved with TOR + FHE
-* MOR balance was reduced from Compute Contract. Contract will be solvent so long as MOR paid < MOR earned per period from emissions.
-* If User sends an RFC which exceeds User’s UserMax, the Router will reject the request.
+## Результат
+* Пользователь получил быстрый результат для своего запроса и не заплатил ничего (это приведет к удивительному пользовательскому опыту и, следовательно, к широкому принятию). **Решает Цель 1.**
+* Контракт вычислений оплачивает вычисления через конкурентный процесс ставок и проверку качества/удовлетворенности от пользователя, который их заказал. **Решает Цель 2.**
+* Поставщик получает деньги (MOR) от контракта вычислений, при условии достаточно быстрого ответа. Поставщик получает ровно то, о чем просил за предоставление вычислений. Если ставка поставщика слишком высока, другие будут делать более низкие ставки, таким образом система эффективна и будет снижать цены поставщиков к стоимости базовой электроэнергии.  **Решает Цель 3**
+* Количество онлайн-транзакций было минимизировано (много тысяч запросов может проходить без единой онлайн-транзакции). **Решает Цель 4**
+* Возможность получить быстрое, бесплатное вычисление стимулирует спрос на токены MOR среди пользователей. **Решает Цель 5**
+* Шаги 6 и 7 обеспечивают разумную конфиденциальность (запрос никогда не касается маршрутизатора, так же как и результат). Поставщики выбираются относительно случайным образом и никогда не узнают личность пользователя, кроме IP-адреса. Более высокий уровень конфиденциальности может быть достигнут позднее с использованием TOR + FHE.
+* Баланс MOR был уменьшен из контракта вычислений. Контракт будет платежеспособным, пока уплаченный MOR < заработанного MOR за период от эмиссии.
+* Если пользователь отправляет RFC, превышающий UserMax пользователя, маршрутизатор отклонит запрос.
 
-—-------------
+-------------
 
-## Compute Budget
-The Morpheus network needs to determine how much MOR it is willing to spend on compute in a given period (such as each day), this is referred to as the Compute Budget. Each period, up to this amount of MOR may be spent by the Compute Contract. This number multiplied by the MOR price gives us a dollar budget for acquisition of Compute each day. 
+## Бюджет вычислений
+Сети Morpheus необходимо определить, сколько MOR она готова потратить на вычисления в определенный период (например, каждый день). Это называется Бюджетом вычислений. Каждый период Контракт вычислений может тратить не более этого количества MOR. Это число, умноженное на цену MOR, дает нам бюджет в долларах на приобретение вычислений каждый день.
 
-## AccessRate
-The Morpheus network allocates the scarce resource of LT production through the concept of the “AccessRate”. The AccessRate determines how many Ts each MOR token can access per day. Unused access does not accrue. AccessRate is always displayed as a quantity of Ts per 1 MOR token (such as 1 MOR = 15,000 T). AccessRate is determined in part by MaxT, which quantifies the maximum number of Ts the network can purchase per day.
+## Уровень доступа (AccessRate)
+Сеть Morpheus распределяет дефицитный ресурс производства T через концепцию "AccessRate" (Уровень доступа). AccessRate определяет, сколько Ts каждый токен MOR может использовать в день. Неиспользованный доступ не накапливается. AccessRate всегда отображается как количество Ts на 1 токен MOR (например, 1 MOR = 15 000 T). AccessRate определяется частично с помощью MaxT, который количественно оценивает максимальное количество Ts, которые сеть может закупить в день.
 
-**AccessRate** = (1/MOR Supply) * MaxT  
-**MaxLT** = ((MOR Compute Budget * MOR Price) / T Price) * 1000  
-**UserMax** = MaxT * User MOR balance  
+**AccessRate** = (1/Общее количество MOR) * MaxT
+**MaxT** = ((Бюджет вычислений MOR * Цена MOR) / Цена T) * 1000
+**UserMax** = MaxT * Баланс MOR пользователя
 
 
-### Example Assumptions: 
-**MOR Supply** = 10,000,000 MOR tokens  
-**MOR Compute Budget** = 3,000 MOR tokens per day  
-**MOR Price** = $20  
-**LT Price** = $0.002 per 1000 Ts  
-**User Balance** = 5 MOR tokens  
+### Пример показателей: 
+**Общее количество MOR** = 10,000,000 MOR  
+**Бюджет вычислений MOR** = 3,000 MOR в день 
+**Цена MOR** = $20  
+**Цена T** = $0.002 за 1000 Ts  
+**Баланс MOR пользователя** = 5 MOR tokens  
 
-### Example Result:
-**MaxT** = 30,000,000,000 Ts (this is the maximum Ts the network can buy/produce each day)  
-**AccessRate** = 3,000 (thus each MOR token grants access to 3,000 Ts per day)  
-**UserMax** = 15,000 (a User with 5 MOR tokens can access up to 15,000 T’s per day)  
-
+### Пример результата:
+**MaxT** = 30,000,000,000 Ts (максимум T, который сети может приобрести/произвести в день)  
+**AccessRate** = 3,000 (таким образом, каждый токен MOR предоставляет доступ к 3,000 T в день)  
+**UserMax** = 15,000 (пользователь с балансом 5 MOR может получить доступ к 15,000 T в день)  
 
 - Each period (each day), Morpheus as a network has enough funds to buy X number of Ts from compute Providers. X is a function of the amount of MOR the Compute Contract is willing to spend (the “Compute Budget”) multiplied by the current MOR price divided by the market rate for Ts. 
 - If the Compute Budget is 3,000 MOR, and each is worth $20, then the network can buy (produce) up to $60,000 of Ts that day. If the going rate for 1,000 Ts is $0.002, then the network can buy up to 30 billion Ts (30m x 1000 Ts). 
