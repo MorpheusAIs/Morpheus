@@ -67,7 +67,8 @@ Then, we need to go to the [Distribution](https://sepolia.etherscan.io/address/0
 
 ![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/stake.png)
 
-It is necessary to select the `stake()` function that will deposit stETH tokens to the smart contract. As parameters:
+It is necessary to select the `stake()` function that will deposit stETH tokens to the smart contract. 
+As parameters:
 - `poolId_`: pool identifier, allowed only existed and public pools; for testing purpose enter “0”;
 - `amount_`: amount of tokens in WEI. (10 stETH in this example).
 
@@ -93,7 +94,8 @@ We need to go to the [Distribution](https://sepolia.etherscan.io/address/0x0Ad2f
 
 ![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/SepoliaTestnetGuide/withdraw.png)
 
-It is necessary to select the `withdraw()` function that will withdraw the required number of stETH. As parameters:
+It is necessary to select the `withdraw()` function that will withdraw the required number of stETH. 
+As parameters:
 - `poolId_`: pool identifier; enter "0" for test purpose;
 - `amount_`: amount of tokens in WEI.
 
@@ -107,7 +109,8 @@ We need to go to the [Distribution](https://sepolia.etherscan.io/address/0x0Ad2f
 
 The mint of the MOR token takes place on the Arbitrum Sepolia network, so we need a Layer Zero bridge to help us do this. 
 
-All the user needs to do is to call the `claim()` function and specify the following parameters:
+All the user needs to do is to call the `claim()` function.
+As parameters:
 - `claim`: here you need to specify the amount of native token in ETH that you will send with the transaction and that will be used as payment for the gas for a mint on the destination network. You can specify more, the remainder will be returned to the sender.
 - `poolId_`: pool identifier; enter "0" for test purpose;
 - `user_`: the address of the user for whom the tokens will be minted.
