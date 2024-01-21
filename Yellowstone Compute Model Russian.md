@@ -2,7 +2,7 @@
 
 # Модель Вычислений Морфеус “Yellowstone” 
 ### Erik Voorhees
-### 3е января 2024
+### 3 января 2024
 
 Предложенная редакция структуры токеномики Morpheus для стимулирования вычислений в децентрализованной сети ИИ
 Просмотр в Notion: https://defiant-wolfsbane-830.notion.site/Morpheus-Yellowstone-Compute-Model-2ca9b4e7e1374c898937fdbd1b964cc1
