@@ -11,7 +11,7 @@ View on Notion: https://defiant-wolfsbane-830.notion.site/Morpheus-Yellowstone-C
 ## Summary
 In the Yellowstone Compute Model, the Morpheus network pays Providers only for Compute actually provided through a competitive bid process, and allocates the scarce production of Tokens pro-rata to MOR token holders based on balance, rather than on payment. This drastically improves UX while minimizing Sybil vulnerability. Yellowstone also imbues the important metrics of time and a Pass/Fail test to ensure Providers are adequately prompt and accurate. Yellowstone preserves privacy by never sending prompts or results through the Router, and minimizes blockchain transactions to permit a large scale of operation. Through this model, MOR achieves fundamental value as it enables perpetual (though not unlimited) access to permissionless compute, without requiring transactions per inference. 
 
-If adopted, this paper replaces the “Compute Proof, Registration & Reward” section of the Morpheus whitepaper (https://github.com/MorpheusAIs/Morpheus/blob/main/WhitePaper.md)
+If adopted, this paper replaces the “Compute Proof, Registration & Reward” section of the [Morpheus whitepaper](https://github.com/MorpheusAIs/Morpheus/blob/main/WhitePaper.md)
 
 ## Background
 Morpheus uses tokenomics to incentivize sufficient and scalable compute as a resource for the purpose of decentralized and permissionless generative AI. In its original conception, Morpheus issued 24% of MOR emissions to Compute Providers directly, pro-rata depending on the inference requests received, and it prioritized inference requests to those providers based on how much MOR they held. 
@@ -22,9 +22,9 @@ Morpheus uses tokenomics to incentivize sufficient and scalable compute as a res
 For example, if there are 100 Compute Providers on day 1 when the network launches, then each one gets a pro-rata reward based on the amount of MOR they have burned via fees. In this case, presuming each of the 100 compute providers burned 100 MOR, then 1% of the 3,456 MOR tokens each day = 34.56 MOR.”
 
 ### There are three major issues with this approach:
-It requires users to pay per-inference transaction fees. Even if low, this is substantial friction and will cause poor UX and an ever-present inferiority to OpenAI’s UX. It also requires at least one blockchain transaction per inference, which is probably not scalable even on L2s. Each inference event is extremely low cost, and if a blockchain transaction was required, the economics would be infeasible. 
-This model is substantially exploitable because expected revenue for compute providers is far higher than actual compute costs. An adversary could thus flood spam inference requests to his own Compute Provider node, and earn a relatively large portion of MOR tokens each day, even though no economic value was provided to anyone. Likely, it would lead to large amounts of early (unused) compute, which disappears once the huge revenue opportunity dissipates, and the MOR spent on that early subsidy would be wasted/lost.  
-If inference requests are prioritized based on the MOR amount held by Providers, then the performance of those providers (response time) and the cost of their inference processing are ignored by the network, and it is precisely these two factors which the network should attempt to optimize (response time and compute cost should be ideally driven as low as possible). If the top MOR-holding provider was running a $200 GPU from his college days, inference performance for many users would be extremely poor. Priority should be based on bid price and performance, not MOR holding.
+1) It requires users to pay per-inference transaction fees. Even if low, this is substantial friction and will cause poor UX and an ever-present inferiority to OpenAI’s UX. It also requires at least one blockchain transaction per inference, which is probably not scalable even on L2s. Each inference event is extremely low cost, and if a blockchain transaction was required, the economics would be infeasible. 
+2) This model is substantially exploitable because expected revenue for compute providers is far higher than actual compute costs. An adversary could thus flood spam inference requests to his own Compute Provider node, and earn a relatively large portion of MOR tokens each day, even though no economic value was provided to anyone. Likely, it would lead to large amounts of early (unused) compute, which disappears once the huge revenue opportunity dissipates, and the MOR spent on that early subsidy would be wasted/lost.  
+3) If inference requests are prioritized based on the MOR amount held by Providers, then the performance of those providers (response time) and the cost of their inference processing are ignored by the network, and it is precisely these two factors which the network should attempt to optimize (response time and compute cost should be ideally driven as low as possible). If the top MOR-holding provider was running a $200 GPU from his college days, inference performance for many users would be extremely poor. Priority should be based on bid price and performance, not MOR holding.
 
 Below is proposed the “Yellowstone” Model which modifies the Morpheus tokenomics for compute provision to address the above issues. This model works regardless of what portion of emissions are allocated to compute, and we’ll assume the status quo of 24% of total emissions. 
 
@@ -50,6 +50,9 @@ Four Components Involved:
 * High throughput processing engine
 * Can be relatively centralized at first, ultimately needs to decentralize
 
+### Compute Contract
+* Permissionless smart contract which receives emissions of MOR, tracks credits and debits to Providers, and pays Providers when called.
+
 ## Standard Weights and Measures
 
 There is an atomic unit of inferences in AI, measured in inferences/second (IPS). This can be conceptually compared to wei on the blockchain. Inferences are used to define rates in the Yellowstone router.  The weight of a single Morpheus AI unit is therefore an inference.  Depending on the type of request, this can be applied to any compute task.  
@@ -74,7 +77,7 @@ There are two types of prompts, defined by the size of response returned by a mo
 
 Yellowstone focuses on Determined Length Prompts.  The router described will be constructed in a fashion to handle undetermined prompts in the future, but not to service them today.  To accomplish this we use a standardized measurement of Decentralized AI.
 
-DeAI Rates
+## DeAI Rates
 
 ### Expressions of inference/second:
 
@@ -91,8 +94,7 @@ The first measure of inference for the Yellowstone router will be tokens. Other 
 
 The block time for inference is 12 seconds, meaning a block of inference transactions is published and accounted for 5 times per minute.  
 
-### Compute Contract
-*Permissionless smart contract which receives emissions of MOR, tracks credits and debits to Providers, and pays Providers when called.
+## Definitions
 
 **“Users”**: defined as any entity that has a MOR address and sends Requests to the Router, using the compute. This can be a specific individual person sending Requests from a Morpheus desktop node, or it could be a bot, or it could be a company or 3rd party website which interacts with the Morpheus network on behalf of its end-users (end-users' use of inference aren't tracked or  considered in the compute contract, except when there is an inference failure). 
 
@@ -106,7 +108,7 @@ The block time for inference is 12 seconds, meaning a block of inference transac
 
 **“TokenMax”** below refers to a maximum number of Tokens accepted for payment by the Router. 
 
-**“RFC”**: stands for “Request for Compute.” A user sends an RFC to the Router, and specifies the [LLM] User desires access to as well as the [TokenMax], which is a cap on the acceptable LT’s in response. User will want to cap this because higher numbers = longer wait times for answers, and count more toward UserMax, which is limited each day. 
+**“RFC”**: stands for “Request for Compute.” A user sends an RFC to the Router, and specifies the [LLM] User desires access to as well as the [TokenMax], which is a cap on the acceptable T’s in response. User will want to cap this because higher numbers = longer wait times for answers, and count more toward [UserMax], which is limited each day. 
 
 
 ### Contract Protections
@@ -119,8 +121,8 @@ For the first year following the Capital Contract's bootsrtapping period, the to
 
 ## Workflow
 1) Users, Providers, and Router all create MOR pub keys (this is their identity, all messages signed as such). 
-2) If User hodls any balance of MOR, User may submit a signed Request for Processing “RFP” message to the Router. User specifies [LLM] and [TokenMax].
-3) Router prioritizes RFPs based on User’s MOR balance (solves sybil issue)
+2) If User hodls any balance of MOR, User may submit a signed Request for Compute “RFC” message to the Router. User specifies [LLM] and [TokenMax].
+3) Router prioritizes RFCs based on User’s MOR balance (solves sybil issue)
 4) Router selects Provider that supports the [LLM], prioritized based on lowest Bid per Token in MOR. 
 5) Router sends liveness check to Provider. If Pass, then
 6) Router connects User to the Provider
@@ -152,31 +154,31 @@ Open question 1: How should the Compute Budget be determined? The simplest idea 
 
 
 ## AccessRate
-The Morpheus network allocates the scarce resource of LT production through the concept of the “AccessRate”. The AccessRate determines how many LTs each MOR token can access per day. Unused access does not accrue. AccessRate is always displayed as a quantity of LTs per 1 MOR token (such as 1 MOR = 15,000 LT). AccessRate is determined in part by MaxLT, which quantifies the maximum number of LTs the network can purchase per day.
+The Morpheus network allocates the scarce resource of T production through the concept of the “AccessRate”. The AccessRate determines how many Ts each MOR token can access per day. Unused access does not accrue. AccessRate is always displayed as a quantity of Ts per 1 MOR token (such as 1 MOR = 15,000 T). AccessRate is determined in part by MaxT, which quantifies the maximum number of Ts the network can purchase per day.
 
-**AccessRate** = (1/MOR Supply) * MaxLT  
-**MaxLT** = ((MOR Compute Budget * MOR Price) / LT Price) * 1000  
-**UserMax** = MaxLT * User MOR balance
+**AccessRate** = (1/MOR Supply) * MaxT  
+**MaxT** = ((MOR Compute Budget * MOR Price) / T Price) * 1000  
+**UserMax** = MaxT * User MOR balance
 
 
 ### Example Assumptions: 
 **MOR Supply** = 10,000,000 MOR tokens  
 **MOR Compute Budget** = 3,000 MOR tokens per day  
 **MOR Price** = $20  
-**LT Price** = $0.002 per 1000 LTs  
+**T Price** = $0.002 per 1000 Ts  
 **User Balance** = 5 MOR tokens
 
 ### Example Result:
-**MaxLT** = 30,000,000,000 LTs (this is the maximum LTs the network can buy/produce each day)  
-**AccessRate** = 3,000 (thus each MOR token grants access to 3,000 LTs per day)  
-**UserMax** = 15,000 (a User with 5 MOR tokens can access up to 15,000 LT’s per day)
+**MaxT** = 30,000,000,000 Ts (this is the maximum Ts the network can buy/produce each day)  
+**AccessRate** = 3,000 (thus each MOR token grants access to 3,000 Ts per day)  
+**UserMax** = 15,000 (a User with 5 MOR tokens can access up to 15,000 Ts per day)
 
 
-- Each period (each day), Morpheus as a network has enough funds to buy X number of LTs from compute Providers. X is a function of the amount of MOR the Compute Contract is willing to spend (the “Compute Budget”) multiplied by the current MOR price divided by the market rate for LTs. 
-- If the Compute Budget is 3,000 MOR, and each is worth $20, then the network can buy (produce) up to $60,000 of LTs that day. If the going rate for 1,000 LTs is $0.002, then the network can buy up to 30 billion LTs (30m x 1000 LTs). 
-- That potential production of 30 billion LT’s is allocated by MOR balance, pro rata. Assume there are 10,000,000 MOR in existence. A user with 500 MOR tokens (0.005% of total) could freely access up to 1.5m LTs that day. 
+- Each period (each day), Morpheus as a network has enough funds to buy X number of Ts from compute Providers. X is a function of the amount of MOR the Compute Contract is willing to spend (the “Compute Budget”) multiplied by the current MOR price divided by the market rate for Ts. 
+- If the Compute Budget is 3,000 MOR, and each is worth $20, then the network can buy (produce) up to $60,000 of Ts that day. If the going rate for 1,000 Ts is $0.002, then the network can buy up to 30 billion Ts (30m x 1000 Ts). 
+- That potential production of 30 billion Ts is allocated by MOR balance, pro rata. Assume there are 10,000,000 MOR in existence. A user with 500 MOR tokens (0.005% of total) could freely access up to 1.5m Ts that day. 
 - So long as Compute Budget is at or below the emissions level, the Compute Contract cannot run out of MOR.  
-- In reality, most tokens will sit in wallets and exchanges, and only a fraction will be used to demand the LT production.
+- In reality, most tokens will sit in wallets and exchanges, and only a fraction will be used to demand the T production.
 
 ## Notes
 * Fundamental demand for MOR comes from Users who wish to have access to generative AI and other forms of compute on the Morpheus network. 
