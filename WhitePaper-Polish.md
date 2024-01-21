@@ -37,7 +37,7 @@ MOR jest nagradzany każdego dnia 24% dla społeczności, 24% dla kapitału, 24%
 
 Odzwierciedla to fakt, że aby Morpheus mógł się rozwijać, potrzebuje następujących elementów: 
 
-Społeczność - Twórcy tworzą frontendy / narzędzia i wprowadzają zastosowania do ekosystemu Morpheus. 
+Społeczność - Twórcy tworzą frontendy / narzędzia i wprowadzają użytkowników do ekosystemu Morpheus.
 
 Kapitał - zapewnia finansowanie obliczeń i kodu. 
 
@@ -121,16 +121,16 @@ Poniżej przedstawiono ujednoliconą krzywą podaży MOR pokazującą pierwszy o
 Pełny węzeł Morpheus jest dostarczany z portfelem lub użytkownik może podłączyć swój istniejący portfel. Umożliwia to użytkownikowi podpisywanie i wysyłanie transakcji zalecanych przez jego Smart Agenta. Tak więc użytkownicy będą mogli uczestniczyć w dowodach za pośrednictwem oprogramowania Morpheus. Dostawcy kapitału nie są jednak zobowiązani do posiadania pełnego węzła. Mogą oni bezpośrednio wchodzić w interakcje z Smart Contractami na Ethereum / Arbitrum za pomocą stETH.
 
 ## Dowód Kapitału i Nagroda:
-Definicją Dostawcy Kapitału jest ktoś, kto dostarcza zysk stETH do sieci Morpheus, która staje się płynnością należącą do protokołu. Ten Smart Contract Dostawcy Kapitału zapewni 50% zysku stETH wyprodukowanego dla funkcji swap Morpheus. Swap kupuje tokeny MOR od automatycznego animatora rynku (AMM), a następnie dodaje je do puli AMM, a pozostałe 50% zysku stETH zostaje zablokowane w AMM jako dostawca płynności. Zapewni to płynność wszystkim programistom, członkom społeczności i dostawcom usług obliczeniowych. 
+Definicją Dostawcy Kapitału jest ktoś, kto dostarcza zysk stETH do sieci Morpheus, która staje się Protocol Owned Liquidity (PoL). Ten Smart Contract Dostawcy Kapitału zapewni 50% zysku stETH wyprodukowanego dla funkcji swap Morpheus. Swap kupuje tokeny MOR od Automatycznego Animatora Rynku (AMM), a następnie łączy je z 50% zysku stETH i blokuje w puli płynności AMM jako PoL. Zapewni to płynność wszystkim programistom, członkom społeczności i dostawcom usług obliczeniowych. Opłaty uzyskane z pozycji płynności są ponownie inwestowane w pulę, zapewniając stały wzrost płynności. 
 
-Cały zysk stETH uzyskany z depozytu jest konwertowany na płynność należącą do protokołu (PoL). Zysk pozostaje jako PoL na czas nieokreślony, ale możesz wypłacić stETH w dowolnym momencie.
+W ten sposób cały zysk stETH uzyskany z depozytu jest konwertowany na płynność posiadaną przez protokół (PoL). Zysk pozostaje jako PoL na czas nieokreślony, ale możesz wypłacić stETH w dowolnym momencie.
 
 W rezultacie Dostawca Kapitału otrzyma tokeny MOR każdego dnia proporcjonalnie do ich całkowitego zysku stETH. Na przykład, jeśli jest 100 dostawców kapitału, z których każdy wniósł 1 stETH zysku w dniu 1 po uruchomieniu sieci, to każdy z nich otrzyma 1% z 3 456 tokenów MOR każdego dnia = 34,56 MOR.
 
 Zaproponowano, aby odnieść się do tego procesu wkładu w zysk, swapu i dodawania płynności jako "TCM". Skrót od "techno-capital machine" na cześć filozofa e/acc Beffa Jezosa. 
 
 ## Dowód Kodu, Rejestracja i Nagroda:
-Definicja Kodera to osoba, która pobrała pełny węzeł Morpheus, podłączyła swój portfel i dodała agenta, smart contract lub inne oprogramowanie do sieci Morpheus.
+Definicja Kodera to osoba, która pobrała i uruchomiła pełny węzeł Morpheus, podłączyła swój portfel i dodała agenta, smart contract lub inne oprogramowanie do Morpheus Network.
 
 Koder wyśle transakcję MOR do Smart Contractu kodera, aby zarejestrować swojego agenta / inteligentny kontrakt lub oprogramowanie. 
 Koder zawrze w notatce transakcji następujące metadane. 
@@ -146,23 +146,14 @@ Gdy pojawią się wyspecjalizowani agenci, narzędzia lub łańcuchy (sekwencje 
 Wiele wiodących badań przeprowadzonych w tym obszarze "Proof of Contribution" zostało przeprowadzonych przez dobrych ludzi z TEA Protocol. W tym Max Howell, twórca Home Brew. Link do artykułu ze szczegółami. Morpheus może rozważyć wykorzystanie TEA po jego uruchomieniu w 2024 roku.
 
 ## Dowód Obliczeniowy, Rejestracja i Nagroda::
-Definicja dostawcy Obliczeń polega na uzyskaniu pełnego węzła Morpheus, podłączeniu portfela i przygotowaniu się do otrzymywania żądań API / LLM / Obliczeń od innych użytkowników Morpheus. Dostarczony Obliczeń można obliczyć, dołączając podpisaną transakcję wygenerowaną przez Smart Agent ze zwrotem danych wyjściowych z transakcji MOR.
-
-Dostawca Obliczeń obliczeniowych wyśle transakcję MOR do Smart Contractu Dostawca Obliczeń, aby zarejestrować punkt końcowy API do odbierania żądań. 
-Dostawca Obliczeń zawrze w notatce transakcji następujące metadane. 
-- A. Link IPFS do ich punktu końcowego API w polu memo transakcji MOR podczas rejestracji. 
-- B. Podpis kryptograficzny, podobny do tego, w jaki sposób programiści podpisują/uwierzytelniają wydania aplikacji.
-- C. Numer wersji oprogramowania Morpheus, którego używają.
-- D. Skrót stanu programu, aby użytkownicy mogli sprawdzić, czy jest to prawidłowa i niezmieniona kopia.
-
-Proporcjonalne opłaty transakcyjne MOR spalone przez każdego Dostawcę Obliczeń służą jako dowód statusu Dostawcy Obliczeń i każdego dnia zarabiają część tokenów MOR. 
-
-Na przykład, jeśli w dniu 1 po uruchomieniu sieci jest 100 Dostawców Obliczeń, to każdy z nich otrzymuje proporcjonalną nagrodę w oparciu o ilość MOR, które spalili za pośrednictwem opłat. W tym przypadku, zakładając, że każdy ze 100 dostawców obliczeniowych spalił 100 MOR, to 1% z 3 456 tokenów MOR każdego dnia = 34,56 MOR.
+W Yellowstone Compute Model sieć Morpheus płaci Postawcom tylko za Obliczenia faktycznie dostarczone w ramach konkurencyjnego procesu przetargowego i przydziela ograniczoną produkcję tokenów proporcjonalnie posiadaczom Tokenów MOR na podstawie salda, a nie płatności. To drastycznie poprawia UX, jednocześnie minimalizując podatność na Sybil. Yellowstone zawiera również ważne wskaźniki czasu i test Pass/Fail, aby zapewnić, że dostawcy są odpowiednio szybcy i dokładni. Yellowstone zachowuje prywatność, nigdy nie wysyłając podpowiedzi ani wyników za pośrednictwem Routera i minimalizuje transakcje blockchain, aby umożliwić działanie na dużą skalę. Dzięki temu modelowi MOR osiąga fundamentalną wartość, ponieważ umożliwia wieczny (choć nie nieograniczony) dostęp do obliczeń bez uprawnień, bez konieczności dokonywania transakcji na wnioskowanie.
 
 Aby zakwalifikować się do otrzymywania żądań Obliczeń, adres Dostawcy Obliczeń musi posiadać tokeny HODL MOR. Żądania będą kierowane do interfejsu API Dostawców Obliczeń proporcjonalnie do tokenów MOR, które hodlują, w porównaniu do wszystkich innych zarejestrowanych Dostawców Obliczeń obliczeniowych.
 
+Szczegóły omówiono w dokumencie Yellowstone Compute Model: https://github.com/MorpheusAIs/Morpheus/blob/main/Yellowstone%20Compute%20Model.md 
+
 ## Dowód, Rejestracja i Nagrody dla Community Buildera:
-Definicja Community Builder polega na pobraniu pełnego węzła Morpheus, podłączeniu portfela i korzystaniu z Morpheus API w celu zapewnienia interfejsu użytkownika i narzędzi programistycznych. Ich wkład można obliczyć poprzez uwzględnienie podpisanej transakcji wygenerowanej przez inteligentnego agenta ze zwrotem danych wyjściowych z transakcji MOR.
+Definicja Community Builder polega na pobraniu i uruchomieniu pełnego węzła Morpheus, podłączeniu portfela i korzystaniu z Morpheus API w celu zapewnienia interfejsu użytkownika i narzędzi programistycznych. Ich wkład można obliczyć poprzez uwzględnienie podpisanej transakcji wygenerowanej przez Smart Agenta ze zwrotem wyniku z transakcji MOR.
 
 Community Builder wyśle transakcję MOR do inteligentnego kontraktu Community Builder, aby zarejestrować punkt końcowy API do odbierania żądań. 
 Community Builder zawrze w notatce transakcji następujące metadane. 
@@ -179,7 +170,7 @@ Na przykład, jeśli w pierwszym dniu po uruchomieniu sieci jest 100 Community B
 ![UpdatedDiagram2UserFlow](https://github.com/MorpheusAIs/Morpheus/blob/fffa44133f5926fc45cf6638313d2bf3338005f0/08%20Morpheus%20WhitePaper-Polish.png)
 
 ## Nagrody Morpheus Dostarczane przez Smart Contract na Ethereum Layer 2 
-Tokeny Morpheus (MOR) będą pierwotnie przyznawane w Layer 1 Ethereum, a na Arbitrum będzie istniał opakowany token MOR (wMOR) do celów płatności i innych działań związanych z użytecznością MOR.
+Deponowanie stETH w celu uzyskania nagród będzie dokonywane w sieci Ethereum mainnet, gdy Tokeny Morpheus (MOR) będą przyznawane na Ethereum Layer 2 Arbitrum w celu dokonywania płatności i innych działań związanych z narzędziami MOR.
 
 Należy zauważyć, że Morpheus nie musi odkładać nagród MOR na konsensus blockchain lub realizację transakcji w rozproszonej księdze dzięki budowaniu na Ethereum i drugiej layer Arbitrum. 
 
