@@ -2,7 +2,7 @@
 
 # Morpheus “Yellowstone” Compute Model
 ### Erik Voorhees
-### January 3rd 2023
+### January 3rd 2024
 
 A suggested revision to the Morpheus tokenomics structure for compute incentivization on a decentralized AI network. 
 View on Notion: https://defiant-wolfsbane-830.notion.site/Morpheus-Yellowstone-Compute-Model-2ca9b4e7e1374c898937fdbd1b964cc1
@@ -94,19 +94,19 @@ The block time for inference is 12 seconds, meaning a block of inference transac
 ### Compute Contract
 *Permissionless smart contract which receives emissions of MOR, tracks credits and debits to Providers, and pays Providers when called.
 
-“Users”: defined as any entity that has a MOR address and sends Requests to the Router, using the compute. This can be a specific individual person sending Requests from a Morpheus desktop node, or it could be a bot, or it could be a company or 3rd party website which interacts with the Morpheus network on behalf of its end-users (end-users' use of inference aren't tracked or  considered in the compute contract, except when there is an inference failure). 
+**“Users”**: defined as any entity that has a MOR address and sends Requests to the Router, using the compute. This can be a specific individual person sending Requests from a Morpheus desktop node, or it could be a bot, or it could be a company or 3rd party website which interacts with the Morpheus network on behalf of its end-users (end-users' use of inference aren't tracked or  considered in the compute contract, except when there is an inference failure). 
 
-“Providers”: defined as any entity, running a node that provides compute resources, has a MOR address and offers Token bids through the Router. When a Provider wins the bid from the Router, Provider provides the compute resource (GPUs, etc) for various AI models to the User. 
+**“Providers”**: defined as any entity, running a node that provides compute resources, has a MOR address and offers Token bids through the Router. When a Provider wins the bid from the Router, Provider provides the compute resource (GPUs, etc) for various AI models to the User. 
 
-“Router”:  defined as a software application that has a MOR address and negotiates the 2-sided market between Users and Providers. The Router registers and tracks Provider addresses and bids, processes Requests from Users, records [miliseconds] and Pass/Fail tests of processed Requests, and instructs the Compute Contract to credit eligible Providers for payment in MOR. The Router never sends or receives MOR transactions (nor transactions on any blockchain). The Router never sees the content of a Request, nor the response. 
+**“Router”**:  defined as a software application that has a MOR address and negotiates the 2-sided market between Users and Providers. The Router registers and tracks Provider addresses and bids, processes Requests from Users, records [miliseconds] and Pass/Fail tests of processed Requests, and instructs the Compute Contract to credit eligible Providers for payment in MOR. The Router never sends or receives MOR transactions (nor transactions on any blockchain). The Router never sees the content of a Request, nor the response. 
 
-“Compute Contract”: defined as a smart contract that has a MOR address, receives all emitted MOR allocated to the Compute bucket, tracks amounts owed to eligible Providers, and pays MOR to eligible Providers when Providers request payment.
+**“Compute Contract”**: defined as a smart contract that has a MOR address, receives all emitted MOR allocated to the Compute bucket, tracks amounts owed to eligible Providers, and pays MOR to eligible Providers when Providers request payment.
 
-“Token” (“T”): is the smallest amount of letters or pixels bid on vi the router. Often this is ~4 characters of text, or 5x5 pixels of image, etc. This is not to be confused with blockchain “tokens” such as ERC20 tokens or the MOR token itself. 
+**“Token” (“T”)**: is the smallest amount of letters or pixels bid on via the router. Often this is ~4 characters of text, or 5x5 pixels of image, etc. This is not to be confused with blockchain “tokens” such as ERC20 tokens or the MOR token itself. 
 
-“TokenMax” below refers to a maximum number of Tokens accepted for payment by the Router. 
+**“TokenMax”** below refers to a maximum number of Tokens accepted for payment by the Router. 
 
-“RFC”: stands for “Request for Compute.” A user sends an RFC to the Router, and specifies the [LLM] User desires access to as well as the [TokenMax], which is a cap on the acceptable LT’s in response. User will want to cap this because higher numbers = longer wait times for answers, and count more toward UserMax, which is limited each day. 
+**“RFC”**: stands for “Request for Compute.” A user sends an RFC to the Router, and specifies the [LLM] User desires access to as well as the [TokenMax], which is a cap on the acceptable LT’s in response. User will want to cap this because higher numbers = longer wait times for answers, and count more toward UserMax, which is limited each day. 
 
 
 ### Contract Protections
@@ -127,17 +127,17 @@ For the first year following the Capital Contract's bootsrtapping period, the to
 7) User sends Query ([LLM],[prompt]) to Provider 
 8) Provider computes Query, sends Result to User
 9) User reports Time [milliseconds] between Step 4 & 5, [Tokens] delivered, and Pass/Fail to Router
-10) Router instructs Compute Contract to credit Provider with MOR if [milliseconds] per [oken] is no worse than X% below mean of past Z queries for that [LLM] and if User reported [Pass]. 
-(11) (Some time later) Provider requests payment of MOR from Compute Contract and Compute Contract sends MOR payment if valid (first blockchain TX so far, can be batched).
+10) Router instructs Compute Contract to credit Provider with MOR if [milliseconds] per [Token] is no worse than X% below mean of past Z queries for that [LLM] and if User reported [Pass].
+11) (Some time later) Provider requests payment of MOR from Compute Contract and Compute Contract sends MOR payment if valid (first blockchain TX so far, can be batched).
 
 ![ComputeContractImage2](https://github.com/MorpheusAIs/Morpheus/assets/1563345/e66ea20c-9851-4f9e-9caa-66c6d798c462)
 
 ## Outcome
-* User received fast Result for her Query, and paid nothing (this will lead to amazing UX and thus adoption). Solves Goal 1.
-* Compute Contract paid for Compute through a competitive bidding process, and a check for quality/satisfaction from the User who ordered it. Solves Goal 2.
-* Provider received money (MOR) from Compute Contract so long as response was fast enough. Provider received exactly what she asked for to provide the compute. If her ask is too high, others will bid lower, thus the system is efficient and will drive down Provider prices toward the cost of base electricity.  Solves Goal 3
-* Number of on-chain transactions was minimized (many thousands of Queries can flow without a single on-chain TX). Solves Goal 4
-* The ability to get fast, free compute drives the demand for MOR tokens to be held by Users. Solves Goal 5
+* User received fast Result for her Query, and paid nothing (this will lead to amazing UX and thus adoption). **Solves Goal 1.**
+* Compute Contract paid for Compute through a competitive bidding process, and a check for quality/satisfaction from the User who ordered it. **Solves Goal 2.**
+* Provider received money (MOR) from Compute Contract so long as response was fast enough. Provider received exactly what she asked for to provide the compute. If her ask is too high, others will bid lower, thus the system is efficient and will drive down Provider prices toward the cost of base electricity.  **Solves Goal 3**
+* Number of on-chain transactions was minimized (many thousands of Queries can flow without a single on-chain TX). **Solves Goal 4**
+* The ability to get fast, free compute drives the demand for MOR tokens to be held by Users. **Solves Goal 5**
 * Step 6 & 7 provide reasonable privacy (Query never touches the Router, nor does Result). Providers are selected somewhat randomly, and never know identity of User other than IP address. Better privacy can be later achieved with TOR + FHE
 * MOR balance was reduced from Compute Contract. Contract will be solvent so long as MOR paid < MOR earned per period from emissions.
 * If User sends an RFC which exceeds User’s UserMax, the Router will reject the request.
@@ -154,29 +154,29 @@ Open question 1: How should the Compute Budget be determined? The simplest idea 
 ## AccessRate
 The Morpheus network allocates the scarce resource of LT production through the concept of the “AccessRate”. The AccessRate determines how many LTs each MOR token can access per day. Unused access does not accrue. AccessRate is always displayed as a quantity of LTs per 1 MOR token (such as 1 MOR = 15,000 LT). AccessRate is determined in part by MaxLT, which quantifies the maximum number of LTs the network can purchase per day.
 
-AccessRate = (1/MOR Supply) * MaxLT
-MaxLT = ((MOR Compute Budget * MOR Price) / LT Price) * 1000
-UserMax = MaxLT * User MOR balance
+**AccessRate** = (1/MOR Supply) * MaxLT  
+**MaxLT** = ((MOR Compute Budget * MOR Price) / LT Price) * 1000  
+**UserMax** = MaxLT * User MOR balance
 
 
 ### Example Assumptions: 
-MOR Supply = 10,000,000 MOR tokens
-MOR Compute Budget = 3,000 MOR tokens per day
-MOR Price = $20
-LT Price = $0.002 per 1000 LTs
-User Balance = 5 MOR tokens
+**MOR Supply** = 10,000,000 MOR tokens  
+**MOR Compute Budget** = 3,000 MOR tokens per day  
+**MOR Price** = $20  
+**LT Price** = $0.002 per 1000 LTs  
+**User Balance** = 5 MOR tokens
 
 ### Example Result:
-MaxLT = 30,000,000,000 LTs (this is the maximum LTs the network can buy/produce each day)
-AccessRate = 3,000 (thus each MOR token grants access to 3,000 LTs per day)
-UserMax = 15,000 (a User with 5 MOR tokens can access up to 15,000 LT’s per day)
+**MaxLT** = 30,000,000,000 LTs (this is the maximum LTs the network can buy/produce each day)  
+**AccessRate** = 3,000 (thus each MOR token grants access to 3,000 LTs per day)  
+**UserMax** = 15,000 (a User with 5 MOR tokens can access up to 15,000 LT’s per day)
 
 
-Each period (each day), Morpheus as a network has enough funds to buy X number of LTs from compute Providers. X is a function of the amount of MOR the Compute Contract is willing to spend (the “Compute Budget”) multiplied by the current MOR price divided by the market rate for LTs. 
-If the Compute Budget is 3,000 MOR, and each is worth $20, then the network can buy (produce) up to $60,000 of LTs that day. If the going rate for 1,000 LTs is $0.002, then the network can buy up to 30 billion LTs (30m x 1000 LTs). 
-That potential production of 30 billion LT’s is allocated by MOR balance, pro rata. Assume there are 10,000,000 MOR in existence. A user with 500 MOR tokens (0.005% of total) could freely access up to 1.5m LTs that day. 
-So long as Compute Budget is at or below the emissions level, the Compute Contract cannot run out of MOR.  
-In reality, most tokens will sit in wallets and exchanges, and only a fraction will be used to demand the LT production.
+- Each period (each day), Morpheus as a network has enough funds to buy X number of LTs from compute Providers. X is a function of the amount of MOR the Compute Contract is willing to spend (the “Compute Budget”) multiplied by the current MOR price divided by the market rate for LTs. 
+- If the Compute Budget is 3,000 MOR, and each is worth $20, then the network can buy (produce) up to $60,000 of LTs that day. If the going rate for 1,000 LTs is $0.002, then the network can buy up to 30 billion LTs (30m x 1000 LTs). 
+- That potential production of 30 billion LT’s is allocated by MOR balance, pro rata. Assume there are 10,000,000 MOR in existence. A user with 500 MOR tokens (0.005% of total) could freely access up to 1.5m LTs that day. 
+- So long as Compute Budget is at or below the emissions level, the Compute Contract cannot run out of MOR.  
+- In reality, most tokens will sit in wallets and exchanges, and only a fraction will be used to demand the LT production.
 
 ## Notes
 * Fundamental demand for MOR comes from Users who wish to have access to generative AI and other forms of compute on the Morpheus network. 
