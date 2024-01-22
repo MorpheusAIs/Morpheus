@@ -12,7 +12,7 @@ Végül a átlagos felhasználó beszélhet Okos Ügynökével normál nyelven, 
 
 Annak érdekében, hogy az Okos Ügynökök mindenki számára elérhetővé váljanak, és növeljük az infrastruktúrájuk decentralizációját, javasoljuk a Morpheus hálózat kifejlesztését. A Morpheus hálózat tartalmazni fog egy tisztességesen indított token-t (a "MOR" token) az összes négy kulcsfontosságú hálózati résztvevő ösztönzésére. Ezek a következők: az interfészeket készítő építők közössége, a Morpheus szoftver/ügynökök fejlesztői, a likviditást hozzáadó tőkebiztosítók és azok, akik számítási kapacitást, tárolóhelyet és sávszélességet szolgáltatnak. A Bitcoin és az Ethereum története jól mutatta, hogy a szűkös digitális tokenekért folytatott szabad és nyílt verseny idővel skálázható infrastruktúrát biztosíthat egy központi blokklánc számára.
 
-![MorpheusNetworkDiagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/f0960e25-80e3-42ed-aa1f-ad9792eb672d)
+![MorpheusNetworkDiagram](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img1-Hungarian.png)
 
 ## Összefüggés és Történelem
 Az OpenAI, a Microsoft és a Google ilyen nagyméretű, zárt forrású nyelvi modelleket üzemeltetnek, díjfizetési licencdíjat számolnak fel ügyfeleknek, és az ügyféladataikat monetizálják. Ezek a modellek cenzúrázottak, törékenyek és falazott kertekben működnek. Erős igény van egy ingyenesen elérhető, nyílt forráskódú nagy nyelvi modellre. Az utóbbi időben olyan nyílt forráskódú LLM-ek, mint a Llama, Falcon és mások, megjelentek, és gyorsan közelítik a zárt forráskódú versenytársaik pontosságát.
@@ -46,7 +46,7 @@ Kóderek - Intelligenciát szolgáltatnak a frontendek, a tőke és a számítá
 
 A MOR Token kínálata maximum 42 000 000 tokenre korlátozódik, amelyek valaha is létezni fognak. A elosztás mind a négy csoporttal kezdődik, amelyek tokeneket szereznek a munka bizonyítékával (munkaerő) és a tőke bizonyítékával (tőke) a hálózatnak. Nincs előbányászás. Nincs korai tokenértékesítés. Csak egy tisztességes indítás.
 
-![MOREmissionsCurve2](https://github.com/MorpheusAIs/Morpheus/assets/1563345/3514217c-50ed-4639-8c5d-87ca5cfb5d1b)
+![MOREmissionsCurve2](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img2-Hungarian.png)
 
 A blokktámogatás 14 400 MOR-al kezdődik naponta, majd naponta 2,468994701 MOR-al csökken, amíg a jutalom el nem éri a 0-t a 5 833. napon. Ekkorra (körülbelül 16 év múlva), feltéve, hogy a Morpheus széles körben használt, a díjak átveszik a fő ösztönző szerepét. Díjak fizetése a felhasználóknak az adataikért, díjak a számítás-szolgáltatóknak, díjak a tőkebiztosítóknak és díjak a kódereknek.
 
@@ -58,7 +58,7 @@ Naponta 14 400 token egyenletes elosztásban a közösségi felhasználók, a t�
 - 3 456 token a közösségnek. Bizonyíték frontend alkalmazások és eszközök építésére, amelyek bevonják a felhasználókat.
 A védelmi erőforrásokra fenntartott maradékkal: 576 token naponta erre a célra.
 
-![5050version3](https://github.com/MorpheusAIs/Morpheus/assets/1563345/c9fe763f-d4e4-4069-b9c9-75e0a777c3ad)
+![5050version3](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img3-Hungarian.png)
 
 ## A MOR Token Hasznossága
 A cél az, hogy a MOR széles körű hasznosságot biztosítson a Morpheus hálózat sok funkciójában. Ennek eredményeként a MOR token használata az on-chain elszámolási mechanizmus lehetőségét kínálja a szoftver valós használatán alapuló jutalmak kiszámítására.
@@ -81,7 +81,7 @@ Minden projekt fejlesztési fázisokon megy keresztül. Fontos, hogy kezdetben f
 
 Megjegyzés: Ez nem egy idővonal. Inkább mindegyik fázis a ciklus egy részének leírása. Lehet, hogy évekbe telik, amíg a közösség kifejlődik és érik a különböző fázisokon keresztül, és a blokktámogatás körülbelül 16 év után lejár. Ez a hosszú elosztási ütemterv azért van, hogy lehetőséget adjon a tokenek széles körű globális jutalmazására. Emellett a blokktámogatás sima napi csökkenése éveken keresztül minden résztvevőnek időt ad a méretarány eléréséhez és az előző támogatott jutalmakból való átmenethez, a keresett díjakon keresztül való működéshez.
 
-![MOREmissionSchedule](https://github.com/MorpheusAIs/Morpheus/assets/1563345/94c96cb0-b6e4-4c63-be46-39088c91e168)
+![MOREmissionSchedule](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img4-Hungarian.png)
 
 ## MOR Állandó Kiadásai
 Mióta elindult a Bitcoin, az emberek vitáznak arról, hogy "mi fog történni, amikor a blokktámogatás végül megszűnik?" Annak érdekében, hogy elkerüljük ezt a haszontalan vitát a Morpheus összefüggésében, és hogy továbbra is összehangoljuk az új kódereket, közösséget, számítási és tőke-szolgáltatókat a jövőben, javasoljuk a MOR tokenek "állandó kiadását". Ez a MOR állandó kiadás akkor kezdődik, amikor az utolsó MOR tokeneket kibocsátják a 5,833. napon a kiosztási ütemterv szerint.
@@ -98,16 +98,16 @@ Ez a folyamat örökké ismétlődik a jövőbe.
 
 Hosszú távú eredmény. Az éves MOR jutalmak kb. 1% (a MOR akkoriban forgalomban lévő számához viszonyítva) áll rendelkezésre a jövőbeli kóderek, számítási, közösségi és tőke számára.
 
-![MaxMORScenario25](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/81c7794a-b5bc-4a9e-bb2d-1f28b98ea079)
+![MaxMORScenario25](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img5-Hungarian.png)
 
 **FONTOS MEGJEGYZÉS:** Ez nem változtatja meg a 42 millió MOR kemény ellátási limit természetét.
 Mivel az állandó kiadási ütemterv meghatározás szerint csak a elégett MOR tokenek egy része, a MOR token csak minden 5,833 napos időszakban válik egyre ritkábbá.
 
-![MOR25ScenarioV9](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/4813cd02-b104-4a0c-893b-a7fd329fe2a3)
+![MOR25ScenarioV9](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img6-Hungarian.png)
 
 Lent látható a egységes MOR Ellátási Görbe, amely az első 5,833 napos időszakot mutatja, és hozzáadja a hosszú állandó kiadásokat a 17. évtől a 256. évig. A MOR példáját feltételezve, hogy az elégett MOR átlagos aránya az érátumokon keresztül 25%.
 
-![MORSupplyCurve20231019](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/8994c389-dad1-4e46-9b63-e048da8ef172)
+![MORSupplyCurve20231019](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img7-Hungarian.png)
 
 ## Közösség, Kód, Számítás és Tőke Bizonyítéka
 A Morpheus teljes csomagja tartalmaz egy pénztárcát, vagy a felhasználó csatlakoztathatja meglévő pénztárcáját. Ez lehetővé teszi a felhasználók számára, hogy aláírják és elküldjék Smart Agentjük által javasolt tranzakciókat. Tehát a felhasználók képesek lesznek részt venni a Morpheus szoftveren keresztül a bizonyítékokban. A Tőke-szolgáltatóknak például nincs szükségük teljes csomagra. Közvetlenül is interakcióba léphetnek az Ethereum / Arbitrum Smart Contractekkel, stETH használatával.
@@ -163,7 +163,7 @@ A Közösségépítő által elégetett pro-rata MOR tranzakciós díjak szolgá
 Például, ha az indításkor, azaz a hálózat elindulásakor 100 Közösségépítő van, akkor mindenki pro-rata jutalmat kap az elégetett MOR mennyiségének alapján a díjak által. Ebben az esetben feltételezve, hogy az 100 Közösségépítő mindegyike elégetett 100 MOR-t, akkor a napi 3,456 MOR token 1% -a = 34.56 MOR-t kapna minden egyes nap.
 
 ## Morpheus Felhasználói Diagram
-![UpdatedDiagram2UserFlow](https://github.com/MorpheusAIs/Morpheus/assets/1563345/a02468a7-9284-4ce5-b7e3-f32f476ff9f1)
+![UpdatedDiagram2UserFlow](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img8-Hungarian.png)
 
 ## Morpheus Jutalmak Szállítva a Smart Contract Által Ethereum Layer 2-n
 
