@@ -242,5 +242,4 @@ Ez a dokumentum ingyenesen adományozva lett a Smart Agent közösségnek, és n
 Engedd szabaddá az elméd.
 
 Morpheus
-
 --------------------------------------------------------------------
