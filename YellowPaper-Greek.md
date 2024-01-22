@@ -22,6 +22,7 @@ b227e7bcb21ec9e8e2b4bf9510a2e1f224953fe5
 ---------
 
 Πρώτη αλληλεπίδραση με το Morpheus στις 22 Οκτωβρίου 2023.
+
 ![FirstInteractionWithMorpheus20231022](https://github.com/MorpheusAIs/Morpheus/assets/1563345/35509f3a-4346-4f58-bb60-f7881fd10f7e)
 
 ## Έξυπνα Συμβόλαια Morpheus
