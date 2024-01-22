@@ -4,10 +4,11 @@ Starting point Decentralize AI Summit repository including the Morpheus Request 
 https://github.com/DecentralizeAI/MRC
 
 ## Morpheus Decentralized AI Ecosystem
-Website: https://www.decentralizeai.org
-X Profile: https://x.com/decentralaiorg/status/1726684615912595866?s=46
-Event 01 in Austin December 9th 2023: https://lu.ma/dofjyni8
-List of resources for building Decentralized AI.
+- Website: https://www.decentralizeai.org
+- X Profile: https://x.com/decentralaiorg/status/1726684615912595866?s=46
+- Event 01 in Austin December 9th 2023: https://lu.ma/dofjyni8
+
+## List of resources for building Decentralized AI.
 
 **Incentives, Payments, Funding**
 Morpheus: https://mor.org/
