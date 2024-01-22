@@ -139,7 +139,13 @@ The Coder will include in the memo of the transaction the following metadata.
 - C. The version number of the software.
 - D. A hash of the state of the program, so users can check it is a valid and unaltered copy.
 
-The contributors to the Morpheus codebase are rewarded in proportion to all the cumulative development done on the repository as gauged by Full Time Equivalent (FTE) work contributed. For example, if there are 10 coders each having contributed 10% of the FTE time when the network launches, then each one gets 10% of the 3,456 MOR tokens each day = 345.6 MOR. This calculation is updated each month based on the cumulative FTE time contributions of the current mainnet version of the Morpheus software.
+The contributors to the Morpheus codebase are rewarded in proportion to all the cumulative development done on the repository as gauged by Full Time Equivalent (FTE) work contributed. For example, if there are 10 coders each having contributed 10% of the FTE time (denominated in hours) when the network launches, then each one gets 10% of the 3,456 MOR tokens each day = 345.6 MOR. This calculation is updated each month based on the cumulative FTE time (denominated in hours) contributions of the current mainnet version of the Morpheus software.
+
+The concept is here is NOT based on the Labor Theory of Value. It doesn't matter how many hours are worked but rather the value produced by the work. That's why the repository owner has to actually merge in the code (the product of the work) for it to count toward rewards. The repository owner acts as the "customer" in the marketplace. 
+
+If the Code contributor is asking too many hours for the Contribution or the quality of the contribution can't be qualified or is of low quality its likely to be rejected by the repository owner. And while anyone "can" make a repository it takes a lot of work to maintain and also attract people to contribute to your repository over others, so the market is likely to focus on the best repositories with the most contributors and the best code resulting.
+
+Open source and free market economics for the win.
 
 Once there are specialized agents or tools or chains (sequence of prompts/calls to an LLM) interoperable with Morpheus, then half (50%) of the rewards will go to their developers. The reward will be calculated in proportion to the usage of those agents. For example, if there are 10 developers who built 10 agents each generating 10% of the agent usage on the Morpheus network. The Morpheus smart contract will calculate those usage statistics via MOR transactions. Then the Morpheus software coders would earn 50% of the MOR reward and each developer of a specialized agent would get 5% of the tokens = 172.8 MOR per developer in this example.
 
