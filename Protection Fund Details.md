@@ -2,16 +2,26 @@
 
 ## Introduction
 The Morpheus white paper sets aside 4% of all MOR emissions for the purpose of a “Protection Fund” and delegates to the Code Providers to act as oracles in the case of its resources being needed.
+Type of actions:
+- Payment of buy bounty to avoid attacks.
+- Payment of audits before new Smart Contracts are deployed.
+- Halting the Smart Contracts in case of an on going attack.
+- Signaling and Mechansim for payout after an attack.
+- Plan In Case of Significant Loss Event (Hard Fork Scenario)
 
 ## Pre-Defined Cases Triggering Minor Payouts
 Before the Smart Contracts go live on the Ethereum network here defined are the conditions under which the Protection Fund will pay out MOR or stETH.
 
 ## Types of Payments:
 1. Bugs discovered and responsibly disclosed to the developers of a Morpheus Capital, Code, Compute, Community or Protection Fund Smart Contract.
-2. User losses of MOR or stETH in the case of an exploited Morpheus Smart Contract.
-3. Making whole providers who didn’t receive MOR emissions in the case of a failure of the Morpheus Smart Contract.
+2. Payment of audits before new Smart Contracts are deployed on the Morpheus network.
+3. User losses of MOR or stETH in the case of an exploited Morpheus Smart Contract.
+4. Making whole providers who didn’t receive MOR emissions in the case of a failure of the Morpheus Smart Contract.
 
 Amounts of payments from the production fund should be in proportion to the bug, loss or emission error.
+
+## Halting Conditions For Smart Contracts
+Before payments for damages can figured out, there should be conditions that trigger a halt of the Smart Contracts in the case of an on going attack.
 
 ## Signaling & Mechanism For Payout
 Code Providers will participate in signaling when a payment should be triggered. First an incident will be detailed and posted on the GitHub repository of the affected Smart Contract. Including a list of affected addresses and amounts of MOR and / or stETH.
