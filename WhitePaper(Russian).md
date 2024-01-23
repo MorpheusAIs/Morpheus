@@ -18,7 +18,7 @@ Morpheus предназначен для стимулирования перво
 ![MorpheusNetworkDiagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/f0960e25-80e3-42ed-aa1f-ad9792eb672d)
 
 ## Контекст и история
-Incumbents such as OpenAI, Microsoft, and Google are running close-sourced large language models, charging customers license fees, and monetizing customer data. These models are censored, fragile, and operate in walled gardens. There is a strong demand for an open-source large language model available for free. Llama, Falcon, and other open-source LLMs have recently been released and are rapidly approaching the accuracy of their close-sourced competitors.
+Такие компании, как OpenAI, Microsoft и Google, используют крупные языковые модели с закрытым исходным кодом, взимают с клиентов плату за лицензию и монетизируют данные о клиентах. Эти модели подвергаются цензуре, хрупки и работают в огороженных садах. Существует большая потребность в крупной бесплатной языковой модели с открытым исходным кодом. Недавно были выпущены Llama, Falcon и другие LLM с открытым исходным кодом, которые быстро приближаются по точности к своим конкурентам с закрытым исходным кодом.
 
 В настоящее время этим LLM с открытым исходным кодом не хватает стандартного графического интерфейса, с помощью которого пользователи могли бы общаться с ними, API для разработчиков, облачного решения для перемещения между устройствами и способа управления пользовательскими данными и процессом восстановления. Именно здесь на помощь приходит протокол Smart Agent Protocol, который представляет собой LLM с открытым исходным кодом, работающий локально и управляемый с помощью пользовательского Web3-кошелька.
 
