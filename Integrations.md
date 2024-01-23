@@ -25,6 +25,17 @@ Akash
 **Forges / Agent Builders**
 Langchain / Langsmith
 
+**Data**
+Syntropy
+Jackal Protocol
+
+**Smart Contracts**
+Syntropy
+Arbitrum 
+
+**Inference**
+Livepeer
+
 ## Morpheus Request for Comments (MRC)
 List of proposals for specific technical functions and integrations for Decentralized AI.
 Similar to the function of the ERC system serves in Ethereum. https://eips.ethereum.org/erc
