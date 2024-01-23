@@ -11,12 +11,12 @@ The Morpheus community is leveraging this framework of the Techno Capital Machin
 The term Techno Capital Machine is inspired by renowned philosopher [Beff Jazos](https://twitter.com/BasedBeffJezos) and has been first implemented by the Morpheus community.
 
 ## Tl;dr
-Developer launches an open source project using the Techno Capital Machine.
-Using TCM, the developer deploys a native token to power their project.
-Users staking stETH can choose to allocate their yield to projects. 
-In exchange for allocating their yield to help fund a project, users are rewarded with a proportional stream of the project’s native token.
-50% of the yield allocated to a project is used to purchase that project’s native token. 
-The native tokens are then paired with the other 50% of the yield and deposited to a liquidity pool on an AMM.
+- Developer launches an open source project using the Techno Capital Machine.
+- Using TCM, the developer deploys a native token to power their project.
+- Users staking stETH can choose to allocate their yield to projects. 
+- In exchange for allocating their yield to help fund a project, users are rewarded with a proportional stream of the project’s native token.
+- 50% of the yield allocated to a project is used to purchase that project’s native token. 
+- The native tokens are then paired with the other 50% of the yield and deposited to a liquidity pool on an AMM.
 
 How to launch your decentralized, open source project in 2024:
 ![TCMin2024](https://github.com/MorpheusAIs/Morpheus/assets/1563345/26c16eed-a5f6-4605-a628-57b96c2530be)
