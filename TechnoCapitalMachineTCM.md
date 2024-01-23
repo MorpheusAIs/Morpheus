@@ -84,4 +84,4 @@ And so here we are at the beginning of 2024 and the vast majority of projects ar
 
 This self-cooked fantasy normally doesn’t work. Instead, founders find themselves having stepped into a trap in forming an entity fundamentally opposed to their initial values. Reality usually arrives years too late to do anything about it.
 
-So what to do?
+So what to do? Its time for a new model that addresses these issues. All the pieces are in place now to launch the Techno Capital Machine.
