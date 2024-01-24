@@ -6,9 +6,75 @@
 
 Данное предложение Машины Технокапита (TCM) подразумевает создание платформы, на которой разработчики могут создавать и развертывать свое программное обеспечение. При этом TCM сначала решает вопросы связанные с инфраструктурой и платежами, прежде чем вознаграждать разработчика в зависимости от популярности программы.
 
-Сообщество Morpheus использует концепцию TCM для ускорения разработки децентрализованного искусственного интеллекта (ИИ). Хотя концепция актуальна для всех смарт-контрактов, децентрализованных приложений и веб3 программ. Подробную информацию о токеномике можно найти по [ссылке на Whitepaper.](https://chat.openai.com/c/788f3c77-6589-4f54-8b78-0d972e9053ca)
+Сообщество Morpheus использует концепцию TCM для ускорения разработки децентрализованного искусственного интеллекта (ИИ). Хотя концепция актуальна для всех смарт-контрактов, децентрализованных приложений и веб3 программ. Подробную информацию о токеномике можно найти по [ссылке на Whitepaper.](https://github.com/MorpheusAIs/Morpheus/blob/main/!KEYDOCS%20README%20FIRST!/2.WhitePaper.md)
 
 Термин Машины Технокапитала вдохновлен известным философом [Беффом Джезосом](https://twitter.com/BasedBeffJezos) и впервые был внедрен сообществом Morpheus.
+
+## Краткое изложение (TL;DR):
+- Разработчик запускает проект с открытым исходным кодом, используя Машину Технокапитала (TCM).
+- С использованием TCM разработчик развертывает собственный токен для поддержки своего проекта.
+- Пользователи, депонирующие stETH, могут направить доход в пользу проектов.
+- В обмен на доход для финансирования проекта, пользователи получают пропорциональное количество собственного токена проекта.
+- 50% выделенного дохода проекту используется для покупки собственного токена этого проекта.
+- Собственные токены затем сопоставляются с остальными 50% дохода и вносятся в пул ликвидности на AMM.
+
+Как запустить свой децентрализованный проект с открытым исходным кодом в 2024 году:
+![TCMin2024](https://github.com/MorpheusAIs/Morpheus/assets/1563345/26c16eed-a5f6-4605-a628-57b96c2530be)
+
+
+## Машина Технокапитала (TCM) как решение
+Давайте объединим усилия, чтобы создать беспрепятственный способ для разработчиков запускать проекты с использованием TCM. 
+Процесс для нового проекта прост:  
+1. Развернуть смарт-контракты для направления капитала в новый проект с открытым исходным кодом.
+2. Использовать доступные децентрализованные вычисления, код и сообщество, которые уже участвуют в открытых технологиях и свободном ПО.
+3. Подключить проект к виртуальной машине Morpheus, чтобы получить доступ к его пользователям, которые используют интеллектуальных агентов (Smart Agents) уже сегодня.
+
+## Смарт-контракты TCM
+1. Пользователи направляют доход проекту с открытым исходным кодом, депонируя активы, такие как stETH, в смарт-контракт.
+2. 50% ежедневного дохода покупает токены в проекте с открытым исходным кодом, которые вносятся в торговую пару AMM как ликвидность, принадлежащая протоколу.
+3. 50% ежедневного дохода остается в виде stETH и добавляется в AMM как другая половина торговой пары, также являющейся ликвидностью, принадлежащей протоколу.
+4. Проект с открытым исходным кодом ежедневно выпускает свой собственный токен вкладчику дохода.
+5. Владельцы собственных токенов имеют доступ к функциям и сервисам проекта с открытым исходным кодом.
+
+Примеры проектов с открытым исходным кодом могут включать в себя Smart Agents, децентрализованные приложения, смарт-контракты, точно настроенные модели и инструменты для использования в конкретных задачах программного обеспечения.
+
+
+## Morpheus - первый проект, реализующий смарт контракты TCM
+Все смарт контракты Morpheus открыты и доступны для любого, кто хочет запустить проект с открытым исходным кодом. Преимущества TCM включают:
+
+1. Легкость создания собственного токена для честного запуска, который будет поддерживать проект с открытым исходным кодом.
+2. Децентрализация, поскольку не требуется создание компании, и охватывает любые юрисдикции.
+3. Пользователь сохраняет полный контроль над своим депозитом в активе, производящем доход.
+4. Ежедневный доход создает устойчивый спрос на собственный токен проекта.
+5. Ежедневно вносимый доход со временем увеличивает ликвидность на AMM.
+6. Держатели собственного токена могут добавлять дополнительные функции к своему умному агенту.
+7. Создатели собственного токена могут получить ликвидность для токена, который они зарабатывают.
+
+
+## Atomic Governance
+In addition to being faster and cheaper than forming a company or foundation, the TCM uses what we call “Atomic Governance” to streamline all the decisions related to the software, infrastructure, capital and frontends. In the Atomic Governance model every person involved is able to freely associate and individually decide their contributions without any votes or friction being introduced.
+
+For example the Coder can elect or not to merge any open source contribution the community of coders suggests for their project. Based on how they value the code contribution and the hours the contributor wants as credit for the work. The Compute providers choose the type of AI models and tokens they want to support and the price at which they are willing to offer them. The Capital Providers select which projects to direct their stETH yield toward based on their desire to use the software being created. And lastly Community builders can choose the projects they want to build front ends for, integrate or otherwise support the development of based on the rewards they receive from project creators.
+
+This TCM framework is much better aligned with a purely free market approach to building, rather than trying to build consensus and achieve coordination among a large number of people which is very time consuming and difficult especially at an early stage where the software needs to quickly change and iterate until it gets to a good product market fit and even afterward to adapt to new market conditions. 
+
+
+## Атомное управление
+В дополнение к тому, что TCM быстрее и дешевле, чем создание компании или фонда, TCM использует то, что мы называем "Атомным управлением", чтобы упростить все решения, связанные с программным обеспечением, инфраструктурой, капиталом и интерфейсами. В модели атомного управления каждый участник волен ассоциироваться и самостоятельно решать свой вклад без всяких голосований или других замедляющих процессов.
+
+Например, программист может решить принять или не принять любой вклад с открытым исходным кодом, который сообщество программистов предложило для их проекта. Основываясь на том, как они оценивают вклад кода и на количестве часов, которые хочет получить автор в качестве кредита за работу. Поставщики вычислений выбирают типы моделей и токенов ИИ, которые они хотят поддерживать, и цену, по которой они готовы предложить их. Поставщики капитала выбирают в какие проекты направить свой доход от stETH в зависимости от их желания использовать создаваемое программное обеспечение. И, наконец, строители сообщества могут выбирать проекты, для которых они хотят создавать интерфейсы, интегрировать или иным образом поддерживать разработку на основе вознаграждений, которые они получают от создателей проектов.
+
+Эта структура TCM гораздо лучше соответствует чисто рыночному подходу, чем попытка достижения согласия и координации между большим числом людей, что занимает много времени и труда, особенно на ранних этапах, когда программное обеспечение должно быстро изменяться и итерироваться до достижения хорошего соответствия продукта рынку и даже после этого, чтобы адаптироваться к новым рыночным условиям.
+
+## Ссылки на код смарт контрактов и примеры
+Смарт контракты поставщиков капитала, которые предоставляют stETH и зарабатывают собственные токены проекта.
+[https://github.com/MorpheusAIs/SmartContracts](https://github.com/MorpheusAIs/SmartContracts)
+
+Модель вычислений Yellowstone для ставок на вычисления.
+[https://github.com/MorpheusAIs/Morpheus/blob/main/Yellowstone%20Computer%20Model-International/Yellowstone%20Compute%20Model%20Russian.md](https://github.com/MorpheusAIs/Morpheus/blob/main/Yellowstone%20Computer%20Model-International/Yellowstone%20Compute%20Model%20Russian.md)
+
+Example Proof of Code Contribution.  
+[https://github.com/MorpheusAIs/Morpheus/blob/main/Contributions/Code%20-%20Proof_Of_Contribution.md](https://github.com/MorpheusAIs/Morpheus/blob/main/Contributions/Code%20-%20Proof_Of_Contribution.md)
 
 
 ## Несоответствие корпоративных структур и децентрализованных технологий
@@ -30,48 +96,5 @@
 
 Эта самодпридуманная фантазия обычно не срабатывает. Вместо этого основатели обнаруживают, что они попали в ловушку, создав компанию, фундаментально противоречащую их первоначальным ценностям. Реальность обычно приходит слишком поздно, чтобы что-то изменить. 
 
-Так что же делать? Its time for a new model that addresses these issues. All the pieces are in place now to launch the Techno Capital Machine.
+Так что же делать? Настало время новой модели, которая решает эти проблемы. В данный момент все части на месте, для того, чтобы запустить Машину технокапитала.
 
-## Машина Технокапитала (TCM) как решение
-Давайте объединим усилия, чтобы создать беспрепятственный способ для разработчиков запускать проекты с использованием TCM. 
-Процесс для нового проекта прост:  
-1. Развернуть смарт-контракты для направления капитала в новый проект с открытым исходным кодом.
-2. Использовать доступные децентрализованные вычисления, код и сообщество, которые уже участвуют в открытых технологиях и свободном ПО.
-3. Подключить проект к виртуальной машине Morpheus, чтобы получить доступ к его пользователям, которые используют интеллектуальных агентов (Smart Agents) уже сегодня.
-
-## Смарт-контракты TCM
-1. Пользователи направляют доход проекту с открытым исходным кодом, депонируя активы, такие как stETH, в смарт-контракт.
-2. 50% ежедневного дохода покупает токены в проекте с открытым исходным кодом, которые вносятся в торговую пару AMM как ликвидность, принадлежащая протоколу.
-3. 50% ежедневного дохода остается в виде stETH и добавляется в AMM как другая половина торговой пары, также являющейся ликвидностью, принадлежащей протоколу.
-4. Проект с открытым исходным кодом ежедневно выпускает свой собственный токен вкладчику дохода.
-5. Владельцы собственных токенов имеют доступ к функциям и сервисам проекта с открытым исходным кодом.
-
-Примеры проектов с открытым исходным кодом могут включать в себя Smart Agents, децентрализованные приложения, смарт-контракты, точно настроенные модели и инструменты для использования в конкретных задачах программного обеспечения.
-
-## Morpheus Is The First Project to Implement the TCM Smart Contracts
-All the Morpheus Smart Contracts are open source and thus available for anyone looking to launch an open source project. Benefits of the TCM include:
-
-1. Easy to create a fair launch native token to power an open source project.
-2. Permissionless as its jurisdiction agnostic, no company needed.
-3. The user maintains custody of their principle in the yield producing asset.
-4. The yield contributed daily creates a sustainable demand for the native token.
-5. The yield contributed daily grows the liquidity of the AMM over time. 
-6. Holders of the native token can add additional functionality to their Smart Agent.
-7. Creators of the native token can get liquidity for the token they earn.
-
-## Atomic Governance
-In addition to being faster and cheaper than forming a company or foundation, the TCM uses what we call “Atomic Governance” to streamline all the decisions related to the software, infrastructure, capital and frontends. In the Atomic Governance model every person involved is able to freely associate and individually decide their contributions without any votes or friction being introduced.
-
-For example the Coder can elect or not to merge any open source contribution the community of coders suggests for their project. Based on how they value the code contribution and the hours the contributor wants as credit for the work. The Compute providers choose the type of AI models and tokens they want to support and the price at which they are willing to offer them. The Capital Providers select which projects to direct their stETH yield toward based on their desire to use the software being created. And lastly Community builders can choose the projects they want to build front ends for, integrate or otherwise support the development of based on the rewards they receive from project creators.
-
-This TCM framework is much better aligned with a purely free market approach to building, rather than trying to build consensus and achieve coordination among a large number of people which is very time consuming and difficult especially at an early stage where the software needs to quickly change and iterate until it gets to a good product market fit and even afterward to adapt to new market conditions. 
-
-## Links To Smart Contract Code and Examples
-Smart Contracts for Capital Providers offering stETH and earning native project tokens.
-[https://github.com/MorpheusAIs/SmartContracts](https://github.com/MorpheusAIs/SmartContracts)
-
-Yellowstone Compute Model for bidding on Compute.
-[https://github.com/MorpheusAIs/Morpheus/blob/main/Yellowstone%20Compute%20Model.md](https://github.com/MorpheusAIs/Morpheus/blob/main/Yellowstone%20Compute%20Model.md)
-
-Example Proof of Code Contribution.
-[https://github.com/MorpheusAIs/Morpheus/blob/main/Code%20-%20Proof_Of_Contribution.md](https://github.com/MorpheusAIs/Morpheus/blob/main/Code%20-%20Proof_Of_Contribution.md)https://github.com/MorpheusAIs/Morpheus/blob/main/Code%20-%20Proof_Of_Contribution.md
