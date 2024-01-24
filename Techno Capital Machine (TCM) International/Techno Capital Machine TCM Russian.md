@@ -51,14 +51,6 @@
 7. Создатели собственного токена могут получить ликвидность для токена, который они зарабатывают.
 
 
-## Atomic Governance
-In addition to being faster and cheaper than forming a company or foundation, the TCM uses what we call “Atomic Governance” to streamline all the decisions related to the software, infrastructure, capital and frontends. In the Atomic Governance model every person involved is able to freely associate and individually decide their contributions without any votes or friction being introduced.
-
-For example the Coder can elect or not to merge any open source contribution the community of coders suggests for their project. Based on how they value the code contribution and the hours the contributor wants as credit for the work. The Compute providers choose the type of AI models and tokens they want to support and the price at which they are willing to offer them. The Capital Providers select which projects to direct their stETH yield toward based on their desire to use the software being created. And lastly Community builders can choose the projects they want to build front ends for, integrate or otherwise support the development of based on the rewards they receive from project creators.
-
-This TCM framework is much better aligned with a purely free market approach to building, rather than trying to build consensus and achieve coordination among a large number of people which is very time consuming and difficult especially at an early stage where the software needs to quickly change and iterate until it gets to a good product market fit and even afterward to adapt to new market conditions. 
-
-
 ## Атомное управление
 В дополнение к тому, что TCM быстрее и дешевле, чем создание компании или фонда, TCM использует то, что мы называем "Атомным управлением", чтобы упростить все решения, связанные с программным обеспечением, инфраструктурой, капиталом и интерфейсами. В модели атомного управления каждый участник волен ассоциироваться и самостоятельно решать свой вклад без всяких голосований или других замедляющих процессов.
 
