@@ -13,7 +13,7 @@ Slutligen kan genomsnittsanvändaren prata med sin Smart Agent på normalt språ
 
 För att göra smarta agenter tillgängliga för alla och öka decentraliseringen av deras infrastruktur föreslår vi att Morpheus-nätverket utvecklas. Morpheus-nätverket kommer att innehålla en ganska lanserad token (MOR-token) för att ge incitament till alla fyra av nätverkets viktigaste bidragsgivare. Nämligen de byggherrar som skapar gränssnitt, kodare som bidrar till Morpheus programvara/agenter, kapitalleverantörer som tillför likviditet och de som tillhandahåller beräkning, lagring och bandbredd. Det har visats väl av historien om Bitcoin och Ethereum att fri och öppen konkurrens för knappa digitala token kan ge skalbar infrastruktur för en offentlig blockkedja under lång tid.
 
-![MorpheusNetworkDiagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/f0960e25-80e3-42ed-aa1f-ad9792eb672d)
+![MorpheusNetworkDiagram](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img1-Swedish.png)
 
 ## Kontext och historik
 Befintliga operatörer som OpenAI, Microsoft och Google kör nära-källa stora språkmodeller, debiterar kunder licensavgifter och monetarisera kunddata. Dessa modeller är censurerade, bräckliga och verkar i muromgärdade trädgårdar. Det finns en stark efterfrågan på en stor språkmodell med öppen källkod tillgänglig utan kostnad. Llama, Falcon och andra LLM med öppen källkod har nyligen släppts och närmar sig snabbt exaktheten hos deras nära-källkodskonkurrenter.
@@ -47,7 +47,7 @@ Kodare - Tillhandahålla intelligens för att använda frontender, kapital och b
 
 MOR-tokenleveransen är begränsad till högst 42 000 000 token som någonsin kommer att finnas. Distributionen kommer att börja med att alla fyra grupper tjänar token genom att tillhandahålla former av bevis på arbete (arbete) och bevis på Stake (kapital) till nätverket. Ingen pre-mine. Ingen tidig tokenförsäljning. Bara en rättvis lansering.
 
-![MOREmissionsCurve2](https://github.com/MorpheusAIs/Morpheus/assets/1563345/3514217c-50ed-4639-8c5d-87ca5cfb5d1b)
+![MOREmissionsCurve2](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img2-Swedish.png)
 
 Blockbelöningen startar på 14 400 MOR per dag och minskar sedan med 2,468994701 MOR varje dag, tills belöningen når 0 på dag 5 833. Vid den tidpunkten (ungefär 16 år från nu) förutsatt att Morpheus är i stor användning, kommer avgifterna att ha tagit över som det primära incitamentet. Avgifter som betalas till användarna för deras data, avgifter till leverantörer av datorer, avgifter till kapitalleverantörer och avgifter till kodare.
 
@@ -58,7 +58,7 @@ Blockbelöningen startar på 14 400 MOR per dag och minskar sedan med 2,46899470
 - 3 456 token för kapital. Bevis på att det har bidragit med sin avkastning, 50% har swappats mot MOR och resten har låsts in i AMM som tillhandahållare av likviditet.
 - 3 456 token för community. Bevis för att bygga frontend-program och verktyg som engagerar användarna.
 Med återstoden avsatt för skyddsresurser: 576 tokens per dag för detta ändamål.
-![5050version3](https://github.com/MorpheusAIs/Morpheus/assets/1563345/c9fe763f-d4e4-4069-b9c9-75e0a777c3ad)
+![5050version3](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img3-Swedish.png)
 
 ## MOR-tokens användbarhet
 Målet är att MOR ska kunna ge bred användbarhet i många av Morfeus-nätverkets funktioner. Som ett resultat av detta erbjuder användningen av MOR-token en mekanism för internredovisning för att beräkna belöningar baserade på verklig användning av programvaran.
@@ -89,7 +89,7 @@ Capital - ETH låst i ett smart kontrakt som genererar avkastning (ETH i ett stE
 
 Observera att det här inte är en tidslinje. Varje fas är snarare en beskrivning av en del av livscykeln. Det kan ta år för samhället att växa och mogna genom varje fas och blockbelöningen går ut efter ca 16 år. Denna långa distributionsschema är avsedd att ge tid för token att belönas på en mycket bred basis globalt. Den jämna dagliga nedgången i blockbelöningar under många år ger också alla deltagare tid att uppnå skala och övergång från de tidiga subventionerade belöningarna till att driva enbart genom de avgifter de tjänar in.
 
-![MOREmissionSchedule](https://github.com/MorpheusAIs/Morpheus/assets/1563345/94c96cb0-b6e4-4c63-be46-39088c91e168)
+![MOREmissionSchedule](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img4-Swedish.png)
 
 ## Svansutsläpp av MOR
 
@@ -107,16 +107,16 @@ Denna process upprepas för evigt in i framtiden.
 
 Långsiktigt resultat. Ungefär 1% av de årliga MOR-belöningarna (i förhållande till antalet MOR som då är i cirkulation) kommer att vara tillgängliga för framtida kodare, beräkningsresurser, gemenskap och kapital.
 
-![MaxMORScenario25](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/81c7794a-b5bc-4a9e-bb2d-1f28b98ea079)
+![MaxMORScenario25](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img5-Swedish.png)
 
 **VIKTIGT MEDDELANDE:**
 "Detta ändrar inte på naturen av den strikta försörjningsgränsen på 42 miljoner MOR. Eftersom svansutsläppsschemat per definition endast är en del av de MOR-tokens som brändes, kan MOR-token bara bli allt mer sällsynt för varje 5 833-dagarsperiod."
 
-![MOR25ScenarioV9](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/4813cd02-b104-4a0c-893b-a7fd329fe2a3)
+![MOR25ScenarioV9](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img6-Swedish.png)
 
 "Nedan visas den enhetliga MOR-försörjningskurvan som visar den första 5 833-dagarsperioden och lägger till de långa svansutsläppen från år 17 till år 256, med antagandet av ett genomsnittligt bränningsgrad på 25% av MOR över epokerna.
 
-![MORSupplyCurve20231019](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/8994c389-dad1-4e46-9b63-e048da8ef172)
+![MORSupplyCurve20231019](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img7-Swedish.png)
 
 ## Bevis på Gemenskap, Kod, Beräkning & Kapital
 Morpheus fullnod kommer med en plånbok eller användaren kan ansluta sin befintliga plånbok. Detta möjliggör för användaren att signera och skicka transaktioner som rekommenderas av deras Smarta Agent. Så användare kommer att kunna delta i bevisen genom Morpheus-programvaran. Dock behöver Kapitalleverantörer till exempel inte ha en fullnod. De kan interagera direkt med Smarta Kontrakt på Ethereum / Arbitrum med stETH.
@@ -169,7 +169,7 @@ De proportionerliga MOR-transaktionsavgifter som varje gemenskapsbyggare bränne
 Om det till exempel finns 100 Community Builders på dag 1 när nätverket startas får var och en en en pro rata-belöning baserad på hur mycket MOR de har bränt via avgifter. I detta fall, förutsatt var och en av de 100 samhällsbyggare brände 100 MOR, sedan 1% av de 3456 MOR tokens varje dag = 34,56 MOR.
 
 ## Morpheus-användardiagram
-![UpdatedDiagram2UserFlow](https://github.com/MorpheusAIs/Morpheus/assets/1563345/a02468a7-9284-4ce5-b7e3-f32f476ff9f1)
+![UpdatedDiagram2UserFlow](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img8-Swedish.png)
 
 ## Morpheus-belöningar levereras genom smart kontrakt på Ethereum Layer 2
 Deponering av stETH för belöningar kommer att göras på Ethereum underhåll, när Morpheus Tokens (MOR) kommer att tilldelas på Ethereum Layer 2 Arbitrum, för betalningar och andra MOR nyttorelaterade åtgärder.
