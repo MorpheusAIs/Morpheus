@@ -13,7 +13,7 @@ Finalmente, o usuário comum pode conversar com seu Smart Agent em linguagem nor
 
 Para tornar os Smart Agents acessíveis a todos e aumentar a descentralização de sua infraestrutura, propomos o desenvolvimento da rede Morpheus. A rede Morpheus incluirá um token lançado de maneira justa (o token "MOR") para incentivar todos os quatro principais contribuidores para a rede. Ou seja, a comunidade de construtores criando interfaces, codificadores contribuindo para o software/agentes Morpheus, provedores de capital adicionando liquidez e aqueles fornecendo computação, armazenamento e largura de banda. Ficou bem demonstrado pela história do Bitcoin e do Ethereum que a competição livre e aberta por tokens digitais escassos pode fornecer infraestrutura escalável para uma blockchain pública ao longo de longos períodos de tempo.
 
-![MorpheusNetworkDiagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/f0960e25-80e3-42ed-aa1f-ad9792eb672d)
+![MorpheusNetworkDiagram](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img1-Portuguese.png)
 
 ## Contexto & Histórico
 Os principais players como OpenAI, Microsoft e Google estão utilizando modelos de linguagem de grande porte de código fechado, cobrando taxas de licença dos clientes e monetizando dados dos usuários. Esses modelos são censurados, frágeis e operam em jardins murados. Existe uma forte demanda por um modelo de linguagem de código aberto e gratuito. Llama, Falcon e outros modelos de linguagem de código aberto foram recentemente lançados e estão se aproximando rapidamente da precisão de seus concorrentes de código fechado.
@@ -47,7 +47,7 @@ Programadores - Fornecem a inteligência para usar as interfaces, capital e comp
 
 O fornecimento total de tokens MOR é limitado a um máximo de 42.000.000 tokens que existirão. A distribuição começará com todos os quatro grupos ganhando os tokens fornecendo formas de prova de trabalho (trabalho) e prova de participação (capital) para a rede. Sem pré-mineração. Sem venda antecipada de tokens. Apenas um lançamento justo.
 
-![MOREmissionsCurve2](https://github.com/MorpheusAIs/Morpheus/assets/1563345/3514217c-50ed-4639-8c5d-87ca5cfb5d1b)
+![MOREmissionsCurve2](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img2-Portuguese.png)
 
 A recompensa por bloco começará com 14.400 MOR por dia e, em seguida, diminuirá em 2.468994701 MOR a cada dia, até que a recompensa atinja 0 no dia 5.833. Nesse momento (cerca de 16 anos a partir de agora), desde que o Morpheus esteja em amplo uso, as taxas terão assumido como o principal incentivo. Taxas pagas aos usuários por seus dados, taxas aos provedores de computação, taxas aos provedores de capital e taxas aos programadores.
 
@@ -60,7 +60,7 @@ Limite de fornecimento de 42 milhões de tokens MOR.
 - 3.456 tokens para a comunidade. Prova de construção de aplicativos e ferramentas de frontend que envolvam os usuários.
 
 Com o restante reservado para recursos de proteção: 576 tokens por dia para esse fim.
-![5050version3](https://github.com/MorpheusAIs/Morpheus/assets/1563345/c9fe763f-d4e4-4069-b9c9-75e0a777c3ad)
+![5050version3](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img3-Portuguese.png)
 
 ## A Utilidade Do Token MOR
 O objetivo é que o MOR forneça utilidade abrangente em muitas das funções da rede Morpheus. Como resultado, o uso do token MOR oferece um mecanismo de contabilidade on-chain para calcular recompensas com base no uso real do software.
@@ -91,7 +91,7 @@ Capital - ETH bloqueado em um contrato inteligente que gera rendimento (por exem
 
 Entendi, isso não é uma linha do tempo, mas sim uma descrição de parte do ciclo de vida. Pode levar anos para a comunidade crescer e amadurecer através de cada fase, e a recompensa por bloco expira após cerca de 16 anos. Este extenso cronograma de distribuição visa fornecer tempo para que os tokens sejam recompensados de maneira muito abrangente globalmente. Além disso, a diminuição suave diária nas recompensas por bloco ao longo de muitos anos dá a todos os participantes tempo para atingir escala e fazer a transição das recompensas subsidiadas iniciais para operar exclusivamente pelas taxas que ganham.
 
-![MOREmissionSchedule](https://github.com/MorpheusAIs/Morpheus/assets/1563345/94c96cb0-b6e4-4c63-be46-39088c91e168)
+![MOREmissionSchedule](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img4-Portuguese.png)
 
 ## Emissões De Cauda De MOR
 Entendi, você está propondo uma "emissão contínua" (tail emission) de tokens MOR para continuar incentivando novos programadores, membros da comunidade, provedores de computação e de capital mesmo após o término das recompensas por bloco. Essa emissão contínua de MOR começará após a última emissão de tokens MOR no dia 5.833 do cronograma de distribuição.
@@ -104,15 +104,15 @@ Depois que o segundo período de 5.833 dias for concluído, esse processo se rep
 
 Esse processo se repete indefinidamente no futuro. O resultado a longo prazo é que cerca de 1% das recompensas anuais de MOR (relativas ao número de MOR em circulação naquele momento) estarão disponíveis para futuros programadores, provedores de computação, membros da comunidade e de capital.
 
-![MaxMORScenario25](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/81c7794a-b5bc-4a9e-bb2d-1f28b98ea079)
+![MaxMORScenario25](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img5-Portuguese.png)
 
 **IMPORTANT NOTE:** Isso não altera a natureza do limite rígido de fornecimento de 42 milhões de MOR. Como a programação de emissão contínua é, por definição, apenas uma parte dos tokens MOR que foram queimados, o token MOR só pode se tornar cada vez mais escasso a cada período de 5.833 dias.
 
-![MOR25ScenarioV9](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/4813cd02-b104-4a0c-893b-a7fd329fe2a3)
+![MOR25ScenarioV9](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img6-Portuguese.png)
 
 Abaixo é mostrada a Curva de Fornecimento unificada do MOR, mostrando o primeiro período de 5.833 dias e adicionando as emissões de longo prazo do ano 17 ao ano 256. Presumindo o exemplo de uma taxa média de queima de 25% do MOR ao longo das épocas.
 
-![MORSupplyCurve20231019](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/8994c389-dad1-4e46-9b63-e048da8ef172)
+![MORSupplyCurve20231019](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img7-Portuguese.png)
 
 ## Prova De Comunidade, Código, Computação e Capital
 O nó completo do Morpheus vem com uma carteira, ou o usuário pode conectar sua carteira existente. Isso permite que o usuário assine e envie transações recomendadas por seu Agente Inteligente. Assim, os usuários poderão participar das provas por meio do software Morpheus. No entanto, não é necessário que os Provedores de Capital tenham um nó completo, por exemplo. Eles podem interagir diretamente com os Contratos Inteligentes na Ethereum/Arbitrum usando stETH.
@@ -175,7 +175,7 @@ As taxas de transação MOR pró-rata queimadas por cada Construtor de Comunidad
 Por exemplo, se houver 100 Construtores de Comunidade no dia 1, quando a rede for lançada, então cada um receberá uma recompensa pró-rata com base na quantidade de MOR que eles queimaram via taxas. Neste caso, presumindo que cada um dos 100 Construtores de Comunidade queimou 100 MOR, então 1% dos 3.456 tokens MOR a cada dia = 34,56 MOR.
 
 ## Diagrama Do Usuário Do Morpheus
-![UpdatedDiagram2UserFlow](https://github.com/MorpheusAIs/Morpheus/assets/1563345/a02468a7-9284-4ce5-b7e3-f32f476ff9f1)
+![UpdatedDiagram2UserFlow](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/img8-Portuguese.png)
 
 ## Recompensas Morpheus Entregues Por Contrato Inteligente No Ethereum Layer 2 
 O depósito de stETH para recompensas será feito na Ethereum mainnet, enquanto os Tokens Morpheus (MOR) serão concedidos na camada 2 Arbitrum da Ethereum, para fins de pagamentos e outras ações relacionadas à utilidade do MOR.
