@@ -1,4 +1,4 @@
-![Morpheus_Coin_Logo_lg](https://github.com/MorpheusAIs/Morpheus/assets/1563345/df8448b9-d571-405c-aca1-5adbdab00e72)
+![Wide but short logo for Morpheus](https://github.com/MorpheusAIs/Morpheus/assets/1563345/be0c5a0f-0766-4e31-8e4a-ab18cd211961)
 
 # Morpheus
 ## A Network For Powering Smart Agents
