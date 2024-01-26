@@ -57,32 +57,32 @@ Beschreibungen der erforderlichen Smart Contract.
 Diagramme über die Verteilung der ETH. 
 
 ### Morpheus MOR Smart-Contract Rewards Distribution
-![new-buckets](https://github.com/SmartAgentProtocol/SmartAgents/assets/76454555/cd57bae7-2a56-4a55-bf3e-1f810f3fba9c)
+![new-buckets](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img1-German-YP.png)
 
 ### MOR-Token-Verteilung am Beispiel von Tag 1 und Tag 2.
-![Untitled spreadsheet - Google Sheets 2023-10-15 13-28-08](https://github.com/MorpheusAIs/Morpheus/assets/76454555/6ff7869d-bbd6-46b5-8673-6a59b75906e1)
+![Untitled spreadsheet - Google Sheets 2023-10-15 13-28-08](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img2-German-YP.png)
 
 ## Beispiel einer Verteilungsberechnung für Adresse 0x123 ETH Contributor
 
 ### Schritt Eins
-![Diagram1ofETHDontator](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/fead528c-d628-449e-a3a3-2f53904f4a3d)
+![Diagram1ofETHDontator](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img3-German-YP.png)
 
 ### Schritt zwei
-![ETHGivenDiagram2](https://github.com/MorpheusAIs/Morpheus/assets/1563345/915020e8-d342-48bc-85ee-367de0325680)
+![ETHGivenDiagram2](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img4-German-YP.png)
 
 ### Step Three
-![Diagram3ForETHGiven](https://github.com/MorpheusAIs/Morpheus/assets/1563345/a3f455af-56de-4c6b-9688-5b9e91673e5a)
+![Diagram3ForETHGiven](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img5-German-YP.png)
 
 ## Beispiel einer Verteilungsberechnung für Adresse 0x123 Compute-Anbieter
 
 ### Schritt Eins
-![MORForCompute](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/bef69c69-0420-441f-97f0-7e8195844f57)
+![MORForCompute](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img6-German-YP.png)
 
 ### Schritt zwei
-![MORForCompute2](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/a6f30da5-5441-4f0a-be80-c5798f5920cd)
+![MORForCompute2](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img7-German-YP.png)
 
 ### MOR-Token-Verteilung Kreisdiagramm
-![mordist](https://github.com/MorpheusAIs/Morpheus/assets/76454555/4157efe7-6abf-404a-87f9-a8dc76cd4799)
+![mordist](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img8-German-YP.png)
 
 ## Morpheus Entwickler Tools und Tech Stack.
 - Llama2 - Robust open source LLM lokal ausgeführt.
@@ -104,19 +104,19 @@ Platzhalter für die Beschreibung des Auditprozesses, wer Audits durchführen ka
 Prompt-Proof, der zum Zeitpunkt einer Benutzerinteraktion generiert wird und die ausgedrückte Absicht zeigt, mit der Auswahl des Smart Contracts übereinstimmt und die Transaktionswerte mit dem Benutzer bestätigt. 
 
 ## Morpheus Benutzer- und Mitwirkungsdiagramm
-![Morpheus User   Contributor Diagram](https://github.com/MorpheusAIs/Morpheus/assets/1563345/2cff8d70-c116-472f-a431-8a82bfa22f9b)
+![Morpheus User   Contributor Diagram](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img9-German-YP.png)
 
 ### Das Diagramm zeigt den UX-Fluss von der Benutzeranfrage bis zur Genehmigung der Web3-Aktion.
-![UX flow for prompted web3 tasks and ticketing](https://github.com/MorpheusAIs/Morpheus/assets/76454555/942b20fb-d67e-4a57-af2c-cd24a89690a5)
+![UX flow for prompted web3 tasks and ticketing](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img10-German-YP.png)
 
 ### Das Diagramm zeigt die lokale Installationsversion von Morpheus.
-![MorpheusLocalDiagram](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/a0564914-cddb-42e4-b0f4-8c2310db6a66)
+![MorpheusLocalDiagram](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img11-German-YP.png)
 
 ### Das Diagramm zeigt die Morpheus P2P Installationsversion.
-![MorpheusP2PDiagram](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/a7eeb31f-3d38-4233-a45f-e9b91ad84ba2)
+![MorpheusP2PDiagram](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img12-German-YP.png)
 
 ### Das Diagramm zeigt die dezentralisierte Version von Morpheus.
-![MorpheusDecentralized](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/1699f2de-cc18-42e8-a05c-32b3307baa20)
+![MorpheusDecentralized](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img13-German-YP.png)
 
 ## Gemeinschaft
 - Smart Agency - Freiberufliche Entwickler, die Anwendungsfälle / Agenten für Morpheus-Nutzer entwickeln.
