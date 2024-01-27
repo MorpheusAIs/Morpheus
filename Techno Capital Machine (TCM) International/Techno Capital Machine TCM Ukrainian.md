@@ -20,7 +20,7 @@
 - Власні токени потім поєднуються з рештою 50% доходу і вносяться до пулу ліквідності на AMM.
 
 Як запустити свій децентралізований проект з відкритим вихідним кодом у 2024 році:
-![TCMin2024](https://github.com/MorpheusAIs/Morpheus/assets/1563345/26c16eed-a5f6-4605-a628-57b96c2530be)
+![TCMin2024](https://github.com/MorpheusAIs/Morpheus/blob/main/Asset/WhitePaper%20Graphics/Ukrainian/UA%20meme%20for%20TCM.jpg)
 
 
 ## Машина Технокапіталу (TCM) як рішення

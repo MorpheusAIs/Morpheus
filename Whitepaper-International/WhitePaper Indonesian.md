@@ -4,7 +4,7 @@
 ## Jaringan Untuk Memberdayakan Smart Agents
 ### Ditulis oleh Morpheus, Trinity, & Neo
 Diterbitkan - 2 September 2023
-Tautan ke Rincian Teknis Yellow Paper: https://github.com/MorpheusAIs/Morpheus/blob/main/YellowPaper.md
+Tautan ke Rincian Teknis Yellow Paper: https://github.com/MorpheusAIs/Morpheus/blob/main/!KEYDOCS%20README%20FIRST!/3.YellowPaper.md
 
 ## Pendahuluan 
 Morpheus dirancang untuk memberikan insentif kepada jaringan peer-to-peer pertama dari AI pribadi, yang dikenal sebagai Smart Agents. Menyediakan Smart Agent sumber terbuka bagi pengguna untuk terhubung ke dompet, Dapps, & kontrak pintar mereka menjanjikan untuk membuka dunia Web3 bagi semua orang. 
@@ -13,7 +13,7 @@ Akhirnya, rata-rata pengguna dapat berbicara dengan Smart Agent mereka dalam bah
 
 Untuk membuat Smart Agents dapat diakses oleh semua orang dan meningkatkan desentralisasi infrastruktur mereka, kami mengusulkan pengembangan jaringan Morpheus. Jaringan Morpheus akan menyertakan token yang cukup diluncurkan (token "MOR") untuk memberi insentif kepada keempat kontributor utama jaringan. Yaitu, komunitas pembangun yang membuat antarmuka, pembuat kode yang berkontribusi pada perangkat lunak / agen Morpheus, penyedia modal yang menambahkan likuiditas dan mereka yang memasok komputasi, penyimpanan, dan bandwidth. Telah ditunjukkan dengan baik oleh sejarah Bitcoin dan Ethereum bahwa persaingan bebas & terbuka untuk token digital yang langka dapat menyediakan infrastruktur yang dapat diskalakan untuk blockchain publik dalam jangka waktu yang lama.
 
-![MorpheusNetworkDiagram](https://github.com/MorpheusAIs/Morpheus/blob/51e75ad58503a3c10b053076cb9ccf34c695e586/MorpheusNetwork.png)
+![MorpheusNetworkDiagram](https://github.com/MorpheusAIs/Morpheus/blob/main/Asset/WhitePaper%20Graphics/Indonesian/MorpheusNetwork.png)
 
 ## Konteks & Sejarah
 Para petahana seperti OpenAI, Microsoft, dan Google menjalankan model bahasa besar yang bersumber dari sumber dekat, membebankan biaya lisensi kepada pelanggan, dan memonetisasi data pelanggan. Model-model ini disensor, rapuh, dan beroperasi di taman bertembok. Ada permintaan yang kuat untuk model bahasa besar bersumber terbuka yang tersedia secara gratis. Llama, Falcon, dan LLM sumber terbuka lainnya baru-baru ini dirilis dan dengan cepat mendekati keakuratan pesaing mereka yang bersumber tertutup.
@@ -47,7 +47,7 @@ Pembuat kode - Menyediakan kecerdasan untuk menggunakan frontend, modal, dan kom
 
 Pasokan Token MOR dibatasi hingga maksimum 42.000.000 token yang akan ada. Distribusi akan dimulai dengan keempat kelompok yang mendapatkan token dengan memberikan bentuk bukti kerja (tenaga kerja) dan bukti kepemilikan (modal) ke jaringan. Tidak ada pra-tambang. Tidak ada penjualan token awal. Hanya peluncuran yang adil.
 
-![MOREmissionsCurve2](https://github.com/MorpheusAIs/Morpheus/blob/51e75ad58503a3c10b053076cb9ccf34c695e586/Emission.png)
+![MOREmissionsCurve2](https://github.com/MorpheusAIs/Morpheus/blob/main/Asset/WhitePaper%20Graphics/Indonesian/Emission.png)
 
 Reward blok akan dimulai dari 14.400 MOR per hari dan kemudian menurun sebesar 2.468994701 MOR setiap harinya, hingga reward mencapai 0 pada hari ke-5.833. Pada saat itu (sekitar 16 tahun dari sekarang) asalkan Morpheus digunakan secara luas, biaya akan mengambil alih sebagai insentif utama. Biaya yang dibayarkan kepada pengguna untuk data mereka, biaya untuk penyedia komputasi, biaya untuk penyedia modal dan biaya untuk pembuat kode.
 
@@ -59,7 +59,7 @@ Reward blok akan dimulai dari 14.400 MOR per hari dan kemudian menurun sebesar 2
 - 3.456 token untuk modal. Bukti hasil stETH yang dikontribusikan, 50% ditukar dengan MOR & sisanya dikunci di AMM sebagai Penyedia Likuiditas. 
 - 3.456 token untuk komunitas. Bukti membangun aplikasi front end & alat yang melibatkan pengguna.
   Dengan sisanya disisihkan untuk sumber daya perlindungan: 576 token per hari untuk tujuan itu.
-  ![5050version3](https://github.com/MorpheusAIs/Morpheus/blob/51e75ad58503a3c10b053076cb9ccf34c695e586/Distribute.png)
+  ![5050version3](https://github.com/MorpheusAIs/Morpheus/blob/main/Asset/WhitePaper%20Graphics/Indonesian/Distribute.png)
 
 ## Kegunaan Token MOR
 Tujuannya adalah agar MOR dapat memberikan kegunaan yang luas dalam banyak fungsi jaringan Morpheus. Sebagai hasilnya, penggunaan token MOR menawarkan mekanisme akuntansi on-chain untuk menghitung imbalan berdasarkan penggunaan perangkat lunak yang sebenarnya.
@@ -90,7 +90,7 @@ Semua proyek melewati fase-fase pengembangan. Sangat penting bahwa pada awalnya 
 
 Perhatikan bahwa ini bukanlah garis waktu. Melainkan setiap fase adalah deskripsi dari bagian siklus hidup. Mungkin diperlukan waktu bertahun-tahun bagi komunitas untuk tumbuh dan menjadi dewasa melalui setiap fase dan reward blok akan kedaluwarsa setelah sekitar 16 tahun. Jadwal distribusi yang panjang ini dimaksudkan untuk memberikan waktu bagi token untuk dihargai secara global. Selain itu, penurunan harian yang mulus dalam block reward selama bertahun-tahun memberikan waktu bagi semua peserta untuk mencapai skala dan transisi dari reward bersubsidi di awal untuk beroperasi semata-mata dari biaya yang mereka hasilkan.
 
-![MOREmissionSchedule](https://github.com/MorpheusAIs/Morpheus/blob/51e75ad58503a3c10b053076cb9ccf34c695e586/Emitted.png)
+![MOREmissionSchedule](https://github.com/MorpheusAIs/Morpheus/blob/main/Asset/WhitePaper%20Graphics/Indonesian/Emitted.png)
 
 ## Emisi Ekor MOR
 Sejak peluncuran Bitcoin, banyak orang berdebat tentang "apa yang akan terjadi ketika hadiah blok akhirnya berhenti?" Untuk menghindari perdebatan yang tidak bermanfaat ini dalam konteks Morpheus dan untuk terus menyelaraskan para pembuat kode baru, komunitas, komputasi & penyedia modal di masa depan, kami mengusulkan "emisi ekor" token MOR. Emisi ekor MOR ini akan dimulai setelah token MOR terakhir dipancarkan pada hari ke 5.833 dari jadwal distribusi.
@@ -107,16 +107,16 @@ Proses ini akan terus berulang di masa depan.
 
 Hasil jangka panjang. Sekitar 1% dari hadiah MOR tahunan (relatif terhadap jumlah MOR yang beredar) akan tersedia untuk para pembuat kode di masa depan, komputasi, komunitas & modal.
 
-![MaxMORScenario25](https://github.com/MorpheusAIs/Morpheus/blob/51e75ad58503a3c10b053076cb9ccf34c695e586/Year.png)
+![MaxMORScenario25](https://github.com/MorpheusAIs/Morpheus/blob/main/Asset/WhitePaper%20Graphics/Indonesian/Year.png)
 
 **CATATAN PENTING:** Hal ini tidak mengubah sifat dari Batas Pasokan keras sebesar 42 Juta MOR. 
 Karena jadwal emisi ekor menurut definisi hanya sebagian dari token MOR yang dibakar, maka token MOR hanya dapat menjadi semakin langka dengan setiap periode 5.833 hari
 
-![MOR25ScenarioV9](https://github.com/MorpheusAIs/Morpheus/blob/51e75ad58503a3c10b053076cb9ccf34c695e586/Circulation.png)
+![MOR25ScenarioV9](https://github.com/MorpheusAIs/Morpheus/blob/main/Asset/WhitePaper%20Graphics/Indonesian/Circulation.png)
 
 Di bawah ini ditunjukkan Kurva Pasokan MOR terpadu yang menunjukkan periode 5.833 hari pertama dan menambahkan emisi ekor panjang dari tahun ke-17 hingga tahun ke-256. Dengan mengasumsikan contoh tingkat pembakaran rata-rata 25% dari MOR selama periode tersebut.
 
-![MORSupplyCurve20231019](https://github.com/MorpheusAIs/Morpheus/blob/51e75ad58503a3c10b053076cb9ccf34c695e586/supply_curve.png)
+![MORSupplyCurve20231019](https://github.com/MorpheusAIs/Morpheus/blob/main/Asset/WhitePaper%20Graphics/Indonesian/supply_curve.png)
 
 ## Bukti Komunitas, Kode, Hitung & Modal
 Node penuh Morpheus dilengkapi dengan dompet atau pengguna dapat menghubungkan dompet yang sudah ada. Hal ini memungkinkan pengguna untuk menandatangani dan mengirim transaksi yang direkomendasikan oleh Smart Agent mereka. Jadi pengguna akan dapat berpartisipasi dalam pembuktian melalui perangkat lunak Morpheus. Namun Penyedia Modal tidak diharuskan untuk memiliki node penuh misalnya. Mereka dapat berinteraksi langsung dengan Smart Contract di Ethereum / Arbitrum menggunakan stETH.
@@ -152,7 +152,7 @@ Dalam Model Komputasi Yellowstone, jaringan Morpheus membayar Penyedia hanya unt
 
 Agar memenuhi syarat untuk menerima permintaan Compute, alamat Compute Provider harus HODL token MOR. Permintaan akan dialihkan ke API Compute Provider secara pro-rata ke MOR yang mereka hodl dibandingkan dengan semua Compute Provider terdaftar lainnya.
 
-Detailnya dibahas dalam makalah Yellowstone Compute Model: https://github.com/MorpheusAIs/Morpheus/blob/main/Yellowstone%20Compute%20Model.md 
+Detailnya dibahas dalam makalah Yellowstone Compute Model: https://github.com/MorpheusAIs/Morpheus/blob/main/!KEYDOCS%20README%20FIRST!/7.Yellowstone%20Compute%20Model.md 
 
 ## Bukti Pembangun Komunitas, Pendaftaran & Penghargaan:
 Definisi dari Pembangun Komunitas adalah mereka telah mengunduh simpul penuh Morpheus, menghubungkan dompet mereka dan menggunakan API Morpheus untuk menyediakan front end pengguna & alat pengembang. Kontribusi yang mereka berikan dapat dihitung dengan menyertakan transaksi yang ditandatangani yang dihasilkan oleh Smart Agent dengan pengembalian hasil dari transaksi MOR.
@@ -170,7 +170,7 @@ Biaya transaksi MOR pro-rata yang dibakar oleh setiap Pembangun Komunitas berfun
 Sebagai contoh, jika ada 100 Community Builder pada hari pertama saat jaringan diluncurkan, maka masing-masing akan mendapatkan hadiah pro-rata berdasarkan jumlah MOR yang telah mereka bakar melalui biaya. Dalam hal ini, dengan asumsi masing-masing dari 100 Community Builder membakar 100 MOR, maka 1% dari 3.456 token MOR setiap hari = 34,56 MOR.
 
 ## Diagram Pengguna Morpheus
-![UpdatedDiagram2UserFlow](https://github.com/MorpheusAIs/Morpheus/blob/51e75ad58503a3c10b053076cb9ccf34c695e586/Diagram_Pengguna.png)
+![UpdatedDiagram2UserFlow](https://github.com/MorpheusAIs/Morpheus/blob/main/Asset/WhitePaper%20Graphics/Indonesian/Diagram_Pengguna.png)
 
 ## Hadiah Morpheus Dikirimkan oleh Smart Contract di Ethereum Layer 2 
 Penyetoran stETH untuk mendapatkan hadiah akan dilakukan di mainnet Ethereum, ketika Token Morpheus (MOR) akan diberikan di Arbitrum Ethereum Layer 2, untuk tujuan pembayaran dan tindakan terkait utilitas MOR lainnya.
