@@ -1,41 +1,41 @@
-# Morpheus Protection Fund Proposal
+# Предложение Фонда защиты Морфеуса
 
-## Introduction
-The Morpheus white paper sets aside 4% of all MOR emissions for the purpose of a “Protection Fund” and delegates to the Code Providers to act as oracles in the case of its resources being needed.
-Type of actions:
-- Payment of buy bounty to avoid attacks.
-- Payment of audits before new Smart Contracts are deployed.
-- Halting the Smart Contracts in case of an on going attack.
-- Signaling and Mechansim for payout after an attack.
-- Plan In Case of Significant Loss Event (Hard Fork Scenario)
+## Введение
+В Белой Книге Morpheus 4% всей эмиссии MOR выделяется для создания «Фонда защиты» и делегируется поставщикам кода, которые выступают в качестве оракулов в случае необходимости в его ресурсах.  
+Тип действий:
+- Выплата награды за нахождение ошибки или уязвимости во избежание атак.
+- Оплата аудитов перед развертыванием новых смарт-контрактов.
+- Остановка смарт-контрактов в случае атаки.
+- Оценка ущерба и механизм выплаты после атаки.
+- План на случай значительных потерь (сценарий хард-форка)
 
-## Pre-Defined Cases Triggering Minor Payouts
-Before the Smart Contracts go live on the Ethereum network here defined are the conditions under which the Protection Fund will pay out MOR or stETH.
+## Заранее определенные случаи для небольших выплат
+Прежде чем смарт-контракты будут запущены в сети Ethereum, здесь определены условия, при которых Фонд защиты будет выплачивать MOR или stETH.
 
-## Types of Payments:
-1. Bugs discovered and responsibly disclosed to the developers of a Morpheus Capital, Code, Compute, Community or Protection Fund Smart Contract.
-2. Payment of audits before new Smart Contracts are deployed on the Morpheus network.
-3. User losses of MOR or stETH in the case of an exploited Morpheus Smart Contract.
-4. Making whole providers who didn’t receive MOR emissions in the case of a failure of the Morpheus Smart Contract.
+## Виды платежей:
+1. Ошибки, обнаруженные и ответственно раскрытые разработчикам смарт-контрактов Капитала, Вычислений, Кода, Комьюнити и Фонда защиты.
+2. Оплата аудита перед развертыванием новых смарт-контрактов в сети Morpheus.
+3. Потери пользователей MOR или sETH в результате ошибки смарт-контрактов Morpheus.
+4. Выплаты в случае, если участники не получили эмиссии MOR, в случае сбоя смарт-контрактов Morpheus.
 
-Amounts of payments from the protection fund should be in proportion to the bug, loss or emission error.
+Суммы выплат из фонда защиты должны быть пропорциональны ошибке, потере или ошибке эмиссии.
 
-## Halting Conditions For Smart Contracts
-Before payments for damages can figured out, there should be conditions that trigger a halt of the Smart Contracts in the case of an on going attack.
+## Условия остановки смарт-контрактов
+Прежде чем определить выплаты для компенсации ущерба, должны быть условия, которые вызывают остановку смарт-контрактов в случае текущей атаки.
 
-## Signaling & Mechanism For Payout
-Code Providers will participate in signaling when a payment should be triggered. First an incident will be detailed and posted on the GitHub repository of the affected Smart Contract. Including a list of affected addresses and amounts of MOR and / or stETH.
+## Оценка ущерба и механизм выплат
+Поставщики кода будут участвовать в оценке ущерба в случае необходимости выплаты. Сначала инцидент будет подробно описан и опубликован в репозитории GitHub затронутого смарт-контракта. Включая список затронутых адресов и сумм MOR и/или stETH.
 
-If a majority of Code Providers (as measured by the weight of their MOR tokens held) which participate in the Signaling period (no longer than 7 days) validate the report as TRUE then a payment will be triggered.
+Если большинство поставщиков кода (измеряемое весом их удерживаемых токенов MOR), участвующих в оценке ущерба (не более 7 дней), подтвердит отчет как ИСТИННЫЙ, то будет инициирована выплата.
 
-Once a payment is triggered the software will message the developers to authorize a payment to the affected addresses in the amounts specified.
+Как только выплата будет инициирована, программное обеспечение отправит разработчикам сообщение с просьбой авторизовать выплату на затронутые адреса в указанных суммах.
 
-## Plan In Case of a Significant Loss Event
-A Significant Loss Event is defined as an event in which the MOR losses exceed the total resources of the Protection Fund. In this case, rather than make a payout of MOR the Code Providers should deploy new Smart Contracts and correct the MOR balances effected manually. This would effectively cause a hard fork in the code / MOR balances and all Providers, token hodlers and other infrastructure providers would have to update their code to the new Smart Contracts.
+## План в случае существенного ущерба
+Существенная потеря определяется как событие, при котором потери MOR превышают общие ресурсы Фонда Защиты. В этом случае вместо выплаты MOR поставщики кода должны развернуть новые смарт-контракты и вручную скорректировать затронутые балансы MOR. Это фактически вызовет хард-форк кода / балансоа MOR, и все поставщики, держатели токенов и другие поставщики инфраструктуры должны будут обновить свой код до новых смарт-контрактов.
 
-In the case of stETH lost in a Significant Loss Event, the Protection Fund shall pay out to the maximum extent possible on a pro-rata basis to the amount of each person’s losses.
+В случае утери stETH в результате существенной ущерба, Фонд Защиты выплатит максимально возможную сумму на пропорциональной основе с учетом ущерба каждого человека.
 
-## Conclusion
-Bugs and errors in software are a reality and mark the history from the two unintentional hard forks of Bitcoin to The DAO during the early days of Ethereum. 
+## Заключение
+Баги и ошибки в программном обеспечении - это реальность отмеченная в истории начиная от двух неумышленных хард форков в Bitcoin до The DAO в ранние дни Ethereum.
 
-So planning ahead for different scenarios and cases and how to handle them is a wise approach for protecting against and otherwise mitigating risks. Fortunately, having set aside resources in advance with the Protection Fund, and also part of the protection fund earning LP rewards in the AMM the resources dedicated to protection of users ought to grow larger over time.
+Таким образом, заранее планировать различные сценарии и случаи и то, как с ними справляться, - мудрый подход для защиты и смягчения рисков. К счастью, благодаря заранее выделенным ресурсам в Фонде Защиты, а также части фонда защиты, приносящей доход в виде комиссионных наград за предоставление ликвидности в AMM, ресурсы, выделенные на защиту пользователей, будут увеличиваться со временем.
