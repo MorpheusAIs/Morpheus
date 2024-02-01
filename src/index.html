@@ -3,17 +3,21 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>chatd</title>
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://metamask-sdk-socket.metafi.codefi.network;">  -->
+    <meta http-equiv="Content-Security-Policy" content="connect-src 'self' unsafe-inline ws://localhost:* https://metamask-sdk-socket.metafi.codefi.network wss://metamask-sdk-socket.metafi.codefi.network data:" />
 
-    <link rel="stylesheet" href="index.css" />
+    <title>Morpheus</title>
 
-    <script type="module" src="./client.js" defer></script>
+    <!-- Include Prism CSS for syntax highlighting -->
+
+
 </head>
+
 
 <body>
     <!-- Initial Loading View -->
     <div id="initial-view">
-        <img id="app-logo" src="../public/dark-logo.png" alt="App Logo" />
+        <img id="app-logo" src="public_assets/morph_square.png" alt="App Logo" />
         <div id="spinner"></div>
         <div id="status-msg"></div>
     </div>
@@ -23,7 +27,7 @@
         <button id="file-open">
             <div id="file-spinner"></div>
             <div id="file-open-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="24" height="24" viewBox="0 2 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <!-- Folder Shape -->
                     <path class="folder-shape" fill="#C8C8C8"
                         d="M2 6c0-1.1.9-2 2-2h6l2 2h8c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6z" />
@@ -75,6 +79,38 @@
             </div>
         </div>
     </div>
+        <div id="wallet" class="wallet-container" style="margin-top: 0;">
+          
+          <h3>Morpheus Test Wallet</h3>
+        
+          <div id="buttonContainers">
+            <button class="button primary" id="connectButton">Connect</button>
+            <button class="button action" id="personalSignButton" style="display: none;" >personal_sign</button>
+            <button class="button action" id="signTypedDataButton" style="display: none;">eth_signTypedData_v4</button>
+            <button class="button action" id="switchChainButton" style="display: none;">Toggle Chain</button> 
+            <button class="button action" id="addChainButton"  style="display: none;">Add Polygon</button>
+            <button class="button action" id="addArbitrumChainButton" style="display: none;">Add Arbitrum</button>
+            <button class="button action" id="switchPolygonButton"  style="display: none;">Switch to Polygon</button>
+            <button class="button action" id="switchArbitrumButton" style="display: none;">Switch to Arbitrum</button>
+            <button class="button danger" id="terminateButton">Terminate</button>
+          </div>
+        
+          <div id="accountContainer">
+            <b>Account:</b><div id="account"></div>
+          </div>
+        
+          <div id="chainContainer">
+            <b>Chain:</b><div id="chain"></div>
+          </div>
+        
+          <div id="responseContainer">
+            <b>Response:</b><div id="response"></div>
+          </div>
+          <canvas id="qrCode"></canvas>
+          <div id="otpContainer">
+            <h1>OTP:</h1>
+            <h1 id="otp"></h1>
+          </div>
+        </div>
 </body>
-
 </html>

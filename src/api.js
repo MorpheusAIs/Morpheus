@@ -1,4 +1,4 @@
-const { openFile } = require("./service/document/reader.js");
+// const { openFile } = require("./service/document/reader.js");
 const { embed } = require("./service/embedding.js");
 const {
   store,
@@ -14,7 +14,7 @@ const {
   serve,
 } = require("./service/ollama/ollama.js");
 
-let model = "mistral";
+let model = "nous-hermes";
 
 function debugLog(msg) {
   if (global.debug) {
@@ -64,7 +64,8 @@ async function runOllamaModel(event, msg) {
 
 async function sendChat(event, msg) {
   let prompt = msg;
-  if (vectorStoreSize() > 0) {
+  const size = await vectorStoreSize();
+  if (size > 0) {
     const msgEmbeds = await embed({
       data: [
         {
@@ -73,9 +74,9 @@ async function sendChat(event, msg) {
         },
       ],
     });
-    const searchResult = search(msgEmbeds[0].embedding, 20);
+    const searchResults = await search(msgEmbeds[0].embedding, 20);
     // format the system context search results
-    let documentString = searchResult.join("\n\n");
+    let documentString = searchResults.join("\n\n");
     // Ensure the contextString does not exceed 500 characters
     if (documentString.length > 500) {
       documentString = documentString.substring(0, 497) + "...";
@@ -112,35 +113,35 @@ function stopChat() {
   abort();
 }
 
-async function loadDocument(event) {
-  try {
-    clearVectorStore();
+// async function loadDocument(event) {
+//   try {
+//     clearVectorStore();
 
-    // read the document
-    const doc = await openFile();
-    if (doc.data.length === 0) {
-      return;
-    }
+//     // read the document
+//     const doc = await openFile();
+//     if (doc.data.length === 0) {
+//       return;
+//     }
 
-    // get the embeddings for the document content
-    if (doc && doc.data) {
-      debugLog("Parsed content...");
-      for (const section of doc.data) {
-        debugLog(section.section);
-        debugLog(section.content);
-      }
-    }
-    const embeddings = await embed(doc);
+//     // get the embeddings for the document content
+//     if (doc && doc.data) {
+//       debugLog("Parsed content...");
+//       for (const section of doc.data) {
+//         debugLog(section.section);
+//         debugLog(section.content);
+//       }
+//     }
+//     const embeddings = await embed(doc);
 
-    // store the embeddings
-    store(embeddings);
+//     // store the embeddings
+//     store(embeddings);
 
-    event.reply("doc:load", { success: true, content: doc.fileName });
-  } catch (err) {
-    console.log(err);
-    event.reply("doc:load", { success: false, content: err.message });
-  }
-}
+//     event.reply("doc:load", { success: true, content: doc.fileName });
+//   } catch (err) {
+//     console.log(err);
+//     event.reply("doc:load", { success: false, content: err.message });
+//   }
+// }
 
 async function serveOllama(event) {
   try {
@@ -160,7 +161,7 @@ module.exports = {
   getModel,
   stopChat,
   sendChat,
-  loadDocument,
+  // loadDocument,
   serveOllama,
   runOllamaModel,
   stopOllama,

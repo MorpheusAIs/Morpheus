@@ -108,7 +108,7 @@ button:focus {
 #chat-view {
     display: none;
     position: relative;
-    width: 100%;
+    width: 75vw;
     height: 100%;
     overflow-y: scroll;
 }
@@ -124,6 +124,12 @@ button:focus {
     z-index: 999;
     pointer-events: none;
     overflow-y: auto;
+}
+
+/* overide prism markdown styles */
+pre[class*=language-] {
+    border: none !important;
+    box-shadow: none !important;
 }
 
 #settings-view {
@@ -182,6 +188,7 @@ button:focus {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    width: 75vw;
     text-align: center;
 }
 
@@ -195,7 +202,7 @@ button:focus {
     background-color: rgba(32, 32, 32, 0.85);
     border: 0.5px solid rgba(200, 200, 200, 0.8);
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 2.5px 5px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -239,7 +246,7 @@ button:focus {
 }
 
 #file-button-text {
-    padding-top: 2.5px;
+    font-size: 0.8rem;
 }
 
 #file-open-err-msg {
@@ -342,3 +349,6 @@ button:focus {
         transform: rotate(360deg);
     }
 }
+
+
+

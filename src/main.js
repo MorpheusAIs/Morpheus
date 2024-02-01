@@ -16,9 +16,11 @@ const {
   stopChat,
   serveOllama,
   stopOllama,
-  loadDocument,
+  // loadDocument,
   runOllamaModel,
 } = require("./api.js");
+
+const { MetaMaskSDK, SDKProvider } = require('@metamask/sdk');
 
 // When debug is set to true, the app will log debug messages to the console
 // This will be turned on by default when running the app in non-packaged mode
@@ -45,23 +47,32 @@ if (require("electron-squirrel-startup")) {
   app.quit();
 }
 
+
+
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
-    width: 800,
+    icon: path.join(__dirname, './public/MOR_logo_circle.icns'),
+    width: 1200,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, "preload.js"),
+      preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
     },
     autoHideMenuBar: true,
   });
 
-  mainWindow.loadFile(path.join(__dirname, "index.html"));
+  mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
-  if (!app.isPackaged) {
-    global.debug = true;
-    mainWindow.webContents.openDevTools();
-  }
-};
+  mainWindow.webContents.openDevTools();
+
+  // session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
+  //   callback({
+  //     responseHeaders: {
+  //       ...details.responseHeaders,
+  //       'Content-Security-Policy': ["connect-src 'self' unsafe-inline ws://localhost:* https://metamask-sdk-socket.metafi.codefi.network wss://metamask-sdk-socket.metafi.codefi.network data:"]
+  //     }
+  //   });
+  // });
+}
 
 app.on("ready", () => {
   // Add a handler for the interprocess events. This enables 2-way communication
@@ -70,7 +81,7 @@ app.on("ready", () => {
   ipcMain.on("model:get", getModel);
   ipcMain.on("chat:send", sendChat);
   ipcMain.on("chat:stop", stopChat);
-  ipcMain.on("doc:load", loadDocument);
+  // ipcMain.on("doc:load", loadDocument);
   ipcMain.on("ollama:serve", serveOllama);
   ipcMain.on("ollama:run", runOllamaModel);
   ipcMain.on("ollama:stop", stopOllama);
@@ -128,14 +139,14 @@ app.on("ready", () => {
   createWindow();
 
   // Define a custom Content Security Policy to only allow loading resources from the app's origin, this is needed to call across the interprocess boundary
-  session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
-    callback({
-      responseHeaders: {
-        ...details.responseHeaders,
-        "Content-Security-Policy": ["default-src 'self'"],
-      },
-    });
-  });
+  // session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
+  //   callback({
+  //     responseHeaders: {
+  //       ...details.responseHeaders,
+  //       "Content-Security-Policy": ["default-src 'self'"],
+  //     },
+  //   });
+  // });
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common
