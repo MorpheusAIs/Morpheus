@@ -58,32 +58,32 @@ Descriptions des contrats intelligents requis.
 Diagrammes détaillant la distribution de l'ETH.
 
 ### Distribution des récompenses du contrat intelligent Morpheus MOR
-![new-buckets](https://github.com/SmartAgentProtocol/SmartAgents/assets/76454555/cd57bae7-2a56-4a55-bf3e-1f810f3fba9c)
+![new-buckets](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img1-French-YP.png)
 
 ### Exemple de distribution des jetons MOR du jour 1 et jour 2.
-![Untitled spreadsheet - Google Sheets 2023-10-15 13-28-08](https://github.com/MorpheusAIs/Morpheus/assets/76454555/6ff7869d-bbd6-46b5-8673-6a59b75906e1)
+![Untitled spreadsheet - Google Sheets 2023-10-15 13-28-08](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img2-French-YP.png)
 
 ## Exemple de calcul de distribution pour l'adresse 0x123, contributeur ETH
 
 ### Étape un
-![Diagramme1pourDontateurETH](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/fead528c-d628-449e-a3a3-2f53904f4a3d)
+![Diagramme1pourDontateurETH](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img3-French-YP.png)
 
 ### Étape deux
-![Diagramme2pourETHDonné](https://github.com/MorpheusAIs/Morpheus/assets/1563345/915020e8-d342-48bc-85ee-367de0325680)
+![Diagramme2pourETHDonné](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img4-French-YP.png)
 
 ### Étape trois
-![Diagramme3pourETHDonné](https://github.com/MorpheusAIs/Morpheus/assets/1563345/a3f455af-56de-4c6b-9688-5b9e91673e5a)
+![Diagramme3pourETHDonné](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img5-French-YP.png)
 
 ## Exemple de calcul de distribution pour l'adresse 0x123, fournisseur de calcul
 
 ### Étape un
-![MORPourCalcul](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/bef69c69-0420-441f-97f0-7e8195844f57)
+![MORPourCalcul](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img6-French-YP.png)
 
 ### Étape deux
-![MORPourCalcul2](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/a6f30da5-5441-4f0a-be80-c5798f5920cd)
+![MORPourCalcul2](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img7-French-YP.png)
 
 ### Diagramme circulaire de distribution des jetons MOR
-![mordist](https://github.com/MorpheusAIs/Morpheus/assets/76454555/4157efe7-6abf-404a-87f9-a8dc76cd4799)
+![mordist](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img8-French-YP.png)
 
 ## Outils de développement Morpheus et pile technologique.
 - Llama2 - Exécution locale robuste de LLM en open source.
@@ -105,19 +105,19 @@ Espace réservé pour la description du processus d'audit, qui peut effectuer de
 Preuve de prompt générée au moment de l'interaction d'un utilisateur montrant l'intention exprimée, correspond aux contrats intelligents sélectionnés, et les valeurs de transaction sont confirmées avec l'utilisateur.
 
 ## Diagramme de l'utilisateur et du contributeur Morpheus
-![Diagramme de l'utilisateur   contributeur Morpheus](https://github.com/MorpheusAIs/Morpheus/assets/1563345/2cff8d70-c116-472f-a431-8a82bfa22f9b)
+![Diagramme de l'utilisateur   contributeur Morpheus](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img9-French-YP.png)
 
 ### Le diagramme montre le flux UX de la demande de l'utilisateur à l'approbation de l'action Web3.
-![Flux UX pour les tâches Web3 incitées et les tickets](https://github.com/MorpheusAIs/Morpheus/assets/76454555/942b20fb-d67e-4a57-af2c-cd24a89690a5)
+![Flux UX pour les tâches Web3 incitées et les tickets](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img10-French-YP.png)
 
 ### Le diagramme montre la version d'installation locale de Morpheus.
-![Diagramme d'installation locale de Morpheus](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/a0564914-cddb-42e4-b0f4-8c2310db6a66)
+![Diagramme d'installation locale de Morpheus](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img11-French-YP.png)
 
 ### Le diagramme montre la version d'installation P2P de Morpheus.
-![Diagramme d'installation P2P de Morpheus](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/a7eeb31f-3d38-4233-a45f-e9b91ad84ba2)
+![Diagramme d'installation P2P de Morpheus](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img12-French-YP.png)
 
 ### Le diagramme montre la version décentralisée de Morpheus.
-![Décentralisé de Morpheus](https://github.com/SmartAgentProtocol/SmartAgents/assets/1563345/1699f2de-cc18-42e8-a05c-32b3307baa20)
+![Décentralisé de Morpheus](https://github.com/0xgroundfloor/Morpheus-Images/blob/main/Yellowpaper-Images/img13-French-YP.png)
 
 ## Communauté
 - Smart Agency - Développeurs indépendants construisant des cas d'utilisation / agents pour les utilisateurs de Morpheus.
