@@ -1,102 +1,64 @@
 {
   "name": "morpheus",
   "productName": "Morpheus",
-  "version": "0.0.4",
+  "version": "0.0.6-alpha",
   "appId": "org.morpheus.client",
   "buildVersion": "${version}-${new Date().getTime()}",
   "icon": "morph_square.icns",
   "description": "Sovereign AI for the people",
-  "main": "src/index.js",
-  "homepage": "https://www.morepheusai.com",
+  "main": ".webpack/main",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
-    "build-verbose": "CSC_NAME='Developer ID Application: Better Brand Management LLC (ZA3KN2X4MN)' electron-builder",
+    "set-permissions": "node setPermissions.js",
+    "start": "electron-forge start",
+    "postmake": "npm run set-permissions",
+    "package": "electron-forge package",
     "make": "electron-forge make",
-    "make-linux": "electron-forge make --platform=linux",
-    "start-forge": "electron-forge start",
-    "postbuild": "dpkg-sig --sign builder dist/*.deb"
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
   },
-  "keywords": [
-    "Local",
-    "Sovereign",
-    "AI"
-  ],
-  "author": "Morpheus",
+  "keywords": [],
+  "author": {
+    "name": "morpheus",
+    "email": "morpheusai@protonmail.me"
+  },
   "license": "MIT",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.2.0",
+    "@electron-forge/maker-deb": "^7.2.0",
+    "@electron-forge/maker-dmg": "^7.2.0",
+    "@electron-forge/maker-rpm": "^7.2.0",
+    "@electron-forge/maker-squirrel": "^7.2.0",
+    "@electron-forge/maker-zip": "^7.2.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.2.0",
+    "@electron-forge/plugin-webpack": "^7.2.0",
+    "@vercel/webpack-asset-relocator-loader": "1.7.3",
+    "copy-webpack-plugin": "^12.0.2",
+    "copyfiles": "^2.4.1",
+    "css-loader": "^6.0.0",
+    "electron": "28.2.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^5.0.0",
+    "node-loader": "^2.0.0",
+    "style-loader": "^3.0.0"
+  },
   "dependencies": {
-    "@xenova/transformers": "^2.6.2",
+    "@metamask/sdk": "^0.14.2",
+    "@opendocsg/pdf2md": "^0.1.28",
+    "@orama/orama": "^2.0.2",
+    "@xenova/transformers": "^2.14.1",
+    "buffer": "^6.0.3",
     "electron-squirrel-startup": "^1.0.0",
-    "langchain": "^0.0.170",
+    "fs": "^0.0.1-security",
+    "langchain": "^0.1.7",
     "mammoth": "^1.6.0",
-    "ml-distance": "^4.0.1",
-    "nvm": "^0.0.4",
     "odt2html": "^1.0.1",
     "pdf-parse": "^1.1.1",
+    "qrcode": "^1.5.3",
     "winston": "^3.11.0"
   },
-  "devDependencies": {
-    "@electron-forge/cli": "^6.1.1",
-    "@electron-forge/maker-deb": "^6.4.2",
-    "@electron-forge/maker-rpm": "^6.4.2",
-    "@electron-forge/maker-snap": "^7.1.0",
-    "@electron-forge/maker-squirrel": "^6.4.2",
-    "@electron-forge/maker-zip": "^6.4.2",
-    "cross-env": "^7.0.3",
-    "electron": "^27.0.4",
-    "electron-builder": "^24.9.1"
-  },
-  "build": {
-    "appId": "org.morpheus.client",
-    "files": "![build_scripts{*/}",
-    "icon": "build/morph_square.icns",
-    "forceCodeSigning": true,
-    "dmg": {
-      "background": "build/1x/gmgbg.png",
-      "window": {
-        "width": 540,
-        "height": 380
-      },
-      "contents": [
-        {
-          "x": 130,
-          "y": 220
-        },
-        {
-          "x": 410,
-          "y": 220,
-          "type": "link",
-          "path": "/Applications"
-        }
-      ]
-    },
-    "mac": {
-      "category": "public.app-category.productivity",
-      "target": [
-        "dmg",
-        "zip"
-      ]
-    },
-    "linux": {
-      "target": [
-        "AppImage",
-        "deb",
-        "rpm",
-        "snap"
-      ],
-      "category": "Utility",
-      "synopsis": "Morpheus is AI for the people",
-      "description": "Decentralized AI for the people",
-      "maintainer": "Morpheus <morepheusai@proton.me>",
-      "vendor": "Morpheus",
-      "executableName": "morpheus",
-      "desktop": {
-        "Name": "Morpheus",
-        "Icon": "build/morph_square.icns"
-      }
-    },
-    "deb": {
-      "compression": "gz"
-    }
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
   }
 }
