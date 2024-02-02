@@ -114,9 +114,9 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | 0xBb46dEF4367111fCa4cdcCfb34CE48DFABbe5e51 | https://github.com/MorpheusAIs/Morpheus | 10 | Anon34 Contribution to papers, reviews, and code. | 
 | 0x373A2b98B1FD70C62EFc7f3b27272eCDBDfD856F | https://github.com/MorpheusAIs/Morpheus | 120 | Anon35 Contribution to papers, reviews, and code. | 
 | 0x1823e8af312D8d14CdCEDa785BF721a5438D0Cd3 | https://github.com/MorpheusAIs/Morpheus | 120 | Anon36 Contribution to papers, reviews, and code. | 
-| 0x0e50f6bc9691BB5c56eA4775322b177b655805c0 | https://github.com/MorpheusAIs/Morpheus | 120 | Anon27 Contribution to papers, reviews, and code. | 
-| 0x7289c33b3640E9928256c2ce237452Cb3C30D84a | https://github.com/MorpheusAIs/Morpheus | 120 | Anon28 Contribution to papers, reviews, and code. | 
-| 0xD8A5529690cDf546FDcF07D593947cE298d60C51 | https://github.com/DecentralizeAI/MRC | 160 | Anon29 Contribution to papers, reviews, and code. | 
-| 0x81e94bB131b184Dcb2CEdC4Ac95622058176290A | https://github.com/MorpheusAIs/Morpheus | 20 | Anon30 Contribution to papers, reviews, and code. | 
-| 0xD8A5529690cDf546FDcF07D593947cE298d60C51 | https://github.com/MorpheusAIs/Morpheus | 480 | Anon31 Contribution to papers, reviews, and code. | 
-| 0xc6A4CE513dD749FB25C35E044F00646abD8F8969 | https://github.com/MorpheusAIs/Morpheus | 10 | Anon32 Contribution to papers, reviews, and code. | 
+| 0x0e50f6bc9691BB5c56eA4775322b177b655805c0 | https://github.com/MorpheusAIs/Morpheus | 120 | Anon37 Contribution to papers, reviews, and code. | 
+| 0x7289c33b3640E9928256c2ce237452Cb3C30D84a | https://github.com/MorpheusAIs/Morpheus | 120 | Anon38 Contribution to papers, reviews, and code. | 
+| 0xD8A5529690cDf546FDcF07D593947cE298d60C51 | https://github.com/DecentralizeAI/MRC | 160 | Anon39 Contribution to papers, reviews, and code. | 
+| 0x81e94bB131b184Dcb2CEdC4Ac95622058176290A | https://github.com/MorpheusAIs/Morpheus | 20 | Anon40 Contribution to papers, reviews, and code. | 
+| 0xD8A5529690cDf546FDcF07D593947cE298d60C51 | https://github.com/MorpheusAIs/Morpheus | 480 | Anon41 Contribution to papers, reviews, and code. | 
+| 0xc6A4CE513dD749FB25C35E044F00646abD8F8969 | https://github.com/MorpheusAIs/Morpheus | 10 | Anon42 Contribution to papers, reviews, and code. | 
