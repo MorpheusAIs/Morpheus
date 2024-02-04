@@ -3,7 +3,7 @@ const setPermissions = require('./setPermissions');
 module.exports = {
   packagerConfig: {
     asar: {
-      unpack: "**/*.node"
+      unpack: "ollama-darwin, **/ollama-darwin/**/*, **/public_assets/**/*"
     },
     afterCopy: [setPermissions]
   },
