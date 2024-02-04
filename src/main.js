@@ -22,6 +22,10 @@ const {
 
 const { MetaMaskSDK, SDKProvider } = require('@metamask/sdk');
 
+const resourcesPath = process.resourcesPath;
+const ollamaPath = path.join(resourcesPath, 'app.asar.unpacked', '.webpack', 'main', 'runners', 'ollama-darwin');
+console.log(ollamaPath);
+
 // When debug is set to true, the app will log debug messages to the console
 // This will be turned on by default when running the app in non-packaged mode
 global.debug = false;

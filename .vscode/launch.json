@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+        "command": "DEBUG='electron-forge:*' npm run make ",
+        "name": "Run npm make with debug",
+        "request": "launch",
+        "type": "node-terminal"
+    },
+    {
+        "command": "npm run make",
+        "name": "Run npm make",
+        "request": "launch",
+        "type": "node-terminal"
+    },
+    {
+      "name": "Debug Main Process",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+      "windows": {
+        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
+      },
+      "args" : ["."],
+      "outputCapture": "std"
+    }
+  ]
+}
