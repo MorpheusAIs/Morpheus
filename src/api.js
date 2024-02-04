@@ -329,26 +329,31 @@ async function sendMorpheusChat(event, msg) {
 
     // Prompt Template to Generate the JSON Body with the Method and Params
     const promptTemplate = `
-    Format the response in JSON as per the following example (limit your response to 200 characters and just the JSON, please!)
+    You are the Morpheus Agent helping the user with their JSON-RPC call. Format the response in JSON as per the following example. However there are a few rules: \n\n
+    1. Only respond with the JSON-RPC method and params. \n
+    2. Limit the response to 200 characters. \n
+    3. Do not provide any additional information or explanation on how you created the response.
+    4. Do not provide any explainer or confirmation before the JSON response. \n
+    \n\n
     Use the provided context output and the user's message to tailor the response.
-    
+    \n
     An relevant example of a metamask payload:
     {{
       "jsonrpc": "2.0",
-      "method": "eth_getBlockByNumber",
-      "params": ["latest", true],
+      "method": "eth_blockNumber",
+      "params": [],
       "id": 1
     }}
-    
+    \n\n
     And the user's inquiry:
     {nlq}
-    
+    \n\n
     Ensure the final response follows this JSON structure with the correct method and params: 
-    
+    \n
     {{
       "jsonrpc": "2.0",
-      "method": "eth_getBlockByNumber",
-      "params": ["latest", true],
+      "method": "eth_blockNumber",
+      "params": [],
       "id": 1
     }}`;
 
@@ -380,14 +385,11 @@ async function sendMorpheusChat(event, msg) {
 
     console.log('Result:', result);
 
-    // Get the JSON Result
-    var result_json_string = result.toString();
-
-    /*    // Get the JSON from the Response (in case there is other data in the response)
-       const result_json = result_json_string.substring(indexOf("```json"), indexOf("}```")); */
+    // Get the JSON Result and Conver to JSON Object
+    var result_json_object = JSON.parse(result);
 
     // Parse the JSON ReSponse from the LLM for the Method and Params
-    const _result_json = result_json_string;
+    const _result_json = result_json_object;
 
     // Retreive the Function Name from the JSON
     const _function_name = _result_json.method ? _result_json.method : 'eth_getBlockByNumber';
@@ -418,7 +420,7 @@ async function sendTransaction(function_name, function_parameters) {
   console.log('Function Name: ', function_name);
   console.log('Function Parameter: ', function_parameters);
 
-  var api_key = ''; // Replace with Infura Key
+  var api_key = '';
 
   // Ethereum Function Router
   switch (function_name) {
@@ -426,37 +428,43 @@ async function sendTransaction(function_name, function_parameters) {
     // Call Eth Contract Method
     case "eth_call":
 
-      function_response = await ethereumAPI(function_name, function_parameters, api_key);
+      function_response = await ethereumAPI(function_name, function_parameters, api_key, "mainnet");
       break;
 
     // Get Eth Balance
     case "eth_getBalance":
 
-      function_response = await ethereumAPI(function_name, function_parameters, api_key);
+      function_response = await ethereumAPI(function_name, function_parameters, api_key, "mainnet");
+      break;
+
+
+    case "eth_blockNumber":
+
+      function_response = await ethereumAPI(function_name, function_parameters, api_key, "mainnet");
       break;
 
     // Get Eth Block By Number
     case "eth_getBlockByNumber":
 
-      function_response = await ethereumAPI(function_name, function_parameters, api_key);
+      function_response = await ethereumAPI(function_name, function_parameters, api_key, "mainnet");
       break;
 
     // Get Eth Transaction by Hash
     case "eth_getTransactionByHash":
 
-      function_response = await etheruemAPI(function_name, function_parameters, api_key);
+      function_response = await etheruemAPI(function_name, function_parameters, api_key, "mainnet");
       break;
 
     // Get Eth Transaction Receipt
     case "eth_getTransactionReceipt":
 
-      function_response = await ethereumAPI(function_name, function_parameters, api_key);
+      function_response = await ethereumAPI(function_name, function_parameters, api_key, "mainnet");
       break;
 
     // Send Eth Transaction
     case "eth_sendRawTransaction":
 
-      function_response = await ethereumAPI(function_name, function_parameters, api_key);
+      function_response = await ethereumAPI(function_name, function_parameters, api_key, "mainnet");
       break;
 
     default:
@@ -468,7 +476,7 @@ async function sendTransaction(function_name, function_parameters) {
   };
 
   // Ethereum API to make JSON RPC Call
-  async function ethereumAPI(function_name, function_parameters, api_key) {
+  async function ethereumAPI(function_name, function_parameters, api_key, network) {
 
     // Dynamically pass in the function name and function parameters into the data object
     var data = {
@@ -488,7 +496,7 @@ async function sendTransaction(function_name, function_parameters) {
     };
 
     // Transaction to Infura
-    const txn_data = await fetch(`https://mainnet.infura.io/v3/${api_key}`, infuraSettings)
+    const txn_data = await fetch(`https://${network}.infura.io/v3/${api_key}`, infuraSettings)
 
     // Transaction Data JSON
     const txn_data_json = await txn_data.json();
@@ -496,7 +504,7 @@ async function sendTransaction(function_name, function_parameters) {
     console.log(txn_data_json);
 
     // Retrieve Block Number from the JSON Result
-    let block_number_hex_string = txn_data_json.result.number;
+    let block_number_hex_string = txn_data_json.result;
 
     console.log('Block Number Hex String', block_number_hex_string);
 
@@ -510,29 +518,29 @@ async function sendTransaction(function_name, function_parameters) {
 
   }
 
-/*   // Ethereum Function Response Router
-  switch (function_name) {
-
-    // Get Eth Block By Number
-    case "eth_getBlockByNumber":
-
-      // The Result from the JSON RPC Call
-      var txn_response_data_result = function_response.result;
-
-      // Retrieve Block Number from the JSON Result
-      let block_number_hex_string = txn_response_data_result.number;
-
-      console.log('Block Number Hex String', block_number_hex_string);
-
-      // Convert to Decimal Block Number
-      let decimal_block_number = parseInt(block_number_hex_string, 16)
-
-      console.log('Block Number:', decimal_block_number);
-
-      // Return back the Response to the User with the Data
-      return `The latest Ethereum blockheight is ${decimal_block_number} `
-
-  } */
+  /*   // Ethereum Function Response Router
+    switch (function_name) {
+  
+      // Get Eth Block By Number
+      case "eth_getBlockByNumber":
+  
+        // The Result from the JSON RPC Call
+        var txn_response_data_result = function_response.result;
+  
+        // Retrieve Block Number from the JSON Result
+        let block_number_hex_string = txn_response_data_result.number;
+  
+        console.log('Block Number Hex String', block_number_hex_string);
+  
+        // Convert to Decimal Block Number
+        let decimal_block_number = parseInt(block_number_hex_string, 16)
+  
+        console.log('Block Number:', decimal_block_number);
+  
+        // Return back the Response to the User with the Data
+        return `The latest Ethereum blockheight is ${decimal_block_number} `
+  
+    } */
 
   return function_response
 
