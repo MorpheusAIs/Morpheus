@@ -12,6 +12,7 @@ fs.writeFileSync(logFilePath, util.inspect(process.env), 'utf-8');
 
 const resourcesPath = process.resourcesPath;
 const ollamaPath = path.join(resourcesPath, 'app.asar.unpacked', '.webpack', 'main', 'runners', 'ollama-darwin');
+console.log(ollamaPath);
 
 let ollamaProcess = null; // Variable to store the Ollama process
 

@@ -25,3 +25,5 @@ package-old.json
 .idea
 venv
 __pycache__/
+/.webpack
+.webpack/
