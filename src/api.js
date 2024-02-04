@@ -287,7 +287,7 @@ async function sendMorpheusChat(event, msg) {
     // Load Metamask Examples
     async function loadMetamaskExamples() {
       try {
-        const directoryLoader = new DirectoryLoader("/home/dom/Morpheus/ai_experiments/rag_assets/metamask_eth_examples", {
+        const directoryLoader = new DirectoryLoader("Morpheus/ai_experiments/rag_assets/metamask_eth_examples", {
           ".txt": (path) => new TextLoader(path),
         });
 
@@ -402,82 +402,6 @@ async function sendMorpheusChat(event, msg) {
   }
 }
 
-// Send Transaction API
-// Send Ethereum Transaction Transaction Router based on the function_name and function parameters
-// Pass in the Function Name and Function Parameters to the JSON RPC Call API
-// Based on the Function Name, Send back a Response with the Result from the Ethereum Blockchain
-async function sendTransaction(function_name, function_parameters) {
-
-  console.log('Function Name: ', function_name);
-  console.log('Function Parameter: ', function_parameters);
-
-  var api_key = '';
-
-  // Ethereum Function Router
-  switch (function_name) {
-
-    // Call Eth Contract Method
-    case "eth_call":
-
-      function_response = await ethereumAPI(function_name, function_parameters, api_key, "mainnet");
-      break;
-
-    // Get Eth Balance
-    case "eth_getBalance":
-
-      function_response = await ethereumAPI(function_name, function_parameters, api_key, "mainnet");
-      break;
-
-
-    case "eth_blockNumber":
-
-      function_response = await ethereumAPI(function_name, function_parameters, api_key, "mainnet");
-      break;
-
-    // Get Eth Block By Number
-    case "eth_getBlockByNumber":
-
-      function_response = await ethereumAPI(function_name, function_parameters, api_key, "mainnet");
-      break;
-
-    // Get Eth Transaction by Hash
-    case "eth_getTransactionByHash":
-
-      function_response = await etheruemAPI(function_name, function_parameters, api_key, "mainnet");
-      break;
-
-    // Get Eth Transaction Count
-    case "eth_getTransactionCount":
-
-      function_response = await etheruemAPI(function_name, function_parameters, api_key, "mainnet");
-      break;
-
-    // Get Eth Transaction Receipt
-    case "eth_getTransactionReceipt":
-
-      function_response = await ethereumAPI(function_name, function_parameters, api_key, "mainnet");
-      break;
-
-    // Send Eth Transaction
-    case "eth_sendRawTransaction":
-
-      function_response = await ethereumAPI(function_name, function_parameters, api_key, "mainnet");
-      break;
-
-    default:
-
-      // Default for Testing
-      function_response = await ethereumAPI("eth_getBlockByNumber", ["latest", true], api_key, "mainnet");
-      break;
-
-  };
-
-  // Return the Function Response
-  return function_response;
-
-}
-
-
 // Ethereum API to make JSON RPC Call
 async function ethereumAPI(function_name, function_parameters, api_key, network) {
 
@@ -547,10 +471,82 @@ async function ethereumAPI(function_name, function_parameters, api_key, network)
       function_message_response = `The balance is ${decimal_balance_number} `
       _function_response = function_message_response;
 
+      break;
+
   }
 
   // Return the Function Response
   return _function_response;
+
+}
+
+// Send Transaction API
+// Send Ethereum Transaction Transaction Router based on the function_name and function parameters
+// Pass in the Function Name and Function Parameters to the JSON RPC Call API
+// Based on the Function Name, Send back a Response with the Result from the Ethereum Blockchain
+async function sendTransaction(function_name, function_parameters) {
+
+  console.log('Function Name: ', function_name);
+  console.log('Function Parameter: ', function_parameters);
+
+  // Set Infura API Key
+  var api_key = '';
+
+  // Ethereum Function Router
+  switch (function_name) {
+
+    // Call Eth Contract Method
+    case "eth_call":
+
+      function_response = await ethereumAPI(function_name, function_parameters, api_key, "mainnet");
+      break;
+
+    // Get Eth Balance
+    case "eth_getBalance":
+
+      function_response = await ethereumAPI(function_name, function_parameters, api_key, "mainnet");
+      break;
+
+
+    case "eth_blockNumber":
+
+      function_response = await ethereumAPI(function_name, function_parameters, api_key, "mainnet");
+      break;
+
+    // Get Eth Block By Number
+    case "eth_getBlockByNumber":
+
+      function_response = await ethereumAPI(function_name, function_parameters, api_key, "mainnet");
+      break;
+
+    // Get Eth Transaction by Hash
+    case "eth_getTransactionByHash":
+
+      function_response = await ethereumAPI(function_name, function_parameters, api_key, "mainnet");
+      break;
+
+    // Get Eth Transaction Count
+    case "eth_getTransactionCount":
+
+      function_response = await ethereumAPI(function_name, function_parameters, api_key, "mainnet");
+      break;
+
+    // Get Eth Transaction Receipt
+    case "eth_getTransactionReceipt":
+
+      function_response = await ethereumAPI(function_name, function_parameters, api_key, "mainnet");
+      break;
+
+    default:
+
+      // Default for Testing
+      function_response = await ethereumAPI("eth_getBlockByNumber", ["latest", true], api_key, "mainnet");
+      break;
+
+  };
+
+  // Return the Function Response
+  return function_response;
 
 }
 
