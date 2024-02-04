@@ -333,11 +333,11 @@ async function sendMorpheusChat(event, msg) {
     1. Only respond with the JSON-RPC method and params. \n
     2. Limit the response to 200 characters. \n
     3. Do not provide any additional information or explanation on how you created the response.
-    4. Do not provide any explainer or confirmation before the JSON response. \n
+    4. Do not provide any text before the JSON response. Only respond with the JSON. \n
     \n\n
     Use the provided context output and the user's message to tailor the response.
     \n
-    An relevant example of a metamask payload:
+    A relevant example of a JSON RPC payload:
     {{
       "jsonrpc": "2.0",
       "method": "eth_blockNumber",
@@ -345,17 +345,8 @@ async function sendMorpheusChat(event, msg) {
       "id": 1
     }}
     \n\n
-    And the user's inquiry:
-    {nlq}
-    \n\n
-    Ensure the final response follows this JSON structure with the correct method and params: 
-    \n
-    {{
-      "jsonrpc": "2.0",
-      "method": "eth_blockNumber",
-      "params": [],
-      "id": 1
-    }}`;
+    Generate the JSON based on the user's inquiry:
+    {nlq}`;
 
     // Loading Messages
     const messages = [
@@ -455,6 +446,12 @@ async function sendTransaction(function_name, function_parameters) {
       function_response = await etheruemAPI(function_name, function_parameters, api_key, "mainnet");
       break;
 
+    // Get Eth Transaction Count
+    case "eth_getTransactionCount":
+
+      function_response = await etheruemAPI(function_name, function_parameters, api_key, "mainnet");
+      break;
+
     // Get Eth Transaction Receipt
     case "eth_getTransactionReceipt":
 
@@ -470,79 +467,90 @@ async function sendTransaction(function_name, function_parameters) {
     default:
 
       // Default for Testing
-      function_response = await ethereumAPI("eth_getBlockByNumber", ["latest", true], api_key);
+      function_response = await ethereumAPI("eth_getBlockByNumber", ["latest", true], api_key, "mainnet");
       break;
 
   };
 
-  // Ethereum API to make JSON RPC Call
-  async function ethereumAPI(function_name, function_parameters, api_key, network) {
+  // Return the Function Response
+  return function_response;
 
-    // Dynamically pass in the function name and function parameters into the data object
-    var data = {
-      "jsonrpc": "2.0",
-      "method": function_name,
-      "params": function_parameters,
-      "id": 1
-    };
+}
 
-    // Infura Settings
-    var infuraSettings = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    };
 
-    // Transaction to Infura
-    const txn_data = await fetch(`https://${network}.infura.io/v3/${api_key}`, infuraSettings)
+// Ethereum API to make JSON RPC Call
+async function ethereumAPI(function_name, function_parameters, api_key, network) {
 
-    // Transaction Data JSON
-    const txn_data_json = await txn_data.json();
+  // Dynamically pass in the function name and function parameters into the data object
+  var data = {
+    "jsonrpc": "2.0",
+    "method": function_name,
+    "params": function_parameters,
+    "id": 1
+  };
 
-    console.log(txn_data_json);
+  // Infura Settings
+  var infuraSettings = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  };
 
-    // Retrieve Block Number from the JSON Result
-    let block_number_hex_string = txn_data_json.result;
+  // Transaction to Infura
+  const txn_data = await fetch(`https://${network}.infura.io/v3/${api_key}`, infuraSettings)
 
-    console.log('Block Number Hex String', block_number_hex_string);
+  // Transaction Data JSON
+  const txn_data_json = await txn_data.json();
 
-    // Convert to Decimal Block Number
-    let decimal_block_number = parseInt(block_number_hex_string, 16)
+  console.log(txn_data_json);
 
-    console.log('Block Number:', decimal_block_number);
+  // Set Vars
+  var _function_response;
+  var function_message_response;
+  var block_number_hex_string;
+  var balance_number_hex_string;
+  var decimal_block_number;
+  var decimal_balance_number;
 
-    // Return back the Response to the User with the Data
-    return `The latest Ethereum blockheight is ${decimal_block_number} `
+  // Switch Statement for the Function Name
+  switch (function_name) {
+
+    case "eth_blockNumber":
+
+      // Retrieve Block Number from the JSON Result
+      block_number_hex_string = txn_data_json.result;
+      decimal_block_number = parseInt(block_number_hex_string, 16);
+      function_message_response = `The latest Ethereum blockheight is ${decimal_block_number} `
+      _function_response = function_message_response;
+
+      break;
+
+    case "eth_getBlockByNumber":
+
+      // The Block Result from the JSON RPC Call
+      var txn_response_data_result = txn_data_json.result;
+      block_number_hex_string = txn_response_data_result.number;
+      decimal_block_number = parseInt(block_number_hex_string, 16)
+      function_message_response = `The latest Ethereum block is ${decimal_block_number} `
+      _function_response = function_message_response;
+
+      break;
+
+    case "eth_getBalance":
+
+      // The Balance Result from the JSON RPC Call
+      var txn_response_data_result = txn_data_json.result;
+      balance_number_hex_string = txn_response_data_result;
+      decimal_balance_number = parseInt(balance_number_hex_string, 16)
+      function_message_response = `The balance is ${decimal_balance_number} `
+      _function_response = function_message_response;
 
   }
 
-  /*   // Ethereum Function Response Router
-    switch (function_name) {
-  
-      // Get Eth Block By Number
-      case "eth_getBlockByNumber":
-  
-        // The Result from the JSON RPC Call
-        var txn_response_data_result = function_response.result;
-  
-        // Retrieve Block Number from the JSON Result
-        let block_number_hex_string = txn_response_data_result.number;
-  
-        console.log('Block Number Hex String', block_number_hex_string);
-  
-        // Convert to Decimal Block Number
-        let decimal_block_number = parseInt(block_number_hex_string, 16)
-  
-        console.log('Block Number:', decimal_block_number);
-  
-        // Return back the Response to the User with the Data
-        return `The latest Ethereum blockheight is ${decimal_block_number} `
-  
-    } */
-
-  return function_response
+  // Return the Function Response
+  return _function_response;
 
 }
 
