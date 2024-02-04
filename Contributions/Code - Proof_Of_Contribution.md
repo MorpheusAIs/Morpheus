@@ -123,3 +123,4 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | 0xc6A4CE513dD749FB25C35E044F00646abD8F8969 | https://github.com/MorpheusAIs/Morpheus | 10 | Anon42 Contribution to papers, reviews, and code. | 
 | 0x411A4D3B06ad7cEDd6dbC423112fe5586e096e56 | https://github.com/MorpheusAIs/Morpheus | 1 | AnonP Contribution to competitive landscape summary. https://github.com/MorpheusAIs/Morpheus/issues/160 . | 
 | 0x9d28ABd25Ce3b65E8F1EC9818a230acEB604Bc82 | https://github.com/vvasan11/Morpheus/blob/main/WhitePaperFinnish.md| 10 hours | Translation of the whitepaper to Finnish. | 
+| 0xe83A996F597f5EFAe542F293A2B3dbDdab5E75C3 | https://github.com/MorpheusAIs/Morpheus/pull/436 | 9 Hours | Romanian Whitepaper translation. |
