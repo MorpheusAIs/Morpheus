@@ -162,6 +162,46 @@ window.electronAPI.onChatReply((event, data) => {
   }
 });
 
+// Receive chat response from Ollama server
+window.electronAPI.onMorpheusChatReply((event, data) => {
+  // clear loading animation
+  const loadingDots = responseElem.querySelector(".dots-loading");
+  if (loadingDots) {
+    loadingDots.remove();
+  }
+
+  if (!data.success) {
+    if (data.content !== "The operation was aborted.") {
+      // Don't display an error if the user stopped the request
+      responseElem.innerText = "Error: " + data.content;
+    }
+    stopRequestContainer.style.display = "none";
+    userInput.disabled = false;
+    userInput.focus();
+    return;
+  }
+
+  if (data.content) {
+    responseElem.innerText += data.content // Append to existing text
+  }
+
+  if (data.content) {
+    // The chat is done, remove the stop request button and re-enable input
+    stopRequestContainer.style.display = "none";
+    userInput.disabled = false;
+    userInput.focus();
+  }
+
+  // Check if the view is already at the bottom of the content
+  const isAtBottom =
+    chatView.scrollTop + chatView.clientHeight >= chatView.scrollHeight - 50; // 10 is a tolerance value
+
+  // If they're at the bottom, scroll to the new bottom
+  if (isAtBottom) {
+    chatView.scrollTop = chatView.scrollHeight;
+  }
+});
+
 // Open file dialog
 openFileButton.addEventListener("click", () => {
   document.getElementById("file-open-icon").style.display = "none";
