@@ -1,5 +1,5 @@
 # Машина Технокапіталу (TCM)
-## Спрощення винагороди веб3-розробників за їх код
+## Код, капітал, спільнота, обчислення: революція відкритого коду починається тут
 
 ## Вступ
 На сьогоднішній день немає простого способу для розробників, які створюють програмне забезпечення, отримувати винагороду за свою роботу, не вдаючись до античного процесу. Вони змушені створювати компанію, фонд чи DAO для вирішення питань продажу, обчислень, зберігання, накладних витрат та збору платежів від користувачів.
@@ -37,6 +37,7 @@
 3. 50% щоденного доходу залишається у вигляді stETH і додається в AMM як інша половина торгової пари, що також є ліквідністю, що належить протоколу.
 4. Проєкт із відкритим вихідним кодом щодня випускає свій власний токен вкладнику доходу.
 5. Власники власних токенів мають доступ до функцій та сервісів проекту з відкритим вихідним кодом.
+6. Проекти також можуть мати доступ до інших учасників стеку Freedom-Tech, щоб розробники могли швидше розширити охоплення своєї екосистеми.
 
 Приклади проектів з відкритим вихідним кодом можуть включати Smart Agents, децентралізовані програми, смарт-контракти, точно налаштовані моделі та інструменти для використання в конкретних завданнях програмного забезпечення.
 
@@ -91,3 +92,27 @@ Example Proof of Code Contribution.
 Ця самопридумана фантазія зазвичай не спрацьовує. Натомість засновники виявляють, що вони потрапили в пастку, створивши компанію, що фундаментально суперечить їх первісним цінностям. Реальність зазвичай приходить надто пізно, щоб щось змінити.
 
 То що робити? Настав час нової моделі, яка вирішує ці проблеми. На даний момент всі частини на місці, щоб запустити Машину технокапіталу.
+
+## Переваги для розробників у використанні Morpheus Tech Stack через TCM
+Враховуючи весь цей контекст поза фінансуванням, які прості практичні технічні переваги Morpheus Tech Stack надає використання TCM.
+- A Chat Interface with a built in GUI.
+- Access to a wide set of open source LLMs.
+- Payment rails for Inference.
+- Large Scale Decentralized Compute.
+- Integrated Front Ends.
+- Capital for your app development.
+- Discoverability of your application.
+- Audits of your Smart Agent.
+- Tracking of rewards for open source contributions.
+- Built in Intent detection to trigger other agentic actions.
+- Proof of user intent and a proof of their action approval.
+- On chain persistent history of actions.
+- Persistent storage of a user's Smart Agent context & history.
+- Persistent storage of a users connections to other Agents.
+- A wallet for a Smart Agent to get paid or pay other agents.
+- The ability to move between devices.
+- The ability to deploy or use agents jurisdiction agnostically.
+- The ability to access uncensored data permissionlessly.
+
+## Висновок
+Приєднуйтесь до спільноти людей, які заново винаходять спосіб створення, фінансування та роботи програм із відкритим кодом.
