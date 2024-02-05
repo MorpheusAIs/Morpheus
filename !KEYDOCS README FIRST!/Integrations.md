@@ -15,19 +15,27 @@ Morpheus: https://mor.org/
 
 **Models**
 Bittensor API Docs https://docs.bittensor.com/python-api/html/index.html
+HyperSpaceAI
 
 **Fine Tuning / Training**
 NOUS Research
+
+**Tools**
+Ora(Previously HyperOracle)
+Lumerin
 
 **Compute**
 Akash
 
 **Forges / Agent Builders**
 Langchain / Langsmith
+Polywrap
 
 **Data**
 Syntropy
 Jackal Protocol
+Bagel
+HyperSpaceAI
 
 **Smart Contracts**
 Syntropy
@@ -35,6 +43,7 @@ Arbitrum
 
 **Inference**
 Livepeer
+HyperSpaceAI
 
 ## Morpheus Request for Comments (MRC)
 List of proposals for specific technical functions and integrations for Decentralized AI.
