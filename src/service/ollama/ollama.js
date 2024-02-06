@@ -1,7 +1,7 @@
 const fs = require("fs");
 const os = require("os");
 const path = require("path");
-const { exec } = require("child_process");
+const { execFile } = require("child_process");
 const { logInfo, logErr } = require("../logger.js");
 
 var OllamaServeType = {
@@ -57,7 +57,7 @@ class Ollama {
     switch (process.platform) {
       case "win32":
         exe = "ollama.exe";
-        appDataPath = path.join(os.homedir(), "AppData", "Local", "chatd");
+        appDataPath = path.join(os.homedir(), "AppData", "Local", "Morpheus");
         break;
       case "darwin":
         exe = "ollama-darwin";
@@ -65,12 +65,12 @@ class Ollama {
           os.homedir(),
           "Library",
           "Application Support",
-          "chatd"
+          "Morpheus"
         );
         break;
       case "linux":
         exe = "ollama-linux"; // x64 only
-        appDataPath = path.join(os.homedir(), ".config", "chatd");
+        appDataPath = path.join(os.homedir(), ".config", "Morpheus");
         break;
       default:
         logErr(`unsupported platform: ${process.platform}`);
@@ -98,8 +98,8 @@ class Ollama {
         ...process.env,
         OLLAMA_MODELS: appDataDirectory,
       };
-      this.childProcess = exec(
-        path + " serve",
+      this.childProcess = execFile(
+        path, ["serve"],
         { env },
         (err, stdout, stderr) => {
           if (err) {
