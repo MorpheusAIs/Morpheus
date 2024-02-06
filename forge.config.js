@@ -2,7 +2,9 @@ const setPermissions = require('./setPermissions');
 
 module.exports = {
   packagerConfig: {
-    asar: true
+    asar: true,
+    afterCopy: [setPermissions],
+    "extraResource": "./src/service/ollama/runners",
   },
   rebuildConfig: {},
   makers: [
