@@ -2,10 +2,7 @@ const setPermissions = require('./setPermissions');
 
 module.exports = {
   packagerConfig: {
-    asar: {
-      unpack: "ollama-darwin, **/ollama-darwin/**/*, **/public_assets/**/*"
-    },
-    afterCopy: [setPermissions]
+    asar: true
   },
   rebuildConfig: {},
   makers: [
@@ -63,9 +60,6 @@ module.exports = {
             },
           ],
         },
-        hooks: {
-          afterCompile: setPermissions,
-        }
       },
     },
   ],
