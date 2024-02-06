@@ -1,12 +1,16 @@
 {
   "name": "morpheus",
   "productName": "Morpheus",
-  "version": "0.0.6-alpha",
+  "version": "0.0.6",
   "appId": "org.morpheus.client",
   "buildVersion": "${version}-${new Date().getTime()}",
   "icon": "morph_square.icns",
   "description": "Sovereign AI for the people",
   "main": ".webpack/main",
+  "electronPackagerConfig": {
+    "icon": "./public/circle-mor-logo.ico" 
+  },
+  
   "scripts": {
     "set-permissions": "node setPermissions.js",
     "start": "electron-forge start",
