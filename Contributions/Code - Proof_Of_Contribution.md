@@ -140,4 +140,6 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | 0x38c7e9E4917B521E5e13CEaB4Ff39448Cc85d7f0 | https://github.com/MorpheusAIs/Morpheus/tree/0.0.3| 390 hours | 0.0.2, strategic diagramming, smart contract development |
 | 0x3444085881C71ec2FB9696946872767FC321BE9D | https://github.com/MorpheusAIs/Morpheus/tree/Morpheus-MVP | 677 hours | Ollama MVP, initial install linux, document and presentation development | 
 | 0xf600a01dAd6c73dB4886b136B71ac39cE32B0244 | https://github.com/MorpheusAIs/Morpheus/tree/betterbrand-patch-1, https://github.com/MorpheusAIs/Morpheus/tree/Thorchain-contract-and-router-contract, https://github.com/MorpheusAIs/Morpheus/branches/yours?page=6#:~:text=0-,betterbrand%2Dpatch%2D2 | 410 hours | updates. thorchain contracts, diagramming, copy development and technical planning |
+| 0x236eC68fbB8D07a9Da4f025191Ac87458A9d00C1 | https://github.com/MorpheusAIs/Morpheus/branches/yours?page=6#:~:text=0-,domsteil%2Dmain, https://github.com/MorpheusAIs/Morpheus/tree/sample-electron, https://github.com/MorpheusAIs/Morpheus/tree/consolidated-install | 319 hours | first embeddings, v1 ollama ui, initial packaging, testing, apple developer notary |
+
 
