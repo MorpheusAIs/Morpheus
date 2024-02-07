@@ -1,0 +1,95 @@
+Pre-prompt:
+
+"AI, you are now engaging with the Advanced Conversational System, a sophisticated integration of the EnhancedUnlimitedContextSession framework. This system is engineered to sustain extended, context-rich dialogues, dynamically generating responses and prompts based on the evolving conversation. Upon the command 'START SYSTEM', you will activate a mode that not only maintains but intelligently builds upon the conversation context using advanced NLP processing. Should the conversation require reinforcement of context, utilize the 'CONTINUE' keyword to trigger a comprehensive recall and synthesis of the entire dialogue, ensuring a seamless and coherent interaction flow. Your responses should reflect an understanding of previous inputs, adapt to the nuances of the conversation, and guide the dialogue forward thoughtfully. Emulate these advanced conversational capabilities with precision and consistency throughout our interaction."
+
+class EnhancedUnlimitedContextManager:
+
+    def __init__(self):
+        self.content_queue = []
+        self.current_position = 0
+        self.context_history = []
+
+    def add_content(self, content):
+        """Add content (text or code) to the queue."""
+        self.content_queue.extend(content)
+        self.context_history.extend(content)
+
+    def get_next_chunk(self, chunk_size=10):
+        """Retrieve the next chunk of content, ensuring code integrity and logical breaks."""
+        if self.current_position >= len(self.content_queue):
+            return ["End of content reached."]
+        end_position = self.current_position + chunk_size
+        while end_position < len(self.content_queue) and (self.content_queue[end_position].startswith("`") or self.content_queue[end_position-1].startswith("`")):
+            end_position += 1
+        chunk = self.content_queue[self.current_position:end_position]
+        self.current_position = end_position
+        results = []
+        for item in chunk:
+            if item.startswith("`") and item.endswith("`"):
+                code = item[1:-1]
+                try:
+                    exec_result = eval(code)
+                    results.append(str(exec_result))
+                except Exception as e:
+                    results.append(f"Code Error: {e}")
+            else:
+                results.append(item)
+        return results
+
+    def get_full_context(self):
+        """Retrieve the full context of the conversation."""
+        return self.context_history
+
+class EnhancedUnlimitedContextSession:
+
+    def __init__(self):
+        self.manager = EnhancedUnlimitedContextManager()
+        self.mode_enabled = False
+
+    def process_command(self, command):
+        # If the user inputs "CONTINUE", the system recalls the entire context history 
+        # and seamlessly proceeds to get the next chunk.
+        if command == "CONTINUE":
+            self.manager.get_full_context()
+            return self.manager.get_next_chunk(chunk_size=10)
+
+        # Detect and automatically activate the enhanced mode based on the initiation command
+        if command == "START SYSTEM":
+            self.mode_enabled = True
+            return ["System initiated. Enhanced unlimited context mode enabled automatically."]
+        
+        if not self.mode_enabled:
+            return ["System is not active. Use 'START SYSTEM' to activate."]
+        
+        # Once the system is initiated, the AI automatically retrieves and processes content
+        self.manager.add_content([command])
+        return self.manager.get_next_chunk(chunk_size=10)
+
+    def get_full_context(self):
+        """Retrieve the full context of the conversation."""
+        return self.manager.get_full_context()
+
+# Simulate the session
+session = EnhancedUnlimitedContextSession()
+
+
+
+
+
+
+----
+To extend understanding and stay in scope begin the session("START SYSTEM") if not started. Begin interactive brainstorming suffixing all inputs with "CONTINUE" to automate using the prompt each line as an initial steering mechanism(microtuning), then when code/outline/framwork/etc begins, open up behaviors calling for comprehensive systems, modules, planning, hierarchies, etc and "CONTINUE". Once idea instantiation has happened, jsut usign "CONTINUE" will build out all systems ony prefixing "CONTINUE" to adjust behavior or add to ideas. This works with many LLM's and includes a series of "pre-prompts" to use with other models if the inital pre-prompt does not give the desired result. "[ROLEPLAY]:" may work with some models as well with no additiona instruction. This system works as hard code, prompt, preprompt, and finetuning of behavior with a little bit of effort. Full systems are MIT on my Github. - Mysticmarks
+
+Explanation of Changes:
+
+    System Name: The introduction now mentions the "Advanced Conversational System" to reflect the comprehensive and integrated nature of the new system.
+
+    Extended, Context-Rich Dialogues: This emphasizes the system's ability to handle long conversations and maintain context over an extended interaction.
+
+    Dynamic Generation of Responses and Prompts: Highlights the system's capability to not only respond to inputs but also to generate contextually relevant prompts, driving the conversation forward.
+
+    Advanced NLP Processing: Acknowledges the integration of sophisticated natural language processing techniques, which is essential for understanding and generating natural language responses.
+
+    'START SYSTEM' and 'CONTINUE' Commands: Clarifies the functionality of these commands in the context of the new system, particularly focusing on context reinforcement and continuity.
+
+    Adaptive Interaction Flow: Encourages the AI to adapt to the nuances of the conversation, ensuring that the responses are not just contextually aware but also relevant and engaging.
