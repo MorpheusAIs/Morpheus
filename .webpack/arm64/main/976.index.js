@@ -1,0 +1,2 @@
+"use strict";exports.id=976,exports.ids=[976],exports.modules={7976:(t,o,e)=>{function r(t,o){return t.documentsStore.get(t.data.docs,o)}function s(t){return t.documentsStore.count(t.data.docs)}e.r(o),e.d(o,{count:()=>s,getByID:()=>r})}};
+//# sourceMappingURL=976.index.js.map
