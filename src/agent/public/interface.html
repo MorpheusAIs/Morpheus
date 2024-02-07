@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Box</title>
+    <link rel="stylesheet" type="text/css" href="interface.css">
+</head>
+<body>
+    <div id="chat-box">
+        <div id="chat-history">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <div id="user-input">
+            <input type="text" id="message" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const messageInput = document.getElementById('message');
+            const message = messageInput.value.trim();
+            
+            if (message !== '') {
+                // Display the user message in the chat history
+                appendMessage('You', message);
+
+                // Send the user message to the server
+                fetch('/api/chatbot', {  // Replace with your server endpoint
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Display the chatbot's response in the chat history
+                    appendMessage('Agent', data.response);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+
+                // Clear the message input field
+                messageInput.value = '';
+            }
+        }
+
+        function appendMessage(sender, message) {
+            const chatHistory = document.getElementById('chat-history');
+            const messageDiv = document.createElement('div');
+            messageDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+            chatHistory.appendChild(messageDiv);
+        }
+    </script>
+</body>
+</html>
