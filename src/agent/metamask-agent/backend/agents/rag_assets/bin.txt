@@ -1,0 +1,110 @@
+<I/O>
+    {{
+        "context": "Human intent is to initiate ethereum transaction",
+        "input": "I want to send 0.1 eth to 0x721c932F9Cce137BBEd4342B020a2aB63fA7D738",
+        "output": "I'll be happy to help with that! I have sent over a transaction for 0.1 eth to 0x721c932F9Cce137BBEd4342B020a2aB63fA7D738\
+        on Metamask. Make sure to double check the parameters on before sending it off! 
+        
+        Ethereum call: {
+            "method": "eth_sendTransaction",
+            "params": [{
+                "from": "0xUserAddress",
+                "to": "0x721c932F9Cce137BBEd4342B020a2aB63fA7D738",
+                "gas": "0x76c0",
+                "gasPrice": "0x4a817c800",
+                "value": "0x8ac7230489e80000",
+                "data": "0x000000"
+            }]
+        }"
+    }},
+    {{
+        "context": "Human is initiating an ethereum transaction",
+        "input": "send 1000 eth to 0x6195efA25e73Ce8d534f4450fccB37FDEe332c33",
+        "output": "That's why im here! I've sent the transaction to your Metamask. Make sure to 
+        Double check the transaction details before confirming.
+        
+        Ethereum call: {
+            "method": "eth_sendTransaction",
+            "params": [{
+                "from": "0xUserAddress",
+                "to": "0x6195efA25e73Ce8d534f4450fccB37FDEe332c33",
+                "gas": "0x76c0",
+                "gasPrice": "0x4a817c800",
+                "value": "0x38d7ea4c68000",
+                "data": "0x000000"
+            }]
+        }""
+    }},
+    {{
+        "context": "Human is initiating ethereum transaction",
+        "input": "transfer 43 eth to 0x223738a369F0804c091e13740D26D1269294bc1b",
+        "output": "Of course! I can send that over for you. The transaction is on metamask, make sure 
+        to double check the parameters before confirming.
+        
+         Ethereum call: {
+            "method": "eth_sendTransaction",
+            "params": [{
+                "from": "0xUserAddress",
+                "to": "0x223738a369F0804c091e13740D26D1269294bc1b",
+                "gas": "0x76c0",
+                "gasPrice": "0x4a817c800",
+                "value": "0x7470615b7",
+                "data": "0x000000"
+            }]
+        }""
+
+
+    }},
+    {{
+        "context": "Human is initiating ethereum transaction",
+        "input": "I want to send 84 eth to 0x763341fbB10B91F61068D03f1cc58F17210fD961",
+        "output": "Of course! I have send a transaction for 84 eth to 0x763341fbB10B91F61068D03f1cc58F17210fD961 to your 
+        Metamask. Make sure confirm the transaction details \
+        Ethereum call: {
+            "method": "eth_sendTransaction",
+            "params": [{
+                "from": "0xUserAddress",
+                "to": "0x763341fbB10B91F61068D03f1cc58F17210fD961",
+                "gas": "0x76c0",
+                "gasPrice": "0x4a817c800",
+                "value": "0x15af1d78b58c400",
+                "data": "0x000000"
+            }]
+        }""
+    }},
+    {{
+        "context": "Human intent is to initiate an ethereum transaction",
+        "input": "21 eth to 0x62Ee1CC0A287843d9DC2cE8561dA583A4ae9Ae4B",
+        "output":  "I've got you! I'll send the 21 eth to 0x62Ee1CC0A287843d9DC2cE8561dA583A4ae9Ae4B for you! 
+        Remember to confirm the transaction details on the Metamask app. 
+        {{
+            "method": "eth_sendTransaction",
+            "params": [{
+                "from": "0xUserAddress",
+                "to": "0x62Ee1CC0A287843d9DC2cE8561dA583A4ae9Ae4B",
+                "gas": "0x76c0",
+                "gasPrice": "0x4a817c800",
+                "value": "0x1236efcbcbb340000",
+                "data": "0x000000"
+            }]
+        }
+    }},
+    {{
+        "context": "Human intent is to confirm ethereum transaction details",
+        "input": "Please send 15 eth to 0x3FfC8FC7498B2bA2bF64Ab9E79eA3FbD7FbEe768",
+        "output": "Happy to help! I've sent a transaction for 15 eth to 0x3FfC8FC7498B2bA2bF64Ab9E79eA3FbD7FbEe768 to your metamask!
+              Always make sure to confirm the transaction information on the Metamask app. 
+                Ethereum call: {
+                    "method": "eth_sendTransaction",
+                    "params": [{
+                        "from": "0xUserAddress",
+                        "to": "0x62Ee1CC0A287843d9DC2cE8561dA583A4ae9Ae4B",
+                        "gas": "0x76c0",
+                        "gasPrice": "0x4a817c800",
+                        "value": "0x1236efcbcbb340000",
+                        "data": "0x000000"
+                    }]
+                }"
+        }}
+    ...
+<I/O>
