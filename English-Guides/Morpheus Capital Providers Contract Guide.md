@@ -2,15 +2,20 @@
 
 ## Table of contents
 1) Smart Contracts Addresses (Ethereum mainnet).
-2) How to deposit stETH into the contract?
-3) What is the amount of MOR rewards earned? 
-4) How can I get information about how much I have deposited?
-5) How to withdraw stETH from the contract?
+2) How to get stETH?
+3) How to deposit stETH into the contract?
+4) What is the amount of MOR rewards earned? 
+5) How can I get information about how much I have deposited?
+6) How to withdraw stETH from the contract?
 
 
 ## Smart Contracts Addresses (Ethereum mainnet)
 - Morpheus Distribution Contract: [0x47176B2Af9885dC6C4575d4eFd63895f7Aaa4790](https://etherscan.io/address/0x47176B2Af9885dC6C4575d4eFd63895f7Aaa4790) 
 - stETH Contract: [0xae7ab96520de3a18e5e111b5eaab095312d7fe84](https://etherscan.io/address/0xae7ab96520de3a18e5e111b5eaab095312d7fe84)
+
+## How to get stETH?
+First a user must get staked ETH from [Lido](https://lido.fi/). You can easily get this by swapping ETH for stETH on the Ethereum mainnet by following intructions at their website.  
+A user may also buy stETH on different exchanges that support it.  
 
 ## How to deposit stETH into the contract?
 You need to go to the [stETH](https://etherscan.io/address/0xae7ab96520de3a18e5e111b5eaab095312d7fe84#writeProxyContract) contract, open the “Contract” tab, then the “Write as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
