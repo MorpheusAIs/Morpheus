@@ -1,6 +1,12 @@
 # The purpose of the guide is to pass you through the process of direct interaction with the Morpheus Distribution Contract
 
-[How to deposit stETH into the contract?](#the-purpose-of-the-guide-is-to-pass-you-through-the-process-of-direct-interaction-with-the-morpheus-distribution-contract)
+## Table of contents
+1) Smart Contracts Addresses (Ethereum mainnet).
+2) How to deposit stETH into the contract?
+3) What is the amount of MOR rewards earned? 
+4) How can I get information about how much I have deposited?
+5) How to withdraw stETH from the contract?
+
 
 ## Smart Contracts Addresses (Ethereum mainnet)
 - Morpheus Distribution Contract: [0x47176B2Af9885dC6C4575d4eFd63895f7Aaa4790](https://etherscan.io/address/0x47176B2Af9885dC6C4575d4eFd63895f7Aaa4790) 
@@ -31,22 +37,22 @@ As parameters:
 Click “**Write**” and confirm a transaction.
 
 
-## What is the amount of MOR rewards earned? How can I get information about how much I have deposited? 
+## What is the amount of MOR rewards earned? 
 You need to go to the [Distribution](https://etherscan.io/address/0x47176B2Af9885dC6C4575d4eFd63895f7Aaa4790#readProxyContract) contract, open the “Contract” tab, then the “Read as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
-
-For this purpose there are two functions, the first shows how many rewards have already been earned, the rewards are earned every block.
 
 ![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/main/MorpheusGuide/rewards.png)
 
-To check the amount of rewards, you need to call the `getCurrentUserReward` function, where you need to enter pool number (`0`) and your address (or the address of the user you want to know about). Click "**Query**". As a result, you will find out how many rewards there are at the moment. Amount is in WEI and you can use this unit converter calculator https://eth-converter.com to help you.
+The rewards are earned every block and to check the amount, you need to call the `getCurrentUserReward` function, where you need to enter pool number (`0`) and your address (or the address of the user you want to know about). Click "**Query**". As a result, you will find out how many rewards there are at the moment. Amount is in WEI and you can use this unit converter calculator https://eth-converter.com to help you. 
 
-The second function will show how many tokens have been invested by the user, the parameters are similar to the first function call. The name of the function is `usersData()`. Click "**Query**". Amount indicated in WEI next to `deposited` line.
+
+## How can I get information about how much I have deposited? 
+The second function will show how many tokens have been invested by the user, the parameters are similar to the previous function call. The name of the function is `usersData()`. Click "**Query**". Your deposited amount is indicated in WEI next to `deposited` line.
 
 ![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/main/MorpheusGuide/deposited.png)
 
 
 ## How to withdraw stETH from the contract?
-`Reminder: you can withdraw funds no earlier than 7 days after the deposit`
+`Reminder: you can withdraw funds no earlier than 7 days after the deposit`  
 You need to go to the [Distribution](https://etherscan.io/address/0x47176B2Af9885dC6C4575d4eFd63895f7Aaa4790#writeProxyContract) contract, open the “Contract” tab, then the “Write as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
 ![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/main/MorpheusGuide/withdraw.png)
