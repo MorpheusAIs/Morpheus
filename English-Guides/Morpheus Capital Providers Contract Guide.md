@@ -14,7 +14,7 @@
 - stETH Contract: [0xae7ab96520de3a18e5e111b5eaab095312d7fe84](https://etherscan.io/address/0xae7ab96520de3a18e5e111b5eaab095312d7fe84)
 
 ## How to get stETH?
-First a user must get staked ETH from [Lido](https://lido.fi/). You can easily get this by swapping ETH for stETH on the Ethereum mainnet by following intructions at their website.  
+First a user must get staked ETH from [Lido](https://lido.fi/). You can easily get this by swapping ETH for stETH on the Ethereum mainnet by following instructions at their website.  
 
 A user may also buy stETH on different exchanges that support it.  
 
