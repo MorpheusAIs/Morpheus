@@ -1,0 +1,14 @@
+**Send Transaction Metamask**:
+```json
+{
+  "method": "eth_sendTransaction",
+  "params": [{
+    "from": "0xDbeC8c7Ac7D6736d0031c0f4545bFa153BA6fD31",
+    "to": "0xDbeC8c7Ac7D6736d0031c0f4545bFa153BA6fD31",
+    "gas": "0x76c0",
+    "gasPrice": "0x4a817c800", 
+    "value": "0x00000000",
+    "data": "0x000000"
+  }],
+}
+```

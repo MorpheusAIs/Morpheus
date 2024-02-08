@@ -1,0 +1,16 @@
+**Send Transaction Metamask**:
+```json
+{
+ "jsonrpc": "2.0",
+ "method": "eth_sendTransaction",
+ "params": [{
+   "from": "0xFromAddress",
+   "to": "0xToAddress",
+   "gas": "0x76c0", // 30400
+   "gasPrice": "0x9184e72a000", // 10000000000000
+   "value": "0x9184e72a", // 2441406250
+   "data": "0xData"
+ }],
+ "id": 1
+}
+```
