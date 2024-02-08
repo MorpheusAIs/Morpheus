@@ -490,7 +490,7 @@ async function sendTransaction(function_name, function_parameters) {
   console.log('Function Parameter: ', function_parameters);
 
   // Set Infura API Key
-  var api_key = '';
+  var api_key = process.env.INFURA_API_KEY;
 
   // Ethereum Function Router
   switch (function_name) {
