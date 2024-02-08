@@ -148,5 +148,9 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | 0x80CdcF57f42C6BfB429b245d798ee46b9F71Edea | https://github.com/MorpheusAIs/Morpheus/pull/517 | 70 Hours | First Smart Agent
 | 0xbac0086453F04Abc25539A1d5D90f797419F9842 | https://github.com/MorpheusAIs/Morpheus/pull/486 | 120 Hours | Fixing the local morpheus client, ollama spawning, asar packaging, Electron CSP
 | 0xC16C04dE65E2EBA60B78294E23953f5EB17F9202 | [https://github.com/MorpheusAIs/tree/rag-feature-branch](https://github.com/MorpheusAIs/Morpheus/tree/rag-feature-branch)https://github.com/MorpheusAIs/Morpheus/tree/rag-feature-branch | 80 HR  | LLamaIndex, Langchain and JSON RPC APIs |
+
+
+
+
 | 0x62aF7c48Cf412162465A8CaFdE44dFb17bA96038 | https://github.com/MorpheusAIs/Morpheus/pull/484, https://github.com/MorpheusAIs/Morpheus/pull/518 | 32 Hours | Editing, adding info to EN whitepapper, Yellow paper and TCM Helping questions and answers to FAQ to Oracle, adding FAQ to Github, Alinging UA and RU TCM, WP and Yellowstone model with EN version, Test dashboard + feedback with findings, translated announcements to RU and UA, helping newcomers with questions and navigation, assisting with issues, facilitating conversations, moderating Ukrainian and Russian language channels |
 
