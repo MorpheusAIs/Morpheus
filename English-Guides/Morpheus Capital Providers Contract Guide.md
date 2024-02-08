@@ -15,6 +15,7 @@
 
 ## How to get stETH?
 First a user must get staked ETH from [Lido](https://lido.fi/). You can easily get this by swapping ETH for stETH on the Ethereum mainnet by following intructions at their website.  
+
 A user may also buy stETH on different exchanges that support it.  
 
 ## How to deposit stETH into the contract?
