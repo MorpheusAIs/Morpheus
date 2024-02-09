@@ -1,4 +1,4 @@
-## Installing Morpheus on WSL
+## Installing Morpheus on Windows
 
 - First, install WSL2, you can do that by running `wsl  --install` on an admin command prompt. Then open WSL2 with `wsl` and follow the setup process.
     
