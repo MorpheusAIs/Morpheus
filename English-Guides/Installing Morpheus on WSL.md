@@ -1,6 +1,6 @@
 ## Installing Morpheus on WSL
 
-- First, install WSL2, you can do that by running `wsl  --install` an admin command prompt.
+- First, install WSL2, you can do that by running `wsl  --install` on an admin command prompt. Then open WSL2 with `wsl` and follow the setup process.
     
 - Then run `curl https://ollama.ai/install.sh | sh` to install ollama.
 
