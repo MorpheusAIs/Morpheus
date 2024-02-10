@@ -63,6 +63,7 @@ Welcome to Morpheus! Follow these steps to get started on your Mac:
 
 ### Installation Steps
 You need to spawn an Ollama server locally + an interface(Electron app) that uses Ollama APIs to send prompts/receive textual outputs.
+Ollama server can use different LLM models for text generation, in our case we're using Mistral with 7B parameters.
 1. **Install Dependencies**:
    - Navigate to your project directory and install the necessary Node.js dependencies by running:
      ```sh
