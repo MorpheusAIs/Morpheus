@@ -30,6 +30,7 @@ function installOllama() {
 
   sudo.exec(installCommand, options, (error, stdout, stderr) => {
     if (error) {
+      console.error('Error installing Ollama:', error);
       throw error; // or handle error as needed
     }
     console.log('Ollama installed successfully');

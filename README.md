@@ -45,3 +45,46 @@ To make Smart Agents accessible to everyone and increase decentralization we pro
 
 ## Morpheus Network Diagram
 ![DiagramupdatedwithstETH](https://github.com/MorpheusAIs/Morpheus/assets/1563345/31711e49-0b57-4b41-b231-ee673dbf6664)
+
+
+## Setting up Morpheus on Mac
+
+Welcome to Morpheus! Follow these steps to get started on your Mac:
+
+### Prerequisites
+- Ensure you have Homebrew installed on your Mac. If not, you can install it by running the following command in your terminal:
+  ```sh
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  ```
+- Install Node.js and npm (Node Package Manager) using Homebrew:
+  ```sh
+  brew install node
+  ```
+
+### Installation Steps
+1. **Install Dependencies**:
+   - Navigate to your project directory and install the necessary Node.js dependencies by running:
+     ```sh
+     npm install
+     ```
+
+2. **Download and Install Ollama**:
+   - Download the Ollama app for Mac from the official website:
+     [Download Ollama for Mac](https://ollama.com/download/mac)
+   - Move the downloaded file to your Applications folder and follow the installation prompts.
+   - Once the installation is over, verify that the server is running by typing this into a browser window: http://127.0.0.1:11434/ You should see text: "Ollama is running"
+
+3. **Run the Application**:
+   - Start Morpheus by running:
+     ```sh
+     npm run start
+     ```
+   - You should see the message "Ollama server is running" in your terminal, followed by the Electron window opening with the status "Initializing..."
+   - Once the initialization is complete, you'll be able to type messages into the Electron window and see the corresponding logs in the terminal.
+
+### Troubleshooting
+If you encounter any issues during the installation or running of Morpheus, please refer to the following resources:
+- [Morpheus GitHub Issues](https://github.com/MorpheusAIs/Morpheus/issues) - for common issues and their solutions.
+- [Ollama Installation Guide](https://ollama.com/support/mac) - for detailed instructions on installing and troubleshooting Ollama on Mac.
+
+Enjoy exploring Morpheus, and welcome to the community of Smart Agents!
