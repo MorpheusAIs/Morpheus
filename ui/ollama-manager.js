@@ -22,20 +22,42 @@ function checkOllama() {
 function installOllama() {
   // Prompt user for permission before proceeding
 
-  const options = {
-    name: 'Electron',
-  };
+  switch (process.platform) {
+    case "win32":
+      console.log("Ollama is not installed yet on your local machine");
+      console.log("Follow instructions to download and install Ollama via: https://github.com/ollama/ollama?tab=readme-ov-file");
+      break;
+    case "darwin":
+      console.log("Ollama is not installed yet on your local machine");
+      console.log("Follow instructions to download and install Ollama via: https://github.com/ollama/ollama?tab=readme-ov-file");
+      break;
+    case "linux":
+      console.log("Trying to install Ollama on Linux");
+      const options = {
+        name: 'Electron',
+      };
+      const installCommand = 'curl https://ollama.ai/install.sh | sh';
 
-  const installCommand = 'curl https://ollama.ai/install.sh | sh';
+      sudo.exec(installCommand, options, (error, stdout, stderr) => {
+        if (error) {
+          console.error('Error installing Ollama:', error);
+          throw error; // or handle error as needed
+        }
+        console.log('Ollama installed successfully');
+      });
 
-  sudo.exec(installCommand, options, (error, stdout, stderr) => {
-    if (error) {
-      console.error('Error installing Ollama:', error);
-      throw error; // or handle error as needed
-    }
-    console.log('Ollama installed successfully');
-  });
+      break;
+    default:
+      reject(new Error(`Unsupported platform: ${process.platform}`));
+      return;
+  }
+
+
 }
 
 // Run the check
 checkOllama();
+
+module.exports = {
+  installOllama
+};

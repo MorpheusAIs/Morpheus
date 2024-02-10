@@ -2,6 +2,8 @@ const fs = require("fs");
 const os = require("os");
 const path = require("path");
 const { exec } = require("child_process");
+const { installOllama } = require('../../../ui/ollama-manager');
+
 
 var OllamaServeType = {
   SYSTEM: "system", // ollama is installed on the system
@@ -25,6 +27,21 @@ class Ollama {
     return this.instance;
   }
 
+  async checkOllamaAvailability() {
+    return new Promise((resolve, reject) => {
+      const command = process.platform === 'win32' ? 'where' : 'which';
+      exec(`${command} ollama`, (error, stdout, stderr) => {
+        if (error) {
+          console.error(`Ollama command not found: ${stderr}`);
+          resolve(false);
+        } else {
+          console.log(`Ollama command found at: ${stdout.trim()}`);
+          resolve(true);
+        }
+      });
+    });
+  }
+
   /**
    * Start Ollama to serve an LLM.
    *
@@ -38,7 +55,22 @@ class Ollama {
       return OllamaServeType.SYSTEM;
     } catch (err) {
       // this is fine, we just need to start ollama
-      console.log(err);
+      console.log("Error pinging Ollama server:", err);
+    }
+
+    console.log("Checking if Ollama is installed");
+    const isOllamaAvailable = await this.checkOllamaAvailability();
+    if (!isOllamaAvailable) {
+      console.log("Ollama is not available, attempting to install...");
+      // Call installOllama here or handle the situation as needed.
+    }
+
+    // try to install ollama
+    try {
+      console.log("trying to install ollama")
+      installOllama()
+    } catch (err) {
+      console.log("tried installing, but failed: ", err)
     }
 
     try {
@@ -47,7 +79,7 @@ class Ollama {
       return OllamaServeType.SYSTEM;
     } catch (err) {
       // ollama is not installed, run the binary directly
-      console.log(`exec ollama: ${err}`);
+      console.log("Failed to run Ollama locally: ", err.message);
     }
 
     // start the packaged ollama server
@@ -59,7 +91,7 @@ class Ollama {
         appDataPath = path.join(os.homedir(), "AppData", "Local", "chatd");
         break;
       case "darwin":
-        exe = "ollama-darwin";
+        exe = "ollama";
         appDataPath = path.join(
           os.homedir(),
           "Library",
@@ -88,6 +120,18 @@ class Ollama {
   // execServe runs the serve command, and waits for a response
   async execServe(path, appDataDirectory) {
     return new Promise((resolve, reject) => {
+      // Check if the 'path' parameter is provided and is a string
+      if (typeof path !== 'string' || path.trim() === '') {
+        reject(new Error("The 'path' parameter must be a non-empty string."));
+        return;
+      }
+
+      // Check if the 'appDataDirectory' parameter is provided and is a string
+      if (typeof appDataDirectory !== 'string' || appDataDirectory.trim() === '') {
+        reject(new Error("The 'appDataDirectory' parameter must be a non-empty string."));
+        return;
+      }
+
       if (!fs.existsSync(appDataDirectory)) {
         fs.mkdirSync(appDataDirectory, { recursive: true });
       }
@@ -221,13 +265,15 @@ class Ollama {
    * @return {Promise<boolean>} True if the server is running.
    */
   async ping() {
+    console.log("Trying to ping..");
     const response = await fetch(this.host, {
       method: "GET",
       cache: "no-store",
     });
 
+    console.log("received response!");
     if (response.status !== 200) {
-      throw new Error("Failed to ping Ollama server");
+      throw new Error("Failed to ping Ollama server, status code:", response.status);
     }
 
     console.log("Ollama server is running");
@@ -251,6 +297,7 @@ class Ollama {
         await new Promise((resolve) => setTimeout(resolve, delay));
       }
     }
+    console.error("Max retries reached. Ollama server didn't respond.");
     throw new Error("Max retries reached. Ollama server didn't respond.");
   }
 
@@ -366,5 +413,5 @@ module.exports = {
   ping,
   clearHistory,
   stop,
-  serve,
+  serve
 };
