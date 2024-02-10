@@ -62,6 +62,7 @@ Welcome to Morpheus! Follow these steps to get started on your Mac:
   ```
 
 ### Installation Steps
+You need to spawn an Ollama server locally + an interface(Electron app) that uses Ollama APIs to send prompts/receive textual outputs.
 1. **Install Dependencies**:
    - Navigate to your project directory and install the necessary Node.js dependencies by running:
      ```sh
@@ -85,6 +86,6 @@ Welcome to Morpheus! Follow these steps to get started on your Mac:
 ### Troubleshooting
 If you encounter any issues during the installation or running of Morpheus, please refer to the following resources:
 - [Morpheus GitHub Issues](https://github.com/MorpheusAIs/Morpheus/issues) - for common issues and their solutions.
-- [Ollama Installation Guide](https://ollama.com/support/mac) - for detailed instructions on installing and troubleshooting Ollama on Mac.
-
+- [Ollama Installation Guide](https://github.com/ollama/ollama) - for detailed instructions on installing and troubleshooting Ollama on Mac.
+- [List of available APIs](https://github.com/ollama/ollama/blob/main/docs/api.md) - list of available ollama APIs
 Enjoy exploring Morpheus, and welcome to the community of Smart Agents!
