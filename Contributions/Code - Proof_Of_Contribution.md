@@ -1,7 +1,16 @@
 ## Code - Proof of Contribution Table
 
-**Before adding a pull request to this table please read the BEST PRACTICES GUIDE.**
-https://github.com/MorpheusAIs/Morpheus/blob/main/!KEYDOCS%20README%20FIRST!/8.Code%20Contributor%20Best%20Practices.md
+**Before adding a pull request to this table [please read the BEST PRACTICES GUIDE](https://github.com/MorpheusAIs/Morpheus/blob/main/!KEYDOCS%20README%20FIRST!/8.Code%20Contributor%20Best%20Practices.md).**
+
+Structuring your Code Contributions pull request. 
+All Code Contributions must include the following four elements.
+- 1. The Ethereum / Wallet address to be rewarded.
+- 2. Link to the Code.
+- 3. Time Requested (hours).
+- 4. Description of Contributions.
+
+Example: | Wallet Address |	Link to Work |Time Requested (hours)	| Description of Contribution |
+Example: | 0x98eFf980C57c9D333340b3856481bF7B8698987c |	Link to Commit #127 |	50 HR |	Integration of ollama |
 
 Detail the work you are contributing to Morpheus.  You must include a link to the work for the work to be considered.  Examples of proof include links to pull requests, github issues, or other easily verifyable information.
 
