@@ -1,8 +1,8 @@
 {
-  "name": "mor-submod",
-  "productName": "mor-submod",
-  "version": "0.0.1-alpha",
-  "description": "MorpheusAI SubMod",
+  "name": "morpheus",
+  "productName": "Morpheus",
+  "version": "0.0.6",
+  "description": "Morpheus is sovereign AI",
   "main": ".webpack/main",
   "scripts": {
     "start": "cross-env NODE_ENV=development DEBUG=electron-packager electron-forge start",
@@ -72,8 +72,8 @@
   },
   "dependencies": {
     "@metamask/sdk": "^0.14.2",
-    "@metamask/sdk-react": "^0.14.2",
-    "@metamask/sdk-react-ui": "^0.14.3",
+    "@metamask/sdk-react": "^0.14.1",
+    "@metamask/sdk-react-ui": "^0.14.2",
     "axios": "^1.6.7",
     "check-disk-space": "^3.4.0",
     "electron-squirrel-startup": "^1.0.0",

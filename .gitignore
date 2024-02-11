@@ -22,8 +22,14 @@ build/morph-dmgbg.ai
 sign.sh
 morpheus-v0.0.4.tgz
 package-old.json
-src/service/ollama/runners/
-src/service/ollama/Ollama
 .idea
 venv
 __pycache__/
+.webpack/
+electron-client/node_modules
+electron-client/dist
+electron-client/.DS_Store
+electron-client/.webpack
+electron-client/.webpack/
+electron-client/.webpack/*      
+electron-client/src/executables/oldllama.zip
