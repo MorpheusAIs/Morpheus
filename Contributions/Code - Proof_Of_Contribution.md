@@ -1,5 +1,8 @@
 ## Code - Proof of Contribution Table
 
+**Before adding a pull request to this table please read the BEST PRACTICES GUIDE.**
+https://github.com/MorpheusAIs/Morpheus/blob/main/!KEYDOCS%20README%20FIRST!/8.Code%20Contributor%20Best%20Practices.md
+
 Detail the work you are contributing to Morpheus.  You must include a link to the work for the work to be considered.  Examples of proof include links to pull requests, github issues, or other easily verifyable information.
 
 *It is your responsability to make the proof easily verifyable. Don't assume reviewers of this table have an understanding of your code. Explain it simply. Limit your descripions to 250 words.*
