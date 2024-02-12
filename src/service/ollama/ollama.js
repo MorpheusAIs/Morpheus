@@ -2,6 +2,7 @@ const fs = require("fs");
 const os = require("os");
 const path = require("path");
 const { exec } = require("child_process");
+const ollamaHost = process.env.OLLAMA_HOST;
 
 var OllamaServeType = {
   SYSTEM: "system", // ollama is installed on the system
@@ -14,7 +15,14 @@ class Ollama {
 
   constructor() {
     this.childProcess = null;
-    this.host = "http://127.0.0.1:11434"; // TODO: check OLLAMA_HOST env var
+
+    // check OLLAMA_HOST env var
+    if (ollamaHost) { 
+      this.host = ollamaHost + ":11343"
+    } else {
+      this.host = "http://127.0.0.1:11434";
+    }
+
     this.abort = new AbortController();
   }
 
