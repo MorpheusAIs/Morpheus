@@ -18,7 +18,7 @@ class Ollama {
 
     // check OLLAMA_HOST env var
     if (ollamaHost) { 
-      this.host = ollamaHost + ":11343"
+      this.host = ollamaHost + ":11343";
     } else {
       this.host = "http://127.0.0.1:11434";
     }
