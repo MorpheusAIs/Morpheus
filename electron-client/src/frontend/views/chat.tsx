@@ -46,7 +46,7 @@ const ChatView = (): JSX.Element => {
       query: question,
     });
 
-    console.log(response.message.content)
+    //console.log(response.message.content)
     const json = JSON.parse(response.message.content);
     const message = json.response;
     const transaction = json.transaction;
@@ -70,8 +70,9 @@ const ChatView = (): JSX.Element => {
             "params": []
           })
           const builtTx = buildTransaction(transaction, account, gasPrice)
-          console.log(builtTx)
+          //console.log(builtTx)
           provider?.request(builtTx)
+          console.log("I AM HERE");
         }
       }
     }
