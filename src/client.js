@@ -8,12 +8,14 @@ const fileButtonText = document.getElementById("file-button-text");
 const initalSpinner = document.getElementById("spinner");
 const statusMsg = document.getElementById("status-msg");
 const settingsIcon = document.getElementById("settings-icon");
+const displayStyleIcon = document.getElementById("display-style-icon");
 const statusContainer = document.getElementById("status-container");
 const stopRequestContainer = document.getElementById("stop-request-container");
 const stopRequestBtn = document.getElementById("stop-request-btn");
 const chatView = document.getElementById("chat-view");
 const settingsView = document.getElementById("settings-view");
 const settingsCancelBtn = document.getElementById("cancel-btn");
+const settingsCloseBtn = document.getElementById("settings-close-btn");
 const settingsSaveBtn = document.getElementById("save-btn");
 const modelSelectInput = document.getElementById("model-select");
 
@@ -42,6 +44,7 @@ window.electronAPI.onOllamaServe((event, data) => {
     // Ollama was already running, and we just connected to it, let the user know
     document.getElementById("status-container").style.display = "flex";
     settingsIcon.style.display = "inline-block";
+    displayStyleIcon.style.display = "inline-block";
   }
   window.electronAPI.runOllama();
 });
@@ -110,7 +113,7 @@ userInput.addEventListener("keydown", function (event) {
 
     // Send chat to Ollama server
     window.electronAPI.sendChat(message);
-    chatView.scrollTop = chatView.scrollHeight;
+    historyContainer.scrollTop = historyContainer.scrollHeight;
     // The response will be received in the onChatReply event
   }
 });
@@ -147,11 +150,11 @@ window.electronAPI.onChatReply((event, data) => {
 
   // Check if the view is already at the bottom of the content
   const isAtBottom =
-    chatView.scrollTop + chatView.clientHeight >= chatView.scrollHeight - 50; // 10 is a tolerance value
+    historyContainer.scrollTop + historyContainer.clientHeight >= historyContainer.scrollHeight - 50; // 10 is a tolerance value
 
   // If they're at the bottom, scroll to the new bottom
   if (isAtBottom) {
-    chatView.scrollTop = chatView.scrollHeight;
+    historyContainer.scrollTop = historyContainer.scrollHeight;
   }
 });
 
@@ -176,6 +179,15 @@ settingsIcon.addEventListener("click", () => {
   modelSelectInput.value = window.electronAPI.getModel();
 });
 
+displayStyleIcon.addEventListener("click", () => {
+  //Toggle the current display style between Dark and Light
+  let displayStyle = localStorage.getItem('display-style');
+  if(!displayStyle || displayStyle == 'dark') displayStyle = 'light';
+  else displayStyle = 'dark';
+  localStorage.setItem('display-style', displayStyle)
+  document.getElementsByTagName('body')[0].className = displayStyle+'-mode';
+})
+
 // A modelGet response means the settings view should be displayed, it is checking what the current loaded model is
 window.electronAPI.onModelGet((event, data) => {
   if (!data.success) {
@@ -188,6 +200,10 @@ window.electronAPI.onModelGet((event, data) => {
 
 // Cancel button in the settings view
 settingsCancelBtn.addEventListener("click", () => {
+  chatView.style.display = "block";
+  settingsView.style.display = "none";
+});
+settingsCloseBtn.addEventListener("click", () => {
   chatView.style.display = "block";
   settingsView.style.display = "none";
 });
