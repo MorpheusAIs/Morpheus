@@ -48,26 +48,30 @@ function buildTransferTransaction(transaction: any, account: string | undefined,
 
 //SwapExactEthForTokens UniswapV2
 //TODO: call helper fuction to get contract address depending on chainID
-export async function buildBuyTransaction(transaction: any, account: string | undefined, gasPrice: any){
+export function buildBuyTransaction(transaction: any, account: string | undefined, gasPrice: any){
     const iface = new ethers.Interface(uniABI);
     const addypath = [WETH_ADDRESS, transaction.tokenAddress];
-    const to = account; //reciepient of tokens
+    
+    const to = account?.toString(); //reciepient of tokens
+    if(to === undefined){
+        console.error('Could not retrieve account') //need better error handling/notifications for the user
+    }
+    //const to = '0x2DDc1600b248D9A24d11bE858fb8388a1e9EAD92'
     const deadline = Math.floor(Date.now() / 1000) + 60 * 20;
 
 
+    console.log("account: "+ to)
     const amountOutMin = BigInt("0").toString(10); //TODO: do math on pool, get slippage from user for now set to 5%
-    const encodeData = iface.encodeFunctionData("swapExactETHForTokens", [amountOutMin, addypath, to?.toString(), deadline]);
+    const encodeData = iface.encodeFunctionData("swapExactETHForTokensSupportingFeeOnTransferTokens", [amountOutMin, addypath, to, deadline]);
 
-    console.log("account" + account);
     const tx = {
         from: account?.toString(),
         to: UniswapV2RouterEth, //UniswapV2 router
-        gas: "0x186a0", //estimate this and pass it in
+        gas: "0xf4240", //estimate this and pass it in
         gasPrice: gasPrice, 
         value: '0x' + ethers.parseEther(transaction.ethAmount).toString(16),
         data: encodeData
     };
 
-    console.log("I AM HERE");
     return tx;
 }

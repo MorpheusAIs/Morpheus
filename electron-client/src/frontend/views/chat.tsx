@@ -46,7 +46,7 @@ const ChatView = (): JSX.Element => {
       query: question,
     });
 
-    //console.log(response.message.content)
+    console.log(response.message.content)
     const json = JSON.parse(response.message.content);
     const message = json.response;
     const transaction = json.transaction;
@@ -65,14 +65,31 @@ const ChatView = (): JSX.Element => {
           { question: question, answer: message, answered: true },
         ]);
         if(isTransactionIntiated(transaction)){
+          console.log("Metamask says account is: " + account)
           const gasPrice = await provider?.request({
             "method": "eth_gasPrice",
             "params": []
           })
-          const builtTx = buildTransaction(transaction, account, gasPrice)
-          //console.log(builtTx)
-          provider?.request(builtTx)
-          console.log("I AM HERE");
+          //TODO: estimate gas
+          let builtTx = buildTransaction(transaction, account, gasPrice)
+          console.log("MetaMask Request:" + JSON.stringify(builtTx))
+          let estimatedGasMaybe = await provider?.request({
+            "method": "eth_estimateGas",
+            "params": [builtTx]
+          })
+
+          if(typeof estimatedGasMaybe === 'string'){
+            const estimatedGas = parseInt(estimatedGasMaybe, 16);
+            console.log("Gas Limit: " + estimatedGas)
+            const gasLimitWithOverhead = Math.ceil(estimatedGas * 5);
+            const gasLimitWithOverheadHex = "0x" + gasLimitWithOverhead.toString(16);
+            console.log("Gas Limit With Overhead: " + gasLimitWithOverhead)
+            builtTx.params[0].gas = gasLimitWithOverheadHex; // Update the transaction with the new gas limit in hex
+          } else {
+            builtTx.params[0].gas = estimatedGasMaybe;
+          }
+
+          await provider?.request(builtTx)
         }
       }
     }
