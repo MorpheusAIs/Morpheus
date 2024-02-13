@@ -7,9 +7,14 @@
 
 html,
 body {
+    --primary-background: #181818;
+    --secondary-background: #454545;
+    --response-background: #202020;
+    --btn-background: rgba(32, 32, 32, 0.85);
+    --primary-text: #C8C8C8;
     height: 100%;
-    background-color: #181818;
-    color: #C8C8C8;
+    background-color: var(--primary-background);
+    color: var(--primary-text);
 }
 
 body {
@@ -17,14 +22,20 @@ body {
     justify-content: center;
     align-items: center;
 }
-
+body.light-mode {
+    --primary-background: #fefefe;
+    --secondary-background: #dcdcdc;
+    --response-background: #acacac;
+    --btn-background: rgba(232, 232, 232, 0.85);
+    --primary-text: #181818;
+}
 textarea {
     width: 100%;
     padding: 20px;
-    background-color: #181818;
+    background-color: var(--primary-background);
     margin-bottom: 16px;
     font-size: 1rem;
-    color: #C8C8C8;
+    color: var(--primary-text);
     border: none;
     resize: none; /* This will prevent users from resizing the textarea manually */
     overflow-y: hidden; /* In case the text exceeds the height */
@@ -38,8 +49,8 @@ textarea:focus {
 
 button {
     background-color: transparent;
-    border: 1px solid #C8C8C8;
-    color: #C8C8C8;
+    border: 1px solid var(--primary-text);
+    color: var(--primary-text);
     padding: 8px 16px;
     font-size: 1rem;
     border-radius: 4px;
@@ -66,33 +77,51 @@ button:focus {
 
 .chat {
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     padding-top: 40px;
 }
 
-.history {
+#history {
     width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    height: auto;
+    flex: 1;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
 }
 
 .history-user-message {
-    width: 100%;
+    max-width: 75%;
+    min-width: 10%;
+    width: auto;
     padding: 20px;
-    background-color: #181818;
+    margin: 5px 0;
+    border-radius: 10px 10px 0 10px;
+    background-color: var(--secondary-background);
+    align-self: flex-end;
+    white-space: pre-wrap;
 }
 
 .history-chat-response {
-    width: 100%;
-    border-radius: 4px;
-    background-color: #202020;
+    max-width: 75%;
+    min-width: 10%;
+    width: auto;
+    align-self: flex-start;
+    border-radius: 10px 10px 10px 0;
+    background-color: var(--response-background);
     padding: 20px;
+    margin: 5px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     white-space: pre-wrap;
 }
 
 .user-message {
     width: 100%;
-    background-color: #202020;
+    background-color: var(--response-background);
     padding: 20px;
 }
 
@@ -100,8 +129,16 @@ button:focus {
     width: 100%;
 }
 
+#user-input-text {
+    border: 1px solid var(--secondary-background);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    justify-self: flex-end;
+}
+
 #user-input-text:focus {
-    border: none;
+    /* border: none; */
     outline: none;
 }
 
@@ -125,6 +162,9 @@ button:focus {
     pointer-events: none;
     overflow-y: auto;
 }
+.light-mode #chat-view::before {
+    background: none;
+}
 
 #settings-view {
     display: none;
@@ -134,23 +174,47 @@ button:focus {
     align-items: center;
 }
 
-.settings-content {
+.settings-modal {
+    border: 2px solid var(--secondary-background);
+    border-radius: 10px;
     width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.settings-header {
+    width: 100%;
+    padding: 5px;
+    background: var(--secondary-background);
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+#settings-close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 0 10px;
+    border: none;
+    margin: 0;
+}
+.settings-content {
+    padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
 #model-label {
-    color: #C8C8C8;
+    color: var(--primary-text);
     font-size: 0.9rem;
 }
 
 #model-select {
     padding: 10px;
-    background-color: #202020;
-    border: 1px solid #C8C8C8;
-    color: #C8C8C8;
+    background-color: var(--response-background);
+    border: 1px solid var(--primary-text);
+    color: var(--primary-text);
     border-radius: 4px;
     font-size: 1rem;
     width: 100%;
@@ -166,8 +230,8 @@ button:focus {
 }
 
 #cancel-btn {
-    background-color: #C8C8C8;
-    color: #202020;
+    background-color: var(--primary-text);
+    color: var(--response-background);
     margin-right: 4px;
 }
 
@@ -186,13 +250,21 @@ button:focus {
 }
 
 #app-logo {
-    max-width: 50%;
+    max-width: 40%;
     height: auto;
     margin-bottom: 20px;
 }
 
+#chat-logo {
+    width: 30px;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    z-index: 1000;
+}
+
 #file-open {
-    background-color: rgba(32, 32, 32, 0.85);
+    background-color: var(--btn-background);
     border: 0.5px solid rgba(200, 200, 200, 0.8);
     cursor: pointer;
     padding: 5px 10px;
@@ -200,9 +272,9 @@ button:focus {
     align-items: center;
     gap: 8px;
     position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 5px;
+    left: 50px;
+    /* transform: translateX(-50%); */
     z-index: 1000; /* To make sure the button is always on top of the chat view */
 }
 
@@ -226,16 +298,16 @@ button:focus {
 }
 
 #file-open:hover {
-    background-color: #C8C8C8;
-    color: #181818;
+    background-color: var(--primary-text);
+    color: var(--primary-background);
 }
 
 #file-open:hover .folder-shape {
-    fill: #181818;
+    fill: var(--primary-background);
 }
 
 #file-open:hover .plus-sign {
-    stroke: #C8C8C8;
+    stroke: var(--primary-text);
 }
 
 #file-button-text {
@@ -247,6 +319,16 @@ button:focus {
 }
 
 #settings-icon {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 40px;
+    cursor: pointer;
+    z-index: 1001;
+    width: 16px;
+    height: 16px;
+}
+#display-style-icon {
     display: none;
     position: fixed;
     top: 10px;
@@ -262,7 +344,7 @@ button:focus {
     align-items: center;
     gap: 5px;
     position: fixed;
-    bottom: 10px;
+    bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.75rem;
@@ -270,7 +352,9 @@ button:focus {
 
 #stop-request-btn {
     font-size: 0.75rem;
-    background-color: rgba(32, 32, 32, 0.85);
+    padding: 0 10px;
+    border: 0.5px solid rgba(200, 200, 200, 0.8);
+    background-color: var(--btn-background);
 }
 
 #status-container {
@@ -294,7 +378,7 @@ button:focus {
 .dots-loading>div {
     width: 4px;
     height: 4px;
-    background-color: #C8C8C8;
+    background-color: var(--primary-text);
     border-radius: 50%;
     margin: 0 2px;
     animation: bounce 0.6s infinite alternate;
@@ -317,14 +401,14 @@ button:focus {
 #spinner {
     border: 2px solid #F8F8F8;
     border-radius: 50%;
-    border-top: 4px solid #181818;
+    border-top: 4px solid var(--primary-background);
     width: 20px;
     height: 20px;
     animation: spin 1s linear infinite;
 }
 
 #file-spinner {
-    border: 2px solid #181818;
+    border: 2px solid var(--primary-background);
     border-radius: 50%;
     border-top: 2px solid #656565;
     width: 10px;
