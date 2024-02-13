@@ -78,6 +78,7 @@
     "check-disk-space": "^3.4.0",
     "electron-squirrel-startup": "^1.0.0",
     "electron-store": "^8.1.0",
+    "ethers": "^6.11.0",
     "native-is-elevated": "^0.7.0",
     "ollama": "^0.4.3",
     "qrcode": "^1.5.3",

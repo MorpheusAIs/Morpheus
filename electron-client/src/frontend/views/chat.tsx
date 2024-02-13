@@ -1,6 +1,8 @@
 import React, { FormEvent, useEffect, useState } from 'react';
 import { OllamaChannel } from './../../events';
 import Styled from 'styled-components';
+import { isTransactionIntiated, buildTransaction } from '../utils/transaction';
+import { useSDK } from '@metamask/sdk-react';
 
 export interface DialogueEntry {
   question: string;
@@ -13,6 +15,7 @@ const ChatView = (): JSX.Element => {
   const [dialogueEntries, setDialogueEntries] = useState<Array<DialogueEntry>>([]);
   const [inputValue, setInputValue] = useState('');
   const [currentQuestion, setCurrentQuestion] = useState<DialogueEntry>();
+  const { ready, sdk, connected, connecting, provider, chainId, account, balance } = useSDK();
 
   useEffect(() => {
     window.backendBridge.ollama.onAnswer((response) => {
@@ -43,13 +46,36 @@ const ChatView = (): JSX.Element => {
       query: question,
     });
 
+    console.log(response.message.content)
+    const json = JSON.parse(response.message.content);
+    const message = json.response;
+    const transaction = json.transaction;
+
+
     if (response) {
       setCurrentQuestion(undefined);
       setDialogueEntries([
         ...dialogueEntries,
-        { question: question, answer: response.message.content, answered: true },
+        { question: question, answer: message, answered: true },
       ]);
+      if (response) {
+        setCurrentQuestion(undefined);
+        setDialogueEntries([
+          ...dialogueEntries,
+          { question: question, answer: message, answered: true },
+        ]);
+        if(isTransactionIntiated(transaction)){
+          const gasPrice = await provider?.request({
+            "method": "eth_gasPrice",
+            "params": []
+          })
+          const builtTx = buildTransaction(transaction, account, gasPrice)
+          console.log(builtTx)
+          provider?.request(builtTx)
+        }
+      }
     }
+
   };
 
   const handleQuestionChange = (e: FormEvent<HTMLInputElement>) => {
