@@ -19,15 +19,14 @@ export const buildTransaction = (transaction: transactionParams, account:  strin
         case "transfer":
             tx = buildTransferTransaction(transaction, account, gasPrice);
             break;  
-        case "buy":
+        /*case "buy":
             tx = buildBuyTransaction(transaction, account, gasPrice, provider);
             break;
         case "sell":
             tx = buildSellTransaction(transaction, account, gasPrice, provider)
-            break;
+            break;*/
         default:
-            console.error(`Transaction of type ${transactionType} not recognsied`);
-            break;
+            throw Error(`Transaction of type ${transactionType} is not yet supported`);
     }
     //returned wrapped call with method for metamask with transaction params
     return {
