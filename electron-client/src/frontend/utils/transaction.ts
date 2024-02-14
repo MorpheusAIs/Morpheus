@@ -4,11 +4,11 @@ import uniABI from "./abis/UniswapV2RouterABI.json"
 import { SDKProvider } from "@metamask/sdk";
 import { transactionParams } from "./types";
 
-export const isTransactionIntiated = (transaction: any) => {
+export const isTransactionIntiated = (transaction: transactionParams) => {
     return !(Object.keys(transaction).length === 0);
 }
 
-export const buildTransaction = (transaction: any, account:  string | undefined, gasPrice: any) => {
+export const buildTransaction = (transaction: transactionParams, account:  string | undefined, gasPrice: string) => {
     const transactionType = transaction.type.toLowerCase();
     
     let tx: any
@@ -32,7 +32,7 @@ export const buildTransaction = (transaction: any, account:  string | undefined,
     }
   }
 
-const buildTransferTransaction = (transaction: any, account: string | undefined, gasPrice: any) => {
+const buildTransferTransaction = (transaction: transactionParams, account: string | undefined, gasPrice: any) => {
     return {
         from: account,
         to: transaction.targetAddress,
@@ -45,17 +45,12 @@ const buildTransferTransaction = (transaction: any, account: string | undefined,
 
 //SwapExactEthForTokens UniswapV2
 //TODO: call helper fuction to get contract address depending on chainID
-export const buildBuyTransaction = (transaction: any, account: string | undefined, gasPrice: any) => {
+export const buildBuyTransaction = (transaction: transactionParams, account: string | undefined, gasPrice: any) => {
     const iface = new ethers.Interface(uniABI);
     const addypath = [WETH_ADDRESS, transaction.tokenAddress];
     
-    const to = account?.toString(); //reciepient of tokens
-    if(to === undefined){
-        console.error('Could not retrieve account') //need better error handling/notifications for the user
-    }
-    //const to = '0x2DDc1600b248D9A24d11bE858fb8388a1e9EAD92'
+    const to = account?.toString();
     const deadline = Math.floor(Date.now() / 1000) + 60 * 20;
-
 
     console.log("account: "+ to)
     const amountOutMin = BigInt("0").toString(10); //TODO: do math on pool, get slippage from user for now set to 5%
@@ -86,7 +81,6 @@ export const handleBalanceRequest = async (provider: SDKProvider | undefined, ac
       "params": []
     });
   
-    console.log("blockNumber: " + blockNumber)
     const balanceWeiHex = await provider?.request({
       "method": "eth_getBalance",
       "params": [
@@ -97,8 +91,16 @@ export const handleBalanceRequest = async (provider: SDKProvider | undefined, ac
     if(typeof balanceWeiHex === 'string'){
       return response + " " + formatWalletBalance(balanceWeiHex);
     } else {
-      throw Error("Wallet Balance Retrievel Failed")
+      console.error('Failed to retrieve a valid balance');
+      throw Error('Invalid Balance Recieved from MetaMask')
     }
+}
+
+const estimateGasWithOverHead = (estimatedGasMaybe: string) => {
+    const estimatedGas = parseInt(estimatedGasMaybe, 16);
+    console.log("Gas Limit: " + estimatedGas)
+    const gasLimitWithOverhead = Math.ceil(estimatedGas * 5);
+    return "0x" + gasLimitWithOverhead.toString(16);
 }
 
 export const handleTransactionRequest = async (provider: SDKProvider | undefined, transaction: transactionParams, account: string | undefined) => {
@@ -106,23 +108,25 @@ export const handleTransactionRequest = async (provider: SDKProvider | undefined
         "method": "eth_gasPrice",
         "params": []
       });
-      let builtTx = buildTransaction(transaction, account, gasPrice);
-      
-      let estimatedGasMaybe = await provider?.request({
-        "method": "eth_estimateGas",
-        "params": [builtTx]
-      });
+    //Sanity Check
+    if(typeof gasPrice !== 'string'){
+    console.error('Failed to retrieve a valid gasPrice');
+    throw new Error('Invalid gasPrice received');
+    }
+    let builtTx = buildTransaction(transaction, account, gasPrice);
+    
+    let estimatedGas = await provider?.request({
+    "method": "eth_estimateGas",
+    "params": [builtTx]
+    });
+    //Sanity Check
+    if(typeof estimatedGas !== 'string'){
+    console.error('Failed to estimate Gas with metamask');
+    throw new Error('Invalid gasPrice received');
+    }
 
-      if(typeof estimatedGasMaybe === 'string'){
-        const estimatedGas = parseInt(estimatedGasMaybe, 16);
-        console.log("Gas Limit: " + estimatedGas)
-        const gasLimitWithOverhead = Math.ceil(estimatedGas * 5);
-        const gasLimitWithOverheadHex = "0x" + gasLimitWithOverhead.toString(16);
-        console.log("Gas Limit With Overhead: " + gasLimitWithOverhead)
-        builtTx.params[0].gas = gasLimitWithOverheadHex; // Update the transaction with the new gas limit in hex
-      } else {
-        builtTx.params[0].gas = estimatedGasMaybe;
-      }
-      await provider?.request(builtTx)
+    const gasLimitWithOverhead = estimateGasWithOverHead(estimatedGas)
+    builtTx.params[0].gas = gasLimitWithOverhead; // Update the transaction with the new gas limit in hex
+    await provider?.request(builtTx)
 }
 

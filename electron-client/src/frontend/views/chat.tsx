@@ -49,12 +49,29 @@ const ChatView = (): JSX.Element => {
         return;
       }
 
+      //Sanity Checks:
+      if(!account || !provider){
+        const errorMessage = `Error: Please connect to metamask`
+        updateDialogueEntries(question, errorMessage);
+        return;
+      }
+
       if (transaction.type.toLowerCase() === "balance") {
-        const message = await handleBalanceRequest(provider, account, response);
+        let message: string;
+        try {
+          message = await handleBalanceRequest(provider, account, response);
+        } catch (error){
+          message = `Error: Failed to retrieve a valid balance from Metamask, try reconnecting.`
+        }
         updateDialogueEntries(question, message);
       } else {
-        updateDialogueEntries(question, response); 
-        await handleTransactionRequest(provider, transaction, account);
+        try {
+          await handleTransactionRequest(provider, transaction, account);
+          updateDialogueEntries(question, response); 
+        } catch (error){
+          const badTransactionMessage = "Error: There was an error sending your transaction, please reconnnect to metamask and try again"
+          updateDialogueEntries(question, badTransactionMessage);     
+        }
       }
     
   }
@@ -73,10 +90,8 @@ const ChatView = (): JSX.Element => {
       query: question,
     });
 
-    const { response, transaction } = parseResponse(inference.message.content)
-
-    let message = response;
-    if (response) {
+    if (inference) {
+      const { response, transaction } = parseResponse(inference.message.content)
       await processResponse(question, response, transaction);
     }
 
