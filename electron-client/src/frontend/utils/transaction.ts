@@ -3,12 +3,15 @@ import { WETH_ADDRESS, UniswapV2RouterEth } from "./addresses";
 import uniABI from "./abis/UniswapV2RouterABI.json"
 import { SDKProvider } from "@metamask/sdk";
 import { transactionParams } from "./types";
+import { add } from "winston";
+
+const slippage = 0.05
 
 export const isTransactionIntiated = (transaction: transactionParams) => {
     return !(Object.keys(transaction).length === 0);
 }
 
-export const buildTransaction = (transaction: transactionParams, account:  string | undefined, gasPrice: string) => {
+export const buildTransaction = (transaction: transactionParams, account:  string | undefined, gasPrice: string, provider: SDKProvider | undefined) => {
     const transactionType = transaction.type.toLowerCase();
     
     let tx: any
@@ -17,9 +20,10 @@ export const buildTransaction = (transaction: transactionParams, account:  strin
             tx = buildTransferTransaction(transaction, account, gasPrice);
             break;  
         case "buy":
-            tx = buildBuyTransaction(transaction, account, gasPrice);
+            tx = buildBuyTransaction(transaction, account, gasPrice, provider);
             break;
         case "sell":
+            tx = buildSellTransaction(transaction, account, gasPrice, provider)
             break;
         default:
             console.error(`Transaction of type ${transactionType} not recognsied`);
@@ -45,17 +49,22 @@ const buildTransferTransaction = (transaction: transactionParams, account: strin
 
 //SwapExactEthForTokens UniswapV2
 //TODO: call helper fuction to get contract address depending on chainID
-export const buildBuyTransaction = (transaction: transactionParams, account: string | undefined, gasPrice: any) => {
+//TODO: get slippage from user
+const buildBuyTransaction = async (transaction: transactionParams, account: string | undefined, gasPrice: string, provider: SDKProvider | undefined) => {
     const iface = new ethers.Interface(uniABI);
     const addypath = [WETH_ADDRESS, transaction.tokenAddress];
     
     const to = account?.toString();
     const deadline = Math.floor(Date.now() / 1000) + 60 * 20;
 
-    console.log("account: "+ to)
-    const amountOutMin = BigInt("0").toString(10); //TODO: do math on pool, get slippage from user for now set to 5%
+    //console.log("account: "+ to)
+    //TODO: get slippage from user, for now next step get reserves from chain and 
+    //set default slippage of 5% (10% will just get sandwhiched)
+    const amounts = await getAmountsOut(iface, provider, account, transaction, addypath);
+    const amountOutMin = BigInt("0").toString(10); 
     const encodeData = iface.encodeFunctionData("swapExactETHForTokensSupportingFeeOnTransferTokens", [amountOutMin, addypath, to, deadline]);
 
+    console.log("account: " +  account?.toString())
     const tx = {
         from: account?.toString(),
         to: UniswapV2RouterEth, //UniswapV2 router
@@ -68,8 +77,58 @@ export const buildBuyTransaction = (transaction: transactionParams, account: str
     return tx;
 }
 
+const getAmountsOut = async (iface :ethers.Interface, provider: SDKProvider | undefined, account: string | undefined, transaction: transactionParams, addypath: string[]) => {
+    const ethAmountInWei = ethers.parseUnits(transaction.ethAmount, "ether")
+    console.log("wei amount in: " + ethAmountInWei)
+    const encodeData = iface.encodeFunctionData("getAmountsOut", [ethAmountInWei, addypath])
+    const amountsEncoded = await provider?.request({
+        "method": "eth_call",
+        "params": [{
+            from: account?.toString(),
+            to: UniswapV2RouterEth,
+            gas: '0xf4240', //doesnt matter since its read only anyway - wont pay gas
+            data: encodeData
+        }, 'latest']  //get amounts from latest block
+    })
+    if (amountsEncoded) {
+        // Decode the data using the interface
+        const amounts = iface.decodeFunctionResult("getAmountsOut", amountsEncoded);
+        // `amounts` will be an array of BigNumbers
+        console.log("amounts: " + amounts)
+        return amounts;
+      } else {
+        // Handle error or invalid result
+        return null;
+      }
+}
+
+//TODO: get slippage from user
+const buildSellTransaction = (transaction: transactionParams, account: string | undefined, gasPrice: any, provider: SDKProvider | undefined) => {
+    const iface = new ethers.Interface(uniABI);
+    const addypath = [transaction.tokenAddress, WETH_ADDRESS];
+    
+    const to = account?.toString();
+    const deadline = Math.floor(Date.now() / 1000) + 60 * 5;
+
+    const amountIn = transaction.tokenAmount; //put it in correct decimals from query
+    //TODO: get slippage from user, for now next step get reserves from chain and 
+    //set default slippage of 5% (10% will just get sandwhiched)
+    const amountOutMin = BigInt("0").toString(10); 
+    const encodeData = iface.encodeFunctionData("swapExactTokensForETHSupportingFeeOnTransferTokens", [amountIn, amountOutMin, addypath, to, deadline]);
+    const tx = {
+        from: account?.toString(),
+        to: UniswapV2RouterEth, //UniswapV2 router
+        gas: "0xf4240", //estimate this and pass it in
+        gasPrice: gasPrice, 
+        value: '0x000',
+        data: encodeData
+    };
+
+    return tx;
+}
+
 //TODO: take chain ID to get arb balance or w/e chain
-export const formatWalletBalance = (balanceWeiHex: string) => {
+const formatWalletBalance = (balanceWeiHex: string) => {
     const balanceBigInt = BigInt(balanceWeiHex)
     const balance = ethers.formatUnits(balanceBigInt, "ether");
     return parseFloat(balance).toFixed(2) + " " + "ETH";
@@ -98,7 +157,7 @@ export const handleBalanceRequest = async (provider: SDKProvider | undefined, ac
 
 const estimateGasWithOverHead = (estimatedGasMaybe: string) => {
     const estimatedGas = parseInt(estimatedGasMaybe, 16);
-    console.log("Gas Limit: " + estimatedGas)
+    //console.log("Gas Limit: " + estimatedGas)
     const gasLimitWithOverhead = Math.ceil(estimatedGas * 5);
     return "0x" + gasLimitWithOverhead.toString(16);
 }
@@ -113,7 +172,7 @@ export const handleTransactionRequest = async (provider: SDKProvider | undefined
     console.error('Failed to retrieve a valid gasPrice');
     throw new Error('Invalid gasPrice received');
     }
-    let builtTx = buildTransaction(transaction, account, gasPrice);
+    let builtTx = buildTransaction(transaction, account, gasPrice, provider);
     
     let estimatedGas = await provider?.request({
     "method": "eth_estimateGas",

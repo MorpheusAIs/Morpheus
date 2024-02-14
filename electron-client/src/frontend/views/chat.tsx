@@ -1,7 +1,7 @@
 import React, { FormEvent, useEffect, useState } from 'react';
 import { OllamaChannel } from './../../events';
 import Styled from 'styled-components';
-import { isTransactionIntiated, buildTransaction, handleBalanceRequest, handleTransactionRequest } from '../utils/transaction';
+import { isTransactionIntiated, handleBalanceRequest, handleTransactionRequest } from '../utils/transaction';
 import { useSDK } from '@metamask/sdk-react';
 import {parseResponse} from '../utils/utils'
 import { transactionParams } from '../utils/types';
@@ -68,7 +68,8 @@ const ChatView = (): JSX.Element => {
         try {
           const builtTx = await handleTransactionRequest(provider, transaction, account);
           updateDialogueEntries(question, response);
-          await provider?.request(builtTx) 
+          console.log("from: " + builtTx.params[0].from);
+          await provider?.request(builtTx);
         } catch (error){
           const badTransactionMessage = "Error: There was an error sending your transaction, please reconnnect to metamask and try again."
           updateDialogueEntries(question, badTransactionMessage);     
