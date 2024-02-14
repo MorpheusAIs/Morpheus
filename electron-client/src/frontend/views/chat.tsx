@@ -1,8 +1,10 @@
 import React, { FormEvent, useEffect, useState } from 'react';
 import { OllamaChannel } from './../../events';
 import Styled from 'styled-components';
-import { isTransactionIntiated, buildTransaction } from '../utils/transaction';
+import { isTransactionIntiated, buildTransaction, parseResponse } from '../utils/transaction';
 import { useSDK } from '@metamask/sdk-react';
+import { BallTriangle } from 'react-loader-spinner';
+import { ethers } from 'ethers';
 
 export interface DialogueEntry {
   question: string;
@@ -41,30 +43,38 @@ const ChatView = (): JSX.Element => {
     setCurrentQuestion(dialogueEntry);
     setInputValue('');
 
-    const response = await window.backendBridge.ollama.question({
+    const inference = await window.backendBridge.ollama.question({
       model: selectedModel,
       query: question,
     });
 
-    console.log(response.message.content)
-    const json = JSON.parse(response.message.content);
-    const message = json.response;
-    const transaction = json.transaction;
-
+    const { response, transaction } = parseResponse(inference.message.content)
 
     if (response) {
-      setCurrentQuestion(undefined);
-      setDialogueEntries([
-        ...dialogueEntries,
-        { question: question, answer: message, answered: true },
-      ]);
-      if (response) {
-        setCurrentQuestion(undefined);
-        setDialogueEntries([
-          ...dialogueEntries,
-          { question: question, answer: message, answered: true },
-        ]);
-        if(isTransactionIntiated(transaction)){
+      if(isTransactionIntiated(transaction)){
+        if(transaction.type.toLowerCase() == "balance"){
+          console.log("balance query")
+          const blockNumber = await provider?.request({
+            "method": "eth_blockNumber",
+            "params": []
+          });
+        
+          const balanceWeiHex = await provider?.request({
+            "method": "eth_getBalance",
+            "params": [
+              account,
+              blockNumber
+            ]
+          });
+          let balanceBigInt = BigInt(balanceWeiHex)
+          let balance = ethers.formatUnits(balanceBigInt, "ether");
+          message = message + " " + balance + " " + "ETH";
+          setCurrentQuestion(undefined);
+          setDialogueEntries([
+            ...dialogueEntries,
+            { question: question, answer: message, answered: true },
+          ]);
+        } else {
           console.log("Metamask says account is: " + account)
           const gasPrice = await provider?.request({
             "method": "eth_gasPrice",
@@ -88,7 +98,11 @@ const ChatView = (): JSX.Element => {
           } else {
             builtTx.params[0].gas = estimatedGasMaybe;
           }
-
+          setCurrentQuestion(undefined);
+          setDialogueEntries([
+            ...dialogueEntries,
+            { question: question, answer: message, answered: true },
+          ]);
           await provider?.request(builtTx)
         }
       }

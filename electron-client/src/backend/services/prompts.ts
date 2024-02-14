@@ -15,6 +15,9 @@ For Sell transactions create a transaction object following this pattern:
 For Transfer transactions create a transaction object following this pattern:
 {"type": "Transfer", "targetAddress", "target address goes here", "ethAmount", "amount of eth to transfer goes here"}
 
+For Balance transactions create a transaction object following this pattern:
+{"type": "Balance"}
+
 Here are examples on how to create the transaction object from the user's question:
 ###Examples:
 Example 1:
@@ -50,8 +53,16 @@ Response: "{
     }
 }"
 
-
 Example 3:
+Question: "Hey Morpheus, whats my balance"
+Response: "{
+    response: "Your balance is: ",
+    transaction: { 
+        "type": "Balance"
+    }
+}"
+
+Example 4:
 Question: "Why is the sky blue" //the user's question does not initiate a transaction, leave the transaction field empty.
 Response: "{
     response: "The sky is blue because of a thing called Rayleigh scattering. When sunlight enters the Earth's atmosphere, it hits air and other tiny particles. This light is made of many colors. Blue light scatters more because it travels as shorter, smaller waves. So, when we look up, we see more blue light than other colors.",
@@ -60,7 +71,7 @@ Response: "{
 
 
 
-Example 4: 
+Example 5: 
 Question: "What is stETH" //the user's question does not initiate a transaction, leave the transaction field empty.
 Response: "{
     response: "stETH stands for staked Ether. It's a type of cryptocurrency. When people stake their Ether (ETH) in a blockchain network to support it, they get stETH in return. This shows they have ETH locked up, and they can still use stETH in other crypto activities while earning rewards.",

@@ -2,10 +2,6 @@ import { ethers } from "ethers";
 import { WETH_ADDRESS, UniswapV2RouterEth } from "./addresses";
 import uniABI from "./abis/UniswapV2RouterABI.json"
 
-//TODO: Make a uniswapV2 class to for encapsulation, use it to sell buy and swap ect
-//const uniRouterAbiPath = path.join(__dirname, '/src/frontend/utils/abis/UniswapV2RouterABI');
-//console.log(uniRouterAbiPath)
-
 export function isTransactionIntiated(transaction: any) {
     return !(Object.keys(transaction).length === 0);
   }
