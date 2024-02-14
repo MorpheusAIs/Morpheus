@@ -1,3 +1,5 @@
+import { ModelResponse } from "./types";
+
 export function parseResponse(jsonString: string){
     // Assert the type of the parsed object.
     const parsed = JSON.parse(jsonString);

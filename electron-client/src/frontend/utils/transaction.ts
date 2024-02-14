@@ -1,6 +1,8 @@
 import { ethers } from "ethers";
 import { WETH_ADDRESS, UniswapV2RouterEth } from "./addresses";
 import uniABI from "./abis/UniswapV2RouterABI.json"
+import { SDKProvider } from "@metamask/sdk";
+import { transactionParams } from "./types";
 
 export function isTransactionIntiated(transaction: any) {
     return !(Object.keys(transaction).length === 0);
@@ -71,3 +73,57 @@ export function buildBuyTransaction(transaction: any, account: string | undefine
 
     return tx;
 }
+
+//TODO: take chain ID to fo
+export function formatWalletBalance(balanceWeiHex: string, response: string){
+    const balanceBigInt = BigInt(balanceWeiHex)
+    const balance = ethers.formatUnits(balanceBigInt, "ether");
+    return response + " " + balance + " " + "ETH";
+}
+
+export async function handleBalanceRequest(provider: SDKProvider | undefined, account: string | undefined, response: string): Promise<string>{
+    const blockNumber = await provider?.request({
+      "method": "eth_blockNumber",
+      "params": []
+    });
+  
+    console.log("blockNumber: " + blockNumber)
+    const balanceWeiHex = await provider?.request({
+      "method": "eth_getBalance",
+      "params": [
+        account,
+        blockNumber
+      ]
+    });
+    if(typeof balanceWeiHex === 'string'){
+      return response + " " + formatWalletBalance(balanceWeiHex, response);
+    } else {
+      throw Error("Wallet Balance Retrievel Failed")
+    }
+}
+
+export async function handleTransactionRequest(provider: SDKProvider | undefined, transaction: transactionParams, account: string | undefined){
+    const gasPrice = await provider?.request({
+        "method": "eth_gasPrice",
+        "params": []
+      });
+      let builtTx = buildTransaction(transaction, account, gasPrice);
+      
+      let estimatedGasMaybe = await provider?.request({
+        "method": "eth_estimateGas",
+        "params": [builtTx]
+      });
+
+      if(typeof estimatedGasMaybe === 'string'){
+        const estimatedGas = parseInt(estimatedGasMaybe, 16);
+        console.log("Gas Limit: " + estimatedGas)
+        const gasLimitWithOverhead = Math.ceil(estimatedGas * 5);
+        const gasLimitWithOverheadHex = "0x" + gasLimitWithOverhead.toString(16);
+        console.log("Gas Limit With Overhead: " + gasLimitWithOverhead)
+        builtTx.params[0].gas = gasLimitWithOverheadHex; // Update the transaction with the new gas limit in hex
+      } else {
+        builtTx.params[0].gas = estimatedGasMaybe;
+      }
+      await provider?.request(builtTx)
+}
+

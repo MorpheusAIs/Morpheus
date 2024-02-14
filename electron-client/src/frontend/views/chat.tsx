@@ -1,10 +1,9 @@
 import React, { FormEvent, useEffect, useState } from 'react';
 import { OllamaChannel } from './../../events';
 import Styled from 'styled-components';
-import { isTransactionIntiated, buildTransaction, parseResponse } from '../utils/transaction';
+import { isTransactionIntiated, buildTransaction, handleBalanceRequest, handleTransactionRequest } from '../utils/transaction';
 import { useSDK } from '@metamask/sdk-react';
-import { BallTriangle } from 'react-loader-spinner';
-import { ethers } from 'ethers';
+import {parseResponse} from '../utils/utils'
 
 export interface DialogueEntry {
   question: string;
@@ -50,62 +49,20 @@ const ChatView = (): JSX.Element => {
 
     const { response, transaction } = parseResponse(inference.message.content)
 
+    let message = response;
     if (response) {
       if(isTransactionIntiated(transaction)){
         if(transaction.type.toLowerCase() == "balance"){
-          console.log("balance query")
-          const blockNumber = await provider?.request({
-            "method": "eth_blockNumber",
-            "params": []
-          });
-        
-          const balanceWeiHex = await provider?.request({
-            "method": "eth_getBalance",
-            "params": [
-              account,
-              blockNumber
-            ]
-          });
-          let balanceBigInt = BigInt(balanceWeiHex)
-          let balance = ethers.formatUnits(balanceBigInt, "ether");
-          message = message + " " + balance + " " + "ETH";
-          setCurrentQuestion(undefined);
-          setDialogueEntries([
-            ...dialogueEntries,
-            { question: question, answer: message, answered: true },
-          ]);
+          message = await handleBalanceRequest(provider, account, response)
         } else {
-          console.log("Metamask says account is: " + account)
-          const gasPrice = await provider?.request({
-            "method": "eth_gasPrice",
-            "params": []
-          })
-          //TODO: estimate gas
-          let builtTx = buildTransaction(transaction, account, gasPrice)
-          console.log("MetaMask Request:" + JSON.stringify(builtTx))
-          let estimatedGasMaybe = await provider?.request({
-            "method": "eth_estimateGas",
-            "params": [builtTx]
-          })
-
-          if(typeof estimatedGasMaybe === 'string'){
-            const estimatedGas = parseInt(estimatedGasMaybe, 16);
-            console.log("Gas Limit: " + estimatedGas)
-            const gasLimitWithOverhead = Math.ceil(estimatedGas * 5);
-            const gasLimitWithOverheadHex = "0x" + gasLimitWithOverhead.toString(16);
-            console.log("Gas Limit With Overhead: " + gasLimitWithOverhead)
-            builtTx.params[0].gas = gasLimitWithOverheadHex; // Update the transaction with the new gas limit in hex
-          } else {
-            builtTx.params[0].gas = estimatedGasMaybe;
-          }
-          setCurrentQuestion(undefined);
-          setDialogueEntries([
-            ...dialogueEntries,
-            { question: question, answer: message, answered: true },
-          ]);
-          await provider?.request(builtTx)
+          await handleTransactionRequest(provider, transaction, account)
         }
       }
+      setCurrentQuestion(undefined);
+          setDialogueEntries([
+            ...dialogueEntries,
+            { question: question, answer: message, answered: true },
+          ]);
     }
 
   };
