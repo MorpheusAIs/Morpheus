@@ -66,10 +66,11 @@ const ChatView = (): JSX.Element => {
         updateDialogueEntries(question, message);
       } else {
         try {
-          await handleTransactionRequest(provider, transaction, account);
-          updateDialogueEntries(question, response); 
+          const builtTx = await handleTransactionRequest(provider, transaction, account);
+          updateDialogueEntries(question, response);
+          await provider?.request(builtTx) 
         } catch (error){
-          const badTransactionMessage = "Error: There was an error sending your transaction, please reconnnect to metamask and try again"
+          const badTransactionMessage = "Error: There was an error sending your transaction, please reconnnect to metamask and try again."
           updateDialogueEntries(question, badTransactionMessage);     
         }
       }

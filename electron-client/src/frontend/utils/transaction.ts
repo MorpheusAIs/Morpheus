@@ -91,8 +91,8 @@ export const handleBalanceRequest = async (provider: SDKProvider | undefined, ac
     if(typeof balanceWeiHex === 'string'){
       return response + " " + formatWalletBalance(balanceWeiHex);
     } else {
-      console.error('Failed to retrieve a valid balance');
-      throw Error('Invalid Balance Recieved from MetaMask')
+      console.error('Failed to retrieve a valid balance.');
+      throw Error('Invalid Balance Recieved from MetaMask.')
     }
 }
 
@@ -127,6 +127,6 @@ export const handleTransactionRequest = async (provider: SDKProvider | undefined
 
     const gasLimitWithOverhead = estimateGasWithOverHead(estimatedGas)
     builtTx.params[0].gas = gasLimitWithOverhead; // Update the transaction with the new gas limit in hex
-    await provider?.request(builtTx)
+    return builtTx
 }
 
