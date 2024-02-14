@@ -4,12 +4,11 @@ import uniABI from "./abis/UniswapV2RouterABI.json"
 import { SDKProvider } from "@metamask/sdk";
 import { transactionParams } from "./types";
 
-export function isTransactionIntiated(transaction: any) {
+export const isTransactionIntiated = (transaction: any) => {
     return !(Object.keys(transaction).length === 0);
-  }
+}
 
-
-export function buildTransaction(transaction: any, account:  string | undefined, gasPrice: any) {
+export const buildTransaction = (transaction: any, account:  string | undefined, gasPrice: any) => {
     const transactionType = transaction.type.toLowerCase();
     
     let tx: any
@@ -33,7 +32,7 @@ export function buildTransaction(transaction: any, account:  string | undefined,
     }
   }
 
-function buildTransferTransaction(transaction: any, account: string | undefined, gasPrice: any){
+const buildTransferTransaction = (transaction: any, account: string | undefined, gasPrice: any) => {
     return {
         from: account,
         to: transaction.targetAddress,
@@ -46,7 +45,7 @@ function buildTransferTransaction(transaction: any, account: string | undefined,
 
 //SwapExactEthForTokens UniswapV2
 //TODO: call helper fuction to get contract address depending on chainID
-export function buildBuyTransaction(transaction: any, account: string | undefined, gasPrice: any){
+export const buildBuyTransaction = (transaction: any, account: string | undefined, gasPrice: any) => {
     const iface = new ethers.Interface(uniABI);
     const addypath = [WETH_ADDRESS, transaction.tokenAddress];
     
@@ -74,14 +73,14 @@ export function buildBuyTransaction(transaction: any, account: string | undefine
     return tx;
 }
 
-//TODO: take chain ID to fo
-export function formatWalletBalance(balanceWeiHex: string, response: string){
+//TODO: take chain ID to get arb balance or w/e chain
+export const formatWalletBalance = (balanceWeiHex: string) => {
     const balanceBigInt = BigInt(balanceWeiHex)
     const balance = ethers.formatUnits(balanceBigInt, "ether");
-    return response + " " + balance + " " + "ETH";
+    return parseFloat(balance).toFixed(2) + " " + "ETH";
 }
 
-export async function handleBalanceRequest(provider: SDKProvider | undefined, account: string | undefined, response: string): Promise<string>{
+export const handleBalanceRequest = async (provider: SDKProvider | undefined, account: string | undefined, response: string) => {
     const blockNumber = await provider?.request({
       "method": "eth_blockNumber",
       "params": []
@@ -96,13 +95,13 @@ export async function handleBalanceRequest(provider: SDKProvider | undefined, ac
       ]
     });
     if(typeof balanceWeiHex === 'string'){
-      return response + " " + formatWalletBalance(balanceWeiHex, response);
+      return response + " " + formatWalletBalance(balanceWeiHex);
     } else {
       throw Error("Wallet Balance Retrievel Failed")
     }
 }
 
-export async function handleTransactionRequest(provider: SDKProvider | undefined, transaction: transactionParams, account: string | undefined){
+export const handleTransactionRequest = async (provider: SDKProvider | undefined, transaction: transactionParams, account: string | undefined) => {
     const gasPrice = await provider?.request({
         "method": "eth_gasPrice",
         "params": []

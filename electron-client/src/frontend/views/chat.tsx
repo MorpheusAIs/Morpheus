@@ -4,6 +4,7 @@ import Styled from 'styled-components';
 import { isTransactionIntiated, buildTransaction, handleBalanceRequest, handleTransactionRequest } from '../utils/transaction';
 import { useSDK } from '@metamask/sdk-react';
 import {parseResponse} from '../utils/utils'
+import { transactionParams } from '../utils/types';
 
 export interface DialogueEntry {
   question: string;
@@ -33,6 +34,31 @@ const ChatView = (): JSX.Element => {
     };
   });
 
+    //Function to update dialogue entries
+  const updateDialogueEntries = (question: string, message: string) => {
+      setCurrentQuestion(undefined);
+      setDialogueEntries([
+        ...dialogueEntries,
+        { question: question, answer: message, answered: true },
+      ]);
+    }
+
+  const processResponse = async (question: string, response: string, transaction: transactionParams) => {
+      if (!isTransactionIntiated(transaction)){
+        updateDialogueEntries(question, response); //no additional logic in this case
+        return;
+      }
+
+      if (transaction.type.toLowerCase() === "balance") {
+        const message = await handleBalanceRequest(provider, account, response);
+        updateDialogueEntries(question, message);
+      } else {
+        updateDialogueEntries(question, response); 
+        await handleTransactionRequest(provider, transaction, account);
+      }
+    
+  }
+
   const handleQuestionAsked = async (question: string) => {
     const dialogueEntry = {
       question: question,
@@ -51,18 +77,7 @@ const ChatView = (): JSX.Element => {
 
     let message = response;
     if (response) {
-      if(isTransactionIntiated(transaction)){
-        if(transaction.type.toLowerCase() == "balance"){
-          message = await handleBalanceRequest(provider, account, response)
-        } else {
-          await handleTransactionRequest(provider, transaction, account)
-        }
-      }
-      setCurrentQuestion(undefined);
-          setDialogueEntries([
-            ...dialogueEntries,
-            { question: question, answer: message, answered: true },
-          ]);
+      await processResponse(question, response, transaction);
     }
 
   };
