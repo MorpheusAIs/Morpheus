@@ -168,3 +168,4 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | 0x0d2065e3Ed3E36919b2AD12FDA8E428Da91bb28D | https://dune.com/potato6969/morpheus-fair-launch and [https://github.com/MorpheusAIs/Morpheus/pull/587](https://github.com/MorpheusAIs/Morpheus/pull/587) | 20 | Dune Dashboard and Guide for TCM Contracts Data Analysis |
 | 0x28D3bDeCE9A0c7F54687F734fA73fBA04ECf5785 | https://github.com/MorpheusAIs/Morpheus/pull/569 | 8 Hours | Translated Yellowpaper into Korean |
 | 0xA94b40c53432f0576E64873CE1CEAd1aae62Fc90 |  | 10 Hours | Best Practice #7 |
+| 0xf0d66807004b4080E02026b50DA1d3b214d2b4b6 | https://github.com/MorpheusAIs/Morpheus/pull/593 | 7 Hours | Translated Whitepaper into Malay |
