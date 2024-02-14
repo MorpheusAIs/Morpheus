@@ -1,4 +1,4 @@
-# The purpose of the guide is to pass you through the process of direct interaction with the Morpheus Distribution Contract
+# The purpose of the guide is to pass you through the process of direct interaction with the Morpheus Capital Providers Distribution Contract 
 
 ## Table of contents
 1) Smart Contracts Addresses (Ethereum mainnet).
@@ -14,7 +14,7 @@
 - stETH Contract: [0xae7ab96520de3a18e5e111b5eaab095312d7fe84](https://etherscan.io/address/0xae7ab96520de3a18e5e111b5eaab095312d7fe84)
 
 ## How to get stETH?
-First a user must get staked ETH from [Lido](https://lido.fi/). You can easily get this by swapping ETH for stETH on the Ethereum mainnet by following intructions at their website.  
+First a user must get staked ETH from [Lido](https://lido.fi/). You can easily get this by swapping ETH for stETH on the Ethereum mainnet by following instructions at their website.  
 
 A user may also buy stETH on different exchanges that support it.  
 
@@ -59,6 +59,7 @@ The second function will show how many tokens have been invested by the user, th
 
 ## How to withdraw stETH from the contract?
 `Reminder: you can withdraw funds no earlier than 7 days after the deposit`  
+
 You need to go to the [Distribution](https://etherscan.io/address/0x47176B2Af9885dC6C4575d4eFd63895f7Aaa4790#writeProxyContract) contract, open the “Contract” tab, then the “Write as Proxy” tab. Don't forget to connect your wallet, which should have enough native token to pay for gas.
 
 ![DistributionContract](https://github.com/antonbosss/fantastic-bassoon/blob/main/MorpheusGuide/withdraw.png)
