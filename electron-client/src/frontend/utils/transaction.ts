@@ -19,12 +19,6 @@ export const buildTransaction = (transaction: transactionParams, account:  strin
         case "transfer":
             tx = buildTransferTransaction(transaction, account, gasPrice);
             break;  
-        /*case "buy":
-            tx = buildBuyTransaction(transaction, account, gasPrice, provider);
-            break;
-        case "sell":
-            tx = buildSellTransaction(transaction, account, gasPrice, provider)
-            break;*/
         default:
             throw Error(`Transaction of type ${transactionType} is not yet supported`);
     }
@@ -44,86 +38,6 @@ const buildTransferTransaction = (transaction: transactionParams, account: strin
         value: '0x' + ethers.parseEther(transaction.ethAmount).toString(16),
         data: "0x000000"
     }
-}
-
-//SwapExactEthForTokens UniswapV2
-//TODO: call helper fuction to get contract address depending on chainID
-//TODO: get slippage from user
-const buildBuyTransaction = async (transaction: transactionParams, account: string | undefined, gasPrice: string, provider: SDKProvider | undefined) => {
-    const iface = new ethers.Interface(uniABI);
-    const addypath = [WETH_ADDRESS, transaction.tokenAddress];
-    
-    const to = account?.toString();
-    const deadline = Math.floor(Date.now() / 1000) + 60 * 20;
-
-    //console.log("account: "+ to)
-    //TODO: get slippage from user, for now next step get reserves from chain and 
-    //set default slippage of 5% (10% will just get sandwhiched)
-    const amounts = await getAmountsOut(iface, provider, account, transaction, addypath);
-    const amountOutMin = BigInt("0").toString(10); 
-    const encodeData = iface.encodeFunctionData("swapExactETHForTokensSupportingFeeOnTransferTokens", [amountOutMin, addypath, to, deadline]);
-
-    console.log("account: " +  account?.toString())
-    const tx = {
-        from: account?.toString(),
-        to: UniswapV2RouterEth, //UniswapV2 router
-        gas: "0xf4240", //estimate this and pass it in
-        gasPrice: gasPrice, 
-        value: '0x' + ethers.parseEther(transaction.ethAmount).toString(16),
-        data: encodeData
-    };
-
-    return tx;
-}
-
-const getAmountsOut = async (iface :ethers.Interface, provider: SDKProvider | undefined, account: string | undefined, transaction: transactionParams, addypath: string[]) => {
-    const ethAmountInWei = ethers.parseUnits(transaction.ethAmount, "ether")
-    console.log("wei amount in: " + ethAmountInWei)
-    const encodeData = iface.encodeFunctionData("getAmountsOut", [ethAmountInWei, addypath])
-    const amountsEncoded = await provider?.request({
-        "method": "eth_call",
-        "params": [{
-            from: account?.toString(),
-            to: UniswapV2RouterEth,
-            gas: '0xf4240', //doesnt matter since its read only anyway - wont pay gas
-            data: encodeData
-        }, 'latest']  //get amounts from latest block
-    })
-    if (amountsEncoded) {
-        // Decode the data using the interface
-        const amounts = iface.decodeFunctionResult("getAmountsOut", amountsEncoded);
-        // `amounts` will be an array of BigNumbers
-        console.log("amounts: " + amounts)
-        return amounts;
-      } else {
-        // Handle error or invalid result
-        return null;
-      }
-}
-
-//TODO: get slippage from user
-const buildSellTransaction = (transaction: transactionParams, account: string | undefined, gasPrice: any, provider: SDKProvider | undefined) => {
-    const iface = new ethers.Interface(uniABI);
-    const addypath = [transaction.tokenAddress, WETH_ADDRESS];
-    
-    const to = account?.toString();
-    const deadline = Math.floor(Date.now() / 1000) + 60 * 5;
-
-    const amountIn = transaction.tokenAmount; //put it in correct decimals from query
-    //TODO: get slippage from user, for now next step get reserves from chain and 
-    //set default slippage of 5% (10% will just get sandwhiched)
-    const amountOutMin = BigInt("0").toString(10); 
-    const encodeData = iface.encodeFunctionData("swapExactTokensForETHSupportingFeeOnTransferTokens", [amountIn, amountOutMin, addypath, to, deadline]);
-    const tx = {
-        from: account?.toString(),
-        to: UniswapV2RouterEth, //UniswapV2 router
-        gas: "0xf4240", //estimate this and pass it in
-        gasPrice: gasPrice, 
-        value: '0x000',
-        data: encodeData
-    };
-
-    return tx;
 }
 
 //TODO: take chain ID to get arb balance or w/e chain

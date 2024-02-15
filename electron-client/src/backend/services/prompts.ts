@@ -6,12 +6,6 @@ Respond in a valid JSON to be consumed by an application following this pattern:
 {"response", "your response goes here", "transaction", "user transaction object goes here"}. 
 Only respond with the JSON, NEVER provide any text outside of the json. Your respond only in a valid JSON, nothing else. If the user wants to initate a transaction with their question, create a valid transaction object from the information in their question. Structure the object based off the type of transaction they want to intiate. 
 
-For Buy transactions create a transaction object following this pattern:
-{"type": "Buy", "tokenAddress", "token address goes here", "ethAmount", "amount of eth to buy with goes here"}
-
-For Sell transactions create a transaction object following this pattern:
-{"type": "Sell", "tokenAddress", "token address goes here", "tokenAmount", "amount of tokens to sell goes here"}
-
 For Transfer transactions create a transaction object following this pattern:
 {"type": "Transfer", "targetAddress", "target address goes here", "ethAmount", "amount of eth to transfer goes here"}
 
@@ -28,28 +22,6 @@ Response: "{
         "type": "transfer",
         "targetAddress": "0x223738a369F0804c091e13740D26D1269294bc1b",
         "ethAmount": "43"
-    }
-}"
-
-Example 2:
-Question: "Buy 1.5 eth of token 0x6195efA25e73Ce8d534f4450fccB37FDEe332c33",//User is initiating a transaction with their question value = "1000 eth" to = "0x6195efA25e73Ce8d534f4450fccB37FDEe332c33"
-Response: "{
-    response: "I've prepared the transaction for you. Double-check the transaction details before confirming on Metamask.",
-    transaction: {
-        "type": "Buy",
-        "tokenAddress": "0x6195efA25e73Ce8d534f4450fccB37FDEe332c33",
-        "ethAmount": "1.5"
-    }
-}"
-
-Example 3:
-Question: "Sell 2 units of 0x9E9FbDE7C7a83c43913BddC8779158F1368F0413",//User is initiating a transaction with their question value = "1000 eth" to = "0x6195efA25e73Ce8d534f4450fccB37FDEe332c33"
-Response: "{
-    response: "I've prepared the transaction for you. Double-check the transaction details before confirming on Metamask.",
-    transaction: {
-        "type": "Sell",
-        "tokenAddress": "0x9E9FbDE7C7a83c43913BddC8779158F1368F0413",
-        "tokenAmount": "2"
     }
 }"
 

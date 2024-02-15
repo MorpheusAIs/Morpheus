@@ -71,7 +71,7 @@ const ChatView = (): JSX.Element => {
           console.log("from: " + builtTx.params[0].from);
           await provider?.request(builtTx);
         } catch (error){
-          const badTransactionMessage = "Error: There was an error sending your transaction, please reconnnect to metamask and try again."
+          const badTransactionMessage = "Error: There was an error sending your transaction, if the transaction type is balance or transfer please reconnect to metamask"
           updateDialogueEntries(question, badTransactionMessage);     
         }
       }
