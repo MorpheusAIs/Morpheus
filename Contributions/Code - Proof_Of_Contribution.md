@@ -175,3 +175,4 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | 0x3476ee81BA812D56b571bCc2e6122De698084E15 | https://morstats.info and [https://github.com/MorpheusAIs/Morpheus/pull/601](https://github.com/MorpheusAIs/Morpheus/pull/601) | 25 | Capital Provider Dashboard and Guide for stETH and MOR Calculations |
 | 0x6b11a53f72503CfE069818c96f2173506E89B2d0 | https://github.com/MorpheusAIs/Morpheus/commit/5318ccda60698a7336ab6412e3813530c8d179ca | 2.5 Hours | Add guide on how to install morpheus on windows |
 | 0x4E1ebaf42b37Fa8af7a5544F06E8c4aefe06F0B8 | https://github.com/MorpheusAIs/Morpheus/pull/540 | 1 Hours | Reviewed language etc |
+| 0xFA47FA4f95110Bce0B7716056f41e5D982BBfBba | https://github.com/MorpheusAIs/Morpheus/pull/317, https://github.com/MorpheusAIs/Morpheus/pull/285 | 25 Hrs | Tranlation for Central Asia|
