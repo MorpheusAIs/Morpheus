@@ -1,6 +1,10 @@
 import React, { FormEvent, useEffect, useState } from 'react';
 import { OllamaChannel } from './../../events';
 import Styled from 'styled-components';
+import { isTransactionIntiated, handleBalanceRequest, handleTransactionRequest } from '../utils/transaction';
+import { useSDK } from '@metamask/sdk-react';
+import {parseResponse} from '../utils/utils'
+import { transactionParams } from '../utils/types';
 
 export interface DialogueEntry {
   question: string;
@@ -13,6 +17,7 @@ const ChatView = (): JSX.Element => {
   const [dialogueEntries, setDialogueEntries] = useState<Array<DialogueEntry>>([]);
   const [inputValue, setInputValue] = useState('');
   const [currentQuestion, setCurrentQuestion] = useState<DialogueEntry>();
+  const { ready, sdk, connected, connecting, provider, chainId, account, balance } = useSDK();
 
   useEffect(() => {
     window.backendBridge.ollama.onAnswer((response) => {
@@ -29,6 +34,50 @@ const ChatView = (): JSX.Element => {
     };
   });
 
+    //Function to update dialogue entries
+  const updateDialogueEntries = (question: string, message: string) => {
+      setCurrentQuestion(undefined);
+      setDialogueEntries([
+        ...dialogueEntries,
+        { question: question, answer: message, answered: true },
+      ]);
+    }
+
+  const processResponse = async (question: string, response: string, transaction: transactionParams) => {
+      if (!isTransactionIntiated(transaction)){
+        updateDialogueEntries(question, response); //no additional logic in this case
+        return;
+      }
+
+      //Sanity Checks:
+      if(!account || !provider){
+        const errorMessage = `Error: Please connect to metamask`
+        updateDialogueEntries(question, errorMessage);
+        return;
+      }
+
+      if (transaction.type.toLowerCase() === "balance") {
+        let message: string;
+        try {
+          message = await handleBalanceRequest(provider, account, response);
+        } catch (error){
+          message = `Error: Failed to retrieve a valid balance from Metamask, try reconnecting.`
+        }
+        updateDialogueEntries(question, message);
+      } else {
+        try {
+          const builtTx = await handleTransactionRequest(provider, transaction, account);
+          updateDialogueEntries(question, response);
+          console.log("from: " + builtTx.params[0].from);
+          await provider?.request(builtTx);
+        } catch (error){
+          const badTransactionMessage = "Error: There was an error sending your transaction, if the transaction type is balance or transfer please reconnect to metamask"
+          updateDialogueEntries(question, badTransactionMessage);     
+        }
+      }
+    
+  }
+
   const handleQuestionAsked = async (question: string) => {
     const dialogueEntry = {
       question: question,
@@ -38,18 +87,16 @@ const ChatView = (): JSX.Element => {
     setCurrentQuestion(dialogueEntry);
     setInputValue('');
 
-    const response = await window.backendBridge.ollama.question({
+    const inference = await window.backendBridge.ollama.question({
       model: selectedModel,
       query: question,
     });
 
-    if (response) {
-      setCurrentQuestion(undefined);
-      setDialogueEntries([
-        ...dialogueEntries,
-        { question: question, answer: response.message.content, answered: true },
-      ]);
+    if (inference) {
+      const { response, transaction } = parseResponse(inference.message.content)
+      await processResponse(question, response, transaction);
     }
+
   };
 
   const handleQuestionChange = (e: FormEvent<HTMLInputElement>) => {

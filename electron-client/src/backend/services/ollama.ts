@@ -18,6 +18,7 @@ import {
 // storage
 import { getModelPathFromStorage } from '../storage';
 import { logger } from './logger';
+import { MOR_PROMPT } from './prompts';
 
 // constants
 const DEFAULT_OLLAMA_URL = 'http://127.0.0.1:11434/';
@@ -144,15 +145,25 @@ export const getOllamaExecutableAndAppDataPath = (
 };
 
 export const askOllama = async (model: string, message: string) => {
+  //const engineeredPrompt = `${MOR_PROMPT}\n\nUser: ${message}\n\nResponse:`
   return await ollama.chat({
     model,
     messages: [
-      {
-        role: 'user',
-        content: `${message}`,
+      { 
+        role: 'system', 
+        content: MOR_PROMPT
       },
-    ],
+      { 
+        role: 'user', 
+        content: ` Now answer the following question: ${message}. Response:` 
+      }
+    ]
+  
   });
+  /*return await ollama.generate({
+    model: model,
+    prompt: engineeredPrompt
+  })*/
 };
 
 export const getOrPullModel = async (model: string) => {
