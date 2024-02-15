@@ -17,7 +17,7 @@ Please include the "pipe" "|" symbol correctly as seen above so your contributio
 
 Detail the work you are contributing to Morpheus.  You must include a link to the work for the work to be considered.  Examples of proof include links to pull requests, github issues, or other easily verifyable information.
 
-*It is your responsability to make the proof easily verifyable. Don't assume reviewers of this table have an understanding of your code. Explain it simply. Limit your descripions to 250 words.*
+*It is your responsibility to make the proof easily verifiable. Don't assume reviewers of this table have an understanding of your code. Explain it simply. Limit your descriptions to 250 words.*
 
 Create a pull request and add a row to the following table. A good way to include proof of work is to put a link to the pull request of the work or a link to the issue in GitHub that describes the testing you did. Only add your link at the bottom, and do not alter any other rows. If you are submitting multiple contributions, please create multiple pull requests - one pull request per contribution.
 
@@ -49,6 +49,7 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | 0xaBd9faA94384595ea304ddce2Ac8e097970eD5b3 | @Believer4  | 12 Hrs | https://github.com/MorpheusAIs/Morpheus/pull/270
 | 0x63d45Be2F2828c0f8e2b4Cff745e89ae74A6d034 | @ dayer | 16 Hrs | General contract testing and subsequent updating of testing documentation (https://github.com/MorpheusAIs/Morpheus/pull/252). Additionally, offensive security contract testing of test contracts
 | 0x01974549C9B9a30d47c548A16b120b1cAa7B586C | `L1Sender` vulnerability report | 12 Hours | Audit [`78b68b7`](https://github.com/MorpheusAIs/SmartContracts/tree/78b68b7d67729c2849cfe16a76a82a7f22b1d5ce) and submitted vulnerabilities & fixes in `L1Sender` | 
+| 0x01974549C9B9a30d47c548A16b120b1cAa7B586C | https://github.com/MorpheusAIs/Morpheus/pull/551 | 16 Hours | Translate Yellow Paper and Yellowstone Compute Model into Chinese |
 | 0x5EBe5223831523823528Ef0a7EdF67D288B1B070 | https://github.com/MorpheusAIs/Morpheus/pull/296 , https://github.com/MorpheusAIs/Morpheus/pull/300, https://github.com/MorpheusAIs/Morpheus/pull/309, https://github.com/MorpheusAIs/Morpheus/pull/318 | 18hrs | Various translations, misc edits
 | 0x683C0173BD2214E95cA9FFB1B437c12A9697ABe6 | @ Ninibarker | 60 Hours | Calls with protocols, sourcing devs, calls with devs for API integration, Operations, onboarded devs from protocols| 
 | 0xb75DB2216E70C7b6bebE1057CF7c99e5D87eD0 | TheOracle-Potentiated | 80 Hours | Adminitration of social channels, growth, API dev sourcing for integrations, calls with protocols,onboarded devs for protocols, Operating work for Design tile library and inforgraphics |
@@ -162,9 +163,24 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | 0xCC5e733cB2E7a59EFC5463575EfC3584D5922486 | https://github.com/MorpheusAIs/Morpheus/tree/0.0.5, https://github.com/MorpheusAIs/Morpheus/blob/006-alpha-fix-2/Contributions/Code%20-%20Proof_Of_Contribution.md | 860 hours | 0.0.5 build, test, package, sign, publish, diagramming, instructions, 0.0.6-alpha-fix-2 |
 | 0x1461F599ecCeC516cf4704253Ab26dF69003439E | https://github.com/MorpheusAIs/Morpheus/pull/321 @Bullfuencer| 25 Hours | White paper translated to Italian including pictures.
 | 0x80CdcF57f42C6BfB429b245d798ee46b9F71Edea | https://github.com/MorpheusAIs/Morpheus/pull/517 | 70 Hours | First Smart Agent
+| 0x80CdcF57f42C6BfB429b245d798ee46b9F71Edea | https://github.com/MorpheusAIs/Morpheus/pull/517 | 70 Hours | First Smart Agent |
+| 0xFa126C09DB44851BFa6bD9D70016f499fdc5586D | [https://github.com/MorpheusAIs/Morpheus/pull/522](https://github.com/MorpheusAIs/Morpheus/pull/522) | 8 HR | UI style adjustments |
 | 0xbac0086453F04Abc25539A1d5D90f797419F9842 | https://github.com/MorpheusAIs/Morpheus/pull/486 | 120 Hours | Fixing the local morpheus client, ollama spawning, asar packaging, Electron CSP
 | 0xC16C04dE65E2EBA60B78294E23953f5EB17F9202 | [https://github.com/MorpheusAIs/tree/rag-feature-branch](https://github.com/MorpheusAIs/Morpheus/tree/rag-feature-branch)https://github.com/MorpheusAIs/Morpheus/tree/rag-feature-branch | 80 HR  | LLamaIndex, Langchain and JSON RPC APIs |
+| 0x65DF6F7E5897b033CAcF77447f0fe274aa03B156 | https://github.com/MorpheusAIs/Morpheus/blob/main/Asset/Design%20Library.md, (https://github.com/MorpheusAIs/Morpheus/commit/647f110028d99fd6a5a62927cd65114d3336e468)  | 180 | Administration of Socials, Medium, Design elements, Social graphics, infographics, Design of 4C Sigils, FAQ reiterations, Integrations|
 | 0x62aF7c48Cf412162465A8CaFdE44dFb17bA96038 | https://github.com/MorpheusAIs/Morpheus/pull/484, https://github.com/MorpheusAIs/Morpheus/pull/518 | 32 Hours | Editing, adding info to EN whitepapper, Yellow paper and TCM Helping questions and answers to FAQ to Oracle, adding FAQ to Github, Alinging UA and RU TCM, WP and Yellowstone model with EN version, Test dashboard + feedback with findings, translated announcements to RU and UA, helping newcomers with questions and navigation, assisting with issues, facilitating conversations, moderating Ukrainian and Russian language channels |
+| 0xbc012fae5b08b244ae680b307a1e03f697d337f6 | https://github.com/MorpheusAIs/Morpheus/pull/547 | 8 HR  | Add funds protection doc translations |
 | 0x28D3bDeCE9A0c7F54687F734fA73fBA04ECf5785 | https://github.com/MorpheusAIs/Morpheus/pull/569 | 8 Hours | Translated Yellowpaper into Korean |
-
+| 0x0d2065e3Ed3E36919b2AD12FDA8E428Da91bb28D | https://dune.com/potato6969/morpheus-fair-launch and [https://github.com/MorpheusAIs/Morpheus/pull/587](https://github.com/MorpheusAIs/Morpheus/pull/587) | 20 | Dune Dashboard and Guide for TCM Contracts Data Analysis |
+| 0x28D3bDeCE9A0c7F54687F734fA73fBA04ECf5785 | https://github.com/MorpheusAIs/Morpheus/pull/569 | 8 Hours | Translated Yellowpaper into Korean |
+| 0xA94b40c53432f0576E64873CE1CEAd1aae62Fc90 |  | 10 Hours | Best Practice #7 |
+| 0x3476ee81BA812D56b571bCc2e6122De698084E15 | https://morstats.info and [https://github.com/MorpheusAIs/Morpheus/pull/601](https://github.com/MorpheusAIs/Morpheus/pull/601) | 25 | Capital Provider Dashboard and Guide for stETH and MOR Calculations |
+| 0x6b11a53f72503CfE069818c96f2173506E89B2d0 | https://github.com/MorpheusAIs/Morpheus/commit/5318ccda60698a7336ab6412e3813530c8d179ca | 2.5 Hours | Add guide on how to install morpheus on windows |
+| 0x4E1ebaf42b37Fa8af7a5544F06E8c4aefe06F0B8 | https://github.com/MorpheusAIs/Morpheus/pull/540 | 1 Hours | Reviewed language etc |
+| 0xFA47FA4f95110Bce0B7716056f41e5D982BBfBba | https://github.com/MorpheusAIs/Morpheus/pull/317, https://github.com/MorpheusAIs/Morpheus/pull/285 | 25 Hrs | Tranlation for Central Asia|
+| 0xbc012fae5b08b244ae680b307a1e03f697d337f6 | https://github.com/MorpheusAIs/Morpheus/pull/547 | 8 HR  | Add funds protection doc translations |
+| themergetv.eth | https://youtu.be/PiZnvLYvXCI | Educational materials: explainer vid for the techno capital machine whitepaper |
+| themergetv.eth | https://www.dropbox.com/scl/fi/czsstt88iz2njze2gusek/MTV.ADB.1.25.24.EG-Building-the-future-of-Web3-Space.RL.mp4?rlkey=e6fmhbfxxpmpw5jcqnebiuaj2&dl=0 | Educational materials: downloadable/reusable vertical micro content on the TCM explainer vid |
+| themergetv.eth | https://www.dropbox.com/scl/fi/jlb5934fcqd4iemeh1a3m/MTV.ADB.1.25.24.EG-Influence-Project-Growth-Revised.mp4?rlkey=596j3zz2pxxoeo6qxca97vb6b&dl=0 | Educational materials: downloadable/reusable vertical micro content on the TCM explainer vid |
+| themergetv.eth | https://www.youtube.com/playlist?list=PLko1NeTe2LV7rWl49Z34qeuTK7zlrf8DE | Educational materials: batch of micro content of David Johnston's NABs speech. Downloadable/reusable for marketing/education purposes |
 | 0xc97eEB4223D5b33222ced576C8B73F4c81978Dac | https://github.com/MorpheusAIs/Morpheus/pull/506 | 8 Hours | Translated yellowstone whitepaper into Korean |
