@@ -24,14 +24,6 @@ class TransactionRequest(BaseModel):
             raise ValueError(f"Morpheus currently supports the following methods: {list(TransactionMethods.keys())}")
         return method
 
-class EthSendTransactionParams(BaseModel):
-    from_: str
-    to: str
-    gas: str
-    gasPrice: str
-    value: str
-    data: str
-
 class ModelInference(BaseModel):
     message: str
     executeTransactionBool: bool
