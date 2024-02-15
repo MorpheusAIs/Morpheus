@@ -179,10 +179,10 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | 0x4E1ebaf42b37Fa8af7a5544F06E8c4aefe06F0B8 | https://github.com/MorpheusAIs/Morpheus/pull/540 | 1 Hours | Reviewed language etc |
 | 0xFA47FA4f95110Bce0B7716056f41e5D982BBfBba | https://github.com/MorpheusAIs/Morpheus/pull/317, https://github.com/MorpheusAIs/Morpheus/pull/285 | 25 Hrs | Tranlation for Central Asia|
 | 0xbc012fae5b08b244ae680b307a1e03f697d337f6 | https://github.com/MorpheusAIs/Morpheus/pull/547 | 8 HR  | Add funds protection doc translations |
+| 0xaA5CaAcfD7a79A3A3B7d99D0c35DB90AF8C27676 | https://github.com/MorpheusAIs/Morpheus/pull/597 | 2 Hours | Spell check and natural language corrections |
+| 0xaA5CaAcfD7a79A3A3B7d99D0c35DB90AF8C27676 | https://github.com/MorpheusAIs/DashBoard/pull/28 | 3 Hours | Pull request for Dashboard repo - Fixes an issue raised by a user https://github.com/MorpheusAIs/DashBoard/issues/14 and update to messages |
 | themergetv.eth | https://youtu.be/PiZnvLYvXCI | Educational materials: explainer vid for the techno capital machine whitepaper |
 | themergetv.eth | https://www.dropbox.com/scl/fi/czsstt88iz2njze2gusek/MTV.ADB.1.25.24.EG-Building-the-future-of-Web3-Space.RL.mp4?rlkey=e6fmhbfxxpmpw5jcqnebiuaj2&dl=0 | Educational materials: downloadable/reusable vertical micro content on the TCM explainer vid |
 | themergetv.eth | https://www.dropbox.com/scl/fi/jlb5934fcqd4iemeh1a3m/MTV.ADB.1.25.24.EG-Influence-Project-Growth-Revised.mp4?rlkey=596j3zz2pxxoeo6qxca97vb6b&dl=0 | Educational materials: downloadable/reusable vertical micro content on the TCM explainer vid |
 | themergetv.eth | https://www.youtube.com/playlist?list=PLko1NeTe2LV7rWl49Z34qeuTK7zlrf8DE | Educational materials: batch of micro content of David Johnston's NABs speech. Downloadable/reusable for marketing/education purposes |
-| 0xaA5CaAcfD7a79A3A3B7d99D0c35DB90AF8C27676 | https://github.com/MorpheusAIs/Morpheus/pull/597 | 2 Hours | Spell check and natural language corrections |
-| 0xaA5CaAcfD7a79A3A3B7d99D0c35DB90AF8C27676 | https://github.com/MorpheusAIs/DashBoard/pull/28 | 3 Hours | Pull request for Dashboard repo - Fixes an issue raised by a user https://github.com/MorpheusAIs/DashBoard/issues/14 and update to messages |
 | 0xc97eEB4223D5b33222ced576C8B73F4c81978Dac | https://github.com/MorpheusAIs/Morpheus/pull/506 | 8 Hours | Translated yellowstone whitepaper into Korean |
