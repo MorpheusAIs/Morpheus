@@ -184,3 +184,4 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | themergetv.eth | https://www.dropbox.com/scl/fi/jlb5934fcqd4iemeh1a3m/MTV.ADB.1.25.24.EG-Influence-Project-Growth-Revised.mp4?rlkey=596j3zz2pxxoeo6qxca97vb6b&dl=0 | Educational materials: downloadable/reusable vertical micro content on the TCM explainer vid |
 | themergetv.eth | https://www.youtube.com/playlist?list=PLko1NeTe2LV7rWl49Z34qeuTK7zlrf8DE | Educational materials: batch of micro content of David Johnston's NABs speech. Downloadable/reusable for marketing/education purposes |
 | 0xc97eEB4223D5b33222ced576C8B73F4c81978Dac | https://github.com/MorpheusAIs/Morpheus/pull/506 | 8 Hours | Translated yellowstone whitepaper into Korean |
+| 0x502e6D422ea4538aE2AF21564dfeeC39e3068dB8 | https://github.com/MorpheusAIs/Morpheus/pull/595 , https://github.com/MorpheusAIs/Morpheus/pull/594 | 2 Hours | Proofread and corrected typo errors |
