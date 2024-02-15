@@ -4,8 +4,8 @@ from utils.functions import convert_to_messages
 #from agents.metamask import rag_chain
 from agents.metamask2 import MOR_prompt, llm
 import re
-import json
-from pydantic import BaseModel
+#import json
+from pydantic import ValidationError
 from fastapi.middleware.cors import CORSMiddleware
 
 ##api endpoints
@@ -54,7 +54,7 @@ async def prompt_model(
     #regular expression to find json
     json_str = re.search(r'({.*})', ai_msg, re.DOTALL)
 
-    data = {}
+    # data = {}
     txConfirmed = False #TODO:set this with secondary model to check confirmation - run concurrently w user prompt
     if json_str:
         json_data = json_str.group(1)
@@ -63,11 +63,11 @@ async def prompt_model(
         json_data = re.sub(r'//.*?\n', '', json_data)
         
         try:
-            # Convert JSON string to Python dictionary
-            data = json.loads(json_data)
+            # Parse the data into JSON format using Pydantic's parse_raw method
+            data = TransactionRequest.parse_raw(json_data)
             txConfirmed = True
             print(data)
-        except json.JSONDecodeError as e:
+        except ValidationError as e:
             print(f"Error decoding JSON: {e}")
     else:
         print("No JSON found")
