@@ -161,6 +161,7 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | 0x2440C6B5dBE0093E71c8563D399521d056460985 | https://github.com/MorpheusAIs/Morpheus/tree/0.0.4 | 380 hours | 0.0.4 build, test, package, sign, publish, diagramming, schematic drawings |
 | 0xCC5e733cB2E7a59EFC5463575EfC3584D5922486 | https://github.com/MorpheusAIs/Morpheus/tree/0.0.5, https://github.com/MorpheusAIs/Morpheus/blob/006-alpha-fix-2/Contributions/Code%20-%20Proof_Of_Contribution.md | 860 hours | 0.0.5 build, test, package, sign, publish, diagramming, instructions, 0.0.6-alpha-fix-2 |
 | 0x1461F599ecCeC516cf4704253Ab26dF69003439E | https://github.com/MorpheusAIs/Morpheus/pull/321 @Bullfuencer| 25 Hours | White paper translated to Italian including pictures.
+| 0x80CdcF57f42C6BfB429b245d798ee46b9F71Edea | https://github.com/MorpheusAIs/Morpheus/pull/517 | 70 Hours | First Smart Agent
 | 0x80CdcF57f42C6BfB429b245d798ee46b9F71Edea | https://github.com/MorpheusAIs/Morpheus/pull/517 | 70 Hours | First Smart Agent |
 | 0xFa126C09DB44851BFa6bD9D70016f499fdc5586D | [https://github.com/MorpheusAIs/Morpheus/pull/522](https://github.com/MorpheusAIs/Morpheus/pull/522) | 8 HR | UI style adjustments |
 | 0xbac0086453F04Abc25539A1d5D90f797419F9842 | https://github.com/MorpheusAIs/Morpheus/pull/486 | 120 Hours | Fixing the local morpheus client, ollama spawning, asar packaging, Electron CSP
@@ -172,3 +173,4 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | 0x28D3bDeCE9A0c7F54687F734fA73fBA04ECf5785 | https://github.com/MorpheusAIs/Morpheus/pull/569 | 8 Hours | Translated Yellowpaper into Korean |
 | 0xA94b40c53432f0576E64873CE1CEAd1aae62Fc90 |  | 10 Hours | Best Practice #7 |
 | 0x3476ee81BA812D56b571bCc2e6122De698084E15 | https://morstats.info and [https://github.com/MorpheusAIs/Morpheus/pull/601](https://github.com/MorpheusAIs/Morpheus/pull/601) | 25 | Capital Provider Dashboard and Guide for stETH and MOR Calculations |
+| 0x6b11a53f72503CfE069818c96f2173506E89B2d0 | https://github.com/MorpheusAIs/Morpheus/commit/5318ccda60698a7336ab6412e3813530c8d179ca | 2.5 Hours | Add guide on how to install morpheus on windows |
