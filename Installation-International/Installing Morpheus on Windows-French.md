@@ -1,6 +1,6 @@
 ## Guide d'installation de Morpheus sur Windows
 
-<img src="/Asset/Installation-Graphics/French/Installation-Guide-French.jpeg" width=50% height=50%> \
+<img src="/Asset/Installation-Graphics/French/Installation-Guide-French.jpeg" width=50% height=50%>
 
 > [!NOTE]
 > Ce guide détaillé vous accompagne pas à pas dans l'installation de Morpheus.
@@ -25,7 +25,7 @@ Installez gdown à l'aide de pip3 : `pip3 install gdown`.
 Téléchargez le paquet Morpheus en exécutant : `gdown https://drive.google.com/uc?id=1PQ3n7LXeJHe_jmkYLDUQ9fWjZQTWbHCB`
 
 ### Étape 6 : Vérification de l'intégrité de Morpheus
-Vérifiez l'intégrité du téléchargement avec la commande : `sha1sum morpheus_0.0.5_amd64.deb. \
+Vérifiez l'intégrité du téléchargement avec la commande : `sha1sum morpheus_0.0.5_amd64.deb` \
 Assurez-vous que le hachage correspond à `b227e7bcb21ec9e8e2b4bf9510a2e1f224953fe5` \
 Si le hachage ne correspond pas, interrompez le processus d'installation.
 
