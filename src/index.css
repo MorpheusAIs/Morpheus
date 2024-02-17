@@ -426,3 +426,38 @@ button:focus {
         transform: rotate(360deg);
     }
 }
+
+#send-chat-button {
+    background-color: var(--btn-background);
+    border: none;
+    cursor: pointer;
+    color: var(--primary-text); /* Change the color to your preference */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size:  16px;
+    margin:  4px  2px;
+}
+
+#send-chat-button-text {
+    padding-top: 2.5px;
+}
+
+#send-chat-button:hover {
+    background-color: var(--primary-text);
+    color: var(--primary-background);
+}
+
+#send-chat-button:hover svg path {
+    fill: #1e1e1e;
+}
+
+.user-input-wrapper {
+    display: flex; 
+    align-items: center;
+}
+
+#user-input-text {
+    flex-grow:  1;
+    margin-right:  10px; 
+}
