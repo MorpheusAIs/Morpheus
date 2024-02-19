@@ -36,10 +36,14 @@ Syntropy
 Jackal Protocol
 Bagel
 HyperSpaceAI
+Lighthouse
 
 **Smart Contracts**
 Syntropy
 Arbitrum 
+Monad
+Sei
+Polygon
 
 **Inference**
 Livepeer
