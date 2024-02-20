@@ -194,4 +194,5 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | themergetv.eth | https://www.youtube.com/playlist?list=PLko1NeTe2LV7rWl49Z34qeuTK7zlrf8DE | 5 | Educational materials: batch of micro content of David Johnston's NABs speech. Downloadable/reusable for marketing/education purposes |
 | 0xc97eEB4223D5b33222ced576C8B73F4c81978Dac | https://github.com/MorpheusAIs/Morpheus/pull/506 | 8 Hours | Translated yellowstone whitepaper into Korean |
 | 0x502e6D422ea4538aE2AF21564dfeeC39e3068dB8 | https://github.com/MorpheusAIs/Morpheus/pull/595 , https://github.com/MorpheusAIs/Morpheus/pull/594 | 2 Hours | Proofread and corrected typo errors |
+| 0x14589BDFdbe3044501044df5B6d53be2f47e92e5 | https://github.com/MorpheusAIs/Morpheus/pull/618 | 1 Hours | Check and Use OLLAMA_HOST environment variable |
 | 0x31E985b4f7af6B479148d260309B7BcEcEF0fa7B | https://github.com/MorpheusAIs/Morpheus/pull/332 | 15 Hours | Translated the whitepaper from English to Swedish |
