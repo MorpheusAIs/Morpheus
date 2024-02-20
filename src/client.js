@@ -2,6 +2,7 @@
 // between the renderer thread (UI) and the worker thread (processing).
 
 const userInput = document.getElementById("user-input-text");
+const sendChatBtn = document.getElementById("send-chat-button");
 const historyContainer = document.getElementById("history");
 const openFileButton = document.getElementById("file-open");
 const fileButtonText = document.getElementById("file-button-text");
@@ -70,6 +71,38 @@ window.electronAPI.onDocumentLoaded((event, data) => {
   document.getElementById("file-spinner").style.display = "none";
   fileButtonText.innerText = data.content; // change the button to say the name of the document
   userInput.focus();
+});
+
+// Send chat on send button click
+sendChatBtn.addEventListener("click", () => {
+  const message = userInput.value;
+  userInput.value = "";
+  userInput.style.height = ""; // reset the height of the input box
+
+  // Create a new text block
+  const historyMessage = document.createElement("div");
+  historyMessage.className = "history-user-message";
+  historyMessage.innerText = message;
+  historyContainer.appendChild(historyMessage);
+
+  // Add the element that will display the response
+  responseElem = document.createElement("div");
+  responseElem.className = "history-chat-response";
+  historyContainer.appendChild(responseElem);
+
+  // Add loading animation
+  const loadingAnimation = document.createElement("div");
+  loadingAnimation.className = "dots-loading";
+  for (let i = 0; i < 3; i++) {
+    const dot = document.createElement("div");
+    loadingAnimation.appendChild(dot);
+  }
+  responseElem.appendChild(loadingAnimation);
+
+  // Send chat to Ollama server
+  window.electronAPI.sendChat(message);
+  historyContainer.scrollTop = historyContainer.scrollHeight;
+  // The response will be received in the onChatReply event
 });
 
 // Send chat on enter key
