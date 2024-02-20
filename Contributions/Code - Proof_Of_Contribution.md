@@ -187,6 +187,7 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | 0x06fe938d02C4AB732Db5918dA83Eeb712AD453Ad | https://github.com/MorpheusAIs/Morpheus/pull/624 | 2 | French installation guide |
 | 0xaA5CaAcfD7a79A3A3B7d99D0c35DB90AF8C27676 | https://github.com/MorpheusAIs/DashBoard/pull/28 | 3 Hours | Pull request for Dashboard repo - Fixes an issue raised by a user https://github.com/MorpheusAIs/DashBoard/issues/14 and update to messages |
 | 0xFA47FA4f95110Bce0B7716056f41e5D982BBfBba | https://github.com/MorpheusAIs/Morpheus/pull/317, https://github.com/MorpheusAIs/Morpheus/pull/285 | 25 Hrs | Tranlation for Central Asia|
+| 0x2567D753e50159EffcCaB3DA32c960148C93e1a5 | https://github.com/MorpheusAIs/Morpheus/pull/628 | 19 Hrs | Whitepaper, Yellow paper, Compute model tranlations in Malayalam language for smc.org.in Malayalam computing community|
 | themergetv.eth | https://youtu.be/PiZnvLYvXCI | 5 | Educational materials: explainer vid for the techno capital machine whitepaper |
 | themergetv.eth | https://www.dropbox.com/scl/fi/czsstt88iz2njze2gusek/MTV.ADB.1.25.24.EG-Building-the-future-of-Web3-Space.RL.mp4?rlkey=e6fmhbfxxpmpw5jcqnebiuaj2&dl=0 | 5|  Educational materials: downloadable/reusable vertical micro content on the TCM explainer vid |
 | themergetv.eth | https://www.dropbox.com/scl/fi/jlb5934fcqd4iemeh1a3m/MTV.ADB.1.25.24.EG-Influence-Project-Growth-Revised.mp4?rlkey=596j3zz2pxxoeo6qxca97vb6b&dl=0 | 5 | Educational materials: downloadable/reusable vertical micro content on the TCM explainer vid |
