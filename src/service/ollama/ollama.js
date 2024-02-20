@@ -14,7 +14,8 @@ class Ollama {
 
   constructor() {
     this.childProcess = null;
-    this.host = "http://127.0.0.1:11434"; // TODO: check OLLAMA_HOST env var
+    // Check OLLAMA_HOST environment variable; use default host if not set
+    this.host = process.env.OLLAMA_HOST || "http://127.0.0.1:11434";
     this.abort = new AbortController();
   }
 
