@@ -10,7 +10,8 @@
 
 
 ## Smart Contracts Addresses (Ethereum mainnet)
-- Morpheus Distribution Contract: [0x47176B2Af9885dC6C4575d4eFd63895f7Aaa4790](https://etherscan.io/address/0x47176B2Af9885dC6C4575d4eFd63895f7Aaa4790) 
+- Morpheus Distribution Proxy Contract: [0x47176B2Af9885dC6C4575d4eFd63895f7Aaa4790](https://etherscan.io/address/0x47176B2Af9885dC6C4575d4eFd63895f7Aaa4790) 
+- Morpheus Distribution Logic Contract: [0x24C09A0C047e8A439f26682Ea51c7157b3cCc20b](https://etherscan.io/address/0x24C09A0C047e8A439f26682Ea51c7157b3cCc20b) 
 - stETH Contract: [0xae7ab96520de3a18e5e111b5eaab095312d7fe84](https://etherscan.io/address/0xae7ab96520de3a18e5e111b5eaab095312d7fe84)
 
 ## How to get stETH?
