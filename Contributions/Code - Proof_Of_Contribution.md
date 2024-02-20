@@ -183,6 +183,7 @@ You need a wallet like Metamask that can receive Ethereum based tokens. MOR is a
 | 0x4E1ebaf42b37Fa8af7a5544F06E8c4aefe06F0B8 | https://github.com/MorpheusAIs/Morpheus/pull/540 | 1 Hours | Reviewed language etc |
 | 0xbc012fae5b08b244ae680b307a1e03f697d337f6 | https://github.com/MorpheusAIs/Morpheus/pull/547 | 8 HR  | Add funds protection doc translations |
 | 0xaA5CaAcfD7a79A3A3B7d99D0c35DB90AF8C27676 | https://github.com/MorpheusAIs/Morpheus/pull/597 | 2 Hours | Spell check and natural language corrections |
+| 0x06fe938d02C4AB732Db5918dA83Eeb712AD453Ad | https://github.com/MorpheusAIs/Morpheus/pull/624 | 2 | French installation guide |
 | 0xaA5CaAcfD7a79A3A3B7d99D0c35DB90AF8C27676 | https://github.com/MorpheusAIs/DashBoard/pull/28 | 3 Hours | Pull request for Dashboard repo - Fixes an issue raised by a user https://github.com/MorpheusAIs/DashBoard/issues/14 and update to messages |
 | 0xFA47FA4f95110Bce0B7716056f41e5D982BBfBba | https://github.com/MorpheusAIs/Morpheus/pull/317, https://github.com/MorpheusAIs/Morpheus/pull/285 | 25 Hrs | Tranlation for Central Asia|
 | themergetv.eth | https://youtu.be/PiZnvLYvXCI | 5 | Educational materials: explainer vid for the techno capital machine whitepaper |
