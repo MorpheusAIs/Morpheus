@@ -16,8 +16,11 @@ The landing page provides the following six key pieces of data:
 ## Staked ETH Page
 The primary calculation page for Capital Providers to understand their expected MOR emissions:
 1) Morpheus Staked Ethereum - API pull from Etherscan that returns the stETH contained within the multi-sig wallet representing the total contributions.
-2) MOR Earned per stETH - Based on the current number of stETH contributed in total, this section gives the calculated MOR earned for each stETH contributed to provide a baseline for expected earnings.
-3) MOR Calculation - Input box for the user to write in their number of stETH contributed. The calculator then shows the daily, weekly, monthly, and yearly MOR emissions. It also has a calculation to show the expected MOR to be earned between the current date and the end of the Bootstrap period.
+2) Staked Ethereum Withdrawn - API pull from Etherscan that analyzes transactions to identify stETH withdrawn that was previously deposited. Note: This amount has already been excluded from the 'Morpheus Staked Ethereum' so there is no need to manually calculate.
+3) Total stETH Contribution Yield - Provides the total earnings from the deposited stETH to Morpheus. The yield on the deposited stETH goes to the protocol which will help to launch the initial liquidity. Yield is provided in both ETH and USD values.
+4) MOR Earned per stETH - Based on the current number of stETH contributed in total, this section gives the calculated MOR earned for each stETH contributed to provide a baseline for expected earnings.
+5) MOR Calculation - Input box for the user to write in their number of stETH contributed. The calculator then shows the daily, weekly, monthly, and yearly MOR emissions. It also has a calculation to show the expected MOR to be earned between the current date and the end of the Bootstrap period.
+6) At the bottom of this page, the etherscan wallet address and contract can be found to allow for users to verify all data.
 
 ## Emissions Page
 Detailed schedule showing the daily emissions broken down by
@@ -168,3 +171,69 @@ Below are several code snippets that are useful for anyone else looking to build
     // Calculate the emissions for today
     $emissions = number_format(max(0, $initial_number - ($days_difference * $reduction_rate)));
     echo  "$emissions";
+
+## stETH Withdrawals
+
+    $apiKey = "[insert your API key]";
+    $contractAddress = "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84";
+    $walletAddress = "0x47176B2Af9885dC6C4575d4eFd63895f7Aaa4790";
+    $startBlock = 0;
+    $endBlock = 27025780;
+    $offset = 100;
+    $sort = "desc";
+    
+    $url = "https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=$contractAddress&address=$walletAddress&startblock=$startBlock&endblock=$endBlock&offset=$offset&sort=$sort&apikey=$apiKey";
+    
+    $response = file_get_contents($url);
+    
+    if ($response === false) {
+        die("Error fetching data from Etherscan API");
+    }
+    
+    $data = json_decode($response, true);
+    
+    // Check if the request was successful
+    if ($data['status'] == 1) {
+        $transactions = $data['result'];
+        
+        // Initialize the total variable
+        $totalValue = 0;
+    
+        // Process transactions with specific 'from' address
+        foreach ($transactions as $transaction) {
+            // Check if the 'from' address matches the desired wallet address
+            if ($transaction['from'] == "0x47176b2af9885dc6c4575d4efd63895f7aaa4790") {
+                // Convert the value from wei to ether
+                $valueInEther = $transaction['value'] / 1e18;
+    
+                // Add the transaction value to the total
+                $totalValue += $valueInEther;
+            }
+        }
+    
+        // Print the total value
+        echo number_format($totalValue, 0) . " stETH" . "\n";
+    } else {
+        die("Etherscan API request failed: " . $data['message']);
+    }
+
+## stETH Rewards for Morpheus
+
+    $apiEndpoint = 'https://stake.lido.fi/api/rewards?address=0x47176B2Af9885dC6C4575d4eFd63895f7Aaa4790&currency=usd&onlyRewards=true&archiveRate=true&skip=0&limit=100';
+    
+    // Fetch data from the API endpoint
+    $jsonOutput = file_get_contents($apiEndpoint);
+    
+    $data = json_decode($jsonOutput, true);
+    
+    if ($data && isset($data['totals']['ethRewards'], $data['totals']['currencyRewards'])) {
+        $ethRewards = number_format($data['totals']['ethRewards'] / 1e18, 2, '.', ',');
+        $currencyRewards = number_format($data['totals']['currencyRewards'], 2, '.', ',');
+    
+        // Now you can use $ethRewards and $currencyRewards as needed
+        echo 'ETH Rewards: ' . $ethRewards . '<br>';
+        echo 'USD Rewards: ' . $currencyRewards;
+    } else {
+        echo 'Error parsing JSON or missing required fields.';
+    }
+
