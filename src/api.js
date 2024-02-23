@@ -26,6 +26,8 @@ const { RecursiveCharacterTextSplitter } = require("langchain/text_splitter");
 const { HNSWLib } = require("@langchain/community/vectorstores/hnswlib");
 const { FaissStore } = require("@langchain/community/vectorstores/faiss");
 
+const { OllamaEmbedding } = require('llamaindex');
+const { OllamaEmbeddings } = require("@langchain/community/embeddings/ollama");
 const { ServiceContext } = require('llamaindex');
 const { VectorStoreIndex } = require('llamaindex');
 const { serviceContextFromDefaults } = require("llamaindex");
@@ -149,76 +151,6 @@ Using Infura RPC Call to start
 Use Router Based on the Function Name and Function Response
 For Smart Contract ABI Metadata Retrieval, Examples Retrieval, and Chat */
 
-const TOP_K_METADATA = 2;
-const TOP_K_ABIS = 5;
-const TOP_K_EXAMPLES = 1;
-
-// Smart Contracts Directory with ABI to make initial function call
-const CONTRACTS_DIR = "public/data";
-
-// Contracts
-let contracts = []; // Array to hold contracts data
-
-// Contract Filenames
-const contractFilenames = ["1inch.json", "curve.json", "lido.json", "pancakeswap.json", "router.json", "sushiswap.json", "uniswap.json", "usdc.json", "usdt.json"];
-
-// Function to extract metadata and abi from a contract object
-function extractMetadataAbi(contract) {
-  const subsetKeys = new Set(["metadata", "abi"]);
-  let result = {};
-  for (let key in contract) {
-    if (subsetKeys.has(key)) {
-      result[key] = contract[key];
-    }
-  }
-  return result;
-}
-
-// Function to extract metadata and abi from a contract object
-contractFilenames.forEach(contractFilename => {
-  let filePath = path.join(CONTRACTS_DIR, contractFilename);
-  let rawData = fs.readFileSync(filePath, 'utf8');
-  let payload = JSON.parse(rawData);
-
-  if (payload.contracts) {
-    payload.contracts.forEach(contract => {
-      contracts.push([contractFilename, extractMetadataAbi(contract)]);
-    });
-  } else {
-    contracts.push([contractFilename, extractMetadataAbi(payload)]);
-  }
-});
-
-
-// For Smart Contract ABI Metadata
-const documentsContractsMetadata = contracts.map(contract => {
-  return new Document({
-    text: contract[1].metadata.toString(),
-    metadata: {
-      fname: contract[0],
-      abis: contract[1].abi
-    },
-    excludedEmbedMetadataKeys: ["abis", "fname"],
-    excludedLlmMetadataKeys: ["abis", "fname"]
-  });
-});
-
-// Create OllamaEmbedding
-const ollamaEmbeds = new Ollama({ model: "llama2" });
-
-var index = VectorStoreIndex.fromDocuments(documentsContractsMetadata, {
-  serviceContext: serviceContextFromDefaults({ embedModel: ollamaEmbeds, llm: new Ollama({ model: "llama2" }), chunkSize: 4096 })
-});
-
-// Create Documents Contract Metadata Index
-const documentsContractsMetadataIndex = index;
-
-// For Smart Contracts ABI Metadata
-const documentsContractsRetriever = new VectorIndexRetriever({
-  index: documentsContractsMetadataIndex,
-  similarityTopK: TOP_K_METADATA
-});
-
 // Asynchronously sends a chat message and processes the response
 async function sendMorpheusChat(event, msg) {
 
@@ -233,16 +165,89 @@ async function sendMorpheusChat(event, msg) {
     // Console log the user NLQ
     console.log('User Message:', NLQ);
 
-    /*
+    const TOP_K_METADATA = 2;
+    const TOP_K_ABIS = 5;
+    const TOP_K_EXAMPLES = 1;
+
+    // Smart Contracts Directory with ABI to make initial function call
+    const CONTRACTS_DIR = "public/data";
+
+    // Contracts
+    let contracts = []; // Array to hold contracts data
+
+    // Contract Filenames
+    const contractFilenames = ["1inch.json", "curve.json", "lido.json", "pancakeswap.json", "router.json", "sushiswap.json", "uniswap.json", "usdc.json", "usdt.json"];
+
+    // Function to extract metadata and abi from a contract object
+    function extractMetadataAbi(contract) {
+      const subsetKeys = new Set(["metadata", "abi"]);
+      let result = {};
+      for (let key in contract) {
+        if (subsetKeys.has(key)) {
+          result[key] = contract[key];
+        }
+      }
+      return result;
+    }
+
+    // Function to extract metadata and abi from a contract object
+    contractFilenames.forEach(contractFilename => {
+      let filePath = path.join(CONTRACTS_DIR, contractFilename);
+      let rawData = fs.readFileSync(filePath, 'utf8');
+      let payload = JSON.parse(rawData);
+
+      if (payload.contracts) {
+        payload.contracts.forEach(contract => {
+          contracts.push([contractFilename, extractMetadataAbi(contract)]);
+        });
+      } else {
+        contracts.push([contractFilename, extractMetadataAbi(payload)]);
+      }
+    });
+
+
+    // For Smart Contract ABI Metadata
+    const documentsContractsMetadata = contracts.map(contract => {
+      return new Document({
+        text: contract[1].metadata.toString(),
+        metadata: {
+          fname: contract[0],
+          abis: contract[1].abi
+        },
+        excludedEmbedMetadataKeys: ["abis", "fname"],
+        excludedLlmMetadataKeys: ["abis", "fname"]
+      });
+    });
+
+    console.log('Documents Contracts Metadata:', documentsContractsMetadata);
+
+    const ollamaLLM = new Ollama({ model: "llama2" });
+
+    const serviceContext = serviceContextFromDefaults({
+      llm: ollamaLLM,
+      embedModel: ollamaLLM,
+      chunkSize: 4096,
+    });
+
+    // Create Vector Store Index
+    var index = await VectorStoreIndex.fromDocuments(documentsContractsMetadata, {
+      serviceContext: serviceContext
+    });
+
+    console.log('Index:', index);
+
     // Load Contract ABIs
     async function loadContractABIs() {
 
       try {
 
-        // Retrieve contracts based on the user message
-        const retrievedContracts = await documentsContractsRetriever.retrieve(NLQ);
+        console.log('Retrieving Contract ABIs...');
 
-        console.log('Retrieved Contracts:', retrievedContracts);
+        const retriever = index.asRetriever(({ k: TOP_K_METADATA }));
+
+        console.log('Retriever:', retriever);
+
+        const retrievedContracts = await retriever.retrieve(NLQ);
 
         // Format the Retreived Contracts based on the results
         const formattedContracts = retrievedContracts.map(contract => {
@@ -258,25 +263,26 @@ async function sendMorpheusChat(event, msg) {
 
         console.error('Error loading contracts:', error);
         throw error;
-        
+
       }
     }
 
     // Create In Memory Vector Store
     async function createInMemoryVectorStore(contracts) {
 
-      // Create Ollama
-      const llm = new Ollama({
-        model: "llama2",
-        baseUrl: "http://localhost:11434",
-      });
+      console.log('Creating In Memory Vector Store...');
 
-      // Create Embeddings
-      const embeddings = llm.getTextEmbedding();
+      // Contracts with ABIs
+      const retrievedContractMetadataWithAbis = contracts;
+      
+      // Embeddings
+      const embeddings = new OllamaEmbeddings({ model: "llama2" });
 
-      return FAISS.fromTexts(contracts, embeddings);
+      return FaissStore.fromTexts(retrievedContractMetadataWithAbis, null, embeddings);
 
     }
+
+    console.log('Loading Contract ABIs...');
 
     // Load Contract ABIs
     const abiInMemoryVectorStore = await loadContractABIs();
@@ -287,11 +293,13 @@ async function sendMorpheusChat(event, msg) {
     // Load Metamask Examples
     async function loadMetamaskExamples() {
       try {
-        const directoryLoader = new DirectoryLoader("Morpheus/ai_experiments/rag_assets/metamask_eth_examples", {
+        const directoryLoader = new DirectoryLoader("ai_experiments/rag_assets/metamask_eth_examples", {
           ".txt": (path) => new TextLoader(path),
         });
 
         const examples = await directoryLoader.load();
+
+        console.log('Examples:', examples);
 
         return createFaissStoreFromExamples(examples);
 
@@ -304,14 +312,8 @@ async function sendMorpheusChat(event, msg) {
     // Create Faiss Store
     async function createFaissStoreFromExamples(examples) {
 
-      // Create Ollama
-      const llm = new Ollama({
-        model: "llama2",
-        baseUrl: "http://localhost:11434",
-      });
-
       // Embeddings
-      const embeddings = llm.getTextEmbedding();
+      const embeddings = new OllamaEmbeddings({ model: "llama2" });
 
       return FaissStore.fromDocuments(examples, embeddings);
     }
@@ -322,7 +324,7 @@ async function sendMorpheusChat(event, msg) {
     // Retrieval Engine
     const metamaskExamplesRetriever = metamaskExamplesInMemoryVectorStore.asRetriever({ k: TOP_K_EXAMPLES });
 
-    */
+    console.log('Metamask Examples Retriever:', metamaskExamplesRetriever);
 
     // Ollama ChatOllama
     const model = new ChatOllama({ model: "llama2" });
@@ -337,13 +339,11 @@ async function sendMorpheusChat(event, msg) {
     \n\n
     Use the provided context output and the user's message to tailor the response.
     \n
+    Based on this context:
+    {context}
+    \n
     A relevant example of a JSON RPC payload:
-    {{
-      "jsonrpc": "2.0",
-      "method": "eth_blockNumber",
-      "params": [],
-      "id": 1
-    }}
+    {metamask_examples}
     \n\n
     Generate the JSON based on the user's inquiry:
     {nlq}`;
@@ -363,13 +363,15 @@ async function sendMorpheusChat(event, msg) {
     const chain = RunnableSequence.from([
       {
         nlq: new RunnablePassthrough(),
-        // context: contractAbiRetriever,
-        // metamask_examples: metamaskExamplesRetriever
+        context: contractAbiRetriever,
+        metamask_examples: metamaskExamplesRetriever
       },
       prompt,
       model,
       new StringOutputParser(),
     ]);
+
+    console.log('Chain:', chain);
 
     // Invoke the Chain for the NLQ response from the AI
     const result = await chain.invoke({ nlq: NLQ });
