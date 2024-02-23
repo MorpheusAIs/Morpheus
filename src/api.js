@@ -36,7 +36,7 @@ const { serviceContextFromDefaults } = require("llamaindex");
 const fs = require("fs");
 const path = require("path");
 
-let model = "llama2:latest";
+let model = "llama2:7b";
 
 // Debug Log
 function debugLog(msg) {
@@ -221,7 +221,7 @@ async function sendMorpheusChat(event, msg) {
 
     console.log('Documents Contracts Metadata:', documentsContractsMetadata);
 
-    const ollamaLLM = new Ollama({ model: "llama2" });
+    const ollamaLLM = new Ollama({ model: "llama2:7b" });
 
     const serviceContext = serviceContextFromDefaults({
       llm: ollamaLLM,
@@ -276,7 +276,7 @@ async function sendMorpheusChat(event, msg) {
       const retrievedContractMetadataWithAbis = contracts;
       
       // Embeddings
-      const embeddings = new OllamaEmbeddings({ model: "llama2" });
+      const embeddings = new OllamaEmbeddings({ model: "llama2:7b" });
 
       return FaissStore.fromTexts(retrievedContractMetadataWithAbis, null, embeddings);
 
@@ -313,7 +313,7 @@ async function sendMorpheusChat(event, msg) {
     async function createFaissStoreFromExamples(examples) {
 
       // Embeddings
-      const embeddings = new OllamaEmbeddings({ model: "llama2" });
+      const embeddings = new OllamaEmbeddings({ model: "llama2:7b" });
 
       return FaissStore.fromDocuments(examples, embeddings);
     }
@@ -327,7 +327,7 @@ async function sendMorpheusChat(event, msg) {
     console.log('Metamask Examples Retriever:', metamaskExamplesRetriever);
 
     // Ollama ChatOllama
-    const model = new ChatOllama({ model: "llama2" });
+    const model = new ChatOllama({ model: "llama2:7b" });
 
     // Prompt Template to Generate the JSON Body with the Method and Params
     const promptTemplate = `
@@ -338,6 +338,8 @@ async function sendMorpheusChat(event, msg) {
     4. Do not provide any text before the JSON response. Only respond with the JSON. \n
     \n\n
     Use the provided context output and the user's message to tailor the response.
+    \n
+    -----------------------
     \n
     Based on this context:
     {context}

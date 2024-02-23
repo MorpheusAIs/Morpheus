@@ -91,7 +91,7 @@
   },
   "dependencies": {
     "@langchain/community": "^0.0.17",
-    "@langchain/core": "^0.1.12",
+    "@langchain/core": "^0.1.15",
     "@xenova/transformers": "^2.6.2",
     "electron-squirrel-startup": "^1.0.0",
     "faiss-node": "^0.5.1",
