@@ -3,7 +3,7 @@ const os = require("os");
 const path = require("path");
 const { exec } = require("child_process");
 
-var OllamaServeType = {
+const OllamaServeType = {
   SYSTEM: "system", // ollama is installed on the system
   PACKAGED: "packaged", // ollama is packaged with the app
 };
@@ -86,46 +86,46 @@ class Ollama {
   }
 
   // execServe runs the serve command, and waits for a response
-  async execServe(path, appDataDirectory) {
-    return new Promise((resolve, reject) => {
-      if (!fs.existsSync(appDataDirectory)) {
-        fs.mkdirSync(appDataDirectory, { recursive: true });
-      }
-      const env = {
-        ...process.env,
-        OLLAMA_MODELS: appDataDirectory,
-      };
-      this.childProcess = exec(
-        path + " serve",
-        { env },
-        (error, stdout, stderr) => {
-          if (error) {
-            reject(`exec error: ${error}`);
-            return;
-          }
-
-          if (stderr) {
-            reject(`ollama stderr: ${stderr}`);
-            return;
-          }
-
-          reject(`ollama stdout: ${stdout}`);
+    async execServe(path, appDataDirectory) {
+      return new Promise((resolve, reject) => {
+        if (!fs.existsSync(appDataDirectory)) {
+          fs.mkdirSync(appDataDirectory, { recursive: true });
         }
-      );
+        const env = {
+          ...process.env,
+          OLLAMA_MODELS: appDataDirectory,
+        };
+        this.childProcess = exec(
+          path + " serve",
+          { env },
+          (error, stdout, stderr) => {
+            if (error) {
+              reject(`exec error: ${error}`);
+              return;
+            }
 
-      // Once the process is started, try to ping Ollama server.
-      this.waitForPing()
-        .then(() => {
-          resolve();
-        })
-        .catch((pingError) => {
-          if (this.childProcess && !this.childProcess.killed) {
-            this.childProcess.kill();
+            if (stderr) {
+              reject(`ollama stderr: ${stderr}`);
+              return;
+            }
+
+            reject(`ollama stdout: ${stdout}`);
           }
-          reject(pingError);
-        });
-    });
-  }
+        );
+
+        // Once the process is started, try to ping Ollama server.
+        this.waitForPing()
+          .then(() => {
+            resolve();
+          })
+          .catch((pingError) => {
+            if (this.childProcess && !this.childProcess.killed) {
+              this.childProcess.kill();
+            }
+            reject(pingError);
+          });
+      });
+    }
 
   async pull(model, fn) {
     const body = JSON.stringify({
@@ -212,6 +212,10 @@ class Ollama {
    * @return {Array} Each item in the array is the contents of a new line.
    */
   parse(value) {
+     if (!(value instanceof ArrayBuffer || ArrayBuffer.isView(value))) {
+        throw new TypeError('The "value" argument must be an instance of ArrayBuffer or ArrayBufferView.');
+    }
+
     return new TextDecoder().decode(value).trim().split(/\r?\n/);
   }
 
@@ -360,6 +364,7 @@ function serve() {
 }
 
 module.exports = {
+  Ollama,
   run,
   generate,
   abort,
