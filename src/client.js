@@ -24,7 +24,7 @@ let responseElem;
 
 /**
  * This is the initial chain of events that must run on start-up.
- * 1. Start the Ollama server.
+ * 1. Start the Ollama server and list locally avaliable models.
  * 2. Run the model. This will load the model into memory so that first chat is not slow.
  *    This step will also download the model if it is not already downloaded.
  * 3. Monitor the run status
@@ -33,6 +33,20 @@ let responseElem;
 
 // 1. Start the Ollama server
 window.electronAPI.serveOllama();
+//  List avaliable models
+window.electronAPI.listLocalModels((event, data) => {
+  
+  let models=data.content.models
+  for(let i = 0; i < models.length; i++) {
+      var opt = document.createElement('option');
+      opt.value = models[i].name;
+      opt.innerHTML = models[i].name;
+      modelSelectInput.appendChild(opt);
+  }
+
+
+}
+  );
 // 2. Run the model
 window.electronAPI.onOllamaServe((event, data) => {
   if (!data.success) {
@@ -190,7 +204,6 @@ window.electronAPI.onChatReply((event, data) => {
     historyContainer.scrollTop = historyContainer.scrollHeight;
   }
 });
-
 // Open file dialog
 openFileButton.addEventListener("click", () => {
   document.getElementById("file-open-icon").style.display = "none";

@@ -37,5 +37,11 @@ contextBridge.exposeInMainWorld("electronAPI", {
       callback(event, data);
     });
   },
+  listLocalModels: (callback) => {
+    ipcRenderer.send("ollama:list")
+    ipcRenderer.on("ollama:list", (event, data) => {
+      callback(event, data);
+    });
+  },
   setModel: (model) => ipcRenderer.send("model:set", model),
 });

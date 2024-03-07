@@ -12,9 +12,10 @@ const {
   generate,
   stop,
   serve,
+  list,
 } = require("./service/ollama/ollama.js");
 
-let model = "mistral";
+let model = "mistral:latest";
 
 function debugLog(msg) {
   if (global.debug) {
@@ -151,6 +152,15 @@ async function serveOllama(event) {
   }
 }
 
+async function listLocalModels(event) {
+  try {
+    modelList= await list()
+    event.reply("ollama:list", { success: true, content: modelList });
+  } catch (err) {
+    event.reply("ollama:list", { success: false, content: "ERR" });
+  }
+}
+
 function stopOllama(event) {
   stop();
 }
@@ -164,4 +174,5 @@ module.exports = {
   serveOllama,
   runOllamaModel,
   stopOllama,
+  listLocalModels,
 };
