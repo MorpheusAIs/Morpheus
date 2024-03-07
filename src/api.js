@@ -157,7 +157,7 @@ async function listLocalModels(event) {
     modelList= await list()
     event.reply("ollama:list", { success: true, content: modelList });
   } catch (err) {
-    event.reply("ollama:list", { success: false, content: "ERR" });
+    event.reply("ollama:list", { success: false, content: err.message });
   }
 }
 
