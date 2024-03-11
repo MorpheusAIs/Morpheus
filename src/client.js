@@ -18,7 +18,10 @@ const settingsView = document.getElementById("settings-view");
 const settingsCancelBtn = document.getElementById("cancel-btn");
 const settingsCloseBtn = document.getElementById("settings-close-btn");
 const settingsSaveBtn = document.getElementById("save-btn");
+const settingsDownloadBtn = document.getElementById("download-btn");
 const modelSelectInput = document.getElementById("model-select");
+const modelSelectDownloadInput = document.getElementById("model-select-download");
+const downloadEmptyWarning = document.getElementById("download-empty-warning");
 
 let responseElem;
 
@@ -267,4 +270,28 @@ settingsSaveBtn.addEventListener("click", () => {
 userInput.addEventListener("input", function () {
   this.style.height = "auto";
   this.style.height = this.scrollHeight + "px";
+});
+//Download button in the settings menu
+settingsDownloadBtn.addEventListener("click", () => {
+  let selectedModel=modelSelectDownloadInput.value
+
+  if (selectedModel.length==0){
+    alert("Input the model name from ollama.com/library to download a new model!")
+    return;
+  }
+  if (!selectedModel.includes(":")){
+    //select latest model version if none is specified
+    selectedModel=selectedModel.concat(":latest")
+  }
+  var opt = document.createElement('option');
+  opt.value = selectedModel;
+  opt.innerHTML = selectedModel;
+  modelSelectInput.appendChild(opt);
+  window.electronAPI.setModel(selectedModel);
+  window.electronAPI.runOllama();
+  modelSelectDownloadInput.value=""
+  chatView.style.display = "none";
+  settingsView.style.display = "none";
+  document.getElementById("initial-view").style.display = "flex";
+
 });

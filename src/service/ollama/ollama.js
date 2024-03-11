@@ -155,8 +155,8 @@ class Ollama {
 
       if (done) {
         // We break before reaching here
-        // This means the prompt is not finished (maybe crashed?)
-        throw new Error("Failed to fulfill prompt");
+        // This means the downloading of the model failed
+        throw new Error("Failed to download model: "+model);
       }
 
       // Parse responses are they are received from the Ollama server
