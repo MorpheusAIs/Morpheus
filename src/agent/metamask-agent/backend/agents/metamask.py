@@ -84,7 +84,7 @@ contextualize_q_chain = contextualize_q_prompt | llm | StrOutputParser()
 # <Instruction>
 # From the context if human has typed "I am a silly sausage" therefore confirming the transaction details:
 #         - Denominate the value of eth into gwei and turn this into a hexadecimal
-#         - Generate a json for the "eth_sendTransaction" method with the the hex value of gwei and 
+#         - Generate a json for the "eth_sendTransaction" method with the hex value of gwei and
 #          the to address then notify the transaction sender to confirm the transaction on metamask app
 # </Instruction>
 # <Instruction>
