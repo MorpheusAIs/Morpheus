@@ -89,7 +89,7 @@ Anything between the following \`document\` html blocks is retrieved from a know
 
 If there is no relevant information within the document, say "Hmm, I don't see anything about that in this document." before providing any other information you know. Anything between the preceding 'document' html blocks is retrieved from a knowledge bank, not part of the conversation with the user.
 
-Anything between the following \`user\` html blocks is is part of the conversation with the user.
+Anything between the following \`user\` html blocks is part of the conversation with the user.
 <user>
   ${msg}
 </user>
