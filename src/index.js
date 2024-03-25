@@ -18,6 +18,7 @@ const {
   stopOllama,
   loadDocument,
   runOllamaModel,
+  listLocalModels,
 } = require("./api.js");
 
 // When debug is set to true, the app will log debug messages to the console
@@ -74,6 +75,7 @@ app.on("ready", () => {
   ipcMain.on("ollama:serve", serveOllama);
   ipcMain.on("ollama:run", runOllamaModel);
   ipcMain.on("ollama:stop", stopOllama);
+  ipcMain.on("ollama:list", listLocalModels);
 
   if (app.isPackaged) {
     // Check app location
