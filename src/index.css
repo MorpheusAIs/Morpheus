@@ -219,6 +219,15 @@ button:focus {
     font-size: 1rem;
     width: 100%;
 }
+#model-select-download {
+    padding: 10px;
+    background-color: var(--response-background);
+    border: 1px solid var(--primary-text);
+    color: var(--primary-text);
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
 
 #model-select:focus {
     outline: none;
@@ -460,4 +469,7 @@ button:focus {
 #user-input-text {
     flex-grow:  1;
     margin-right:  10px; 
+}
+#download-empty-warning{
+    display: none;
 }

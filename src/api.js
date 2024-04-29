@@ -12,9 +12,10 @@ const {
   generate,
   stop,
   serve,
+  list,
 } = require("./service/ollama/ollama.js");
 
-let model = "mistral";
+let model = "mistral:latest";
 
 function debugLog(msg) {
   if (global.debug) {
@@ -36,7 +37,7 @@ async function runOllamaModel(event, msg) {
     await run(model, (json) => {
       // status will be set if the model is downloading
       if (json.status) {
-        if (json.status.includes("downloading")) {
+        if (json.status.includes("downloading") || json.status.includes("pulling")) {
           const percent = Math.round((json.completed / json.total) * 100);
           const content = isNaN(percent)
             ? "Downloading AI model..."
@@ -151,6 +152,15 @@ async function serveOllama(event) {
   }
 }
 
+async function listLocalModels(event) {
+  try {
+    modelList= await list()
+    event.reply("ollama:list", { success: true, content: modelList });
+  } catch (err) {
+    event.reply("ollama:list", { success: false, content: err.message });
+  }
+}
+
 function stopOllama(event) {
   stop();
 }
@@ -164,4 +174,5 @@ module.exports = {
   serveOllama,
   runOllamaModel,
   stopOllama,
+  listLocalModels,
 };

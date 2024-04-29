@@ -18,17 +18,21 @@ const settingsView = document.getElementById("settings-view");
 const settingsCancelBtn = document.getElementById("cancel-btn");
 const settingsCloseBtn = document.getElementById("settings-close-btn");
 const settingsSaveBtn = document.getElementById("save-btn");
+const settingsDownloadBtn = document.getElementById("download-btn");
 const modelSelectInput = document.getElementById("model-select");
+const modelSelectDownloadInput = document.getElementById("model-select-download");
+const downloadEmptyWarning = document.getElementById("download-empty-warning");
 
 let responseElem;
 
 /**
  * This is the initial chain of events that must run on start-up.
- * 1. Start the Ollama server.
+ * 1. Start the Ollama server
  * 2. Run the model. This will load the model into memory so that first chat is not slow.
  *    This step will also download the model if it is not already downloaded.
  * 3. Monitor the run status
  * 4. Load the chat
+ * 5. List locally avaliable models
  */
 
 // 1. Start the Ollama server
@@ -65,6 +69,21 @@ window.electronAPI.onOllamaRun((event, data) => {
   }
   statusMsg.textContent = data.content;
 });
+
+// 5.  List avaliable models
+window.electronAPI.listLocalModels((event, data) => {
+  
+  let models=data.content.models
+  for(let i = 0; i < models.length; i++) {
+      var opt = document.createElement('option');
+      opt.value = models[i].name;
+      opt.innerHTML = models[i].name;
+      modelSelectInput.appendChild(opt);
+  }
+
+
+}
+  );
 
 // Update the display when a document is loaded
 window.electronAPI.onDocumentLoaded((event, data) => {
@@ -190,7 +209,6 @@ window.electronAPI.onChatReply((event, data) => {
     historyContainer.scrollTop = historyContainer.scrollHeight;
   }
 });
-
 // Open file dialog
 openFileButton.addEventListener("click", () => {
   document.getElementById("file-open-icon").style.display = "none";
@@ -252,4 +270,28 @@ settingsSaveBtn.addEventListener("click", () => {
 userInput.addEventListener("input", function () {
   this.style.height = "auto";
   this.style.height = this.scrollHeight + "px";
+});
+//Download button in the settings menu
+settingsDownloadBtn.addEventListener("click", () => {
+  let selectedModel=modelSelectDownloadInput.value
+
+  if (selectedModel.length==0){
+    alert("Input the model name from ollama.com/library to download a new model!")
+    return;
+  }
+  if (!selectedModel.includes(":")){
+    //select latest model version if none is specified
+    selectedModel=selectedModel.concat(":latest")
+  }
+  var opt = document.createElement('option');
+  opt.value = selectedModel;
+  opt.innerHTML = selectedModel;
+  modelSelectInput.appendChild(opt);
+  window.electronAPI.setModel(selectedModel);
+  window.electronAPI.runOllama();
+  modelSelectDownloadInput.value=""
+  chatView.style.display = "none";
+  settingsView.style.display = "none";
+  document.getElementById("initial-view").style.display = "flex";
+
 });

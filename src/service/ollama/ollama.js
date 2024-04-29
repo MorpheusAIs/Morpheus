@@ -155,8 +155,8 @@ class Ollama {
 
       if (done) {
         // We break before reaching here
-        // This means the prompt is not finished (maybe crashed?)
-        throw new Error("Failed to fulfill prompt");
+        // This means the downloading of the model failed
+        throw new Error("Failed to download model: "+model);
       }
 
       // Parse responses are they are received from the Ollama server
@@ -169,6 +169,43 @@ class Ollama {
           // done
           return;
         }
+      }
+    }
+  }
+
+  async listModels() {
+
+    const response = await fetch(this.host + "/api/tags", {
+      method: "GET",
+      cache: "no-store",
+    });
+
+    if (response.status !== 200) {
+      let err = `HTTP Error (${response.status}): `;
+      err += await response.text();
+
+      throw new Error(err);
+    }
+
+    const reader = response.body.getReader();
+
+    //Reads the stream until list of models is returned
+    while (true) {
+      const { done, value } = await reader.read();
+
+      if (done) {
+        // We break before reaching here
+        // This means the prompt is not finished (maybe crashed?)
+        throw new Error("Failed to fulfill prompt");
+      }
+
+      // Parse responses are they are received from the Ollama server
+      for (const buffer of this.parse(value)) {
+        const json = JSON.parse(buffer);
+
+          // done
+          return json;
+        
       }
     }
   }
@@ -359,6 +396,10 @@ function serve() {
   const ollama = Ollama.getOllama();
   return ollama.serve();
 }
+function list() {
+  const ollama = Ollama.getOllama();
+  return ollama.listModels();
+}
 
 module.exports = {
   run,
@@ -368,4 +409,5 @@ module.exports = {
   clearHistory,
   stop,
   serve,
+  list,
 };
