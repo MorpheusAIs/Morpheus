@@ -209,7 +209,7 @@ stopRequestBtn.addEventListener("click", () => {
 
 settingsIcon.addEventListener("click", () => {
   // Send a request to get the current model, settings view will be displayed when the response is received
-  modelSelectInput.value = window.electronAPI.getModel();
+  window.electronAPI.getModel();
 });
 
 displayStyleIcon.addEventListener("click", () => {
